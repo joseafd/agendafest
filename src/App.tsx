@@ -217,26 +217,38 @@ export default function App() {
 
   // 12. Scroll to Current Time Handler
   const handleScrollToCurrentTime = () => {
-    if (viewMode === 'hours') {
-      const element = document.getElementById('act-playing-now');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setToastMessage('⏳ Desplazado al concierto actual');
-        setTimeout(() => setToastMessage(null), 2000);
+    const activeDayId = getInitialDayId();
+
+    const performScroll = () => {
+      if (viewMode === 'hours') {
+        const element = document.getElementById('act-playing-now');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          setToastMessage('⏳ Desplazado al concierto actual');
+          setTimeout(() => setToastMessage(null), 2000);
+        } else {
+          setToastMessage('No hay ningún concierto activo en este momento');
+          setTimeout(() => setToastMessage(null), 2500);
+        }
       } else {
-        setToastMessage('No hay ningún concierto activo en este momento');
-        setTimeout(() => setToastMessage(null), 2500);
+        const redLine = document.getElementById('timeline-now-marker');
+        if (redLine) {
+          redLine.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          setToastMessage('⏳ Desplazado a la hora actual');
+          setTimeout(() => setToastMessage(null), 2000);
+        } else {
+          setToastMessage('Fuera de horario de festival');
+          setTimeout(() => setToastMessage(null), 2500);
+        }
       }
+    };
+
+    if (selectedDayId !== activeDayId) {
+      setSelectedDayId(activeDayId);
+      // Wait for React to switch and render the new day's acts
+      setTimeout(performScroll, 120);
     } else {
-      const redLine = document.getElementById('timeline-now-marker');
-      if (redLine) {
-        redLine.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        setToastMessage('⏳ Desplazado a la hora actual');
-        setTimeout(() => setToastMessage(null), 2000);
-      } else {
-        setToastMessage('Fuera de horario de festival');
-        setTimeout(() => setToastMessage(null), 2500);
-      }
+      performScroll();
     }
   };
 
@@ -823,7 +835,7 @@ export default function App() {
           </main>
 
           {/* Floating Action Button: Go to Current Time */}
-          {shouldShowLive && (
+          {(viewMode === 'stages' || shouldShowLive || selectedDayId !== getInitialDayId()) && (
             <button
               onClick={handleScrollToCurrentTime}
               style={{
