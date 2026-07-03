@@ -835,7 +835,7 @@ export default function App() {
           </main>
 
           {/* Floating Action Button: Go to Current Time */}
-          {(viewMode === 'stages' || shouldShowLive || selectedDayId !== getInitialDayId()) && (
+          {true && (
             <button
               onClick={handleScrollToCurrentTime}
               style={{
