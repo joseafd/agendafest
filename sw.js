@@ -1,4 +1,4 @@
-const CACHE_NAME = 'resu2026-cache-v9';
+const CACHE_NAME = 'resu2026-cache-v10';
 
 // Static assets to precache immediately
 const PRECACHE_ASSETS = [
