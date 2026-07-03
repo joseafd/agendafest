@@ -21,8 +21,8 @@ function excelDateToYYYYMMDD(serial) {
   return `${y}-${m}-${d}`;
 }
 
+// Helper to convert Excel fractional day (0-1) to HH:MM time string
 function excelTimeToHHMM(fractionalDay) {
-  // Convert Excel fractional day (0-1) to HH:MM time string
   const totalMinutes = Math.round(fractionalDay * 24 * 60);
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
@@ -104,7 +104,9 @@ firmasData.forEach(f => {
   signaturesMap[id] = f;
 });
 
-// Process News Items
+// Process News Items (Sorted by date descending: newest first)
+noticiasDataRaw.sort((a, b) => (b.Fecha_noticia || 0) - (a.Fecha_noticia || 0));
+
 const noticias = noticiasDataRaw.map(n => {
   const dateStr = n['Fecha_noticia'] ? excelDateToYYYYMMDD(n['Fecha_noticia']) : '';
   const fecha = dateStr ? formatDate(dateStr) : '';
