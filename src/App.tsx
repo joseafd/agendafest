@@ -16,8 +16,30 @@ export default function App() {
   // 1. App Navigation State (home, agenda, map, credits)
   const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'credits'>('home');
 
+  // Helper to determine the initial day based on current query date-time and the Jornada schedule
+  const getInitialDayId = (): string => {
+    const now = new Date();
+    
+    // Month is 0-indexed: July is index 6
+    const j1_end   = new Date(2026, 6, 2, 3, 30, 0); // Thursday 2 July 03:30
+    const j2_end   = new Date(2026, 6, 3, 3, 30, 0); // Friday 3 July 03:30
+    const j3_end   = new Date(2026, 6, 4, 3, 30, 0); // Saturday 4 July 03:30
+
+    if (now < j1_end) {
+      return '2026-07-01'; // Miércoles
+    }
+    if (now >= j1_end && now < j2_end) {
+      return '2026-07-02'; // Jueves
+    }
+    if (now >= j2_end && now < j3_end) {
+      return '2026-07-03'; // Viernes
+    }
+    // Any time after Friday 03:30 AM defaults to Saturday (Jornada 4)
+    return '2026-07-04'; // Sábado
+  };
+
   // 2. Persistent State
-  const [selectedDayId, setSelectedDayId] = useLocalStorage<string>('rf_selected_day', '2026-07-01');
+  const [selectedDayId, setSelectedDayId] = useState<string>(getInitialDayId());
   const [viewMode, setViewMode] = useLocalStorage<'hours' | 'stages'>('rf_view_mode', 'hours');
   const [favorites, setFavorites] = useLocalStorage<string[]>('rf_favorites', []);
   const [visibleStages, setVisibleStages] = useLocalStorage<string[]>('rf_visible_stages', defaultStages);
