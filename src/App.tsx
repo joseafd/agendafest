@@ -874,7 +874,7 @@ export default function App() {
                   animation: 'pulseYellow 1.5s infinite ease-in-out',
                 }}
               />
-              AHORA
+              AHORA (v8)
             </button>
           )}
         </div>
