@@ -5,16 +5,17 @@ import { HoursView } from './components/HoursView';
 import { StagesView } from './components/StagesView';
 import { FilterDrawer } from './components/FilterDrawer';
 import { BandDetailModal } from './components/BandDetailModal';
-import { festivalData } from './data/festivalData';
+import { festivalData, noticiasData } from './data/festivalData';
 import type { Act } from './data/festivalData';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import { Calendar, Map, ArrowLeft, Info, Share2 } from 'lucide-react';
+import { Calendar, Map, ArrowLeft, Info, Share2, Newspaper } from 'lucide-react';
+import { NewsView } from './components/NewsView';
 
 export default function App() {
   const defaultStages = ["Main", "Ritual", "Chaos", "Desert"];
 
-  // 1. App Navigation State (home, agenda, map, credits)
-  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'credits'>('home');
+  // 1. App Navigation State (home, agenda, map, credits, news)
+  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'credits' | 'news'>('home');
 
   // Helper to determine the initial day based on current query date-time and the Jornada schedule
   const getInitialDayId = (): string => {
@@ -397,7 +398,7 @@ export default function App() {
               }}
             />
 
-            {/* Horizontally aligned interior buttons */}
+            {/* Grid of buttons (2x2) */}
             <div
               style={{
                 position: 'absolute',
@@ -405,91 +406,126 @@ export default function App() {
                 left: '12px',
                 right: '12px',
                 display: 'flex',
+                flexDirection: 'column',
                 gap: '8px',
                 zIndex: 10,
               }}
             >
-              {/* Agenda Tab */}
-              <button
-                onClick={() => setActiveTab('agenda')}
-                style={{
-                  flex: 1,
-                  background: 'var(--gradient-accent)',
-                  color: '#ffffff',
-                  border: 'none',
-                  borderRadius: '12px',
-                  padding: '10px',
-                  fontSize: '0.88rem',
-                  fontWeight: '800',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  boxShadow: '0 4px 12px rgba(255, 42, 133, 0.3)',
-                  transition: 'transform 0.1s',
-                }}
-                className="btn-interactive"
-                onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-                onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-              >
-                <Calendar size={14} />
-                Agenda
-              </button>
+              {/* Row 1 */}
+              <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+                {/* Agenda Tab */}
+                <button
+                  onClick={() => setActiveTab('agenda')}
+                  style={{
+                    flex: 1,
+                    background: 'var(--gradient-accent)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '12px',
+                    padding: '10px',
+                    fontSize: '0.88rem',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    boxShadow: '0 4px 12px rgba(255, 42, 133, 0.3)',
+                    transition: 'transform 0.1s',
+                  }}
+                  className="btn-interactive"
+                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
+                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                >
+                  <Calendar size={14} />
+                  Agenda
+                </button>
 
-              {/* Mapa Tab */}
-              <button
-                onClick={() => setActiveTab('map')}
-                style={{
-                  flex: 1,
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  color: 'var(--text-primary)',
-                  border: '1px solid var(--border-color)',
-                  borderRadius: '12px',
-                  padding: '10px',
-                  fontSize: '0.88rem',
-                  fontWeight: '800',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  transition: 'transform 0.1s',
-                }}
-                className="btn-interactive"
-                onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-                onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-              >
-                <Map size={14} color="#ffd600" />
-                Mapa
-              </button>
+                {/* Noticias Tab */}
+                <button
+                  onClick={() => setActiveTab('news')}
+                  style={{
+                    flex: 1,
+                    background: 'linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '12px',
+                    padding: '10px',
+                    fontSize: '0.88rem',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    boxShadow: '0 4px 12px rgba(0, 114, 255, 0.3)',
+                    transition: 'transform 0.1s',
+                  }}
+                  className="btn-interactive"
+                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
+                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                >
+                  <Newspaper size={14} />
+                  Noticias
+                </button>
+              </div>
 
-              {/* Créditos Tab */}
-              <button
-                onClick={() => setActiveTab('credits')}
-                style={{
-                  flex: 1,
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  color: 'var(--text-primary)',
-                  border: '1px solid var(--border-color)',
-                  borderRadius: '12px',
-                  padding: '10px',
-                  fontSize: '0.88rem',
-                  fontWeight: '800',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  transition: 'transform 0.1s',
-                }}
-                className="btn-interactive"
-                onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-                onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-              >
-                <Info size={14} color="#ffd600" />
-                Créditos
-              </button>
+              {/* Row 2 */}
+              <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+                {/* Mapa Tab */}
+                <button
+                  onClick={() => setActiveTab('map')}
+                  style={{
+                    flex: 1,
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    color: 'var(--text-primary)',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: '12px',
+                    padding: '10px',
+                    fontSize: '0.88rem',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    transition: 'transform 0.1s',
+                  }}
+                  className="btn-interactive"
+                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
+                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                >
+                  <Map size={14} color="#ffd600" />
+                  Mapa
+                </button>
+
+                {/* Créditos Tab */}
+                <button
+                  onClick={() => setActiveTab('credits')}
+                  style={{
+                    flex: 1,
+                    background: 'rgba(255, 255, 255, 0.04)',
+                    color: 'var(--text-primary)',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: '12px',
+                    padding: '10px',
+                    fontSize: '0.88rem',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px',
+                    transition: 'transform 0.1s',
+                  }}
+                  className="btn-interactive"
+                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
+                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+                >
+                  <Info size={14} color="#ffd600" />
+                  Créditos
+                </button>
+              </div>
             </div>
           </div>
 
@@ -808,6 +844,14 @@ export default function App() {
         </div>
       )}
 
+      {/* VIEW 5: NEWS VIEWER */}
+      {activeTab === 'news' && (
+        <NewsView
+          noticias={noticiasData}
+          onBackToHome={() => setActiveTab('home')}
+        />
+      )}
+
       {/* VIEW 4: AGENDA (SCHEDULER) */}
       {activeTab === 'agenda' && (
         <div className="app-container">
@@ -874,7 +918,7 @@ export default function App() {
                   animation: 'pulseYellow 1.5s infinite ease-in-out',
                 }}
               />
-              AHORA (v8)
+              AHORA
             </button>
           )}
         </div>

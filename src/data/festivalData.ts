@@ -38,6 +38,13 @@ export interface FestivalData {
   days: FestivalDay[];
 }
 
+export interface NoticiaItem {
+  fecha: string;
+  imagen: string;
+  entradilla: string;
+  noticia: string;
+}
+
 // Global start hour for the timeline (14:00)
 export const DAY_START_HOUR = 14;
 
@@ -1472,3 +1479,24 @@ export const festivalData: FestivalData = {
     };
   })
 };
+
+export const noticiasData: NoticiaItem[] = [
+  {
+    "fecha": "29/06/2026",
+    "imagen": "https://scontent.fbio3-1.fna.fbcdn.net/v/t39.99422-6/736343148_1348783289919456_2872457055456058256_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=scXNdlGehAYQ7kNvwErRBlD&_nc_oc=AdqWCbGf0CGjMl8jaWEgwLj-3mSoGqf8p_cZ5FA1c0Mo_VvvfBhFNvc0BXj_SnjbC_c&_nc_zt=14&_nc_ht=scontent.fbio3-1.fna&_nc_gid=DU5FkyvKhp9xssnjhwmdXg&_nc_ss=7b2a8&oh=00_AQCvNzvgxpKqAcfB1YIdDXCEaeRGLZ36Wd_DE1-yhrrG4A&oe=6A4D9041",
+    "entradilla": "Horarios de pulseración y Taquillas",
+    "noticia": "Horarios de pulseración y Taquillas"
+  },
+  {
+    "fecha": "30/06/2026",
+    "imagen": "https://scontent.fbio3-1.fna.fbcdn.net/v/t39.99422-6/736349305_1614637920087864_3569990565911515227_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=zPmnLukVoIYQ7kNvwE2GiNK&_nc_oc=AdoXqW6ucmn4rG8zsr9Wbq6NaWOSpcL0cK-ZUpbB5FKWzZ9xSkzADoJhPcVePt1eGgQ&_nc_zt=14&_nc_ht=scontent.fbio3-1.fna&_nc_gid=Xbjgn1d33gh-fK7BeNyAVw&_nc_ss=7b2a8&oh=00_AQC3LrvliBlGOGyQ3fcHAarvOe1Y-g-bUU80Kd6FZQK8Ag&oe=6A4D8B54",
+    "entradilla": "Localización de Taquillas, Pulseras, Incidencias y Recinto",
+    "noticia": "Localización de Taquillas, Pulseras, Incidencias y Recinto"
+  },
+  {
+    "fecha": "01/07/2026",
+    "imagen": "https://scontent.fbio3-2.fna.fbcdn.net/v/t39.99422-6/734826776_1435094478510075_4957313761417329896_n.png?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bP-Qc4Spn0oQ7kNvwF_qKQ9&_nc_oc=Adpuq1rQ_9CoTNZSFQ143ZiR_t-sVL3bfulg-8WBN9X30EsBoD1V6EM8ZKyx1ki66sk&_nc_zt=14&_nc_ht=scontent.fbio3-2.fna&_nc_gid=To2SavWz1QfhkKPSahpvWQ&_nc_ss=7b2a8&oh=00_AQAwRMUETRoyn2nWrvqMHqjniQ9AYLKAP1vjZXtEM1eGeA&oe=6A4DA47F",
+    "entradilla": "Buses hasta/desde el recinto",
+    "noticia": "El precio del billete por cada trayecto es de 1,60€, excepto la conexión con Vicedo en la que el importe es de 3,20€ por cada viaje."
+  }
+];

@@ -31,6 +31,11 @@ function excelTimeToHHMM(fractionalDay) {
   return `${hh}:${mm}`;
 }
 
+function formatDate(dateStr) {
+  const [year, month, day] = dateStr.split('-');
+  return `${day}/${month}/${year}`;
+}
+
 function getWeekdayLabel(dateSerial) {
   const dateStr = excelDateToYYYYMMDD(dateSerial);
   if (dateStr === '2026-07-01') return 'MIERCOLES 1';
@@ -62,10 +67,12 @@ function extractTitleAndDescription(desc) {
 const artistasSheet = workbook.Sheets['Artistas'];
 const actuacionesSheet = workbook.Sheets['Actuaciones'];
 const firmasSheet = workbook.Sheets['Firmas'];
+const noticiasSheet = workbook.Sheets['Noticias'];
 
 const artistasData = XLSX.utils.sheet_to_json(artistasSheet);
 const actuacionesData = XLSX.utils.sheet_to_json(actuacionesSheet);
 const firmasData = XLSX.utils.sheet_to_json(firmasSheet);
+const noticiasDataRaw = noticiasSheet ? XLSX.utils.sheet_to_json(noticiasSheet) : [];
 
 // 3. Build maps
 // Map of Artista ID -> Bio Details
@@ -95,6 +102,18 @@ const signaturesMap = {};
 firmasData.forEach(f => {
   const id = String(f['Artista ID']).toLowerCase().trim();
   signaturesMap[id] = f;
+});
+
+// Process News Items
+const noticias = noticiasDataRaw.map(n => {
+  const dateStr = n['Fecha_noticia'] ? excelDateToYYYYMMDD(n['Fecha_noticia']) : '';
+  const fecha = dateStr ? formatDate(dateStr) : '';
+  return {
+    fecha,
+    imagen: n['Imagen'] ? String(n['Imagen']).trim() : '',
+    entradilla: n['Entradilla'] ? String(n['Entradilla']).trim() : '',
+    noticia: n['Noticia'] ? String(n['Noticia']).trim() : ''
+  };
 });
 
 // 4. Group acts by day
@@ -236,6 +255,13 @@ export interface FestivalData {
   days: FestivalDay[];
 }
 
+export interface NoticiaItem {
+  fecha: string;
+  imagen: string;
+  entradilla: string;
+  noticia: string;
+}
+
 // Global start hour for the timeline (14:00)
 export const DAY_START_HOUR = 14;
 
@@ -295,6 +321,8 @@ export const festivalData: FestivalData = {
     };
   })
 };
+
+export const noticiasData: NoticiaItem[] = ${JSON.stringify(noticias, null, 2)};
 `;
 
 const tsFilePath = path.join(__dirname, 'src', 'data', 'festivalData.ts');
