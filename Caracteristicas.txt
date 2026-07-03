@@ -1,0 +1,27 @@
+Contenidos enriquecido
+- Ficha Detallada de Bandas: Con biografía ampliada, país de origen, géneros musicales y un reproductor de YouTube integrado para ver sus vídeos destacados sin salir de la página.
+- Mapa del Recinto: Vista interactiva del mapa del festival.
+- Créditos: Ficha de agradecimientos con botones directos e integrados a las cuentas profesionales de Instagram y Facebook del autor.
+
+Agenda con Doble Visualización
+- Vista Horizontal (Timeline por Escenarios): Rejilla interactiva con escala ampliada y cabeceras deslizantes.
+- Vista Vertical (Horarios por Bloques): Agrupación cronológica por horas con scroll vertical para un repaso rápido de la jornada.
+
+Modo "En Directo" y Simulador de Tiempo
+- Línea de Tiempo: Una barra vertical de neón rojo se desplaza en el Timeline marcando el minuto exacto del día.
+- Badge Parpadeante: Los conciertos activos se iluminan con un aviso de ● DIRECTO / ● LIVE con animación de pulso.
+- Simulador Integrado: Fuera de las fechas del festival, la app proyecta la hora real de tu PC sobre el día seleccionado para que puedas probar la línea móvil y los badges en vivo.
+
+Detector de Solapamientos (Conflictos)
+- Si marcas como favoritas dos bandas que coinciden en el tiempo, la app añade un aviso visual de ⚠️ Solape en la agenda.
+- Dentro de la ficha de la banda, se despliega una caja de alerta amarilla que detalla explícitamente con qué otra favorita choca, su horario y su escenario.
+
+Cuenta Atrás de Favoritos
+- Si una de tus bandas favoritas va a empezar a tocar en menos de 2 horas (120 minutos), la tarjeta muestra un cronómetro dinámico en minutos (ej. “En 25 min” o “25'”) que se actualiza automáticamente cada 30 segundos.
+
+Opciones de Compartir y Difundir
+- Compartir App (Home): Copia el enlace limpio de la web para difundir la aplicación y que otros empiecen a crear su propia agenda de cero.
+- Compartir Agenda (Scheduler): Genera un enlace único con tus grupos seleccionados. Al abrirlo, tus amigos verán un asistente interactivo para Importar (Combinar con sus favoritos) o Reemplazar su agenda por la tuya.
+
+Optimización de recursos
+- Una vez cargada por primera vez, luego es capaz de funcionar incluso sin cobertura dentro del festival

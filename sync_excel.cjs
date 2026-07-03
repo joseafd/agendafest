@@ -38,11 +38,9 @@ function formatDate(dateStr) {
 
 function getWeekdayLabel(dateSerial) {
   const dateStr = excelDateToYYYYMMDD(dateSerial);
-  if (dateStr === '2026-07-01') return 'MIERCOLES 1';
-  if (dateStr === '2026-07-02') return 'JUEVES 2';
-  if (dateStr === '2026-07-03') return 'VIERNES 3';
-  if (dateStr === '2026-07-04') return 'SABADO 4';
-  return 'MIERCOLES 1';
+  const dateObj = new Date(dateStr);
+  const weekdayEsList = ['DOMINGO', 'LUNES', 'MARTES', 'MIERCOLES', 'JUEVES', 'VIERNES', 'SABADO'];
+  return `${weekdayEsList[dateObj.getDay()]} ${dateObj.getDate()}`;
 }
 
 function extractTitleAndDescription(desc) {
@@ -64,15 +62,32 @@ function extractTitleAndDescription(desc) {
 }
 
 // 2. Read sheets
+const edicionSheet = workbook.Sheets['Edición'];
 const artistasSheet = workbook.Sheets['Artistas'];
 const actuacionesSheet = workbook.Sheets['Actuaciones'];
 const firmasSheet = workbook.Sheets['Firmas'];
 const noticiasSheet = workbook.Sheets['Noticias'];
 
+const edicionData = XLSX.utils.sheet_to_json(edicionSheet);
 const artistasData = XLSX.utils.sheet_to_json(artistasSheet);
 const actuacionesData = XLSX.utils.sheet_to_json(actuacionesSheet);
 const firmasData = XLSX.utils.sheet_to_json(firmasSheet);
 const noticiasDataRaw = noticiasSheet ? XLSX.utils.sheet_to_json(noticiasSheet) : [];
+
+// Parse Edición Row
+const edicionRow = edicionData[0] || {};
+const edicionConfig = {
+  festival: edicionRow['Nombre Festival'] ? String(edicionRow['Nombre Festival']).trim() : 'Resurrection Fest',
+  visibleName: edicionRow['Nombre visible'] ? String(edicionRow['Nombre visible']).trim() : 'Resurrection Fest E.G.',
+  year: edicionRow['Año'] ? Number(edicionRow['Año']) : 2026,
+  startDate: edicionRow['Fecha inicio'] ? excelDateToYYYYMMDD(edicionRow['Fecha inicio']) : '2026-07-01',
+  endDate: edicionRow['Fecha fin'] ? excelDateToYYYYMMDD(edicionRow['Fecha fin']) : '2026-07-04',
+  location: edicionRow['Localidad'] ? String(edicionRow['Localidad']).trim() : 'Viveiro',
+  timezone: edicionRow['Zona horaria'] ? String(edicionRow['Zona horaria']).trim() : 'Europe/Madrid',
+  logo: edicionRow['Logo'] ? String(edicionRow['Logo']).trim() : 'logo.svg',
+  cartel: edicionRow['Cartel'] ? String(edicionRow['Cartel']).trim() : 'PORTADA_RR.jpg',
+  mapa: edicionRow['Mapa'] ? String(edicionRow['Mapa']).trim() : 'MAPA.jpg'
+};
 
 // 3. Build maps
 // Map of Artista ID -> Bio Details
@@ -119,19 +134,47 @@ const noticias = noticiasDataRaw.map(n => {
 });
 
 // 4. Group acts by day
-const daysConfig = [
-  { id: "2026-07-01", dayNumber: 1, dayLabel: "Miércoles 1", weekdayEs: "Miércoles", doors: "15:00" },
-  { id: "2026-07-02", dayNumber: 2, dayLabel: "Jueves 2", weekdayEs: "Jueves", doors: "15:00" },
-  { id: "2026-07-03", dayNumber: 3, dayLabel: "Viernes 3", weekdayEs: "Viernes", doors: "14:30" },
-  { id: "2026-07-04", dayNumber: 4, dayLabel: "Sábado 4", weekdayEs: "Sábado", doors: "14:05" }
-];
+// Dynamically build daysConfig based on startDate and endDate
+const daysConfig = [];
+const startDay = new Date(edicionConfig.startDate);
+const endDay = new Date(edicionConfig.endDate);
 
-const actsByDay = {
-  "2026-07-01": [],
-  "2026-07-02": [],
-  "2026-07-03": [],
-  "2026-07-04": []
-};
+// Map week day numbers to Spanish text
+const weekdayEsList = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
+let currentDay = new Date(startDay);
+let dayNum = 1;
+
+while (currentDay <= endDay) {
+  const y = currentDay.getFullYear();
+  const m = String(currentDay.getMonth() + 1).padStart(2, '0');
+  const d = String(currentDay.getDate()).padStart(2, '0');
+  const dateId = `${y}-${m}-${d}`;
+  
+  const weekdayEs = weekdayEsList[currentDay.getDay()];
+  const dayLabel = `${weekdayEs} ${currentDay.getDate()}`;
+  
+  // Set default doors opening times
+  let doors = "15:00";
+  if (dayNum === 3) doors = "14:30";
+  if (dayNum === 4) doors = "14:05";
+  
+  daysConfig.push({
+    id: dateId,
+    dayNumber: dayNum,
+    dayLabel,
+    weekdayEs,
+    doors
+  });
+  
+  currentDay.setDate(currentDay.getDate() + 1);
+  dayNum++;
+}
+
+const actsByDay = {};
+daysConfig.forEach(day => {
+  actsByDay[day.id] = [];
+});
 
 // Helper to convert time "HH:MM" to minutes relative to 14:00 (matching festivalData.ts timeToMinutes)
 function timeToMinutes(timeStr) {
@@ -149,7 +192,7 @@ actuacionesData.forEach(act => {
   const dateStr = excelDateToYYYYMMDD(act['Fecha']);
   
   if (!actsByDay[dateStr]) {
-    return; // Skip if date is outside our range
+    return; // Skip if date is outside our dynamic range
   }
   
   const stage = String(act['Escenario']).replace(/\s*Stage$/i, '').trim();
@@ -212,13 +255,26 @@ const days = daysConfig.map(day => {
 });
 
 const rawFestivalData = {
-  festival: "Resurrection Fest 2026",
+  festival: edicionConfig.festival + " " + edicionConfig.year,
   days
 };
 
 // 5. Generate festivalData.ts source code
 const tsCode = `// Generated automatically from AgendaFest.xlsx by sync_excel.cjs
 // Do not edit this file manually.
+
+export interface EdicionConfig {
+  festival: string;
+  visibleName: string;
+  year: number;
+  startDate: string;
+  endDate: string;
+  location: string;
+  timezone: string;
+  logo: string;
+  cartel: string;
+  mapa: string;
+}
 
 export interface BandBio {
   name: string;
@@ -263,6 +319,8 @@ export interface NoticiaItem {
   entradilla: string;
   noticia: string;
 }
+
+export const edicionConfig: EdicionConfig = ${JSON.stringify(edicionConfig, null, 2)};
 
 // Global start hour for the timeline (14:00)
 export const DAY_START_HOUR = 14;

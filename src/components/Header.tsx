@@ -1,6 +1,7 @@
 import React from 'react';
 import { Clock, LayoutGrid, SlidersHorizontal, Home, Share2 } from 'lucide-react';
 import type { FestivalDay } from '../data/festivalData';
+import { edicionConfig } from '../data/festivalData';
 
 interface HeaderProps {
   days: FestivalDay[];
@@ -66,8 +67,12 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Center: Logo */}
           <div style={{ textAlign: 'center' }}>
-            <h1 className="font-metal" style={{ fontSize: '1.3rem', lineHeight: 1.1 }}>RESURRECTION</h1>
-            <span style={{ fontSize: '0.75rem', letterSpacing: '3px', color: 'var(--text-secondary)', fontWeight: 800 }}>FEST 2026</span>
+            <h1 className="font-metal" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>
+              {edicionConfig.festival}
+            </h1>
+            <span style={{ fontSize: '0.65rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>
+              {edicionConfig.location.toUpperCase()} {edicionConfig.year}
+            </span>
           </div>
 
           {/* Right: Share + View Toggle + Filters Button Container */}

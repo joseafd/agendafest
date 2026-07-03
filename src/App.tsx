@@ -5,7 +5,7 @@ import { HoursView } from './components/HoursView';
 import { StagesView } from './components/StagesView';
 import { FilterDrawer } from './components/FilterDrawer';
 import { BandDetailModal } from './components/BandDetailModal';
-import { festivalData, noticiasData } from './data/festivalData';
+import { festivalData, noticiasData, edicionConfig } from './data/festivalData';
 import type { Act } from './data/festivalData';
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { Calendar, Map, ArrowLeft, Info, Share2, Newspaper } from 'lucide-react';
@@ -17,26 +17,32 @@ export default function App() {
   // 1. App Navigation State (home, agenda, map, credits, news)
   const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'credits' | 'news'>('home');
 
-  // Helper to determine the initial day based on current query date-time and the Jornada schedule
+  // Helper to determine the initial day based on current date-time and the Jornada schedule
   const getInitialDayId = (): string => {
     const now = new Date();
-    
-    // Month is 0-indexed: July is index 6
-    const j1_end   = new Date(2026, 6, 2, 3, 30, 0); // Thursday 2 July 03:30
-    const j2_end   = new Date(2026, 6, 3, 3, 30, 0); // Friday 3 July 03:30
-    const j3_end   = new Date(2026, 6, 4, 3, 30, 0); // Saturday 4 July 03:30
+    const days = festivalData.days;
 
-    if (now < j1_end) {
-      return '2026-07-01'; // Miércoles
+    if (!days || days.length === 0) {
+      return edicionConfig.startDate;
     }
-    if (now >= j1_end && now < j2_end) {
-      return '2026-07-02'; // Jueves
+
+    for (let i = 0; i < days.length; i++) {
+      const day = days[i];
+      const [y, m, d] = day.id.split('-').map(Number);
+      
+      // Jornada ends at 03:30 AM (or 03:00 AM on the last day) on the NEXT calendar day
+      const nextDayDate = new Date(y, m - 1, d + 1);
+      const endTimeStr = (i === days.length - 1) ? '03:00:00' : '03:30:00';
+      const [endH, endM, endS] = endTimeStr.split(':').map(Number);
+      nextDayDate.setHours(endH, endM, endS, 0);
+      
+      // If current time is before the end of this day's jornada, this is the active day!
+      if (now < nextDayDate) {
+        return day.id;
+      }
     }
-    if (now >= j2_end && now < j3_end) {
-      return '2026-07-03'; // Viernes
-    }
-    // Any time after Friday 03:30 AM defaults to Saturday (Jornada 4)
-    return '2026-07-04'; // Sábado
+
+    return days[days.length - 1].id;
   };
 
   // 2. Persistent State
@@ -77,9 +83,14 @@ export default function App() {
     }
   }, []);
 
-  // 5b. Visitor Counter fetcher (CounterAPI.dev)
+  // 5b. Visitor Counter fetcher (CounterAPI.dev) & Title Updater
   useEffect(() => {
-    fetch('https://api.counterapi.dev/v1/joseafd_resurrection_fest_2026/page_views/up')
+    // Dynamic document title
+    document.title = `${edicionConfig.visibleName} - Agenda de Conciertos`;
+
+    // Dynamic slug for counter API
+    const slug = `${edicionConfig.festival.toLowerCase().replace(/[^a-z0-9]/g, '_')}_${edicionConfig.year}`;
+    fetch(`https://api.counterapi.dev/v1/${slug}/page_views/up`)
       .then((res) => res.json())
       .then((data) => {
         if (data && typeof data.count === 'number') {
@@ -111,11 +122,12 @@ export default function App() {
 
   const [currentFestivalMinutes, setCurrentFestivalMinutes] = useState<number>(getFestivalMinutes());
 
-  // 1.1 Countdown Timer State & Effect (to July 1, 2026 15:00)
+  // 1.1 Countdown Timer State & Effect (based on edicionConfig.startDate)
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
 
   useEffect(() => {
-    const targetDate = new Date(2026, 6, 1, 15, 0, 0); // July 1, 2026 15:00
+    const [y, m, d] = edicionConfig.startDate.split('-').map(Number);
+    const targetDate = new Date(y, m - 1, d, 15, 0, 0); // Opening gates at 15:00
     
     const updateCountdown = () => {
       const now = new Date();
@@ -389,8 +401,12 @@ export default function App() {
           }}
         >
           <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-            <h1 className="font-metal neon-text-glow" style={{ fontSize: '2.1rem', lineHeight: 1.1 }}>RESURRECTION</h1>
-            <span style={{ fontSize: '0.85rem', letterSpacing: '4px', color: 'var(--text-secondary)', fontWeight: 800 }}>FEST 2026</span>
+            <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.8rem', lineHeight: 1.1, textTransform: 'uppercase' }}>
+              {edicionConfig.festival}
+            </h1>
+            <span style={{ fontSize: '0.8rem', letterSpacing: '3px', color: 'var(--text-secondary)', fontWeight: 800, textTransform: 'uppercase' }}>
+              {edicionConfig.location} {edicionConfig.year}
+            </span>
           </div>
 
           {/* Countdown Timer */}
@@ -415,7 +431,7 @@ export default function App() {
               }}
             >
               <div style={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#ffd600', fontWeight: '800' }}>
-                FALTAN PARA EL PORTAL DEL RESU
+                FALTAN PARA EL PORTAL DE {edicionConfig.festival.toUpperCase()}
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -473,8 +489,8 @@ export default function App() {
             }}
           >
             <img
-              src="./images/PORTADA_RR.jpg"
-              alt="Cartel Resurrection Fest"
+              src={`./images/${edicionConfig.cartel}`}
+              alt={`Cartel ${edicionConfig.festival}`}
               style={{
                 width: '100%',
                 height: 'auto',
@@ -725,7 +741,7 @@ export default function App() {
 
             <div style={{ textAlign: 'center' }}>
               <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.25rem', lineHeight: 1.1 }}>MAPA DEL RECINTO</h1>
-              <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>RESURRECTION FEST</span>
+              <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800, textTransform: 'uppercase' }}>{edicionConfig.festival}</span>
             </div>
 
             <div style={{ width: '38px' }} />
@@ -745,8 +761,8 @@ export default function App() {
           >
             <div className="glass-gradient-border-portada neon-glow" style={{ maxWidth: '600px', width: '100%', overflow: 'hidden' }}>
               <img
-                src="./images/MAPA.jpg"
-                alt="Mapa del Resurrection Fest 2026"
+                src={`./images/${edicionConfig.mapa}`}
+                alt={`Mapa del ${edicionConfig.festival} ${edicionConfig.year}`}
                 style={{
                   width: '100%',
                   height: 'auto',
@@ -803,7 +819,7 @@ export default function App() {
 
             <div style={{ textAlign: 'center' }}>
               <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.25rem', lineHeight: 1.1 }}>CRÉDITOS</h1>
-              <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>RESURRECTION FEST</span>
+              <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800, textTransform: 'uppercase' }}>{edicionConfig.festival}</span>
             </div>
 
             <div style={{ width: '38px' }} />
@@ -833,7 +849,7 @@ export default function App() {
             >
               <img
                 src="./images/CREDITOS.jpg"
-                alt="Créditos del Resurrection Fest"
+                alt={`Créditos de ${edicionConfig.festival}`}
                 style={{
                   width: '100%',
                   height: 'auto',

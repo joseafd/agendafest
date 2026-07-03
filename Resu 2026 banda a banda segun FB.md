@@ -1158,3 +1158,5 @@ El quinteto es una de las propuestas más viscerales y sofisticadas del metal co
 
 Como ya sabréis, el pasado mes de abril sufrimos la pérdida de Bo Lueders, miembro de Harm's Way, guitarrista, amante empedernido de la música e icono del hardcore contemporáneo. Por motivos evidentes, Harm's Way no actuarán en Europa este año y Elwood Stray nos acompañarán el sábado en el Chaos. Todo nuestro apoyo y amor a la familia y compañeros de Bo 🖤
 
+
+
