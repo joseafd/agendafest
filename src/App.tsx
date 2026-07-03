@@ -111,6 +111,34 @@ export default function App() {
 
   const [currentFestivalMinutes, setCurrentFestivalMinutes] = useState<number>(getFestivalMinutes());
 
+  // 1.1 Countdown Timer State & Effect (to July 1, 2026 15:00)
+  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number } | null>(null);
+
+  useEffect(() => {
+    const targetDate = new Date(2026, 6, 1, 15, 0, 0); // July 1, 2026 15:00
+    
+    const updateCountdown = () => {
+      const now = new Date();
+      const diff = targetDate.getTime() - now.getTime();
+      
+      if (diff <= 0) {
+        setTimeLeft(null); // Festival started
+        return;
+      }
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      setTimeLeft({ days, hours, minutes, seconds });
+    };
+    
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentFestivalMinutes(getFestivalMinutes());
@@ -360,10 +388,79 @@ export default function App() {
             overflowY: 'auto',
           }}
         >
-          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '20px' }}>
             <h1 className="font-metal neon-text-glow" style={{ fontSize: '2.1rem', lineHeight: 1.1 }}>RESURRECTION</h1>
             <span style={{ fontSize: '0.85rem', letterSpacing: '4px', color: 'var(--text-secondary)', fontWeight: 800 }}>FEST 2026</span>
           </div>
+
+          {/* Countdown Timer */}
+          {timeLeft ? (
+            <div
+              style={{
+                marginBottom: '20px',
+                padding: '10px 16px',
+                background: 'rgba(15, 17, 24, 0.65)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: '1px solid rgba(255, 214, 0, 0.25)',
+                borderRadius: '12px',
+                color: '#ffffff',
+                textAlign: 'center',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 214, 0, 0.05)',
+                maxWidth: '320px',
+                width: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '4px',
+              }}
+            >
+              <div style={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#ffd600', fontWeight: '800' }}>
+                FALTAN PARA EL PORTAL DEL RESU
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ffffff', lineHeight: 1.1 }}>{timeLeft.days}</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Días</span>
+                </div>
+                <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'rgba(255,255,255,0.4)', lineHeight: 1.1 }}>:</span>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ffffff', lineHeight: 1.1 }}>{String(timeLeft.hours).padStart(2, '0')}</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Horas</span>
+                </div>
+                <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'rgba(255,255,255,0.4)', lineHeight: 1.1 }}>:</span>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ffffff', lineHeight: 1.1 }}>{String(timeLeft.minutes).padStart(2, '0')}</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Min</span>
+                </div>
+                <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'rgba(255,255,255,0.4)', lineHeight: 1.1 }}>:</span>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ff2a85', lineHeight: 1.1 }}>{String(timeLeft.seconds).padStart(2, '0')}</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Seg</span>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div
+              style={{
+                marginBottom: '20px',
+                padding: '6px 12px',
+                background: 'rgba(255, 42, 133, 0.08)',
+                border: '1px solid rgba(255, 42, 133, 0.3)',
+                borderRadius: '10px',
+                color: '#ffffff',
+                fontSize: '0.78rem',
+                fontWeight: '800',
+                letterSpacing: '0.5px',
+                boxShadow: '0 0 10px rgba(255, 42, 133, 0.1)',
+                animation: 'pulseYellow 2s infinite ease-in-out',
+                maxWidth: '320px',
+                textAlign: 'center',
+                width: '100%',
+              }}
+            >
+              🤘 EL FESTIVAL YA HA COMENZADO 🤘
+            </div>
+          )}
 
           {/* Portada Cover Container with Overlaid Buttons */}
           <div
@@ -398,134 +495,122 @@ export default function App() {
               }}
             />
 
-            {/* Grid of buttons (2x2) */}
+            {/* Horizontal circular navigation icons only */}
             <div
               style={{
                 position: 'absolute',
-                bottom: '16px',
-                left: '12px',
-                right: '12px',
+                bottom: '20px',
+                left: 0,
+                right: 0,
                 display: 'flex',
-                flexDirection: 'column',
-                gap: '8px',
+                justifyContent: 'center',
+                gap: '16px',
                 zIndex: 10,
               }}
             >
-              {/* Row 1 */}
-              <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
-                {/* Agenda Tab */}
-                <button
-                  onClick={() => setActiveTab('agenda')}
-                  style={{
-                    flex: 1,
-                    background: 'var(--gradient-accent)',
-                    color: '#ffffff',
-                    border: 'none',
-                    borderRadius: '12px',
-                    padding: '10px',
-                    fontSize: '0.88rem',
-                    fontWeight: '800',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    boxShadow: '0 4px 12px rgba(255, 42, 133, 0.3)',
-                    transition: 'transform 0.1s',
-                  }}
-                  className="btn-interactive"
-                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                >
-                  <Calendar size={14} />
-                  Agenda
-                </button>
+              {/* Agenda Icon */}
+              <button
+                onClick={() => setActiveTab('agenda')}
+                aria-label="Agenda"
+                title="Agenda"
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: 'rgba(255, 42, 133, 0.15)',
+                  border: '2px solid rgba(255, 42, 133, 0.8)',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 12px rgba(255, 42, 133, 0.4)',
+                  transition: 'transform 0.1s, background-color 0.2s',
+                }}
+                className="btn-interactive"
+                onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.9)'; }}
+                onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+              >
+                <Calendar size={20} color="#ff2a85" />
+              </button>
 
-                {/* Noticias Tab */}
-                <button
-                  onClick={() => setActiveTab('news')}
-                  style={{
-                    flex: 1,
-                    background: 'linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)',
-                    color: '#ffffff',
-                    border: 'none',
-                    borderRadius: '12px',
-                    padding: '10px',
-                    fontSize: '0.88rem',
-                    fontWeight: '800',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    boxShadow: '0 4px 12px rgba(0, 114, 255, 0.3)',
-                    transition: 'transform 0.1s',
-                  }}
-                  className="btn-interactive"
-                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                >
-                  <Newspaper size={14} />
-                  Noticias
-                </button>
-              </div>
+              {/* Noticias Icon */}
+              <button
+                onClick={() => setActiveTab('news')}
+                aria-label="Noticias"
+                title="Noticias"
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: 'rgba(0, 198, 255, 0.15)',
+                  border: '2px solid rgba(0, 198, 255, 0.8)',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 12px rgba(0, 198, 255, 0.4)',
+                  transition: 'transform 0.1s, background-color 0.2s',
+                }}
+                className="btn-interactive"
+                onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.9)'; }}
+                onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+              >
+                <Newspaper size={20} color="#00c6ff" />
+              </button>
 
-              {/* Row 2 */}
-              <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
-                {/* Mapa Tab */}
-                <button
-                  onClick={() => setActiveTab('map')}
-                  style={{
-                    flex: 1,
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    color: 'var(--text-primary)',
-                    border: '1px solid var(--border-color)',
-                    borderRadius: '12px',
-                    padding: '10px',
-                    fontSize: '0.88rem',
-                    fontWeight: '800',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    transition: 'transform 0.1s',
-                  }}
-                  className="btn-interactive"
-                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                >
-                  <Map size={14} color="#ffd600" />
-                  Mapa
-                </button>
+              {/* Mapa Icon */}
+              <button
+                onClick={() => setActiveTab('map')}
+                aria-label="Mapa"
+                title="Mapa"
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: 'rgba(255, 214, 0, 0.15)',
+                  border: '2px solid rgba(255, 214, 0, 0.8)',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 12px rgba(255, 214, 0, 0.4)',
+                  transition: 'transform 0.1s, background-color 0.2s',
+                }}
+                className="btn-interactive"
+                onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.9)'; }}
+                onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+              >
+                <Map size={20} color="#ffd600" />
+              </button>
 
-                {/* Créditos Tab */}
-                <button
-                  onClick={() => setActiveTab('credits')}
-                  style={{
-                    flex: 1,
-                    background: 'rgba(255, 255, 255, 0.04)',
-                    color: 'var(--text-primary)',
-                    border: '1px solid var(--border-color)',
-                    borderRadius: '12px',
-                    padding: '10px',
-                    fontSize: '0.88rem',
-                    fontWeight: '800',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    transition: 'transform 0.1s',
-                  }}
-                  className="btn-interactive"
-                  onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
-                  onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-                >
-                  <Info size={14} color="#ffd600" />
-                  Créditos
-                </button>
-              </div>
+              {/* Créditos Icon */}
+              <button
+                onClick={() => setActiveTab('credits')}
+                aria-label="Créditos"
+                title="Créditos"
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  border: '2px solid rgba(255, 255, 255, 0.35)',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 8px rgba(255, 255, 255, 0.15)',
+                  transition: 'transform 0.1s, background-color 0.2s',
+                }}
+                className="btn-interactive"
+                onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.9)'; }}
+                onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+              >
+                <Info size={20} color="#ffffff" />
+              </button>
             </div>
           </div>
 

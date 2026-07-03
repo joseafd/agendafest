@@ -199,11 +199,11 @@ export function NewsView({ noticias, onBackToHome }: NewsViewProps) {
             </button>
 
             {selectedNews.imagen && (
-              <div style={{ width: '100%', maxHeight: '250px', overflow: 'hidden', position: 'relative' }}>
+              <div style={{ width: '100%', overflow: 'hidden', position: 'relative', borderTopLeftRadius: '24px', borderTopRightRadius: '24px', background: '#000000' }}>
                 <img
                   src={selectedNews.imagen}
                   alt={selectedNews.entradilla}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
               </div>
             )}
