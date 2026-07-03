@@ -89,7 +89,7 @@ export default function App() {
     document.title = `${edicionConfig.visibleName} - Agenda de Conciertos`;
 
     // Dynamic slug for counter API
-    const slug = `${edicionConfig.festival.toLowerCase().replace(/[^a-z0-9]/g, '_')}_${edicionConfig.year}`;
+    const slug = `joseafd_${edicionConfig.festival.toLowerCase().replace(/[^a-z0-9]/g, '_')}_${edicionConfig.year}`;
     fetch(`https://api.counterapi.dev/v1/${slug}/page_views/up`)
       .then((res) => res.json())
       .then((data) => {
