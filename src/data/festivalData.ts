@@ -66,9 +66,9 @@ export const edicionConfig: EdicionConfig = {
   "endDate": "2026-07-04",
   "location": "Viveiro",
   "timezone": "Europe/Madrid",
-  "logo": "logo.svg",
-  "cartel": "cartel.jpg",
-  "mapa": "mapa.jpg"
+  "logo": "logoresu2026.jpg",
+  "cartel": "cartelresu2026.jpg",
+  "mapa": "maparesu2026.jpg"
 };
 
 // Global start hour for the timeline (14:00)
