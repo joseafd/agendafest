@@ -44,6 +44,8 @@ https://www.youtube.com/watch?v=gLtbBsBGKxc
 
 Japón - Rock Alternativo, Rap Metal
 
+SESIONES DE FIRMAS - MIERCOLES 1 - 19:30 A 19:50
+
 Tres años después, los japoneses MAN WITH A MISSION regresan a Viveiro y lo hacen por la puerta grande, consagrados como una de las grandes formaciones niponas de rock a día de hoy 🎵
 
 Aunque lo que seguro que te impactará será su puesta en escena 🤘🏼 Los lobos de Shibuya no dejan a nadie indiferente. Así que prepárate para un show sorprendente con una producción impactante como la que están exhibiendo en Asia estas semanas dentro de su tour mundial Howling Across 🙌
@@ -84,7 +86,11 @@ https://www.youtube.com/watch?v=EBAdqbbioZ8
 
 España - Garaje Rock, Psicodelia
 
-Black Maracas es una destacada banda madrileña de garage-rock, psicodelia y punk, liderada por Adrián "Dilly Child" Martín. El grupo ha logrado expandirse internacionalmente con giras por Europa, México y Estados Unidos (actuando en festivales de renombre como el Levitation y Freakout). Garaje cavernícola psicodelicioso
+¡EL GARAJE CAVERNÍCOLA DE BLACK MARACAS EN EL RESURRECTION FEST EG 2026! 🔥
+
+La banda madrileña Black Maracas surge gracias a la visión creativa de Adrián Martín como un ritual de garaje, stoner y psicodelia muy particular al que poco a poco se le han ido añadido matices más duros que vocalmente recuerdan incluso a un black o sludge metal rock and rollero con fuzz hasta arriba 🎸
+
+Tras viajar por parte de Europa y América, este genial proyecto que en directo multiplica por mil su talento, nos enseñará las garras desde el Desert Stage el próximo miércoles 1 de julio 🤘
 
 https://www.youtube.com/watch?v=nUX-xW182EI
 
@@ -153,6 +159,8 @@ https://www.youtube.com/watch?v=MfDZlUD\_1WU
 **THROWN** - ¡THROWN ESTARÁN POR PRIMERA VEZ EN ESPAÑA EN EL RESURRECTION FEST EG! 💥 FB 26K  SP 888K
 
 Suecia - Hardcore Punk, Metalcore
+
+SESIONES DE FIRMAS - MIERCOLES 1 - 18:00 A 18:30
 
 Thrown desembarcarán en Viveiro en 2026 para demostrar por qué son una de las bandas más explosivas del metalcore y hardcore actual. El cuarteto sueco liderado por Marcus Lundqvist vendrá a nuestro Main Stage dispuesto a arrasar con todo con su mezcla de rabia, riffs afilados y groove 🎸💣
 
@@ -310,7 +318,7 @@ España - Metalcore
 
 Con su estilo entre el post-hardcore y metalcore, la banda madrileña es un ejemplo de constancia y amor por la música. Desde su creación hace aproximadamente una década hasta hoy, y con dos discos por medio, su música ha llegado tanto a varios países de Europa como Latinoamérica gracias a dos álbumes top publicados en 2018 y 2025 🙌
 
-En 2025 estuvieron en el Hellfest, pero nosotros ya los tuvimos por nuestros escenarios en 2024. Este mismo año Fallen At Dawn nos volverán a visitar para darlo todo en el Ritual el jueves 2 de julio 
+En 2025 estuvieron en el Hellfest, pero nosotros ya los tuvimos por nuestros escenarios en 2024. Este mismo año Fallen At Dawn nos volverán a visitar para darlo todo en el Ritual el jueves 2 de julio
 
 https://www.youtube.com/watch?v=mmP3MmImXi0
 
@@ -504,6 +512,8 @@ https://www.youtube.com/watch?v=6joGJzYX\_Rc
 
 Alemania - Metalcore
 
+SESIONES DE FIRMAS - JUEVES 2 - 20:30 A 21:00
+
 Referentes del metalcore europeo desde finales de los 90, Caliban ha construido una identidad feroz y auténtica que les ha mantenido en primera línea durante más de dos décadas. Con una mezcla de brutalidad, sensibilidad melódica y una puesta en escena arrolladora, la banda alemana sigue demostrando hoy en día por qué su nombre pesa tanto dentro del género 🤘🏼
 
 Tras el lanzamiento hace unos meses de "Back From Hell", su decimotercer álbum en el que han recuperado un sonido más crudo y directo, Caliban volverán a Viveiro para ofrecer una actuación exclusiva que solo podremos vivir en el Resu. Una oportunidad única para disfrutar de su energía y de temazos que conectan ya a varias generaciones 💥
@@ -546,29 +556,21 @@ https://www.youtube.com/watch?v=x2lxwwzkLCM
 
 
 
-**WITCH CLUB SATAN** - ¡LAS COMBATIVAS WITCH CLUB SATAN LLEGAN AL RESURRECTION FEST 2026! 🔥 SP 55K
-
-Noruega - Black Metal
-
-Desde Noruega, WCS aterrizan por primera vez en Viveiro para demostrar que el black metal puede seguir provocando y sorprendiendo como en su época dorada. El trío ha sacudido la escena escandinava con una propuesta que va más allá de la música gracias a su actitud punk e increíble propuesta teatral 🕯️
-
-Lejos de los clichés habituales, Nikoline, Victoria y Johanna traen un directo que funciona como un ritual crudo e histriónico cargado de simbolismo. Vendrán al Resu a presentar su propia visión del caos 🤘 ¡IMPERDIBLES! ✊
-
-https://www.youtube.com/watch?v=WvgixsYAUvE
-
-
-
 **AUTHORITY ZERO** - SP 262
 
 EEUU - Punk Rock
+
+SESIONES DE FIRMAS - JUEVES 2 - 18:30 A 19:00
 
 ¡AUTHORITY ZERO TRAERÁN MÁS DE TRES DÉCADAS DE PUNK INCOMBUSTIBLE AL RF2026! 🛹
 
 Authority Zero son una de esas bandas por las que volverías a desempolvar tus zapas y tu skate. Vienen desde la calurosa ciudad de Mesa (Arizona) y llevan dando guerra desde los años 90 con su hardcore melódico y skate punk veloz con algunos toques rítmicos de ska y reggae 🕺
 
-Vente a gozar de esta bandaza míticas con miles de kilómetros a sus espaldas y la misma rabia y contundencia que el primer día. ¡La cita será en el Chaos Stage el jueves 2 de julio! 🏃‍♂️⚡
+Vente a gozar de esta bandaza míticas con miles de kilómetros a sus espaldas y la misma rabia y contundencia que el primer día. ¡La cita será en el Ritual Stage el jueves 2 de julio! 🏃‍♂️⚡
 
 https://www.youtube.com/watch?v=XmhN3t4wLFA
+
+
 
 
 
@@ -592,149 +594,233 @@ VIERNES 3
 
 **THE FALL OF ATLANTIS**
 
+España - Metalcore, Deathcore
+
 The Fall Of Atlantis se creó en Madrid en el año 2012, la banda se caracteriza por tener un estilo Metalcore poco corriente con influencias del Deathcore y la música electrónica, donde podemos encontrar desde los breakdowns más potentes y rompedores a melodías pegadizas
+
+https://www.youtube.com/watch?v=zNDcD3oSt3U
 
 
 
 **NUKORE** - ¡CROSSOVER ARROLLADOR DE RAP Y METAL CON NUKORE EN EL RESURRECTION FEST EG 2026! 💥 SP 1K
 
+España - Harcore, Rapcore
+
 Con una sólida trayectoria que ya supera los 20 años, la banda vitoriana Nukore es un referente de autenticidad y tesón en la escena nacional. Desde su formación, han sabido perfeccionar su mezcla implacable entre nu metal, hardcore, rap y metal alternativo dejando canciones brutales a lo largo de sus seis referencias de estudio 🙌
 
 Si te mola el hardcore noventero y el nu metal y bandas como Rage Against The Machine, Biohazard, Suicidal Tendencies o Stuck Mojo, no te lo pienses y vente a verlos el viernes 3 de julio al Ritual Stage de una 🤘
 
+https://www.youtube.com/watch?v=EmnfimPvST0
 
 
-**BLAZE THE TRAIL** - ¡EL HURACÁN DE BLAZE THE TRAIL DESTRUIRÁ EL MAIN STAGE ESTE AÑO EN EL RF2026! 🔥 SP 5K
 
-La formación pucelana nacida de las cenizas de Remember These Eyes estará en Viveiro por segunda vez tras sorprender con su conciertazo de 2022. Regresarán más fuertes que nunca, asaltando esta vez el Main Stage el viernes 3 de julio 💥 Armados con la brutalidad del hardcore moderno y metal, los de Valladolid Blaze The Trail tomarán nuestro festi para demostrar lo duro que han estado trabajando todos estos años para continuar su indiscutible perseverancia dentro del panorama estatal de la última década 🤘🏻
+**BLAZE THE TRAIL** - ¡EL HURACÁN DE BLAZE THE TRAIL DESTRUIRÁ EL RITUAL STAGE ESTE AÑO EN EL RF2026! 🔥 SP 5K
+
+España - Harcore
+
+La formación pucelana nacida de las cenizas de Remember These Eyes estará en Viveiro por segunda vez tras sorprender con su conciertazo de 2022. Regresarán más fuertes que nunca, asaltando esta vez el Ritual Stage el viernes 3 de julio 💥 Armados con la brutalidad del hardcore moderno y metal, los de Valladolid Blaze The Trail tomarán nuestro festi para demostrar lo duro que han estado trabajando todos estos años para continuar su indiscutible perseverancia dentro del panorama estatal de la última década 🤘🏻
 
 ¡Nos os los perdáis por nada del mundo! ¡Nos vemos allí! 🧨
+
+https://www.youtube.com/watch?v=6l5TIlI4tdg
 
 
 
 **PANTS OFF**  SP 1K
 
+España - Punk-rock
+
 están a punto de cumplir 20 años como banda e institución de resistencia de la escena pontevedresa y compostelana. Mezclan el rock alternativo con la esencia y melodías del pop punk de los 90 y comienzos de los 2000 (sí, su nombre es un guiño a Blink-182) con música fresca, pegadiza y directa al grano para corear a pleno pulmón 🗣️
 
 Directos desde A Estrada y curtidos en salas y festis, traen su directo tan fiestero como reivindicativo a Viveiro para romperla en el Chaos Stage el viernes 3 de julio. ¡Vente a celebrarlo!
 
+https://www.youtube.com/watch?v=AO4JQ3\_zPXE
 
 
-**NOT YET** SP 1K
+
+**NOT YET** ¡OTROS DE LA CASA! SP 1K
+
+España - Post Hardcore
+
+Not Yet es una joven banda de post-hardcore formada en Viveiro en 2022. El grupo debutó en 2025 con su EP "Two Steps To Rest". Son parte de la cantera local y han participado con notorio éxito en el Resu del año pasado.
+
+https://www.youtube.com/watch?v=GljyxhhdFqU
 
 
 
 **MADMESS** ¡VIAJE ASTRAL DIRECTO DESDE OPORTO CON LA PSICODELIA DE **MADMESS** EN EL RF2026! 🔥 SP 2K
 
+Portugal - Rock Psicodélico
+
 ¡Preparaos para levitar! Desde su formación en 2017, el power trío luso-británico ha demostrado que la psicodelia sigue sin tener fronteras. Sus directos son rituales sonoros que maman directamente de los 70 con jams espaciales e hipnóticas que te hacen levitar 🧘
 
-Si os molan los riffs infinitos y bandas como Earthless, Black Sabbath o Kyuss, el viernes 3 de julio vais a gozar de lo lindo con Madmess en el Desert Stage 🙂‍↕️
+Si os molan los riffs infinitos y bandas como Earthless, Black Sabbath o Kyuss, vais a gozar de lo lindo con Madmess en el Desert Stage 🙂‍↕️
+
+https://www.youtube.com/watch?v=sNi\_YmGT7Cw
 
 
 
 **THE RASMUS** - ¡THE RASMUS ESTARÁN EN EL RESURRECTION FEST EG 2026 CON UNA FECHA EXCLUSIVA EN ESPAÑA! 🔥 SP 3270
 
+Finlandia - Rock Melodico
+
+SESIONES DE FIRMAS - VIERNES 3 - 19:00 A 19:30
+
 La cuervos finlandeses The Rasmus echarán a volar sobre Viveiro con su rock melódico y energía arrolladora. Llegan más vivos que nunca, listos para conquistarnos con nuevos sonidos y con esas atmósferas melancólicas que los convirtieron en leyenda 🙌
 
 ¿Listxs para dejaros la voz con himnos generacionales como "In The Shadows", "No Fear" o "Livin' In A World Without You"? Si creciste con ellos o quieres saber por qué marcaron una época, ¡no te lo pierdas! 🤟
+
+https://www.youtube.com/watch?v=uY4vweIBFcY
 
 
 
 **OSLO OVNIES** - ¡ROCK, ELECTRÓNICA, POST-HARDCORE Y POP CON OSLO OVNIES EN EL RESURRECTION FEST EG 2026! ✨  SP 6K
 
+España - Rock alternativo
+
 El quinteto con sede en La Rioja lleva casi una década en la escena alternativa estatal desde su creación en 2017. En estos años han lanzado dos álbumes (y todo apunta a que más pronto que tarde nos regalarán nuevas canciones) en los que han demostrado que no se casan con nadie ni tienen complejos con las etiquetas, y que tanto el pop, la electrónica y el rock como el post-hardcore, post-rock y el metal son parte de su esencia y raíces 🙌
 
-El viernes 3 de julio OSLO OVNIES estarán en el Chaos Stage dando un bolo muy especial como parte de su gira "¿Dónde está mi ovni?", y estamos segurísimxs de que os flipará su solvencia y energía en directo. Aunque las comparaciones son odiosas y su abanico sea demasiado amplio como para encasillarlos, si os molan artistas como Frank Carter, Biela, Bolu2 Death, Johnny Garso o Bring Me The Horizon, os recomendamos no perdéroslos 🕺
+OSLO OVNIES estarán en el Chaos Stage dando un bolo muy especial como parte de su gira "¿Dónde está mi ovni?", y estamos segurísimxs de que os flipará su solvencia y energía en directo. Aunque las comparaciones son odiosas y su abanico sea demasiado amplio como para encasillarlos, si os molan artistas como Frank Carter, Biela, Bolu2 Death, Johnny Garso o Bring Me The Horizon, os recomendamos no perdéroslos 🕺
+
+https://www.youtube.com/watch?v=TgWSiiCQU1I
 
 
 
 **OKKULTIST** - SP 7K
 
+Portugal - Death Metal
+
 Son una de las bandas que más están llamando la atención en la escena metal de Portugal y llegan a Resurrection Fest EG 2026 para hacer temblar el Ritual Stage con sus salvajes riffs de guitarra y la poderosa voz de Beatriz Mariano. Okkultist prometen una descarga de puro Death Metal en Viveiro el viernes 3 de julio
+
+https://www.youtube.com/watch?v=9mJu2r\_v7FE
 
 
 
 **MOURIR** ¡OSCURIDAD Y DISONANCIAS CON MOURIR EN EL RESURRECTION FEST EG 2026! 🔥 SP 6K
 
+Francia - Black Metal
+
 Desde Francia llega una de las propuestas más oscuras, gélidas y extremas de esta edición del Resu. Mourir nacieron en 2019, aunque su historia se podría remontar unos años atrás más con Vermine, proyecto de black metal en solitario del vocalista y guitarrista Olivier Lolmède 🙌
 
-El cuarteto, que el próximo 10 de julio lanzará su tercer LP debutando con Pelagic Records, factura un black particular; crudo, atmosférico, y disonante con arrebatos sludge que hacen de su música asfixiantemente moderna y única. ¡No te los pierdas si te molan Imperial Triumphant, Fange, The Great Old Ones o Wiegedood! Estarán el 3 de julio en el Desert Stage 🤘
+El cuarteto, que el próximo 10 de julio lanzará su tercer LP debutando con Pelagic Records, factura un black particular; crudo, atmosférico, y disonante con arrebatos sludge que hacen de su música asfixiantemente moderna y única. ¡No te los pierdas si te molan Imperial Triumphant, Fange, The Great Old Ones o Wiegedood! 🤘
+
+https://www.youtube.com/watch?v=yq483\_-C5tA
 
 
 
 **BLEED FROM WITHIN** - Pocas cosas superan la brutalidad y dedicación de Bleed From Within dentro del metalcore actual 🔥 SP 461K
 
-Son claramente una de las bandas del momento, y ya en 2022 nos demostraron de lo que son capaces en el festi. Tendremos el placer de verlos tocar otra vez 4 años después en su mejor momento el próximo viernes 3 de julio en el Main Stage. ¡Puro metal escocés! 🤘
+Reino Unido - Metal, Groove Metal
 
-BLEED FROM WITHIN VUELVEN AL RESURRECTION FEST ESTE 2026! 🔥
+Son claramente una de las bandas del momento, y ya en 2022 nos demostraron de lo que son capaces en el festi. Tendremos el placer de verlos tocar otra vez 4 años después en su mejor momento. ¡Puro metal escocés! 🤘
 
 La banda escocesa llega al Resu en el mejor momento de su carrera. Tras dos décadas de evolución desde sus inicios en el deathcore hasta la mezcla de death melódico, metalcore y groove actual, los de Glasgow han ido cuidando y perfeccionando sus melodías y groove hasta hoy, que ya son considerados uno de los nombres fundamentales para entender el metal británico contemporáneo🤘
 
-Su regreso por Viveiro después de 4 años no será una cita más. Bleed From Within volverán con su álbum "Zenith" bajo el brazo, un nuevo repertorio y una madurez extra que no ha afectado en absoluto a su demoledora agresividad. ¡Imperdibles! 👊
+Su regreso por Viveiro no será una cita más. Bleed From Within volverán con su álbum "Zenith" bajo el brazo, un nuevo repertorio y una madurez extra que no ha afectado en absoluto a su demoledora agresividad. ¡Imperdibles! 👊
+
+https://www.youtube.com/watch?v=42-e9zFmgPA
 
 
 
 **INITIATE** ¡ENERGÍA INAGOTABLE Y CATARSIS COLECTIVA HARDCORE CON INITIATE EN EL RESURRECTION FEST EG 2026!🔥 SP 18K
 
+EEUU - Hardcore
+
 El hardcore moderno no se entiende sin bandas como Initiate, formación californiana que desde hace una década ha mantenido de la mano la agresividad, integridad y conciencia dentro de un género nacido por y para ello. Aunque se rigen por la velocidad y urgencia, también son capaces de transitar lo melódico sin perder su gancho 👊💥
 
 Initiate se han convertido en una voz vital del underground por su música y mensaje, que pretende dar visibilidad y soporte a personas queer, mujeres y todo tipo de gente afectada por injusticias sistémicas. Este ideario tan unido al hardcore y punk es el puente perfecto para derribar barreras y crear una comunidad diversa con el único fin de disfrutar, bailar, gritar y sentirse parte de algo más grande ✊
+
+https://www.youtube.com/watch?v=KH0PrtJIkIo
 
 
 
 **HULDER** - ¡EL BLACK MEDIEVAL Y CRUDO DE HULDER DESTROZARÁ RITUAL STAGE EN EL RF26! 🔥 SP 38K
 
-Si eres de lxs que todavía piensan que el black metal crudo solo sale de Escandinavia, prepárate para la propuesta el dúo belga-americano Hulder nos traerá el viernes 3 al Ritual Stage. El proyecto está revitalizando el género con su autodenominado "dark medieval black metal", y estamos segurísimxs de que hará las delicias de cualquier fan del black pagano de los 90 🤘
+EEUU - Black Metal
+
+Si eres de lxs que todavía piensan que el black metal crudo solo sale de Escandinavia, prepárate para la propuesta el dúo belga-americano Hulder nos traerá el viernes 3. El proyecto está revitalizando el género con su autodenominado "dark medieval black metal", y estamos segurísimxs de que hará las delicias de cualquier fan del black pagano de los 90 🤘
 
 Con base en Estados Unidos, en Hulder se mezcla la crudeza de los inicios del estilo con atmósferas densas y algún que otro guiño al dark folk que os transportará a castillos belgas en ruinas y bosques olvidados a lo largo y ancho de Europa. ¡Banda imprescindible para lxs fans de lo extremo! 👊
+
+https://www.youtube.com/watch?v=Q2gttZHbJsw
 
 
 
 **ROSALIE CUNNINGHAM** - ¡EL MAGNETISMO PSICODÉLICO DE ROSALIE CUNNINGHAM TAMBIÉN ESTARÁ EN VIVEIRO ESTE 2026! 🍄✨  SP 12K
 
+Reino Unido - Rock Psicodélico
+
 La elegancia del rock setentero tiene nombre propio y llega desde la inglesa Southend-on-Sea hasta Galicia para dejar con la boca abierta a todas las personas dispuestas a un viaje irrepetible en el Desert Stage. Rosalie Cunningham, la exlíder de la aclamada banda inglesa Purson, nos cautivará con su propuesta de rock and roll vintage, artístico y lisérgico
 
 La talentosa multiinstrumentista británica es conocida por su estética e imaginación desbordante a la hora de componer. Viene a presentarnos las joyas de su elogiado tercer disco en solitario, "To Shoot Another Day", una obra llena de estilo, carisma y riffs hipnóticos, y a tocar otros de sus tantísimos temazos
+
+https://www.youtube.com/watch?v=8YehoejPll8\&list=RDEM71BufWZpq5YI695VOCH1Xw\&start\_radio=1
 
 
 
 **TRIVIUM** - ¡TRIVIUM VUELVEN AL RESURRECTION FEST EG! 🤘  SP 2196
 
+EEUU - Metalcore
+
 Nos alegra volver a contar en nuestro Main Stage con una de las bandas de metal más queridas por el público. Trivium ya nos sorprendieron con sus directos en Viveiro en el 2013 y 2019 y, siete años después, volverán a poner patas arriba el festival 🤘
 
-Matt Heafy y los suyos nos presentarán el próximo mes de octubre los temas del EP que lanzarán muy pronto, “Struck Dead”, del que esperamos que nos caiga algo en julio de 2026. Pero tranquilxs, porque no faltarán las canciones más míticas en el set de los americanos
+Matt Heafy y los suyos nos presentarán el próximo mes de octubre los temas del EP “Struck Dead”, del que esperamos que nos caiga algo en julio de 2026. Pero tranquilxs, porque no faltarán las canciones más míticas en el set de los americanos
 
 Ya hacía tiempo que no los teníamos por aquí. Los de Florida vuelven a Galicia con un set completo lleno de nuevas canciones y viejos clásicos del metalcore y heavy metal contemporáneo que han dejado huella en una generación entera 🙌
 
 Con la banda en un estado de forma casi insuperable y queriéndose comer los escenarios como demostraron en su tour europeo (que pasó por el Vistalegre de Madrid) del año pasado, esta es la oportunidad ideal para tacharlos de la lista de deseos 🤘
 
+https://www.youtube.com/watch?v=IIgswpHNZik
+
 
 
 **DYING WISH** - ¡LA FEROCIDAD DESCARNADA DE DYING WISH GOLPEARÁ CON FUERZA EL RESU ESTE AÑO! 🔥⛓️  SP 227
 
-Cruda y sin concesiones, la banda originaria de Portland trae de vuelta al ruedo la esencia del metalcore melódico tan amado en los primeros 2000. Con la desgarradora Emma Boster al mando, el grupo americano hará memorable su paso por Viveiro y por el Chaos Stage 😈
+EEUU - Metalcore
+
+Cruda y sin concesiones, la banda originaria de Portland trae de vuelta al ruedo la esencia del metalcore melódico tan amado en los primeros 2000. Con la desgarradora Emma Boster al mando, el grupo americano hará memorable su paso por Viveiro 😈
 
 Con su forma singular de canalizar el duelo, vulnerabilidad y rabia a través de la música, sus directos convierten su arte en una catarsis colectiva de brutalidad, tal y como quedó plasmada en su más reciente trabajo "Flesh Stays Together" o en cualquiera de sus dos anteriores referencias hasta hoy 🙌
+
+https://www.youtube.com/watch?v=U1g8yXXOmOQ
 
 
 
 **GAEREA** - LA OSCURIDAD Y DESGARRADORA BELLEZA DE GAEREA TAMBIÉN SERÁ PARTE DEL RF2026! 🔥 SP 101K
 
+Portugal - Black Metal
+
 Nuestros vecinos tripeiros conforman una de esas bandas que ha logrado revolucionar el panorama extremo reciente. Desde Portugal, Gaerea han cruzado fronteras con su black metal teatral que ha ido fusionándose de manera majestuosa con las atmósferas del post-metal y la melodía del metalcore en su material más reciente 🤘
 
-Indispensables para todo fan que tenga en el radar a Harakiri For The Sky, Obsidian Kingdom o Behemoth y busque nuevas experiencias. ¡No falles a su ceremonia en el Ritual Stage el 3 de julio! 🙏
+Indispensables para todo fan que tenga en el radar a Harakiri For The Sky, Obsidian Kingdom o Behemoth y busque nuevas experiencias. 🙏
+
+https://www.youtube.com/watch?v=NpdWlHP\_pns
 
 
 
-**RETURN TO DUST** - ¡RETURN TO DUST TRAERÁN SU ROCK NOVENTERO AMERICANO AL RESU EL PRÓXIMO MES DE JULIO! 💥  SP 404K
+**RETURN TO DUST** - ¡RETURN TO DUST TRAERÁN SU ROCK NOVENTERO AMERICANO AL RESU! 💥  SP 404K
+
+EEUU - Rock
 
 Decía el propio Kurt Cobain que el grunge estaba muerto, pero estamos seguros de que en eso no estuvo muy acertado. Desde L.A., Return to Dust son un claro ejemplo de que el rock noventero sigue llamando atención y que el espíritu apasionado de Soundgarden y Alice In Chains o incluso de QOTSA o The Black Crowes todavía resuena en las nuevas generaciones 🙌
 
 Sus temas entran como si nada y, lo más importante: están lejos de ser una copia barata de la música del pasado. Tienen todas las papeletas para triunfar, y esperamos y deseamos que así sea. ¡Quedaros con sus caras porque aquí hay talento! 🔥
 
+https://www.youtube.com/watch?v=r\_TvbkwN4I4
 
 
-**LIMP BIZKIT** - LIMP BIZKIT ACTUARÁN EN EL MOVISTAR ARENA DE MADRID EL PRÓXIMO 1 DE JULIO TRAS AGOTAR EN EL RESURRECTION FEST 🔥 (24-02-2026)  SP 23.224K
+
+**LIMP BIZKIT** - BOOOM! 💣 LIMP BIZKIT WILL HEADLINE RESURRECTION FEST EG 2026 🔥 SP 23.224K
+
+EEUU - Nu Metal, Rap Metal
+
+Tras muchos años intentándolo, una de las bandas más pedidas y un icono generacional POR FIN estará en Viveiro el próximo verano en el mejor momento de su carrera. Encabezando grandes festivales de todo el mundo, y tras 14 años sin pisar España, ¡LIMP BIZKIT ESTARÁN EN EL RESURRECTION FEST ENCABEZANDO UNO DE LOS DÍAS!
+
+A buen seguro, será uno de los conciertos más brutales que jamás hayamos visto en Viveiro, sin ninguna duda. Por favor dad la bienvenida a Fred Durst y compañía, porque LIMP BIZKIT IS IN DA HOUSE!
+
+https://www.youtube.com/watch?v=bSTX2xVpfPw
+
+
 
 Tras el éxito arrollador de Fred Durst y compañía agotando sus entradas para el Resurrection Fest EG 2026 en su día de actuación, la banda ha decidido añadir un nuevo concierto en Madrid para todos los fans que no han podido acudir al festival este año y así resarcirse de los ya 14 años que llevamos sin verles en España.
 
@@ -742,55 +828,73 @@ Este concierto de Limp Bizkit tendrá lugar en Madrid el próximo 1 de julio, y 
 
 Como no recordar a Sam Rivers, el que fuera bajista y cofundador de la banda, fallecido en 2025. El encargado de honrar a Sam Rivers en esta gira es Richie Buxton conocido como Kid Not, músico australiano y bajista de Ecca Vandal
 
-BOOOM! 💣 LIMP BIZKIT WILL HEADLINE RESURRECTION FEST EG 2026, ONLY SHOW IN SPAIN! 🔥 (22-09-2025)
-
-It's just one of those days… 🤘
-
-Tras muchos años intentándolo, una de las bandas más pedidas por tod@s vosotr@s y un icono generacional POR FIN estará en Viveiro el próximo verano en el mejor momento de su carrera. Encabezando grandes festivales de todo el mundo, y tras 14 años sin pisar España, ¡LIMP BIZKIT Limp Bizkit ESTARÁN EN EL RESURRECTION FEST ENCABEZANDO UNO DE LOS DÍAS!
-
-Será el único concierto que hagan en España en 2026 y va a ser uno de los más brutales que jamás hemos visto en Viveiro, entrando directamente en la historia del festival y de nuestro país sin ninguna duda. Por favor dad la bienvenida a Fred Durst y compañía, porque LIMP BIZKIT IS IN DA HOUSE!
+https://www.youtube.com/watch?v=bSTX2xVpfPw
 
 
 
-**END IT** - ¡DE LAS CALLES DE BALTIMORE A VIVERO! ¡END IT TOCARÁN EN EL CHAOS STAGE EN EL RESU 2026! 💥  SP 108K
+**END IT** - ¡DE LAS CALLES DE BALTIMORE A VIVERO! 💥  SP 108K
+
+EEUU - Hardcore
 
 Consolidada como una de las nuevas bandas destacadas de la nueva oleada del DC hardcore y del sello Flatspot, End It BCHC han devuelto al género su sentimiento de peligro primitivo y urgencia a veces tan añorado con canciones breves con un claro mensaje combativo anticolonista y antiautoritario ✊
 
 Desde las trincheras de Maryland, los americanos nos visitarán el próximo miércoles 3 de julio para dejar en llamas el Chaos con su BCHC. Vendrán presentando las canciones de su LP debut "Wrong Side Of Heaven", uno de los discos más top estrenados el pasado 2025 dentro del hardcore y punk 🏃‍♂️
 
+https://www.youtube.com/watch?v=xuhVpPAx0bA
 
 
-**NEVERTEL** - ¡LOS ESTADOUNidenses NEVERTEL VENDRÁN AL RF2026 CON SU METAL ALTERNATIVO LLENO DE FLOW! 🔴  SP 1.203K
+
+**NEVERTEL** - ¡LOS ESTADOUNIDENSES NEVERTEL VENDRÁN AL RF2026 CON SU METAL ALTERNATIVO LLENO DE FLOW! 🔴  SP 1.203K
+
+EEUU - Metalcore
 
 Si buscas algo fresco, dinámico y con actitud, Nevertel te van a molar FIJO. Desde Florida, el trío ha sabido construir un sonido propio mezclando metalcore con hip hop y rock alternativo, todo ello envuelto en una producción moderna y directa 🔥
 
 Formados alrededor de 2014 y recientemente fichados por Epitaph (sello de Brett de Bad Religion), han ido esparciendo sus singles pegadizos que ya acumulan millones de escuchas por todo el mundo y se han hecho virales gracias a sus estribillos agresivos y enérgicos y el boca a boca de Internet 🌎
 
-Su equilibrio entre melodía y contundencia los está poniendo en el punto de mira de las nuevas generaciones. ¡No te los pierdas el viernes 3 de julio en el Main Stage! 🙌
+Su equilibrio entre melodía y contundencia los está poniendo en el punto de mira de las nuevas generaciones.🙌
+
+https://www.youtube.com/watch?v=Jp6-SoqXp\_s
 
 
 
 **BORKNAGAR** - ¡EL METAL EXTREMO DE BORKNAGAR ESTARÁ EN EL RESURRECTION FEST 2026! 🔥  SP 48K
 
+Noruega - Black Metal
+
 Fundados en 1994 en Noruega, Borknagar llegaron para romper los límites del black tradicional más allá de los clichés de los que se rodeaban en la época, sumando a su ecuación también el metal progresivo y folk. Con su capacidad para fusionar agresividad y melodía, son hoy día un pilar indiscutible del género a nivel mundial 🤘
 
 Los nórdicos llenarán Viveiro y nuestro Desert Stage de atmósferas bellas y épicas con lo que sabemos que será un conciertazo increíble ❤️‍🔥
+
+https://www.youtube.com/watch?v=7hxKHRqCRdA
 
 
 
 **CAVALERA CONSPIRACY** - ¡Los hermanos Cavalera estarán tocando al completo el "Chaos A.D." de Sepultura en el Resurrection Fest EG 2026! 🔥  SP 145K
 
+EEUU - Groove Metal, Thrash
+
 Allá por 1993, Sepultura lanzaron uno de sus discos más icónicos y una pieza clave para el thrash y groove metal de los años 90 con clásicos todavía vigentes como "Refuse/Resist", "Territory", "Slave New World" o "Propaganda" 💣
 
 Ahora, más de 30 años después y como Cavalera Conspiracy, los hermanos y miembros originales de Sepultura Max e Iggor, más en forma que nunca, rescatarán en directo en Viveiro este discazo acompañados de Igor Calavera Jr. (hijo de Max) al bajo y Travis Stone a la guitarra 🤘
+
+https://www.youtube.com/watch?v=qCMz704soB4
 
 
 
 **HOUSE OF PROTECTION** - ¡HOUSE OF PROTECTION ESTARÁN EN LA PRÓXIMA EDICIÓN DEL RESURRECTION FEST EG EN 2026! 🔥  SP 234K
 
-La banda de Los Ángeles ideada y conformada por los exintegrantes de Fever 333 Aric Improta y Stephen Harrison en 2024 llegará al Resu el año que viene para saldar la deuda tras su repentina caída del cartel de 2025. ¡ESTA VEZ SÍ! 🤘
+EEUU - Punk, Metal
+
+SESIONES DE FIRMAS - VIERNES 3 - 20:00 A 20:30
+
+La banda de Los Ángeles ideada y conformada por los exintegrantes de Fever 333 Aric Improta y Stephen Harrison en 2024 llegará al Resu para saldar la deuda tras su repentina caída del cartel de 2025. ¡ESTA VEZ SÍ! 🤘
 
 Con su mezcla de punk, metal y rock electrónico, House of Protection promete hacernos sudar y enloquecer como nunca con su único concierto en festis españoles durante 2026. ¡CITA IMPERDIBLE! 😎
+
+https://www.youtube.com/watch?v=5QbMOtl\_SRo
+
+
 
 
 
@@ -815,6 +919,12 @@ Su mezcla de metal digital con pop punk o ska es única e intensa, ideal para mo
 
 
 **STELLVRIS**  SP 23K
+
+¡PURO CONTRASTE Y RABIA MODERNA CON STELLVRIS EN EL RF2026! 💥
+
+Directos desde las calles de Praga, los brutales y pegadizos STELLVRIS llegan dispuestos para romperlo en el Ritual Stage el sábado 4 de julio. Activos desde 2019, han conseguido la fórmula perfecta entre la contundencia del metalcore y el "bounce" del nu metal con melodías coreables, atmósferas electrónicas y algún que otro destello pop 🙌
+
+Si te molan los sonidos a lo Spiritbox, Jinjer o Architects, no les quites el ojo de encima. Media Europa ya se ha rendido a su estilo. ¡No los dejes pasar! 🔥
 
 
 
@@ -862,6 +972,10 @@ Tirando de frecuencias analógicas, loops y caos, estos jóvenes escandinavos co
 
 **IMMINENCE** - Imminence vuelven a Viveiro 🔥 Los suecos estarán en Resurrection Fest EG 2026 en la que será su única fecha en toda España del próximo año  SP 1211K
 
+Suecia - Metalcore
+
+SESIONES DE FIRMAS - SABADO 2 - 16:00 A 16:30
+
 ¡Qué ganas de escuchar en directo singles como God Fearing Man! 🤩
 
 ¡LA ELEGANCIA OSCURA DE IMMINENCE LLEGA AL RESU ESTE 2026! 🎻🌑
@@ -869,6 +983,8 @@ Tirando de frecuencias analógicas, loops y caos, estos jóvenes escandinavos co
 Desde Suecia, Imminence regresan a Viveiro para demostrarnos una vez más por qué su estilo es tan único. La banda originaria de Trelleborg es conocida por alejarse totalmente de los clichés, utilizando el violín como arma de guía para sus temas cinemáticos y melancólicos ❤️‍🔥
 
 Tras lanzar dos discos sobresalientes en 2024 donde el metalcore se une a la música sinfónica y post-hardcore, vuelven en su mejor momento a nuestro festival. ¡Despójate de los clichés y prepárate para disfrutar de su crudeza y puesta en escena en directo! 🤘
+
+https://www.youtube.com/watch?v=7b-VTfpGFUQ
 
 
 
@@ -904,11 +1020,17 @@ Si os molan los sonidos poco comunes, ruidosos, y a la vez técnicos y mecánico
 
 **P.O.D.** - ¡EL ÚNICO CONCIERTO DE P.O.D. EN ESPAÑA EN 2026 SERÁ EN EL RESURRECTION FEST EG 2026! 🙏🏼  SP 4.321K
 
+EEUU - Nu Metal
+
+SESIONES DE FIRMAS - SABADO 2 - 17:00 A 17:30
+
 Desde su formación en la ciudad de San Diego en los 90 hasta su boom en los 2000, los americanos P.O.D. (Payable On Death) han sido una de las bandas más top del nu metal gracias a su mezcla auténtica, positiva y llena de actitud de rap, metal, hardcore y rock 🔥
 
 Con más de 12 millones de discos vendidos y varios nominaciones a los Grammy, la formación liderada por el siempre reconocible Sonny Sandoval a las voces lo sigue petando con himnos como "Alive", "Boom", "Youth Of The Nation", "Southtown" o "Goodbye For Now" (en el que colaboró haciendo coros una todavía desconocida Katty Perry), temazos inolvidables que todavía resuenan en oídos de varias generaciones 💥
 
 P.O.D. regresarán a España para regalarnos un espectáculo único en el próximo capítulo del Resu donde reviviremos FIJO algunos de los mejores momentos de este milenio saltando y cantando todxs como nunca en nuestro Main Stage ❤️‍🔥
+
+https://www.youtube.com/watch?v=\_ocD7BsrjrU
 
 
 
@@ -923,6 +1045,12 @@ La música de los escoceses va quemando lentamente y te agarra para no soltarte.
 
 
 **DISTANT** SP 188K
+
+¡DISTANT LLEGAN AL RESURRECTION FEST EG 2026 CON EL DEATHCORE MÁS BESTIA! 🔥
+
+La historia de DISTANT se remonta a 2014, año en el que se formaron entre Países Bajos y Eslovaquia. Más de una década después, el grupo sigue reventándolo con su propuesta agresiva, pesada y bruta a caballo entre el deathcore y el slam death metal, mezclando unas afinaciones imposibles con atmósferas aterradoras de ciencia ficción 💀
+
+¡Preparad vuestros cuellos, porque vendrán a Viveiro para masacrar el Ritual Stage con sus breakdowns sísmicos que no darán tregua a nadie! 🔨
 
 
 
@@ -952,33 +1080,43 @@ Del sludge más sucio hasta el rock y metal progresivo, nos han regalado joyas l
 
 
 
-**AA WILLIAMS** - ¿Habéis escuchado ya "Poison" de AA Williams? 🐦‍⬛  SP 53K
-
-El nuevo single de la londinense A.A. Williams estrenado hace unas semanas, se suma a otros cuatro estrenados desde finales del año pasado y que formarán parte de "Solstice", su nuevo disco que saldrá el próximo 5 de junio 🙌
-
-La artista estará en el Resurrection Fest el sábado 4 de julio tocando algunas de sus nuevas canciones encima del Desert Stage 🏜️
-
-**A.A. WILLIAMS** - ¡LA REINA DEL DEATH GOSPEL NOS HARÁ FLOTAR EN EL RESU 2026! 🌑
+**AA WILLIAMS** - !LA REINA DEL DEATH GOSPEL NOS HARÁ FLOTAR EN EL RESU 2026! 🐦‍⬛  SP 53K
 
 La artista británica A.A. Williams, conocida por su propuesta oscura, atmosférica y emocionalmente intensa, nos hará viajar a otra dimensión desde el Desert Stage el próximo sábado 4 de julio con su atípico y genial estilo mezcla de shoegaze, doom, folk, metal, post-rock e incluso música clásica bautizado como "death gospel" 💀
 
 Nacida en Londres, ha colaborado con bandas increíbles como At The Gates, Cult Of Luna o Mono además de haber estrenado 3 geniales discos de su puño y letra 🔥
 
+¿Habéis escuchado ya "Poison"? El nuevo single de la londinense A.A. Williams estrenado hace unas semanas, se suma a otros cuatro estrenados desde finales del año pasado y que formarán parte de "Solstice", su nuevo disco que saldrá el próximo 5 de junio 🙌
+
 
 
 **DOGMA**  SP 302K
+
+¡DOGMA TRAERÁN SU CEREMONIA GUITARRARERA Y DE PECADO AL RESU! 🌑⛧
+
+Es una de esas bandas por las que seguramente venderías tu alma sin pensarlo demasiado. Esta oscura y provocadora hermandad musical fundada en 2019 combina de una forma genial el heavy metal y hard rock, invitando totalmente a la liberación a través del pecado 😈
+
+La formación Dogma, compuesta por integrantes internacionales, engancha tanto gracias a su música seductora y magnética como a su teatralidad llena de descaro. Estarán tocando el sábado 4 de julio en el Ritual, ¡así que pásate a confesarte! 🙏
 
 
 
 **CONVERGE** - ÚNICO CONCIERTO DE CONVERGE EN ESPAÑA EN 2026 🧨  SP 323K
 
+EEUU - Hardcore 
+
+SESIONES DE FIRMAS - SABADO 2 - 20:00 A 20:30
+
 Pocas bandas han marcado con tanta fuerza el cruce entre el hardcore, metal y la experimentación como Converge. Desde los 90, el cuarteto de Massachusetts ha redefinido los límites de lo extremo combinando visceralidad y agresividad con emotividad. Discos como "Jane Doe", "You Fail Me" o "All We Love We Leave Behind" o sus colaboraciones con otrxs artistas (Chelsea Wolfe, Napalm Death, Coalesce, Dropdead...) no solo influenciaron a generaciones enteras, sino que se convirtieron en auténticos pilares de una escena que todavía vibra con su impacto 🔥
 
 En 2026 regresarán a Galicia después de 7 años sin pisar España para hacer temblar el Resurrection Fest EG, trayendo consigo toda la furia, caos y precisión que los ha convertido en culto. Una oportunidad única para ver a una banda abrasiva que no entiende de medias tintas y que, décadas después, sigue sonando como si fuese a terminarse el mundo 🤘🏼
 
+https://www.youtube.com/watch?v=qxelfxGa2oo
+
 
 
 **MARILYN MANSON** - ¡MARILYN MANSON EN PLENÍSIMA FORMA EN VIVO! 🔥  SP 7.256
+
+EEUU - Metal Industrial
 
 El Reverendo lleva casi un par de años sorprendiendo con sus directos. Su regreso al estado de forma de sus mejores años está impresionando a todo el mundo, y nosotrxs vamos a poder disfrutar por primera vez en Galicia de esta nueva etapa de auténtica resurrección del americano el próximo sábado 4 de julio en el Main Stage del Resu 🤘
 
@@ -989,6 +1127,8 @@ Lejos de vivir solo de la nostalgia, el reverendo Marilyn Manson está protagoni
 No hacen falta más presentaciones para uno de los reyes del metal industrial y shock rock, un artista único que rompió moldes, desafió a la sociedad de su época y dejó en la memoria himnos generacionales inmortales, viscerales y oscuros, por los que no han pasado el tiempo 🙌
 
 ¡Prepárate para vivir algo descomunal el sábado 4 de julio en el Main Stage! ¡No te pierdas el que será su primer conci de la gira por Europa! 🔥
+
+https://www.youtube.com/watch?v=yjWtkQSF8dA
 
 
 
@@ -1006,9 +1146,7 @@ Con una actitud poderosa y toques de modernidad claros, han ido dejando huella a
 
 Blood Incantation uno de los fenómenos más aclamados del metal extremo a nivel mundial aterrizará en Viveiro para presentarnos un repertorio brutal en el que tocarán canciones tanto de su increíble “Absolute Elsewhere” como de sus anteriores trabajos con una fecha única en nuestro país 🛸
 
-Con historia desde 2011, la banda de Colorado ha recibido elogios a nivel mundial desde sus comienzos gracias a su estilo que combina el death metal con el ambient, la psicodelia y la ciencia ficción 🤘
-
-¡Prepárate para un viaje interdimensional de los que dejan huella! 🧘‍♂️
+Con historia desde 2011, la banda de Colorado ha recibido elogios a nivel mundial desde sus comienzos gracias a su estilo que combina el death metal con el ambient, la psicodelia y la ciencia ficción 🤘¡Prepárate para un viaje interdimensional de los que dejan huella! 🧘‍♂️
 
 
 

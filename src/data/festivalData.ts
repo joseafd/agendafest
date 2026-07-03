@@ -7,6 +7,7 @@ export interface BandBio {
   country?: string;
   genre?: string;
   youtubeUrl?: string;
+  signingSession?: string; // New optional property
 }
 
 export interface Act {
@@ -80,6 +81,7 @@ function buildBandBio(name: string, title: string, paragraphs: string[]): BandBi
   let country = '';
   let genre = '';
   let youtubeUrl = '';
+  let signingSession = '';
   const descriptionParagraphs = [...paragraphs];
 
   // 1. Extract country & genre from the first line if it contains the " - " separator
@@ -89,6 +91,15 @@ function buildBandBio(name: string, title: string, paragraphs: string[]): BandBi
       const parts = firstLine.split(' - ');
       country = parts[0].trim();
       genre = parts[1].trim();
+      descriptionParagraphs.shift(); // remove from description list
+    }
+  }
+
+  // 1.5. Extract signing session if the next line starts with "SESIONES DE FIRMAS"
+  if (descriptionParagraphs.length > 0) {
+    const nextLine = descriptionParagraphs[0];
+    if (nextLine.toUpperCase().startsWith('SESIONES DE FIRMAS')) {
+      signingSession = nextLine.trim();
       descriptionParagraphs.shift(); // remove from description list
     }
   }
@@ -109,6 +120,7 @@ function buildBandBio(name: string, title: string, paragraphs: string[]): BandBi
     country: country || undefined,
     genre: genre || undefined,
     youtubeUrl: youtubeUrl || undefined,
+    signingSession: signingSession || undefined,
   };
 }
 
@@ -275,8 +287,7 @@ const rawFestivalData = {
         { "band": "Lionheart", "stage": "Chaos", "start": "23:45", "end": "01:00" },
         { "band": "Anthrax", "stage": "Main", "start": "00:20", "end": "01:35" },
         { "band": "Psychonaut", "stage": "Desert", "start": "01:00", "end": "02:00" },
-        { "band": "Witch Club Satan", "stage": "Ritual", "start": "01:35", "end": "02:25" },
-        { "band": "Authority Zero", "stage": "Chaos", "start": "02:10", "end": "03:10" },
+        { "band": "Authority Zero", "stage": "Ritual", "start": "01:35", "end": "02:25" },
         { "band": "Feuerschwanz", "stage": "Main", "start": "02:25", "end": "03:25" }
       ]
     },
@@ -290,7 +301,7 @@ const rawFestivalData = {
       "acts": [
         { "band": "Nukore", "stage": "Ritual", "start": "15:05", "end": "15:50" },
         { "band": "The Fall Of Atlantis", "stage": "Desert", "start": "15:05", "end": "15:45" },
-        { "band": "Blaze The Trail", "stage": "Main", "start": "15:50", "end": "16:35" },
+        { "band": "Nevertel", "stage": "Main", "start": "15:50", "end": "16:35" },
         { "band": "Pants Off", "stage": "Chaos", "start": "15:50", "end": "16:35" },
         { "band": "Not Yet", "stage": "Ritual", "start": "16:35", "end": "17:20" },
         { "band": "Madmess", "stage": "Desert", "start": "16:35", "end": "17:20" },
@@ -308,7 +319,7 @@ const rawFestivalData = {
         { "band": "Return To Dust", "stage": "Desert", "start": "22:00", "end": "23:00" },
         { "band": "End It", "stage": "Chaos", "start": "23:00", "end": "00:00" },
         { "band": "Limp Bizkit", "stage": "Main", "start": "23:10", "end": "00:30" },
-        { "band": "Nevertel", "stage": "Ritual", "start": "00:35", "end": "01:25" },
+        { "band": "Blaze The Trail", "stage": "Ritual", "start": "00:35", "end": "01:25" },
         { "band": "Borknagar", "stage": "Desert", "start": "00:35", "end": "01:45" },
         { "band": "Cavalera Conspiracy", "stage": "Main", "start": "01:25", "end": "02:40" },
         { "band": "House Of Protection", "stage": "Chaos", "start": "01:40", "end": "02:40" }

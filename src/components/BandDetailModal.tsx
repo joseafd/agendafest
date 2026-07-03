@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Zap, Clock, Calendar, MapPin, Globe, Music } from 'lucide-react';
+import { X, Zap, Clock, Calendar, MapPin, Globe, Music, PenTool } from 'lucide-react';
 import type { Act } from '../data/festivalData';
 
 import { festivalData } from '../data/festivalData';
@@ -345,6 +345,60 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
               )}
             </div>
           </div>
+
+          {/* Prominent Signing Session Banner */}
+          {act.bio?.signingSession && (
+            <div
+              style={{
+                marginTop: '16px',
+                padding: '12px 16px',
+                background: 'linear-gradient(135deg, rgba(230, 126, 34, 0.15) 0%, rgba(112, 0, 255, 0.08) 100%)',
+                border: '1px solid rgba(230, 126, 34, 0.3)',
+                borderRadius: '14px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                boxShadow: '0 4px 15px rgba(230, 126, 34, 0.15)',
+              }}
+            >
+              <div
+                style={{
+                  background: 'rgba(230, 126, 34, 0.2)',
+                  borderRadius: '10px',
+                  padding: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '1px solid rgba(230, 126, 34, 0.3)',
+                }}
+              >
+                <PenTool size={18} color="#e67e22" />
+              </div>
+              <div style={{ flex: 1 }}>
+                <div
+                  style={{
+                    fontSize: '0.68rem',
+                    color: '#e67e22',
+                    fontWeight: '800',
+                    letterSpacing: '1.2px',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  ✍️ Pase de Firmas Oficial
+                </div>
+                <div
+                  style={{
+                    fontSize: '0.88rem',
+                    color: '#ffffff',
+                    fontWeight: '700',
+                    marginTop: '2px',
+                  }}
+                >
+                  {act.bio.signingSession.replace(/^SESIONES DE FIRMAS\s*[-–:]\s*/i, '')}
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Favorite CTA Button */}
           <button
