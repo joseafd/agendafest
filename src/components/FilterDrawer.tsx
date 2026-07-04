@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Zap, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff } from 'lucide-react';
+import { X, Zap, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff, ChevronDown, ChevronUp, Globe, Music } from 'lucide-react';
 
 interface FilterDrawerProps {
   isOpen: boolean;
@@ -8,8 +8,19 @@ interface FilterDrawerProps {
   onlyFavorites: boolean;
   visibleStages: string[];
   stagesOrder: string[];
+  selectedCountries: string[];
+  selectedGenres: string[];
+  // Options
+  allCountries: string[];
+  allGenres: string[];
   // Save callbacks
-  onSave: (onlyFavorites: boolean, visibleStages: string[], stagesOrder: string[]) => void;
+  onSave: (
+    onlyFavorites: boolean,
+    visibleStages: string[],
+    stagesOrder: string[],
+    selectedCountries: string[],
+    selectedGenres: string[]
+  ) => void;
   defaultStages: string[];
   onClearFavorites?: () => void; // New optional prop
 }
@@ -20,6 +31,10 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
   onlyFavorites: propOnlyFavorites,
   visibleStages: propVisibleStages,
   stagesOrder: propStagesOrder,
+  selectedCountries,
+  selectedGenres,
+  allCountries,
+  allGenres,
   onSave,
   defaultStages,
   onClearFavorites,
@@ -28,6 +43,12 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
   const [localOnlyFavorites, setLocalOnlyFavorites] = useState(propOnlyFavorites);
   const [localVisibleStages, setLocalVisibleStages] = useState<string[]>([]);
   const [localStagesOrder, setLocalStagesOrder] = useState<string[]>([]);
+  const [localSelectedCountries, setLocalSelectedCountries] = useState<string[]>([]);
+  const [localSelectedGenres, setLocalSelectedGenres] = useState<string[]>([]);
+
+  // Collapsible sections state
+  const [isCountriesExpanded, setIsCountriesExpanded] = useState(false);
+  const [isGenresExpanded, setIsGenresExpanded] = useState(false);
 
   // Synchronize local state with props when drawer opens
   useEffect(() => {
@@ -35,8 +56,10 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
       setLocalOnlyFavorites(propOnlyFavorites);
       setLocalVisibleStages([...propVisibleStages]);
       setLocalStagesOrder([...propStagesOrder]);
+      setLocalSelectedCountries([...selectedCountries]);
+      setLocalSelectedGenres([...selectedGenres]);
     }
-  }, [isOpen, propOnlyFavorites, propVisibleStages, propStagesOrder]);
+  }, [isOpen, propOnlyFavorites, propVisibleStages, propStagesOrder, selectedCountries, selectedGenres]);
 
   if (!isOpen) return null;
 
@@ -72,6 +95,8 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
     setLocalOnlyFavorites(false);
     setLocalVisibleStages([...defaultStages]);
     setLocalStagesOrder([...defaultStages]);
+    setLocalSelectedCountries([]);
+    setLocalSelectedGenres([]);
   };
 
   // Commit changes and close
@@ -81,7 +106,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
       alert("Debes tener al menos un escenario visible.");
       return;
     }
-    onSave(localOnlyFavorites, localVisibleStages, localStagesOrder);
+    onSave(localOnlyFavorites, localVisibleStages, localStagesOrder, localSelectedCountries, localSelectedGenres);
     onClose();
   };
 
@@ -129,7 +154,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             justifyContent: 'space-between',
           }}
         >
-          <h2 style={{ fontSize: '1rem', fontWeight: '800', letterSpacing: '0.5px' }}>FILTROS Y ESCENARIOS</h2>
+          <h2 style={{ fontSize: '1rem', fontWeight: '800', letterSpacing: '0.5px' }}>FILTROS</h2>
           <button
             onClick={onClose}
             aria-label="Cerrar panel de filtros"
@@ -203,6 +228,188 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
                 <RefreshCw size={12} />
                 Borrar todos mis favoritos
               </button>
+            )}
+          </div>
+
+          {/* Country Filter Section */}
+          <div>
+            <button
+              onClick={() => setIsCountriesExpanded(!isCountriesExpanded)}
+              style={{
+                width: '100%',
+                background: 'none',
+                border: 'none',
+                color: 'var(--text-primary)',
+                padding: '0',
+                margin: '0',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '10px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Globe size={16} color="var(--text-muted)" />
+                <h3 style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                  País {localSelectedCountries.length > 0 ? `(${localSelectedCountries.length})` : ''}
+                </h3>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                {localSelectedCountries.length > 0 && (
+                  <span
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setLocalSelectedCountries([]);
+                    }}
+                    style={{
+                      fontSize: '0.7rem',
+                      color: 'var(--accent-red)',
+                      fontWeight: '700',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Limpiar
+                  </span>
+                )}
+                {isCountriesExpanded ? <ChevronUp size={16} color="var(--text-muted)" /> : <ChevronDown size={16} color="var(--text-muted)" />}
+              </div>
+            </button>
+            
+            {isCountriesExpanded && (
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '8px',
+                  maxHeight: '150px',
+                  overflowY: 'auto',
+                  padding: '8px 4px',
+                  background: 'rgba(255, 255, 255, 0.01)',
+                  borderRadius: '8px',
+                  border: '1px solid var(--border-color)',
+                }}
+              >
+                {allCountries.map((country) => {
+                  const isActive = localSelectedCountries.includes(country);
+                  return (
+                    <button
+                      key={country}
+                      onClick={() => {
+                        setLocalSelectedCountries((prev) =>
+                          prev.includes(country)
+                            ? prev.filter((c) => c !== country)
+                            : [...prev, country]
+                        );
+                      }}
+                      style={{
+                        padding: '6px 12px',
+                        borderRadius: '20px',
+                        fontSize: '0.8rem',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        background: isActive ? 'rgba(255, 0, 60, 0.12)' : 'rgba(255, 255, 255, 0.02)',
+                        border: isActive ? '1px solid var(--accent-red)' : '1px solid var(--border-color)',
+                        color: isActive ? '#ffffff' : 'var(--text-secondary)',
+                        transition: 'all 0.15s ease',
+                      }}
+                    >
+                      {country}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+
+          {/* Genre Filter Section */}
+          <div>
+            <button
+              onClick={() => setIsGenresExpanded(!isGenresExpanded)}
+              style={{
+                width: '100%',
+                background: 'none',
+                border: 'none',
+                color: 'var(--text-primary)',
+                padding: '0',
+                margin: '0',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                marginBottom: '10px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Music size={16} color="var(--text-muted)" />
+                <h3 style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                  Género {localSelectedGenres.length > 0 ? `(${localSelectedGenres.length})` : ''}
+                </h3>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                {localSelectedGenres.length > 0 && (
+                  <span
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setLocalSelectedGenres([]);
+                    }}
+                    style={{
+                      fontSize: '0.7rem',
+                      color: 'var(--accent-red)',
+                      fontWeight: '700',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Limpiar
+                  </span>
+                )}
+                {isGenresExpanded ? <ChevronUp size={16} color="var(--text-muted)" /> : <ChevronDown size={16} color="var(--text-muted)" />}
+              </div>
+            </button>
+            
+            {isGenresExpanded && (
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '8px',
+                  maxHeight: '150px',
+                  overflowY: 'auto',
+                  padding: '8px 4px',
+                  background: 'rgba(255, 255, 255, 0.01)',
+                  borderRadius: '8px',
+                  border: '1px solid var(--border-color)',
+                }}
+              >
+                {allGenres.map((genre) => {
+                  const isActive = localSelectedGenres.includes(genre);
+                  return (
+                    <button
+                      key={genre}
+                      onClick={() => {
+                        setLocalSelectedGenres((prev) =>
+                          prev.includes(genre)
+                            ? prev.filter((g) => g !== genre)
+                            : [...prev, genre]
+                        );
+                      }}
+                      style={{
+                        padding: '6px 12px',
+                        borderRadius: '20px',
+                        fontSize: '0.8rem',
+                        fontWeight: '600',
+                        cursor: 'pointer',
+                        background: isActive ? 'rgba(255, 0, 60, 0.12)' : 'rgba(255, 255, 255, 0.02)',
+                        border: isActive ? '1px solid var(--accent-red)' : '1px solid var(--border-color)',
+                        color: isActive ? '#ffffff' : 'var(--text-secondary)',
+                        transition: 'all 0.15s ease',
+                      }}
+                    >
+                      {genre}
+                    </button>
+                  );
+                })}
+              </div>
             )}
           </div>
 

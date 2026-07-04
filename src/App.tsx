@@ -11,8 +11,9 @@ import { useLocalStorage } from './hooks/useLocalStorage';
 import { Calendar, Map, ArrowLeft, Info, Share2, Newspaper } from 'lucide-react';
 import { NewsView } from './components/NewsView';
 
+const defaultStages = ["Main", "Ritual", "Chaos", "Desert"];
+
 export default function App() {
-  const defaultStages = ["Main", "Ritual", "Chaos", "Desert"];
 
   // 1. App Navigation State (home, agenda, map, credits, news)
   const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'credits' | 'news'>('home');
@@ -52,6 +53,8 @@ export default function App() {
   const [visibleStages, setVisibleStages] = useLocalStorage<string[]>('rf_visible_stages', defaultStages);
   const [stagesOrder, setStagesOrder] = useLocalStorage<string[]>('rf_stages_order', defaultStages);
   const [onlyFavorites, setOnlyFavorites] = useLocalStorage<boolean>('rf_only_favorites', false);
+  const [selectedCountries, setSelectedCountries] = useLocalStorage<string[]>('rf_selected_countries', []);
+  const [selectedGenres, setSelectedGenres] = useLocalStorage<string[]>('rf_selected_genres', []);
 
   // 3. UI & Notification State
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -68,6 +71,30 @@ export default function App() {
   const currentDay = useMemo(() => {
     return days.find((day) => day.id === selectedDayId) || days[0];
   }, [days, selectedDayId]);
+
+  const allCountries = useMemo(() => {
+    const countries = new Set<string>();
+    days.forEach((day) => {
+      day.acts.forEach((act) => {
+        if (act.bio?.country) {
+          countries.add(act.bio.country.trim());
+        }
+      });
+    });
+    return Array.from(countries).sort();
+  }, [days]);
+
+  const allGenres = useMemo(() => {
+    const genres = new Set<string>();
+    days.forEach((day) => {
+      day.acts.forEach((act) => {
+        if (act.bio?.genre) {
+          genres.add(act.bio.genre.trim());
+        }
+      });
+    });
+    return Array.from(genres).sort();
+  }, [days]);
 
   // 5. URL query string import checker (runs on load)
   useEffect(() => {
@@ -309,11 +336,15 @@ export default function App() {
   const handleSaveFilters = (
     newOnlyFavorites: boolean,
     newVisibleStages: string[],
-    newStagesOrder: string[]
+    newStagesOrder: string[],
+    newSelectedCountries: string[],
+    newSelectedGenres: string[]
   ) => {
     setOnlyFavorites(newOnlyFavorites);
     setVisibleStages(newVisibleStages);
     setStagesOrder(newStagesOrder);
+    setSelectedCountries(newSelectedCountries);
+    setSelectedGenres(newSelectedGenres);
   };
 
   // Determine if active filters exist (for red dot indicator in header)
@@ -321,8 +352,8 @@ export default function App() {
     const isStagesModified = 
       visibleStages.length !== defaultStages.length ||
       stagesOrder.some((s, idx) => s !== defaultStages[idx]);
-    return onlyFavorites || isStagesModified;
-  }, [onlyFavorites, visibleStages, stagesOrder, defaultStages]);
+    return onlyFavorites || isStagesModified || selectedCountries.length > 0 || selectedGenres.length > 0;
+  }, [onlyFavorites, visibleStages, stagesOrder, selectedCountries, selectedGenres]);
 
   // 10. Filtered acts computation
   const filteredActs = useMemo(() => {
@@ -337,8 +368,13 @@ export default function App() {
     }
 
     return actsPool.filter((act) => {
-      // Filter by search query
-      const matchSearch = act.band.toLowerCase().includes(searchQuery.toLowerCase());
+      // Filter by search query (band name, description, country, genre)
+      const query = searchQuery.toLowerCase().trim();
+      const matchSearch = 
+        act.band.toLowerCase().includes(query) ||
+        (act.bio?.description?.toLowerCase().includes(query)) ||
+        (act.bio?.country?.toLowerCase().includes(query)) ||
+        (act.bio?.genre?.toLowerCase().includes(query));
       
       // Filter by visible stages
       const matchStage = visibleStages.includes(act.stage);
@@ -346,9 +382,17 @@ export default function App() {
       // Filter by favorites only switch
       const matchFavorite = !onlyFavorites || favorites.includes(act.id);
 
-      return matchSearch && matchStage && matchFavorite;
+      // Filter by selected countries
+      const matchCountry = selectedCountries.length === 0 || 
+        (act.bio?.country && selectedCountries.includes(act.bio.country.trim()));
+
+      // Filter by selected genres
+      const matchGenre = selectedGenres.length === 0 || 
+        (act.bio?.genre && selectedGenres.includes(act.bio.genre.trim()));
+
+      return matchSearch && matchStage && matchFavorite && matchCountry && matchGenre;
     });
-  }, [currentDay, days, searchQuery, searchGlobal, visibleStages, onlyFavorites, favorites]);
+  }, [currentDay, days, searchQuery, searchGlobal, visibleStages, onlyFavorites, favorites, selectedCountries, selectedGenres]);
 
   // Render the selected view
   const renderView = () => {
@@ -1032,6 +1076,10 @@ export default function App() {
         onlyFavorites={onlyFavorites}
         visibleStages={visibleStages}
         stagesOrder={stagesOrder}
+        selectedCountries={selectedCountries}
+        selectedGenres={selectedGenres}
+        allCountries={allCountries}
+        allGenres={allGenres}
         onSave={handleSaveFilters}
         defaultStages={defaultStages}
         onClearFavorites={handleClearFavorites}

@@ -155,7 +155,7 @@ const rawFestivalData = {
             "title": "",
             "description": "Desde Asturias, Aneuma se ha convertido en una de las bandas emergentes más potentes del metal nacional desde su creación hace un lustro. Su mezcla de death metal con metalcore intensa y fresca les llevó a tocar en el Wacken Open Air hace unos años, lugar en el que lograron un histórico segundo puesto en la competición internacional 🤘  Con tres discos lanzados hasta la fecha, el quinteto de Puerto de Vega ha demostrado que la vigencia del sonido de Gotemburgo es atemporal, y que su fórmula incluso es renovar y traer al presente poniendo esmero y dedicación. Nos lo demostrarán como solamente ellxs saben el miércoles 1 de julio en el Ritual Stage 🙌",
             "country": "España",
-            "genre": "Death metal",
+            "genre": "Death Metal",
             "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc"
           }
         },
@@ -183,7 +183,7 @@ const rawFestivalData = {
             "name": "GOD COMPLEX",
             "title": "",
             "description": "God Complex se crearon en 2017 y rápidamente se consolidaron como una de las formaciones de metalcore más feroz del Reino Unido. Tras debutar en 2021, hicieron una breve pausa para rearmarse y regresar más brutales y rabiosos que nunca coqueteando también con el mathcore y deathcore en sus singles más recientes 👊  Tras arrasar en su regreso por Londres y su natal Liverpool, los tendremos en el Resurrection Fest listos para desatar el caos en, valga la redundancia, el Chaos Stage, que estarán golpeando con riffs gordos y groove hiperviolento el miércoles 1 de julio 🤘Violencia sonora sin filtro",
-            "country": "Reino Unido",
+            "country": "UK",
             "genre": "Metalcore",
             "youtubeUrl": "https://www.youtube.com/watch?v=uBU8\\_O8G9IM"
           }
@@ -225,7 +225,7 @@ const rawFestivalData = {
             "name": "PRESIDENT",
             "title": "",
             "description": "PRESIDENT apareció de la nada en 2025, y en cuestión de semanas se convirtió en uno de los fenómenos virales más duros del metal moderno. El colectivo británico dirigido por su líder homónimo The President se suma a esta edición para captar devotos en su genial propuesta 🤫  Con más de 50 millones de reproducciones en plataformas, es la nueva sensación que lo está petando entre curiosxs y fans de Dayseeker, Sleep Theory o Bad Omens. Metalcore y post-hardcore de primera con una chispa de R\\&B y pop que lo hace único 🙌 ¡No te puedes perder esta locura el primer día de festi en el Main Stage! 🔥",
-            "country": "Reino Unido",
+            "country": "UK",
             "genre": "Hard Rock",
             "youtubeUrl": "https://www.youtube.com/watch?v=aczq-iCfFOk"
           }
@@ -367,7 +367,7 @@ const rawFestivalData = {
             "title": "",
             "description": "Desde Suecia, nos visitan Self Deception, maestros de la melodía rock y la contundencia del metalcore europeo. Formados en 2005 y reconocidos a nivel internacional, estarán en el Ritual Stage presentando su nuevo álbum \"One Of Us\", su séptimo disco que se estrenará en mayo de este año 🤘  ¡Preparaos para una buena masterclass de potencia y estribillos gigantescos! 🙌",
             "country": "Suecia",
-            "genre": "Netalcore",
+            "genre": "Metalcore",
             "youtubeUrl": "https://www.youtube.com/watch?v=VcoSyfcqYSY"
           }
         },
@@ -535,8 +535,8 @@ const rawFestivalData = {
             "name": "CASKETS",
             "title": "",
             "description": "Desde su irrupción en la escena británica en 2018, la banda Caskets ha sabido elevar el post-hardcore a una nueva dimensión, mezclando ganchos melódicos impecables con una carga emocional brutal en la que el metal y rock alternativo tienen mucho peso. A día de hoy, son una de las bandas de metal y rock alternativo más frescas, potentes y queridas del panorama 🙌  Desde Leeds hasta Viveiro, el cuarteto promete regalarnos lo mejor de sí desde el Main Stage el próximo jueves 2 de julio ❤️‍🔥",
-            "country": "Reino Unido",
-            "genre": "PostHardcore",
+            "country": "UK",
+            "genre": "Post Harcore",
             "youtubeUrl": "https://www.youtube.com/watch?v=kT36IN83gGI"
           }
         },
@@ -606,7 +606,7 @@ const rawFestivalData = {
             "title": "",
             "description": "Desde Atlanta (Georgia), el rock teatral de The Funeral Portrait inundará nuestro recinto de emo, post-hardcore y rock. Son una banda que vive por y para sus devotos, la Coffin Crew, ofreciendo espectáculos llenos de dramatismo, teatralidad y una actitud que atrapan desde el primer momento 🙌  Tras el éxito de su segundo disco \"Greetings From Suffocate City\" y de arrasar por más de una docena de países, acaban de lanzar un nuevo trabajo en vivo titulado \"Live From Suffocate City\". ¡No os perdáis su debut en el Resu desde el Ritual Stage! 🔥",
             "country": "EEUU",
-            "genre": "Post-Harcore",
+            "genre": "Post Harcore",
             "youtubeUrl": "https://www.youtube.com/watch?v=a8DP5vhiDTk"
           }
         },
@@ -647,7 +647,7 @@ const rawFestivalData = {
             "name": "IRON MAIDEN",
             "title": "",
             "description": "El jueves 2 de julio nos espera una noche inolvidable con los reyes del heavy metal Iron Maiden. Darán un concierto de más de 2 horas en las que podremos disfrutar de todo su legado en estas más de cinco décadas. ¡No necesitan más presentaciones! 🔥  Los tuvimos por nuestra tierra por primera vez en 1998 en Ourense con Blaze Bayley a las voces, la segunda en A Coruña en 2003 con Bruce Dickinson de regreso al grupo, y la tercera en el Resu de 2016 ☝️🤓  Las leyendas del heavy metal ya llevan casi un par de semanas con su gira europea celebrando sus 50 años de historia, y aunque os pueda sorprender a muchxs, están sonando más fuertes y contundentes que nunca. Damos fe de que el tiempo no pasa por los británicos  ¡La Dama de Hierro vuelve a casa! Ya ha pasado una década tras su última e inolvidable actuación en el festival, la banda más grande de la historia del heavy metal vuelve a Viveiro. ¡Y no vuelven de cualquier manera! Los británicos darán en el Resurrection Fest EG uno de los dos únicos conciertos en España en 2026 con su gira \"Run For Your Lives\" celebrando sus 50 años de historia con un setlist de locos en el que recorrerán todos los himnos de sus primeros 9 discos de estudios, desde \"Iron Maiden\" hasta \"Fear Of The Dark\", un “greatest hits” en toda regla.  Están agotando todos los estadios de Europa a meses vista, ¡así que no te lo puedes perder por nada del mundo!",
-            "country": "Reino Unido",
+            "country": "UK",
             "genre": "Heavy Metal",
             "youtubeUrl": "https://www.youtube.com/watch?v=aAsrFetnHzM"
           }
@@ -833,7 +833,7 @@ const rawFestivalData = {
             "title": "",
             "description": "están a punto de cumplir 20 años como banda e institución de resistencia de la escena pontevedresa y compostelana. Mezclan el rock alternativo con la esencia y melodías del pop punk de los 90 y comienzos de los 2000 (sí, su nombre es un guiño a Blink-182) con música fresca, pegadiza y directa al grano para corear a pleno pulmón 🗣️  Directos desde A Estrada y curtidos en salas y festis, traen su directo tan fiestero como reivindicativo a Viveiro para romperla en el Chaos Stage el viernes 3 de julio. ¡Vente a celebrarlo!",
             "country": "España",
-            "genre": "Punk-rock",
+            "genre": "Punk Rock",
             "youtubeUrl": "https://www.youtube.com/watch?v=AO4JQ3\\_zPXE"
           }
         },
@@ -931,7 +931,7 @@ const rawFestivalData = {
             "name": "BLEED FROM WITHIN",
             "title": "",
             "description": "Son claramente una de las bandas del momento, y ya en 2022 nos demostraron de lo que son capaces en el festi. Tendremos el placer de verlos tocar otra vez 4 años después en su mejor momento. ¡Puro metal escocés! 🤘  La banda escocesa llega al Resu en el mejor momento de su carrera. Tras dos décadas de evolución desde sus inicios en el deathcore hasta la mezcla de death melódico, metalcore y groove actual, los de Glasgow han ido cuidando y perfeccionando sus melodías y groove hasta hoy, que ya son considerados uno de los nombres fundamentales para entender el metal británico contemporáneo🤘  Su regreso por Viveiro no será una cita más. Bleed From Within volverán con su álbum \"Zenith\" bajo el brazo, un nuevo repertorio y una madurez extra que no ha afectado en absoluto a su demoledora agresividad. ¡Imperdibles! 👊",
-            "country": "Reino Unido",
+            "country": "UK",
             "genre": "Metal",
             "youtubeUrl": "https://www.youtube.com/watch?v=42-e9zFmgPA"
           }
@@ -973,7 +973,7 @@ const rawFestivalData = {
             "name": "ROSALIE CUNNINGHAM",
             "title": "",
             "description": "La elegancia del rock setentero tiene nombre propio y llega desde la inglesa Southend-on-Sea hasta Galicia para dejar con la boca abierta a todas las personas dispuestas a un viaje irrepetible en el Desert Stage. Rosalie Cunningham, la exlíder de la aclamada banda inglesa Purson, nos cautivará con su propuesta de rock and roll vintage, artístico y lisérgico  La talentosa multiinstrumentista británica es conocida por su estética e imaginación desbordante a la hora de componer. Viene a presentarnos las joyas de su elogiado tercer disco en solitario, \"To Shoot Another Day\", una obra llena de estilo, carisma y riffs hipnóticos, y a tocar otros de sus tantísimos temazos",
-            "country": "Reino Unido",
+            "country": "UK",
             "genre": "Rock Psicodélico",
             "youtubeUrl": "https://www.youtube.com/watch?v=8YehoejPll8\\&list=RDEM71BufWZpq5YI695VOCH1Xw\\&start\\_radio=1"
           }
@@ -1144,8 +1144,8 @@ const rawFestivalData = {
             "title": "",
             "description": "La energía y descontrol bailable de la banda de Osaka contraatacará en nuestra próxima edición después reventarlo en 2025 desde el Chaos Stage. Esta vez será más grande que nunca para la banda nipona: estarán comiéndose el Main Stage el sábado 4 de julio 🔥  Su mezcla de metal digital con pop punk o ska es única e intensa, ideal para montar una buena fiesta en verano en Viveiro. Si te los perdiste el año pasado, ¡prepárate! 👐  ¡Que tiemble Viveiro! 🤘🏼",
             "country": "Japón",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Metalcore",
+            "youtubeUrl": "https://www.youtube.com/watch?v=H_-leVD654w"
           }
         },
         {
@@ -1158,8 +1158,8 @@ const rawFestivalData = {
             "title": "",
             "description": "Down to Suffer es una banda joven cántabra de cinco integrantes (Julen, Dabi, Jesús, Mario y Samu) que nace para renovar el proyecto Burning the Waves. Con tres singles publicados, sacan a primeros de 2026 el que es su primer EP \"Eclipse\"",
             "country": "España",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Metalcore",
+            "youtubeUrl": "https://www.youtube.com/watch?v=7Uk_uG26VT4"
           }
         },
         {
@@ -1172,8 +1172,8 @@ const rawFestivalData = {
             "title": "¡PURO CONTRASTE Y RABIA MODERNA CON STELLVRIS EN EL RF2026! 💥",
             "description": "Directos desde las calles de Praga, los brutales y pegadizos STELLVRIS llegan dispuestos para romperlo en el Ritual Stage el sábado 4 de julio. Activos desde 2019, han conseguido la fórmula perfecta entre la contundencia del metalcore y el \"bounce\" del nu metal con melodías coreables, atmósferas electrónicas y algún que otro destello pop 🙌\n\nSi te molan los sonidos a lo Spiritbox, Jinjer o Architects, no les quites el ojo de encima. Media Europa ya se ha rendido a su estilo. ¡No los dejes pasar! 🔥",
             "country": "Chequia",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Modern Metal",
+            "youtubeUrl": "https://www.youtube.com/watch?v=yAnEyq8iOzY"
           }
         },
         {
@@ -1186,8 +1186,8 @@ const rawFestivalData = {
             "title": "",
             "description": "Desde Barcelona, DONUTS HOLE regresan a nuestro festi para darlo todo el sábado 4 de julio en el Chaos Stage y afirmar su legado de más de 15 años dentro de la escena de nacional de metal. Estuvieron con nosotrxs en 2024, ¡y ya tocaba repetir! 🤘  El cuarteto ha girado por Europa y Latinoamérica con giras tanto en solitario como con artistas de renombre internacional (Soulfly, Hamlet, Crystal Lake, Soziedad Alkoholika...) gracias a un trabajo duro e incesante, muchas horas en la carretera, muchísima implicación, y una entrega hacia lo que hacen como pocxs artistas tienen 🙌  ¡Os prometemos que su propuesta de post-metalcore contundente y emocional a partes iguales no os dejará indiferentes! ✊",
             "country": "España",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Metalcore",
+            "youtubeUrl": "https://www.youtube.com/watch?v=DqcHLdIygpk"
           }
         },
         {
@@ -1200,8 +1200,8 @@ const rawFestivalData = {
             "title": "",
             "description": "Pioneros, incombustibles e historia viva de nuestra música. Sus canciones son parte del legado del metal en España de las últimas cuatro décadas, que se dice pronto. ¡Nos flipa tenerlos de vuelta por una casa que consideramos que también es suya! 🙌  Sobran presentaciones para los madrileños Hamlet, que marcaron con sus discos a varias generaciones de metaleros y hardcoretas con su particular estilo y compromiso con unos directos salvajes que Molly siempre lleva a otro nivel como uno de los frontman más indomesticables que ha pisado nuestros escenarios 🤘",
             "country": "España",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Thrash Metal",
+            "youtubeUrl": "https://www.youtube.com/watch?v=HGozdu9dfZ8"
           }
         },
         {
@@ -1214,8 +1214,8 @@ const rawFestivalData = {
             "title": "",
             "description": "El dúo vasco es una apisonadora de stoner, metal y rock pesado. Vienen de Bermeo (Bizkaia), tienen ya experiencia en sus espaldas, y llevan unos dos años dando candela de la buena con un sonido sucio con mucho fuzz y groove del que obliga a mover a sacudir bien las cervicales 🤘  Crudos como su nombre sugiere, cuentan con un espíritu 100% DIY y cuentan con una identidad propia arraigada a su tierra e idioma mezclada con la pesadez del stoner desértico de los años 90. Vienen de grabar hace casi tres años su segundo EP \"Nintzen\" con el mítico Victor García de Ultramarinos Costa Brava y los tendremos el próximo sábado 4 de julio el Desert Stage repartiendo de lo lindo ✊",
             "country": "España",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Stoner",
+            "youtubeUrl": "https://www.youtube.com/watch?v=nRJeIUhuNmE"
           }
         },
         {
@@ -1227,9 +1227,9 @@ const rawFestivalData = {
             "name": "TODOMAL",
             "title": "",
             "description": "El dúo formado por Christopher \"Wildman\" y Javier \"Mile\" pondrá la nota doom al Ritual Stage el sábado 4 de julio. Combinando riffs pesados, una inspiración cinematográfica, y una melancólica oscura clásica del doom, TodoMal se ha convertido desde su formación en 2020 en una singular propuesta del underground en la que también hay espacio para la música progresiva y space rock 🌑  Con cinco integrantes de proyectos como Teitanblood, Balmog, Maud The Moth o Jade completando la formación en directo, se dejarán caer por Viveiro, donde aprovecharán para presentar algún que otro tema de su tercer disco \"Graveyards Of Joy\", que se estrenará el día previo a su actuación en el Resu 🙌",
-            "country": "-",
-            "genre": "Doom",
-            "youtubeUrl": "-"
+            "country": "España",
+            "genre": "Doom Metal",
+            "youtubeUrl": "https://www.youtube.com/watch?v=v3KnTgn_XJ8"
           }
         },
         {
@@ -1242,8 +1242,8 @@ const rawFestivalData = {
             "title": "",
             "description": "Si lo tuyo es la música con gritos saturados y el rock mecánico y ruidoso con alma punk, no deberías perderte a la banda sueca The Family Men en directo. Influenciados, en sus propias palabras, tanto por Skinny Puppy como Slipknot o Steely Dan, los de Gotemburgo recuerdan por momentos a son una de esas bandas a las que seguir los pasos 👣  Tirando de frecuencias analógicas, loops y caos, estos jóvenes escandinavos con apenas 3 años de existencia te sacuden y golpean el pecho en sus directos con su muro de sonido salvaje e impredecible. ¡Cita a la que asistir sí o sí el sábado 4 de julio en el Chaos Stage! 👊",
             "country": "Suecia",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Rock Industrial",
+            "youtubeUrl": "https://www.youtube.com/watch?v=Y-v9rBFMsSY"
           }
         },
         {
@@ -1271,8 +1271,8 @@ const rawFestivalData = {
             "title": "",
             "description": "Todo el mundo sabe que Suecia es la cuna europea de muchísimas de las bandas más top del rock y metal de los últimos 30 años The Gems (ex-Thundermother) vienen de ahí, pero traen savia todavía más fresca a la escena con una magia de esa que solamente se respira en los grandes shows de rock ⚡  El power trío de Estocolmo no te fallará si lo que buscas es reencontrarte con ese hard rock guitarrero que derrocha carretera y glamour con un claro sabor setentero 🙌",
             "country": "Suecia",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Hard Rock",
+            "youtubeUrl": "https://www.youtube.com/watch?v=CZzpb-MYrsg"
           }
         },
         {
@@ -1298,9 +1298,9 @@ const rawFestivalData = {
             "name": "FRONTIERER",
             "title": "",
             "description": "Nacidos entre Escocia y Estados Unidos en el verano de 2011 y autoproclamados como \"transatlantic noise terror\", Frontierer son un colectivo de mathcore vanguardista y abrasivo que ha construido una identidad propia basada en el caos y las disonancias 🤯  Si os molan los sonidos poco comunes, ruidosos, y a la vez técnicos y mecánicos, o si lo tuyo son bandas como The Dillinger Escape Plan, Botch, Car Bomb o Gaza, esta es vuestra oportunidad de oro 🥇  ¡Estamos segurísimos de que os van a dejar locos y harán temblar Viveiro! 🤘",
-            "country": "-",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "country": "UK",
+            "genre": "Noise Hardcore",
+            "youtubeUrl": "https://www.youtube.com/watch?v=wI4mG1MwgpM"
           }
         },
         {
@@ -1327,9 +1327,9 @@ const rawFestivalData = {
             "name": "CWFEN",
             "title": "",
             "description": "Cwfen es un proyecto originario de Glasgow que habita lo espiritual y ominoso. Su sonido a medio camino entre el doom metal, gothic rock y shoegaze envuelve y atrapa, y sus invocaciones sonoras a brujas, mártires y condenas eternas te arrastran en cuestión de segundos 💫  La música de los escoceses va quemando lentamente y te agarra para no soltarte. Su directo promete ser una experiencia hipnótica para cabecear como si no hubiese mañana 🔥  ¡Prepárate con tus mejores galas para este ritual! 🛐🕯️",
-            "country": "Reino Unido",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "country": "UK",
+            "genre": "Doom Metal",
+            "youtubeUrl": "https://www.youtube.com/watch?v=R4ElqI1RZGM"
           }
         },
         {
@@ -1341,9 +1341,9 @@ const rawFestivalData = {
             "name": "DISTANT",
             "title": "¡DISTANT LLEGAN AL RESURRECTION FEST EG 2026 CON EL DEATHCORE MÁS BESTIA! 🔥",
             "description": "La historia de DISTANT se remonta a 2014, año en el que se formaron entre Países Bajos y Eslovaquia. Más de una década después, el grupo sigue reventándolo con su propuesta agresiva, pesada y bruta a caballo entre el deathcore y el slam death metal, mezclando unas afinaciones imposibles con atmósferas aterradoras de ciencia ficción 💀\n\n¡Preparad vuestros cuellos, porque vendrán a Viveiro para masacrar el Ritual Stage con sus breakdowns sísmicos que no darán tregua a nadie! 🔨",
-            "country": "-",
+            "country": "Paises Bajos",
             "genre": "Deathcore",
-            "youtubeUrl": "-"
+            "youtubeUrl": "https://www.youtube.com/watch?v=PHZFd5mKPks"
           }
         },
         {
@@ -1356,8 +1356,8 @@ const rawFestivalData = {
             "title": "",
             "description": "Desde Boyertown, Pensilvania, el proyecto formado por miembros de bandas tan respetadas como Never Ending Game, Payback o Year Of The Knife llega a Viveiro como una realeza del hardcore metálico influenciado por el rap y metal noventero más bestia 💣  Con su estética y sonido callejero harán que flipéis con su directo, que es como una olla a presión a punto de estallar. ¡Calentad bien antes de entrar al pit porque va a arder! 🔥¡Una de esas citas que es mejor no perder en el Chaos Stage! 🤘",
             "country": "EEUU",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Hardcore Melódico",
+            "youtubeUrl": "https://www.youtube.com/watch?v=t3yEQRc5tPc"
           }
         },
         {
@@ -1370,8 +1370,8 @@ const rawFestivalData = {
             "title": "",
             "description": "Los de Atlanta han vuelto con \"Your Ghost Again\", tema que marca una nueva etapa tras atravesar su momento más difícil como banda con la turbulenta salida y muerte de Brent Hinds en agosto de 2025. La canción es un homenaje a los casi 25 años del grupo junto a Brent, a esos momentos que los cuatro músicos pasaron juntos sobre los escenarios y detrás de ellos. Hay riffs pesados que recuerdan a \"Leviathan\" y \"Blood Mountain\", otros más psicodélicos, pero sobre todo mucha carga emocional. 🖤  El tema, producido por la banda junto a Patrik Berger y Kurt Ballou (guitarrista de Converge, banda que también tendremos en el Resu este año), parece el inicio de algo más grande que derivará en el noveno disco de estudio del grupo, que estamos deseando escuchar. 🤘  ¡Muchas ganas de que llegue el sábado 4 de julio para verlos de vuelta en el Main Stage! 🦣  ¡MASTODON VUELVEN A GALICIA PARA EL RESURRECTION FEST EG 2026! 🐳  Sobran las presentaciones para una de las bandas más influyentes del metal del nuevo milenio. Desde su nacimiento en Atlanta en el año 2000, Mastodon ha hecho de los riffs pesados una de sus señas de identidad conquistando a gente de todo el mundo 🔥  Del sludge más sucio hasta el rock y metal progresivo, nos han regalado joyas llenas de fuerza y emoción que ya son parte de la historia del heavy metal como \"Leviathan\", \"Blood Mountain\", \"Crack The Skye\" o \"Emperor Of Sand\"🤘🏼  ¡No te los pierdas en su regreso a Viveiro después de petarlo en 2017 y 2022! ¡Esta vez toca rendir homenaje como merece al legado del gran Brent Hinds! ❤️‍🔥",
             "country": "EEUU",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "genre": "Metal Progresivo",
+            "youtubeUrl": "https://www.youtube.com/watch?v=WTQR-RvexVk"
           }
         },
         {
@@ -1383,9 +1383,9 @@ const rawFestivalData = {
             "name": "AA WILLIAMS",
             "title": "",
             "description": "La artista británica A.A. Williams, conocida por su propuesta oscura, atmosférica y emocionalmente intensa, nos hará viajar a otra dimensión desde el Desert Stage el próximo sábado 4 de julio con su atípico y genial estilo mezcla de shoegaze, doom, folk, metal, post-rock e incluso música clásica bautizado como \"death gospel\" 💀  Nacida en Londres, ha colaborado con bandas increíbles como At The Gates, Cult Of Luna o Mono además de haber estrenado 3 geniales discos de su puño y letra 🔥  ¿Habéis escuchado ya \"Poison\"? El nuevo single de la londinense A.A. Williams estrenado hace unas semanas, se suma a otros cuatro estrenados desde finales del año pasado y que formarán parte de \"Solstice\", su nuevo disco que saldrá el próximo 5 de junio 🙌",
-            "country": "Reino Unido",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "country": "UK",
+            "genre": "Dark Folk",
+            "youtubeUrl": "https://www.youtube.com/watch?v=nqD7OauxaTo"
           }
         },
         {
@@ -1397,9 +1397,9 @@ const rawFestivalData = {
             "name": "DOGMA",
             "title": "¡DOGMA TRAERÁN SU CEREMONIA GUITARRARERA Y DE PECADO AL RESU! 🌑⛧",
             "description": "Es una de esas bandas por las que seguramente venderías tu alma sin pensarlo demasiado. Esta oscura y provocadora hermandad musical fundada en 2019 combina de una forma genial el heavy metal y hard rock, invitando totalmente a la liberación a través del pecado 😈\n\nLa formación Dogma, compuesta por integrantes internacionales, engancha tanto gracias a su música seductora y magnética como a su teatralidad llena de descaro. Estarán tocando el sábado 4 de julio en el Ritual, ¡así que pásate a confesarte! 🙏",
-            "country": "-",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "country": "EEUU",
+            "genre": "Heavy Metal",
+            "youtubeUrl": "https://www.youtube.com/watch?v=1f6GEWdSz-s"
           }
         },
         {
@@ -1440,9 +1440,9 @@ const rawFestivalData = {
             "name": "THE VINTAGE CARAVAN",
             "title": "",
             "description": "Nacidos en la península de Álftanes en 2006, The Vintage Caravan han conseguido consolidarse como una de las bandas más top del rock contemporáneo europeo con su estilo influenciado por el hard rock de los 60 y 70 ⚡️  Con una actitud poderosa y toques de modernidad claros, han ido dejando huella a nivel internacional mezclando riffs contundentes, psicodelia y blues en un solo ente haciendo de sus directos un auténtico espectáculo 🎸  ¡No te quedes sin verlos!",
-            "country": "-",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "country": "Islandia",
+            "genre": "Hard Rock",
+            "youtubeUrl": "https://www.youtube.com/watch?v=7a5loP5tjp8"
           }
         },
         {
@@ -1454,9 +1454,9 @@ const rawFestivalData = {
             "name": "BLOOD INCANTATION",
             "title": "",
             "description": "Blood Incantation uno de los fenómenos más aclamados del metal extremo a nivel mundial aterrizará en Viveiro para presentarnos un repertorio brutal en el que tocarán canciones tanto de su increíble “Absolute Elsewhere” como de sus anteriores trabajos con una fecha única en nuestro país 🛸  Con historia desde 2011, la banda de Colorado ha recibido elogios a nivel mundial desde sus comienzos gracias a su estilo que combina el death metal con el ambient, la psicodelia y la ciencia ficción 🤘¡Prepárate para un viaje interdimensional de los que dejan huella! 🧘‍♂️",
-            "country": "-",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "country": "EEUU",
+            "genre": "Death Metal",
+            "youtubeUrl": "https://www.youtube.com/watch?v=O9WYceFbHw4"
           }
         },
         {
@@ -1468,9 +1468,9 @@ const rawFestivalData = {
             "name": "ELWOOD STRAY",
             "title": "",
             "description": "Formados en la ciudad industrial de Essen hace una década, ELWOOD STRAY han ido madurando a lo largo de los años su propuesta densa y agresiva donde el metalcore moderno se articula con el post-hardcore creando una mezcla perfecta entre abrasión y melodía 💥  El quinteto es una de las propuestas más viscerales y sofisticadas del metal contemporáneo europeo. Se dejará caer por Viveiro para presentar su nuevo y segundo álbum \"Descending\", estrenado a comienzos de año, el sábado 4 de julio 🤘  Como ya sabréis, el pasado mes de abril sufrimos la pérdida de Bo Lueders, miembro de Harm's Way, guitarrista, amante empedernido de la música e icono del hardcore contemporáneo. Por motivos evidentes, Harm's Way no actuarán en Europa este año y Elwood Stray nos acompañarán el sábado en el Chaos. Todo nuestro apoyo y amor a la familia y compañeros de Bo 🖤",
-            "country": "-",
-            "genre": "-",
-            "youtubeUrl": "-"
+            "country": "Alemania",
+            "genre": "Hardcore",
+            "youtubeUrl": "https://www.youtube.com/watch?v=JVF6e_LSO2k"
           }
         }
       ]
