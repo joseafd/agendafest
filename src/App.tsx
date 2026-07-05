@@ -202,6 +202,17 @@ export default function App() {
     return true; // Simulate live mode on any selected day outside festival dates
   }, [selectedDayId]);
 
+  // Determine if the festival is completely over (passed Sunday morning of the last day's jornada)
+  const isFestivalOver = useMemo(() => {
+    const now = new Date();
+    if (!days || days.length === 0) return false;
+    const lastDay = days[days.length - 1];
+    const [y, m, d] = lastDay.id.split('-').map(Number);
+    // Last day's concerts end at 03:00 AM on the next day
+    const endOfFestival = new Date(y, m - 1, d + 1, 3, 0, 0);
+    return now > endOfFestival;
+  }, [days]);
+
   // 7. Favorite Timing Conflicts Detector
   const conflictActIds = useMemo(() => {
     const conflicts = new Set<string>();
@@ -504,21 +515,21 @@ export default function App() {
               style={{
                 marginBottom: '20px',
                 padding: '6px 12px',
-                background: 'rgba(255, 42, 133, 0.08)',
-                border: '1px solid rgba(255, 42, 133, 0.3)',
+                background: isFestivalOver ? 'rgba(255, 255, 255, 0.04)' : 'rgba(255, 42, 133, 0.08)',
+                border: isFestivalOver ? '1px solid rgba(255, 255, 255, 0.2)' : '1px solid rgba(255, 42, 133, 0.3)',
                 borderRadius: '10px',
                 color: '#ffffff',
                 fontSize: '0.78rem',
                 fontWeight: '800',
                 letterSpacing: '0.5px',
-                boxShadow: '0 0 10px rgba(255, 42, 133, 0.1)',
+                boxShadow: isFestivalOver ? '0 0 10px rgba(255, 255, 255, 0.05)' : '0 0 10px rgba(255, 42, 133, 0.1)',
                 animation: 'pulseYellow 2s infinite ease-in-out',
                 maxWidth: '320px',
                 textAlign: 'center',
                 width: '100%',
               }}
             >
-              🤘 EL FESTIVAL YA HA COMENZADO 🤘
+              {isFestivalOver ? '🤘 EL FESTIVAL YA HA FINALIZADO 🤘' : '🤘 EL FESTIVAL YA HA COMENZADO 🤘'}
             </div>
           )}
 
