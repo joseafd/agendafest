@@ -1,7 +1,7 @@
 {
-  "short_name": "Resu 2026",
-  "name": "Resurrection Fest 2026 Schedule",
-  "description": "Agenda y horarios interactivos para el Resurrection Fest 2026",
+  "short_name": "AgendaFest",
+  "name": "AgendaFest - Portal de Conciertos",
+  "description": "Agenda y horarios interactivos para tus festivales favoritos",
   "icons": [
     {
       "src": "icon.svg",
