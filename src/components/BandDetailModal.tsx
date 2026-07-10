@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, Zap, Clock, Calendar, MapPin, Globe, Music, PenTool } from 'lucide-react';
 import type { Act, FestivalDay, StageConfig } from '../data/festivalData';
+import { t } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 function getYoutubeEmbedUrl(url: string): string | null {
   if (!url) return null;
@@ -33,6 +35,7 @@ interface BandDetailModalProps {
   onLocateStage?: (stage: string) => void;
   days: FestivalDay[];
   editionStages: StageConfig[];
+  language: Language;
 }
 
 export const BandDetailModal: React.FC<BandDetailModalProps> = ({
@@ -46,6 +49,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
   onLocateStage,
   days,
   editionStages,
+  language,
 }) => {
   const [imgError, setImgError] = useState<boolean>(false);
 
@@ -87,28 +91,59 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
       .toUpperCase();
   };
 
-  // Convert band name to standardized uppercase filename (e.g. "P.O.D." -> "POD.jpg", "A Day To Remember" -> "A DAY TO REMEMBER.jpg")
+  // Convert band name to standardized uppercase filename
   const getBandImageName = (name: string): string => {
     return name
       .toUpperCase()
       .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "") // remove accent diacritics
-      .replace(/[^A-Z0-9\s-]/g, "") // remove dots/special characters
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^A-Z0-9\s-]/g, "")
       .trim()
-      .replace(/[\s-]+/g, " "); // preserve spaces and clean multiple spacing
+      .replace(/[\s-]+/g, " ");
   };
 
-  // Helper to format Spanish weekday name
-  const getDayDescription = (id: string): string => {
+  // Helper to format localized day label
+  const getLocalizedDayDescription = (id: string, lang: Language): string => {
     const datePart = id.substring(0, 10);
     const day = days.find(d => d.id === datePart);
-    if (day) {
-      const [, month, date] = datePart.split('-').map(Number);
-      const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-      const monthName = months[month - 1];
-      return `${day.weekdayEs} ${date} de ${monthName}`;
+    if (!day) return '';
+    
+    const [, month, date] = datePart.split('-').map(Number);
+    
+    const monthsMap: Record<number, Record<Language, string>> = {
+      1: { es: 'Enero', en: 'January', fr: 'Janvier' },
+      2: { es: 'Febrero', en: 'February', fr: 'Février' },
+      3: { es: 'Marzo', en: 'March', fr: 'Mars' },
+      4: { es: 'Abril', en: 'April', fr: 'Avril' },
+      5: { es: 'Mayo', en: 'May', fr: 'Mai' },
+      6: { es: 'Junio', en: 'June', fr: 'Juin' },
+      7: { es: 'Julio', en: 'July', fr: 'Juillet' },
+      8: { es: 'Agosto', en: 'August', fr: 'Août' },
+      9: { es: 'Septiembre', en: 'September', fr: 'Septembre' },
+      10: { es: 'Octubre', en: 'October', fr: 'Octobre' },
+      11: { es: 'Noviembre', en: 'November', fr: 'Novembre' },
+      12: { es: 'Diciembre', en: 'December', fr: 'Décembre' },
+    };
+    
+    const weekdayTranslations: Record<string, Record<Language, string>> = {
+      'miercoles': { es: 'Miércoles', en: 'Wednesday', fr: 'Mercredi' },
+      'jueves': { es: 'Jueves', en: 'Thursday', fr: 'Jeudi' },
+      'viernes': { es: 'Viernes', en: 'Friday', fr: 'Vendredi' },
+      'sabado': { es: 'Sábado', en: 'Saturday', fr: 'Samedi' },
+      'domingo': { es: 'Domingo', en: 'Sunday', fr: 'Dimanche' },
+      'miércoles': { es: 'Miércoles', en: 'Wednesday', fr: 'Mercredi' },
+      'sábado': { es: 'Sábado', en: 'Saturday', fr: 'Samedi' },
+    };
+
+    const wKey = day.weekdayEs.toLowerCase();
+    const localizedWeekday = weekdayTranslations[wKey]?.[lang] || day.weekdayEs;
+    const localizedMonth = monthsMap[month]?.[lang] || monthsMap[month]?.['es'] || '';
+
+    if (lang === 'en') {
+      return `${localizedWeekday}, ${localizedMonth} ${date}`;
     }
-    return '';
+    const prep = t(lang, 'de');
+    return `${localizedWeekday} ${date} ${prep} ${localizedMonth}`;
   };
 
   const imageName = getBandImageName(act.band);
@@ -150,7 +185,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
           boxShadow: '0 20px 50px rgba(0, 0, 0, 0.75)',
           animation: 'fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         }}
-        onClick={(e) => e.stopPropagation()} // Prevent close on tap inside card
+        onClick={(e) => e.stopPropagation()}
       >
         
         {/* 1. HERO HEADER - FULL BLEED PHOTO */}
@@ -167,7 +202,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
             padding: '24px 20px',
           }}
         >
-          {/* Background Band Image (Loads if no error) */}
+          {/* Background Band Image */}
           {!imgError ? (
             <img
               src={`./images/${imageName}.jpg`}
@@ -184,7 +219,6 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
               }}
             />
           ) : (
-            /* Fallback full-bleed gradient with initials */
             <div
               style={{
                 position: 'absolute',
@@ -214,7 +248,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
             </div>
           )}
 
-          {/* Dark esmerilado gradient overlay for text readability */}
+          {/* Dark overlay */}
           <div
             style={{
               position: 'absolute',
@@ -227,10 +261,10 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
             }}
           />
 
-          {/* Close button overlaid on top right */}
+          {/* Close button */}
           <button
             onClick={onClose}
-            aria-label="Cerrar detalles"
+            aria-label={language === 'en' ? "Close details" : language === 'fr' ? "Fermer les détails" : "Cerrar detalles"}
             style={{
               position: 'absolute',
               top: '12px',
@@ -253,7 +287,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
             <X size={18} />
           </button>
 
-          {/* Content (Title) overlaid over the photo */}
+          {/* Title overlay */}
           <div style={{ position: 'relative', zIndex: 5, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2
               className="neon-text-glow"
@@ -289,17 +323,17 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.90rem', color: 'var(--text-secondary)' }}>
               <Calendar size={16} color="var(--accent-red)" />
               <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: '600' }}>Día</div>
-                <div style={{ fontWeight: '800', color: '#fff' }}>{getDayDescription(act.id)}</div>
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: '600' }}>{t(language, 'dayLabel')}</div>
+                <div style={{ fontWeight: '800', color: '#fff', fontSize: '0.85rem' }}>{getLocalizedDayDescription(act.id, language)}</div>
               </div>
             </div>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.90rem', color: 'var(--text-secondary)' }}>
               <Clock size={16} color="var(--accent-red)" />
               <div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: '600' }}>Horario</div>
-                <div style={{ fontWeight: '800', color: '#fff' }}>
-                  {act.start} - {act.end} <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>({act.duration}m)</span>
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: '600' }}>{t(language, 'timeLabel')}</div>
+                <div style={{ fontWeight: '800', color: '#fff', fontSize: '0.85rem' }}>
+                  {act.start} - {act.end} <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: 'normal' }}>({act.duration}m)</span>
                 </div>
               </div>
             </div>
@@ -321,9 +355,9 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <MapPin size={16} color={stageColor} />
                 <div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: '600' }}>Escenario</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: '600' }}>{t(language, 'stageLabel')}</div>
                   <div style={{ fontWeight: '800', color: stageColor, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    {act.stage} Stage
+                    {language === 'en' ? `${act.stage} Stage` : language === 'fr' ? `Scène ${act.stage}` : `Escenario ${act.stage}`}
                   </div>
                 </div>
               </div>
@@ -347,7 +381,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   }}
                   className="btn-interactive"
                 >
-                  📍 Ubicar
+                  {language === 'en' ? '📍 Locate' : language === 'fr' ? '📍 Situer' : '📍 Ubicar'}
                 </button>
               )}
             </div>
@@ -391,7 +425,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                     textTransform: 'uppercase',
                   }}
                 >
-                  ✍️ Pase de Firmas Oficial
+                  {language === 'en' ? '✍️ Official Signing Session' : language === 'fr' ? '✍️ Séance de Dédicaces' : '✍️ Pase de Firmas Oficial'}
                 </div>
                 <div
                   style={{
@@ -416,8 +450,8 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
               color: '#ffffff',
               border: isFavorite ? '1px solid rgba(255, 42, 133, 0.45)' : 'none',
               borderRadius: '14px',
-              padding: '14px', /* Aumentado padding */
-              fontSize: '1.05rem', /* Aumentado 2pt */
+              padding: '14px',
+              fontSize: '1.05rem',
               fontWeight: '800',
               cursor: 'pointer',
               display: 'flex',
@@ -432,7 +466,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
             onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
           >
             <Zap size={18} fill={isFavorite ? '#ffd600' : 'none'} stroke={isFavorite ? '#ffd600' : '#ffffff'} />
-            {isFavorite ? 'Quitar de Favoritos' : 'Añadir a Favoritos'}
+            {isFavorite ? t(language, 'removeFavorites') : t(language, 'addFavorites')}
           </button>
 
           {/* Timing Conflict Alert */}
@@ -455,13 +489,13 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
               <span style={{ fontSize: '1.25rem', lineHeight: 1 }}>⚠️</span>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', textAlign: 'left' }}>
                 <span style={{ color: '#ffd600', fontWeight: '900', fontSize: '0.82rem', letterSpacing: '0.5px', textTransform: 'uppercase' }}>
-                  Conflicto de Horario
+                  {t(language, 'conflictTitle')}
                 </span>
                 <span style={{ fontSize: '0.8rem', color: 'var(--text-primary)', lineHeight: 1.35 }}>
-                  Coincide en tiempo con tu favorita:{' '}
+                  {t(language, 'conflictDesc')}{' '}
                   {conflictingActs.map((c, idx) => (
                     <span key={c.id}>
-                      <strong>{c.band}</strong> ({c.start} - {c.end} en {c.stage} Stage)
+                      <strong>{c.band}</strong> ({c.start} - {c.end} {language === 'en' ? 'on' : language === 'fr' ? 'sur' : 'en'} {c.stage})
                       {idx < conflictingActs.length - 1 ? ', ' : ''}
                     </span>
                   ))}
@@ -473,10 +507,10 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
           {/* Description Section */}
           <div>
             <h3 style={{ fontSize: '0.88rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px' }}>
-              Información de la Banda
+              {language === 'en' ? 'Band Information' : language === 'fr' ? 'Informations sur le groupe' : 'Información de la Banda'}
             </h3>
 
-            {/* Country and Genre sub-row (same style as details grid) */}
+            {/* Country and Genre sub-row */}
             {(act.bio?.country || act.bio?.genre) && (
               <div
                 style={{
@@ -501,7 +535,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   >
                     <Globe size={15} color="var(--accent-red)" />
                     <div>
-                      <div style={{ fontSize: '0.70rem', color: 'var(--text-muted)', fontWeight: '600' }}>País</div>
+                      <div style={{ fontSize: '0.70rem', color: 'var(--text-muted)', fontWeight: '600' }}>{t(language, 'countryLabel')}</div>
                       <div style={{ fontWeight: '800', color: '#fff' }}>{act.bio.country}</div>
                     </div>
                   </div>
@@ -523,7 +557,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   >
                     <Music size={15} color="var(--accent-red)" />
                     <div style={{ overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-                      <div style={{ fontSize: '0.70rem', color: 'var(--text-muted)', fontWeight: '600', marginBottom: '2px' }}>Género</div>
+                      <div style={{ fontSize: '0.70rem', color: 'var(--text-muted)', fontWeight: '600', marginBottom: '2px' }}>{t(language, 'genreLabel')}</div>
                       {act.bio.genre.split(',').map((style, idx) => (
                         <div
                           key={idx}
@@ -560,7 +594,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
               </div>
             ) : (
               <p style={{ fontSize: '0.95rem', fontStyle: 'italic', color: 'var(--text-muted)' }}>
-                Información no disponible.
+                {language === 'en' ? 'Information not available.' : language === 'fr' ? 'Informations non disponibles.' : 'Información no disponible.'}
               </p>
             )}
           </div>
@@ -569,7 +603,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
           {act.bio?.youtubeUrl && (
             <div>
               <h3 style={{ fontSize: '0.88rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '10px' }}>
-                Vídeo Destacado
+                {language === 'en' ? 'Featured Video' : language === 'fr' ? 'Vidéo Vedette' : 'Vídeo Destacado'}
               </h3>
               {(() => {
                 const embedUrl = getYoutubeEmbedUrl(act.bio.youtubeUrl);
@@ -579,7 +613,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                     style={{
                       position: 'relative',
                       width: '100%',
-                      paddingBottom: '56.25%', /* 16:9 Aspect Ratio */
+                      paddingBottom: '56.25%',
                       height: 0,
                       borderRadius: '12px',
                       overflow: 'hidden',

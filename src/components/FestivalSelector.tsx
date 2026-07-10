@@ -1,31 +1,29 @@
 import React, { useState, useMemo } from 'react';
 import { Calendar, MapPin, Search, List, LayoutGrid, ArrowRight } from 'lucide-react';
 import type { FestivalEdition } from '../data/festivalData';
+import { t, formatDatesByLang } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 interface FestivalSelectorProps {
   editions: FestivalEdition[];
   onSelectEdition: (id: string) => void;
+  language: Language;
+  onChangeLanguage: (lang: Language) => void;
 }
 
 export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
   editions,
   onSelectEdition,
+  language,
+  onChangeLanguage,
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [sortBy, setSortBy] = useState<'name' | 'date'>('date');
   const [layoutMode, setLayoutMode] = useState<'grid' | 'list'>('grid');
 
-  // Format date range nicely (e.g. "1 - 4 de Jul 2026")
+  // Format date range nicely
   const formatFestivalDates = (start: string, end: string): string => {
-    const [sY, sM, sD] = start.split('-').map(Number);
-    const [, eM, eD] = end.split('-').map(Number);
-    const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
-    
-    if (sM === eM) {
-      return `${sD} - ${eD} de ${months[sM - 1]} ${sY}`;
-    } else {
-      return `${sD} de ${months[sM - 1]} - ${eD} de ${months[eM - 1]} ${sY}`;
-    }
+    return formatDatesByLang(language, start, end);
   };
 
   // Determine status (Próximamente, En Vivo, Finalizado)
@@ -35,11 +33,11 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
     const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
     
     if (todayStr < start) {
-      return { label: 'Próximamente', color: '#ffd600', bg: 'rgba(255, 214, 0, 0.12)' };
+      return { label: t(language, 'proximamente'), color: '#ffd600', bg: 'rgba(255, 214, 0, 0.12)' };
     } else if (todayStr >= start && todayStr <= end) {
-      return { label: 'En Vivo', color: '#ff003c', bg: 'rgba(255, 0, 60, 0.15)', pulse: true };
+      return { label: t(language, 'enVivo'), color: '#ff003c', bg: 'rgba(255, 0, 60, 0.15)', pulse: true };
     } else {
-      return { label: 'Finalizado', color: '#94a3b8', bg: 'rgba(148, 163, 184, 0.1)' };
+      return { label: t(language, 'finalizado'), color: '#94a3b8', bg: 'rgba(148, 163, 184, 0.1)' };
     }
   };
 
@@ -98,7 +96,7 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
             textTransform: 'uppercase',
           }}
         >
-          Tu Portal de Conciertos
+          {t(language, 'tuPortal')}
         </span>
       </div>
 
@@ -131,7 +129,7 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
           />
           <input
             type="text"
-            placeholder="Buscar festival o ciudad..."
+            placeholder={t(language, 'buscarFestival')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             style={{
@@ -168,7 +166,7 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
                 transition: 'background 0.2s, color 0.2s',
               }}
             >
-              Por Fecha
+              {t(language, 'porFecha')}
             </button>
             <button
               onClick={() => setSortBy('name')}
@@ -184,28 +182,95 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
                 transition: 'background 0.2s, color 0.2s',
               }}
             >
-              Por Nombre
+              {t(language, 'porNombre')}
             </button>
           </div>
 
-          {/* Layout Mode Button */}
-          <button
-            onClick={() => setLayoutMode(layoutMode === 'grid' ? 'list' : 'grid')}
-            style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid var(--border-color)',
-              color: 'var(--text-primary)',
-              padding: '8px',
-              borderRadius: '10px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            title={layoutMode === 'grid' ? 'Ver en Lista' : 'Ver en Cuadrícula'}
-          >
-            {layoutMode === 'grid' ? <List size={18} /> : <LayoutGrid size={18} />}
-          </button>
+          {/* Right Action Container: Flags + Layout Mode */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* Language Flags */}
+            <div style={{ display: 'flex', gap: '6px' }}>
+              <button
+                onClick={() => onChangeLanguage('es')}
+                style={{
+                  background: language === 'es' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                  border: language === 'es' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
+                  fontSize: '1.25rem',
+                  cursor: 'pointer',
+                  borderRadius: '8px',
+                  padding: '4px 6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.2s',
+                  opacity: language === 'es' ? 1 : 0.4,
+                }}
+                className="btn-interactive"
+                title="Español"
+              >
+                🇪🇸
+              </button>
+              <button
+                onClick={() => onChangeLanguage('en')}
+                style={{
+                  background: language === 'en' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                  border: language === 'en' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
+                  fontSize: '1.25rem',
+                  cursor: 'pointer',
+                  borderRadius: '8px',
+                  padding: '4px 6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.2s',
+                  opacity: language === 'en' ? 1 : 0.4,
+                }}
+                className="btn-interactive"
+                title="English"
+              >
+                🇬🇧
+              </button>
+              <button
+                onClick={() => onChangeLanguage('fr')}
+                style={{
+                  background: language === 'fr' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                  border: language === 'fr' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
+                  fontSize: '1.25rem',
+                  cursor: 'pointer',
+                  borderRadius: '8px',
+                  padding: '4px 6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.2s',
+                  opacity: language === 'fr' ? 1 : 0.4,
+                }}
+                className="btn-interactive"
+                title="Français"
+              >
+                🇫🇷
+              </button>
+            </div>
+
+            {/* Layout Mode Button */}
+            <button
+              onClick={() => setLayoutMode(layoutMode === 'grid' ? 'list' : 'grid')}
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid var(--border-color)',
+                color: 'var(--text-primary)',
+                padding: '8px',
+                borderRadius: '10px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+              title={layoutMode === 'grid' ? (language === 'en' ? 'List View' : language === 'fr' ? 'Vue en Liste' : 'Ver en Lista') : (language === 'en' ? 'Grid View' : language === 'fr' ? 'Vue en Grille' : 'Ver en Cuadrícula')}
+            >
+              {layoutMode === 'grid' ? <List size={18} /> : <LayoutGrid size={18} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -213,7 +278,7 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
       <div className="responsive-content" style={{ width: '100%', flex: 1 }}>
         {filteredEditions.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '40px 20px', color: 'var(--text-muted)' }}>
-            No se encontraron festivales que coincidan con tu búsqueda.
+            {t(language, 'noFestivales')}
           </div>
         ) : layoutMode === 'grid' ? (
           /* GRID VIEW */

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { X, Smartphone, Laptop, Share2, Copy, Check, ArrowUpRight, HelpCircle } from 'lucide-react';
+import { t, tFormat } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 interface PwaInstallModalProps {
   isOpen: boolean;
   onClose: () => void;
   festivalName: string;
   year: number;
+  language: Language;
 }
 
 type TabType = 'android' | 'ios' | 'desktop';
@@ -15,6 +18,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
   onClose,
   festivalName,
   year,
+  language,
 }) => {
   const [activeTab, setActiveTab] = useState<TabType>('android');
   const [copied, setCopied] = useState(false);
@@ -32,7 +36,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
   };
 
   const handleShareApi = () => {
-    if (navigator.share) {
+    if (typeof navigator.share !== 'undefined') {
       navigator.share({
         title: `AgendaFest - ${festivalName}`,
         text: `¡Mira la agenda de conciertos y horarios para el ${festivalName} ${year}!`,
@@ -91,10 +95,10 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
         >
           <div>
             <h2 className="font-metal" style={{ fontSize: '1.25rem', color: '#ffffff', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <HelpCircle size={18} color="#ff2a85" /> UTILIDADES Y GUÍA
+              <HelpCircle size={18} color="#ff2a85" /> {t(language, 'modalTitle')}
             </h2>
             <p style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '2px', letterSpacing: '0.5px' }}>
-              Instala la PWA y comparte {festivalName}
+              {tFormat(language, 'modalSubtitle', { festival: festivalName })}
             </p>
           </div>
           <button
@@ -124,7 +128,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
           {/* Section 1: PWA Install Guide */}
           <div>
             <h3 style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>
-              📲 ¿Cómo fijar la App en tu pantalla?
+              {t(language, 'installTitle')}
             </h3>
             
             {/* Tabs Selector */}
@@ -199,7 +203,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
                   transition: 'background 0.2s, color 0.2s',
                 }}
               >
-                <Laptop size={14} /> Ordenador
+                <Laptop size={14} /> {language === 'en' ? 'Desktop' : language === 'fr' ? 'Ordinateur' : 'Ordenador'}
               </button>
             </div>
 
@@ -217,14 +221,14 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
               {activeTab === 'android' && (
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                    <span style={{ background: 'rgba(0, 198, 255, 0.1)', color: '#00c6ff', padding: '4px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: 800 }}>RECOMENDADO</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.8rem' }}>Google Chrome / Samsung Internet</span>
+                    <span style={{ background: 'rgba(0, 198, 255, 0.1)', color: '#00c6ff', padding: '4px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: 800 }}>{t(language, 'recommended')}</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.8rem' }}>{t(language, 'androidBrowser')}</span>
                   </div>
                   <ol style={{ paddingLeft: '20px', margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--text-secondary)' }}>
-                    <li>Abre el navegador y entra a la web.</li>
-                    <li>Pulsa el botón de tres puntos <strong style={{ color: '#ffffff' }}>`⋮`</strong> en la esquina superior derecha.</li>
-                    <li>Selecciona la opción <strong style={{ color: 'var(--accent-red)' }}>`Añadir a pant. de inicio`</strong> o <strong style={{ color: 'var(--accent-red)' }}>`Instalar aplicación`</strong>.</li>
-                    <li>Confirma y la app aparecerá en tu escritorio como una app nativa (¡funciona sin conexión!).</li>
+                    <li>{t(language, 'androidStep1')}</li>
+                    <li>{t(language, 'androidStep2')}</li>
+                    <li>{t(language, 'androidStep3')}</li>
+                    <li>{t(language, 'androidStep4')}</li>
                   </ol>
                 </div>
               )}
@@ -232,14 +236,14 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
               {activeTab === 'ios' && (
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                    <span style={{ background: 'rgba(255, 214, 0, 0.1)', color: '#ffd600', padding: '4px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: 800 }}>OBLIGATORIO</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.8rem' }}>Safari Browser</span>
+                    <span style={{ background: 'rgba(255, 214, 0, 0.1)', color: '#ffd600', padding: '4px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: 800 }}>{t(language, 'required')}</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.8rem' }}>{t(language, 'iosBrowser')}</span>
                   </div>
                   <ol style={{ paddingLeft: '20px', margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--text-secondary)' }}>
-                    <li>Abre la app obligatoriamente en <strong style={{ color: '#ffffff' }}>Safari</strong>.</li>
-                    <li>Pulsa el botón de **Compartir** <strong style={{ color: '#ffffff' }}>`[+]`</strong> (el icono del cuadrado con una flecha hacia arriba, en el menú inferior).</li>
-                    <li>Baja en el menú flotante y selecciona <strong style={{ color: 'var(--accent-red)' }}>`Añadir a la pantalla de inicio`</strong>.</li>
-                    <li>Pulsa <strong style={{ color: '#ffffff' }}>`Añadir`</strong> arriba a la derecha.</li>
+                    <li>{t(language, 'iosStep1')}</li>
+                    <li>{t(language, 'iosStep2')}</li>
+                    <li>{t(language, 'iosStep3')}</li>
+                    <li>{t(language, 'iosStep4')}</li>
                   </ol>
                 </div>
               )}
@@ -247,14 +251,14 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
               {activeTab === 'desktop' && (
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                    <span style={{ background: 'rgba(0, 230, 118, 0.1)', color: '#00e676', padding: '4px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: 800 }}>RECOMENDADO</span>
-                    <span style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.8rem' }}>Chrome, Edge, Opera</span>
+                    <span style={{ background: 'rgba(0, 230, 118, 0.1)', color: '#00e676', padding: '4px 8px', borderRadius: '6px', fontSize: '0.7rem', fontWeight: 800 }}>{t(language, 'recommended')}</span>
+                    <span style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: '0.8rem' }}>{t(language, 'pcBrowser')}</span>
                   </div>
                   <ol style={{ paddingLeft: '20px', margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', color: 'var(--text-secondary)' }}>
-                    <li>Fíjate en la **barra de direcciones** de tu navegador (arriba a la derecha).</li>
-                    <li>Verás un icono circular con un símbolo de **más** `(+)` o un icono de ordenador con una flecha.</li>
-                    <li>Haz clic en él y selecciona <strong style={{ color: 'var(--accent-red)' }}>`Instalar`</strong>.</li>
-                    <li>AgendaFest se abrirá en su propia ventana independiente con icono en tu escritorio.</li>
+                    <li>{t(language, 'pcStep1')}</li>
+                    <li>{t(language, 'pcStep2')}</li>
+                    <li>{t(language, 'pcStep3')}</li>
+                    <li>{t(language, 'pcStep4')}</li>
                   </ol>
                 </div>
               )}
@@ -264,7 +268,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
           {/* Section 2: Share Link */}
           <div>
             <h3 style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '12px' }}>
-              🔗 Compartir AgendaFest
+              {t(language, 'shareTitle')}
             </h3>
             
             <div style={{ display: 'flex', gap: '8px' }}>
@@ -306,7 +310,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
                 className="btn-interactive"
               >
                 {copied ? <Check size={14} /> : <Copy size={14} />}
-                {copied ? 'Copiado' : 'Copiar'}
+                {copied ? t(language, 'copied') : t(language, 'copy')}
               </button>
             </div>
 
@@ -334,7 +338,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
                 className="btn-interactive"
               >
                 <Share2 size={14} color="#ff2a85" />
-                Compartir por WhatsApp, Redes, etc.
+                {t(language, 'shareText')}
               </button>
             )}
           </div>
@@ -342,11 +346,11 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
           {/* Section 3: Credits */}
           <div style={{ marginTop: '4px', borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '16px' }}>
             <h3 style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--text-primary)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '10px' }}>
-              📷 Créditos y Autoría
+              {t(language, 'creditsTitle')}
             </h3>
             
             <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-              Esta aplicación no oficial ha sido desarrollada para facilitar la consulta de horarios y escenarios.
+              {t(language, 'creditsDesc')}
             </p>
             
             <div
@@ -362,7 +366,7 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
               }}
             >
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Fotografía oficial</span>
+                <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{t(language, 'officialPhoto')}</span>
                 <span style={{ fontSize: '0.78rem', color: '#ffffff', fontWeight: 700 }}>Jose Antonio Fernández</span>
               </div>
               <a

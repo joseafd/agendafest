@@ -1,6 +1,8 @@
 import React from 'react';
 import { Clock, LayoutGrid, SlidersHorizontal, Home, Share2, HelpCircle } from 'lucide-react';
 import type { FestivalDay } from '../data/festivalData';
+import { t, getLocalizedDayLabel } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 interface HeaderProps {
   days: FestivalDay[];
@@ -16,6 +18,8 @@ interface HeaderProps {
   festivalName: string;
   location: string;
   year: number;
+  language: Language;
+  onChangeLanguage: (lang: Language) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -32,6 +36,8 @@ export const Header: React.FC<HeaderProps> = ({
   festivalName,
   location,
   year,
+  language,
+  onChangeLanguage,
 }) => {
   return (
     <header
@@ -52,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Left: Home Button */}
           <button
             onClick={onGoHome}
-            aria-label="Volver al inicio"
+            aria-label={t(language, 'goHome')}
             style={{
               background: 'rgba(255, 255, 255, 0.04)',
               border: '1px solid var(--border-color)',
@@ -82,13 +88,77 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
           </div>
 
-          {/* Right: Share + View Toggle + Filters Button Container */}
-          <div style={{ display: 'flex', gap: '8px' }}>
+          {/* Right: Flags + Share + View Toggle + Filters Button Container */}
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            {/* Language Flags */}
+            <div style={{ display: 'flex', gap: '4px', marginRight: '4px' }}>
+              <button
+                onClick={() => onChangeLanguage('es')}
+                style={{
+                  background: language === 'es' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                  border: 'none',
+                  fontSize: '1.1rem',
+                  cursor: 'pointer',
+                  borderRadius: '6px',
+                  padding: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.2s',
+                  opacity: language === 'es' ? 1 : 0.4,
+                }}
+                className="btn-interactive"
+                title="Español"
+              >
+                🇪🇸
+              </button>
+              <button
+                onClick={() => onChangeLanguage('en')}
+                style={{
+                  background: language === 'en' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                  border: 'none',
+                  fontSize: '1.1rem',
+                  cursor: 'pointer',
+                  borderRadius: '6px',
+                  padding: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.2s',
+                  opacity: language === 'en' ? 1 : 0.4,
+                }}
+                className="btn-interactive"
+                title="English"
+              >
+                🇬🇧
+              </button>
+              <button
+                onClick={() => onChangeLanguage('fr')}
+                style={{
+                  background: language === 'fr' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
+                  border: 'none',
+                  fontSize: '1.1rem',
+                  cursor: 'pointer',
+                  borderRadius: '6px',
+                  padding: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.2s',
+                  opacity: language === 'fr' ? 1 : 0.4,
+                }}
+                className="btn-interactive"
+                title="Français"
+              >
+                🇫🇷
+              </button>
+            </div>
+
             {/* Help/PWA Install Button */}
             <button
               onClick={onOpenPwaGuide}
-              aria-label="Guía de instalación y ayuda"
-              title="Guía de instalación y ayuda"
+              aria-label={t(language, 'helpTitle')}
+              title={t(language, 'helpTitle')}
               style={{
                 background: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid var(--border-color)',
@@ -111,7 +181,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Share Button */}
             <button
               onClick={onShare}
-              aria-label="Compartir favoritos"
+              aria-label={t(language, 'shareFavs')}
               style={{
                 background: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid var(--border-color)',
@@ -134,7 +204,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* View Toggle */}
             <button
               onClick={onToggleViewMode}
-              aria-label={viewMode === 'hours' ? 'Ver cuadrícula de escenarios' : 'Ver lista por horas'}
+              aria-label={viewMode === 'hours' ? t(language, 'viewStages') : t(language, 'viewHours')}
               style={{
                 background: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid var(--border-color)',
@@ -157,7 +227,7 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Filter Drawer Trigger */}
             <button
               onClick={onOpenFilters}
-              aria-label="Abrir filtros y ordenar escenarios"
+              aria-label={t(language, 'openFilters')}
               style={{
                 background: hasActiveFilters ? 'rgba(255, 0, 60, 0.15)' : 'rgba(255, 255, 255, 0.04)',
                 border: `1px solid ${hasActiveFilters ? 'var(--accent-red)' : 'var(--border-color)'}`,
@@ -206,7 +276,8 @@ export const Header: React.FC<HeaderProps> = ({
         >
           {days.map((day) => {
             const isActive = day.id === selectedDayId;
-            const labelParts = day.dayLabel.split(' ');
+            const localizedLabel = getLocalizedDayLabel(day.dayLabel, language);
+            const labelParts = localizedLabel.split(' ');
             const shortLabel = `${labelParts[0].substring(0, 3)} ${labelParts[1] || ''}`;
 
             return (

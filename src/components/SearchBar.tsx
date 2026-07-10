@@ -1,11 +1,14 @@
 import React from 'react';
 import { Search, X, Calendar } from 'lucide-react';
+import { t } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 interface SearchBarProps {
   searchQuery: string;
   onSearchChange: (query: string) => void;
   searchGlobal: boolean;
   onSearchGlobalToggle: (global: boolean) => void;
+  language: Language;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
@@ -13,6 +16,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   onSearchChange,
   searchGlobal,
   onSearchGlobalToggle,
+  language,
 }) => {
   return (
     <div
@@ -37,7 +41,10 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder={searchGlobal ? "Buscar banda en todo el festival..." : "Buscar banda en este día..."}
+          placeholder={searchGlobal 
+            ? (language === 'en' ? "Search band in all days..." : language === 'fr' ? "Rechercher groupe dans tout le festival..." : "Buscar banda en todo el festival...")
+            : t(language, 'searchBarPlaceholder')
+          }
           style={{
             width: '100%',
             background: '#151722',
@@ -45,7 +52,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             borderRadius: '10px',
             padding: '10px 36px 10px 36px',
             color: 'var(--text-primary)',
-            fontSize: '0.98rem', /* Aumentado */
+            fontSize: '0.98rem',
             outline: 'none',
             transition: 'border-color 0.2s',
           }}
@@ -55,7 +62,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         {searchQuery && (
           <button
             onClick={() => onSearchChange('')}
-            aria-label="Limpiar búsqueda"
+            aria-label={language === 'en' ? "Clear search" : language === 'fr' ? "Effacer la recherche" : "Limpiar búsqueda"}
             style={{
               position: 'absolute',
               right: '12px',
@@ -81,7 +88,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
             background: 'none',
             border: 'none',
             color: searchGlobal ? 'var(--accent-red)' : 'var(--text-secondary)',
-            fontSize: '0.85rem', /* Aumentado */
+            fontSize: '0.85rem',
             fontWeight: '600',
             cursor: 'pointer',
             display: 'flex',
@@ -93,7 +100,10 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           }}
         >
           <Calendar size={12} color={searchGlobal ? 'var(--accent-red)' : 'var(--text-muted)'} />
-          {searchGlobal ? 'Buscando en todos los días' : 'Buscar en todo el festival'}
+          {searchGlobal 
+            ? (language === 'en' ? "Searching in all days" : language === 'fr' ? "Recherche sur tous les jours" : "Buscando en todos los días") 
+            : t(language, 'searchGlobalLabel')
+          }
         </button>
       </div>
       </div>

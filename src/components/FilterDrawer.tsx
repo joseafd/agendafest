@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, Zap, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff, ChevronDown, ChevronUp, Globe, Music } from 'lucide-react';
 import type { StageConfig } from '../data/festivalData';
+import { t } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 interface FilterDrawerProps {
   isOpen: boolean;
@@ -24,7 +26,8 @@ interface FilterDrawerProps {
     selectedGenres: string[]
   ) => void;
   defaultStages: string[];
-  onClearFavorites?: () => void; // New optional prop
+  onClearFavorites?: () => void;
+  language: Language;
 }
 
 export const FilterDrawer: React.FC<FilterDrawerProps> = ({
@@ -41,6 +44,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
   onSave,
   defaultStages,
   onClearFavorites,
+  language,
 }) => {
   // Local state to manage changes before committing on "Guardar"
   const [localOnlyFavorites, setLocalOnlyFavorites] = useState(propOnlyFavorites);
@@ -106,7 +110,12 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
   const handleSave = () => {
     // Prevent saving if no stages are visible
     if (localVisibleStages.length === 0) {
-      alert("Debes tener al menos un escenario visible.");
+      alert(language === 'en' 
+        ? "You must have at least one stage visible." 
+        : language === 'fr' 
+          ? "Vous devez avoir au moins une scène visible." 
+          : "Debes tener al menos un escenario visible."
+      );
       return;
     }
     onSave(localOnlyFavorites, localVisibleStages, localStagesOrder, localSelectedCountries, localSelectedGenres);
@@ -145,7 +154,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
           paddingTop: 'var(--safe-top)',
           paddingBottom: 'var(--safe-bottom)',
         }}
-        onClick={(e) => e.stopPropagation()} // Prevent closing when tapping panel
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Drawer Header */}
         <div
@@ -157,10 +166,12 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             justifyContent: 'space-between',
           }}
         >
-          <h2 style={{ fontSize: '1rem', fontWeight: '800', letterSpacing: '0.5px' }}>FILTROS</h2>
+          <h2 className="font-metal" style={{ fontSize: '1.1rem', fontWeight: '800', letterSpacing: '0.5px' }}>
+            {t(language, 'filterTitle')}
+          </h2>
           <button
             onClick={onClose}
-            aria-label="Cerrar panel de filtros"
+            aria-label={t(language, 'closeFilters')}
             style={{
               background: 'rgba(255,255,255,0.05)',
               border: 'none',
@@ -183,13 +194,13 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
           {/* Favorites Filter Section */}
           <div>
             <h3 style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', marginBottom: '10px', textTransform: 'uppercase' }}>
-              Preferencias
+              {language === 'en' ? "PREFERENCES" : language === 'fr' ? "PRÉFÉRENCES" : "PREFERENCIAS"}
             </h3>
             
             <div className="switch-container">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <Zap size={16} color="var(--accent-red)" fill="var(--accent-red)" />
-                <span style={{ fontSize: '0.88rem', fontWeight: '600' }}>Sólo mostrar favoritos</span>
+                <span style={{ fontSize: '0.88rem', fontWeight: '600' }}>{t(language, 'filterFavorites')}</span>
               </div>
               <label className="switch">
                 <input
@@ -204,7 +215,12 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             {onClearFavorites && (
               <button
                 onClick={() => {
-                  if (window.confirm("¿Seguro que deseas borrar todas las bandas de tus favoritos? Esta acción no se puede deshacer.")) {
+                  const confirmMsg = language === 'en'
+                    ? "Are you sure you want to clear all favorite bands? This action cannot be undone."
+                    : language === 'fr'
+                      ? "Voulez-vous vraiment effacer tous vos favoris ? Cette action est irréversible."
+                      : "¿Seguro que deseas borrar todas las bandas de tus favoritos? Esta acción no se puede deshacer.";
+                  if (window.confirm(confirmMsg)) {
                     onClearFavorites();
                     onClose();
                   }
@@ -229,7 +245,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
                 className="btn-interactive"
               >
                 <RefreshCw size={12} />
-                Borrar todos mis favoritos
+                {language === 'en' ? 'Clear all my favorites' : language === 'fr' ? 'Effacer tous mes favoris' : 'Borrar todos mis favoritos'}
               </button>
             )}
           </div>
@@ -255,7 +271,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Globe size={16} color="var(--text-muted)" />
                 <h3 style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                  País {localSelectedCountries.length > 0 ? `(${localSelectedCountries.length})` : ''}
+                  {t(language, 'filterCountries')} {localSelectedCountries.length > 0 ? `(${localSelectedCountries.length})` : ''}
                 </h3>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -272,7 +288,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
                       cursor: 'pointer',
                     }}
                   >
-                    Limpiar
+                    {language === 'en' ? "Clear" : language === 'fr' ? "Effacer" : "Limpiar"}
                   </span>
                 )}
                 {isCountriesExpanded ? <ChevronUp size={16} color="var(--text-muted)" /> : <ChevronDown size={16} color="var(--text-muted)" />}
@@ -346,7 +362,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Music size={16} color="var(--text-muted)" />
                 <h3 style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                  Género {localSelectedGenres.length > 0 ? `(${localSelectedGenres.length})` : ''}
+                  {t(language, 'filterGenres')} {localSelectedGenres.length > 0 ? `(${localSelectedGenres.length})` : ''}
                 </h3>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -363,7 +379,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
                       cursor: 'pointer',
                     }}
                   >
-                    Limpiar
+                    {language === 'en' ? "Clear" : language === 'fr' ? "Effacer" : "Limpiar"}
                   </span>
                 )}
                 {isGenresExpanded ? <ChevronUp size={16} color="var(--text-muted)" /> : <ChevronDown size={16} color="var(--text-muted)" />}
@@ -420,10 +436,10 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
           <div>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
               <h3 style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '800', letterSpacing: '1px', textTransform: 'uppercase' }}>
-                Visibilidad y Orden de Escenarios
+                {t(language, 'filterStages')}
               </h3>
               <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>
-                Usa las flechas para ordenar
+                {language === 'en' ? 'Use arrows to sort' : language === 'fr' ? 'Utiliser les flèches pour trier' : 'Usa las flechas para ordenar'}
               </span>
             </div>
 
@@ -560,7 +576,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.04)'; }}
           >
             <RefreshCw size={14} />
-            Restablecer
+            {language === 'en' ? 'Reset' : language === 'fr' ? 'Réinitialiser' : 'Restablecer'}
           </button>
 
           {/* Save Button */}
@@ -583,7 +599,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
             onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
           >
-            Guardar
+            {language === 'en' ? 'Save' : language === 'fr' ? 'Enregistrer' : 'Guardar'}
           </button>
         </div>
       </div>

@@ -10,6 +10,8 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import { Calendar, Map, ArrowLeft, Download, Share2, Newspaper } from 'lucide-react';
 import type { Act, FestivalEdition } from '../data/festivalData';
 import { PwaInstallModal } from './PwaInstallModal';
+import { t, tFormat } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 const getYoutubeId = (url: string) => {
   if (!url) return '';
@@ -22,12 +24,16 @@ interface FestivalDashboardProps {
   editionId: string;
   edition: FestivalEdition;
   onBackToSelector: () => void;
+  language: Language;
+  onChangeLanguage: (lang: Language) => void;
 }
 
 export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   editionId,
   edition,
   onBackToSelector,
+  language,
+  onChangeLanguage,
 }) => {
   const edicionConfig = edition.config;
   const days = edition.days;
@@ -241,7 +247,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   // 8. Share Favorites Handler
   const handleShareFavorites = () => {
     if (favorites.length === 0) {
-      setToastMessage('Añade primero alguna banda a favoritos para compartir');
+      setToastMessage(t(language, 'toastNoFavsShare'));
       setTimeout(() => setToastMessage(null), 2500);
       return;
     }
@@ -251,11 +257,11 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
 
     navigator.clipboard.writeText(shareUrl)
       .then(() => {
-        setToastMessage('🔗 ¡Enlace de tu agenda copiado al portapapeles!');
+        setToastMessage(t(language, 'toastShareSuccess'));
         setTimeout(() => setToastMessage(null), 2500);
       })
       .catch(() => {
-        setToastMessage('No se pudo copiar el enlace de forma automática');
+        setToastMessage(t(language, 'toastShareError'));
         setTimeout(() => setToastMessage(null), 2500);
       });
   };
@@ -926,6 +932,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
           noticias={noticiasData}
           onBackToHome={() => setActiveTab('home')}
           festivalName={edicionConfig.visibleName}
+          language={language}
         />
       )}
 
@@ -946,6 +953,8 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
             festivalName={edicionConfig.visibleName}
             location={edicionConfig.location}
             year={edicionConfig.year}
+            language={language}
+            onChangeLanguage={onChangeLanguage}
           />
 
           <SearchBar
@@ -953,6 +962,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
             onSearchChange={setSearchQuery}
             searchGlobal={searchGlobal}
             onSearchGlobalToggle={setSearchGlobal}
+            language={language}
           />
 
           <main style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative' }}>
@@ -996,7 +1006,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 animation: 'pulseYellow 1.5s infinite ease-in-out',
               }}
             />
-            AHORA
+            {language === 'en' ? 'NOW' : language === 'fr' ? 'MAINTENANT' : 'AHORA'}
           </button>
         </div>
       )}
@@ -1016,6 +1026,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
         onSave={handleSaveFilters}
         defaultStages={defaultStages}
         onClearFavorites={handleClearFavorites}
+        language={language}
       />
 
       <BandDetailModal
@@ -1032,6 +1043,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
         onLocateStage={handleLocateStage}
         days={days}
         editionStages={edition.stages}
+        language={language}
       />
 
       {toastMessage && (
@@ -1092,10 +1104,10 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               <Share2 size={36} style={{ margin: '0 auto' }} />
             </div>
             <h2 className="font-metal" style={{ fontSize: '1.25rem', marginBottom: '8px' }}>
-              IMPORTAR AGENDA
+              {t(language, 'importTitle')}
             </h2>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '20px', lineHeight: 1.4 }}>
-              Te han compartido un itinerario con <strong>{pendingImport.length}</strong> bandas favoritas. ¿Qué deseas hacer?
+              {tFormat(language, 'importDesc', { count: pendingImport.length })}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -1104,7 +1116,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                   setFavorites((prev) => Array.from(new Set([...prev, ...pendingImport])));
                   window.history.replaceState({}, document.title, window.location.pathname);
                   setPendingImport(null);
-                  setToastMessage('✅ ¡Favoritos combinados con éxito!');
+                  setToastMessage(t(language, 'toastMergeSuccess'));
                   setTimeout(() => setToastMessage(null), 2500);
                 }}
                 style={{
@@ -1119,7 +1131,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 }}
                 className="btn-interactive"
               >
-                Importar (Combinar con mis favoritos)
+                {t(language, 'importMerge')}
               </button>
               
               <button
@@ -1127,7 +1139,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                   setFavorites(pendingImport);
                   window.history.replaceState({}, document.title, window.location.pathname);
                   setPendingImport(null);
-                  setToastMessage('✅ Tu agenda ha sido reemplazada');
+                  setToastMessage(t(language, 'toastReplaceSuccess'));
                   setTimeout(() => setToastMessage(null), 2500);
                 }}
                 style={{
@@ -1142,7 +1154,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 }}
                 className="btn-interactive"
               >
-                Reemplazar (Borrará mis favoritos actuales)
+                {t(language, 'importReplace')}
               </button>
 
               <button
@@ -1160,7 +1172,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                   cursor: 'pointer',
                 }}
               >
-                Descartar
+                {t(language, 'importDiscard')}
               </button>
             </div>
           </div>
@@ -1173,6 +1185,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
         onClose={() => setIsPwaModalOpen(false)}
         festivalName={edicionConfig.visibleName}
         year={edicionConfig.year}
+        language={language}
       />
     </div>
   );

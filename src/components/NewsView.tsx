@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import type { NoticiaItem } from '../data/festivalData';
 import { ArrowLeft, Calendar, Newspaper, X } from 'lucide-react';
+import { t } from '../utils/translations';
+import type { Language } from '../utils/translations';
 
 interface NewsViewProps {
   noticias: NoticiaItem[];
   onBackToHome: () => void;
   festivalName: string;
+  language: Language;
 }
 
-export function NewsView({ noticias, onBackToHome, festivalName }: NewsViewProps) {
+export function NewsView({ noticias, onBackToHome, festivalName, language }: NewsViewProps) {
   const [selectedNews, setSelectedNews] = useState<NoticiaItem | null>(null);
 
   return (
@@ -33,7 +36,7 @@ export function NewsView({ noticias, onBackToHome, festivalName }: NewsViewProps
       >
         <button
           onClick={onBackToHome}
-          aria-label="Volver al inicio"
+          aria-label={t(language, 'backToHome')}
           style={{
             background: 'rgba(255, 255, 255, 0.04)',
             border: '1px solid var(--border-color)',
@@ -54,8 +57,12 @@ export function NewsView({ noticias, onBackToHome, festivalName }: NewsViewProps
         </button>
 
         <div style={{ textAlign: 'center' }}>
-          <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>NOTICIAS {festivalName}</h1>
-          <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>ÚLTIMAS NOVEDADES</span>
+          <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>
+            {t(language, 'newsTitle')} {festivalName}
+          </h1>
+          <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>
+            {language === 'en' ? 'LATEST UPDATES' : language === 'fr' ? 'DERNIÈRES NOUVELLES' : 'ÚLTIMAS NOVEDADES'}
+          </span>
         </div>
 
         <div style={{ width: '38px' }} />
@@ -66,7 +73,7 @@ export function NewsView({ noticias, onBackToHome, festivalName }: NewsViewProps
         {noticias.length === 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--text-muted)', gap: '12px', padding: '32px' }}>
             <Newspaper size={48} style={{ opacity: 0.3 }} />
-            <p style={{ textAlign: 'center', fontSize: '0.9rem' }}>No hay noticias publicadas en este momento.</p>
+            <p style={{ textAlign: 'center', fontSize: '0.9rem' }}>{t(language, 'emptyNews')}</p>
           </div>
         ) : (
           noticias.map((item, index) => (
@@ -129,7 +136,9 @@ export function NewsView({ noticias, onBackToHome, festivalName }: NewsViewProps
                   {item.entradilla}
                 </h2>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '8px' }}>
-                  <span style={{ fontSize: '0.72rem', color: 'var(--color-primary)', fontWeight: '700', letterSpacing: '0.5px' }}>Leer más →</span>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--color-primary)', fontWeight: '700', letterSpacing: '0.5px' }}>
+                    {t(language, 'readMore')} →
+                  </span>
                 </div>
               </div>
             </div>
@@ -178,7 +187,7 @@ export function NewsView({ noticias, onBackToHome, festivalName }: NewsViewProps
             {/* Close Button */}
             <button
               onClick={() => setSelectedNews(null)}
-              aria-label="Cerrar noticia"
+              aria-label={language === 'en' ? "Close article" : language === 'fr' ? "Fermer l'article" : "Cerrar noticia"}
               style={{
                 position: 'absolute',
                 top: '12px',
