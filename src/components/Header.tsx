@@ -79,13 +79,45 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           {/* Center: Logo */}
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '3px' }}>
             <h1 className="font-metal" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>
               {festivalName}
             </h1>
-            <span style={{ fontSize: '0.65rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>
-              {location.toUpperCase()} {year}
-            </span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <span style={{ fontSize: '0.65rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>
+                {location.toUpperCase()} {year}
+              </span>
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  background: 'rgba(0, 230, 118, 0.1)',
+                  color: '#00e676',
+                  fontSize: '0.55rem',
+                  fontWeight: '800',
+                  padding: '1px 5px',
+                  borderRadius: '4px',
+                  border: '1px solid rgba(0, 230, 118, 0.25)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.3px',
+                  lineHeight: '1',
+                }}
+                title={language === 'en' ? 'Offline Mode Active' : language === 'fr' ? 'Mode hors ligne actif' : 'Modo sin conexión activo'}
+              >
+                <span
+                  style={{
+                    width: '4px',
+                    height: '4px',
+                    borderRadius: '50%',
+                    background: '#00e676',
+                    marginRight: '3.5px',
+                    boxShadow: '0 0 6px #00e676',
+                    animation: 'pulseYellow 2s infinite ease-in-out',
+                  }}
+                />
+                {language === 'en' ? 'Offline' : language === 'fr' ? 'Hors ligne' : 'Sin conexión'}
+              </span>
+            </div>
           </div>
 
           {/* Right: Flags + Share + View Toggle + Filters Button Container */}

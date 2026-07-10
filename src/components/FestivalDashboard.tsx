@@ -90,6 +90,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   const [toastMessage, setToastMessage] = useState<string | null>(null);
   const [pendingImport, setPendingImport] = useState<string[] | null>(null);
   const [visitCount, setVisitCount] = useState<number | null>(null);
+  const [nextFavImgError, setNextFavImgError] = useState<boolean>(false);
 
   // 4. Days list shortcut
   const currentDay = useMemo(() => {
@@ -184,6 +185,120 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     }, 30000); // Update every 30 seconds
     return () => clearInterval(timer);
   }, [getFestivalMinutes]);
+
+  // Real-time / simulated date logic for Next Favorite Band
+  const [currentTime, setCurrentTime] = useState<Date>(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 10000); // Update every 10 seconds
+    return () => clearInterval(timer);
+  }, []);
+
+  const getSimulatedOrRealTime = useCallback((realTime: Date): Date => {
+    const dateStr = `${realTime.getFullYear()}-${(realTime.getMonth() + 1).toString().padStart(2, '0')}-${realTime.getDate().toString().padStart(2, '0')}`;
+    const isFestivalPeriod = dateStr >= edicionConfig.startDate && dateStr <= edicionConfig.endDate;
+    
+    if (isFestivalPeriod) {
+      return realTime;
+    }
+    
+    if (!days || days.length === 0) return realTime;
+    const firstDay = days[0];
+    const [y, m, d] = firstDay.id.split('-').map(Number);
+    
+    const simulated = new Date(y, m - 1, d);
+    simulated.setHours(realTime.getHours(), realTime.getMinutes(), realTime.getSeconds(), 0);
+    
+    // Fallback: if simulated time is outside festival timeline, force 18:30 for demo purposes
+    const currentHours = realTime.getHours();
+    if (currentHours < edicionConfig.dayStartHour && currentHours >= edicionConfig.dayEndHour) {
+      simulated.setHours(18, 30, 0, 0);
+    }
+    return simulated;
+  }, [days, edicionConfig]);
+
+  const getActAbsoluteStartTime = useCallback((act: Act): Date => {
+    const datePart = act.id.substring(0, 10);
+    const [y, m, d] = datePart.split('-').map(Number);
+    const [h, min] = act.start.split(':').map(Number);
+    
+    const actDate = new Date(y, m - 1, d);
+    if (h < edicionConfig.dayEndHour) {
+      actDate.setDate(actDate.getDate() + 1);
+    }
+    actDate.setHours(h, min, 0, 0);
+    return actDate;
+  }, [edicionConfig]);
+
+  const getActLocalizedDayNameAndHour = useCallback((act: Act, lang: Language): string => {
+    const datePart = act.id.substring(0, 10);
+    const day = days.find(d => d.id === datePart);
+    if (!day) return act.start;
+    
+    const weekdayTranslations: Record<string, Record<Language, string>> = {
+      'miercoles': { es: 'Miér', en: 'Wed', fr: 'Mer' },
+      'jueves': { es: 'Jue', en: 'Thu', fr: 'Jeu' },
+      'viernes': { es: 'Vie', en: 'Fri', fr: 'Ven' },
+      'sabado': { es: 'Sáb', en: 'Sat', fr: 'Sam' },
+      'domingo': { es: 'Dom', en: 'Sun', fr: 'Dim' },
+      'miércoles': { es: 'Miér', en: 'Wed', fr: 'Mer' },
+      'sábado': { es: 'Sáb', en: 'Sat', fr: 'Sam' },
+    };
+
+    const wKey = day.weekdayEs.toLowerCase();
+    const shortWeekday = weekdayTranslations[wKey]?.[lang] || day.weekdayEs.substring(0, 3);
+    return `${shortWeekday}, ${act.start}`;
+  }, [days]);
+
+  const nextFavoriteAct = useMemo(() => {
+    if (favorites.length === 0 || !days) return null;
+    
+    const simTime = getSimulatedOrRealTime(currentTime);
+    const list: Array<{ act: Act; startTime: Date; endTime: Date; status: 'live' | 'upcoming'; minutesToStart: number; stageColor: string }> = [];
+    
+    days.forEach((day) => {
+      day.acts.forEach((act) => {
+        if (favorites.includes(act.id)) {
+          const startTime = getActAbsoluteStartTime(act);
+          const endTime = new Date(startTime.getTime() + act.duration * 60 * 1000);
+          
+          if (simTime < endTime) {
+            const isLive = simTime >= startTime;
+            const status = isLive ? 'live' : 'upcoming';
+            const minutesToStart = Math.round((startTime.getTime() - simTime.getTime()) / (60 * 1000));
+            const stageObj = edition.stages.find(s => s.name === act.stage);
+            const stageColor = stageObj ? stageObj.color : '#ffffff';
+            
+            list.push({
+              act,
+              startTime,
+              endTime,
+              status,
+              minutesToStart,
+              stageColor,
+            });
+          }
+        }
+      });
+    });
+    
+    if (list.length === 0) return null;
+    
+    // Sort: live first, then chronologically
+    list.sort((a, b) => {
+      if (a.status === 'live' && b.status !== 'live') return -1;
+      if (a.status !== 'live' && b.status === 'live') return 1;
+      return a.startTime.getTime() - b.startTime.getTime();
+    });
+    
+    return list[0];
+  }, [days, favorites, currentTime, getSimulatedOrRealTime, getActAbsoluteStartTime, edition.stages]);
+
+  useEffect(() => {
+    setNextFavImgError(false);
+  }, [nextFavoriteAct?.act?.id]);
 
   // Determine if we should show active live indicators
   // For testing: if outside festival dates, always show live line using system clock on selected day.
@@ -621,6 +736,111 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               }}
             >
               {isFestivalOver ? t(language, 'festivalFinished') : t(language, 'festivalStarted')}
+            </div>
+          )}
+
+          {/* Next Favorite Band Card */}
+          {nextFavoriteAct && (
+            <div
+              onClick={() => handleSelectAct(nextFavoriteAct.act)}
+              style={{
+                marginBottom: '20px',
+                padding: '12px 14px',
+                background: nextFavoriteAct.status === 'live'
+                  ? 'linear-gradient(135deg, rgba(255, 42, 133, 0.25) 0%, rgba(13, 15, 20, 0.75) 100%)'
+                  : 'rgba(15, 17, 24, 0.65)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                border: nextFavoriteAct.status === 'live'
+                  ? '1px solid rgba(255, 42, 133, 0.6)'
+                  : '1px solid var(--border-color)',
+                borderRadius: '16px',
+                color: '#ffffff',
+                cursor: 'pointer',
+                textAlign: 'left',
+                boxShadow: nextFavoriteAct.status === 'live'
+                  ? '0 8px 24px rgba(255, 42, 133, 0.2), 0 0 12px rgba(255, 42, 133, 0.1)'
+                  : '0 4px 16px rgba(0, 0, 0, 0.3)',
+                maxWidth: '320px',
+                width: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                animation: 'fadeIn 0.3s ease-out',
+                transition: 'transform 0.15s, border-color 0.15s',
+              }}
+              className="btn-interactive news-card"
+            >
+              <div
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '8px',
+                  overflow: 'hidden',
+                  background: 'rgba(0, 0, 0, 0.25)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  position: 'relative',
+                }}
+              >
+                {!nextFavImgError ? (
+                  <img
+                    src={`./images/${nextFavoriteAct.act.band.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Z0-9\s-]/g, "").trim().replace(/[\s-]+/g, " ")}.jpg`}
+                    alt=""
+                    onError={() => setNextFavImgError(true)}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                  />
+                ) : (
+                  <span style={{ fontSize: '0.85rem', fontWeight: '800', color: 'rgba(255,255,255,0.6)', fontFamily: 'var(--font-display)' }}>
+                    {nextFavoriteAct.act.band.substring(0, 2).toUpperCase()}
+                  </span>
+                )}
+              </div>
+
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '2px', flexWrap: 'wrap' }}>
+                  <span
+                    style={{
+                      fontSize: '0.6rem',
+                      background: nextFavoriteAct.status === 'live' ? 'var(--accent-red)' : 'rgba(255, 255, 255, 0.08)',
+                      color: '#ffffff',
+                      padding: '2px 6px',
+                      borderRadius: '4px',
+                      fontWeight: '800',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                    }}
+                  >
+                    {nextFavoriteAct.status === 'live' 
+                      ? (language === 'en' ? '● LIVE' : language === 'fr' ? '● EN DIRECT' : '● EN DIRECTO')
+                      : (language === 'en' ? 'NEXT FAVORITE' : language === 'fr' ? 'PROCHAIN FAVORIS' : 'SIGUIENTE FAVORITO')
+                    }
+                  </span>
+                  {nextFavoriteAct.status === 'upcoming' && (
+                    <span style={{ fontSize: '0.68rem', color: '#ffd600', fontWeight: '800' }}>
+                      {nextFavoriteAct.minutesToStart <= 120 
+                        ? (language === 'en' ? `In ${nextFavoriteAct.minutesToStart} min` : language === 'fr' ? `Dans ${nextFavoriteAct.minutesToStart} min` : `En ${nextFavoriteAct.minutesToStart} min`)
+                        : getActLocalizedDayNameAndHour(nextFavoriteAct.act, language)
+                      }
+                    </span>
+                  )}
+                </div>
+                <h4 style={{ fontSize: '0.95rem', fontWeight: '800', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {nextFavoriteAct.act.band}
+                </h4>
+                <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '2px', display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
+                  <span style={{ fontWeight: '700' }}>{nextFavoriteAct.act.start} - {nextFavoriteAct.act.end}</span>
+                  <span>•</span>
+                  <span style={{ color: nextFavoriteAct.stageColor, fontWeight: '600' }}>{nextFavoriteAct.act.stage}</span>
+                </div>
+              </div>
             </div>
           )}
 
