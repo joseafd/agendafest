@@ -7,8 +7,9 @@ import { FilterDrawer } from './FilterDrawer';
 import { BandDetailModal } from './BandDetailModal';
 import { NewsView } from './NewsView';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { Calendar, Map, ArrowLeft, Info, Share2, Newspaper } from 'lucide-react';
+import { Calendar, Map, ArrowLeft, Download, Share2, Newspaper } from 'lucide-react';
 import type { Act, FestivalEdition } from '../data/festivalData';
+import { PwaInstallModal } from './PwaInstallModal';
 
 const getYoutubeId = (url: string) => {
   if (!url) return '';
@@ -60,8 +61,9 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     return days[days.length - 1].id;
   };
 
-  // 1. App Navigation State (home, agenda, map, credits, news)
-  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'credits' | 'news'>('home');
+  // 1. App Navigation State (home, agenda, map, news)
+  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'news'>('home');
+  const [isPwaModalOpen, setIsPwaModalOpen] = useState<boolean>(false);
 
   // 2. Persistent State
   const [selectedDayId, setSelectedDayId] = useState<string>(getInitialDayId());
@@ -258,19 +260,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
       });
   };
 
-  // 9. Share App Handler (General Diffusion)
-  const handleShareApp = () => {
-    const baseUrl = window.location.origin + window.location.pathname;
-    navigator.clipboard.writeText(baseUrl)
-      .then(() => {
-        setToastMessage('🔗 ¡Enlace de la app copiado! ¡Compártelo con tus amigos!');
-        setTimeout(() => setToastMessage(null), 3000);
-      })
-      .catch(() => {
-        setToastMessage('No se pudo copiar el enlace de la app');
-        setTimeout(() => setToastMessage(null), 2500);
-      });
-  };
+
 
   // 10. Clear Favorites Handler
   const handleClearFavorites = () => {
@@ -764,28 +754,28 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 <Map size={20} color="#ffd600" />
               </button>
 
-              {/* Créditos Icon */}
+              {/* Instalar App Icon */}
               <button
-                onClick={() => setActiveTab('credits')}
-                aria-label="Créditos"
-                title="Créditos"
+                onClick={() => setIsPwaModalOpen(true)}
+                aria-label="Instalar App"
+                title="Instalar App"
                 style={{
                   width: '48px',
                   height: '48px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  border: '2px solid rgba(255, 255, 255, 0.35)',
+                  background: 'rgba(0, 230, 118, 0.15)',
+                  border: '2px solid rgba(0, 230, 118, 0.8)',
                   color: '#ffffff',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 0 8px rgba(255, 255, 255, 0.15)',
+                  boxShadow: '0 0 12px rgba(0, 230, 118, 0.4)',
                   transition: 'transform 0.1s, background-color 0.2s',
                 }}
                 className="btn-interactive"
               >
-                <Info size={20} color="#ffffff" />
+                <Download size={20} color="#00e676" />
               </button>
             </div>
           </div>
@@ -816,33 +806,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
             ← Cambiar de Festival
           </button>
 
-          {/* Share App Button */}
-          <button
-            onClick={handleShareApp}
-            style={{
-              marginTop: '12px',
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              color: '#ffffff',
-              borderRadius: '12px',
-              padding: '12px 24px',
-              fontSize: '0.92rem',
-              fontWeight: '700',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              transition: 'background 0.2s, transform 0.1s',
-              maxWidth: '320px',
-              width: '100%',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-            }}
-            className="btn-interactive"
-          >
-            <Share2 size={16} color="#ff2a85" />
-            Compartir App con amigos
-          </button>
+
 
           {/* Visitor Counter Badge */}
           {visitCount !== null && (
@@ -954,162 +918,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
         </div>
       )}
 
-      {/* VIEW 3: CREDITS VIEWER */}
-      {activeTab === 'credits' && (
-        <div className="app-container animate-fade-in" style={{ background: 'var(--bg-primary)' }}>
-          <header
-            style={{
-              position: 'sticky',
-              top: 0,
-              zIndex: 50,
-              padding: '12px 16px',
-              background: 'rgba(13, 15, 20, 0.75)',
-              backdropFilter: 'blur(16px)',
-              WebkitBackdropFilter: 'blur(16px)',
-              borderBottom: '1px solid var(--border-color)',
-              borderTop: 'var(--safe-top) solid transparent',
-              width: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <button
-              onClick={() => setActiveTab('home')}
-              aria-label="Volver al inicio"
-              style={{
-                background: 'rgba(255, 255, 255, 0.04)',
-                border: '1px solid var(--border-color)',
-                color: 'var(--text-primary)',
-                padding: '10px',
-                borderRadius: '12px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'background 0.2s',
-              }}
-              className="btn-interactive"
-            >
-              <ArrowLeft size={18} />
-            </button>
 
-            <div style={{ textAlign: 'center' }}>
-              <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.25rem', lineHeight: 1.1 }}>CRÉDITOS</h1>
-              <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800, textTransform: 'uppercase' }}>{edicionConfig.festivalName}</span>
-            </div>
-
-            <div style={{ width: '38px' }} />
-          </header>
-
-          <main
-            style={{
-              flex: 1,
-              overflowY: 'auto',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              padding: '24px',
-              background: 'var(--bg-primary)',
-              gap: '24px',
-            }}
-          >
-            <div
-              className="glass-gradient-border-portada neon-glow"
-              style={{
-                maxWidth: '320px',
-                width: '100%',
-                overflow: 'hidden',
-                position: 'relative',
-              }}
-            >
-              <img
-                src="./images/CREDITOS.jpg"
-                alt={`Créditos de ${edicionConfig.festivalName}`}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  display: 'block',
-                }}
-              />
-
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: '90px',
-                  background: 'linear-gradient(to top, rgba(10, 11, 16, 0.95) 0%, rgba(10, 11, 16, 0.7) 40%, rgba(10, 11, 16, 0) 100%)',
-                  zIndex: 5,
-                }}
-              />
-
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '16px',
-                  left: '12px',
-                  right: '12px',
-                  display: 'flex',
-                  gap: '8px',
-                  zIndex: 10,
-                }}
-              >
-                <a
-                  href="https://www.instagram.com/joseantoniofd.photo/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    flex: 1,
-                    background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
-                    color: '#ffffff',
-                    textDecoration: 'none',
-                    borderRadius: '12px',
-                    padding: '10px',
-                    fontSize: '0.88rem',
-                    fontWeight: '800',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    boxShadow: '0 4px 10px rgba(220, 39, 67, 0.3)',
-                  }}
-                  className="btn-interactive"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-                  Instagram
-                </a>
-
-                <a
-                  href="https://www.facebook.com/joseantoniofernandezphoto"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    flex: 1,
-                    background: '#1877f2',
-                    color: '#ffffff',
-                    textDecoration: 'none',
-                    borderRadius: '12px',
-                    padding: '10px',
-                    fontSize: '0.88rem',
-                    fontWeight: '800',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '6px',
-                    boxShadow: '0 4px 12px rgba(24, 119, 242, 0.25)',
-                  }}
-                  className="btn-interactive"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}><path d="M18 2h-3a5 5 0 0 0 -5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                  Facebook
-                </a>
-              </div>
-            </div>
-          </main>
-        </div>
-      )}
 
       {/* VIEW 5: NEWS VIEWER */}
       {activeTab === 'news' && (
@@ -1133,6 +942,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
             hasActiveFilters={hasActiveFilters}
             onGoHome={() => setActiveTab('home')}
             onShare={handleShareFavorites}
+            onOpenPwaGuide={() => setIsPwaModalOpen(true)}
             festivalName={edicionConfig.visibleName}
             location={edicionConfig.location}
             year={edicionConfig.year}
@@ -1356,6 +1166,14 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
           </div>
         </div>
       )}
+
+      {/* PWA / Share / Credits Modal */}
+      <PwaInstallModal
+        isOpen={isPwaModalOpen}
+        onClose={() => setIsPwaModalOpen(false)}
+        festivalName={edicionConfig.visibleName}
+        year={edicionConfig.year}
+      />
     </div>
   );
 };

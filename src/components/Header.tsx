@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, LayoutGrid, SlidersHorizontal, Home, Share2 } from 'lucide-react';
+import { Clock, LayoutGrid, SlidersHorizontal, Home, Share2, HelpCircle } from 'lucide-react';
 import type { FestivalDay } from '../data/festivalData';
 
 interface HeaderProps {
@@ -12,6 +12,7 @@ interface HeaderProps {
   hasActiveFilters: boolean;
   onGoHome: () => void;
   onShare: () => void;
+  onOpenPwaGuide: () => void;
   festivalName: string;
   location: string;
   year: number;
@@ -27,6 +28,7 @@ export const Header: React.FC<HeaderProps> = ({
   hasActiveFilters,
   onGoHome,
   onShare,
+  onOpenPwaGuide,
   festivalName,
   location,
   year,
@@ -82,6 +84,30 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Right: Share + View Toggle + Filters Button Container */}
           <div style={{ display: 'flex', gap: '8px' }}>
+            {/* Help/PWA Install Button */}
+            <button
+              onClick={onOpenPwaGuide}
+              aria-label="Guía de instalación y ayuda"
+              title="Guía de instalación y ayuda"
+              style={{
+                background: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid var(--border-color)',
+                color: 'var(--text-primary)',
+                padding: '10px',
+                borderRadius: '12px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s, transform 0.1s',
+              }}
+              className="btn-interactive"
+              onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.95)'; }}
+              onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+            >
+              <HelpCircle size={18} />
+            </button>
+
             {/* Share Button */}
             <button
               onClick={onShare}
