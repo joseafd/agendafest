@@ -122,6 +122,7 @@ edicionData.forEach(edRow => {
     mapa: edRow['Mapa'] ? String(edRow['Mapa']).trim() : 'MAPA.jpg',
     dayStartHour: excelFractionalDayToHour(edRow['Hora inicio parrilla']),
     dayEndHour: excelFractionalDayToHour(edRow['Hora fin parrilla']),
+    aftermovieUrl: edRow['Aftermovie'] ? String(edRow['Aftermovie']).trim() : '',
   };
 
   const startHour = edicionConfig.dayStartHour;
@@ -338,6 +339,7 @@ export interface EdicionConfig {
   mapa: string;
   dayStartHour: number;
   dayEndHour: number;
+  aftermovieUrl: string;
 }
 
 export interface StageConfig {

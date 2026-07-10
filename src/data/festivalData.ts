@@ -16,6 +16,7 @@ export interface EdicionConfig {
   mapa: string;
   dayStartHour: number;
   dayEndHour: number;
+  aftermovieUrl: string;
 }
 
 export interface StageConfig {
@@ -119,7 +120,8 @@ const rawAgendaFestData: any = {
       "cartel": "cartelresu2026.jpg",
       "mapa": "maparesu2026.jpg",
       "dayStartHour": 14,
-      "dayEndHour": 4
+      "dayEndHour": 4,
+      "aftermovieUrl": "https://www.youtube.com/watch?v=Fd3gLltg0dY"
     },
     "stages": [
       {
@@ -1556,7 +1558,8 @@ const rawAgendaFestData: any = {
       "cartel": "cartelleyendas2026.jpg",
       "mapa": "mapaleyendas2026.jpg",
       "dayStartHour": 14,
-      "dayEndHour": 4
+      "dayEndHour": 4,
+      "aftermovieUrl": "https://www.youtube.com/watch?v=Nj-5T2YueiA"
     },
     "stages": [
       {

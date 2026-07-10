@@ -10,6 +10,13 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 import { Calendar, Map, ArrowLeft, Info, Share2, Newspaper } from 'lucide-react';
 import type { Act, FestivalEdition } from '../data/festivalData';
 
+const getYoutubeId = (url: string) => {
+  if (!url) return '';
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : '';
+};
+
 interface FestivalDashboardProps {
   editionId: string;
   edition: FestivalEdition;
@@ -458,6 +465,66 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
             position: 'relative',
           }}
         >
+          {/* Ambient Video Background */}
+          {edicionConfig.aftermovieUrl && (
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden',
+                zIndex: 0,
+                pointerEvents: 'none',
+              }}
+            >
+              <iframe
+                title="Aftermovie Background"
+                src={`https://www.youtube.com/embed/${getYoutubeId(edicionConfig.aftermovieUrl)}?autoplay=1&mute=1&loop=1&playlist=${getYoutubeId(edicionConfig.aftermovieUrl)}&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1`}
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                style={{
+                  width: '100vw',
+                  height: '56.25vw',
+                  minHeight: '100vh',
+                  minWidth: '177.77vh',
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  opacity: 0.25,
+                  filter: 'blur(8px) saturate(1.5)',
+                }}
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'radial-gradient(circle, rgba(13,15,20,0.5) 0%, rgba(13,15,20,0.95) 100%)',
+                }}
+              />
+            </div>
+          )}
+
+          {/* Content Wrapper */}
+          <div
+            style={{
+              position: 'relative',
+              zIndex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              height: 'auto',
+            }}
+          >
           {/* Back to Selector Menu Button */}
           <button
             onClick={onBackToSelector}
@@ -569,17 +636,37 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               width: '100%',
               position: 'relative',
               overflow: 'hidden',
+              aspectRatio: edicionConfig.aftermovieUrl ? '16/9' : 'auto',
+              background: '#0d0f14',
             }}
           >
-            <img
-              src={`./images/${edicionConfig.cartel}`}
-              alt={`Cartel ${edicionConfig.festivalName}`}
-              style={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-              }}
-            />
+            {edicionConfig.aftermovieUrl ? (
+              <div style={{ width: '100%', height: '100%', pointerEvents: 'none' }}>
+                <iframe
+                  title="Aftermovie Card"
+                  src={`https://www.youtube.com/embed/${getYoutubeId(edicionConfig.aftermovieUrl)}?autoplay=1&mute=1&loop=1&playlist=${getYoutubeId(edicionConfig.aftermovieUrl)}&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1`}
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                  }}
+                />
+              </div>
+            ) : (
+              <img
+                src={`./images/${edicionConfig.cartel}`}
+                alt={`Cartel ${edicionConfig.festivalName}`}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                }}
+              />
+            )}
 
             <div
               style={{
@@ -587,7 +674,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 bottom: 0,
                 left: 0,
                 right: 0,
-                height: '110px',
+                height: edicionConfig.aftermovieUrl ? '70px' : '110px',
                 background: 'linear-gradient(to top, rgba(10, 11, 16, 0.95) 0%, rgba(10, 11, 16, 0.7) 40%, rgba(10, 11, 16, 0) 100%)',
                 zIndex: 5,
               }}
@@ -789,6 +876,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               <span>Visitas: {visitCount.toLocaleString()}</span>
             </div>
           )}
+          </div>
         </div>
       )}
 
