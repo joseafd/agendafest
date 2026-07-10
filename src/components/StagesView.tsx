@@ -1,20 +1,19 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useMemo } from 'react';
 import { Zap } from 'lucide-react';
-import type { Act } from '../data/festivalData';
+import type { Act, StageConfig } from '../data/festivalData';
 
-const getStageGlassStyle = (stage: string, isPlayingNow: boolean, isFavorite: boolean) => {
-  const lower = stage.toLowerCase();
-  let rgb = "211, 19, 60"; // Main (Red)
+const getStageGlassStyle = (color: string, isPlayingNow: boolean, isFavorite: boolean) => {
+  let hex = color.replace('#', '');
+  if (hex.length === 3) {
+    hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+  }
+  const r = parseInt(hex.substring(0, 2), 16) || 255;
+  const g = parseInt(hex.substring(2, 4), 16) || 255;
+  const b = parseInt(hex.substring(4, 6), 16) || 255;
+  const rgb = `${r}, ${g}, ${b}`;
+
   let borderAlpha = isPlayingNow ? "0.8" : (isFavorite ? "0.55" : "0.3");
   let bgAlpha = isPlayingNow ? "0.2" : "0.1";
-  
-  if (lower === 'ritual') {
-    rgb = "43, 139, 227"; // Blue
-  } else if (lower === 'chaos') {
-    rgb = "156, 31, 184"; // Purple
-  } else if (lower === 'desert') {
-    rgb = "230, 126, 34"; // Orange
-  }
   
   return {
     background: `rgba(${rgb}, ${bgAlpha})`,
@@ -36,6 +35,9 @@ interface StagesViewProps {
   currentTimeMinutes: number;
   shouldShowLive: boolean;
   conflictActIds: Set<string>;
+  dayStartHour: number;
+  dayEndHour: number;
+  editionStages: StageConfig[];
 }
 
 export const StagesView: React.FC<StagesViewProps> = ({
@@ -47,49 +49,57 @@ export const StagesView: React.FC<StagesViewProps> = ({
   currentTimeMinutes,
   shouldShowLive,
   conflictActIds,
+  dayStartHour,
+  dayEndHour,
+  editionStages,
 }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const MINUTE_WIDTH = 3.6; // Aumentado para dar más espacio horizontal (1 min = 3.6px, 40 min = 144px)
-  const HOUR_WIDTH = 60 * MINUTE_WIDTH; // 1 hora = 216px
-  const TIMELINE_START_HOUR = 14; // Start at 14:00
-  const TIMELINE_END_HOUR = 28; // End at 04:00 next morning (28:00)
-  const TOTAL_HOURS = TIMELINE_END_HOUR - TIMELINE_START_HOUR; // 14 hours
-  const TIMELINE_WIDTH = TOTAL_HOURS * HOUR_WIDTH; // 3024px
+  const MINUTE_WIDTH = 3.6; // 1 min = 3.6px
+  const HOUR_WIDTH = 60 * MINUTE_WIDTH; // 1 hour = 216px
+  
+  const TIMELINE_START_HOUR = dayStartHour;
+  const TIMELINE_END_HOUR = dayEndHour < dayStartHour ? dayEndHour + 24 : dayEndHour;
+  const TOTAL_HOURS = TIMELINE_END_HOUR - TIMELINE_START_HOUR;
+  const TIMELINE_WIDTH = TOTAL_HOURS * HOUR_WIDTH;
 
   // Auto-scroll to the first act of the day when day changes
   useEffect(() => {
     if (scrollContainerRef.current && acts.length > 0) {
-      // Find the earliest startMinutes among acts
       const earliestStart = Math.min(...acts.map(a => a.startMinutes));
-      // Scroll to that position (minus a bit of margin so it's not glued to the left edge)
       const scrollPos = Math.max(0, earliestStart * MINUTE_WIDTH - 60);
       scrollContainerRef.current.scrollLeft = scrollPos;
     }
   }, [acts]);
 
   // Generate half-hour marks for the header and vertical grid lines
-  const hourMarks = [];
-  const HALF_HOUR_WIDTH = 30 * MINUTE_WIDTH; // 30 minutes = 75px
-  const TOTAL_HALF_HOURS = TOTAL_HOURS * 2; // 28 half-hour blocks
-  for (let i = 0; i <= TOTAL_HALF_HOURS; i++) {
-    const totalMinutes = i * 30;
-    const adjustedHour = TIMELINE_START_HOUR + Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
-    const displayHour = adjustedHour >= 24 ? adjustedHour - 24 : adjustedHour;
-    const timeStr = `${displayHour.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-    hourMarks.push({
-      timeStr,
-      offset: i * HALF_HOUR_WIDTH,
-      isHalfHour: minutes === 30,
-    });
-  }
+  const hourMarks = useMemo(() => {
+    const marks = [];
+    const HALF_HOUR_WIDTH = 30 * MINUTE_WIDTH;
+    const TOTAL_HALF_HOURS = TOTAL_HOURS * 2;
+    for (let i = 0; i <= TOTAL_HALF_HOURS; i++) {
+      const totalMinutes = i * 30;
+      const adjustedHour = TIMELINE_START_HOUR + Math.floor(totalMinutes / 60);
+      const minutes = totalMinutes % 60;
+      const displayHour = adjustedHour >= 24 ? adjustedHour - 24 : adjustedHour;
+      const timeStr = `${displayHour.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+      marks.push({
+        timeStr,
+        offset: i * HALF_HOUR_WIDTH,
+        isHalfHour: minutes === 30,
+      });
+    }
+    return marks;
+  }, [TOTAL_HOURS, TIMELINE_START_HOUR]);
 
   // Filter acts belonging to visible stages
-  const actsByStage: Record<string, Act[]> = {};
-  stages.forEach((stage) => {
-    actsByStage[stage] = acts.filter((act) => act.stage === stage);
-  });
+  const actsByStage = useMemo(() => {
+    const actsMap: Record<string, Act[]> = {};
+    stages.forEach((stage) => {
+      actsMap[stage] = acts.filter((act) => act.stage === stage);
+    });
+    return actsMap;
+  }, [stages, acts]);
 
   return (
     <div
@@ -98,7 +108,7 @@ export const StagesView: React.FC<StagesViewProps> = ({
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden',
-        background: 'rgba(27, 29, 36, 0.7)', /* Gris al 70% */
+        background: 'rgba(27, 29, 36, 0.7)',
       }}
       className="animate-fade-in"
     >
@@ -197,14 +207,14 @@ export const StagesView: React.FC<StagesViewProps> = ({
                     bottom: 0,
                     width: '1px',
                     borderLeft: mark.isHalfHour
-                      ? '1px dashed rgba(255, 255, 255, 0.12)' // Línea discontinua para las medias horas
-                      : '1px solid rgba(255, 255, 255, 0.22)', // Línea sólida para las horas enteras
+                      ? '1px dashed rgba(255, 255, 255, 0.12)'
+                      : '1px solid rgba(255, 255, 255, 0.22)',
                   }}
                 />
               ))}
 
               {/* Red vertical time line representing current time */}
-              {shouldShowLive && currentTimeMinutes >= 0 && currentTimeMinutes < (14 * 60) && (
+              {shouldShowLive && currentTimeMinutes >= 0 && currentTimeMinutes < (TOTAL_HOURS * 60) && (
                 <div
                   id="timeline-now-marker"
                   style={{
@@ -222,9 +232,10 @@ export const StagesView: React.FC<StagesViewProps> = ({
             </div>
 
             {/* Stage lanes */}
-            {stages.map((stage) => {
+            {stages.map((stage, idx) => {
               const stageActs = actsByStage[stage] || [];
-              const stageColor = `var(--color-${stage.toLowerCase()})`;
+              const stageObj = editionStages.find(s => s.name === stage);
+              const stageColor = stageObj ? stageObj.color : '#ffffff';
 
               return (
                 <div
@@ -258,18 +269,19 @@ export const StagesView: React.FC<StagesViewProps> = ({
                   >
                     <span
                       style={{
-                        fontSize: '0.75rem',
+                        fontSize: '0.72rem',
                         fontWeight: '800',
                         color: stageColor,
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
                         textAlign: 'center',
+                        wordBreak: 'break-word',
                       }}
                     >
                       {stage}
                     </span>
                     <span style={{ fontSize: '0.55rem', color: 'var(--text-muted)', marginTop: '2px' }}>
-                      {stage === 'Main' ? 'Escenario 1' : stage === 'Ritual' ? 'Escenario 2' : stage === 'Chaos' ? 'Escenario 3' : 'Escenario 4'}
+                      {`Escenario ${stageObj ? stageObj.order : idx + 1}`}
                     </span>
                   </div>
 
@@ -290,7 +302,7 @@ export const StagesView: React.FC<StagesViewProps> = ({
                       const minToStart = act.startMinutes - currentTimeMinutes;
                       const showCountdown = isFavorite && shouldShowLive && minToStart > 0 && minToStart <= 120;
 
-                      const glassStyle = getStageGlassStyle(act.stage, isPlayingNow, isFavorite);
+                      const glassStyle = getStageGlassStyle(stageColor, isPlayingNow, isFavorite);
 
                       return (
                         <div
@@ -298,11 +310,11 @@ export const StagesView: React.FC<StagesViewProps> = ({
                           onClick={() => onSelectAct(act)}
                           style={{
                             position: 'absolute',
-                            left: `${leftPos + 4}px`, // small offset spacing
-                            width: `${blockWidth - 8}px`, // small offset spacing
+                            left: `${leftPos + 4}px`,
+                            width: `${blockWidth - 8}px`,
                             top: '12px',
                             height: '70px',
-                            color: '#ffffff', /* High-contrast white text */
+                            color: '#ffffff',
                             borderRadius: '12px',
                             padding: '8px 10px',
                             display: 'flex',
@@ -327,7 +339,7 @@ export const StagesView: React.FC<StagesViewProps> = ({
                                 display: '-webkit-box',
                                 WebkitLineClamp: 2,
                                 WebkitBoxOrient: 'vertical',
-                                whiteSpace: 'normal', /* Permitir salto de línea */
+                                whiteSpace: 'normal',
                                 overflow: 'hidden',
                                 lineHeight: 1.1,
                                 flex: 1,

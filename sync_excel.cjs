@@ -31,6 +31,11 @@ function excelTimeToHHMM(fractionalDay) {
   return `${hh}:${mm}`;
 }
 
+function excelFractionalDayToHour(fractionalDay) {
+  if (typeof fractionalDay !== 'number') return 14; // default
+  return Math.round(fractionalDay * 24);
+}
+
 function formatDate(dateStr) {
   const [year, month, day] = dateStr.split('-');
   return `${day}/${month}/${year}`;
@@ -46,11 +51,9 @@ function getWeekdayLabel(dateSerial) {
 function extractTitleAndDescription(desc) {
   if (!desc) return { title: '', description: '' };
   
-  // Split on double space or more to separate catchphrase from description body
   const parts = desc.split(/  +/);
   if (parts.length > 1) {
     const firstPart = parts[0].trim();
-    // If the first sentence is short (under 200 chars) and contains exclamation/emoji, treat as title
     if (firstPart.length < 200 && (firstPart.startsWith('¡') || firstPart.toUpperCase() === firstPart || firstPart.includes('!') || firstPart.includes('🔥') || firstPart.includes('💥'))) {
       const title = firstPart.replace(/\*\*/g, '').trim();
       const rest = parts.slice(1).join('\n\n').trim();
@@ -66,31 +69,17 @@ const edicionSheet = workbook.Sheets['Edición'];
 const artistasSheet = workbook.Sheets['Artistas'];
 const actuacionesSheet = workbook.Sheets['Actuaciones'];
 const firmasSheet = workbook.Sheets['Firmas'];
+const escenariosSheet = workbook.Sheets['Escenarios'];
 const noticiasSheet = workbook.Sheets['Noticias'];
 
 const edicionData = XLSX.utils.sheet_to_json(edicionSheet);
 const artistasData = XLSX.utils.sheet_to_json(artistasSheet);
 const actuacionesData = XLSX.utils.sheet_to_json(actuacionesSheet);
 const firmasData = XLSX.utils.sheet_to_json(firmasSheet);
+const escenariosData = escenariosSheet ? XLSX.utils.sheet_to_json(escenariosSheet) : [];
 const noticiasDataRaw = noticiasSheet ? XLSX.utils.sheet_to_json(noticiasSheet) : [];
 
-// Parse Edición Row
-const edicionRow = edicionData[0] || {};
-const edicionConfig = {
-  festival: edicionRow['Nombre Festival'] ? String(edicionRow['Nombre Festival']).trim() : 'Resurrection Fest',
-  visibleName: edicionRow['Nombre visible'] ? String(edicionRow['Nombre visible']).trim() : 'Resurrection Fest E.G.',
-  year: edicionRow['Año'] ? Number(edicionRow['Año']) : 2026,
-  startDate: edicionRow['Fecha inicio'] ? excelDateToYYYYMMDD(edicionRow['Fecha inicio']) : '2026-07-01',
-  endDate: edicionRow['Fecha fin'] ? excelDateToYYYYMMDD(edicionRow['Fecha fin']) : '2026-07-04',
-  location: edicionRow['Localidad'] ? String(edicionRow['Localidad']).trim() : 'Viveiro',
-  timezone: edicionRow['Zona horaria'] ? String(edicionRow['Zona horaria']).trim() : 'Europe/Madrid',
-  logo: edicionRow['Logo'] ? String(edicionRow['Logo']).trim() : 'logo.svg',
-  cartel: edicionRow['Cartel'] ? String(edicionRow['Cartel']).trim() : 'PORTADA_RR.jpg',
-  mapa: edicionRow['Mapa'] ? String(edicionRow['Mapa']).trim() : 'MAPA.jpg'
-};
-
-// 3. Build maps
-// Map of Artista ID -> Bio Details
+// 3. Build Global Artists Map
 const artistsMap = {};
 artistasData.forEach(art => {
   const id = String(art['Artista ID']).toLowerCase().trim();
@@ -112,159 +101,232 @@ artistasData.forEach(art => {
   };
 });
 
-// Map of Artista ID -> Signing Session Info
-const signaturesMap = {};
-firmasData.forEach(f => {
-  const id = String(f['Artista ID']).toLowerCase().trim();
-  signaturesMap[id] = f;
-});
+// 4. Process each Edition
+const agendaFestData = {};
 
-// Process News Items (Sorted by date descending: newest first)
-noticiasDataRaw.sort((a, b) => (b.Fecha_noticia || 0) - (a.Fecha_noticia || 0));
+edicionData.forEach(edRow => {
+  const edicionId = String(edRow['Edicion ID'] || edRow['Festival ID'] || 'default').trim();
+  
+  const edicionConfig = {
+    festivalId: String(edRow['Festival ID'] || 'default').trim(),
+    edicionId: edicionId,
+    festivalName: String(edRow['Nombre Festival'] || 'Festival').trim(),
+    visibleName: String(edRow['Nombre visible'] || edRow['Nombre Festival'] || 'Festival').trim(),
+    year: edRow['Año'] ? Number(edRow['Año']) : new Date().getFullYear(),
+    startDate: edRow['Fecha inicio'] ? excelDateToYYYYMMDD(edRow['Fecha inicio']) : '2026-07-01',
+    endDate: edRow['Fecha fin'] ? excelDateToYYYYMMDD(edRow['Fecha fin']) : '2026-07-04',
+    location: edRow['Localidad'] ? String(edRow['Localidad']).trim() : '',
+    timezone: edRow['Zona horaria'] ? String(edRow['Zona horaria']).trim() : 'Europe/Madrid',
+    logo: edRow['Logo'] ? String(edRow['Logo']).trim() : 'logo.svg',
+    cartel: edRow['Cartel'] ? String(edRow['Cartel']).trim() : 'PORTADA.jpg',
+    mapa: edRow['Mapa'] ? String(edRow['Mapa']).trim() : 'MAPA.jpg',
+    dayStartHour: excelFractionalDayToHour(edRow['Hora inicio parrilla']),
+    dayEndHour: excelFractionalDayToHour(edRow['Hora fin parrilla']),
+  };
 
-const noticias = noticiasDataRaw.map(n => {
-  const dateStr = n['Fecha_noticia'] ? excelDateToYYYYMMDD(n['Fecha_noticia']) : '';
-  const fecha = dateStr ? formatDate(dateStr) : '';
-  return {
-    fecha,
-    imagen: n['Imagen'] ? String(n['Imagen']).trim() : '',
-    entradilla: n['Entradilla'] ? String(n['Entradilla']).trim() : '',
-    noticia: n['Noticia'] ? String(n['Noticia']).trim() : ''
+  const startHour = edicionConfig.dayStartHour;
+
+  // Helper to convert time "HH:MM" to minutes relative to startHour
+  function timeToMinutesLocal(timeStr) {
+    const [hourStr, minStr] = timeStr.split(':');
+    let hour = parseInt(hourStr, 10);
+    const minutes = parseInt(minStr, 10);
+    if (hour < startHour) {
+      hour += 24;
+    }
+    return (hour * 60 + minutes) - (startHour * 60);
+  }
+
+  // Filter stages for this edition
+  const edEscenarios = escenariosData.filter(e => {
+    const edId = String(e['Edicion ID'] || '').trim();
+    return edId === '' || edId === edicionId;
+  });
+
+  // Sort stages by order
+  edEscenarios.sort((a, b) => Number(a['Orden'] || 0) - Number(b['Orden'] || 0));
+  
+  const stages = edEscenarios.map(e => ({
+    id: String(e['ID']).trim(),
+    name: String(e['Nombre']).trim(),
+    order: Number(e['Orden'] || 0),
+    color: String(e['Color'] || '#ffffff').trim()
+  }));
+
+  const stageNames = stages.map(s => s.name);
+
+  // Filter acts for this edition
+  const edActuaciones = actuacionesData.filter(act => {
+    const edId = String(act['Edicion ID'] || '').trim();
+    return edId === '' || edId === edicionId;
+  });
+
+  // Filter signatures for this edition
+  const edFirmas = firmasData.filter(f => {
+    const edId = String(f['Edicion ID'] || '').trim();
+    return edId === '' || edId === edicionId;
+  });
+
+  // Filter news for this edition
+  const edNoticiasRaw = noticiasDataRaw.filter(n => {
+    const edId = String(n['Edicion ID'] || '').trim();
+    return edId === '' || edId === edicionId;
+  });
+
+  // Map signatures by Artist ID
+  const signaturesMap = {};
+  edFirmas.forEach(f => {
+    const id = String(f['Artista ID']).toLowerCase().trim();
+    signaturesMap[id] = f;
+  });
+
+  // Sort news descending
+  edNoticiasRaw.sort((a, b) => (b.Fecha_noticia || 0) - (a.Fecha_noticia || 0));
+  const noticias = edNoticiasRaw.map(n => {
+    const dateStr = n['Fecha_noticia'] ? excelDateToYYYYMMDD(n['Fecha_noticia']) : '';
+    const fecha = dateStr ? formatDate(dateStr) : '';
+    return {
+      fecha,
+      imagen: n['Imagen'] ? String(n['Imagen']).trim() : '',
+      entradilla: n['Entradilla'] ? String(n['Entradilla']).trim() : '',
+      noticia: n['Noticia'] ? String(n['Noticia']).trim() : ''
+    };
+  });
+
+  // Build days list
+  const daysConfig = [];
+  const startDay = new Date(edicionConfig.startDate);
+  const endDay = new Date(edicionConfig.endDate);
+  const weekdayEsList = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+  
+  let currentDay = new Date(startDay);
+  let dayNum = 1;
+
+  while (currentDay <= endDay) {
+    const y = currentDay.getFullYear();
+    const m = String(currentDay.getMonth() + 1).padStart(2, '0');
+    const d = String(currentDay.getDate()).padStart(2, '0');
+    const dateId = `${y}-${m}-${d}`;
+    
+    const weekdayEs = weekdayEsList[currentDay.getDay()];
+    const dayLabel = `${weekdayEs} ${currentDay.getDate()}`;
+    
+    daysConfig.push({
+      id: dateId,
+      dayNumber: dayNum,
+      dayLabel,
+      weekdayEs
+    });
+    
+    currentDay.setDate(currentDay.getDate() + 1);
+    dayNum++;
+  }
+
+  const actsByDay = {};
+  daysConfig.forEach(day => {
+    actsByDay[day.id] = [];
+  });
+
+  edActuaciones.forEach(act => {
+    const artistId = String(act['Artista ID']).toLowerCase().trim();
+    const dateStr = excelDateToYYYYMMDD(act['Fecha']);
+    
+    if (!actsByDay[dateStr]) return;
+    
+    const stage = String(act['Escenario']).trim();
+    const start = excelTimeToHHMM(act['Inicio']);
+    const end = excelTimeToHHMM(act['Fin']);
+    
+    const artistInfo = artistsMap[artistId];
+    if (!artistInfo) {
+      console.warn(`Warning: No bio found for Artista ID "${artistId}"`);
+      return;
+    }
+    
+    // Look up signing session
+    const signature = signaturesMap[artistId];
+    let signingSession = undefined;
+    if (signature) {
+      const weekdayStr = getWeekdayLabel(signature.Fecha);
+      const startSig = excelTimeToHHMM(signature.Inicio);
+      const endSig = excelTimeToHHMM(signature.Fin);
+      signingSession = `SESIONES DE FIRMAS - ${weekdayStr} - ${startSig} A ${endSig}`;
+    }
+    
+    const bio = {
+      name: artistInfo.name,
+      title: artistInfo.title,
+      description: artistInfo.description,
+      country: artistInfo.country || undefined,
+      genre: artistInfo.genre || undefined,
+      youtubeUrl: artistInfo.youtubeUrl || undefined,
+      signingSession: signingSession || undefined
+    };
+    
+    actsByDay[dateStr].push({
+      band: artistInfo.name,
+      stage,
+      start,
+      end,
+      bio
+    });
+  });
+
+  // Sort acts and calculate doors per day dynamically (30m before first act)
+  const days = daysConfig.map(day => {
+    const dayActs = actsByDay[day.id];
+    dayActs.sort((a, b) => {
+      return timeToMinutesLocal(a.start) - timeToMinutesLocal(b.start);
+    });
+
+    let doors = "15:00"; // fallback
+    if (dayActs.length > 0) {
+      const firstActStart = dayActs[0].start;
+      const [h, m] = firstActStart.split(':').map(Number);
+      let doorsH = h;
+      let doorsM = m - 30;
+      if (doorsM < 0) {
+        doorsH -= 1;
+        doorsM += 60;
+      }
+      doors = `${String(doorsH).padStart(2, '0')}:${String(doorsM).padStart(2, '0')}`;
+    }
+
+    return {
+      id: day.id,
+      dayNumber: day.dayNumber,
+      dayLabel: day.dayLabel,
+      weekdayEs: day.weekdayEs,
+      doors: doors,
+      stages: stageNames,
+      acts: [] // will be enriched in the output TS file
+    };
+  });
+
+  // Save the structured data
+  agendaFestData[edicionId] = {
+    config: edicionConfig,
+    stages,
+    days: days.map(d => {
+      // Keep raw acts to be enriched in tsCode
+      const rawActs = actsByDay[d.id];
+      return {
+        ...d,
+        acts: rawActs
+      };
+    }),
+    noticias
   };
 });
-
-// 4. Group acts by day
-// Dynamically build daysConfig based on startDate and endDate
-const daysConfig = [];
-const startDay = new Date(edicionConfig.startDate);
-const endDay = new Date(edicionConfig.endDate);
-
-// Map week day numbers to Spanish text
-const weekdayEsList = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-
-let currentDay = new Date(startDay);
-let dayNum = 1;
-
-while (currentDay <= endDay) {
-  const y = currentDay.getFullYear();
-  const m = String(currentDay.getMonth() + 1).padStart(2, '0');
-  const d = String(currentDay.getDate()).padStart(2, '0');
-  const dateId = `${y}-${m}-${d}`;
-  
-  const weekdayEs = weekdayEsList[currentDay.getDay()];
-  const dayLabel = `${weekdayEs} ${currentDay.getDate()}`;
-  
-  // Set default doors opening times
-  let doors = "15:00";
-  if (dayNum === 3) doors = "14:30";
-  if (dayNum === 4) doors = "14:05";
-  
-  daysConfig.push({
-    id: dateId,
-    dayNumber: dayNum,
-    dayLabel,
-    weekdayEs,
-    doors
-  });
-  
-  currentDay.setDate(currentDay.getDate() + 1);
-  dayNum++;
-}
-
-const actsByDay = {};
-daysConfig.forEach(day => {
-  actsByDay[day.id] = [];
-});
-
-// Helper to convert time "HH:MM" to minutes relative to 14:00 (matching festivalData.ts timeToMinutes)
-function timeToMinutes(timeStr) {
-  const [hourStr, minStr] = timeStr.split(':');
-  let hour = parseInt(hourStr, 10);
-  const minutes = parseInt(minStr, 10);
-  if (hour >= 0 && hour <= 6) {
-    hour += 24;
-  }
-  return (hour * 60 + minutes) - (14 * 60);
-}
-
-actuacionesData.forEach(act => {
-  const artistId = String(act['Artista ID']).toLowerCase().trim();
-  const dateStr = excelDateToYYYYMMDD(act['Fecha']);
-  
-  if (!actsByDay[dateStr]) {
-    return; // Skip if date is outside our dynamic range
-  }
-  
-  const stage = String(act['Escenario']).replace(/\s*Stage$/i, '').trim();
-  const start = excelTimeToHHMM(act['Inicio']);
-  const end = excelTimeToHHMM(act['Fin']);
-  
-  const artistInfo = artistsMap[artistId];
-  if (!artistInfo) {
-    console.warn(`Warning: No bio found for Artista ID "${artistId}"`);
-    return;
-  }
-  
-  // Look up signing session
-  const signature = signaturesMap[artistId];
-  let signingSession = undefined;
-  if (signature) {
-    const weekdayStr = getWeekdayLabel(signature.Fecha);
-    const startSig = excelTimeToHHMM(signature.Inicio);
-    const endSig = excelTimeToHHMM(signature.Fin);
-    signingSession = `SESIONES DE FIRMAS - ${weekdayStr} - ${startSig} A ${endSig}`;
-  }
-  
-  const bio = {
-    name: artistInfo.name,
-    title: artistInfo.title,
-    description: artistInfo.description,
-    country: artistInfo.country || undefined,
-    genre: artistInfo.genre || undefined,
-    youtubeUrl: artistInfo.youtubeUrl || undefined,
-    signingSession: signingSession || undefined
-  };
-  
-  actsByDay[dateStr].push({
-    band: artistInfo.name,
-    stage,
-    start,
-    end,
-    bio
-  });
-});
-
-// Sort acts chronologically in each day
-Object.keys(actsByDay).forEach(dateStr => {
-  actsByDay[dateStr].sort((a, b) => {
-    return timeToMinutes(a.start) - timeToMinutes(b.start);
-  });
-});
-
-// Construct the final days structure
-const days = daysConfig.map(day => {
-  return {
-    id: day.id,
-    dayNumber: day.dayNumber,
-    dayLabel: day.dayLabel,
-    weekdayEs: day.weekdayEs,
-    doors: day.doors,
-    stages: ["Main", "Ritual", "Chaos", "Desert"],
-    acts: actsByDay[day.id]
-  };
-});
-
-const rawFestivalData = {
-  festival: edicionConfig.festival + " " + edicionConfig.year,
-  days
-};
 
 // 5. Generate festivalData.ts source code
 const tsCode = `// Generated automatically from AgendaFest.xlsx by sync_excel.cjs
 // Do not edit this file manually.
 
 export interface EdicionConfig {
-  festival: string;
+  festivalId: string;
+  edicionId: string;
+  festivalName: string;
   visibleName: string;
   year: number;
   startDate: string;
@@ -274,6 +336,15 @@ export interface EdicionConfig {
   logo: string;
   cartel: string;
   mapa: string;
+  dayStartHour: number;
+  dayEndHour: number;
+}
+
+export interface StageConfig {
+  id: string;
+  name: string;
+  order: number;
+  color: string;
 }
 
 export interface BandBio {
@@ -292,8 +363,8 @@ export interface Act {
   stage: string;
   start: string;
   end: string;
-  startMinutes: number; // relative to 14:00
-  endMinutes: number;   // relative to 14:00
+  startMinutes: number; // relative to dayStartHour
+  endMinutes: number;   // relative to dayStartHour
   duration: number;     // in minutes
   bio?: BandBio;
 }
@@ -320,25 +391,27 @@ export interface NoticiaItem {
   noticia: string;
 }
 
-export const edicionConfig: EdicionConfig = ${JSON.stringify(edicionConfig, null, 2)};
+export interface FestivalEdition {
+  config: EdicionConfig;
+  stages: StageConfig[];
+  days: FestivalDay[];
+  noticias: NoticiaItem[];
+}
 
-// Global start hour for the timeline (14:00)
-export const DAY_START_HOUR = 14;
-
-export function timeToMinutes(timeStr: string): number {
+export function timeToMinutes(timeStr: string, dayStartHour: number): number {
   const [hourStr, minStr] = timeStr.split(':');
   let hour = parseInt(hourStr, 10);
   const minutes = parseInt(minStr, 10);
 
-  if (hour >= 0 && hour <= 6) {
+  if (hour < dayStartHour) {
     hour += 24;
   }
 
-  return (hour * 60 + minutes) - (DAY_START_HOUR * 60);
+  return (hour * 60 + minutes) - (dayStartHour * 60);
 }
 
-export function minutesToTime(minutes: number): string {
-  const absoluteMinutes = minutes + (DAY_START_HOUR * 60);
+export function minutesToTime(minutes: number, dayStartHour: number): string {
+  const absoluteMinutes = minutes + (dayStartHour * 60);
   let hour = Math.floor(absoluteMinutes / 60);
   const min = absoluteMinutes % 60;
 
@@ -351,40 +424,47 @@ export function minutesToTime(minutes: number): string {
   return \`\${hourStr}:\${minStr}\`;
 }
 
-// Raw source JSON dataset
-const rawFestivalData = ${JSON.stringify(rawFestivalData, null, 2)};
+// Raw source JSON dataset containing all festivals/editions
+const rawAgendaFestData: any = ${JSON.stringify(agendaFestData, null, 2)};
 
 // Process and enrich raw data
-export const festivalData: FestivalData = {
-  festival: rawFestivalData.festival,
-  days: rawFestivalData.days.map((day) => {
-    return {
-      ...day,
-      acts: day.acts.map((act, index) => {
-        const startMin = timeToMinutes(act.start);
-        const endMin = timeToMinutes(act.end);
-        const duration = endMin - startMin;
-        const id = \`\${day.id}-\${act.stage}-\${act.band.toLowerCase().replace(/[^a-z0-9]/g, '')}-\${index}\`;
+export const agendaFestData: Record<string, FestivalEdition> = {};
 
-        return {
-          id,
-          band: act.band,
-          stage: act.stage,
-          start: act.start,
-          end: act.end,
-          startMinutes: startMin,
-          endMinutes: endMin,
-          duration,
-          bio: act.bio
-        };
-      })
-    };
-  })
-};
+Object.keys(rawAgendaFestData).forEach((edicionId) => {
+  const edition = rawAgendaFestData[edicionId];
+  const startHour = edition.config.dayStartHour;
 
-export const noticiasData: NoticiaItem[] = ${JSON.stringify(noticias, null, 2)};
+  agendaFestData[edicionId] = {
+    config: edition.config,
+    stages: edition.stages,
+    noticias: edition.noticias,
+    days: edition.days.map((day: any) => {
+      return {
+        ...day,
+        acts: day.acts.map((act: any, index: number) => {
+          const startMin = timeToMinutes(act.start, startHour);
+          const endMin = timeToMinutes(act.end, startHour);
+          const duration = endMin - startMin;
+          const id = \`\${day.id}-\${act.stage.replace(/[^a-z0-9]/gi, '')}-\${act.band.toLowerCase().replace(/[^a-z0-9]/g, '')}-\${index}\`;
+
+          return {
+            id,
+            band: act.band,
+            stage: act.stage,
+            start: act.start,
+            end: act.end,
+            startMinutes: startMin,
+            endMinutes: endMin,
+            duration,
+            bio: act.bio
+          };
+        })
+      };
+    })
+  };
+});
 `;
 
 const tsFilePath = path.join(__dirname, 'src', 'data', 'festivalData.ts');
 fs.writeFileSync(tsFilePath, tsCode, 'utf8');
-console.log(`festivalData.ts synchronized successfully from Excel!`);
+console.log(`festivalData.ts synchronized successfully for all editions from Excel!`);

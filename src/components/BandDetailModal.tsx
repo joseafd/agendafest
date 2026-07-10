@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { X, Zap, Clock, Calendar, MapPin, Globe, Music, PenTool } from 'lucide-react';
-import type { Act } from '../data/festivalData';
+import type { Act, FestivalDay, StageConfig } from '../data/festivalData';
 
-import { festivalData } from '../data/festivalData';
-
-export function getYoutubeEmbedUrl(url: string): string | null {
+function getYoutubeEmbedUrl(url: string): string | null {
   if (!url) return null;
   let videoId = '';
   const watchMatch = url.match(/[?&]v=([^&#]+)/);
@@ -32,7 +30,9 @@ interface BandDetailModalProps {
   onToggleFavorite: (id: string) => void;
   conflictActIds?: Set<string>;
   favorites?: string[];
-  onLocateStage?: (stage: string) => void; // New optional prop
+  onLocateStage?: (stage: string) => void;
+  days: FestivalDay[];
+  editionStages: StageConfig[];
 }
 
 export const BandDetailModal: React.FC<BandDetailModalProps> = ({
@@ -44,6 +44,8 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
   conflictActIds = new Set(),
   favorites = [],
   onLocateStage,
+  days,
+  editionStages,
 }) => {
   const [imgError, setImgError] = useState<boolean>(false);
 
@@ -57,7 +59,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
     if (!act || !isFavorite || !conflictActIds || !favorites) return [];
     
     const dayId = act.id.substring(0, 10);
-    const day = festivalData.days.find(d => d.id === dayId);
+    const day = days.find(d => d.id === dayId);
     if (!day) return [];
 
     return day.acts.filter(a => {
@@ -68,11 +70,12 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
       const endOverlap = Math.min(act.endMinutes, a.endMinutes);
       return startOverlap < endOverlap;
     });
-  }, [act, isFavorite, conflictActIds, favorites]);
+  }, [act, isFavorite, conflictActIds, favorites, days]);
 
   if (!isOpen || !act) return null;
 
-  const stageColor = `var(--color-${act.stage.toLowerCase()})`;
+  const stageObj = editionStages.find(s => s.name === act.stage);
+  const stageColor = stageObj ? stageObj.color : '#ffffff';
 
   // Convert "Iron Maiden" to "IM" for the fallback gradient placeholder
   const getInitials = (name: string): string => {
@@ -97,10 +100,14 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
 
   // Helper to format Spanish weekday name
   const getDayDescription = (id: string): string => {
-    if (id.startsWith('2026-07-01')) return 'Miércoles 1 de Julio';
-    if (id.startsWith('2026-07-02')) return 'Jueves 2 de Julio';
-    if (id.startsWith('2026-07-03')) return 'Viernes 3 de Julio';
-    if (id.startsWith('2026-07-04')) return 'Sábado 4 de Julio';
+    const datePart = id.substring(0, 10);
+    const day = days.find(d => d.id === datePart);
+    if (day) {
+      const [, month, date] = datePart.split('-').map(Number);
+      const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+      const monthName = months[month - 1];
+      return `${day.weekdayEs} ${date} de ${monthName}`;
+    }
     return '';
   };
 

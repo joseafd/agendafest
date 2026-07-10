@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import type { NoticiaItem } from '../data/festivalData';
-import { edicionConfig } from '../data/festivalData';
 import { ArrowLeft, Calendar, Newspaper, X } from 'lucide-react';
 
 interface NewsViewProps {
   noticias: NoticiaItem[];
   onBackToHome: () => void;
+  festivalName: string;
 }
 
-export function NewsView({ noticias, onBackToHome }: NewsViewProps) {
+export function NewsView({ noticias, onBackToHome, festivalName }: NewsViewProps) {
   const [selectedNews, setSelectedNews] = useState<NoticiaItem | null>(null);
 
   return (
@@ -54,7 +54,7 @@ export function NewsView({ noticias, onBackToHome }: NewsViewProps) {
         </button>
 
         <div style={{ textAlign: 'center' }}>
-          <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>NOTICIAS {edicionConfig.festival}</h1>
+          <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>NOTICIAS {festivalName}</h1>
           <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>ÚLTIMAS NOVEDADES</span>
         </div>
 

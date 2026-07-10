@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Zap, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff, ChevronDown, ChevronUp, Globe, Music } from 'lucide-react';
+import type { StageConfig } from '../data/festivalData';
 
 interface FilterDrawerProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface FilterDrawerProps {
   // Options
   allCountries: string[];
   allGenres: string[];
+  stagesConfig: StageConfig[];
   // Save callbacks
   onSave: (
     onlyFavorites: boolean,
@@ -35,6 +37,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
   selectedGenres,
   allCountries,
   allGenres,
+  stagesConfig,
   onSave,
   defaultStages,
   onClearFavorites,
@@ -427,7 +430,8 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               {localStagesOrder.map((stage, idx) => {
                 const isVisible = localVisibleStages.includes(stage);
-                const stageColor = `var(--color-${stage.toLowerCase()})`;
+                const stageObj = stagesConfig.find(s => s.name === stage);
+                const stageColor = stageObj ? stageObj.color : '#ffffff';
 
                 return (
                   <div

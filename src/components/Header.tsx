@@ -1,7 +1,6 @@
 import React from 'react';
 import { Clock, LayoutGrid, SlidersHorizontal, Home, Share2 } from 'lucide-react';
 import type { FestivalDay } from '../data/festivalData';
-import { edicionConfig } from '../data/festivalData';
 
 interface HeaderProps {
   days: FestivalDay[];
@@ -13,6 +12,9 @@ interface HeaderProps {
   hasActiveFilters: boolean;
   onGoHome: () => void;
   onShare: () => void;
+  festivalName: string;
+  location: string;
+  year: number;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -25,6 +27,9 @@ export const Header: React.FC<HeaderProps> = ({
   hasActiveFilters,
   onGoHome,
   onShare,
+  festivalName,
+  location,
+  year,
 }) => {
   return (
     <header
@@ -68,10 +73,10 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Center: Logo */}
           <div style={{ textAlign: 'center' }}>
             <h1 className="font-metal" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>
-              {edicionConfig.festival}
+              {festivalName}
             </h1>
             <span style={{ fontSize: '0.65rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>
-              {edicionConfig.location.toUpperCase()} {edicionConfig.year}
+              {location.toUpperCase()} {year}
             </span>
           </div>
 
