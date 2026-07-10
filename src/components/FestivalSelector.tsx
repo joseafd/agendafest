@@ -188,69 +188,33 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
 
           {/* Right Action Container: Flags + Layout Mode */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {/* Language Flags */}
-            <div style={{ display: 'flex', gap: '6px' }}>
-              <button
-                onClick={() => onChangeLanguage('es')}
-                style={{
-                  background: language === 'es' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
-                  border: language === 'es' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
-                  fontSize: '1.25rem',
-                  cursor: 'pointer',
-                  borderRadius: '8px',
-                  padding: '4px 6px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.2s',
-                  opacity: language === 'es' ? 1 : 0.4,
-                }}
-                className="btn-interactive"
-                title="Español"
-              >
-                🇪🇸
-              </button>
-              <button
-                onClick={() => onChangeLanguage('en')}
-                style={{
-                  background: language === 'en' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
-                  border: language === 'en' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
-                  fontSize: '1.25rem',
-                  cursor: 'pointer',
-                  borderRadius: '8px',
-                  padding: '4px 6px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.2s',
-                  opacity: language === 'en' ? 1 : 0.4,
-                }}
-                className="btn-interactive"
-                title="English"
-              >
-                🇬🇧
-              </button>
-              <button
-                onClick={() => onChangeLanguage('fr')}
-                style={{
-                  background: language === 'fr' ? 'rgba(255, 255, 255, 0.12)' : 'transparent',
-                  border: language === 'fr' ? '1px solid rgba(255,255,255,0.2)' : '1px solid transparent',
-                  fontSize: '1.25rem',
-                  cursor: 'pointer',
-                  borderRadius: '8px',
-                  padding: '4px 6px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.2s',
-                  opacity: language === 'fr' ? 1 : 0.4,
-                }}
-                className="btn-interactive"
-                title="Français"
-              >
-                🇫🇷
-              </button>
-            </div>
+            {/* Language Toggle Button (ES -> EN -> FR -> ES) */}
+            <button
+              onClick={() => {
+                if (language === 'es') onChangeLanguage('en');
+                else if (language === 'en') onChangeLanguage('fr');
+                else onChangeLanguage('es');
+              }}
+              aria-label={language === 'es' ? 'Cambiar idioma' : language === 'en' ? 'Change language' : 'Changer de langue'}
+              title={language === 'es' ? 'Cambiar idioma' : language === 'en' ? 'Change language' : 'Changer de langue'}
+              style={{
+                background: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid var(--border-color)',
+                fontSize: '1.15rem',
+                cursor: 'pointer',
+                padding: '7px 9px',
+                borderRadius: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s, transform 0.1s',
+              }}
+              className="btn-interactive"
+              onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.95)'; }}
+              onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+            >
+              {language === 'es' ? '🇪🇸' : language === 'en' ? '🇬🇧' : '🇫🇷'}
+            </button>
 
             {/* Layout Mode Button */}
             <button
