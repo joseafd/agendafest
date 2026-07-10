@@ -541,7 +541,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               transition: 'background 0.2s',
             }}
             className="btn-interactive"
-            title="Volver a AgendaFest"
+            title={t(language, 'backToSelector')}
           >
             <ArrowLeft size={18} />
           </button>
@@ -577,27 +577,27 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               }}
             >
               <div style={{ fontSize: '0.58rem', textTransform: 'uppercase', letterSpacing: '1.5px', color: '#ffd600', fontWeight: '800' }}>
-                FALTAN PARA EL PORTAL DE {edicionConfig.festivalName.toUpperCase()}
+                {t(language, 'countdownTitle')}
               </div>
               <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ffffff', lineHeight: 1.1 }}>{timeLeft.days}</span>
-                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Días</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>{t(language, 'daysLabel')}</span>
                 </div>
                 <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'rgba(255,255,255,0.4)', lineHeight: 1.1 }}>:</span>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ffffff', lineHeight: 1.1 }}>{String(timeLeft.hours).padStart(2, '0')}</span>
-                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Horas</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>{t(language, 'hoursLabel')}</span>
                 </div>
                 <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'rgba(255,255,255,0.4)', lineHeight: 1.1 }}>:</span>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ffffff', lineHeight: 1.1 }}>{String(timeLeft.minutes).padStart(2, '0')}</span>
-                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Min</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>{t(language, 'minutesLabel')}</span>
                 </div>
                 <span style={{ fontSize: '1.25rem', fontWeight: '900', color: 'rgba(255,255,255,0.4)', lineHeight: 1.1 }}>:</span>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ff2a85', lineHeight: 1.1 }}>{String(timeLeft.seconds).padStart(2, '0')}</span>
-                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>Seg</span>
+                  <span style={{ fontSize: '0.5rem', color: 'var(--text-secondary)', textTransform: 'uppercase' }}>{t(language, 'secondsLabel')}</span>
                 </div>
               </div>
             </div>
@@ -620,7 +620,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 width: '100%',
               }}
             >
-              {isFestivalOver ? '🤘 EL FESTIVAL YA HA FINALIZADO 🤘' : '🤘 EL FESTIVAL YA HA COMENZADO 🤘'}
+              {isFestivalOver ? t(language, 'festivalFinished') : t(language, 'festivalStarted')}
             </div>
           )}
 
@@ -809,7 +809,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
             }}
             className="btn-interactive"
           >
-            ← Cambiar de Festival
+            {t(language, 'backToSelector')}
           </button>
 
 

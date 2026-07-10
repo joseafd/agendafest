@@ -31,6 +31,13 @@ export interface TranslationDict {
   toastNoFavsShare: string;
   toastShareSuccess: string;
   toastShareError: string;
+  countdownTitle: string;
+  daysLabel: string;
+  hoursLabel: string;
+  minutesLabel: string;
+  secondsLabel: string;
+  festivalStarted: string;
+  festivalFinished: string;
 
   // Header.tsx
   viewHours: string;
@@ -132,6 +139,13 @@ export const translations: Record<Language, TranslationDict> = {
     toastNoFavsShare: "Añade primero alguna banda a favoritos para compartir",
     toastShareSuccess: "🔗 ¡Enlace de tu agenda copiado al portapapeles!",
     toastShareError: "No se pudo copiar el enlace de forma automática",
+    countdownTitle: "YA FALTA POCO PARA EL INICIO",
+    daysLabel: "Días",
+    hoursLabel: "Horas",
+    minutesLabel: "Min",
+    secondsLabel: "Seg",
+    festivalStarted: "🤘 EL FESTIVAL YA HA COMENZADO 🤘",
+    festivalFinished: "🤘 EL FESTIVAL YA HA FINALIZADO 🤘",
 
     viewHours: "Ver lista por horas",
     viewStages: "Ver cuadrícula de escenarios",
@@ -225,6 +239,13 @@ export const translations: Record<Language, TranslationDict> = {
     toastNoFavsShare: "Add bands to favorites first to share",
     toastShareSuccess: "🔗 Schedule link copied to clipboard!",
     toastShareError: "Could not copy the link automatically",
+    countdownTitle: "GETTING CLOSER TO THE START",
+    daysLabel: "Days",
+    hoursLabel: "Hours",
+    minutesLabel: "Min",
+    secondsLabel: "Sec",
+    festivalStarted: "🤘 THE FESTIVAL HAS STARTED 🤘",
+    festivalFinished: "🤘 THE FESTIVAL HAS ENDED 🤘",
 
     viewHours: "View list by hours",
     viewStages: "View stage grid",
@@ -318,6 +339,13 @@ export const translations: Record<Language, TranslationDict> = {
     toastNoFavsShare: "Ajoutez d'abord des groupes à vos favoris pour partager",
     toastShareSuccess: "🔗 Lien de l'agenda copié dans le presse-papiers !",
     toastShareError: "Impossible de copier le lien automatiquement",
+    countdownTitle: "LE DÉPART APPROCHE",
+    daysLabel: "Jours",
+    hoursLabel: "Heures",
+    minutesLabel: "Min",
+    secondsLabel: "Sec",
+    festivalStarted: "🤘 LE FESTIVAL A COMMENCÉ 🤘",
+    festivalFinished: "🤘 LE FESTIVAL EST TERMINÉ 🤘",
 
     viewHours: "Affichage par heures",
     viewStages: "Affichage par scènes",
