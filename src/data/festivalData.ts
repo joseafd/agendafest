@@ -1540,6 +1540,161 @@ const rawAgendaFestData: any = {
         "noticia": "Horarios de pulseración y Taquillas"
       }
     ]
+  },
+  "leyendas-del-rock-2026": {
+    "config": {
+      "festivalId": "leyendas-del-rock",
+      "edicionId": "leyendas-del-rock-2026",
+      "festivalName": "Leyendas del Rock",
+      "visibleName": "Leyendas del Rock",
+      "year": 2026,
+      "startDate": "2026-08-05",
+      "endDate": "2026-08-08",
+      "location": "Villena (Alicante)",
+      "timezone": "Europe/Madrid",
+      "logo": "logoleyendas.jpg",
+      "cartel": "cartelleyendas.jpg",
+      "mapa": "mapaleyendas.jpg",
+      "dayStartHour": 14,
+      "dayEndHour": 4
+    },
+    "stages": [
+      {
+        "id": "jesus-de-la-rosa",
+        "name": "Jesús de la Rosa",
+        "order": 1,
+        "color": "#ff2a85"
+      },
+      {
+        "id": "azucena",
+        "name": "Azucena",
+        "order": 2,
+        "color": "#2b8be3"
+      },
+      {
+        "id": "new-rock",
+        "name": "New Rock",
+        "order": 3,
+        "color": "#9c1fb8"
+      },
+      {
+        "id": "mark-reale",
+        "name": "Mark Reale",
+        "order": 4,
+        "color": "#e67e22"
+      }
+    ],
+    "days": [
+      {
+        "id": "2026-08-05",
+        "dayNumber": 1,
+        "dayLabel": "Miércoles 5",
+        "weekdayEs": "Miércoles",
+        "doors": "22:00",
+        "stages": [
+          "Jesús de la Rosa",
+          "Azucena",
+          "New Rock",
+          "Mark Reale"
+        ],
+        "acts": [
+          {
+            "band": "BLIND GUARDIAN",
+            "stage": "Jesús de la Rosa",
+            "start": "22:30",
+            "end": "24:00",
+            "bio": {
+              "name": "BLIND GUARDIAN",
+              "title": "",
+              "description": "¡Los bardos del metal vuelven a reclamar su trono! Blind Guardian traerán a Villena su espectacular power metal cargado de himnos legendarios coreados por miles de fans en todo el mundo. ¡Un concierto imprescindible! 🔥",
+              "country": "Alemania",
+              "genre": "Power Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=yY6mJg4b_rA"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-08-06",
+        "dayNumber": 2,
+        "dayLabel": "Jueves 6",
+        "weekdayEs": "Jueves",
+        "doors": "20:30",
+        "stages": [
+          "Jesús de la Rosa",
+          "Azucena",
+          "New Rock",
+          "Mark Reale"
+        ],
+        "acts": [
+          {
+            "band": "ALESTORM",
+            "stage": "Azucena",
+            "start": "21:00",
+            "end": "22:15",
+            "bio": {
+              "name": "ALESTORM",
+              "title": "",
+              "description": "¡Piratas al abordaje! Alestorm traerá su folk metal festivo, cerveza y patos de goma gigantes para montar la mayor fiesta del verano en el escenario del Leyendas 🤘🏴‍☠️",
+              "country": "Reino Unido",
+              "genre": "Pirate Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=ggyC0FOiN1Q"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-08-07",
+        "dayNumber": 3,
+        "dayLabel": "Viernes 7",
+        "weekdayEs": "Viernes",
+        "doors": "23:15",
+        "stages": [
+          "Jesús de la Rosa",
+          "Azucena",
+          "New Rock",
+          "Mark Reale"
+        ],
+        "acts": [
+          {
+            "band": "SAUROM",
+            "stage": "Jesús de la Rosa",
+            "start": "23:45",
+            "end": "25:15",
+            "bio": {
+              "name": "SAUROM",
+              "title": "",
+              "description": "Juglares, saltimbanquis e historias mágicas en una producción visual inigualable. Saurom presentará su concierto especial de gran formato en el escenario principal Jesús de la Rosa.",
+              "country": "España",
+              "genre": "Folk Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=F0f5i1vK760"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-08-08",
+        "dayNumber": 4,
+        "dayLabel": "Sábado 8",
+        "weekdayEs": "Sábado",
+        "doors": "15:00",
+        "stages": [
+          "Jesús de la Rosa",
+          "Azucena",
+          "New Rock",
+          "Mark Reale"
+        ],
+        "acts": []
+      }
+    ],
+    "noticias": [
+      {
+        "fecha": "03/08/2026",
+        "imagen": "https://scontent.fbio3-1.fna.fbcdn.net/v/t39.99422-6/736343148_1348783289919456_2872457055456058256_n.png?stp=dst-jpg_tt6&oh=00_AQCvNzvgxpKqAcfB1YIdDXCEaeRGLZ36Wd_DE1-yhrrG4A&oe=6A4D9041",
+        "entradilla": "¡Bienvenidos a Leyendas del Rock 2026!",
+        "noticia": "Arranca la edición 2026 de Leyendas del Rock en Villena con el mejor heavy metal nacional e internacional. Revisa los horarios y escenarios."
+      }
+    ]
   }
 };
 
