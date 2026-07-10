@@ -52,7 +52,28 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
     if (sortBy === 'name') {
       result.sort((a, b) => a.config.festivalName.localeCompare(b.config.festivalName));
     } else {
-      result.sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
+      const getStatusWeight = (start: string, end: string): number => {
+        const now = new Date();
+        const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        if (todayStr >= start && todayStr <= end) return 1; // Live
+        if (todayStr < start) return 2; // Upcoming
+        return 3; // Past
+      };
+
+      result.sort((a, b) => {
+        const weightA = getStatusWeight(a.config.startDate, a.config.endDate);
+        const weightB = getStatusWeight(b.config.startDate, b.config.endDate);
+
+        if (weightA !== weightB) {
+          return weightA - weightB;
+        }
+        if (weightA === 3) {
+          // Both past: show most recent first
+          return b.config.endDate.localeCompare(a.config.endDate);
+        }
+        // Both live or upcoming: show closest starting first
+        return a.config.startDate.localeCompare(b.config.startDate);
+      });
     }
 
     return result;
