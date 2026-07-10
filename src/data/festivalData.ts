@@ -113,7 +113,7 @@ const rawAgendaFestData: any = {
       "year": 2026,
       "startDate": "2026-07-01",
       "endDate": "2026-07-04",
-      "location": "Viveiro",
+      "location": "Viveiro (Lugo)",
       "timezone": "Europe/Madrid",
       "logo": "logoresu2026.jpg",
       "cartel": "cartelresu2026.jpg",
@@ -183,7 +183,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CROWDED",
               "title": "",
-              "description": "Después de tocar en la carpa Red Bull en 2024, la joven banda coruñesa de metal formada en 2021 regresa al festi para abrir fuego en el Chaos Stage el próximo miércoles 1 de julio 🧨  El quinteto Crowded vuelve al Resu con un segundo EP estrenado a principios de año titulado \"Kindred Spirits\" que releva a su debut \"Underdogs\" de 2023 forjando su sonido mezcla de metal alternativo y rock noventero e influencias del thrash y metalcore 🤘  ¡No te pierdas a una de las propuestas más jóvenes y con más potencial de esta edición! ¡Venid a apoyarlos como merecen! 🙌",
+              "description": "Después de tocar en la carpa Red Bull en 2024, la joven banda coruñesa de metal formada en 2021 regresa al festi para abrir fuego en el Chaos Stage el próximo miércoles 1 de julio 🧨  El quinteto Crowded vuelve al Resu con un segundo EP estrenado a principios de año titulado \"Kindred Spirits\" que releva a su debut \"Underdogs\" de 2023 forjando su sonido mezcla de metal alternativo y rock noventero e influencias del thrash y metalcore 🤘  ¡No te pierdas a una de las propuestas más jóvenes y con más potencial de sus giras! ¡Venid a apoyarlos como merecen! 🙌",
               "country": "España",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=5LrDrFgDyl4"
@@ -268,7 +268,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "PRESIDENT",
               "title": "",
-              "description": "PRESIDENT apareció de la nada en 2025, y en cuestión de semanas se convirtió en uno de los fenómenos virales más duros del metal moderno. El colectivo británico dirigido por su líder homónimo The President se suma a esta edición para captar devotos en su genial propuesta 🤫  Con más de 50 millones de reproducciones en plataformas, es la nueva sensación que lo está petando entre curiosxs y fans de Dayseeker, Sleep Theory o Bad Omens. Metalcore y post-hardcore de primera con una chispa de R\\&B y pop que lo hace único 🙌 ¡No te puedes perder esta locura el primer día de festi en el Main Stage! 🔥",
+              "description": "PRESIDENT apareció de la nada en 2025, y en cuestión de semanas se convirtió en uno de los fenómenos virales más duros del metal moderno. El colectivo británico dirigido por su líder homónimo The President se suma a sus giras para captar devotos en su genial propuesta 🤫  Con más de 50 millones de reproducciones en plataformas, es la nueva sensación que lo está petando entre curiosxs y fans de Dayseeker, Sleep Theory o Bad Omens. Metalcore y post-hardcore de primera con una chispa de R\\&B y pop que lo hace único 🙌 ¡No te puedes perder esta locura el primer día de festi en el Main Stage! 🔥",
               "country": "UK",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=aczq-iCfFOk"
@@ -282,7 +282,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "IMMORTAL DISFIGUREMENT",
               "title": "",
-              "description": "No tenemos dudas de que el concierto de Immortal Disfigurement será uno de las más bestias de esta edición. Vienen de Pittsburgh y están liderados por CJ McCreery, un fuera de serie dentro del deathcore que ha formado parte de bandas como Lorna Shore y Signs Of The Swarm y que os dejará con la boca abierta desde el minuto 0 😱  Guturales inhumanos, una agresividad al límite con breakdowns sin ningún sentido, y mucha técnica y sinfonías que os harán experimentar cómo suenan la violencia y oscuridad de verdad 👹",
+              "description": "No tenemos dudas de que el concierto de Immortal Disfigurement será uno de las más bestias de sus giras. Vienen de Pittsburgh y están liderados por CJ McCreery, un fuera de serie dentro del deathcore que ha formado parte de bandas como Lorna Shore y Signs Of The Swarm y que os dejará con la boca abierta desde el minuto 0 😱  Guturales inhumanos, una agresividad al límite con breakdowns sin ningún sentido, y mucha técnica y sinfonías que os harán experimentar cómo suenan la violencia y oscuridad de verdad 👹",
               "country": "EEUU",
               "genre": "Deathcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=myEyI0gT6r8"
@@ -296,7 +296,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE PRETTY WILD",
               "title": "",
-              "description": "Desde Estados Unidos, The Pretty Wild desembarcan en Viveiro para demostrarnos que el metal moderno dosmilero corre por sus venas. Las hermanas y power duo Jyl y Jules Wylde llegan al Resu con su explosiva mezcla de tralla a dos voces, riffs pesados y una estética y actitud que marcan la diferencia 🔥  Estarán en el Ritual Stage el miércoles 1 de julio tras girar con Sleep Theory y tocar en festis como el Download y Graspop. ¡Prometen no dar tregua y comerse el escenario como nadie! 🤘",
+              "description": "Desde Estados Unidos, The Pretty Wild desembarcan en directo para demostrarnos que el metal moderno dosmilero corre por sus venas. Las hermanas y power duo Jyl y Jules Wylde llegan al Resu con su explosiva mezcla de tralla a dos voces, riffs pesados y una estética y actitud que marcan la diferencia 🔥  Estarán en el Ritual Stage el miércoles 1 de julio tras girar con Sleep Theory y tocar en festis como el Download y Graspop. ¡Prometen no dar tregua y comerse el escenario como nadie! 🤘",
               "country": "EEUU",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=3V9isTmCQRo"
@@ -338,7 +338,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THROWN",
               "title": "",
-              "description": "Thrown desembarcarán en Viveiro en 2026 para demostrar por qué son una de las bandas más explosivas del metalcore y hardcore actual. El cuarteto sueco liderado por Marcus Lundqvist vendrá a nuestro Main Stage dispuesto a arrasar con todo con su mezcla de rabia, riffs afilados y groove 🎸💣  Activos desde 2019 y nacidos de las cenizas de Grieved, vienen de estrenar su LP debut \"Excessive Guilt\" hace un año. Un disco ansioso, oscuro y mecánico ideal para una buena descarga de adrenalina. Thrown darán un concierto en Madrid acompañados de House of Protection. ¡No te pierdas a estas dos bandas en acción el 2 de julio! 🤘",
+              "description": "Thrown desembarcarán en directo en 2026 para demostrar por qué son una de las bandas más explosivas del metalcore y hardcore actual. El cuarteto sueco liderado por Marcus Lundqvist vendrá a nuestro Main Stage dispuesto a arrasar con todo con su mezcla de rabia, riffs afilados y groove 🎸💣  Activos desde 2019 y nacidos de las cenizas de Grieved, vienen de estrenar su LP debut \"Excessive Guilt\" hace un año. Un disco ansioso, oscuro y mecánico ideal para una buena descarga de adrenalina. Thrown darán un concierto en Madrid acompañados de House of Protection. ¡No te pierdas a estas dos bandas en acción el 2 de julio! 🤘",
               "country": "Suecia",
               "genre": "Hardcore Punk",
               "youtubeUrl": "https://www.youtube.com/watch?v=DqBzOVCmIdM",
@@ -395,7 +395,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GET THE SHOT",
               "title": "",
-              "description": "Desde las frías calles de Quebec, Get The Shot llegan a Viveiro para demostrar que la fusión de la furia del hardcore más pesado, el thrash y el metalcore goza de mejor salud que nunca. Sin artificios, directos y con una fórmula infalible de riffs, velocidad y rabia 🔥  El escuadrón canadiense no dejará títere con cabeza y hará temblar como mejor sabe el Chaos Stage el primer día de festi, el miércoles 1 de julio con una fecha única en España este año. ¡Nos vemos en el pit! 👊",
+              "description": "Desde las frías calles de Quebec, Get The Shot llegan a Viveiro para demostrar que la fusión de la furia del hardcore más pesado, el thrash y el metalcore goza de mejor salud que nunca. Sin artificios, directos y con una fórmula infalible de riffs, velocidad y rabia 🔥  El escuadrón canadiense no dejará títere con cabeza y hará temblar como mejor sabe el Chaos Stage el primer día de festi, el miércoles 1 de julio con una fecha única en España habitualmente. ¡Nos vemos en el pit! 👊",
               "country": "Canada",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=UvncAul5sEI"
@@ -409,7 +409,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SELF DECEPTION",
               "title": "",
-              "description": "Desde Suecia, nos visitan Self Deception, maestros de la melodía rock y la contundencia del metalcore europeo. Formados en 2005 y reconocidos a nivel internacional, estarán en el Ritual Stage presentando su nuevo álbum \"One Of Us\", su séptimo disco que se estrenará en mayo de este año 🤘  ¡Preparaos para una buena masterclass de potencia y estribillos gigantescos! 🙌",
+              "description": "Desde Suecia, nos visitan Self Deception, maestros de la melodía rock y la contundencia del metalcore europeo. Formados en 2005 y reconocidos a nivel internacional, estarán en el Ritual Stage presentando su nuevo álbum \"One Of Us\", su séptimo disco que se estrenará en mayo de habitualmente 🤘  ¡Preparaos para una buena masterclass de potencia y estribillos gigantescos! 🙌",
               "country": "Suecia",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=VcoSyfcqYSY"
@@ -508,7 +508,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ARSON TIDES",
               "title": "",
-              "description": "📌 La banda  Arson Tides, ha sido una de las tres elegidas para la gloria en el concurso de bandas del Resurrection Fest. La joven banda tiene entre sus filas a al vocalista cangués Orlando Soage, el guitarrista de Bueu Víctor Gómez y al benjamín del festival, Mateo, el joven baterista vigués de 16 años",
+              "description": "📌 La banda  Arson Tides, ha sido una de las tres elegidas para la gloria en el concurso de bandas del Resurrection Fest. La joven banda tiene entre sus filas a al vocalista cangués Orlando Soage, el guitarrista de Bueu Víctor Gómez y al benjamín dsus conciertos, Mateo, el joven baterista vigués de 16 años",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=x8Ku8xs3LJA\\&list=RDEMx9F7gSD6CPp5z3JPCDu3FA\\&start\\_radio=1"
@@ -662,7 +662,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BELVEDERE",
               "title": "¡SKATE PUNK A TODO TRAPO CON LOS MÍTICOS BELVEDERE EN EL RF26! ⚡",
-              "description": "Los rápidos y técnicos canadienses Belvedere Band también serán parte de nuestro cartelón de este año. Son considerados un grupo de culto muy admirado entre fans de Strung Out, Satanic Surfers o Propaghandi, formaciones también míticas dentro del punk y hardcore melódico más veloz 🧨🛹\n\nDesde 1995 en el ruedo, salvando ese parón que hicieron del 2005 al 2011, sus dinámicas instrumentales y armonías vocales son algunas de sus señas de identidad más características y disfrutables. Estarán en el Chaos repartiendo mandanga el jueves 2 de julio 🔥",
+              "description": "Los rápidos y técnicos canadienses Belvedere Band también serán parte de nuestro cartelón de habitualmente. Son considerados un grupo de culto muy admirado entre fans de Strung Out, Satanic Surfers o Propaghandi, formaciones también míticas dentro del punk y hardcore melódico más veloz 🧨🛹\n\nDesde 1995 en el ruedo, salvando ese parón que hicieron del 2005 al 2011, sus dinámicas instrumentales y armonías vocales son algunas de sus señas de identidad más características y disfrutables. Estarán en el Chaos repartiendo mandanga el jueves 2 de julio 🔥",
               "country": "Canada",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=9SFlXVpZfsg"
@@ -690,7 +690,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "IRON MAIDEN",
               "title": "",
-              "description": "El jueves 2 de julio nos espera una noche inolvidable con los reyes del heavy metal Iron Maiden. Darán un concierto de más de 2 horas en las que podremos disfrutar de todo su legado en estas más de cinco décadas. ¡No necesitan más presentaciones! 🔥  Los tuvimos por nuestra tierra por primera vez en 1998 en Ourense con Blaze Bayley a las voces, la segunda en A Coruña en 2003 con Bruce Dickinson de regreso al grupo, y la tercera en el Resu de 2016 ☝️🤓  Las leyendas del heavy metal ya llevan casi un par de semanas con su gira europea celebrando sus 50 años de historia, y aunque os pueda sorprender a muchxs, están sonando más fuertes y contundentes que nunca. Damos fe de que el tiempo no pasa por los británicos  ¡La Dama de Hierro vuelve a casa! Ya ha pasado una década tras su última e inolvidable actuación en el festival, la banda más grande de la historia del heavy metal vuelve a Viveiro. ¡Y no vuelven de cualquier manera! Los británicos darán en el Resurrection Fest EG uno de los dos únicos conciertos en España en 2026 con su gira \"Run For Your Lives\" celebrando sus 50 años de historia con un setlist de locos en el que recorrerán todos los himnos de sus primeros 9 discos de estudios, desde \"Iron Maiden\" hasta \"Fear Of The Dark\", un “greatest hits” en toda regla.  Están agotando todos los estadios de Europa a meses vista, ¡así que no te lo puedes perder por nada del mundo!",
+              "description": "El jueves 2 de julio nos espera una noche inolvidable con los reyes del heavy metal Iron Maiden. Darán un concierto de más de 2 horas en las que podremos disfrutar de todo su legado en estas más de cinco décadas. ¡No necesitan más presentaciones! 🔥  Los tuvimos por nuestra tierra por primera vez en 1998 en Ourense con Blaze Bayley a las voces, la segunda en A Coruña en 2003 con Bruce Dickinson de regreso al grupo, y la tercera en el Resu de 2016 ☝️🤓  Las leyendas del heavy metal ya llevan casi un par de semanas con su gira europea celebrando sus 50 años de historia, y aunque os pueda sorprender a muchxs, están sonando más fuertes y contundentes que nunca. Damos fe de que el tiempo no pasa por los británicos  ¡La Dama de Hierro vuelve a casa! Ya ha pasado una década tras su última e inolvidable actuación en sus conciertos, la banda más grande de la historia del heavy metal vuelve a Viveiro. ¡Y no vuelven de cualquier manera! Los británicos darán en el Resurrection Fest EG uno de los dos únicos conciertos en España en 2026 con su gira \"Run For Your Lives\" celebrando sus 50 años de historia con un setlist de locos en el que recorrerán todos los himnos de sus primeros 9 discos de estudios, desde \"Iron Maiden\" hasta \"Fear Of The Dark\", un “greatest hits” en toda regla.  Están agotando todos los estadios de Europa a meses vista, ¡así que no te lo puedes perder por nada del mundo!",
               "country": "UK",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=aAsrFetnHzM"
@@ -889,7 +889,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "NOT YET",
               "title": "",
-              "description": "Not Yet es una joven banda de post-hardcore formada en Viveiro en 2022. El grupo debutó en 2025 con su EP \"Two Steps To Rest\". Son parte de la cantera local y han participado con notorio éxito en el Resu del año pasado.",
+              "description": "Not Yet es una joven banda de post-hardcore formada en directo en 2022. El grupo debutó en 2025 con su EP \"Two Steps To Rest\". Son parte de la cantera local y han participado con notorio éxito en el Resu del año pasado.",
               "country": "España",
               "genre": "Post Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=GljyxhhdFqU"
@@ -946,7 +946,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "OKKULTIST",
               "title": "",
-              "description": "Son una de las bandas que más están llamando la atención en la escena metal de Portugal y llegan a Resurrection Fest EG 2026 para hacer temblar el Ritual Stage con sus salvajes riffs de guitarra y la poderosa voz de Beatriz Mariano. Okkultist prometen una descarga de puro Death Metal en Viveiro el viernes 3 de julio",
+              "description": "Son una de las bandas que más están llamando la atención en la escena metal de Portugal y llegan a Resurrection Fest EG 2026 para hacer temblar el Ritual Stage con sus salvajes riffs de guitarra y la poderosa voz de Beatriz Mariano. Okkultist prometen una descarga de puro Death Metal en directo el viernes 3 de julio",
               "country": "Portugal",
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=9mJu2r\\_v7FE"
@@ -960,7 +960,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MOURIR",
               "title": "",
-              "description": "Desde Francia llega una de las propuestas más oscuras, gélidas y extremas de esta edición del Resu. Mourir nacieron en 2019, aunque su historia se podría remontar unos años atrás más con Vermine, proyecto de black metal en solitario del vocalista y guitarrista Olivier Lolmède 🙌  El cuarteto, que el próximo 10 de julio lanzará su tercer LP debutando con Pelagic Records, factura un black particular; crudo, atmosférico, y disonante con arrebatos sludge que hacen de su música asfixiantemente moderna y única. ¡No te los pierdas si te molan Imperial Triumphant, Fange, The Great Old Ones o Wiegedood! 🤘",
+              "description": "Desde Francia llega una de las propuestas más oscuras, gélidas y extremas de sus giras del Resu. Mourir nacieron en 2019, aunque su historia se podría remontar unos años atrás más con Vermine, proyecto de black metal en solitario del vocalista y guitarrista Olivier Lolmède 🙌  El cuarteto, que el próximo 10 de julio lanzará su tercer LP debutando con Pelagic Records, factura un black particular; crudo, atmosférico, y disonante con arrebatos sludge que hacen de su música asfixiantemente moderna y única. ¡No te los pierdas si te molan Imperial Triumphant, Fange, The Great Old Ones o Wiegedood! 🤘",
               "country": "Francia",
               "genre": "Black Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=yq483\\_-C5tA"
@@ -1030,7 +1030,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "TRIVIUM",
               "title": "",
-              "description": "Nos alegra volver a contar en nuestro Main Stage con una de las bandas de metal más queridas por el público. Trivium ya nos sorprendieron con sus directos en Viveiro en el 2013 y 2019 y, siete años después, volverán a poner patas arriba el festival 🤘  Matt Heafy y los suyos nos presentarán el próximo mes de octubre los temas del EP “Struck Dead”, del que esperamos que nos caiga algo en julio de 2026. Pero tranquilxs, porque no faltarán las canciones más míticas en el set de los americanos  Ya hacía tiempo que no los teníamos por aquí. Los de Florida vuelven a Galicia con un set completo lleno de nuevas canciones y viejos clásicos del metalcore y heavy metal contemporáneo que han dejado huella en una generación entera 🙌  Con la banda en un estado de forma casi insuperable y queriéndose comer los escenarios como demostraron en su tour europeo (que pasó por el Vistalegre de Madrid) del año pasado, esta es la oportunidad ideal para tacharlos de la lista de deseos 🤘",
+              "description": "Nos alegra volver a contar en nuestro Main Stage con una de las bandas de metal más queridas por el público. Trivium ya nos sorprendieron con sus directos en directo en el 2013 y 2019 y, siete años después, volverán a poner patas arriba sus conciertos 🤘  Matt Heafy y los suyos nos presentarán el próximo mes de octubre los temas del EP “Struck Dead”, del que esperamos que nos caiga algo en julio de 2026. Pero tranquilxs, porque no faltarán las canciones más míticas en el set de los americanos  Ya hacía tiempo que no los teníamos por aquí. Los de Florida vuelven a Galicia con un set completo lleno de nuevas canciones y viejos clásicos del metalcore y heavy metal contemporáneo que han dejado huella en una generación entera 🙌  Con la banda en un estado de forma casi insuperable y queriéndose comer los escenarios como demostraron en su tour europeo (que pasó por el Vistalegre de Madrid) del año pasado, esta es la oportunidad ideal para tacharlos de la lista de deseos 🤘",
               "country": "EEUU",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=IIgswpHNZik"
@@ -1100,7 +1100,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LIMP BIZKIT",
               "title": "",
-              "description": "Tras muchos años intentándolo, una de las bandas más pedidas y un icono generacional POR FIN estará en Viveiro el próximo verano en el mejor momento de su carrera. Encabezando grandes festivales de todo el mundo, y tras 14 años sin pisar España, ¡LIMP BIZKIT ESTARÁN EN EL RESURRECTION FEST ENCABEZANDO UNO DE LOS DÍAS!  A buen seguro, será uno de los conciertos más brutales que jamás hayamos visto en Viveiro, sin ninguna duda. Por favor dad la bienvenida a Fred Durst y compañía, porque LIMP BIZKIT IS IN DA HOUSE!  https://www.youtube.com/watch?v=bSTX2xVpfPw  Tras el éxito arrollador de Fred Durst y compañía agotando sus entradas para el Resurrection Fest EG 2026 en su día de actuación, la banda ha decidido añadir un nuevo concierto en Madrid para todos los fans que no han podido acudir al festival este año y así resarcirse de los ya 14 años que llevamos sin verles en España.  Este concierto de Limp Bizkit tendrá lugar en Madrid el próximo 1 de julio, y en un gran recinto a la altura de la ocasión como es el conocido Movistar Arena de la capital. El cartel contaré con P.O.D. P.O.D. , que junto con Limp Bizkit nos darán un viaje al pasado para revivir la época más potente del nu metal, y también con DeathByRomy  Como no recordar a Sam Rivers, el que fuera bajista y cofundador de la banda, fallecido en 2025. El encargado de honrar a Sam Rivers en esta gira es Richie Buxton conocido como Kid Not, músico australiano y bajista de Ecca Vandal",
+              "description": "Tras muchos años intentándolo, una de las bandas más pedidas y un icono generacional POR FIN estará en directo el próximo verano en el mejor momento de su carrera. Encabezando grandes festivales de todo el mundo, y tras 14 años sin pisar España, ¡LIMP BIZKIT ESTARÁN EN EL RESURRECTION FEST ENCABEZANDO UNO DE LOS DÍAS!  A buen seguro, será uno de los conciertos más brutales que jamás hayamos visto en directo, sin ninguna duda. Por favor dad la bienvenida a Fred Durst y compañía, porque LIMP BIZKIT IS IN DA HOUSE!  https://www.youtube.com/watch?v=bSTX2xVpfPw  Tras el éxito arrollador de Fred Durst y compañía agotando sus entradas para el Resurrection Fest EG 2026 en su día de actuación, la banda ha decidido añadir un nuevo concierto en Madrid para todos los fans que no han podido acudir al festival habitualmente y así resarcirse de los ya 14 años que llevamos sin verles en España.  Este concierto de Limp Bizkit tendrá lugar en Madrid el próximo 1 de julio, y en un gran recinto a la altura de la ocasión como es el conocido Movistar Arena de la capital. El cartel contaré con P.O.D. P.O.D. , que junto con Limp Bizkit nos darán un viaje al pasado para revivir la época más potente del nu metal, y también con DeathByRomy  Como no recordar a Sam Rivers, el que fuera bajista y cofundador de la banda, fallecido en 2025. El encargado de honrar a Sam Rivers en esta gira es Richie Buxton conocido como Kid Not, músico australiano y bajista de Ecca Vandal",
               "country": "EEUU",
               "genre": "Nu Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=bSTX2xVpfPw"
@@ -1114,7 +1114,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLAZE THE TRAIL",
               "title": "",
-              "description": "La formación pucelana nacida de las cenizas de Remember These Eyes estará en Viveiro por segunda vez tras sorprender con su conciertazo de 2022. Regresarán más fuertes que nunca, asaltando esta vez el Ritual Stage el viernes 3 de julio 💥 Armados con la brutalidad del hardcore moderno y metal, los de Valladolid Blaze The Trail tomarán nuestro festi para demostrar lo duro que han estado trabajando todos estos años para continuar su indiscutible perseverancia dentro del panorama estatal de la última década 🤘🏻  ¡Nos os los perdáis por nada del mundo! ¡Nos vemos allí! 🧨",
+              "description": "La formación pucelana nacida de las cenizas de Remember These Eyes estará en directo por segunda vez tras sorprender con su conciertazo de 2022. Regresarán más fuertes que nunca, asaltando esta vez el Ritual Stage el viernes 3 de julio 💥 Armados con la brutalidad del hardcore moderno y metal, los de Valladolid Blaze The Trail tomarán nuestro festi para demostrar lo duro que han estado trabajando todos estos años para continuar su indiscutible perseverancia dentro del panorama estatal de la última década 🤘🏻  ¡Nos os los perdáis por nada del mundo! ¡Nos vemos allí! 🧨",
               "country": "España",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=6l5TIlI4tdg"
@@ -1142,7 +1142,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CAVALERA CONSPIRACY",
               "title": "",
-              "description": "Allá por 1993, Sepultura lanzaron uno de sus discos más icónicos y una pieza clave para el thrash y groove metal de los años 90 con clásicos todavía vigentes como \"Refuse/Resist\", \"Territory\", \"Slave New World\" o \"Propaganda\" 💣  Ahora, más de 30 años después y como Cavalera Conspiracy, los hermanos y miembros originales de Sepultura Max e Iggor, más en forma que nunca, rescatarán en directo en Viveiro este discazo acompañados de Igor Calavera Jr. (hijo de Max) al bajo y Travis Stone a la guitarra 🤘",
+              "description": "Allá por 1993, Sepultura lanzaron uno de sus discos más icónicos y una pieza clave para el thrash y groove metal de los años 90 con clásicos todavía vigentes como \"Refuse/Resist\", \"Territory\", \"Slave New World\" o \"Propaganda\" 💣  Ahora, más de 30 años después y como Cavalera Conspiracy, los hermanos y miembros originales de Sepultura Max e Iggor, más en forma que nunca, rescatarán en directo en directo este discazo acompañados de Igor Calavera Jr. (hijo de Max) al bajo y Travis Stone a la guitarra 🤘",
               "country": "EEUU",
               "genre": "Groove Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=qCMz704soB4"
@@ -1186,7 +1186,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ISCREAM NEVER GROUND",
               "title": "",
-              "description": "La energía y descontrol bailable de la banda de Osaka contraatacará en nuestra próxima edición después reventarlo en 2025 desde el Chaos Stage. Esta vez será más grande que nunca para la banda nipona: estarán comiéndose el Main Stage el sábado 4 de julio 🔥  Su mezcla de metal digital con pop punk o ska es única e intensa, ideal para montar una buena fiesta en verano en Viveiro. Si te los perdiste el año pasado, ¡prepárate! 👐  ¡Que tiemble Viveiro! 🤘🏼",
+              "description": "La energía y descontrol bailable de la banda de Osaka contraatacará en nuestra próxima edición después reventarlo en 2025 desde el Chaos Stage. Esta vez será más grande que nunca para la banda nipona: estarán comiéndose el Main Stage el sábado 4 de julio 🔥  Su mezcla de metal digital con pop punk o ska es única e intensa, ideal para montar una buena fiesta en verano en directo. Si te los perdiste el año pasado, ¡prepárate! 👐  ¡Que tiemble Viveiro! 🤘🏼",
               "country": "Japón",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=H_-leVD654w"
@@ -1412,7 +1412,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MASTODON",
               "title": "",
-              "description": "Los de Atlanta han vuelto con \"Your Ghost Again\", tema que marca una nueva etapa tras atravesar su momento más difícil como banda con la turbulenta salida y muerte de Brent Hinds en agosto de 2025. La canción es un homenaje a los casi 25 años del grupo junto a Brent, a esos momentos que los cuatro músicos pasaron juntos sobre los escenarios y detrás de ellos. Hay riffs pesados que recuerdan a \"Leviathan\" y \"Blood Mountain\", otros más psicodélicos, pero sobre todo mucha carga emocional. 🖤  El tema, producido por la banda junto a Patrik Berger y Kurt Ballou (guitarrista de Converge, banda que también tendremos en el Resu este año), parece el inicio de algo más grande que derivará en el noveno disco de estudio del grupo, que estamos deseando escuchar. 🤘  ¡Muchas ganas de que llegue el sábado 4 de julio para verlos de vuelta en el Main Stage! 🦣  ¡MASTODON VUELVEN A GALICIA PARA EL RESURRECTION FEST EG 2026! 🐳  Sobran las presentaciones para una de las bandas más influyentes del metal del nuevo milenio. Desde su nacimiento en Atlanta en el año 2000, Mastodon ha hecho de los riffs pesados una de sus señas de identidad conquistando a gente de todo el mundo 🔥  Del sludge más sucio hasta el rock y metal progresivo, nos han regalado joyas llenas de fuerza y emoción que ya son parte de la historia del heavy metal como \"Leviathan\", \"Blood Mountain\", \"Crack The Skye\" o \"Emperor Of Sand\"🤘🏼  ¡No te los pierdas en su regreso a Viveiro después de petarlo en 2017 y 2022! ¡Esta vez toca rendir homenaje como merece al legado del gran Brent Hinds! ❤️‍🔥",
+              "description": "Los de Atlanta han vuelto con \"Your Ghost Again\", tema que marca una nueva etapa tras atravesar su momento más difícil como banda con la turbulenta salida y muerte de Brent Hinds en agosto de 2025. La canción es un homenaje a los casi 25 años del grupo junto a Brent, a esos momentos que los cuatro músicos pasaron juntos sobre los escenarios y detrás de ellos. Hay riffs pesados que recuerdan a \"Leviathan\" y \"Blood Mountain\", otros más psicodélicos, pero sobre todo mucha carga emocional. 🖤  El tema, producido por la banda junto a Patrik Berger y Kurt Ballou (guitarrista de Converge, banda que también tendremos en el Resu habitualmente), parece el inicio de algo más grande que derivará en el noveno disco de estudio del grupo, que estamos deseando escuchar. 🤘  ¡Muchas ganas de que llegue el sábado 4 de julio para verlos de vuelta en el Main Stage! 🦣  ¡MASTODON VUELVEN A GALICIA PARA EL RESURRECTION FEST EG 2026! 🐳  Sobran las presentaciones para una de las bandas más influyentes del metal del nuevo milenio. Desde su nacimiento en Atlanta en el año 2000, Mastodon ha hecho de los riffs pesados una de sus señas de identidad conquistando a gente de todo el mundo 🔥  Del sludge más sucio hasta el rock y metal progresivo, nos han regalado joyas llenas de fuerza y emoción que ya son parte de la historia del heavy metal como \"Leviathan\", \"Blood Mountain\", \"Crack The Skye\" o \"Emperor Of Sand\"🤘🏼  ¡No te los pierdas en su regreso a Viveiro después de petarlo en 2017 y 2022! ¡Esta vez toca rendir homenaje como merece al legado del gran Brent Hinds! ❤️‍🔥",
               "country": "EEUU",
               "genre": "Metal Progresivo",
               "youtubeUrl": "https://www.youtube.com/watch?v=WTQR-RvexVk"
@@ -1469,7 +1469,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MARILYN MANSON",
               "title": "",
-              "description": "El Reverendo lleva casi un par de años sorprendiendo con sus directos. Su regreso al estado de forma de sus mejores años está impresionando a todo el mundo, y nosotrxs vamos a poder disfrutar por primera vez en Galicia de esta nueva etapa de auténtica resurrección del americano el próximo sábado 4 de julio en el Main Stage del Resu 🤘  ¡MARILYN MANSON ESTARÁ POR PRIMERA VEZ EN EL RESURRECTION FEST ESTE 2026! 🦇  Lejos de vivir solo de la nostalgia, el reverendo Marilyn Manson está protagonizando uno de los regresos a los escenarios más brutales e inesperados de los últimos tiempos. Con su actual gira por Estados Unidos, está mostrando al mundo su renacimiento con un estado de forma espectacular (sin ir más lejos, anteayer impresionó a todo el público del festival Sick New World), dejando claro que ha recuperado el trono como una de las figuras más importantes e icónicas de los 90 y 2000 🤘  No hacen falta más presentaciones para uno de los reyes del metal industrial y shock rock, un artista único que rompió moldes, desafió a la sociedad de su época y dejó en la memoria himnos generacionales inmortales, viscerales y oscuros, por los que no han pasado el tiempo 🙌  ¡Prepárate para vivir algo descomunal el sábado 4 de julio en el Main Stage! ¡No te pierdas el que será su primer conci de la gira por Europa! 🔥",
+              "description": "El Reverendo lleva casi un par de años sorprendiendo con sus directos. Su regreso al estado de forma de sus mejores años está impresionando a todo el mundo, y nosotrxs vamos a poder disfrutar por primera vez en Galicia de esta nueva etapa de auténtica resurrección del americano el próximo sábado 4 de julio en el Main Stage del Resu 🤘  ¡MARILYN MANSON ESTARÁ POR PRIMERA VEZ EN EL RESURRECTION FEST ESTE 2026! 🦇  Lejos de vivir solo de la nostalgia, el reverendo Marilyn Manson está protagonizando uno de los regresos a los escenarios más brutales e inesperados de los últimos tiempos. Con su actual gira por Estados Unidos, está mostrando al mundo su renacimiento con un estado de forma espectacular (sin ir más lejos, anteayer impresionó a todo el público dsus conciertos Sick New World), dejando claro que ha recuperado el trono como una de las figuras más importantes e icónicas de los 90 y 2000 🤘  No hacen falta más presentaciones para uno de los reyes del metal industrial y shock rock, un artista único que rompió moldes, desafió a la sociedad de su época y dejó en la memoria himnos generacionales inmortales, viscerales y oscuros, por los que no han pasado el tiempo 🙌  ¡Prepárate para vivir algo descomunal el sábado 4 de julio en el Main Stage! ¡No te pierdas el que será su primer conci de la gira por Europa! 🔥",
               "country": "EEUU",
               "genre": "Metal Industrial",
               "youtubeUrl": "https://www.youtube.com/watch?v=yjWtkQSF8dA"
@@ -1497,7 +1497,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLOOD INCANTATION",
               "title": "",
-              "description": "Blood Incantation uno de los fenómenos más aclamados del metal extremo a nivel mundial aterrizará en Viveiro para presentarnos un repertorio brutal en el que tocarán canciones tanto de su increíble “Absolute Elsewhere” como de sus anteriores trabajos con una fecha única en nuestro país 🛸  Con historia desde 2011, la banda de Colorado ha recibido elogios a nivel mundial desde sus comienzos gracias a su estilo que combina el death metal con el ambient, la psicodelia y la ciencia ficción 🤘¡Prepárate para un viaje interdimensional de los que dejan huella! 🧘‍♂️",
+              "description": "Blood Incantation uno de los fenómenos más aclamados del metal extremo a nivel mundial aterrizará en directo para presentarnos un repertorio brutal en el que tocarán canciones tanto de su increíble “Absolute Elsewhere” como de sus anteriores trabajos con una fecha única en nuestro país 🛸  Con historia desde 2011, la banda de Colorado ha recibido elogios a nivel mundial desde sus comienzos gracias a su estilo que combina el death metal con el ambient, la psicodelia y la ciencia ficción 🤘¡Prepárate para un viaje interdimensional de los que dejan huella! 🧘‍♂️",
               "country": "EEUU",
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=O9WYceFbHw4"
@@ -1511,7 +1511,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ELWOOD STRAY",
               "title": "",
-              "description": "Formados en la ciudad industrial de Essen hace una década, ELWOOD STRAY han ido madurando a lo largo de los años su propuesta densa y agresiva donde el metalcore moderno se articula con el post-hardcore creando una mezcla perfecta entre abrasión y melodía 💥  El quinteto es una de las propuestas más viscerales y sofisticadas del metal contemporáneo europeo. Se dejará caer por Viveiro para presentar su nuevo y segundo álbum \"Descending\", estrenado a comienzos de año, el sábado 4 de julio 🤘  Como ya sabréis, el pasado mes de abril sufrimos la pérdida de Bo Lueders, miembro de Harm's Way, guitarrista, amante empedernido de la música e icono del hardcore contemporáneo. Por motivos evidentes, Harm's Way no actuarán en Europa este año y Elwood Stray nos acompañarán el sábado en el Chaos. Todo nuestro apoyo y amor a la familia y compañeros de Bo 🖤",
+              "description": "Formados en la ciudad industrial de Essen hace una década, ELWOOD STRAY han ido madurando a lo largo de los años su propuesta densa y agresiva donde el metalcore moderno se articula con el post-hardcore creando una mezcla perfecta entre abrasión y melodía 💥  El quinteto es una de las propuestas más viscerales y sofisticadas del metal contemporáneo europeo. Se dejará caer por Viveiro para presentar su nuevo y segundo álbum \"Descending\", estrenado a comienzos de año, el sábado 4 de julio 🤘  Como ya sabréis, el pasado mes de abril sufrimos la pérdida de Bo Lueders, miembro de Harm's Way, guitarrista, amante empedernido de la música e icono del hardcore contemporáneo. Por motivos evidentes, Harm's Way no actuarán en Europa habitualmente y Elwood Stray nos acompañarán el sábado en el Chaos. Todo nuestro apoyo y amor a la familia y compañeros de Bo 🖤",
               "country": "Alemania",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=JVF6e_LSO2k"
@@ -1625,7 +1625,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THUNDERMOTHER",
               "title": "",
-              "description": "¡Las reinas suecas del hard rock llegan para tronar en el escenario principal! Con su rock clásico directo y enérgico, Thundermother garantizan decibelios y actitud.",
+              "description": "¡Las reinas suecas del hard rock llegan para tronar en el escenario! Con su rock clásico directo y enérgico, Thundermother garantizan decibelios y actitud.",
               "country": "Suecia",
               "genre": "Hard Rock"
             }
@@ -1690,7 +1690,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SIGNS OF THE SWARM",
               "title": "",
-              "description": "Deathcore ultrapesado y técnico desde Pittsburgh, listos para demoler el New Rock con breakdowns brutales.",
+              "description": "Deathcore ultrapesado y técnico desde Pittsburgh, listos para demoler el escenario con breakdowns brutales.",
               "country": "EEUU",
               "genre": "Deathcore"
             }
@@ -1729,7 +1729,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SLAUGHTER TO PREVAIL",
               "title": "",
-              "description": "Con el brutal Alex Terrible a las voces y sus icónicas máscaras doradas, Slaughter to Prevail desatarán la tormenta de deathcore más aplastante del festival.",
+              "description": "Con el brutal Alex Terrible a las voces y sus icónicas máscaras doradas, Slaughter to Prevail desatarán la tormenta de deathcore más aplastante dsus conciertos.",
               "country": "Rusia",
               "genre": "Deathcore"
             }
@@ -1952,7 +1952,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CELTIBEERIAN",
               "title": "",
-              "description": "Folk metal fiestero e irreverente. Cerveza, gaitas y diversión garantizada en el escenario New Rock.",
+              "description": "Folk metal fiestero e irreverente. Cerveza, gaitas y diversión garantizada en el escenario.",
               "country": "España",
               "genre": "Folk Metal"
             }
@@ -2070,7 +2070,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE BABOON SHOW",
               "title": "",
-              "description": "¡Pura dinamita en directo! La banda de punk rock sueca liderada por la electrizante Cecilia Boström ofrecerá uno de los shows más enérgicos del festival.",
+              "description": "¡Pura dinamita en directo! La banda de punk rock sueca liderada por la electrizante Cecilia Boström ofrecerá uno de los shows más enérgicos dsus conciertos.",
               "country": "Suecia",
               "genre": "Punk Rock"
             }
@@ -2174,7 +2174,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SAUROM",
               "title": "",
-              "description": "Juglares, saltimbanquis e historias mágicas en una producción visual inigualable. Saurom presentará su concierto especial de gran formato en el escenario principal Jesús de la Rosa.",
+              "description": "Juglares, saltimbanquis e historias mágicas en una producción visual inigualable. Saurom presentará su concierto especial de gran formato en los escenarios.",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=F0f5i1vK760"
@@ -2228,7 +2228,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GUILT TRIP",
               "title": "",
-              "description": "Hardcore metalizado directo desde Manchester para desatar los moshpits más salvajes de la jornada.",
+              "description": "Hardcore metalizado directo desde Manchester para desatar los moshpits más salvajes .",
               "country": "Reino Unido",
               "genre": "Hardcore"
             }
@@ -2247,14 +2247,15 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "Francia",
+            "band": "EIHWAR",
             "stage": "Doro Pesch",
             "start": "18:10",
             "end": "19:10",
             "bio": {
-              "name": "Francia",
+              "name": "EIHWAR",
               "title": "",
               "description": "Folk pagano nórdico mezclado con ritmos electrónicos de techno y trance. ¡Una experiencia ritual y bailable única!",
+              "country": "Francia",
               "genre": "Pagan Folk"
             }
           },
@@ -2312,14 +2313,15 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "EEUU",
+            "band": "HARDLINE",
             "stage": "New Rock",
             "start": "20:50",
             "end": "21:40",
             "bio": {
-              "name": "EEUU",
+              "name": "HARDLINE",
               "title": "",
               "description": "El cantante Johnny Gioeli lidera esta banda de hard rock melódico nacida en los noventa.",
+              "country": "EEUU",
               "genre": "Hard Rock"
             }
           },
@@ -2331,7 +2333,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HELLOWEEN",
               "title": "",
-              "description": "¡El cabeza de cartel indiscutible! Los creadores del power metal Helloween regresan con su show completo de aniversario para reinar en Villena.",
+              "description": "¡El cabeza de cartel indiscutible! Los creadores del power metal Helloween regresan con su show completo de aniversario para reinar en directo.",
               "country": "Alemania",
               "genre": "Power Metal"
             }
@@ -2370,7 +2372,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "WARCRY",
               "title": "",
-              "description": "Víctor García y sus chicos regresan al Leyendas para descargar sus himnos inmortales de heavy metal coreados por miles de almas.",
+              "description": "Víctor García y sus chicos regresan en directo para descargar sus himnos inmortales de heavy metal coreados por miles de almas.",
               "country": "España",
               "genre": "Heavy Metal"
             }
