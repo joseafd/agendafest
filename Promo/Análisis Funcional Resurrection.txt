@@ -1,129 +1,85 @@
-# Análisis Funcional - Resurrection Fest 2026 Concert Scheduler PWA
+# Análisis Funcional - AgendaFest Concert Scheduler PWA (Multifestival)
 
-Este documento recoge de manera detallada todas las funcionalidades que componen la aplicación **Resurrection Fest 2026 - Agenda de Conciertos**. La app está diseñada bajo una filosofía *Mobile-First* y como una *Progressive Web App (PWA)*, permitiendo su consulta íntegra sin conexión a Internet (offline) en el recinto del festival.
-
----
-
-## 1. Portada (Pantalla de Inicio)
-
-La portada actúa como el portal de bienvenida y centro de mando de la aplicación, utilizando una estética visual inspirada en la cartelería del festival (fondo oscuro con contrastes de neón amarillo, rosa y azul).
-
-### Funcionalidades:
-- **Identidad del Festival**: Muestra el logotipo estilizado del festival, la edición ("Resurrection Fest 2026") y la imagen oficial del cartel.
-- **Cuenta Atrás en Tiempo Real (Temporizador Regresivo)**:
-  - Muestra los Días, Horas, Minutos y Segundos restantes hasta el inicio del festival (1 de Julio de 2026 a las 15:00).
-  - Al cumplirse la fecha o durante las jornadas de conciertos, el temporizador se transforma en un cartel animado dinámico: `🤘 EL FESTIVAL YA HA COMENZADO 🤘`.
-- **Contador de Visitas en Vivo**:
-  - Incorpora un distintivo en la parte inferior de la pantalla que muestra las visitas totales en vivo del portal mediante una integración API.
-  - El contador tiene una luz LED rosa neón parpadeante que simula actividad en tiempo real.
-- **Botón de Compartir Aplicación (Difusión)**:
-  - Un botón destacado de "Compartir App con amigos".
-  - Utiliza la API nativa de compartir del navegador (Web Share API) en móviles para enviar el enlace y título a través de WhatsApp, Telegram, etc. Si el navegador no la soporta (PC), copia el enlace automáticamente al portapapeles y lanza un aviso flotante (Toast).
-- **Barra de Navegación Minimalista**:
-  - En la parte inferior de la portada, superpuesta con un degradado oscuro, se ubica una hilera horizontal de 4 botones circulares de cristal (Glassmorphic) con halos de neón que dan acceso directo a las secciones clave:
-    1. 📅 **Agenda** (Rosa Neón): Acceso al programador de horarios.
-    2. 📰 **Noticias** (Celeste Neón): Acceso al canal de novedades oficiales.
-    3. 🗺️ **Mapa** (Oro Neón): Acceso al mapa del recinto.
-    4. ℹ️ **Créditos** (Gris Translúcido): Información del autor y redes.
+Este documento recoge de manera detallada todas las funcionalidades que componen la aplicación **AgendaFest**, que ofrece soporte para la gestión simultánea de festivales como **Resurrection Fest 2026** y **Leyendas del Rock 2026**. La app está diseñada bajo la filosofía *Mobile-First* y como una *Progressive Web App (PWA)*, permitiendo su consulta íntegra sin conexión a Internet (offline).
 
 ---
 
-## 2. Sección de Noticias (News Feed)
+## 1. Selector de Ediciones (Portada Portal)
 
-Esta sección permite a la organización publicar información importante de última hora (pulseras, transportes, incidencias) sincronizada directamente desde la hoja de cálculo.
+El portal principal actúa como el selector global de festivales, ofreciendo una interfaz limpia y atractiva adaptada a dispositivos móviles.
 
 ### Funcionalidades:
-- **Orden Cronológico Inverso**: Las noticias se ordenan de **más recientes a más antiguas** según su fecha de publicación.
-- **Vista en Lista (Feed Vertical)**:
-  - Tarjetas individuales de diseño oscuro y bordes redondeados.
-  - Cabecera de la tarjeta con imagen de la noticia (si está disponible) cortada uniformemente.
-  - Distintivo de fecha de publicación (ej: `29/06/2026`) con icono de calendario.
-  - Titular descriptivo de la noticia (`Entradilla`).
-- **Ventana de Detalle Modal**:
-  - Al hacer clic en cualquier tarjeta de noticia, se abre una ventana modal con fondo oscuro translúcido y animación de escalado.
-  - **Visualización Completa de la Imagen**: La imagen de cabecera se muestra en sus proporciones originales (completa, sin recortes).
-  - Muestra la fecha de publicación, el titular en negrita y el **cuerpo completo de la noticia** respetando saltos de línea y párrafos.
-  - Cuenta con un botón de cierre rápido (X) en la esquina superior derecha y permite cerrar haciendo clic fuera de la ventana.
-- **Botón de Retorno al Inicio**: Cabecera fija (Sticky Header) con flecha para volver al menú de la Portada.
+- **Catálogo de Festivales**: Muestra tarjetas interactivas de los festivales activos. Cada tarjeta incluye la imagen oficial, fechas formateadas, localización y un indicador de estado del festival (`En Vivo`, `Próximamente`, `Finalizado`).
+- **Barra de Búsqueda de Festivales**: Permite buscar festivales dinámicamente por nombre o ciudad de celebración.
+- **Filtros de Clasificación**: Botones interactivos para ordenar la lista de festivales por **Fecha** (orden cronológico) o por **Nombre** (orden alfabético).
+- **Modos de Visualización**: Interruptor para alternar la vista entre cuadrícula (Grid, con tarjetas visuales del cartel) y lista (List, diseño compacto).
+- **Selector de Idioma**: Botón interactivo de bandera para alternar el idioma de forma cíclica (ES -> EN -> FR) en todo el portal.
+
+---
+
+## 2. Portada del Festival (Inicio)
+
+Una vez seleccionado un festival, se accede a su pantalla de inicio. Esta actúa como la base de operaciones de la edición correspondiente.
+
+### Funcionalidades:
+- **Aftermovie de Fondo**: En lugar de una imagen estática, la cabecera del festival muestra en bucle y silencio el video oficial del aftermovie del festival en YouTube, creando una sensación inmersiva inmediata.
+- **Identidad Localizada**: Muestra el nombre oficial de la edición, localización, año y rango de fechas formateadas según el idioma activo del usuario.
+- **Cuenta Atrás Inteligente**:
+  - Muestra un temporizador regresivo con días, horas, minutos y segundos restantes para el inicio del festival. El título cambia a `"YA FALTA POCO PARA EL INICIO"`.
+  - Al dar inicio, se transforma en el aviso dinámico: `"🤘 EL FESTIVAL YA HA COMENZADO 🤘"`.
+  - Tras finalizar, se muestra en translúcido: `"🤘 EL FESTIVAL YA HA FINALIZADO 🤘"`.
+- **Tarjeta "Siguiente Concierto Favorito"**:
+  - Si el usuario tiene favoritos, aparece un panel glassmórfico interactivo que destaca cuál de sus bandas favoritas está tocando en directo o tocará a continuación, detallando hora, escenario y cuenta atrás en minutos.
+  - **Simulador Demo**: En periodo de pruebas fuera de fechas, mapea automáticamente la hora actual del PC al primer día de conciertos a las 18:30 para que el usuario pueda testear y comprobar en vivo los estados de "Directo" y las cuentas atrás.
+  - Al pulsar la tarjeta, se abre directamente la ficha de la banda.
+- **Botón de Instalación PWA**: Botón verde neón de alta visibilidad que abre la guía paso a paso para añadir la aplicación a la pantalla de inicio del dispositivo.
+- **Contador de Visitas**: Muestra las visitas totales del portal del festival mediante integración API con un LED rosa parpadeante.
+- **Menú de Pestañas**: En la parte inferior se encuentra el menú de pestañas para navegar a la **Agenda**, **Noticias** y **Mapa**.
 
 ---
 
 ## 3. Agenda (Parrilla de Horarios)
 
-El núcleo de la aplicación, encargado de mostrar las actuaciones de los artistas organizadas por días, horas y escenarios.
+Sección donde se visualizan y gestionan los horarios del festival de forma interactiva y localizada.
 
 ### Funcionalidades:
-- **Navegación de 4 Días**: Pestañas de selección rápida en la cabecera para navegar entre:
-  * Miércoles 1
-  * Jueves 2
-  * Viernes 3
-  * Sábado 4
-- **Detección Dinámica de la Jornada Activa (Inicio Inteligente)**:
-  - Al abrir la aplicación, el sistema lee la fecha y hora actual del dispositivo del usuario y sitúa la agenda automáticamente en la **Jornada de conciertos activa**:
-    * **Jornada 1 (Miércoles 1)**: De miércoles 15:00 a jueves 03:30.
-    * **Jornada 2 (Jueves 2)**: De jueves 15:00 a viernes 03:30.
-    * **Jornada 3 (Viernes 3)**: De viernes 15:00 a sábado 03:30.
-    * **Jornada 4 (Sábado 4)**: De sábado 15:00 a domingo 03:00.
-  - Si el festival no ha comenzado, abre en el primer día (Miércoles 1).
-  - Si el festival ya ha terminado, abre en el último día (Sábado 4).
-  - Resuelve las madrugadas (ej. Jueves a las 02:00 AM muestra el cartel de la jornada del miércoles, no el del jueves natural).
-- **Dos Modos de Vista**:
-  - 📋 **Vista de Horas (Vertical)**:
-    - Lista vertical cronológica hora a hora de los conciertos del día seleccionado.
-    - Se ocultan las horas previas a las 17:00 en días laborables para mantener la pantalla compacta.
-    - Muestra cada concierto indicando hora, banda, escenario (código de color) y el botón de añadir a favoritos.
-  - 🗺️ **Vista de Escenarios (Horizontal)**:
-    - Una cuadrícula horizontal donde las columnas representan las horas (de 14:00 a 03:30) y las filas representan los 4 escenarios oficiales: **Main Stage**, **Ritual Stage**, **Chaos Stage** y **Desert Stage**.
-    - Permite desplazamiento horizontal fluido para ver el solapamiento de bandas.
-    - Muestra barras de duración de cada concierto proporcionales a su tiempo real.
-- **Línea de Tiempo Actual (Indicador Live)**:
-  - Una línea vertical de color rojo neón que se desplaza en tiempo real por el timeline horizontal indicando la hora actual.
-  - En la vista vertical, destaca el concierto que está sonando en ese instante.
-- **Botón Flotante AHORA (Smooth Scroll)**:
-  - Botón flotante siempre visible en la esquina inferior derecha con un punto LED rosa neón.
-  - **Redirección de jornada**: Si el usuario está viendo otro día (ej. Miércoles) y pulsa "AHORA", la aplicación cambia de inmediato la agenda al día actual (ej. Viernes) y hace un desplazamiento suave (Scroll) para centrar la línea roja de la hora actual en pantalla.
-- **Cajón de Búsqueda y Filtros**:
-  - **Buscador de Texto**: Permite filtrar las bandas del día por nombre, país, género o biografía.
-  - **Búsqueda Global**: Interruptor para extender la búsqueda del texto ingresado a todos los días del festival (no solo al día activo).
-  - **Filtro de Escenarios**: Permite activar o desactivar escenarios de forma individual de la vista para limpiar la parrilla.
-  - **Filtro de Favoritos**: Mostrar únicamente los conciertos marcados como favoritos.
-  - **Botón de Borrado de Favoritos**: Botón en el menú lateral para limpiar por completo la lista de favoritos de localStorage con ventana de confirmación nativa.
-- **Persistencia de Favoritos y Control de Solapamientos**:
-  - Los favoritos se guardan localmente en el dispositivo.
-  - Si dos o más conciertos favoritos coinciden en horario, se dibuja un triángulo de advertencia amarillo en las tarjetas del concierto indicando que existe un solapamiento de horarios en tu agenda.
+- **Selector de Días**: Pestañas con los días del festival traducidas de forma dinámica (ej. *Jueves* 🇪🇸 / *Thursday* 🇬🇧 / *Jeudi* 🇫🇷).
+- **Inicio Inteligente**: Abre automáticamente la agenda en la jornada de conciertos en curso basándose en la fecha del sistema, respetando el solape de madrugada (hasta las 03:30 AM).
+- **Doble Vista de Horarios**:
+  - **Vista Horas (Vertical)**: Agrupación cronológica por horas con códigos de color por escenario para un repaso rápido de la programación del día.
+  - **Vista Escenarios (Horizontal)**: Parrilla interactiva donde cada fila representa un escenario y los conciertos son bloques horizontales proporcionales a su duración. Permite scroll horizontal continuo.
+- **Línea de Tiempo Directo (Live Line)**: Línea vertical de neón rojo que avanza en tiempo real indicando el minuto exacto en el timeline horizontal.
+- **Buscador y Filtros**:
+  - Búsqueda por texto (banda, país, género o biografía) a nivel de día o global en todo el festival.
+  - Cajón de filtros para ordenar y ocultar escenarios de forma manual, y filtrar por países y géneros de forma múltiple a través de chips interactivos.
+- **Indicador sin Conexión (Offline Ready)**: En la cabecera central del festival, un badge verde neón intermitente confirma que la app está cacheada y lista para funcionar sin cobertura.
+- **Selector de Idioma Cíclico**: Un único botón en la barra de herramientas del Header que rota el idioma y muestra la bandera activa (`🇪🇸` / `🇬🇧` / `🇫🇷`), maximizando el espacio de pantalla para evitar colisiones de botones.
 
 ---
 
 ## 4. Ficha de Detalle del Artista (Modal)
 
-Al pulsar sobre cualquier concierto en la agenda se abre una ficha detallada sobre el artista que cubre la pantalla.
+Se abre al pulsar cualquier banda en la agenda, ofreciendo información contextualizada.
 
 ### Funcionalidades:
-- **Cabecera Fotográfica**: Muestra una foto de la banda o el logotipo de la misma.
-- **Identificadores Fieles**: Justo debajo del título se muestran badges finos y redondeados que indican el **País de procedencia** y el **Género musical** del grupo.
-- **Tarjeta de Concierto**: Indica de manera destacada el escenario, el día de la semana, el horario de inicio y fin, y la duración del show en minutos.
-- **Localizador en Mapa**: Un botón de "Ver en Mapa" que cierra la ficha, redirige al usuario a la pestaña de Mapa y lanza un toast indicando en qué zona del recinto se ubica el escenario en el que toca esa banda.
-- **Banner Oficial de Firma de Autógrafos**:
-  - Si el artista tiene programada una sesión de firmas en el Excel, se dibuja un banner destacado en color oro con un icono de pluma estilográfica que reza: `SESIÓN DE FIRMAS: [Día] - De [Inicio] a [Fin] en la Signing Tent`.
-- **Reproductor de YouTube Integrado**: Un reproductor de vídeo embebido en la ficha que carga de forma optimizada y reproduce el videoclip oficial o actuación destacada de la banda.
-- **Biografía del Artista**: Cuerpo de texto que narra la trayectoria, estilo y detalles de la propuesta del grupo.
+- **Datos de Artista**: Muestra la foto de la banda, país de origen, géneros musicales, escenario y horario del concierto.
+- **Aviso de Solapamientos**: Si la banda coincide en horario con otra favorita, muestra una advertencia amarilla detallada con el nombre, escenario y horario de la banda con la que choca.
+- **Reproductor de YouTube**: Carga optimizada del videoclip oficial de la banda sin salir del portal.
+- **Sesión de Firmas**: Banner destacado en oro si el artista tiene programada firma de autógrafos en la carpa oficial (*Signing Tent*).
+- **Localizador en Mapa**: Cierra el detalle y sitúa al usuario directamente en el mapa del recinto en la zona correspondiente al escenario del concierto.
 
 ---
 
 ## 5. Mapa del Recinto
 
-Muestra un plano detallado de la distribución de escenarios, barras, baños y zonas de acampada.
-
-### Funcionalidades:
-- **Plano en Alta Resolución**: Renderizado de la imagen oficial del plano del festival.
-- **Contenedor Zoomable y Desplazable**: Permite realizar pellizco para hacer zoom en pantallas móviles y desplazarse por el recinto para localizar los escenarios.
+- Muestra la distribución física del festival de forma individualizada.
+- Carga el mapa de Leyendas del Rock (`mapaleyendas2026.jpg`) o de Resurrection Fest (`maparesu2026.jpg`) en base al festival activo.
+- Contenedor interactivo con soporte para zoom táctil (pellizco) y desplazamiento.
 
 ---
 
-## 6. Créditos e Información
+## 6. Ayuda, PWA e Instalación
 
-Espacio dedicado a los desarrolladores y colaboradores de la aplicación.
-
-### Funcionalidades:
-- **Créditos Fotográficos**: Atribución del cartel, fotografías y recursos oficiales.
-- **Enlaces a Redes Sociales**: Botones estilizados con degradados característicos para acceder directamente a los perfiles profesionales de Instagram y Facebook de la fotografía oficial del evento.
+- **Guía de Instalación Paso a Paso**: Modal con pestañas dedicadas para instalar la app en la pantalla de inicio en Android (Chrome/Firefox), iOS (Safari) y PC.
+- **Compartir Agenda**: Botón de compartir que genera una URL con tus favoritos codificados para enviarlos a amigos. Al abrirla, un asistente les permite combinar agendas o reemplazar sus favoritos.
+- **Créditos**: Agradecimientos de recursos y botones a las redes profesionales del desarrollador integrados al pie del modal de ayuda.

@@ -1,27 +1,40 @@
-Contenidos enriquecido
-- Ficha Detallada de Bandas: Con biografía ampliada, país de origen, géneros musicales y un reproductor de YouTube integrado para ver sus vídeos destacados sin salir de la página.
-- Mapa del Recinto: Vista interactiva del mapa del festival.
-- Créditos: Ficha de agradecimientos con botones directos e integrados a las cuentas profesionales de Instagram y Facebook del autor.
+Características Clave de AgendaFest
 
-Agenda con Doble Visualización
-- Vista Horizontal (Timeline por Escenarios): Rejilla interactiva con escala ampliada y cabeceras deslizantes.
-- Vista Vertical (Horarios por Bloques): Agrupación cronológica por horas con scroll vertical para un repaso rápido de la jornada.
+Soporte Multifestival Completo (NUEVO)
+- Selector de Portada: Página de entrada interactiva para buscar y seleccionar entre diferentes ediciones de festivales activos (como Resurrection Fest 2026 y Leyendas del Rock 2026).
+- Vistas de Visualización: Modos de cuadrícula (grid con posters oficiales) y de lista (rows) ordenados por fecha o de forma alfabética.
+- Carga de Recursos Dinámicos: Cada festival carga su propia paleta de colores, escenarios, plano del recinto, firmas, noticias y agenda independientes.
 
-Modo "En Directo" y Simulador de Tiempo
-- Línea de Tiempo: Una barra vertical de neón rojo se desplaza en el Timeline marcando el minuto exacto del día.
-- Badge Parpadeante: Los conciertos activos se iluminan con un aviso de ● DIRECTO / ● LIVE con animación de pulso.
-- Simulador Integrado: Fuera de las fechas del festival, la app proyecta la hora real de tu PC sobre el día seleccionado para que puedas probar la línea móvil y los badges en vivo.
+Soporte Multiidioma (ES, EN, FR) e i18n Completo (NUEVO)
+- Localización Completa: Traduce dinámicamente títulos, buscadores, filtros, biografías, guías PWA y notificaciones al Español 🇪🇸, Inglés 🇬🇧 y Francés 🇫🇷.
+- Botón de Idioma Cíclico: Ahorra espacio crítico en la barra de herramientas móvil mediante un único botón táctil que rota el idioma (ES -> EN -> FR) y muestra la bandera activa.
+- Formateo de Fechas Localizado: Formatea rangos de fechas (ej: "Jul 30 - Aug 2" vs "30 de Jul al 2 de Ago") y traduce las cabeceras de jornada (Miércoles, Jueves, etc.) al idioma del usuario.
+
+Contenido Enriquecido y Portada Dinámica
+- Aftermovie de Fondo (NUEVO): La pantalla de inicio de cada festival reproduce en bucle y silencio el video oficial del último aftermovie del festival correspondiente como fondo de la tarjeta de presentación.
+- Ficha Detallada de Bandas: Con biografía ampliada, país de origen, géneros musicales y un reproductor de YouTube integrado para ver sus videoclips destacados sin salir de la app.
+- Mapa del Recinto Desplazable: Vista interactiva con zoom táctil y redirección automática al mapa correspondiente de cada festival.
+
+Agenda con Doble Visualización y "En Directo"
+- Vista Horizontal (Timeline por Escenarios): Rejilla interactiva con escala de tiempo lineal y cabeceras flotantes deslizantes para comparar horarios.
+- Vista Vertical (Horarios por Bloques): Agrupación cronológica por horas con scroll vertical para un repaso rápido de quién toca.
+- Barra de Tiempo Real (Live Line): Una línea vertical de neón rojo se desplaza en el Timeline marcando el minuto exacto del día.
+- Badges de Concierto en Directo: Las bandas activas se iluminan con un aviso dinámico y parpadeante de "● DIRECTO" / "● LIVE".
+
+Tarjeta de Próximo Concierto Favorito (NUEVO)
+- Panel en Home: Muestra de forma destacada en la Home qué banda favorita está tocando en este momento o cuál es la siguiente en empezar.
+- Cuenta Atrás: Muestra una cuenta atrás en minutos si el concierto empieza en menos de 2 horas.
+- Simulador de Pruebas: Si el festival no ha comenzado en la vida real, AgendaFest mapea la hora de tu PC al primer día del festival para que puedas probar los estados de "Directo" o cuenta atrás de forma interactiva en la demo.
+
+Indicador de Estado Offline (NUEVO)
+- Badge Listo sin Conexión: Sutil indicador visual con un LED verde neón intermitente en la cabecera central ("Listo sin conexión" / "Offline" / "Hors ligne") que confirma que la app está cacheada y lista para funcionar sin cobertura.
+
+Guía PWA Paso a Paso (NUEVO)
+- Asistente de Instalación: Sustituye antiguos accesos de créditos por un botón neón verde "Instalar App" que despliega guías detalladas e ilustradas de instalación en la pantalla de inicio para Android (Chrome/Firefox), iOS (Safari) y PC. Los créditos y enlaces de redes se unifican limpiamente en el pie de esta guía.
 
 Detector de Solapamientos (Conflictos)
-- Si marcas como favoritas dos bandas que coinciden en el tiempo, la app añade un aviso visual de ⚠️ Solape en la agenda.
-- Dentro de la ficha de la banda, se despliega una caja de alerta amarilla que detalla explícitamente con qué otra favorita choca, su horario y su escenario.
+- Avisos de Solape: Alerta con un triángulo amarillo en la agenda si marcas bandas que coinciden en horario.
+- Detalle en Ficha: Caja amarilla en el modal de la banda que detalla de forma explícita qué otras bandas favoritas colisionan en tiempo, sus horas y sus escenarios.
 
-Cuenta Atrás de Favoritos
-- Si una de tus bandas favoritas va a empezar a tocar en menos de 2 horas (120 minutos), la tarjeta muestra un cronómetro dinámico en minutos (ej. “En 25 min” o “25'”) que se actualiza automáticamente cada 30 segundos.
-
-Opciones de Compartir y Difundir
-- Compartir App (Home): Copia el enlace limpio de la web para difundir la aplicación y que otros empiecen a crear su propia agenda de cero.
-- Compartir Agenda (Scheduler): Genera un enlace único con tus grupos seleccionados. Al abrirlo, tus amigos verán un asistente interactivo para Importar (Combinar con sus favoritos) o Reemplazar su agenda por la tuya.
-
-Optimización de recursos
-- Una vez cargada por primera vez, luego es capaz de funcionar incluso sin cobertura dentro del festival
+Compartir e Importar Agendas
+- Asistente de Importación: Genera un enlace que contiene tus favoritos. Al compartirlo con un amigo, se le abrirá un menú interactivo para "Combinar" tus favoritos con los suyos o "Reemplazar" su agenda.

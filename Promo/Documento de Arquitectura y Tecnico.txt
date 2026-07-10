@@ -1,121 +1,89 @@
-# Documento de Arquitectura y Especificación Técnica - Resurrection Fest 2026
+# Documento de Arquitectura y Especificación Técnica - AgendaFest
 
-Este documento detalla la arquitectura de software, la estructura del código, los flujos de datos, los algoritmos de tiempo y la estrategia de almacenamiento en caché PWA de la aplicación **Resurrection Fest 2026**.
+Este documento detalla la arquitectura de software, la estructura del código, los flujos de datos, los algoritmos de tiempo y la estrategia de persistencia y almacenamiento en caché de la plataforma **AgendaFest**, que da soporte a múltiples festivales como **Resurrection Fest 2026** y **Leyendas del Rock 2026**.
 
 ---
 
 ## 1. Stack Tecnológico Principal
 
-- **Framework**: React 19 (TypeScript)
-- **Herramienta de Construcción (Bundler)**: Vite 8.1
+- **Framework**: React 19 (TypeScript).
+- **Herramienta de Construcción (Bundler)**: Vite 8.1.
 - **Estilos**: CSS3 Vanilla (Variables CSS globales, Grid, Flexbox y animaciones de fotogramas clave `@keyframes`).
 - **Iconografía**: `lucide-react` (iconos vectoriales ligeros).
 - **Procesamiento de Datos**: NodeJS + `xlsx` (SheetJS) para compilación en tiempo de construcción.
 - **Plataforma PWA**: Service Workers nativos en JavaScript ES6.
+- **Internacionalización**: Módulo i18n nativo (`translations.ts`) para localización dinámica (Español 🇪🇸, Inglés 🇬🇧, Francés 🇫🇷).
 
 ---
 
-## 2. Flujo de Sincronización de Datos (Compilación)
+## 2. Flujo de Sincronización y Modelo Multifestival (Compilación)
 
 Para maximizar el rendimiento del dispositivo móvil, los datos no se parsean en el cliente desde el archivo Excel. En su lugar, se compilan estáticamente en tiempo de desarrollo.
 
 ```mermaid
 graph TD
-    A[AgendaFest.xlsx] -->|Lectura de celdas y fechas| B(sync_excel.cjs)
-    B -->|Mapeo de Relaciones e IDs| C[src/data/festivalData.ts]
+    A[AgendaFest.xlsx] -->|Lectura de celdas de múltiples pestañas| B(sync_excel.cjs)
+    B -->|Mapeo de Relaciones, Edición e IDs| C[src/data/festivalData.ts]
     C -->|Vite Build: Compilación Estática| D[dist/assets/index-*.js]
 ```
 
-### Script de Sincronización (`sync_excel.cjs`)
-El script de NodeJS [sync_excel.cjs](file:///d:/Antigravity/Resurrection%20Fest%202026/sync_excel.cjs) procesa el libro de cálculo `AgendaFest.xlsx` traduciendo tipos de datos:
-1. **Fechas Excel**: Convierte números de serie de fecha (ej: `46204` -> `2026-07-01`) utilizando la fórmula de desfase epoch: `utc_days = Math.floor(serial - 25569)`.
-2. **Horas Excel**: Convierte fracciones de día (ej: `0.64236` -> `15:25`) mediante: `totalMinutes = Math.round(fractionalDay * 24 * 60)`.
-3. **Mapeo de Noticias**: Lee la hoja `Noticias`, ordena los elementos en **orden descendente (por fecha de más reciente a más antigua)** y los exporta como `noticiasData`.
-4. **Relación de Firmas**: Vincula las filas de la pestaña `Firmas` con los artistas de la pestaña `Artistas` a través del `Artista ID` y formatea la cadena de visualización en la biografía.
-5. **Estructuración Chonológica**: Agrupa los conciertos por día y los ordena de forma ascendente según su hora de inicio antes de inyectar el JSON final en [festivalData.ts](file:///d:/Antigravity/Resurrection%20Fest%202026/src/data/festivalData.ts).
+### Script de Sincronización Multifestival (`sync_excel.cjs`)
+El script de NodeJS [sync_excel.cjs](file:///d:/Antigravity/AgendaFest/sync_excel.cjs) procesa el libro de cálculo `AgendaFest.xlsx` separando los datos por `Edicion ID` e inyectando las siguientes estructuras en [festivalData.ts](file:///d:/Antigravity/AgendaFest/src/data/festivalData.ts):
+1. **Pestaña Edición**: Define las ediciones activas (ej: `resurrection-fest-2026`, `leyendas-del-rock-2026`), con sus configuraciones de nombre, año, localización, fecha de inicio/fin, aftermovie de YouTube, imagen de plano, cartel, y rango horario de la parrilla (ej. `dayStartHour` y `dayEndHour`).
+2. **Fechas y Horas Excel**: Convierte números de serie de fecha (ej: `46204` -> `2026-07-01`) utilizando la fórmula de desfase epoch, y horas (ej: `0.64236` -> `15:25`) a minutos absolutos desde la medianoche.
+3. **Mapeo de Noticias**: Lee la hoja `Noticias`, filtra por festival, ordena los elementos de forma descendente (por fecha de más reciente a más antigua) y los exporta como `noticias`.
+4. **Relación de Firmas**: Vincula las filas de la pestaña `Firmas` con los artistas de la pestaña `Actuaciones` y los asigna al festival correspondiente.
+5. **Estructuración Chonológica**: Agrupa los conciertos por día y los ordena de forma ascendente según su hora de inicio antes de inyectar el JSON de ediciones final.
 
 ---
 
 ## 3. Algoritmos de Gestión de Tiempos y Jornadas
 
-El festival transcurre en horarios especiales (de 15:00 a 03:30 de la madrugada del día siguiente). El sistema cuenta con helpers específicos para manejar estas desviaciones horarias.
+Los festivales transcurren en horarios nocturnos especiales (ej. de 15:00 a 03:30 de la madrugada del día siguiente). El sistema cuenta con helpers específicos para manejar estas desviaciones horarias y la simulación.
 
 ### 1. Conversión de Tiempos del Festival
-La escala de tiempo de la parrilla horizontal se inicializa a las **14:00** (2 horas antes del primer concierto). Los conciertos que suceden de madrugada (ej: `01:30`) se proyectan al día siguiente sumándoles 24 horas (`25:30`):
+La escala de tiempo de la parrilla se inicializa según `dayStartHour`. Los conciertos que suceden de madrugada (ej: `01:30`) se proyectan al día siguiente sumándoles 24 horas para mantenerlos en la misma jornada musical:
 ```typescript
-export const DAY_START_HOUR = 14;
-
-export function timeToMinutes(timeStr: string): number {
+export function timeToMinutes(timeStr: string, dayStartHour: number): number {
   const [hourStr, minStr] = timeStr.split(':');
   let hour = parseInt(hourStr, 10);
   const minutes = parseInt(minStr, 10);
 
-  // Tratamiento de madrugadas (de 00:00 a 06:00)
   if (hour >= 0 && hour <= 6) {
     hour += 24;
   }
 
-  return (hour * 60 + minutes) - (DAY_START_HOUR * 60);
+  return (hour * 60 + minutes) - (dayStartHour * 60);
 }
 ```
 
-### 2. Detección de Jornada Activa (`getInitialDayId`)
-El inicio automático de la agenda calcula la jornada activa comparando la fecha y hora del sistema del usuario con los límites exactos de finalización de cada jornada (03:30 AM / 03:00 AM):
-```typescript
-const getInitialDayId = (): string => {
-  const now = new Date();
-  
-  // Límites de finalización de cada jornada (Mes de Julio es índice 6)
-  const j1_end = new Date(2026, 6, 2, 3, 30, 0); // Miércoles termina el Jueves 03:30
-  const j2_end = new Date(2026, 6, 3, 3, 30, 0); // Jueves termina el Viernes 03:30
-  const j3_end = new Date(2026, 6, 4, 3, 30, 0); // Viernes termina el Sábado 03:30
-
-  if (now < j1_end) {
-    return '2026-07-01'; // Miércoles
-  }
-  if (now >= j1_end && now < j2_end) {
-    return '2026-07-02'; // Jueves
-  }
-  if (now >= j2_end && now < j3_end) {
-    return '2026-07-03'; // Viernes
-  }
-  return '2026-07-04'; // Sábado
-};
-```
+### 2. Algoritmo de Próximo Concierto Favorito y Simulación (Demo Mode)
+Para permitir que el usuario visualice la tarjeta de cuenta atrás de su próximo concierto favorito incluso fuera de las fechas reales del festival, implementamos un simulador dinámico que proyecta la fecha/hora del PC sobre las jornadas del festival:
+- **`getSimulatedOrRealTime`**: Si el día actual cae fuera del periodo del festival, proyecta la fecha al primer día del festival y fuerza las 18:30 (hora de alta actividad) para la prueba de "Directo" o "Siguiente Favorito".
+- **`getActAbsoluteStartTime`**: Calcula la fecha y hora absoluta de un concierto, resolviendo de forma segura el salto de madrugada (+1 día si la hora es inferior a `dayEndHour`).
+- **`nextFavoriteAct`**: Filtra todos los conciertos marcados como favoritos que aún no han terminado, ordenándolos para mostrar el que esté sonando en directo o el próximo a iniciarse.
 
 ---
 
-## 4. Persistencia y Almacenamiento Local
+## 4. Persistencia Segmentada y Localización (localStorage)
 
-La aplicación utiliza el custom hook `useLocalStorage` para la sincronización automática de estados con `localStorage`:
-- `rf_favorites`: Listado de `Act ID` seleccionados por el usuario como favoritos (Array de strings).
-- `rf_view_mode`: Guarda la última vista preferida del usuario (`'hours'` o `'stages'`).
-- `rf_visible_stages`: Almacena la lista de escenarios visibles configurada por el usuario en el cajón de filtros.
+La aplicación gestiona de forma persistente las preferencias del usuario separándolas por festival (namespace segmentado) para evitar colisiones:
+- **Idioma Global**: `af_language` almacena el idioma activo (`'es' | 'en' | 'fr'`).
+- **Estados por Festival**:
+  - `af_${editionId}_favorites`: Array de `Act ID` marcados como favoritos.
+  - `af_${editionId}_view_mode`: Última vista preferida del usuario (`'hours'` o `'stages'`).
+  - `af_${editionId}_visible_stages`: Lista de escenarios visibles.
+  - `af_${editionId}_stages_order`: Orden de prioridad personalizado de escenarios.
+  - `af_${editionId}_selected_countries` / `af_${editionId}_selected_genres`: Filtros persistentes del usuario.
 
 ---
 
 ## 5. Estrategia de Caché PWA y Service Worker (`sw.js`)
 
-El Service Worker [sw.js](file:///d:/Antigravity/Resurrection%20Fest%202026/public/sw.js) implementa diferentes estrategias de almacenamiento en caché adaptadas a cada tipo de recurso:
+El Service Worker [sw.js](file:///d:/Antigravity/AgendaFest/public/sw.js) implementa diferentes estrategias de almacenamiento en caché para garantizar el funcionamiento offline absoluto en el recinto del festival:
 
-1. **Precacheo Estático (Install Event)**:
-   Cachea inmediatamente el esqueleto básico en la instalación (`index.html`, `manifest.json`, `icon.svg`, `./`).
-2. **Estrategia Cache First (Imágenes y Activos Gráficos)**:
-   Las imágenes del plano del recinto (`MAPA.jpg`) y los recursos de portada se sirven desde la caché para asegurar carga instantánea offline. En segundo plano, se lanza una petición de revalidación a la red para actualizar la caché si el recurso cambió.
-3. **Estrategia Stale-While-Revalidate (Javascript / CSS)**:
-   Los bundles del código compilado de Vite se sirven de inmediato desde la caché. A su vez, se descarga la nueva versión en segundo plano para las siguientes cargas.
-4. **Estrategia Network First (Documento HTML principal)**:
-   El archivo index.html se consulta siempre primero a la red para garantizar que las actualizaciones de los scripts sean visibles de inmediato. Si falla la red (offline), sirve el index.html precacheado.
-
-### Mecanismo de Actualización e index.html
-Para evitar que los usuarios queden bloqueados en versiones antiguas debido a la persistencia del Service Worker, se ha inyectado un listener en [`index.html`](file:///d:/Antigravity/Resurrection%20Fest%202026/index.html):
-```javascript
-let refreshing = false;
-navigator.serviceWorker.addEventListener('controllerchange', () => {
-  if (!refreshing) {
-    refreshing = true;
-    window.location.reload(); // Recarga en caliente cuando el nuevo SW toma control
-  }
-});
-```
-Cada vez que subimos el número de versión de la caché (`CACHE_NAME = 'resu2026-cache-v11'`), el Service Worker se actualiza, reclama la página en segundo plano y dispara el refresco de forma transparente para el usuario.
+1. **Precacheo Estático (Install Event)**: Cachea de forma inmediata el esqueleto de la aplicación (`index.html`, `manifest.json`, `favicon.svg`, `./`).
+2. **Estrategia Cache First (Imágenes de Ediciones y Mapas)**: Las fotos de portada y los planos de los recintos (`maparesu2026.jpg`, `mapaleyendas2026.jpg`) se sirven directamente desde la caché. Se actualiza en segundo plano solo si cambian.
+3. **Estrategia Stale-While-Revalidate (Javascript / CSS)**: Los scripts compilados de Vite se sirven al instante desde la caché y se actualizan de forma asíncrona para la siguiente carga.
+4. **Estrategia Network First (Documento HTML principal)**: El `index.html` siempre se solicita primero a la red para buscar actualizaciones de versiones del bundle, sirviendo la caché local en caso de ausencia de cobertura.
+5. **Mecanismo de Recarga en Caliente**: Listener en `index.html` que detecta la actualización del Service Worker (`controllerchange`) y refresca la página de forma fluida y transparente para el usuario.
