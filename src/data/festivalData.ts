@@ -1552,36 +1552,30 @@ const rawAgendaFestData: any = {
       "endDate": "2026-08-08",
       "location": "Villena (Alicante)",
       "timezone": "Europe/Madrid",
-      "logo": "logoleyendas.jpg",
-      "cartel": "cartelleyendas.jpg",
-      "mapa": "mapaleyendas.jpg",
+      "logo": "logoleyendas2026.jpg",
+      "cartel": "cartelleyendas2026.jpg",
+      "mapa": "mapaleyendas2026.jpg",
       "dayStartHour": 14,
       "dayEndHour": 4
     },
     "stages": [
       {
-        "id": "jesus-de-la-rosa",
-        "name": "Jesús de la Rosa",
+        "id": "dave-mustane-stage",
+        "name": "Dave Mustaine",
         "order": 1,
         "color": "#ff2a85"
       },
       {
-        "id": "azucena",
-        "name": "Azucena",
+        "id": "doro-tesch-stage",
+        "name": "Doro Pesch",
         "order": 2,
         "color": "#2b8be3"
       },
       {
-        "id": "new-rock",
+        "id": "new-rock-stage",
         "name": "New Rock",
         "order": 3,
         "color": "#9c1fb8"
-      },
-      {
-        "id": "mark-reale",
-        "name": "Mark Reale",
-        "order": 4,
-        "color": "#e67e22"
       }
     ],
     "days": [
@@ -1590,26 +1584,206 @@ const rawAgendaFestData: any = {
         "dayNumber": 1,
         "dayLabel": "Miércoles 5",
         "weekdayEs": "Miércoles",
-        "doors": "22:00",
+        "doors": "16:20",
         "stages": [
-          "Jesús de la Rosa",
-          "Azucena",
-          "New Rock",
-          "Mark Reale"
+          "Dave Mustaine",
+          "Doro Pesch",
+          "New Rock"
         ],
         "acts": [
           {
-            "band": "BLIND GUARDIAN",
-            "stage": "Jesús de la Rosa",
-            "start": "22:30",
-            "end": "24:00",
+            "band": "TAILGUNNER",
+            "stage": "Doro Pesch",
+            "start": "16:50",
+            "end": "17:40",
             "bio": {
-              "name": "BLIND GUARDIAN",
+              "name": "TAILGUNNER",
               "title": "",
-              "description": "¡Los bardos del metal vuelven a reclamar su trono! Blind Guardian traerán a Villena su espectacular power metal cargado de himnos legendarios coreados por miles de fans en todo el mundo. ¡Un concierto imprescindible! 🔥",
-              "country": "Alemania",
-              "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yY6mJg4b_rA"
+              "description": "Considerados la punta de lanza de la nueva ola del heavy metal británico clásico. ¡Velocidad y guitarras gemelas garantizadas!",
+              "country": "Reino Unido",
+              "genre": "Heavy Metal"
+            }
+          },
+          {
+            "band": "HELEVEN",
+            "stage": "New Rock",
+            "start": "17:05",
+            "end": "17:55",
+            "bio": {
+              "name": "HELEVEN",
+              "title": "",
+              "description": "Banda granadina que destaca por su metal oscuro, atmosférico y cargado de riffs de afinación baja y melodías intensas.",
+              "country": "España",
+              "genre": "Metal Alternativo"
+            }
+          },
+          {
+            "band": "THUNDERMOTHER",
+            "stage": "Dave Mustaine",
+            "start": "17:50",
+            "end": "18:50",
+            "bio": {
+              "name": "THUNDERMOTHER",
+              "title": "",
+              "description": "¡Las reinas suecas del hard rock llegan para tronar en el escenario principal! Con su rock clásico directo y enérgico, Thundermother garantizan decibelios y actitud.",
+              "country": "Suecia",
+              "genre": "Hard Rock"
+            }
+          },
+          {
+            "band": "KILLUS",
+            "stage": "New Rock",
+            "start": "18:20",
+            "end": "19:10",
+            "bio": {
+              "name": "KILLUS",
+              "title": "",
+              "description": "Metal industrial y visual desde Villarreal. Una puesta en escena espectacular con maquillaje y sonidos mecánicos y potentes.",
+              "country": "España",
+              "genre": "Metal Industrial"
+            }
+          },
+          {
+            "band": "ORBIT CULTURE",
+            "stage": "Doro Pesch",
+            "start": "19:00",
+            "end": "20:00",
+            "bio": {
+              "name": "ORBIT CULTURE",
+              "title": "",
+              "description": "Uno de los grupos revelación del metal moderno. Su combinación de death metal melódico, groove y elementos industriales es simplemente demoledora.",
+              "country": "Suecia",
+              "genre": "Death Metal Melódico"
+            }
+          },
+          {
+            "band": "HADADANZA",
+            "stage": "New Rock",
+            "start": "19:35",
+            "end": "20:25",
+            "bio": {
+              "name": "HADADANZA",
+              "title": "",
+              "description": "Folk metal con temática fantástica y fiestera que nos transportará a mundos medievales a ritmo de gaitas y violines.",
+              "country": "España",
+              "genre": "Folk Metal"
+            }
+          },
+          {
+            "band": "BLACK LABEL SOCIETY",
+            "stage": "Dave Mustaine",
+            "start": "20:10",
+            "end": "21:10",
+            "bio": {
+              "name": "BLACK LABEL SOCIETY",
+              "title": "",
+              "description": "Liderados por el legendario guitarrista Zakk Wylde, Black Label Society descargarán sus riffs pesados y solos vertiginosos que han marcado el metal sureño contemporáneo.",
+              "country": "EEUU",
+              "genre": "Heavy Metal"
+            }
+          },
+          {
+            "band": "SIGNS OF THE SWARM",
+            "stage": "New Rock",
+            "start": "20:50",
+            "end": "21:40",
+            "bio": {
+              "name": "SIGNS OF THE SWARM",
+              "title": "",
+              "description": "Deathcore ultrapesado y técnico desde Pittsburgh, listos para demoler el New Rock con breakdowns brutales.",
+              "country": "EEUU",
+              "genre": "Deathcore"
+            }
+          },
+          {
+            "band": "SAVATAGE",
+            "stage": "Doro Pesch",
+            "start": "21:20",
+            "end": "22:40",
+            "bio": {
+              "name": "SAVATAGE",
+              "title": "",
+              "description": "¡Un regreso legendario! Savatage, pioneros del metal progresivo y sinfónico, ofrecerán un show exclusivo repasando su mítica trayectoria.",
+              "country": "EEUU",
+              "genre": "Metal Progresivo"
+            }
+          },
+          {
+            "band": "DEATHBATS",
+            "stage": "New Rock",
+            "start": "22:05",
+            "end": "22:55",
+            "bio": {
+              "name": "DEATHBATS",
+              "title": "",
+              "description": "Banda tributo a Avenged Sevenfold, reviviendo con fidelidad y energía los mejores éxitos de la formación californiana.",
+              "country": "España",
+              "genre": "Tributo A7X"
+            }
+          },
+          {
+            "band": "SLAUGHTER TO PREVAIL",
+            "stage": "Dave Mustaine",
+            "start": "22:50",
+            "end": "00:10",
+            "bio": {
+              "name": "SLAUGHTER TO PREVAIL",
+              "title": "",
+              "description": "Con el brutal Alex Terrible a las voces y sus icónicas máscaras doradas, Slaughter to Prevail desatarán la tormenta de deathcore más aplastante del festival.",
+              "country": "Rusia",
+              "genre": "Deathcore"
+            }
+          },
+          {
+            "band": "CHAINED SAINT",
+            "stage": "New Rock",
+            "start": "23:20",
+            "end": "00:20",
+            "bio": {
+              "name": "CHAINED SAINT",
+              "title": "",
+              "description": "Joven promesa del thrash metal estadounidense. Riffs rápidos y agresividad vieja escuela.",
+              "country": "EEUU",
+              "genre": "Thrash Metal"
+            }
+          },
+          {
+            "band": "SEPULTURA",
+            "stage": "Doro Pesch",
+            "start": "00:20",
+            "end": "01:40",
+            "bio": {
+              "name": "SEPULTURA",
+              "title": "",
+              "description": "En su gira mundial de despedida \"Celebrating Life Through Death\", los gigantes brasileños dirán adiós repasando cuatro décadas de historia.",
+              "country": "Brasil",
+              "genre": "Thrash Metal"
+            }
+          },
+          {
+            "band": "PROM KINKS",
+            "stage": "New Rock",
+            "start": "00:45",
+            "end": "01:45",
+            "bio": {
+              "name": "PROM KINKS",
+              "title": "",
+              "description": "Banda de rock nacional con sonido enérgico y letras cargadas de rebeldía.",
+              "country": "España",
+              "genre": "Rock"
+            }
+          },
+          {
+            "band": "SALDUIE",
+            "stage": "Dave Mustaine",
+            "start": "01:50",
+            "end": "03:00",
+            "bio": {
+              "name": "SALDUIE",
+              "title": "",
+              "description": "Folk metal zaragozano de temática histórica celta-ibera. Vientos tradicionales y riffs de metal se fusionan en directo.",
+              "country": "España",
+              "genre": "Folk Metal"
             }
           }
         ]
@@ -1619,26 +1793,207 @@ const rawAgendaFestData: any = {
         "dayNumber": 2,
         "dayLabel": "Jueves 6",
         "weekdayEs": "Jueves",
-        "doors": "20:30",
+        "doors": "16:20",
         "stages": [
-          "Jesús de la Rosa",
-          "Azucena",
-          "New Rock",
-          "Mark Reale"
+          "Dave Mustaine",
+          "Doro Pesch",
+          "New Rock"
         ],
         "acts": [
           {
-            "band": "ALESTORM",
-            "stage": "Azucena",
-            "start": "21:00",
-            "end": "22:15",
+            "band": "CREEPER",
+            "stage": "Doro Pesch",
+            "start": "16:50",
+            "end": "17:40",
             "bio": {
-              "name": "ALESTORM",
+              "name": "CREEPER",
               "title": "",
-              "description": "¡Piratas al abordaje! Alestorm traerá su folk metal festivo, cerveza y patos de goma gigantes para montar la mayor fiesta del verano en el escenario del Leyendas 🤘🏴‍☠️",
+              "description": "Glam rock y goth punk teatral de influencia ochentera. Creeper presentará un directo magnético y oscuro.",
               "country": "Reino Unido",
-              "genre": "Pirate Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=ggyC0FOiN1Q"
+              "genre": "Goth Punk"
+            }
+          },
+          {
+            "band": "EKYRIAN",
+            "stage": "New Rock",
+            "start": "17:05",
+            "end": "17:55",
+            "bio": {
+              "name": "EKYRIAN",
+              "title": "",
+              "description": "Folk metal madrileño con instrumentación clásica (flauta, gaita, violín) y letras basadas en leyendas y literatura fantástica.",
+              "country": "España",
+              "genre": "Folk Metal"
+            }
+          },
+          {
+            "band": "MUSHROOMHEAD",
+            "stage": "Dave Mustaine",
+            "start": "17:50",
+            "end": "18:50",
+            "bio": {
+              "name": "MUSHROOMHEAD",
+              "title": "",
+              "description": "Los enmascarados de Cleveland combinan metal industrial, alternativo y gótico en un directo teatral con doble batería de agua.",
+              "country": "EEUU",
+              "genre": "Metal Alternativo"
+            }
+          },
+          {
+            "band": "ANEUMA",
+            "stage": "New Rock",
+            "start": "18:20",
+            "end": "19:10",
+            "bio": {
+              "name": "ANEUMA",
+              "title": "",
+              "description": "Desde Asturias, Aneuma se ha convertido en una de las bandas emergentes más potentes del metal nacional desde su creación hace un lustro. Su mezcla de death metal con metalcore intensa y fresca les llevó a tocar en el Wacken Open Air hace unos años, lugar en el que lograron un histórico segundo puesto en la competición internacional 🤘  Con tres discos lanzados hasta la fecha, el quinteto de Puerto de Vega ha demostrado que la vigencia del sonido de Gotemburgo es atemporal, y que su fórmula incluso es renovar y traer al presente poniendo esmero y dedicación. Nos lo demostrarán como solamente ellxs saben el miércoles 1 de julio en el Ritual Stage 🙌",
+              "country": "España",
+              "genre": "Death Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc"
+            }
+          },
+          {
+            "band": "NORTHLANE",
+            "stage": "Doro Pesch",
+            "start": "19:00",
+            "end": "20:00",
+            "bio": {
+              "name": "NORTHLANE",
+              "title": "",
+              "description": "Líderes mundiales del metalcore progresivo y la electrónica industrial. Presentarán su potente directo tecnológico.",
+              "country": "Australia",
+              "genre": "Metalcore"
+            }
+          },
+          {
+            "band": "LÁNDEVIR",
+            "stage": "New Rock",
+            "start": "19:35",
+            "end": "20:25",
+            "bio": {
+              "name": "LÁNDEVIR",
+              "title": "",
+              "description": "Veteranos del folk metal nacional procedentes de Elda. Melodías de origen celta combinadas con heavy metal clásico.",
+              "country": "España",
+              "genre": "Folk Metal"
+            }
+          },
+          {
+            "band": "DARK TRANQUILLITY",
+            "stage": "Dave Mustaine",
+            "start": "20:10",
+            "end": "21:10",
+            "bio": {
+              "name": "DARK TRANQUILLITY",
+              "title": "",
+              "description": "Pioneros del sonido de Gotemburgo, liderados por Mikael Stanne, traerán su melancólica y veloz maestría melódica.",
+              "country": "Suecia",
+              "genre": "Death Metal Melódico"
+            }
+          },
+          {
+            "band": "INJECTOR",
+            "stage": "New Rock",
+            "start": "20:50",
+            "end": "21:40",
+            "bio": {
+              "name": "INJECTOR",
+              "title": "",
+              "description": "Thrash metal rápido, agresivo y de altísima calidad técnica procedente de Murcia.",
+              "country": "España",
+              "genre": "Thrash Metal"
+            }
+          },
+          {
+            "band": "GODSMACK",
+            "stage": "Doro Pesch",
+            "start": "21:20",
+            "end": "22:30",
+            "bio": {
+              "name": "GODSMACK",
+              "title": "",
+              "description": "Sully Erna y los suyos descargarán himnos del rock alternativo y post-grunge de finales de los noventa y dos mil.",
+              "country": "EEUU",
+              "genre": "Metal Alternativo"
+            }
+          },
+          {
+            "band": "EVO",
+            "stage": "New Rock",
+            "start": "22:05",
+            "end": "22:55",
+            "bio": {
+              "name": "EVO",
+              "title": "",
+              "description": "Leyenda del heavy metal madrileño de los años ochenta, listos para revivir himnos como \"Animal de ciudad\".",
+              "country": "España",
+              "genre": "Heavy Metal"
+            }
+          },
+          {
+            "band": "ARCH ENEMY",
+            "stage": "Dave Mustaine",
+            "start": "22:40",
+            "end": "00:10",
+            "bio": {
+              "name": "ARCH ENEMY",
+              "title": "",
+              "description": "Liderados por la imponente Alissa White-Gluz y Michael Amott a las guitarras, Arch Enemy son los reyes indiscutibles del death metal melódico global.",
+              "country": "Suecia",
+              "genre": "Death Metal Melódico"
+            }
+          },
+          {
+            "band": "CELTIBEERIAN",
+            "stage": "New Rock",
+            "start": "23:20",
+            "end": "00:20",
+            "bio": {
+              "name": "CELTIBEERIAN",
+              "title": "",
+              "description": "Folk metal fiestero e irreverente. Cerveza, gaitas y diversión garantizada en el escenario New Rock.",
+              "country": "España",
+              "genre": "Folk Metal"
+            }
+          },
+          {
+            "band": "DARTAGNAN",
+            "stage": "Doro Pesch",
+            "start": "00:20",
+            "end": "01:40",
+            "bio": {
+              "name": "DARTAGNAN",
+              "title": "",
+              "description": "Folk rock de temática mosquetera. Espadas, violines y estribillos épicos cantados en alemán.",
+              "country": "Alemania",
+              "genre": "Folk Rock"
+            }
+          },
+          {
+            "band": "BOLU2 DEATH",
+            "stage": "New Rock",
+            "start": "00:45",
+            "end": "01:45",
+            "bio": {
+              "name": "BOLU2 DEATH",
+              "title": "",
+              "description": "Huesca metalcore y dubstep fusionados en una bomba de energía brutal.",
+              "country": "España",
+              "genre": "Metalcore/Electronic"
+            }
+          },
+          {
+            "band": "LÈPOKA",
+            "stage": "Dave Mustaine",
+            "start": "01:50",
+            "end": "03:00",
+            "bio": {
+              "name": "LÈPOKA",
+              "title": "",
+              "description": "Folk metal cervecero y festivo desde Castellón. La fiesta está asegurada con sus melodías y ritmos pegadizos.",
+              "country": "España",
+              "genre": "Folk Metal"
             }
           }
         ]
@@ -1648,19 +2003,174 @@ const rawAgendaFestData: any = {
         "dayNumber": 3,
         "dayLabel": "Viernes 7",
         "weekdayEs": "Viernes",
-        "doors": "23:15",
+        "doors": "16:20",
         "stages": [
-          "Jesús de la Rosa",
-          "Azucena",
-          "New Rock",
-          "Mark Reale"
+          "Dave Mustaine",
+          "Doro Pesch",
+          "New Rock"
         ],
         "acts": [
           {
+            "band": "CHEZ KANE",
+            "stage": "Doro Pesch",
+            "start": "16:50",
+            "end": "17:40",
+            "bio": {
+              "name": "CHEZ KANE",
+              "title": "",
+              "description": "La gran voz del hard rock melódico ochentero actual. Chez Kane y su banda nos transportarán a la era dorada del AOR.",
+              "country": "Reino Unido",
+              "genre": "Hard Rock"
+            }
+          },
+          {
+            "band": "XERIA",
+            "stage": "New Rock",
+            "start": "17:05",
+            "end": "17:55",
+            "bio": {
+              "name": "XERIA",
+              "title": "",
+              "description": "Banda vallisoletana de metal sinfónico y alternativo, con grandes melodías vocales a cargo de Marina Sweet.",
+              "country": "España",
+              "genre": "Metal Sinfónico"
+            }
+          },
+          {
+            "band": "FUTURE PALACE",
+            "stage": "Dave Mustaine",
+            "start": "17:50",
+            "end": "18:50",
+            "bio": {
+              "name": "FUTURE PALACE",
+              "title": "",
+              "description": "Trío alemán de post-hardcore y metal alternativo liderado por Maria Lessing, con melodías emocionales y breakdowns pesados.",
+              "country": "Alemania",
+              "genre": "Post-Hardcore"
+            }
+          },
+          {
+            "band": "WINGS OF STEEL",
+            "stage": "New Rock",
+            "start": "18:20",
+            "end": "19:10",
+            "bio": {
+              "name": "WINGS OF STEEL",
+              "title": "",
+              "description": "Hard rock clásico y heavy metal de la costa oeste con riffs potentes y voz espectacular.",
+              "country": "EEUU",
+              "genre": "Hard Rock"
+            }
+          },
+          {
+            "band": "THE BABOON SHOW",
+            "stage": "Doro Pesch",
+            "start": "19:00",
+            "end": "20:00",
+            "bio": {
+              "name": "THE BABOON SHOW",
+              "title": "",
+              "description": "¡Pura dinamita en directo! La banda de punk rock sueca liderada por la electrizante Cecilia Boström ofrecerá uno de los shows más enérgicos del festival.",
+              "country": "Suecia",
+              "genre": "Punk Rock"
+            }
+          },
+          {
+            "band": "AGAINST MYSELF",
+            "stage": "New Rock",
+            "start": "19:35",
+            "end": "20:25",
+            "bio": {
+              "name": "AGAINST MYSELF",
+              "title": "",
+              "description": "Banda de metal sinfónico y progresivo que destaca por sus composiciones complejas e intensas atmósferas.",
+              "country": "España",
+              "genre": "Metal Sinfónico"
+            }
+          },
+          {
+            "band": "SARATOGA",
+            "stage": "Dave Mustaine",
+            "start": "20:10",
+            "end": "21:10",
+            "bio": {
+              "name": "SARATOGA",
+              "title": "",
+              "description": "La apisonadora del heavy metal español. Tete Novoa, Jero Ramiro y Niko del Hierro repasarán sus mayores clásicos.",
+              "country": "España",
+              "genre": "Heavy Metal"
+            }
+          },
+          {
+            "band": "EMPLOYED TO SERVE",
+            "stage": "New Rock",
+            "start": "20:50",
+            "end": "21:40",
+            "bio": {
+              "name": "EMPLOYED TO SERVE",
+              "title": "",
+              "description": "Desde el Reino Unido llega uno de los directos de metalcore y hardcore más pesados y viscerales de la actualidad.",
+              "country": "Reino Unido",
+              "genre": "Metalcore"
+            }
+          },
+          {
+            "band": "STRATOVARIUS",
+            "stage": "Doro Pesch",
+            "start": "21:20",
+            "end": "22:30",
+            "bio": {
+              "name": "STRATOVARIUS",
+              "title": "",
+              "description": "Los padres finlandeses del power metal sinfónico descargarán himnos inmortales como \"Hunting High and Low\" y \"Black Diamond\".",
+              "country": "Finlandia",
+              "genre": "Power Metal"
+            }
+          },
+          {
+            "band": "DAERIA",
+            "stage": "New Rock",
+            "start": "22:05",
+            "end": "22:55",
+            "bio": {
+              "name": "DAERIA",
+              "title": "",
+              "description": "Heavy metal moderno y alternativo con potentes guitarras y una impecable ejecución vocal.",
+              "country": "España",
+              "genre": "Metal Alternativo"
+            }
+          },
+          {
+            "band": "IN FLAMES",
+            "stage": "Dave Mustaine",
+            "start": "22:40",
+            "end": "00:10",
+            "bio": {
+              "name": "IN FLAMES",
+              "title": "",
+              "description": "Una de las bandas más influyentes de la historia del metal. De inventores del death metal melódico a gigantes del metal alternativo moderno.",
+              "country": "Suecia",
+              "genre": "Metal Alternativo"
+            }
+          },
+          {
+            "band": "MIND DRILLER",
+            "stage": "New Rock",
+            "start": "23:20",
+            "end": "00:20",
+            "bio": {
+              "name": "MIND DRILLER",
+              "title": "",
+              "description": "Banda de metal industrial con tres vocalistas (masculino, femenino y gutural) que crean una mezcla de voces única.",
+              "country": "España",
+              "genre": "Metal Industrial"
+            }
+          },
+          {
             "band": "SAUROM",
-            "stage": "Jesús de la Rosa",
-            "start": "23:45",
-            "end": "25:15",
+            "stage": "Doro Pesch",
+            "start": "00:20",
+            "end": "01:40",
             "bio": {
               "name": "SAUROM",
               "title": "",
@@ -1668,6 +2178,32 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=F0f5i1vK760"
+            }
+          },
+          {
+            "band": "JORDI WILD DJ SET",
+            "stage": "New Rock",
+            "start": "00:45",
+            "end": "01:45",
+            "bio": {
+              "name": "JORDI WILD DJ SET",
+              "title": "",
+              "description": "El creador de contenido y melómano Jordi Wild cerrará la noche del viernes con un DJ Set cargado de clásicos del rock y el metal.",
+              "country": "España",
+              "genre": "DJ Set"
+            }
+          },
+          {
+            "band": "DARK MOOR",
+            "stage": "Dave Mustaine",
+            "start": "01:50",
+            "end": "03:00",
+            "bio": {
+              "name": "DARK MOOR",
+              "title": "",
+              "description": "Pioneros del metal sinfónico y neoclásico en España, con una larga trayectoria internacional.",
+              "country": "España",
+              "genre": "Metal Sinfónico"
             }
           }
         ]
@@ -1677,14 +2213,195 @@ const rawAgendaFestData: any = {
         "dayNumber": 4,
         "dayLabel": "Sábado 8",
         "weekdayEs": "Sábado",
-        "doors": "15:00",
+        "doors": "16:30",
         "stages": [
-          "Jesús de la Rosa",
-          "Azucena",
-          "New Rock",
-          "Mark Reale"
+          "Dave Mustaine",
+          "Doro Pesch",
+          "New Rock"
         ],
-        "acts": []
+        "acts": [
+          {
+            "band": "GUILT TRIP",
+            "stage": "Dave Mustaine",
+            "start": "17:00",
+            "end": "18:00",
+            "bio": {
+              "name": "GUILT TRIP",
+              "title": "",
+              "description": "Hardcore metalizado directo desde Manchester para desatar los moshpits más salvajes de la jornada.",
+              "country": "Reino Unido",
+              "genre": "Hardcore"
+            }
+          },
+          {
+            "band": "DEATH AND LEGACY",
+            "stage": "New Rock",
+            "start": "17:05",
+            "end": "17:55",
+            "bio": {
+              "name": "DEATH AND LEGACY",
+              "title": "",
+              "description": "Banda de death melódico liderada por Hynphernia, que destaca por su contundencia y atmósfera oscura.",
+              "country": "España",
+              "genre": "Death Metal Melódico"
+            }
+          },
+          {
+            "band": "Francia",
+            "stage": "Doro Pesch",
+            "start": "18:10",
+            "end": "19:10",
+            "bio": {
+              "name": "Francia",
+              "title": "",
+              "description": "Folk pagano nórdico mezclado con ritmos electrónicos de techno y trance. ¡Una experiencia ritual y bailable única!",
+              "genre": "Pagan Folk"
+            }
+          },
+          {
+            "band": "FALLEN AT DAWN",
+            "stage": "New Rock",
+            "start": "18:20",
+            "end": "19:10",
+            "bio": {
+              "name": "FALLEN AT DAWN",
+              "title": "",
+              "description": "Con su estilo entre el post-hardcore y metalcore, la banda madrileña es un ejemplo de constancia y amor por la música. Desde su creación hace aproximadamente una década hasta hoy, y con dos discos por medio, su música ha llegado tanto a varios países de Europa como Latinoamérica gracias a dos álbumes top publicados en 2018 y 2025 🙌  En 2025 estuvieron en el Hellfest, pero nosotros ya los tuvimos por nuestros escenarios en 2024. Este mismo año Fallen At Dawn nos volverán a visitar para darlo todo en el Ritual el jueves 2 de julio",
+              "country": "España",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0"
+            }
+          },
+          {
+            "band": "DEICIDE",
+            "stage": "Dave Mustaine",
+            "start": "19:20",
+            "end": "20:20",
+            "bio": {
+              "name": "DEICIDE",
+              "title": "",
+              "description": "Liderados por el infame Glen Benton, los reyes del death metal satánico clásico descargarán su brutal repertorio blasfemo.",
+              "country": "EEUU",
+              "genre": "Death Metal"
+            }
+          },
+          {
+            "band": "LATZEN",
+            "stage": "New Rock",
+            "start": "19:35",
+            "end": "20:25",
+            "bio": {
+              "name": "LATZEN",
+              "title": "",
+              "description": "Mítica banda de heavy metal euskaldun, listos para recordar clásicos atemporales.",
+              "country": "España",
+              "genre": "Heavy Metal"
+            }
+          },
+          {
+            "band": "HEAVEN SHALL BURN",
+            "stage": "Doro Pesch",
+            "start": "20:30",
+            "end": "21:50",
+            "bio": {
+              "name": "HEAVEN SHALL BURN",
+              "title": "",
+              "description": "La apisonadora alemana de death metal melódico y metalcore desatará una tormenta de moshpits épicos.",
+              "country": "Alemania",
+              "genre": "Melodic Death Metal"
+            }
+          },
+          {
+            "band": "EEUU",
+            "stage": "New Rock",
+            "start": "20:50",
+            "end": "21:40",
+            "bio": {
+              "name": "EEUU",
+              "title": "",
+              "description": "El cantante Johnny Gioeli lidera esta banda de hard rock melódico nacida en los noventa.",
+              "genre": "Hard Rock"
+            }
+          },
+          {
+            "band": "HELLOWEEN",
+            "stage": "Dave Mustaine",
+            "start": "22:00",
+            "end": "00:00",
+            "bio": {
+              "name": "HELLOWEEN",
+              "title": "",
+              "description": "¡El cabeza de cartel indiscutible! Los creadores del power metal Helloween regresan con su show completo de aniversario para reinar en Villena.",
+              "country": "Alemania",
+              "genre": "Power Metal"
+            }
+          },
+          {
+            "band": "TEN56.",
+            "stage": "New Rock",
+            "start": "22:05",
+            "end": "22:55",
+            "bio": {
+              "name": "TEN56.",
+              "title": "",
+              "description": "Metal oscuro y deathcore de vanguardia con toques industriales y breakdowns opresivos.",
+              "country": "Francia",
+              "genre": "Deathcore"
+            }
+          },
+          {
+            "band": "HALF ME",
+            "stage": "New Rock",
+            "start": "23:20",
+            "end": "00:20",
+            "bio": {
+              "name": "HALF ME",
+              "title": "",
+              "description": "Metalcore experimental y agresivo firmado por uno de los nuevos estandartes del sello Arising Empire.",
+              "country": "Alemania",
+              "genre": "Metalcore"
+            }
+          },
+          {
+            "band": "WARCRY",
+            "stage": "Doro Pesch",
+            "start": "00:10",
+            "end": "01:40",
+            "bio": {
+              "name": "WARCRY",
+              "title": "",
+              "description": "Víctor García y sus chicos regresan al Leyendas para descargar sus himnos inmortales de heavy metal coreados por miles de almas.",
+              "country": "España",
+              "genre": "Heavy Metal"
+            }
+          },
+          {
+            "band": "CABAL",
+            "stage": "New Rock",
+            "start": "00:45",
+            "end": "01:45",
+            "bio": {
+              "name": "CABAL",
+              "title": "",
+              "description": "Metal extremo oscuro e inquietante directo desde Copenhague.",
+              "country": "Dinamarca",
+              "genre": "Deathcore"
+            }
+          },
+          {
+            "band": "ANKHARA",
+            "stage": "Dave Mustaine",
+            "start": "01:50",
+            "end": "03:00",
+            "bio": {
+              "name": "ANKHARA",
+              "title": "",
+              "description": "Gran banda madrileña de heavy metal clásico con tintes power metal y la inconfundible voz de Pacho Brea.",
+              "country": "España",
+              "genre": "Heavy Metal"
+            }
+          }
+        ]
       }
     ],
     "noticias": [
