@@ -11,7 +11,7 @@ El portal principal actúa como el selector global de festivales, ofreciendo una
 ### Funcionalidades:
 - **Catálogo de Festivales**: Muestra tarjetas interactivas de los festivales activos. Cada tarjeta incluye la imagen oficial, fechas formateadas, localización y un indicador de estado del festival (`En Vivo`, `Próximamente`, `Finalizado`).
 - **Barra de Búsqueda de Festivales**: Permite buscar festivales dinámicamente por nombre o ciudad de celebración.
-- **Filtros de Clasificación**: Botones interactivos para ordenar la lista de festivales por **Fecha** (orden cronológico) o por **Nombre** (orden alfabético).
+- **Filtros de Clasificación**: Botones interactivos para ordenar la lista de festivales por **Nombre** (orden alfabético) o por **Fecha**. El orden por fecha es inteligente y sensible al tiempo: sitúa los festivales `En Vivo` en primer lugar, seguidos por los `Próximamente` cronológicamente (el más cercano primero), y relega los festivales `Finalizados` en el pasado al final de la lista de forma inversa (los más recientes primero), evitando que las ediciones antiguas obstruyan la visualización.
 - **Modos de Visualización**: Interruptor para alternar la vista entre cuadrícula (Grid, con tarjetas visuales del cartel) y lista (List, diseño compacto).
 - **Selector de Idioma**: Botón interactivo de bandera para alternar el idioma de forma cíclica (ES -> EN -> FR) en todo el portal.
 

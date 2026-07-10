@@ -63,6 +63,16 @@ Para permitir que el usuario visualice la tarjeta de cuenta atrás de su próxim
 - **`getActAbsoluteStartTime`**: Calcula la fecha y hora absoluta de un concierto, resolviendo de forma segura el salto de madrugada (+1 día si la hora es inferior a `dayEndHour`).
 - **`nextFavoriteAct`**: Filtra todos los conciertos marcados como favoritos que aún no han terminado, ordenándolos para mostrar el que esté sonando en directo o el próximo a iniciarse.
 
+### 3. Ordenación Inteligente por Fecha en la Portada (Selector)
+El selector de festivales implementa un comparador sensible al tiempo para ordenar las ediciones según la fecha de la consulta. Esto evita que los festivales finalizados en años anteriores obstruyan la parte superior de la interfaz:
+1. **Asignación de Pesos de Estado**:
+   - `En Vivo`: Peso 1 (máxima prioridad).
+   - `Próximamente`: Peso 2.
+   - `Finalizado`: Peso 3 (mínima prioridad).
+2. **Criterios de Desempate**:
+   - Si ambos están `En Vivo` o `Próximamente`, se ordenan cronológicamente (el que comience antes va primero).
+   - Si ambos están `Finalizados` (ej: en el año 2027), se ordenan de forma cronológica inversa (los más recientes arriba).
+
 ---
 
 ## 4. Persistencia Segmentada y Localización (localStorage)

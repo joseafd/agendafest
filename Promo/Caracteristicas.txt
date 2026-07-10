@@ -2,7 +2,7 @@ Características Clave de AgendaFest
 
 Soporte Multifestival Completo (NUEVO)
 - Selector de Portada: Página de entrada interactiva para buscar y seleccionar entre diferentes ediciones de festivales activos (como Resurrection Fest 2026 y Leyendas del Rock 2026).
-- Vistas de Visualización: Modos de cuadrícula (grid con posters oficiales) y de lista (rows) ordenados por fecha o de forma alfabética.
+- Vistas de Visualización y Ordenación Inteligente: Modos de cuadrícula (grid con posters oficiales) y de lista (rows). La ordenación "Por fecha" es inteligente y tiene en cuenta la fecha de consulta: prioriza festivales activos (en vivo) y futuros, relegando los festivales finalizados en el pasado al final de la lista de manera descendente (los más recientes primero).
 - Carga de Recursos Dinámicos: Cada festival carga su propia paleta de colores, escenarios, plano del recinto, firmas, noticias y agenda independientes.
 
 Soporte Multiidioma (ES, EN, FR) e i18n Completo (NUEVO)
