@@ -30,6 +30,28 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const [isCreditsOpen, setIsCreditsOpen] = useState(false);
   const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | null>(null);
 
+  // Load followed editions from localStorage
+  const [followedEditions, setFollowedEditions] = useState<string[]>(() => {
+    try {
+      const stored = window.localStorage.getItem('af_followed_editions');
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      return [];
+    }
+  });
+
+  const handleToggleFollow = (edId: string) => {
+    setFollowedEditions((prev) => {
+      const updated = prev.includes(edId) ? prev.filter(id => id !== edId) : [...prev, edId];
+      try {
+        window.localStorage.setItem('af_followed_editions', JSON.stringify(updated));
+      } catch (e) {
+        // ignore
+      }
+      return updated;
+    });
+  };
+
   const searchRef = useRef<HTMLInputElement>(null);
 
   // Focus global search bar
@@ -208,6 +230,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
                     edition={ed}
                     language={language}
                     onClick={() => onSelectEdition(ed.config.edicionId)}
+                    isFollowed={followedEditions.includes(ed.config.edicionId)}
+                    onToggleFollow={() => handleToggleFollow(ed.config.edicionId)}
                   />
                 ))}
               </div>
@@ -223,15 +247,19 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               onSelectEdition={onSelectEdition}
               onScrollToUpcoming={() => handleScrollToSection('upcoming-festivals-section')}
               onShowAll={() => handleScrollToSection('upcoming-festivals-section')}
+              followedEditions={followedEditions}
+              onToggleFollow={handleToggleFollow}
             />
 
-            {/* 4. Continuar mi agenda */}
-            <ContinueAgendaSection
-              editions={editions}
-              language={language}
-              onSelectEdition={onSelectEdition}
-              onScrollToMyFestivals={() => handleScrollToSection('my-festivals-section')}
-            />
+            {/* 4. Continuar mi agenda (sólo se muestra si hay agendas con favoritos) */}
+            {editionsWithFavs.length > 0 && (
+              <ContinueAgendaSection
+                editions={editions}
+                language={language}
+                onSelectEdition={onSelectEdition}
+                onScrollToMyFestivals={() => handleScrollToSection('my-festivals-section')}
+              />
+            )}
 
             {/* 5. Próximos festivales */}
             <UpcomingFestivalsSection
@@ -239,6 +267,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               language={language}
               onSelectEdition={onSelectEdition}
               onShowAll={() => handleScrollToSection('upcoming-festivals-section')}
+              followedEditions={followedEditions}
+              onToggleFollow={handleToggleFollow}
             />
 
             {/* 6. Accesos rápidos */}

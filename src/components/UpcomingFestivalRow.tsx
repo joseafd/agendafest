@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, Bookmark } from 'lucide-react';
 import type { FestivalEdition } from '../data/festivalData';
 import { t, formatDatesByLang } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -8,12 +8,16 @@ interface UpcomingFestivalRowProps {
   edition: FestivalEdition;
   language: Language;
   onClick: () => void;
+  isFollowed?: boolean;
+  onToggleFollow?: (e: React.MouseEvent) => void;
 }
 
 export const UpcomingFestivalRow: React.FC<UpcomingFestivalRowProps> = ({
   edition,
   language,
   onClick,
+  isFollowed = false,
+  onToggleFollow,
 }) => {
   const { config, days } = edition;
 
@@ -117,6 +121,30 @@ export const UpcomingFestivalRow: React.FC<UpcomingFestivalRowProps> = ({
 
       {/* Right side: Badge and Arrow */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+        {onToggleFollow && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onToggleFollow(e);
+            }}
+            style={{
+              background: isFollowed ? 'rgba(255, 214, 0, 0.15)' : 'rgba(255, 255, 255, 0.02)',
+              border: isFollowed ? '1px solid #ffd600' : '1px solid var(--border-color)',
+              color: isFollowed ? '#ffd600' : 'var(--text-secondary)',
+              borderRadius: '6px',
+              padding: '6px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'background 0.2s, border-color 0.2s, color 0.2s',
+            }}
+            className="btn-interactive"
+            title={isFollowed ? 'Quitar de mis favoritos' : 'Añadir a mis favoritos'}
+          >
+            <Bookmark size={12} fill={isFollowed ? '#ffd600' : 'none'} />
+          </button>
+        )}
         <span
           style={{
             padding: '3px 8px',

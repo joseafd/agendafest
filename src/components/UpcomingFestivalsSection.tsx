@@ -9,6 +9,8 @@ interface UpcomingFestivalsSectionProps {
   language: Language;
   onSelectEdition: (id: string) => void;
   onShowAll: () => void;
+  followedEditions: string[];
+  onToggleFollow: (id: string) => void;
 }
 
 export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> = ({
@@ -16,13 +18,14 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
   language,
   onSelectEdition,
   onShowAll,
+  followedEditions,
+  onToggleFollow,
 }) => {
   // Determine which festivals are already in "My Festivals" to exclude them
   const myEditionsIds = useMemo(() => {
     return editions.filter(ed => {
       const edId = ed.config.edicionId;
-      const lastOpened = window.localStorage.getItem('af_last_opened_edition');
-      const isLastOpened = lastOpened === edId;
+      const isFollowed = followedEditions.includes(edId);
 
       let hasFavs = false;
       try {
@@ -35,15 +38,21 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
         // ignore
       }
 
-      return isLastOpened || hasFavs;
+      return isFollowed || hasFavs;
     }).map(ed => ed.config.edicionId);
-  }, [editions]);
+  }, [editions, followedEditions]);
 
   const upcomingEditions = useMemo(() => {
-    // Exclude myEditionsIds, unless there are no other festivals to display
+    const now = new Date();
+    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+
+    // Exclude myEditionsIds and exclude past editions (endDate must be >= todayStr)
     let filtered = editions.filter(ed => !myEditionsIds.includes(ed.config.edicionId));
+    filtered = filtered.filter(ed => ed.config.endDate >= todayStr);
+
     if (filtered.length === 0) {
-      filtered = editions; // Show all if upcoming list would otherwise be empty
+      // Fallback: show all active/future editions even if they are followed/opened
+      filtered = editions.filter(ed => ed.config.endDate >= todayStr);
     }
 
     // Sort by start date ascending
@@ -116,6 +125,8 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
               edition={ed}
               language={language}
               onClick={() => onSelectEdition(ed.config.edicionId)}
+              isFollowed={followedEditions.includes(ed.config.edicionId)}
+              onToggleFollow={() => onToggleFollow(ed.config.edicionId)}
             />
           ))}
         </div>

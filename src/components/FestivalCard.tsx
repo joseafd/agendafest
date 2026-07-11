@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar, Bookmark } from 'lucide-react';
 import type { FestivalEdition } from '../data/festivalData';
 import { t, formatDatesByLang } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -8,12 +8,16 @@ interface FestivalCardProps {
   edition: FestivalEdition;
   language: Language;
   onClick: () => void;
+  isFollowed?: boolean;
+  onToggleFollow?: (e: React.MouseEvent) => void;
 }
 
 export const FestivalCard: React.FC<FestivalCardProps> = ({
   edition,
   language,
   onClick,
+  isFollowed = false,
+  onToggleFollow,
 }) => {
   const { config, days } = edition;
 
@@ -91,6 +95,36 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
           zIndex: 1,
         }}
       />
+
+      {/* Top Left Follow/Bookmark Toggle Button */}
+      {onToggleFollow && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleFollow(e);
+          }}
+          style={{
+            position: 'absolute',
+            top: '12px',
+            left: '12px',
+            width: '28px',
+            height: '28px',
+            background: isFollowed ? 'rgba(255, 214, 0, 0.2)' : 'rgba(15, 17, 24, 0.75)',
+            border: isFollowed ? '1px solid #ffd600' : '1px solid var(--border-color)',
+            borderRadius: '8px',
+            color: isFollowed ? '#ffd600' : 'var(--text-secondary)',
+            cursor: 'pointer',
+            zIndex: 10,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'background 0.2s, border-color 0.2s, color 0.2s',
+          }}
+          className="btn-interactive"
+        >
+          <Bookmark size={14} fill={isFollowed ? '#ffd600' : 'none'} />
+        </button>
+      )}
 
       {/* Top Status Badge */}
       <div

@@ -10,6 +10,8 @@ interface MyFestivalsSectionProps {
   onSelectEdition: (id: string) => void;
   onScrollToUpcoming: () => void;
   onShowAll: () => void;
+  followedEditions: string[];
+  onToggleFollow: (id: string) => void;
 }
 
 export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
@@ -18,12 +20,13 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
   onSelectEdition,
   onScrollToUpcoming,
   onShowAll,
+  followedEditions,
+  onToggleFollow,
 }) => {
   // Determine which festivals belong to "My Festivals"
   const myEditions = editions.filter(ed => {
     const edId = ed.config.edicionId;
-    const lastOpened = window.localStorage.getItem('af_last_opened_edition');
-    const isLastOpened = lastOpened === edId;
+    const isFollowed = followedEditions.includes(edId);
 
     let hasFavs = false;
     try {
@@ -36,7 +39,7 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
       // ignore
     }
 
-    return isLastOpened || hasFavs;
+    return isFollowed || hasFavs;
   });
 
   return (
@@ -135,6 +138,8 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
               edition={ed}
               language={language}
               onClick={() => onSelectEdition(ed.config.edicionId)}
+              isFollowed={followedEditions.includes(ed.config.edicionId)}
+              onToggleFollow={() => onToggleFollow(ed.config.edicionId)}
             />
           ))}
         </div>
