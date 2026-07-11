@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import type { FestivalEdition } from '../data/festivalData';
 import { FestivalCard } from './FestivalCard';
 import { t } from '../utils/translations';
@@ -23,24 +23,28 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
   followedEditions,
   onToggleFollow,
 }) => {
-  // Determine which festivals belong to "My Festivals"
-  const myEditions = editions.filter(ed => {
-    const edId = ed.config.edicionId;
-    const isFollowed = followedEditions.includes(edId);
+  // Determine which festivals belong to "My Festivals" and sort chronologically
+  const myEditions = useMemo(() => {
+    const filtered = editions.filter(ed => {
+      const edId = ed.config.edicionId;
+      const isFollowed = followedEditions.includes(edId);
 
-    let hasFavs = false;
-    try {
-      const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
-      if (favsStr) {
-        const favs = JSON.parse(favsStr);
-        hasFavs = Array.isArray(favs) && favs.length > 0;
+      let hasFavs = false;
+      try {
+        const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
+        if (favsStr) {
+          const favs = JSON.parse(favsStr);
+          hasFavs = Array.isArray(favs) && favs.length > 0;
+        }
+      } catch (e) {
+        // ignore
       }
-    } catch (e) {
-      // ignore
-    }
 
-    return isFollowed || hasFavs;
-  });
+      return isFollowed || hasFavs;
+    });
+
+    return filtered.sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
+  }, [editions, followedEditions]);
 
   return (
     <section

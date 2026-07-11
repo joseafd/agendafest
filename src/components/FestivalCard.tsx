@@ -96,7 +96,7 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
         }}
       />
 
-      {/* Top Left Follow/Bookmark Toggle Button */}
+      {/* Top Right Follow/Bookmark Toggle Button */}
       {onToggleFollow && (
         <button
           onClick={(e) => {
@@ -106,7 +106,7 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
           style={{
             position: 'absolute',
             top: '12px',
-            left: '12px',
+            right: '12px',
             width: '28px',
             height: '28px',
             background: isFollowed ? 'rgba(255, 42, 133, 0.2)' : 'rgba(15, 17, 24, 0.75)',
@@ -140,7 +140,7 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
         style={{
           position: 'absolute',
           top: '12px',
-          right: '12px',
+          left: '12px',
           padding: '4px 10px',
           background: status.bg,
           borderRadius: '8px',
