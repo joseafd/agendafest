@@ -217,6 +217,12 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   }, []);
 
   const getSimulatedOrRealTime = useCallback((realTime: Date): Date => {
+    const params = new URLSearchParams(window.location.search);
+    const isDemo = params.get('demo') === 'true' || window.localStorage.getItem('af_demo_mode') === 'true';
+    if (!isDemo) {
+      return realTime;
+    }
+
     const dateStr = `${realTime.getFullYear()}-${(realTime.getMonth() + 1).toString().padStart(2, '0')}-${realTime.getDate().toString().padStart(2, '0')}`;
     const isFestivalPeriod = dateStr >= edicionConfig.startDate && dateStr <= edicionConfig.endDate;
     
@@ -847,6 +853,12 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                     <span style={{ fontSize: '0.68rem', color: '#ffd600', fontWeight: '800' }}>
                       {nextFavoriteAct.minutesToStart <= 120 
                         ? (language === 'en' ? `In ${nextFavoriteAct.minutesToStart} min` : language === 'fr' ? `Dans ${nextFavoriteAct.minutesToStart} min` : `En ${nextFavoriteAct.minutesToStart} min`)
+                        : nextFavoriteAct.minutesToStart >= 1440
+                        ? (language === 'en' 
+                            ? `${Math.round(nextFavoriteAct.minutesToStart / 1440)} days left` 
+                            : language === 'fr' 
+                            ? `Dans ${Math.round(nextFavoriteAct.minutesToStart / 1440)} jours` 
+                            : `Faltan ${Math.round(nextFavoriteAct.minutesToStart / 1440)} días`)
                         : getActLocalizedDayNameAndHour(nextFavoriteAct.act, language)
                       }
                     </span>

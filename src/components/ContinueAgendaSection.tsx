@@ -79,6 +79,10 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       
       // Determine simulation time (consistent with FestivalDashboard logic)
       const getSimulatedOrRealTime = (realTime: Date): Date => {
+        const params = new URLSearchParams(window.location.search);
+        const isDemo = params.get('demo') === 'true' || window.localStorage.getItem('af_demo_mode') === 'true';
+        if (!isDemo) return realTime;
+
         const dateStr = `${realTime.getFullYear()}-${(realTime.getMonth() + 1).toString().padStart(2, '0')}-${realTime.getDate().toString().padStart(2, '0')}`;
         const isFestivalPeriod = dateStr >= ed.config.startDate && dateStr <= ed.config.endDate;
         if (isFestivalPeriod) return realTime;
@@ -298,7 +302,16 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
               <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--text-primary)' }}>
                 {primaryAgenda.nextOrLiveAct.status === 'live'
                   ? tFormat(language, 'enDirectoHome', { band: primaryAgenda.nextOrLiveAct.act.band })
-                  : tFormat(language, 'proximoHome', { band: primaryAgenda.nextOrLiveAct.act.band, time: primaryAgenda.nextOrLiveAct.act.start })}
+                  : tFormat(language, 'proximoHome', { 
+                      band: primaryAgenda.nextOrLiveAct.act.band, 
+                      time: primaryAgenda.nextOrLiveAct.minutesToStart >= 1440
+                        ? (language === 'en' 
+                            ? `${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} days left` 
+                            : language === 'fr' 
+                            ? `Dans ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} jours` 
+                            : `Faltan ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} días`)
+                        : primaryAgenda.nextOrLiveAct.act.start 
+                    })}
               </span>
             </div>
           )}
