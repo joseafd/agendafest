@@ -10,6 +10,7 @@ import { PwaInstallModal } from './PwaInstallModal';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 import type { FestivalEdition } from '../data/festivalData';
+import { FinishedFestivalsSection } from './FinishedFestivalsSection';
 import { X, Calendar, Map, Newspaper, Info } from 'lucide-react';
 
 interface GlobalHomeProps {
@@ -28,7 +29,7 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [isPwaOpen, setIsPwaOpen] = useState(false);
   const [isCreditsOpen, setIsCreditsOpen] = useState(false);
-  const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | null>(null);
+  const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | 'savedFinished' | 'historical' | null>(null);
 
   // Load followed editions from localStorage
   const [followedEditions, setFollowedEditions] = useState<string[]>(() => {
@@ -39,6 +40,39 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
       return [];
     }
   });
+
+  const todayStr = useMemo(() => {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  }, []);
+
+  const finishedEditions = useMemo(() => {
+    return editions.filter(ed => ed.config.endDate < todayStr);
+  }, [editions, todayStr]);
+
+  const finishedWithFavsOrFollowed = useMemo(() => {
+    return finishedEditions.filter(ed => {
+      const edId = ed.config.edicionId;
+      const isFollowed = followedEditions.includes(edId);
+      
+      let hasFavs = false;
+      try {
+        const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
+        if (favsStr) {
+          const favs = JSON.parse(favsStr);
+          hasFavs = Array.isArray(favs) && favs.length > 0;
+        }
+      } catch (e) {
+        // ignore
+      }
+      return isFollowed || hasFavs;
+    });
+  }, [finishedEditions, followedEditions]);
+
+  const historicalEditions = useMemo(() => {
+    const savedIds = finishedWithFavsOrFollowed.map(ed => ed.config.edicionId);
+    return finishedEditions.filter(ed => !savedIds.includes(ed.config.edicionId));
+  }, [finishedEditions, finishedWithFavsOrFollowed]);
 
   const handleToggleFollow = (edId: string) => {
     setFollowedEditions((prev) => {
@@ -271,6 +305,17 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               onToggleFollow={handleToggleFollow}
             />
 
+            {/* 5.5 Festivales finalizados */}
+            <FinishedFestivalsSection
+              editions={editions}
+              language={language}
+              onSelectEdition={onSelectEdition}
+              followedEditions={followedEditions}
+              onToggleFollow={handleToggleFollow}
+              onOpenSavedModal={() => setActiveSelectorModal('savedFinished')}
+              onOpenHistoricalModal={() => setActiveSelectorModal('historical')}
+            />
+
             {/* 6. Accesos rápidos */}
             <QuickAccessSection
               language={language}
@@ -337,6 +382,10 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
                   ? (language === 'es' ? 'Selecciona una agenda' : language === 'en' ? 'Select a schedule' : 'Sélectionner un agenda')
                   : activeSelectorModal === 'map'
                   ? (language === 'es' ? 'Selecciona un mapa' : language === 'en' ? 'Select a map' : 'Sélectionner un plan')
+                  : activeSelectorModal === 'savedFinished'
+                  ? (language === 'es' ? 'Agendas de festivales finalizados' : language === 'en' ? 'Past Festival Schedules' : 'Agendas de festivals terminés')
+                  : activeSelectorModal === 'historical'
+                  ? (language === 'es' ? 'Histórico de festivales' : language === 'en' ? 'Festival Archive' : 'Historique des festivals')
                   : (language === 'es' ? 'Selecciona un festival' : language === 'en' ? 'Select a festival' : 'Sélectionner un festival')
                 }
               </h4>
@@ -350,37 +399,49 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {/* Show matching editions */}
-              {(activeSelectorModal === 'agenda' ? editionsWithFavs : editions).map((ed) => (
-                <button
-                  key={ed.config.edicionId}
-                  onClick={() => handleSelectEditionFromModal(ed.config.edicionId)}
-                  style={{
-                    width: '100%',
-                    padding: '12px 16px',
-                    borderRadius: '12px',
-                    border: '1px solid var(--border-color)',
-                    background: 'rgba(255,255,255,0.02)',
-                    color: '#ffffff',
-                    fontSize: '0.92rem',
-                    fontWeight: '700',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                  }}
-                  className="btn-interactive"
-                >
-                  {activeSelectorModal === 'agenda' ? (
-                    <Calendar size={16} color="#ff2a85" />
-                  ) : activeSelectorModal === 'map' ? (
-                    <Map size={16} color="#e67e22" />
-                  ) : (
-                    <Newspaper size={16} color="#2b8be3" />
-                  )}
-                  <span>{ed.config.visibleName}</span>
-                </button>
-              ))}
+              {(() => {
+                let list = editions;
+                if (activeSelectorModal === 'agenda') {
+                  list = editionsWithFavs;
+                } else if (activeSelectorModal === 'savedFinished') {
+                  list = finishedWithFavsOrFollowed;
+                } else if (activeSelectorModal === 'historical') {
+                  list = historicalEditions;
+                }
+                return list.map((ed) => (
+                  <button
+                    key={ed.config.edicionId}
+                    onClick={() => handleSelectEditionFromModal(ed.config.edicionId)}
+                    style={{
+                      width: '100%',
+                      padding: '12px 16px',
+                      borderRadius: '12px',
+                      border: '1px solid var(--border-color)',
+                      background: 'rgba(255,255,255,0.02)',
+                      color: '#ffffff',
+                      fontSize: '0.92rem',
+                      fontWeight: '700',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                    }}
+                    className="btn-interactive"
+                  >
+                    {activeSelectorModal === 'agenda' || activeSelectorModal === 'savedFinished' ? (
+                      <Calendar size={16} color="#ff2a85" />
+                    ) : activeSelectorModal === 'map' ? (
+                      <Map size={16} color="#e67e22" />
+                    ) : activeSelectorModal === 'historical' ? (
+                      <Calendar size={16} color="#94a3b8" />
+                    ) : (
+                      <Newspaper size={16} color="#2b8be3" />
+                    )}
+                    <span>{ed.config.visibleName}</span>
+                  </button>
+                ));
+              })()}
             </div>
           </div>
         </div>
