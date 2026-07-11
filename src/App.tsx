@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FestivalSelector } from './components/FestivalSelector';
+import { GlobalHome } from './components/GlobalHome';
 import { FestivalDashboard } from './components/FestivalDashboard';
 import { agendaFestData } from './data/festivalData';
 import type { Language } from './utils/translations';
@@ -16,14 +16,13 @@ export default function App() {
   useEffect(() => {
     if (selectedEditionId) {
       window.localStorage.setItem('af_selected_edition_id', selectedEditionId);
+      window.localStorage.setItem('af_last_opened_edition', selectedEditionId);
     } else {
       window.localStorage.removeItem('af_selected_edition_id');
     }
   }, [selectedEditionId]);
 
-  useEffect(() => {
-    window.localStorage.setItem('af_language', language);
-  }, [language]);
+  window.localStorage.setItem('af_language', language);
 
   // If a shared favorites link is loaded, default to the first edition if none selected
   useEffect(() => {
@@ -40,7 +39,7 @@ export default function App() {
 
   if (!selectedEditionId || !agendaFestData[selectedEditionId]) {
     return (
-      <FestivalSelector
+      <GlobalHome
         editions={editionsList}
         onSelectEdition={setSelectedEditionId}
         language={language}

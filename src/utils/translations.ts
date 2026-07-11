@@ -38,6 +38,40 @@ export interface TranslationDict {
   secondsLabel: string;
   festivalStarted: string;
   festivalFinished: string;
+  tuRuta: string;
+  tuRutaDesc: string;
+  myFestivals: string;
+  verTodos: string;
+  continueMyAgenda: string;
+  upcomingFestivals: string;
+  quickAccess: string;
+  noSavedFestivals: string;
+  viewUpcomingFestivals: string;
+  createYourAgenda: string;
+  createYourAgendaDesc: string;
+  startNow: string;
+  noUpcomingFestivals: string;
+  myAgendaDesc: string;
+  searchDesc: string;
+  mapDesc: string;
+  newsDesc: string;
+  installDesc: string;
+  moreDesc: string;
+  searchPlaceholderGlobal: string;
+  noResultsFound: string;
+  hoursAvailable: string;
+  agendaSaved: string;
+  hoursPending: string;
+  lineupAnnounced: string;
+  conciertosGuardados: string;
+  solapesDetectados: string;
+  sinSolapes: string;
+  enDirectoHome: string;
+  proximoHome: string;
+  menuTitle: string;
+  helpAndInfo: string;
+  legalInfo: string;
+  suggestions: string;
 
   // Header.tsx
   viewHours: string;
@@ -208,7 +242,41 @@ export const translations: Record<Language, TranslationDict> = {
     newsTitle: "ÚLTIMAS NOTICIAS",
     readMore: "Leer más",
     backToHome: "Volver",
-    emptyNews: "No hay noticias disponibles en este momento."
+    emptyNews: "No hay noticias disponibles en este momento.",
+    tuRuta: "Tu ruta entre escenarios",
+    tuRutaDesc: "Elige festival, guarda tus conciertos y evita solapes.",
+    myFestivals: "Mis festivales",
+    verTodos: "Ver todos",
+    continueMyAgenda: "Continuar mi agenda",
+    upcomingFestivals: "Próximos festivales",
+    quickAccess: "Accesos rápidos",
+    noSavedFestivals: "Todavía no tienes festivales guardados",
+    viewUpcomingFestivals: "Ver próximos festivales",
+    createYourAgenda: "Crea tu agenda",
+    createYourAgendaDesc: "Marca tus bandas favoritas y organiza tu festival sin solapes.",
+    startNow: "Empezar ahora",
+    noUpcomingFestivals: "No hay próximos festivales disponibles",
+    myAgendaDesc: "Tus conciertos guardados",
+    searchDesc: "Festivales, bandas y ciudades",
+    mapDesc: "Escenarios, zonas y servicios",
+    newsDesc: "Novedades del mundo festival",
+    installDesc: "Acceso rápido desde tu móvil",
+    moreDesc: "Ajustes, ayuda y sugerencias",
+    searchPlaceholderGlobal: "Buscar festival, ciudad o banda",
+    noResultsFound: "No se han encontrado resultados",
+    hoursAvailable: "Horarios disponibles",
+    agendaSaved: "Mi agenda guardada",
+    hoursPending: "Horarios pendientes",
+    lineupAnnounced: "Cartel anunciado",
+    conciertosGuardados: "{count} conciertos guardados",
+    solapesDetectados: "{count} solapes detectados",
+    sinSolapes: "Sin solapes",
+    enDirectoHome: "En directo: {band}",
+    proximoHome: "Próximo: {band} ({time})",
+    menuTitle: "Menú principal",
+    helpAndInfo: "Ayuda e información",
+    legalInfo: "Información legal",
+    suggestions: "Enviar sugerencias"
   },
   en: {
     tuPortal: "Your Concert Portal",
@@ -308,7 +376,41 @@ export const translations: Record<Language, TranslationDict> = {
     newsTitle: "LATEST NEWS",
     readMore: "Read more",
     backToHome: "Back",
-    emptyNews: "No news available at the moment."
+    emptyNews: "No news available at the moment.",
+    tuRuta: "Your route between stages",
+    tuRutaDesc: "Choose a festival, save your concerts, and avoid clashes.",
+    myFestivals: "My festivals",
+    verTodos: "View all",
+    continueMyAgenda: "Continue my schedule",
+    upcomingFestivals: "Upcoming festivals",
+    quickAccess: "Quick access",
+    noSavedFestivals: "You don't have saved festivals yet",
+    viewUpcomingFestivals: "View upcoming festivals",
+    createYourAgenda: "Create your schedule",
+    createYourAgendaDesc: "Star your favorite bands and organize your festival without clashes.",
+    startNow: "Start now",
+    noUpcomingFestivals: "No upcoming festivals available",
+    myAgendaDesc: "Your saved concerts",
+    searchDesc: "Festivals, bands and cities",
+    mapDesc: "Stages, zones and services",
+    newsDesc: "News from the festival world",
+    installDesc: "Quick access from your mobile",
+    moreDesc: "Settings, help and suggestions",
+    searchPlaceholderGlobal: "Search festival, city or band",
+    noResultsFound: "No results found",
+    hoursAvailable: "Schedules available",
+    agendaSaved: "My saved schedule",
+    hoursPending: "Schedules pending",
+    lineupAnnounced: "Lineup announced",
+    conciertosGuardados: "{count} concerts saved",
+    solapesDetectados: "{count} clashes detected",
+    sinSolapes: "No clashes",
+    enDirectoHome: "Live: {band}",
+    proximoHome: "Next: {band} ({time})",
+    menuTitle: "Main Menu",
+    helpAndInfo: "Help & info",
+    legalInfo: "Legal information",
+    suggestions: "Send suggestions"
   },
   fr: {
     tuPortal: "Votre Portail de Concerts",
@@ -408,7 +510,41 @@ export const translations: Record<Language, TranslationDict> = {
     newsTitle: "DERNIÈRES NOUVELLES",
     readMore: "Lire la suite",
     backToHome: "Retour",
-    emptyNews: "Aucune actualité disponible pour le moment."
+    emptyNews: "Aucune actualité disponible pour le moment.",
+    tuRuta: "Votre itinéraire entre scènes",
+    tuRutaDesc: "Choisissez un festival, enregistrez vos concerts et évitez les chevauchements.",
+    myFestivals: "Mes festivals",
+    verTodos: "Voir tout",
+    continueMyAgenda: "Continuer mon agenda",
+    upcomingFestivals: "Festivals à venir",
+    quickAccess: "Accès rapides",
+    noSavedFestivals: "Vous n'avez pas encore de festivals sauvegardés",
+    viewUpcomingFestivals: "Voir les festivals à venir",
+    createYourAgenda: "Créez votre agenda",
+    createYourAgendaDesc: "Marquez vos groupes favoris et organisez votre festival sans chevauchements.",
+    startNow: "Commencer",
+    noUpcomingFestivals: "Aucun festival à venir disponible",
+    myAgendaDesc: "Vos concerts sauvegardés",
+    searchDesc: "Festivals, groupes et villes",
+    mapDesc: "Scènes, zones et services",
+    newsDesc: "Actualités du monde des festivals",
+    installDesc: "Accès rapide depuis votre mobile",
+    moreDesc: "Paramètres, aide et suggestions",
+    searchPlaceholderGlobal: "Rechercher un festival, une ville ou un groupe",
+    noResultsFound: "Aucun résultat trouvé",
+    hoursAvailable: "Horaires disponibles",
+    agendaSaved: "Mon agenda sauvegardé",
+    hoursPending: "Horaires en attente",
+    lineupAnnounced: "Affiche annoncée",
+    conciertosGuardados: "{count} concerts sauvegardés",
+    solapesDetectados: "{count} chevauchements détectés",
+    sinSolapes: "Aucun chevauchement",
+    enDirectoHome: "En direct: {band}",
+    proximoHome: "Prochain: {band} ({time})",
+    menuTitle: "Menu principal",
+    helpAndInfo: "Aide & info",
+    legalInfo: "Informations légales",
+    suggestions: "Envoyer des suggestions"
   }
 };
 

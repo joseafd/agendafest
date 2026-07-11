@@ -111,6 +111,26 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     }
   }, []);
 
+  // 5a. Global Home navigation routing check
+  useEffect(() => {
+    const openAgendaFavs = window.localStorage.getItem(`af_${editionId}_open_agenda_favs`);
+    if (openAgendaFavs === 'true') {
+      window.localStorage.removeItem(`af_${editionId}_open_agenda_favs`);
+      setActiveTab('agenda');
+      setOnlyFavorites(true);
+    }
+    const openMap = window.localStorage.getItem(`af_${editionId}_open_map`);
+    if (openMap === 'true') {
+      window.localStorage.removeItem(`af_${editionId}_open_map`);
+      setActiveTab('map');
+    }
+    const openNews = window.localStorage.getItem(`af_${editionId}_open_news`);
+    if (openNews === 'true') {
+      window.localStorage.removeItem(`af_${editionId}_open_news`);
+      setActiveTab('news');
+    }
+  }, [editionId]);
+
   // 5b. Visitor Counter fetcher (CounterAPI.dev) & Title Updater
   useEffect(() => {
     // Dynamic document title
