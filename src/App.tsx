@@ -24,13 +24,18 @@ export default function App() {
 
   window.localStorage.setItem('af_language', language);
 
-  // If a shared favorites link is loaded, default to the first edition if none selected
+  // If a shared favorites link is loaded, default to the shared edition or first edition if none selected
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.has('favs') && !selectedEditionId) {
-      const firstEditionId = Object.keys(agendaFestData)[0];
-      if (firstEditionId) {
-        setSelectedEditionId(firstEditionId);
+      const editionParam = params.get('edition');
+      if (editionParam && agendaFestData[editionParam]) {
+        setSelectedEditionId(editionParam);
+      } else {
+        const firstEditionId = Object.keys(agendaFestData)[0];
+        if (firstEditionId) {
+          setSelectedEditionId(firstEditionId);
+        }
       }
     }
   }, [selectedEditionId]);

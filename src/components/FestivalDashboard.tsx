@@ -101,15 +101,27 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.has('favs')) {
+      const editionParam = params.get('edition');
+      if (editionParam && editionParam !== editionId) {
+        return;
+      }
+      
       const favsStr = params.get('favs');
       if (favsStr) {
         const sharedIds = favsStr.split(',').filter(id => id.trim() !== '');
-        if (sharedIds.length > 0) {
-          setPendingImport(sharedIds);
+        
+        // Filter: only keep IDs that match a day from this festival
+        const validIds = sharedIds.filter(id => {
+          const datePart = id.substring(0, 10);
+          return days.some(d => d.id === datePart);
+        });
+
+        if (validIds.length > 0) {
+          setPendingImport(validIds);
         }
       }
     }
-  }, []);
+  }, [editionId, days]);
 
   // 5a. Global Home navigation routing check
   useEffect(() => {
@@ -394,7 +406,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     }
 
     const baseUrl = window.location.origin + window.location.pathname;
-    const shareUrl = `${baseUrl}?favs=${encodeURIComponent(favorites.join(','))}`;
+    const shareUrl = `${baseUrl}?edition=${editionId}&favs=${encodeURIComponent(favorites.join(','))}`;
 
     navigator.clipboard.writeText(shareUrl)
       .then(() => {
