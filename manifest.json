@@ -4,14 +4,14 @@
   "description": "Agenda y horarios interactivos para tus festivales favoritos",
   "icons": [
     {
-      "src": "icon.svg",
-      "type": "image/svg+xml",
+      "src": "favicon.png",
+      "type": "image/png",
       "sizes": "any",
       "purpose": "any"
     },
     {
-      "src": "icon.svg",
-      "type": "image/svg+xml",
+      "src": "favicon.png",
+      "type": "image/png",
       "sizes": "any",
       "purpose": "maskable"
     }
