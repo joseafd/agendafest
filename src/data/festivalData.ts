@@ -178,7 +178,11 @@ const rawAgendaFestData: any = {
               "description": "La formación alemana de metalcore annisokay llegará a Viveiro para liarla bien en nuestro Main Stage. Con una trayectoria de casi dos décadas y seis discos de estudio estrenados, Annisokay han ido perfeccionando su fórmula mezclando el metal alternativo, djent y metalcore con tintes electrónicos de manera impecable 🤘  La elegancia de las guitarras y voces melódicas de Chris en perfecto equilibrio con la agresividad de los guturales de Rudi crean un combo perfecto del que podremos disfrutar en directo en el primer día de Resu. ¡Estamos segurxs de que os volarán la cabeza! 💥",
               "country": "Alemania",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=6T4JAn4lFL0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=6T4JAn4lFL0",
+              "spotifyUrl": "https://open.spotify.com/artist/7lAi1Cv19DsukgGjbZQxFg",
+              "instagramUrl": "https://www.instagram.com/annisokay/",
+              "facebookUrl": "https://www.facebook.com/annisokay",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174b4d845bbfb42f16a61c01ab1"
             }
           },
           {
@@ -192,7 +196,11 @@ const rawAgendaFestData: any = {
               "description": "Después de tocar en la carpa Red Bull en 2024, la joven banda coruñesa de metal formada en 2021 regresa al festi para abrir fuego en el Chaos Stage el próximo miércoles 1 de julio 🧨  El quinteto Crowded vuelve al Resu con un segundo EP estrenado a principios de año titulado \"Kindred Spirits\" que releva a su debut \"Underdogs\" de 2023 forjando su sonido mezcla de metal alternativo y rock noventero e influencias del thrash y metalcore 🤘  ¡No te pierdas a una de las propuestas más jóvenes y con más potencial de sus giras! ¡Venid a apoyarlos como merecen! 🙌",
               "country": "España",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=5LrDrFgDyl4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=5LrDrFgDyl4",
+              "spotifyUrl": "https://open.spotify.com/artist/7ohlPA8dRBtCf92zaZCaaB",
+              "instagramUrl": "https://www.instagram.com/crowdedhousehq/",
+              "facebookUrl": "https://www.facebook.com/crowdedhouse",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517444cb4815148bd49c0a600b89"
             }
           },
           {
@@ -206,7 +214,10 @@ const rawAgendaFestData: any = {
               "description": "Desde Asturias, Aneuma se ha convertido en una de las bandas emergentes más potentes del metal nacional desde su creación hace un lustro. Su mezcla de death metal con metalcore intensa y fresca les llevó a tocar en el Wacken Open Air hace unos años, lugar en el que lograron un histórico segundo puesto en la competición internacional 🤘  Con tres discos lanzados hasta la fecha, el quinteto de Puerto de Vega ha demostrado que la vigencia del sonido de Gotemburgo es atemporal, y que su fórmula incluso es renovar y traer al presente poniendo esmero y dedicación. Nos lo demostrarán como solamente ellxs saben el miércoles 1 de julio en el Ritual Stage 🙌",
               "country": "España",
               "genre": "Death Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc"
+              "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc",
+              "spotifyUrl": "https://open.spotify.com/artist/7bxj5hQmURF8Y1DB3Zalfl",
+              "facebookUrl": "https://www.facebook.com/profile.php?id=100085118077210",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517422a922aee0225190714f9c3d"
             }
           },
           {
@@ -221,6 +232,9 @@ const rawAgendaFestData: any = {
               "country": "Japón",
               "genre": "Rock Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=FrXAUcLWYZ4",
+              "spotifyUrl": "https://open.spotify.com/artist/3NTbOmzlj2cL86XFuDVFvZ",
+              "facebookUrl": "https://www.facebook.com/MWAMjapan",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174e30959e15d3719dc8d9ffe65",
               "signingSession": "SESIONES DE FIRMAS - MIERCOLES 1 - 19:30 A 19:50"
             }
           },
@@ -235,7 +249,11 @@ const rawAgendaFestData: any = {
               "description": "God Complex se crearon en 2017 y rápidamente se consolidaron como una de las formaciones de metalcore más feroz del Reino Unido. Tras debutar en 2021, hicieron una breve pausa para rearmarse y regresar más brutales y rabiosos que nunca coqueteando también con el mathcore y deathcore en sus singles más recientes 👊  Tras arrasar en su regreso por Londres y su natal Liverpool, los tendremos en el Resurrection Fest listos para desatar el caos en, valga la redundancia, el Chaos Stage, que estarán golpeando con riffs gordos y groove hiperviolento el miércoles 1 de julio 🤘Violencia sonora sin filtro",
               "country": "UK",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=uBU8\\_O8G9IM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=uBU8\\_O8G9IM",
+              "spotifyUrl": "https://open.spotify.com/artist/4Ase9pfG4FCMoiuyRduc8k",
+              "instagramUrl": "https://www.instagram.com/godcomplexuk/",
+              "facebookUrl": "https://www.facebook.com/GodComplexUK",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174f4955c9f0802e7974d78c0c5"
             }
           },
           {
@@ -249,7 +267,11 @@ const rawAgendaFestData: any = {
               "description": "Desde Burdeos, la banda originalmente conocida como TSS llega a Viveiro para demostrar por qué están obteniendo tantísimo reconocimiento a lo largo y ancho de Europa. Vienen a reventar el escenario con su fusión única de riffs pesados de metalcore moderno mezclado con pop oscuro, synth y rock electrónico 🌪️  ¡Una experiencia sonora y estética retro, oscura e innovadora para disfrutar con intensidad desde nuestro Ritual Stage! ⚡ Estética oscura, vampírica. Atmósfera densa.",
               "country": "Francia",
               "genre": "Metal Moderno",
-              "youtubeUrl": "https://www.youtube.com/watch?v=EBAdqbbioZ8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=EBAdqbbioZ8",
+              "spotifyUrl": "https://open.spotify.com/artist/0hTsRy6iJPc0fgkxhEHzmT",
+              "instagramUrl": "https://www.instagram.com/thesundaysadness/",
+              "facebookUrl": "https://www.facebook.com/TheSundaySadness",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051747e810df67eaa12da0582b245"
             }
           },
           {
@@ -291,7 +313,11 @@ const rawAgendaFestData: any = {
               "description": "No tenemos dudas de que el concierto de Immortal Disfigurement será uno de las más bestias de sus giras. Vienen de Pittsburgh y están liderados por CJ McCreery, un fuera de serie dentro del deathcore que ha formado parte de bandas como Lorna Shore y Signs Of The Swarm y que os dejará con la boca abierta desde el minuto 0 😱  Guturales inhumanos, una agresividad al límite con breakdowns sin ningún sentido, y mucha técnica y sinfonías que os harán experimentar cómo suenan la violencia y oscuridad de verdad 👹",
               "country": "EEUU",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=myEyI0gT6r8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=myEyI0gT6r8",
+              "spotifyUrl": "https://open.spotify.com/artist/7qkUuynmt0X6RkPgvF5ttK",
+              "instagramUrl": "https://www.instagram.com/immortaldisfigurement/",
+              "facebookUrl": "https://www.facebook.com/immortaldisfigurement",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517418948a56786b9b75ff4a9664"
             }
           },
           {
@@ -305,7 +331,10 @@ const rawAgendaFestData: any = {
               "description": "Desde Estados Unidos, The Pretty Wild desembarcan en directo para demostrarnos que el metal moderno dosmilero corre por sus venas. Las hermanas y power duo Jyl y Jules Wylde llegan al Resu con su explosiva mezcla de tralla a dos voces, riffs pesados y una estética y actitud que marcan la diferencia 🔥  Estarán en el Ritual Stage el miércoles 1 de julio tras girar con Sleep Theory y tocar en festis como el Download y Graspop. ¡Prometen no dar tregua y comerse el escenario como nadie! 🤘",
               "country": "EEUU",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=3V9isTmCQRo"
+              "youtubeUrl": "https://www.youtube.com/watch?v=3V9isTmCQRo",
+              "spotifyUrl": "https://open.spotify.com/artist/4DJ2QHcDJiDC0Kx1xZ9oNm",
+              "instagramUrl": "https://www.instagram.com/wearetheprettywild/",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746f91713ebd51749f9c63b6ec"
             }
           },
           {
@@ -333,7 +362,11 @@ const rawAgendaFestData: any = {
               "description": "La banda dublinesa, conocida por su enfoque en el folklore tradicional irlandés, viene directa de las calles, de tocar delante de transeúntes mostrando a todxs su estilo celebratorio con dinámicas derivadas del rock y del metal progresivo que van de lo contemplativo a la explosión en cuestión de segundos ⚡️  Viveiro será el punto ideal de reunión entre dos culturas hermanas en herencia como son la gallega y la irlandesa. ¡Será una cita imperdible para festejar la música en directo! Y, ¡OJO! ¡Vendrán con su nuevo y bestial disco \"Pull Like A Dog\" bajo el brazo! 🤘LET'S GO! 🙌",
               "country": "Irlanda",
               "genre": "Folk Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=MfDZlUD\\_1WU"
+              "youtubeUrl": "https://www.youtube.com/watch?v=MfDZlUD\\_1WU",
+              "spotifyUrl": "https://open.spotify.com/artist/6BCpGC485tSshwjemmeAmd",
+              "instagramUrl": "https://www.instagram.com/thescratchmusic/",
+              "facebookUrl": "https://www.facebook.com/TheScratchMusic",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741d205bf1c3d1017658dafc87"
             }
           },
           {
@@ -348,6 +381,10 @@ const rawAgendaFestData: any = {
               "country": "Suecia",
               "genre": "Hardcore Punk",
               "youtubeUrl": "https://www.youtube.com/watch?v=DqBzOVCmIdM",
+              "spotifyUrl": "https://open.spotify.com/artist/5eBCPtU2iPbzuMRre9BePt",
+              "instagramUrl": "https://www.instagram.com/thrownband/",
+              "facebookUrl": "https://www.facebook.com/thrownband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517489a040970f9cbe2e7cc55526",
               "signingSession": "SESIONES DE FIRMAS - MIERCOLES 1 - 18:00 A 18:30"
             }
           },
@@ -362,7 +399,11 @@ const rawAgendaFestData: any = {
               "description": "Reconocidos mundialmente por su mezcla de EDM y deathcore, The Browning llegan a Viveiro para redefinir los límites de la brutalidad desde el Ritual Stage. La formación estadounidense ha ido perfeccionado su deathcore demoledor con metalcore y djent añadiendo a su ecuación ritmos electrónicos sacados del hardstyle, house, techno o dance 🔥  Jonny McBee, cerebro del proyecto, y su equipo han conseguido que sus conciertos sean como una pista de baile apocalíptica con moshpits. Tras reventarlo con \"OMNI\" en 2024, celebrar su legado con la regrabación de \"Burn This World\", o versionar el clásico de eurodance \"Blue (Da Ba Dee)\" de Eiffel 65, llegan en un estado de forma insuperable 🤘",
               "country": "EEUU",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=\\_DEdsCEUpaI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=\\_DEdsCEUpaI",
+              "spotifyUrl": "https://open.spotify.com/artist/4DSNcg40nf6T3eNAObq1Lo",
+              "instagramUrl": "https://www.instagram.com/thebrowningofficial/",
+              "facebookUrl": "https://www.facebook.com/TheBrowningOfficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517443493246e66f6e7641067204"
             }
           },
           {
@@ -376,7 +417,11 @@ const rawAgendaFestData: any = {
               "description": "Last Train no son nuevos en esto. La banda originaria de Alsacia tiene una historia larga sobre sus espaldas y llevan casi una década girando sin parar y sacando música bajo su propio sello, algo bastante poco común hoy día en artistas de su talla ✊  Su rollo es el rock alternativo con aires de los 90, pero detrás hay influencias claras que transitan también el industrial, hard rock, punk, garage o stoner 🎸  ¡Estamos seguro de que lo van a petar y sabemos que vais a salir de su concierto siendo fans! 🤘 Recordaros que abrieron para Linkin Park en Lyon - Francia",
               "country": "Francia",
               "genre": "Rock alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=UTwRqGlIaIs"
+              "youtubeUrl": "https://www.youtube.com/watch?v=UTwRqGlIaIs",
+              "spotifyUrl": "https://open.spotify.com/artist/4S47feOS2ATuhc7Ao5ilfG",
+              "instagramUrl": "https://www.instagram.com/lasttrainband/",
+              "facebookUrl": "https://www.facebook.com/lasttrainofficial",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051746704861c4fb1ac622541beb1"
             }
           },
           {
@@ -390,7 +435,11 @@ const rawAgendaFestData: any = {
               "description": "A Day To Remember son ya un referente dentro del metalcore y desde siempre una de las bandas más votadas por el público. Preparaos porque se vienen temazos, baladas, mosh ¡y mucha fiesta! 🗣️ Viendo cómo suenan, los bolazos que están dando en directo, y la forma en la que la gente lo está dando todísimo, os podéis hacer a la idea de lo que se viene 🥵",
               "country": "EEUU",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=jGxykN8cx7w"
+              "youtubeUrl": "https://www.youtube.com/watch?v=jGxykN8cx7w",
+              "spotifyUrl": "https://open.spotify.com/artist/4NiJW4q9ichVqL1aUsgGAN",
+              "instagramUrl": "https://www.instagram.com/adtr/",
+              "facebookUrl": "https://www.facebook.com/adtr",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051746164f861e5e683c9067f4395"
             }
           },
           {
@@ -404,7 +453,11 @@ const rawAgendaFestData: any = {
               "description": "Desde las frías calles de Quebec, Get The Shot llegan a Viveiro para demostrar que la fusión de la furia del hardcore más pesado, el thrash y el metalcore goza de mejor salud que nunca. Sin artificios, directos y con una fórmula infalible de riffs, velocidad y rabia 🔥  El escuadrón canadiense no dejará títere con cabeza y hará temblar como mejor sabe el Chaos Stage el primer día de festi, el miércoles 1 de julio con una fecha única en España habitualmente. ¡Nos vemos en el pit! 👊",
               "country": "Canada",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=UvncAul5sEI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=UvncAul5sEI",
+              "spotifyUrl": "https://open.spotify.com/artist/47YTOUaDKlPoDHr00r5Wu2",
+              "instagramUrl": "https://www.instagram.com/gettheshothc/",
+              "facebookUrl": "https://www.facebook.com/gettheshothc",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517471760ce2698c7a1ef11827ce"
             }
           },
           {
@@ -418,7 +471,11 @@ const rawAgendaFestData: any = {
               "description": "Desde Suecia, nos visitan Self Deception, maestros de la melodía rock y la contundencia del metalcore europeo. Formados en 2005 y reconocidos a nivel internacional, estarán en el Ritual Stage presentando su nuevo álbum \"One Of Us\", su séptimo disco que se estrenará en mayo de habitualmente 🤘  ¡Preparaos para una buena masterclass de potencia y estribillos gigantescos! 🙌",
               "country": "Suecia",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=VcoSyfcqYSY"
+              "youtubeUrl": "https://www.youtube.com/watch?v=VcoSyfcqYSY",
+              "spotifyUrl": "https://open.spotify.com/artist/0FHW0Lp33r3fvIG0HL4mW0",
+              "instagramUrl": "https://www.instagram.com/selfdeception_official/",
+              "facebookUrl": "https://www.facebook.com/selfdeceptionsthlm",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174087085203613a85a09bd9573"
             }
           },
           {
@@ -432,7 +489,11 @@ const rawAgendaFestData: any = {
               "description": "Directos desde Euskadi y activos desde hace ya una década, Lampr3a vendrán a darnos una masterclass de prog instrumental el miércoles 1 de julio en el Desert Stage 🔥\n\nAunque son un trío, hacen por un quinteto cuando empiezan a tocar. Sus instrumentos hablan por sí solos a base de polirritmias locas, una técnica milimetrada y experimentación que parece de otra galaxia. ¡No te los pierdas porque fijo que vas a flipar! 🧠✨",
               "country": "España",
               "genre": "Metal Progresivo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=er6nWXylNHE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=er6nWXylNHE",
+              "spotifyUrl": "https://open.spotify.com/artist/3jIBGr0NVe9cmBRI09itgn",
+              "instagramUrl": "https://www.instagram.com/lampr3a/",
+              "facebookUrl": "https://www.facebook.com/lampr3a",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051742d3625365dbb832e71d50294"
             }
           },
           {
@@ -446,7 +507,11 @@ const rawAgendaFestData: any = {
               "description": "Los suecos Sabaton regresan a Viveiro convertidos en una de las fuerzas más imponentes del heavy europeo. Lo que empezó como una banda apasionada por lo bélico se ha transformado en un fenómeno global capaz de unir a varias generaciones coreando sus himnos. La contundencia instrumental del power metal y la poderosa voz Joakim Brodén ha logrado redefinir el género con su identidad heroica con una propuesta escénica inconfundible 🪖  Vuelven al Main Stage del Resu tras años de espera, y nos traerán su producción y escenografía más bestia además de un set repleto de temazos que son ya una lección de historia metalera. ¡Preparaos para la batalla! ⚔️",
               "country": "Suecia",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Dfh1aSdxr9U"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Dfh1aSdxr9U",
+              "spotifyUrl": "https://open.spotify.com/artist/3o2dn2O0FCVsWDFSh8qxgG",
+              "instagramUrl": "https://www.instagram.com/sabatonofficial/",
+              "facebookUrl": "https://www.facebook.com/sabaton",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174fc0524cca1171fac8678f4bf"
             }
           },
           {
@@ -460,7 +525,11 @@ const rawAgendaFestData: any = {
               "description": "Van a darlo todo en la jornada inaugural de nuestra edición 2026 en un miércoles 1 de julio en el que nos impresionarán con todo tipo de temazos, demostrando por qué se han posicionado por derecho propio como una de las grandes bandas en directo del circuito de salas y festivales de Reino Unido.  ¡No te los pierdas en Resurrection Fest! ❤️‍🔥",
               "country": "UK",
               "genre": "Hardcore Punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=147BrDp-XuA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=147BrDp-XuA",
+              "spotifyUrl": "https://open.spotify.com/artist/4Gmrt82h2vjGjnp67SG5Nw",
+              "instagramUrl": "https://www.instagram.com/highvis/",
+              "facebookUrl": "https://www.facebook.com/highvispunk",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051742c3b07616f77f8bca1ab8179"
             }
           },
           {
@@ -474,7 +543,11 @@ const rawAgendaFestData: any = {
               "description": "Desde la soleada California, Faetooth nos traen una propuesta que contrasta drásticamente con su lugar de origen. El trío angelino integrado por Ari, Jenna y Rah ha acuñado su propio género, el \"fairy doom\", mezclando la lentitud y pesadez de doom clásico y sludge con armonías más etéreas del post-metal y shoegaze 🌑✨  Una mezcla cautivadora que combina los riffs lentos, pesados y aplastantes del doom metal clásico con armonías vocales etéreas y delicadas. Sus letras, profundamente introspectivas, exploran la belleza de la naturaleza y el misticismo, creando una atmósfera única que atrapa desde el primer acorde 🧘  En sus 7 años de historia, las americanas han ido creciendo en la escena underground gracias a dos discos geniales que hiptonizan con su belleza oscura y un aura folklórica y espiritual que las hace únicas en sus presentaciones en vivo. Nos lo demostrarán el miércoles 1 de julio encabezando el Desert Stage 🤘",
               "country": "EEUU",
               "genre": "Doom",
-              "youtubeUrl": "https://www.youtube.com/watch?v=nytv1O2yvG8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=nytv1O2yvG8",
+              "spotifyUrl": "https://open.spotify.com/artist/6bAM7jeIX4pI5lZ0QoSZjt",
+              "instagramUrl": "https://www.instagram.com/faetooth/",
+              "facebookUrl": "https://www.facebook.com/faetoothband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174673238b2ab364667667e1008"
             }
           },
           {
@@ -488,7 +561,11 @@ const rawAgendaFestData: any = {
               "description": "El thrash metal no se entendería igual sin ellos. Con raíces en el corazón de California en los años 80, Testament son parte de la realeza absoluta del género y uno de los pilares que moldeó ese sonido más rápido, afilado y agresivo de la Costa Oeste americana 🤘  Chuck Billy y la dupla insperable de Alex Skolnick y Eric Peterson a las guitarras nos hará perder el control con caña a saco, clásicos y repertorio de un nuevo disco en el que se han atrevido a tontear con el black y death metal saliendo implacables. 🌪️ ¡Un lujazo tenerlos de vuelta por Viveiro! 🙌  ¡Venid con fuerzas, porque os iréis con agujetas FIJO! 🏃‍♂️",
               "country": "EEUU",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Gtw3lcQvyPU"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Gtw3lcQvyPU",
+              "spotifyUrl": "https://open.spotify.com/artist/28hJdGN1Awf7u3ifk2lVkg",
+              "instagramUrl": "https://www.instagram.com/testamentofficial/",
+              "facebookUrl": "https://www.facebook.com/testamentlegions",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051745663001a056558505a84d8e1"
             }
           }
         ]
@@ -517,7 +594,10 @@ const rawAgendaFestData: any = {
               "description": "📌 La banda  Arson Tides, ha sido una de las tres elegidas para la gloria en el concurso de bandas del Resurrection Fest. La joven banda tiene entre sus filas a al vocalista cangués Orlando Soage, el guitarrista de Bueu Víctor Gómez y al benjamín dsus conciertos, Mateo, el joven baterista vigués de 16 años",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=x8Ku8xs3LJA\\&list=RDEMx9F7gSD6CPp5z3JPCDu3FA\\&start\\_radio=1"
+              "youtubeUrl": "https://www.youtube.com/watch?v=x8Ku8xs3LJA\\&list=RDEMx9F7gSD6CPp5z3JPCDu3FA\\&start\\_radio=1",
+              "spotifyUrl": "https://open.spotify.com/artist/138GsDz0pX5leXnKi7ay7G",
+              "instagramUrl": "https://www.instagram.com/tides._/",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517408e3b7d4e3bb04423a5ed2cd"
             }
           },
           {
@@ -531,7 +611,9 @@ const rawAgendaFestData: any = {
               "description": "Con su estilo entre el post-hardcore y metalcore, la banda madrileña es un ejemplo de constancia y amor por la música. Desde su creación hace aproximadamente una década hasta hoy, y con dos discos por medio, su música ha llegado tanto a varios países de Europa como Latinoamérica gracias a dos álbumes top publicados en 2018 y 2025 🙌  En 2025 estuvieron en el Hellfest, pero nosotros ya los tuvimos por nuestros escenarios en 2024. Este mismo año Fallen At Dawn nos volverán a visitar para darlo todo en el Ritual el jueves 2 de julio",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0",
+              "instagramUrl": "https://www.instagram.com/fallenatdawnofficial/",
+              "facebookUrl": "https://www.facebook.com/FallenAtDawnOfficial"
             }
           },
           {
@@ -545,7 +627,9 @@ const rawAgendaFestData: any = {
               "description": "Te gusta o no el fuet, seguro que Fuet! te van a molar fijo. Si eres de disfrutar de la buena zapatilla hardcore, del screamo y de riffs tralleros forjados en metal y emoción, esta banda de colegas madrileña creada en el 2020 viene a darte lo que quieres y mucho más con su agresividad positiva y sudorosa 🌪️  Fans de la fórmula de hardcore y punk más fresca y ecléctica, de Turnstile, Refused, Touché Amoré, IDLES o At The Drive-In, no os perdáis esta cita en el Chaos el jueves 2 de julio. Vienen a dar una de las primeras sesiones de cardio del día, así que ven preparadx 👟💥",
               "country": "España",
               "genre": "Hardcore Melódico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=735VrHSslAA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=735VrHSslAA",
+              "spotifyUrl": "https://open.spotify.com/artist/7aTaQAh9d7z98h0CMrx1s6",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051740684d08ba2a1fb899214040c"
             }
           },
           {
@@ -559,7 +643,10 @@ const rawAgendaFestData: any = {
               "description": "Jugando prácticamente en casa, Her Anxiety harán ruta de Vigo a Viveiro para reventarlo una vez más con nosotrxs. Fueron una de las revelaciones en del Resu en 2014 cuando todavía se hacían llamar His Anxiety, ganaron el Band Contest de 2024 abriendo el festi del mismo año, y este 2026 nos volverán a visitar el jueves 2 de julio para hacer temblar el Ritual Stage 🤘  Con sede en La Ciudad Olívica desde su creación en 2012, la formación liderada por Aida Otero es uno de los secretos mejor guardados de las Rías Baixas gracias a esa particular combinación de death melódico moderno y metalcore que nos transporta al sonido que In Flames, Walls Of Jericho, Arch Enemy, e incluso a los inicios de Parkway Drive o Bring Me The Horizon moldearon a finales de los 90 y comienzos de los 2000 🔥",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=MQi07wk7xms"
+              "youtubeUrl": "https://www.youtube.com/watch?v=MQi07wk7xms",
+              "spotifyUrl": "https://open.spotify.com/artist/2IZHv7enTnPW7yuS9w1qq7",
+              "instagramUrl": "https://www.instagram.com/heranxietyband/",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743ed3cd4237f99b7298a59b06"
             }
           },
           {
@@ -573,7 +660,10 @@ const rawAgendaFestData: any = {
               "description": "La banda de Atlanta Silly Goose, creada en 2017 como Student Driver, fue una de nuestras últimas incorporaciones. Silly Goose han reventado el panorama con un nu metal y rap rock que rinde homenaje a la actitud noventera de formaciones como Limp Bizkit o Rage Against The Machine, influenciándose también de gente como Gojira y recordando por momentos a artistas como UnityTX, Fox Lake o Hed PE 🤘\n\nEstán aquí en parte gracias a sus particulares conciertos clandestinos en parkings, trenes, restaurantes de comida rápida o gasolineras. Estamos segurxs de que su actitud callejero, guerrillera y descarada a lo Beastie Boys o Joey Valence \\& Brae unida a su sentido del humor y buen rollo os van a flipar 🫵",
               "country": "EEUU",
               "genre": "Nu Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=UuSXoG2ncME"
+              "youtubeUrl": "https://www.youtube.com/watch?v=UuSXoG2ncME",
+              "spotifyUrl": "https://open.spotify.com/artist/0GicbfMtwhn3Ch0PdwkADQ",
+              "instagramUrl": "https://www.instagram.com/sillygooseatl/",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051745ee17d6fdaa227d2b307e297"
             }
           },
           {
@@ -587,7 +677,11 @@ const rawAgendaFestData: any = {
               "description": "Desde su irrupción en la escena británica en 2018, la banda Caskets ha sabido elevar el post-hardcore a una nueva dimensión, mezclando ganchos melódicos impecables con una carga emocional brutal en la que el metal y rock alternativo tienen mucho peso. A día de hoy, son una de las bandas de metal y rock alternativo más frescas, potentes y queridas del panorama 🙌  Desde Leeds hasta Viveiro, el cuarteto promete regalarnos lo mejor de sí desde el Main Stage el próximo jueves 2 de julio ❤️‍🔥",
               "country": "UK",
               "genre": "Post Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=kT36IN83gGI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=kT36IN83gGI",
+              "spotifyUrl": "https://open.spotify.com/artist/2XIbOWDT5vZPW7jNyzdfcK",
+              "instagramUrl": "https://www.instagram.com/caskets_band/",
+              "facebookUrl": "https://www.facebook.com/casketsbandofficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051747094e150185be7496961ec17"
             }
           },
           {
@@ -601,7 +695,11 @@ const rawAgendaFestData: any = {
               "description": "El cuarteto nacido en Bergen aprovechará la visita al Resurrection Fest EG 2026 para hacernos bailar y sudar como locxs con su mezcla de hardcore, pop, punk, post-hardcore e incluso metal. Con sus chándals Adidas como uniforme, la banda escandinava nos enseñará lo que es la energía el jueves 2 de julio en el Chaos Stage 🧨  Divertida, sarcástica, apocalíptica e hipnótica, la propuesta de Blood Command hará que las suelas de tus zapas se gasten más que en una pista de skate. Si te molan Refused, Paramore, Scowl, Drug Church, The Armed o Hot Snakes…",
               "country": "Noruega",
               "genre": "Punk Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=hcDyDii-Low"
+              "youtubeUrl": "https://www.youtube.com/watch?v=hcDyDii-Low",
+              "spotifyUrl": "https://open.spotify.com/artist/4WfUbvICLrqPW9rzuNGS1f",
+              "instagramUrl": "https://www.instagram.com/bloodcommand/",
+              "facebookUrl": "https://www.facebook.com/bloodcommand",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174f77a7ddaaee51fe2df8c3bd3"
             }
           },
           {
@@ -615,7 +713,11 @@ const rawAgendaFestData: any = {
               "description": "Desde las montañas de Suiza, el quinteto de heavy y power metal Burning Witches vendrá dispuesto a incendiar Viveiro con su energía indomable. Son una de las bandas más interesantes y enérgicas del heavy actual más agresivo y violento, y así lo demostrarán subidas al Ritual Stage el jueves 2 de julio 🔥  Esa mezcla entre la actitud macarra de W.A.S.P., la épica de Iron Maiden, el dominio vocal de Rob de Judas Priest con la genial Laura Guldemond y esos riffs y solos imposibles os fliparán si os mola el metal clásico más oscuro, ocultista y poderoso ✊",
               "country": "Suiza",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=RwomV4za97A"
+              "youtubeUrl": "https://www.youtube.com/watch?v=RwomV4za97A",
+              "spotifyUrl": "https://open.spotify.com/artist/0eNuNAhL4dW2nvKbSe2mS8",
+              "instagramUrl": "https://www.instagram.com/burningwitchesofficial/",
+              "facebookUrl": "https://www.facebook.com/burningwitches666",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174ed7fd539fd4bbc095f69749f"
             }
           },
           {
@@ -629,7 +731,11 @@ const rawAgendaFestData: any = {
               "description": "El cuarteto sueco fundado en 2011 Blues Pills visitará Viveiro para hacernos viajar a la década de los años 70 con su rock revival. La banda liderada por Elin Larsson enamora allá por donde pasa con su propuesta vintage, psicodélica y sofisticada guiada por la pasión ❤️‍🔥\n\nImagínate una mezcla de Janis Joplin o Aretha Franklin a las voces con Led Zeppelin, los Fleetwood Mac de Peter Green y Black Sabbath en la parte rítmica, y lo tienes. Mucho fuzz, mucho soul y mucha psicodelia para toda aquella persona que se anime a volar con su directazo encabezando el Desert Stage el jueves 🦋",
               "country": "Suecia",
               "genre": "Psicodelia",
-              "youtubeUrl": "https://www.youtube.com/watch?v=lZK5xfbZXNw"
+              "youtubeUrl": "https://www.youtube.com/watch?v=lZK5xfbZXNw",
+              "spotifyUrl": "https://open.spotify.com/artist/2lmQ4CUnjmLIIfnwZdRmMY",
+              "instagramUrl": "https://www.instagram.com/bluespills/",
+              "facebookUrl": "https://www.facebook.com/BluesPills",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174ae9a9ec82f0aad57ac2fa9a3"
             }
           },
           {
@@ -643,7 +749,11 @@ const rawAgendaFestData: any = {
               "description": "No hacen falta presentaciones para una de las bandas más importantes de la historia del metal español y de las más queridas en el Resu. El grupo albaceteño fundado en el año 2000 estará una vez más en el Main Stage para petarlo con su thrash rápido, acelerado y furioso 🤘  Angelus Apatrida llevan afilando sus cuchillos desde hace casi tres décadas en las que han lanzado 8 discazos con los que han conseguido dominar el circuito internacional, logrando hitos históricos que parecíán impensables como ser el Nº1 en las listas de ventas de España, y esparciendo su legado por gran parte de Estados Unidos y Latinoamérica, además de China, Japón, Australia o Nueva Zelanda, entre muchísimos otros lugares del globo 🌍  ¡Preparaos para agitar vuestras cabezas en lo que seguro será una comunión de circle pits y locura! 🏃‍♂️ YOU ARE NEXT! 🫵",
               "country": "España",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=xb50ooBETEc"
+              "youtubeUrl": "https://www.youtube.com/watch?v=xb50ooBETEc",
+              "spotifyUrl": "https://open.spotify.com/artist/3bnPBquC93vbHmamojAf59",
+              "instagramUrl": "https://www.instagram.com/angelusapatrida/",
+              "facebookUrl": "https://www.facebook.com/angelusapatrida",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174e2e02a23d38e23a35f3dda34"
             }
           },
           {
@@ -657,7 +767,11 @@ const rawAgendaFestData: any = {
               "description": "Desde Atlanta (Georgia), el rock teatral de The Funeral Portrait inundará nuestro recinto de emo, post-hardcore y rock. Son una banda que vive por y para sus devotos, la Coffin Crew, ofreciendo espectáculos llenos de dramatismo, teatralidad y una actitud que atrapan desde el primer momento 🙌  Tras el éxito de su segundo disco \"Greetings From Suffocate City\" y de arrasar por más de una docena de países, acaban de lanzar un nuevo trabajo en vivo titulado \"Live From Suffocate City\". ¡No os perdáis su debut en el Resu desde el Ritual Stage! 🔥",
               "country": "EEUU",
               "genre": "Post Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=a8DP5vhiDTk"
+              "youtubeUrl": "https://www.youtube.com/watch?v=a8DP5vhiDTk",
+              "spotifyUrl": "https://open.spotify.com/artist/4iGsihTcyZ80RQFZhC8bf8",
+              "instagramUrl": "https://www.instagram.com/tfp_insta/",
+              "facebookUrl": "https://www.facebook.com/thefuneralportrait",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c65a19fb4526e6640f14b0eb"
             }
           },
           {
@@ -671,7 +785,10 @@ const rawAgendaFestData: any = {
               "description": "Los rápidos y técnicos canadienses Belvedere Band también serán parte de nuestro cartelón de habitualmente. Son considerados un grupo de culto muy admirado entre fans de Strung Out, Satanic Surfers o Propaghandi, formaciones también míticas dentro del punk y hardcore melódico más veloz 🧨🛹\n\nDesde 1995 en el ruedo, salvando ese parón que hicieron del 2005 al 2011, sus dinámicas instrumentales y armonías vocales son algunas de sus señas de identidad más características y disfrutables. Estarán en el Chaos repartiendo mandanga el jueves 2 de julio 🔥",
               "country": "Canada",
               "genre": "Punk Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=9SFlXVpZfsg"
+              "youtubeUrl": "https://www.youtube.com/watch?v=9SFlXVpZfsg",
+              "spotifyUrl": "https://open.spotify.com/artist/6LaK7jiyyNzB8JVhddxZxG",
+              "facebookUrl": "https://www.facebook.com/belvedere669",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174a3ba1aba509d351b685dd756"
             }
           },
           {
@@ -699,7 +816,11 @@ const rawAgendaFestData: any = {
               "description": "El jueves 2 de julio nos espera una noche inolvidable con los reyes del heavy metal Iron Maiden. Darán un concierto de más de 2 horas en las que podremos disfrutar de todo su legado en estas más de cinco décadas. ¡No necesitan más presentaciones! 🔥  Los tuvimos por nuestra tierra por primera vez en 1998 en Ourense con Blaze Bayley a las voces, la segunda en A Coruña en 2003 con Bruce Dickinson de regreso al grupo, y la tercera en el Resu de 2016 ☝️🤓  Las leyendas del heavy metal ya llevan casi un par de semanas con su gira europea celebrando sus 50 años de historia, y aunque os pueda sorprender a muchxs, están sonando más fuertes y contundentes que nunca. Damos fe de que el tiempo no pasa por los británicos  ¡La Dama de Hierro vuelve a casa! Ya ha pasado una década tras su última e inolvidable actuación en sus conciertos, la banda más grande de la historia del heavy metal vuelve a Viveiro. ¡Y no vuelven de cualquier manera! Los británicos darán en el Resurrection Fest EG uno de los dos únicos conciertos en España en 2026 con su gira \"Run For Your Lives\" celebrando sus 50 años de historia con un setlist de locos en el que recorrerán todos los himnos de sus primeros 9 discos de estudios, desde \"Iron Maiden\" hasta \"Fear Of The Dark\", un “greatest hits” en toda regla.  Están agotando todos los estadios de Europa a meses vista, ¡así que no te lo puedes perder por nada del mundo!",
               "country": "UK",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=aAsrFetnHzM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=aAsrFetnHzM",
+              "spotifyUrl": "https://open.spotify.com/artist/6mdiAmATAx73kdxrNrnlao",
+              "instagramUrl": "https://www.instagram.com/ironmaiden/",
+              "facebookUrl": "https://www.facebook.com/ironmaiden",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174f9978ad4808f6f2723124d19"
             }
           },
           {
@@ -713,7 +834,11 @@ const rawAgendaFestData: any = {
               "description": "Si buscáis la locura y lo impredecible, vais a ir saciados con The Callous Daoboys, una de esas bandas modernas salvadoras del metalcore y mathcore actual. Los de Georgia son como un huracán, y por momentos recuerdan con sus rítmicas al salvajismo de The Dilllinger Escape Plan, Every Time I Die o SeeYouSpaceCowboy 💥\n\nDisonancias, breakdowns huracanados y violines esquizofrénicos en un cóctel explosivo y único que no tenemos duda alguna de que os volará la cabeza el próximo jueves 2 de julio en el Chaos Stage 🔥",
               "country": "EEUU",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=4l5qLn2NrnE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=4l5qLn2NrnE",
+              "spotifyUrl": "https://open.spotify.com/artist/4ZWRLOs7c4drt9mKGc0Ds0",
+              "instagramUrl": "https://www.instagram.com/thecallousdaoboys/",
+              "facebookUrl": "https://www.facebook.com/thecallousdaoboys",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051745b5adfd95f6b322fb7ae729d"
             }
           },
           {
@@ -727,7 +852,11 @@ const rawAgendaFestData: any = {
               "description": "La joven banda Vulvarine creada en 2019 es la definición perfecta de sororidad, actitud y energía sobre los escenarios. Su descaro y sus geniales riffs son su carta de presentación, y su compromiso con el rock y su actitud punk callejera, parte de su identidad ❤️‍🔥  Si os gustan los himnos rebeldes y los guitarrazos, os flipará el \"vulvarock\" de las austríacas. Sus influencias del glam, hard rock, punk setentero, heavy metal y movimiento feminista americano riot grrrl las hacen únicas e imperdibles en directo 💪",
               "country": "Austria",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=6joGJzYX\\_Rc"
+              "youtubeUrl": "https://www.youtube.com/watch?v=6joGJzYX\\_Rc",
+              "spotifyUrl": "https://open.spotify.com/artist/16MG8AG1y22HDmY8IoI5lY",
+              "instagramUrl": "https://www.instagram.com/vulvarine_band/",
+              "facebookUrl": "https://www.facebook.com/vulvarine.vienna",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051740a1c9d4dd7f23acca1a1581b"
             }
           },
           {
@@ -742,6 +871,10 @@ const rawAgendaFestData: any = {
               "country": "Alemania",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=z4DXIoWCr1Q",
+              "spotifyUrl": "https://open.spotify.com/artist/1oeo6cC9Fqa2bxxv67qBQL",
+              "instagramUrl": "https://www.instagram.com/calibanofficial/",
+              "facebookUrl": "https://www.facebook.com/CalibanOfficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174682b7b4eb91bd27faa15f117",
               "signingSession": "SESIONES DE FIRMAS - JUEVES 2 - 20:30 A 21:00"
             }
           },
@@ -756,7 +889,11 @@ const rawAgendaFestData: any = {
               "description": "Los referentes del beatdown californiano regresan al Resu para demostrar por qué su trono sigue intacto. Directos desde la Bay Area, LIONHEART OFFICIAL han pasado de ser una promesa del hardcore a convertirse en una apisonadora de agresividad metalera y hardcore con actitud callejera que ya es historia viva del género 🤘  Su vuelta a los escenarios de Viveiro será uno de los puntos álgidos del Chaos Stage. Por si fuera poco, vendrán con nuevo material recién salido del horno: su octavo LP \"Valley Of Death II\", secuela de una primera parte estrenada en 2019 que garantizará los moshpits y dolores de cuello. ¿Preparadxs para la carnicería? 👊",
               "country": "EEUU",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=VeP1OmL5fNQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=VeP1OmL5fNQ",
+              "spotifyUrl": "https://open.spotify.com/artist/6dOCTX1ATvti0d4uaxwlO3",
+              "instagramUrl": "https://www.instagram.com/lionheartca/",
+              "facebookUrl": "https://www.facebook.com/lionheartca",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749d9c2adfaa9d7886eaab969b"
             }
           },
           {
@@ -770,7 +907,11 @@ const rawAgendaFestData: any = {
               "description": "Como parte del clásico Big Four del thrash metal, Anthrax es junto a Metallica, Slayer y Megadeth una de las formaciones más importantes del género. Activos desde hace casi 45 años y con una larga sombra más allá del thrash y heavy, también han sido responsables de fusionar el rap y el metal antes que nadie, ayudando al nacimiento del nu metal 😎 Los americanos vendrán desde Nueva York hasta Viveiro para regresar al Resu tras el impecable directo que nos regalaron en la edición de 2017 para dar uno de los dos únicos conciertos que darán en España en 2026 🤘",
               "country": "EEUU",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Pj5u8OagODo"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Pj5u8OagODo",
+              "spotifyUrl": "https://open.spotify.com/artist/3JysSUOyfVs1UQ0UaESheP",
+              "instagramUrl": "https://www.instagram.com/anthrax/",
+              "facebookUrl": "https://www.facebook.com/anthrax",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051748fa118d8e890fcb413676e56"
             }
           },
           {
@@ -784,7 +925,11 @@ const rawAgendaFestData: any = {
               "description": "Vienen desde Mechelen (Bélgica), y en la última década se han convertido en uno de los nombres más interesantes del post-metal y metal progresivo del Viejo Continente. Con influencias claras de Amenra, Tool, Gojira o Pink Floyd revoloteando el ambiente, el trío belga PSYCHONAUT es capaz de crear un sonido gigantesco y atmosférico lleno de riffs pesados, letras filosóficas y espirituales 🧘  Vienen de fichar con Pelagic Records, el sello de Robin de The Ocean, con su último álbum \"World Maker\", y junto a los ya mencionados Amenra, Pothamus, Wiegedood y Brutus son una de las bandas belgas más queridas y aclamadas de los últimos años 🙌",
               "country": "Bélgica",
               "genre": "Post Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=x2lxwwzkLCM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=x2lxwwzkLCM",
+              "spotifyUrl": "https://open.spotify.com/artist/604HhRLmc5DXNS221XKm3a",
+              "instagramUrl": "https://www.instagram.com/psychonautband/",
+              "facebookUrl": "https://www.facebook.com/psychonautband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174afdc2d8c216673ea95ea23c0"
             }
           },
           {
@@ -799,6 +944,9 @@ const rawAgendaFestData: any = {
               "country": "EEUU",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=XmhN3t4wLFA",
+              "spotifyUrl": "https://open.spotify.com/artist/5CHcX5KtuSz5uo1p5fM3sz",
+              "facebookUrl": "https://www.facebook.com/authorityzero.official",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cc8769232844e85493288724",
               "signingSession": "SESIONES DE FIRMAS - JUEVES 2 - 18:30 A 19:00"
             }
           },
@@ -813,7 +961,11 @@ const rawAgendaFestData: any = {
               "description": "Desde su nacimiento en 2004 en Erlangen (Baviera, Alemania) como respuesta satírica y humorística al metal y rock \"medieval\" alemán del momento hasta hoy, Feuerschwanz han conseguido labrarse una carrera top con más de una docena de discos publicados en poco más de dos décadas donde el folk de sus comienzos ha ido mutando sin perder la esencia hacia el power y heavy metal más potente 🤘🏼  El sexteto comandado por Peter Hanrici (Hauptmann Feuerschwanz) ha logrado pasar de pequeños recintos a grandes escenarios europeos gracias a su pedazo de despliegue sobre los escenarios, además de alcanzar las primeras posiciones de las listas musicales de su país con sus trabajos más recientes 🎸🎻  ¡Os prometemos que os lo vais a pasas pipa con su directo en el Resu! 🙌🏼",
               "country": "Alemania",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=-rKOoM7S6mw"
+              "youtubeUrl": "https://www.youtube.com/watch?v=-rKOoM7S6mw",
+              "spotifyUrl": "https://open.spotify.com/artist/2Ct54gNxKnYLnXk9HhviMI",
+              "instagramUrl": "https://www.instagram.com/feuerschwanzband/",
+              "facebookUrl": "https://www.facebook.com/feuerschwanz",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174412d9bee52f47326eb0ed7d0"
             }
           }
         ]
@@ -842,7 +994,9 @@ const rawAgendaFestData: any = {
               "description": "Con una sólida trayectoria que ya supera los 20 años, la banda vitoriana Nukore es un referente de autenticidad y tesón en la escena nacional. Desde su formación, han sabido perfeccionar su mezcla implacable entre nu metal, hardcore, rap y metal alternativo dejando canciones brutales a lo largo de sus seis referencias de estudio 🙌  Si te mola el hardcore noventero y el nu metal y bandas como Rage Against The Machine, Biohazard, Suicidal Tendencies o Stuck Mojo, no te lo pienses y vente a verlos el viernes 3 de julio al Ritual Stage de una 🤘",
               "country": "España",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=EmnfimPvST0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=EmnfimPvST0",
+              "spotifyUrl": "https://open.spotify.com/artist/76hPQa6sCQSpbMsSzLVSAw",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174a1c7ed6c04f937ded19c3a0c"
             }
           },
           {
@@ -856,7 +1010,8 @@ const rawAgendaFestData: any = {
               "description": "The Fall Of Atlantis se creó en Madrid en el año 2012, la banda se caracteriza por tener un estilo Metalcore poco corriente con influencias del Deathcore y la música electrónica, donde podemos encontrar desde los breakdowns más potentes y rompedores a melodías pegadizas",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=zNDcD3oSt3U"
+              "youtubeUrl": "https://www.youtube.com/watch?v=zNDcD3oSt3U",
+              "facebookUrl": "https://www.facebook.com/TheFallOfAtlantis"
             }
           },
           {
@@ -870,7 +1025,11 @@ const rawAgendaFestData: any = {
               "description": "Si buscas algo fresco, dinámico y con actitud, Nevertel te van a molar FIJO. Desde Florida, el trío ha sabido construir un sonido propio mezclando metalcore con hip hop y rock alternativo, todo ello envuelto en una producción moderna y directa 🔥  Formados alrededor de 2014 y recientemente fichados por Epitaph (sello de Brett de Bad Religion), han ido esparciendo sus singles pegadizos que ya acumulan millones de escuchas por todo el mundo y se han hecho virales gracias a sus estribillos agresivos y enérgicos y el boca a boca de Internet 🌎  Su equilibrio entre melodía y contundencia los está poniendo en el punto de mira de las nuevas generaciones.🙌",
               "country": "EEUU",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Jp6-SoqXp\\_s"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Jp6-SoqXp\\_s",
+              "spotifyUrl": "https://open.spotify.com/artist/0uTkKGuqdf7CtKlZLt9N0Y",
+              "instagramUrl": "https://www.instagram.com/nevertelofficial/",
+              "facebookUrl": "https://www.facebook.com/NevertelOfficial",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749b6aa935e19530c540cfd7be"
             }
           },
           {
@@ -884,7 +1043,8 @@ const rawAgendaFestData: any = {
               "description": "están a punto de cumplir 20 años como banda e institución de resistencia de la escena pontevedresa y compostelana. Mezclan el rock alternativo con la esencia y melodías del pop punk de los 90 y comienzos de los 2000 (sí, su nombre es un guiño a Blink-182) con música fresca, pegadiza y directa al grano para corear a pleno pulmón 🗣️  Directos desde A Estrada y curtidos en salas y festis, traen su directo tan fiestero como reivindicativo a Viveiro para romperla en el Chaos Stage el viernes 3 de julio. ¡Vente a celebrarlo!",
               "country": "España",
               "genre": "Punk Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=AO4JQ3\\_zPXE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=AO4JQ3\\_zPXE",
+              "facebookUrl": "https://www.facebook.com/pantsoffmusic"
             }
           },
           {
@@ -912,7 +1072,11 @@ const rawAgendaFestData: any = {
               "description": "¡Preparaos para levitar! Desde su formación en 2017, el power trío luso-británico ha demostrado que la psicodelia sigue sin tener fronteras. Sus directos son rituales sonoros que maman directamente de los 70 con jams espaciales e hipnóticas que te hacen levitar 🧘  Si os molan los riffs infinitos y bandas como Earthless, Black Sabbath o Kyuss, vais a gozar de lo lindo con Madmess en el Desert Stage 🙂‍↕️",
               "country": "Portugal",
               "genre": "Rock Psicodélico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=sNi\\_YmGT7Cw"
+              "youtubeUrl": "https://www.youtube.com/watch?v=sNi\\_YmGT7Cw",
+              "spotifyUrl": "https://open.spotify.com/artist/5heR5lCdbT4TqjgnQNji4U",
+              "instagramUrl": "https://www.instagram.com/madmessband/",
+              "facebookUrl": "https://www.facebook.com/madmessband",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174dc49476fb23bf6a52c369b95"
             }
           },
           {
@@ -927,6 +1091,10 @@ const rawAgendaFestData: any = {
               "country": "Finlandia",
               "genre": "Rock Melodico",
               "youtubeUrl": "https://www.youtube.com/watch?v=uY4vweIBFcY",
+              "spotifyUrl": "https://open.spotify.com/artist/76ptJV8617638xrpeoUtzl",
+              "instagramUrl": "https://www.instagram.com/therasmusofficial/",
+              "facebookUrl": "https://www.facebook.com/therasmusofficial",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517452612710e1a88ad35002aced",
               "signingSession": "SESIONES DE FIRMAS - VIERNES 3 - 19:00 A 19:30"
             }
           },
@@ -941,7 +1109,11 @@ const rawAgendaFestData: any = {
               "description": "El quinteto con sede en La Rioja lleva casi una década en la escena alternativa estatal desde su creación en 2017. En estos años han lanzado dos álbumes (y todo apunta a que más pronto que tarde nos regalarán nuevas canciones) en los que han demostrado que no se casan con nadie ni tienen complejos con las etiquetas, y que tanto el pop, la electrónica y el rock como el post-hardcore, post-rock y el metal son parte de su esencia y raíces 🙌  OSLO OVNIES estarán en el Chaos Stage dando un bolo muy especial como parte de su gira \"¿Dónde está mi ovni?\", y estamos segurísimxs de que os flipará su solvencia y energía en directo. Aunque las comparaciones son odiosas y su abanico sea demasiado amplio como para encasillarlos, si os molan artistas como Frank Carter, Biela, Bolu2 Death, Johnny Garso o Bring Me The Horizon, os recomendamos no perdéroslos 🕺",
               "country": "España",
               "genre": "Rock alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=TgWSiiCQU1I"
+              "youtubeUrl": "https://www.youtube.com/watch?v=TgWSiiCQU1I",
+              "spotifyUrl": "https://open.spotify.com/artist/3KSBsxMjBEZCxmrj0GEWJI",
+              "instagramUrl": "https://www.instagram.com/osloovnies/",
+              "facebookUrl": "https://www.facebook.com/osloovniesband",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741f670e6d8023290fcf317dfd"
             }
           },
           {
@@ -969,7 +1141,9 @@ const rawAgendaFestData: any = {
               "description": "Desde Francia llega una de las propuestas más oscuras, gélidas y extremas de sus giras del Resu. Mourir nacieron en 2019, aunque su historia se podría remontar unos años atrás más con Vermine, proyecto de black metal en solitario del vocalista y guitarrista Olivier Lolmède 🙌  El cuarteto, que el próximo 10 de julio lanzará su tercer LP debutando con Pelagic Records, factura un black particular; crudo, atmosférico, y disonante con arrebatos sludge que hacen de su música asfixiantemente moderna y única. ¡No te los pierdas si te molan Imperial Triumphant, Fange, The Great Old Ones o Wiegedood! 🤘",
               "country": "Francia",
               "genre": "Black Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yq483\\_-C5tA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=yq483\\_-C5tA",
+              "instagramUrl": "https://www.instagram.com/movrir/",
+              "facebookUrl": "https://www.facebook.com/movrir"
             }
           },
           {
@@ -983,7 +1157,11 @@ const rawAgendaFestData: any = {
               "description": "Son claramente una de las bandas del momento, y ya en 2022 nos demostraron de lo que son capaces en el festi. Tendremos el placer de verlos tocar otra vez 4 años después en su mejor momento. ¡Puro metal escocés! 🤘  La banda escocesa llega al Resu en el mejor momento de su carrera. Tras dos décadas de evolución desde sus inicios en el deathcore hasta la mezcla de death melódico, metalcore y groove actual, los de Glasgow han ido cuidando y perfeccionando sus melodías y groove hasta hoy, que ya son considerados uno de los nombres fundamentales para entender el metal británico contemporáneo🤘  Su regreso por Viveiro no será una cita más. Bleed From Within volverán con su álbum \"Zenith\" bajo el brazo, un nuevo repertorio y una madurez extra que no ha afectado en absoluto a su demoledora agresividad. ¡Imperdibles! 👊",
               "country": "UK",
               "genre": "Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=42-e9zFmgPA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=42-e9zFmgPA",
+              "spotifyUrl": "https://open.spotify.com/artist/5ZvwJikDgdP1PFU4PkAPVG",
+              "instagramUrl": "https://www.instagram.com/bleedfromwithin/",
+              "facebookUrl": "https://www.facebook.com/bleedfromwithinband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cd7069f3be53bbc57a747293"
             }
           },
           {
@@ -997,7 +1175,8 @@ const rawAgendaFestData: any = {
               "description": "El hardcore moderno no se entiende sin bandas como Initiate, formación californiana que desde hace una década ha mantenido de la mano la agresividad, integridad y conciencia dentro de un género nacido por y para ello. Aunque se rigen por la velocidad y urgencia, también son capaces de transitar lo melódico sin perder su gancho 👊💥  Initiate se han convertido en una voz vital del underground por su música y mensaje, que pretende dar visibilidad y soporte a personas queer, mujeres y todo tipo de gente afectada por injusticias sistémicas. Este ideario tan unido al hardcore y punk es el puente perfecto para derribar barreras y crear una comunidad diversa con el único fin de disfrutar, bailar, gritar y sentirse parte de algo más grande ✊",
               "country": "EEUU",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=KH0PrtJIkIo"
+              "youtubeUrl": "https://www.youtube.com/watch?v=KH0PrtJIkIo",
+              "instagramUrl": "https://www.instagram.com/initiate_hc/"
             }
           },
           {
@@ -1011,7 +1190,10 @@ const rawAgendaFestData: any = {
               "description": "Si eres de lxs que todavía piensan que el black metal crudo solo sale de Escandinavia, prepárate para la propuesta el dúo belga-americano Hulder nos traerá el viernes 3. El proyecto está revitalizando el género con su autodenominado \"dark medieval black metal\", y estamos segurísimxs de que hará las delicias de cualquier fan del black pagano de los 90 🤘  Con base en Estados Unidos, en Hulder se mezcla la crudeza de los inicios del estilo con atmósferas densas y algún que otro guiño al dark folk que os transportará a castillos belgas en ruinas y bosques olvidados a lo largo y ancho de Europa. ¡Banda imprescindible para lxs fans de lo extremo! 👊",
               "country": "EEUU",
               "genre": "Black Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Q2gttZHbJsw"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Q2gttZHbJsw",
+              "spotifyUrl": "https://open.spotify.com/artist/65vrcJ67suxLePeEhUtLLo",
+              "facebookUrl": "https://www.facebook.com/HulderUS",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741f6ff549b2bbbb0819e40440"
             }
           },
           {
@@ -1025,7 +1207,11 @@ const rawAgendaFestData: any = {
               "description": "La elegancia del rock setentero tiene nombre propio y llega desde la inglesa Southend-on-Sea hasta Galicia para dejar con la boca abierta a todas las personas dispuestas a un viaje irrepetible en el Desert Stage. Rosalie Cunningham, la exlíder de la aclamada banda inglesa Purson, nos cautivará con su propuesta de rock and roll vintage, artístico y lisérgico  La talentosa multiinstrumentista británica es conocida por su estética e imaginación desbordante a la hora de componer. Viene a presentarnos las joyas de su elogiado tercer disco en solitario, \"To Shoot Another Day\", una obra llena de estilo, carisma y riffs hipnóticos, y a tocar otros de sus tantísimos temazos",
               "country": "UK",
               "genre": "Rock Psicodélico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=8YehoejPll8\\&list=RDEM71BufWZpq5YI695VOCH1Xw\\&start\\_radio=1"
+              "youtubeUrl": "https://www.youtube.com/watch?v=8YehoejPll8\\&list=RDEM71BufWZpq5YI695VOCH1Xw\\&start\\_radio=1",
+              "spotifyUrl": "https://open.spotify.com/artist/2DvBNcZ05NC2AOuQa7oyqH",
+              "instagramUrl": "https://www.instagram.com/rosaliecunningham71/",
+              "facebookUrl": "https://www.facebook.com/RosalieCunninghamOfficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744d81765e21254b9dbdc8df0e"
             }
           },
           {
@@ -1039,7 +1225,11 @@ const rawAgendaFestData: any = {
               "description": "Nos alegra volver a contar en nuestro Main Stage con una de las bandas de metal más queridas por el público. Trivium ya nos sorprendieron con sus directos en directo en el 2013 y 2019 y, siete años después, volverán a poner patas arriba sus conciertos 🤘  Matt Heafy y los suyos nos presentarán el próximo mes de octubre los temas del EP “Struck Dead”, del que esperamos que nos caiga algo en julio de 2026. Pero tranquilxs, porque no faltarán las canciones más míticas en el set de los americanos  Ya hacía tiempo que no los teníamos por aquí. Los de Florida vuelven a Galicia con un set completo lleno de nuevas canciones y viejos clásicos del metalcore y heavy metal contemporáneo que han dejado huella en una generación entera 🙌  Con la banda en un estado de forma casi insuperable y queriéndose comer los escenarios como demostraron en su tour europeo (que pasó por el Vistalegre de Madrid) del año pasado, esta es la oportunidad ideal para tacharlos de la lista de deseos 🤘",
               "country": "EEUU",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=IIgswpHNZik"
+              "youtubeUrl": "https://www.youtube.com/watch?v=IIgswpHNZik",
+              "spotifyUrl": "https://open.spotify.com/artist/278ZYwGhdK6QTzE3MFePnP",
+              "instagramUrl": "https://www.instagram.com/triviumband/",
+              "facebookUrl": "https://www.facebook.com/TriviumOfficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ab21a41e346730ff64be53c2"
             }
           },
           {
@@ -1053,7 +1243,11 @@ const rawAgendaFestData: any = {
               "description": "Cruda y sin concesiones, la banda originaria de Portland trae de vuelta al ruedo la esencia del metalcore melódico tan amado en los primeros 2000. Con la desgarradora Emma Boster al mando, el grupo americano hará memorable su paso por Viveiro 😈  Con su forma singular de canalizar el duelo, vulnerabilidad y rabia a través de la música, sus directos convierten su arte en una catarsis colectiva de brutalidad, tal y como quedó plasmada en su más reciente trabajo \"Flesh Stays Together\" o en cualquiera de sus dos anteriores referencias hasta hoy 🙌",
               "country": "EEUU",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=U1g8yXXOmOQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=U1g8yXXOmOQ",
+              "spotifyUrl": "https://open.spotify.com/artist/4igS2MSwOIf3F9YeL929IO",
+              "instagramUrl": "https://www.instagram.com/dyingwishhc/",
+              "facebookUrl": "https://www.facebook.com/DyingWish503",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051748dc46d134bd391950448b780"
             }
           },
           {
@@ -1067,7 +1261,11 @@ const rawAgendaFestData: any = {
               "description": "Nuestros vecinos tripeiros conforman una de esas bandas que ha logrado revolucionar el panorama extremo reciente. Desde Portugal, Gaerea han cruzado fronteras con su black metal teatral que ha ido fusionándose de manera majestuosa con las atmósferas del post-metal y la melodía del metalcore en su material más reciente 🤘  Indispensables para todo fan que tenga en el radar a Harakiri For The Sky, Obsidian Kingdom o Behemoth y busque nuevas experiencias. 🙏",
               "country": "Portugal",
               "genre": "Black Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=NpdWlHP\\_pns"
+              "youtubeUrl": "https://www.youtube.com/watch?v=NpdWlHP\\_pns",
+              "spotifyUrl": "https://open.spotify.com/artist/1wXoI3Ajpv4WwQ3LmcrSBw",
+              "instagramUrl": "https://www.instagram.com/gaerea_/",
+              "facebookUrl": "https://www.facebook.com/gaerea",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749291dd6eb8ea9ebab3363d87"
             }
           },
           {
@@ -1081,7 +1279,10 @@ const rawAgendaFestData: any = {
               "description": "Decía el propio Kurt Cobain que el grunge estaba muerto, pero estamos seguros de que en eso no estuvo muy acertado. Desde L.A., Return to Dust son un claro ejemplo de que el rock noventero sigue llamando atención y que el espíritu apasionado de Soundgarden y Alice In Chains o incluso de QOTSA o The Black Crowes todavía resuena en las nuevas generaciones 🙌  Sus temas entran como si nada y, lo más importante: están lejos de ser una copia barata de la música del pasado. Tienen todas las papeletas para triunfar, y esperamos y deseamos que así sea. ¡Quedaros con sus caras porque aquí hay talento! 🔥",
               "country": "EEUU",
               "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=r\\_TvbkwN4I4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=r\\_TvbkwN4I4",
+              "spotifyUrl": "https://open.spotify.com/artist/53Hm23U3dtaHeB5Oy6GbaS",
+              "instagramUrl": "https://www.instagram.com/returntodustband/",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174362ffca97de946dd048c973c"
             }
           },
           {
@@ -1095,7 +1296,11 @@ const rawAgendaFestData: any = {
               "description": "Consolidada como una de las nuevas bandas destacadas de la nueva oleada del DC hardcore y del sello Flatspot, End It BCHC han devuelto al género su sentimiento de peligro primitivo y urgencia a veces tan añorado con canciones breves con un claro mensaje combativo anticolonista y antiautoritario ✊  Desde las trincheras de Maryland, los americanos nos visitarán el próximo miércoles 3 de julio para dejar en llamas el Chaos con su BCHC. Vendrán presentando las canciones de su LP debut \"Wrong Side Of Heaven\", uno de los discos más top estrenados el pasado 2025 dentro del hardcore y punk 🏃‍♂️",
               "country": "EEUU",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=xuhVpPAx0bA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=xuhVpPAx0bA",
+              "spotifyUrl": "https://open.spotify.com/artist/5YlX74SFjWauq32aKLwAYn",
+              "instagramUrl": "https://www.instagram.com/enditbaltimore/",
+              "facebookUrl": "https://www.facebook.com/EndItBCHC",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174de085730e9d3a870ab7f5824"
             }
           },
           {
@@ -1109,7 +1314,11 @@ const rawAgendaFestData: any = {
               "description": "Tras muchos años intentándolo, una de las bandas más pedidas y un icono generacional POR FIN estará en directo el próximo verano en el mejor momento de su carrera. Encabezando grandes festivales de todo el mundo, y tras 14 años sin pisar España, ¡LIMP BIZKIT ESTARÁN EN EL RESURRECTION FEST ENCABEZANDO UNO DE LOS DÍAS!  A buen seguro, será uno de los conciertos más brutales que jamás hayamos visto en directo, sin ninguna duda. Por favor dad la bienvenida a Fred Durst y compañía, porque LIMP BIZKIT IS IN DA HOUSE!  https://www.youtube.com/watch?v=bSTX2xVpfPw  Tras el éxito arrollador de Fred Durst y compañía agotando sus entradas para el Resurrection Fest EG 2026 en su día de actuación, la banda ha decidido añadir un nuevo concierto en Madrid para todos los fans que no han podido acudir al festival habitualmente y así resarcirse de los ya 14 años que llevamos sin verles en España.  Este concierto de Limp Bizkit tendrá lugar en Madrid el próximo 1 de julio, y en un gran recinto a la altura de la ocasión como es el conocido Movistar Arena de la capital. El cartel contaré con P.O.D. P.O.D. , que junto con Limp Bizkit nos darán un viaje al pasado para revivir la época más potente del nu metal, y también con DeathByRomy  Como no recordar a Sam Rivers, el que fuera bajista y cofundador de la banda, fallecido en 2025. El encargado de honrar a Sam Rivers en esta gira es Richie Buxton conocido como Kid Not, músico australiano y bajista de Ecca Vandal",
               "country": "EEUU",
               "genre": "Nu Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=bSTX2xVpfPw"
+              "youtubeUrl": "https://www.youtube.com/watch?v=bSTX2xVpfPw",
+              "spotifyUrl": "https://open.spotify.com/artist/165ZgPlLkK7bf5bDoFc6Sb",
+              "instagramUrl": "https://www.instagram.com/limpbizkit/",
+              "facebookUrl": "https://www.facebook.com/limpbizkit",
+              "imageUrl": "https://i.scdn.co/image/38532b2db9bc627567271da917855a59be788860"
             }
           },
           {
@@ -1137,7 +1346,11 @@ const rawAgendaFestData: any = {
               "description": "Fundados en 1994 en Noruega, Borknagar llegaron para romper los límites del black tradicional más allá de los clichés de los que se rodeaban en la época, sumando a su ecuación también el metal progresivo y folk. Con su capacidad para fusionar agresividad y melodía, son hoy día un pilar indiscutible del género a nivel mundial 🤘  Los nórdicos llenarán Viveiro y nuestro Desert Stage de atmósferas bellas y épicas con lo que sabemos que será un conciertazo increíble ❤️‍🔥",
               "country": "Noruega",
               "genre": "Black Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=7hxKHRqCRdA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=7hxKHRqCRdA",
+              "spotifyUrl": "https://open.spotify.com/artist/0vxxsjcDy61x5zvrOqwHIL",
+              "instagramUrl": "https://www.instagram.com/borknagar/",
+              "facebookUrl": "https://www.facebook.com/borknagarofficial",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517428e028c642117dc411386f77"
             }
           },
           {
@@ -1151,7 +1364,11 @@ const rawAgendaFestData: any = {
               "description": "Allá por 1993, Sepultura lanzaron uno de sus discos más icónicos y una pieza clave para el thrash y groove metal de los años 90 con clásicos todavía vigentes como \"Refuse/Resist\", \"Territory\", \"Slave New World\" o \"Propaganda\" 💣  Ahora, más de 30 años después y como Cavalera Conspiracy, los hermanos y miembros originales de Sepultura Max e Iggor, más en forma que nunca, rescatarán en directo en directo este discazo acompañados de Igor Calavera Jr. (hijo de Max) al bajo y Travis Stone a la guitarra 🤘",
               "country": "EEUU",
               "genre": "Groove Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=qCMz704soB4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=qCMz704soB4",
+              "spotifyUrl": "https://open.spotify.com/artist/7F1K4WlMshx23V2TTz4KwV",
+              "instagramUrl": "https://www.instagram.com/cavaleraconspiracy/",
+              "facebookUrl": "https://www.facebook.com/maxeigorcavalera",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174d93429df94b98f1f457f2856"
             }
           },
           {
@@ -1166,6 +1383,10 @@ const rawAgendaFestData: any = {
               "country": "EEUU",
               "genre": "Punk",
               "youtubeUrl": "https://www.youtube.com/watch?v=5QbMOtl\\_SRo",
+              "spotifyUrl": "https://open.spotify.com/artist/6fb3I3Q54izgnOMtiZbOBA",
+              "instagramUrl": "https://www.instagram.com/house_of_protection/",
+              "facebookUrl": "https://www.facebook.com/houseofprotectionmusic",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051748e510569f5e209a267b77f62",
               "signingSession": "SESIONES DE FIRMAS - VIERNES 3 - 20:00 A 20:30"
             }
           }
@@ -1195,7 +1416,10 @@ const rawAgendaFestData: any = {
               "description": "La energía y descontrol bailable de la banda de Osaka contraatacará en nuestra próxima edición después reventarlo en 2025 desde el Chaos Stage. Esta vez será más grande que nunca para la banda nipona: estarán comiéndose el Main Stage el sábado 4 de julio 🔥  Su mezcla de metal digital con pop punk o ska es única e intensa, ideal para montar una buena fiesta en verano en directo. Si te los perdiste el año pasado, ¡prepárate! 👐  ¡Que tiemble Viveiro! 🤘🏼",
               "country": "Japón",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=H_-leVD654w"
+              "youtubeUrl": "https://www.youtube.com/watch?v=H_-leVD654w",
+              "spotifyUrl": "https://open.spotify.com/artist/3VaWHUyDEoBjigERzadi1g",
+              "instagramUrl": "https://www.instagram.com/iscream.never.ground/",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174a1e6c83ef9381bc74ccefd08"
             }
           },
           {
@@ -1209,7 +1433,9 @@ const rawAgendaFestData: any = {
               "description": "Down to Suffer es una banda joven cántabra de cinco integrantes (Julen, Dabi, Jesús, Mario y Samu) que nace para renovar el proyecto Burning the Waves. Con tres singles publicados, sacan a primeros de 2026 el que es su primer EP \"Eclipse\"",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=7Uk_uG26VT4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=7Uk_uG26VT4",
+              "spotifyUrl": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746b134287e3095d2c84b7932a"
             }
           },
           {
@@ -1223,7 +1449,10 @@ const rawAgendaFestData: any = {
               "description": "Directos desde las calles de Praga, los brutales y pegadizos STELLVRIS llegan dispuestos para romperlo en el Ritual Stage el sábado 4 de julio. Activos desde 2019, han conseguido la fórmula perfecta entre la contundencia del metalcore y el \"bounce\" del nu metal con melodías coreables, atmósferas electrónicas y algún que otro destello pop 🙌\n\nSi te molan los sonidos a lo Spiritbox, Jinjer o Architects, no les quites el ojo de encima. Media Europa ya se ha rendido a su estilo. ¡No los dejes pasar! 🔥",
               "country": "Chequia",
               "genre": "Modern Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yAnEyq8iOzY"
+              "youtubeUrl": "https://www.youtube.com/watch?v=yAnEyq8iOzY",
+              "spotifyUrl": "https://open.spotify.com/artist/3n9SWHa9CmQldmLrD9zfll",
+              "facebookUrl": "https://www.facebook.com/STELLVRIS.band",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174040cf44eff6f405a81dcf59f"
             }
           },
           {
@@ -1237,7 +1466,9 @@ const rawAgendaFestData: any = {
               "description": "Desde Barcelona, DONUTS HOLE regresan a nuestro festi para darlo todo el sábado 4 de julio en el Chaos Stage y afirmar su legado de más de 15 años dentro de la escena de nacional de metal. Estuvieron con nosotrxs en 2024, ¡y ya tocaba repetir! 🤘  El cuarteto ha girado por Europa y Latinoamérica con giras tanto en solitario como con artistas de renombre internacional (Soulfly, Hamlet, Crystal Lake, Soziedad Alkoholika...) gracias a un trabajo duro e incesante, muchas horas en la carretera, muchísima implicación, y una entrega hacia lo que hacen como pocxs artistas tienen 🙌  ¡Os prometemos que su propuesta de post-metalcore contundente y emocional a partes iguales no os dejará indiferentes! ✊",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=DqcHLdIygpk"
+              "youtubeUrl": "https://www.youtube.com/watch?v=DqcHLdIygpk",
+              "instagramUrl": "https://www.instagram.com/donutsholeoficial/",
+              "facebookUrl": "https://www.facebook.com/donutshole"
             }
           },
           {
@@ -1251,7 +1482,11 @@ const rawAgendaFestData: any = {
               "description": "Pioneros, incombustibles e historia viva de nuestra música. Sus canciones son parte del legado del metal en España de las últimas cuatro décadas, que se dice pronto. ¡Nos flipa tenerlos de vuelta por una casa que consideramos que también es suya! 🙌  Sobran presentaciones para los madrileños Hamlet, que marcaron con sus discos a varias generaciones de metaleros y hardcoretas con su particular estilo y compromiso con unos directos salvajes que Molly siempre lleva a otro nivel como uno de los frontman más indomesticables que ha pisado nuestros escenarios 🤘",
               "country": "España",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=HGozdu9dfZ8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=HGozdu9dfZ8",
+              "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
+              "instagramUrl": "https://www.instagram.com/hamletband/",
+              "facebookUrl": "https://www.facebook.com/hamletband",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747e1b69bc4f40b05b6a7052cd"
             }
           },
           {
@@ -1265,7 +1500,9 @@ const rawAgendaFestData: any = {
               "description": "El dúo vasco es una apisonadora de stoner, metal y rock pesado. Vienen de Bermeo (Bizkaia), tienen ya experiencia en sus espaldas, y llevan unos dos años dando candela de la buena con un sonido sucio con mucho fuzz y groove del que obliga a mover a sacudir bien las cervicales 🤘  Crudos como su nombre sugiere, cuentan con un espíritu 100% DIY y cuentan con una identidad propia arraigada a su tierra e idioma mezclada con la pesadez del stoner desértico de los años 90. Vienen de grabar hace casi tres años su segundo EP \"Nintzen\" con el mítico Victor García de Ultramarinos Costa Brava y los tendremos el próximo sábado 4 de julio el Desert Stage repartiendo de lo lindo ✊",
               "country": "España",
               "genre": "Stoner",
-              "youtubeUrl": "https://www.youtube.com/watch?v=nRJeIUhuNmE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=nRJeIUhuNmE",
+              "instagramUrl": "https://www.instagram.com/_kruddo_/",
+              "facebookUrl": "https://www.facebook.com/KRUDDO"
             }
           },
           {
@@ -1279,7 +1516,9 @@ const rawAgendaFestData: any = {
               "description": "El dúo formado por Christopher \"Wildman\" y Javier \"Mile\" pondrá la nota doom al Ritual Stage el sábado 4 de julio. Combinando riffs pesados, una inspiración cinematográfica, y una melancólica oscura clásica del doom, TodoMal se ha convertido desde su formación en 2020 en una singular propuesta del underground en la que también hay espacio para la música progresiva y space rock 🌑  Con cinco integrantes de proyectos como Teitanblood, Balmog, Maud The Moth o Jade completando la formación en directo, se dejarán caer por Viveiro, donde aprovecharán para presentar algún que otro tema de su tercer disco \"Graveyards Of Joy\", que se estrenará el día previo a su actuación en el Resu 🙌",
               "country": "España",
               "genre": "Doom Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=v3KnTgn_XJ8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=v3KnTgn_XJ8",
+              "instagramUrl": "https://www.instagram.com/todo_mal_band/",
+              "facebookUrl": "https://www.facebook.com/todomalofficial"
             }
           },
           {
@@ -1293,7 +1532,11 @@ const rawAgendaFestData: any = {
               "description": "Si lo tuyo es la música con gritos saturados y el rock mecánico y ruidoso con alma punk, no deberías perderte a la banda sueca The Family Men en directo. Influenciados, en sus propias palabras, tanto por Skinny Puppy como Slipknot o Steely Dan, los de Gotemburgo recuerdan por momentos a son una de esas bandas a las que seguir los pasos 👣  Tirando de frecuencias analógicas, loops y caos, estos jóvenes escandinavos con apenas 3 años de existencia te sacuden y golpean el pecho en sus directos con su muro de sonido salvaje e impredecible. ¡Cita a la que asistir sí o sí el sábado 4 de julio en el Chaos Stage! 👊",
               "country": "Suecia",
               "genre": "Rock Industrial",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Y-v9rBFMsSY"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Y-v9rBFMsSY",
+              "spotifyUrl": "https://open.spotify.com/artist/1ANDjinr8OtamQ6TCV2HBG",
+              "instagramUrl": "https://www.instagram.com/thefamilymengbg/",
+              "facebookUrl": "https://www.facebook.com/thefamilymenband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517447e04bfe40fed89c81118d7f"
             }
           },
           {
@@ -1308,6 +1551,10 @@ const rawAgendaFestData: any = {
               "country": "Suecia",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=7b-VTfpGFUQ",
+              "spotifyUrl": "https://open.spotify.com/artist/7rqJQQxuUOCk052MK5kLsH",
+              "instagramUrl": "https://www.instagram.com/imminenceswe/",
+              "facebookUrl": "https://www.facebook.com/imminenceswe",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746235156da99ba77dde123ba2",
               "signingSession": "SESIONES DE FIRMAS - SABADO 4 - 16:00 A 16:30"
             }
           },
@@ -1322,7 +1569,11 @@ const rawAgendaFestData: any = {
               "description": "Todo el mundo sabe que Suecia es la cuna europea de muchísimas de las bandas más top del rock y metal de los últimos 30 años The Gems (ex-Thundermother) vienen de ahí, pero traen savia todavía más fresca a la escena con una magia de esa que solamente se respira en los grandes shows de rock ⚡  El power trío de Estocolmo no te fallará si lo que buscas es reencontrarte con ese hard rock guitarrero que derrocha carretera y glamour con un claro sabor setentero 🙌",
               "country": "Suecia",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=CZzpb-MYrsg"
+              "youtubeUrl": "https://www.youtube.com/watch?v=CZzpb-MYrsg",
+              "spotifyUrl": "https://open.spotify.com/artist/735eXziB2hC9TFcx6wjBsf",
+              "instagramUrl": "https://www.instagram.com/thegems.music/",
+              "facebookUrl": "https://www.facebook.com/thegemsbandswe",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174afe861bb48644f72fc60d7df"
             }
           },
           {
@@ -1336,7 +1587,11 @@ const rawAgendaFestData: any = {
               "description": "Desde Italia, Hand Of Juno llevan ya unos años construyendo su propio espacio dentro del metal moderno, mezclando riffs pesados con industrial y post-hardcore lleno de detalles y capas, además de una estética inimitable que atrapa 🙌  Antes de que digas nada: no, no son la típica banda de metalcore. Los originarios de Milán saben cuidar de sus atmósferas y de los contrastes entre lo agresivo y etéreo marcando una clara diferencia. ¡Están ya en el radar europeo, pero todo pinta a que pronto los veremos crecer como merecen! ❤️‍🔥",
               "country": "Italia",
               "genre": "Metal Industrial",
-              "youtubeUrl": "https://www.youtube.com/watch?v=0fSoJaU6rTE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=0fSoJaU6rTE",
+              "spotifyUrl": "https://open.spotify.com/artist/2g8hgaQzyK2a6ZD5AOKArj",
+              "instagramUrl": "https://www.instagram.com/handofjuno_official/",
+              "facebookUrl": "https://www.facebook.com/handofjunoband",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174d29ef4301b2c73cd77f8f640"
             }
           },
           {
@@ -1350,7 +1605,11 @@ const rawAgendaFestData: any = {
               "description": "Nacidos entre Escocia y Estados Unidos en el verano de 2011 y autoproclamados como \"transatlantic noise terror\", Frontierer son un colectivo de mathcore vanguardista y abrasivo que ha construido una identidad propia basada en el caos y las disonancias 🤯  Si os molan los sonidos poco comunes, ruidosos, y a la vez técnicos y mecánicos, o si lo tuyo son bandas como The Dillinger Escape Plan, Botch, Car Bomb o Gaza, esta es vuestra oportunidad de oro 🥇  ¡Estamos segurísimos de que os van a dejar locos y harán temblar Viveiro! 🤘",
               "country": "UK",
               "genre": "Noise Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=wI4mG1MwgpM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=wI4mG1MwgpM",
+              "spotifyUrl": "https://open.spotify.com/artist/6AMqkTWbhukzRS5je3Q5qt",
+              "instagramUrl": "https://www.instagram.com/frontiererband/",
+              "facebookUrl": "https://www.facebook.com/frontiererband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741696c69bb13dc4d8e38058f4"
             }
           },
           {
@@ -1365,6 +1624,10 @@ const rawAgendaFestData: any = {
               "country": "EEUU",
               "genre": "Nu Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=\\_ocD7BsrjrU",
+              "spotifyUrl": "https://open.spotify.com/artist/6KO6G41BBLTDNYOLefWTMU",
+              "instagramUrl": "https://www.instagram.com/POD/",
+              "facebookUrl": "https://www.facebook.com/PayableOnDeathPOD",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517415c1b5623a7ba1bb228087c2",
               "signingSession": "SESIONES DE FIRMAS - SABADO 4 - 17:00 A 17:30"
             }
           },
@@ -1379,7 +1642,11 @@ const rawAgendaFestData: any = {
               "description": "Cwfen es un proyecto originario de Glasgow que habita lo espiritual y ominoso. Su sonido a medio camino entre el doom metal, gothic rock y shoegaze envuelve y atrapa, y sus invocaciones sonoras a brujas, mártires y condenas eternas te arrastran en cuestión de segundos 💫  La música de los escoceses va quemando lentamente y te agarra para no soltarte. Su directo promete ser una experiencia hipnótica para cabecear como si no hubiese mañana 🔥  ¡Prepárate con tus mejores galas para este ritual! 🛐🕯️",
               "country": "UK",
               "genre": "Doom Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=R4ElqI1RZGM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=R4ElqI1RZGM",
+              "spotifyUrl": "https://open.spotify.com/artist/2osrICe2kgcit3D086z3Lo",
+              "instagramUrl": "https://www.instagram.com/cwfenband/",
+              "facebookUrl": "https://www.facebook.com/Cwfenband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174a6d9c7444ad8a5e271b58364"
             }
           },
           {
@@ -1393,7 +1660,11 @@ const rawAgendaFestData: any = {
               "description": "La historia de DISTANT se remonta a 2014, año en el que se formaron entre Países Bajos y Eslovaquia. Más de una década después, el grupo sigue reventándolo con su propuesta agresiva, pesada y bruta a caballo entre el deathcore y el slam death metal, mezclando unas afinaciones imposibles con atmósferas aterradoras de ciencia ficción 💀\n\n¡Preparad vuestros cuellos, porque vendrán a Viveiro para masacrar el Ritual Stage con sus breakdowns sísmicos que no darán tregua a nadie! 🔨",
               "country": "Paises Bajos",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=PHZFd5mKPks"
+              "youtubeUrl": "https://www.youtube.com/watch?v=PHZFd5mKPks",
+              "spotifyUrl": "https://open.spotify.com/artist/7dfpBi0QvO9FmlhBK6XHwJ",
+              "instagramUrl": "https://www.instagram.com/DistantOfficial/",
+              "facebookUrl": "https://www.facebook.com/DistantOfficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051749633e7f4c2a15372288b1357"
             }
           },
           {
@@ -1407,7 +1678,10 @@ const rawAgendaFestData: any = {
               "description": "Desde Boyertown, Pensilvania, el proyecto formado por miembros de bandas tan respetadas como Never Ending Game, Payback o Year Of The Knife llega a Viveiro como una realeza del hardcore metálico influenciado por el rap y metal noventero más bestia 💣  Con su estética y sonido callejero harán que flipéis con su directo, que es como una olla a presión a punto de estallar. ¡Calentad bien antes de entrar al pit porque va a arder! 🔥¡Una de esas citas que es mejor no perder en el Chaos Stage! 🤘",
               "country": "EEUU",
               "genre": "Hardcore Melódico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=t3yEQRc5tPc"
+              "youtubeUrl": "https://www.youtube.com/watch?v=t3yEQRc5tPc",
+              "spotifyUrl": "https://open.spotify.com/artist/2eIUyCr530XyFHd358dxYZ",
+              "instagramUrl": "https://www.instagram.com/gridironhardcore/",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517450858f98bce1c94db46ff292"
             }
           },
           {
@@ -1421,7 +1695,11 @@ const rawAgendaFestData: any = {
               "description": "Los de Atlanta han vuelto con \"Your Ghost Again\", tema que marca una nueva etapa tras atravesar su momento más difícil como banda con la turbulenta salida y muerte de Brent Hinds en agosto de 2025. La canción es un homenaje a los casi 25 años del grupo junto a Brent, a esos momentos que los cuatro músicos pasaron juntos sobre los escenarios y detrás de ellos. Hay riffs pesados que recuerdan a \"Leviathan\" y \"Blood Mountain\", otros más psicodélicos, pero sobre todo mucha carga emocional. 🖤  El tema, producido por la banda junto a Patrik Berger y Kurt Ballou (guitarrista de Converge, banda que también tendremos en el Resu habitualmente), parece el inicio de algo más grande que derivará en el noveno disco de estudio del grupo, que estamos deseando escuchar. 🤘  ¡Muchas ganas de que llegue el sábado 4 de julio para verlos de vuelta en el Main Stage! 🦣  ¡MASTODON VUELVEN A GALICIA PARA EL RESURRECTION FEST EG 2026! 🐳  Sobran las presentaciones para una de las bandas más influyentes del metal del nuevo milenio. Desde su nacimiento en Atlanta en el año 2000, Mastodon ha hecho de los riffs pesados una de sus señas de identidad conquistando a gente de todo el mundo 🔥  Del sludge más sucio hasta el rock y metal progresivo, nos han regalado joyas llenas de fuerza y emoción que ya son parte de la historia del heavy metal como \"Leviathan\", \"Blood Mountain\", \"Crack The Skye\" o \"Emperor Of Sand\"🤘🏼  ¡No te los pierdas en su regreso a Viveiro después de petarlo en 2017 y 2022! ¡Esta vez toca rendir homenaje como merece al legado del gran Brent Hinds! ❤️‍🔥",
               "country": "EEUU",
               "genre": "Metal Progresivo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=WTQR-RvexVk"
+              "youtubeUrl": "https://www.youtube.com/watch?v=WTQR-RvexVk",
+              "spotifyUrl": "https://open.spotify.com/artist/1Dvfqq39HxvCJ3GvfeIFuT",
+              "instagramUrl": "https://www.instagram.com/mastodonrocks/",
+              "facebookUrl": "https://www.facebook.com/Mastodon",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051745490f4a4c327475719679a5f"
             }
           },
           {
@@ -1435,7 +1713,9 @@ const rawAgendaFestData: any = {
               "description": "La artista británica A.A. Williams, conocida por su propuesta oscura, atmosférica y emocionalmente intensa, nos hará viajar a otra dimensión desde el Desert Stage el próximo sábado 4 de julio con su atípico y genial estilo mezcla de shoegaze, doom, folk, metal, post-rock e incluso música clásica bautizado como \"death gospel\" 💀  Nacida en Londres, ha colaborado con bandas increíbles como At The Gates, Cult Of Luna o Mono además de haber estrenado 3 geniales discos de su puño y letra 🔥  ¿Habéis escuchado ya \"Poison\"? El nuevo single de la londinense A.A. Williams estrenado hace unas semanas, se suma a otros cuatro estrenados desde finales del año pasado y que formarán parte de \"Solstice\", su nuevo disco que saldrá el próximo 5 de junio 🙌",
               "country": "UK",
               "genre": "Dark Folk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=nqD7OauxaTo"
+              "youtubeUrl": "https://www.youtube.com/watch?v=nqD7OauxaTo",
+              "spotifyUrl": "https://open.spotify.com/artist/3dRfiJ2650SZu6GbydcHNb",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517486b13e4d2e65ebf694384ef4"
             }
           },
           {
@@ -1449,7 +1729,10 @@ const rawAgendaFestData: any = {
               "description": "Es una de esas bandas por las que seguramente venderías tu alma sin pensarlo demasiado. Esta oscura y provocadora hermandad musical fundada en 2019 combina de una forma genial el heavy metal y hard rock, invitando totalmente a la liberación a través del pecado 😈\n\nLa formación Dogma, compuesta por integrantes internacionales, engancha tanto gracias a su música seductora y magnética como a su teatralidad llena de descaro. Estarán tocando el sábado 4 de julio en el Ritual, ¡así que pásate a confesarte! 🙏",
               "country": "EEUU",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=1f6GEWdSz-s"
+              "youtubeUrl": "https://www.youtube.com/watch?v=1f6GEWdSz-s",
+              "spotifyUrl": "https://open.spotify.com/artist/5PxwnAyDeI22zgN023OTFt",
+              "facebookUrl": "https://www.facebook.com/DOGMA.am",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e3a9da7263d60cde3e4c4442"
             }
           },
           {
@@ -1464,6 +1747,10 @@ const rawAgendaFestData: any = {
               "country": "EEUU",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=qxelfxGa2oo",
+              "spotifyUrl": "https://open.spotify.com/artist/7kHzfxMLtVHHb523s43rY1",
+              "instagramUrl": "https://www.instagram.com/converge/",
+              "facebookUrl": "https://www.facebook.com/converge",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174f39c2d3ba5a7548dd73f92ff",
               "signingSession": "SESIONES DE FIRMAS - SABADO 4 - 20:00 A 20:30"
             }
           },
@@ -1478,7 +1765,11 @@ const rawAgendaFestData: any = {
               "description": "El Reverendo lleva casi un par de años sorprendiendo con sus directos. Su regreso al estado de forma de sus mejores años está impresionando a todo el mundo, y nosotrxs vamos a poder disfrutar por primera vez en Galicia de esta nueva etapa de auténtica resurrección del americano el próximo sábado 4 de julio en el Main Stage del Resu 🤘  ¡MARILYN MANSON ESTARÁ POR PRIMERA VEZ EN EL RESURRECTION FEST ESTE 2026! 🦇  Lejos de vivir solo de la nostalgia, el reverendo Marilyn Manson está protagonizando uno de los regresos a los escenarios más brutales e inesperados de los últimos tiempos. Con su actual gira por Estados Unidos, está mostrando al mundo su renacimiento con un estado de forma espectacular (sin ir más lejos, anteayer impresionó a todo el público dsus conciertos Sick New World), dejando claro que ha recuperado el trono como una de las figuras más importantes e icónicas de los 90 y 2000 🤘  No hacen falta más presentaciones para uno de los reyes del metal industrial y shock rock, un artista único que rompió moldes, desafió a la sociedad de su época y dejó en la memoria himnos generacionales inmortales, viscerales y oscuros, por los que no han pasado el tiempo 🙌  ¡Prepárate para vivir algo descomunal el sábado 4 de julio en el Main Stage! ¡No te pierdas el que será su primer conci de la gira por Europa! 🔥",
               "country": "EEUU",
               "genre": "Metal Industrial",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yjWtkQSF8dA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=yjWtkQSF8dA",
+              "spotifyUrl": "https://open.spotify.com/artist/2VYQTNDsvvKN9wmU5W7xpj",
+              "instagramUrl": "https://www.instagram.com/marilynmanson/",
+              "facebookUrl": "https://www.facebook.com/MarilynManson",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174df97decd4f8f568310bd0031"
             }
           },
           {
@@ -1492,7 +1783,11 @@ const rawAgendaFestData: any = {
               "description": "Nacidos en la península de Álftanes en 2006, The Vintage Caravan han conseguido consolidarse como una de las bandas más top del rock contemporáneo europeo con su estilo influenciado por el hard rock de los 60 y 70 ⚡️  Con una actitud poderosa y toques de modernidad claros, han ido dejando huella a nivel internacional mezclando riffs contundentes, psicodelia y blues en un solo ente haciendo de sus directos un auténtico espectáculo 🎸  ¡No te quedes sin verlos!",
               "country": "Islandia",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=7a5loP5tjp8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=7a5loP5tjp8",
+              "spotifyUrl": "https://open.spotify.com/artist/61MH29rMIyOfuK7KXQznzX",
+              "instagramUrl": "https://www.instagram.com/thevintagecaravan/",
+              "facebookUrl": "https://www.facebook.com/vintagecaravan",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174d08dc4cf0e505cc615424f25"
             }
           },
           {
@@ -1506,7 +1801,11 @@ const rawAgendaFestData: any = {
               "description": "Blood Incantation uno de los fenómenos más aclamados del metal extremo a nivel mundial aterrizará en directo para presentarnos un repertorio brutal en el que tocarán canciones tanto de su increíble “Absolute Elsewhere” como de sus anteriores trabajos con una fecha única en nuestro país 🛸  Con historia desde 2011, la banda de Colorado ha recibido elogios a nivel mundial desde sus comienzos gracias a su estilo que combina el death metal con el ambient, la psicodelia y la ciencia ficción 🤘¡Prepárate para un viaje interdimensional de los que dejan huella! 🧘‍♂️",
               "country": "EEUU",
               "genre": "Death Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=O9WYceFbHw4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=O9WYceFbHw4",
+              "spotifyUrl": "https://open.spotify.com/artist/6FGv87WQ3mJWn3cmLUww6x",
+              "instagramUrl": "https://www.instagram.com/bloodincantationofficial/",
+              "facebookUrl": "https://www.facebook.com/Blood-incantation-508899805936788",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517439beafeafdc096ec01250662"
             }
           },
           {
@@ -1520,7 +1819,11 @@ const rawAgendaFestData: any = {
               "description": "Formados en la ciudad industrial de Essen hace una década, ELWOOD STRAY han ido madurando a lo largo de los años su propuesta densa y agresiva donde el metalcore moderno se articula con el post-hardcore creando una mezcla perfecta entre abrasión y melodía 💥  El quinteto es una de las propuestas más viscerales y sofisticadas del metal contemporáneo europeo. Se dejará caer por Viveiro para presentar su nuevo y segundo álbum \"Descending\", estrenado a comienzos de año, el sábado 4 de julio 🤘  Como ya sabréis, el pasado mes de abril sufrimos la pérdida de Bo Lueders, miembro de Harm's Way, guitarrista, amante empedernido de la música e icono del hardcore contemporáneo. Por motivos evidentes, Harm's Way no actuarán en Europa habitualmente y Elwood Stray nos acompañarán el sábado en el Chaos. Todo nuestro apoyo y amor a la familia y compañeros de Bo 🖤",
               "country": "Alemania",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=JVF6e_LSO2k"
+              "youtubeUrl": "https://www.youtube.com/watch?v=JVF6e_LSO2k",
+              "spotifyUrl": "https://open.spotify.com/artist/6n5DUGtIWYMurrtVt7IdZr",
+              "instagramUrl": "https://www.instagram.com/elwood_stray/",
+              "facebookUrl": "https://www.facebook.com/elwoodstrayband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ceb758e41a24c01b787251dc"
             }
           }
         ]
@@ -1609,7 +1912,11 @@ const rawAgendaFestData: any = {
               "description": "Considerados la punta de lanza de la nueva ola del heavy metal británico clásico. ¡Velocidad y guitarras gemelas garantizadas!",
               "country": "Reino Unido",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=nnsTQq_8mR8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=nnsTQq_8mR8",
+              "spotifyUrl": "https://open.spotify.com/artist/6Wl6VXLasmiON3BDiha6e1",
+              "instagramUrl": "https://www.instagram.com/tailgunnerhq/",
+              "facebookUrl": "https://www.facebook.com/tailgunnerhq",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517411072a5adb75af0738e5fb41"
             }
           },
           {
@@ -1637,7 +1944,11 @@ const rawAgendaFestData: any = {
               "description": "¡Las reinas suecas del hard rock llegan para tronar en el escenario! Con su rock clásico directo y enérgico, Thundermother garantizan decibelios y actitud.",
               "country": "Suecia",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=gyL8pHR2UPk"
+              "youtubeUrl": "https://www.youtube.com/watch?v=gyL8pHR2UPk",
+              "spotifyUrl": "https://open.spotify.com/artist/18jTFcgHRRYHdwdof1MDZw",
+              "instagramUrl": "https://www.instagram.com/thundermother/",
+              "facebookUrl": "https://www.facebook.com/thundermother",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ac5e45658534c13cda7aa881"
             }
           },
           {
@@ -1651,7 +1962,11 @@ const rawAgendaFestData: any = {
               "description": "Metal industrial y visual desde Villarreal. Una puesta en escena espectacular con maquillaje y sonidos mecánicos y potentes.",
               "country": "España",
               "genre": "Metal Industrial",
-              "youtubeUrl": "https://www.youtube.com/playlist?list=OLAK5uy_l9fRGqB0eRiw0WBkqiKQ3nEV5ezIc87qY"
+              "youtubeUrl": "https://www.youtube.com/playlist?list=OLAK5uy_l9fRGqB0eRiw0WBkqiKQ3nEV5ezIc87qY",
+              "spotifyUrl": "https://open.spotify.com/artist/0c44C54LrAHha0u92agfHM",
+              "instagramUrl": "https://www.instagram.com/killusband/",
+              "facebookUrl": "https://www.facebook.com/Killusband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cdcfff294626def3c5cb85b9"
             }
           },
           {
@@ -1665,7 +1980,11 @@ const rawAgendaFestData: any = {
               "description": "Uno de los grupos revelación del metal moderno. Su combinación de death metal melódico, groove y elementos industriales es simplemente demoledora.",
               "country": "Suecia",
               "genre": "Death Metal Melódico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Y5SpGQMoaUU"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Y5SpGQMoaUU",
+              "spotifyUrl": "https://open.spotify.com/artist/7k29FbDq69ju2fe6zTskxY",
+              "instagramUrl": "https://www.instagram.com/orbitculture/",
+              "facebookUrl": "https://www.facebook.com/OrbitCulture",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174ff61b86e734b5bdbd2d8eb25"
             }
           },
           {
@@ -1693,7 +2012,10 @@ const rawAgendaFestData: any = {
               "description": "Liderados por el legendario guitarrista Zakk Wylde, Black Label Society descargarán sus riffs pesados y solos vertiginosos que han marcado el metal sureño contemporáneo.",
               "country": "EEUU",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=l47At7wrhyI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=l47At7wrhyI",
+              "spotifyUrl": "https://open.spotify.com/artist/0zfT626RwO6zN3RDYeRit5",
+              "facebookUrl": "https://www.facebook.com/blacklabelsociety",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ca9e1ddb61172c1b9672567a"
             }
           },
           {
@@ -1707,7 +2029,11 @@ const rawAgendaFestData: any = {
               "description": "Deathcore ultrapesado y técnico desde Pittsburgh, listos para demoler el escenario con breakdowns brutales.",
               "country": "EEUU",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.heaviestofart.com/post/album-to-watch-for-signs-of-the-swarm-amongst-the-low-empty"
+              "youtubeUrl": "https://www.heaviestofart.com/post/album-to-watch-for-signs-of-the-swarm-amongst-the-low-empty",
+              "spotifyUrl": "https://open.spotify.com/artist/0yxJx8OEyDfd7dzLsFuNrS",
+              "instagramUrl": "https://www.instagram.com/signsoftheswarm/",
+              "facebookUrl": "https://www.facebook.com/signsoftheswarm",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743d8cd968fe05c1d3825b896d"
             }
           },
           {
@@ -1721,7 +2047,11 @@ const rawAgendaFestData: any = {
               "description": "¡Un regreso legendario! Savatage, pioneros del metal progresivo y sinfónico, ofrecerán un show exclusivo repasando su mítica trayectoria.",
               "country": "EEUU",
               "genre": "Metal Progresivo",
-              "youtubeUrl": "https://www.youtube.com/watch/?v=xHNVK9NY4JE"
+              "youtubeUrl": "https://www.youtube.com/watch/?v=xHNVK9NY4JE",
+              "spotifyUrl": "https://open.spotify.com/artist/3N1B1g6JtIgd6ClRkzD4yT",
+              "instagramUrl": "https://www.instagram.com/thisissavatage/",
+              "facebookUrl": "https://www.facebook.com/savatage",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517428ce3420531dadeaea4d8aef"
             }
           },
           {
@@ -1749,7 +2079,11 @@ const rawAgendaFestData: any = {
               "description": "Con el brutal Alex Terrible a las voces y sus icónicas máscaras doradas, Slaughter to Prevail desatarán la tormenta de deathcore más aplastante dsus conciertos.",
               "country": "Rusia",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=QrpI-1TmOqM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=QrpI-1TmOqM",
+              "spotifyUrl": "https://open.spotify.com/artist/24Oiw7BlvO1BETecDLJt6m",
+              "instagramUrl": "https://www.instagram.com/slaughtertoprevailband/",
+              "facebookUrl": "https://www.facebook.com/slaughtertoprevailrus",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174b283678ed69bc98f2f637ad8"
             }
           },
           {
@@ -1763,7 +2097,11 @@ const rawAgendaFestData: any = {
               "description": "Joven promesa del thrash metal estadounidense. Riffs rápidos y agresividad vieja escuela.",
               "country": "EEUU",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=_UBlWbLTVSE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=_UBlWbLTVSE",
+              "spotifyUrl": "https://open.spotify.com/artist/6JChzL9HQEspINhiTqSURd",
+              "instagramUrl": "https://www.instagram.com/chainedsaintofficial/",
+              "facebookUrl": "https://www.facebook.com/chainedsaint",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517443bdf2ead814b5374f92a118"
             }
           },
           {
@@ -1777,7 +2115,11 @@ const rawAgendaFestData: any = {
               "description": "En su gira mundial de despedida \"Celebrating Life Through Death\", los gigantes brasileños dirán adiós repasando cuatro décadas de historia.",
               "country": "Brasil",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=c7Z8Ww1EmMk"
+              "youtubeUrl": "https://www.youtube.com/watch?v=c7Z8Ww1EmMk",
+              "spotifyUrl": "https://open.spotify.com/artist/6JW8wliOEwaDZ231ZY7cf4",
+              "instagramUrl": "https://www.instagram.com/sepultura/",
+              "facebookUrl": "https://www.facebook.com/sepultura",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517442b136165ba6ce25d2c1ebdc"
             }
           },
           {
@@ -1791,7 +2133,10 @@ const rawAgendaFestData: any = {
               "description": "Banda de rock nacional con sonido enérgico y letras cargadas de rebeldía.",
               "country": "España",
               "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=i2SfKTf02gk"
+              "youtubeUrl": "https://www.youtube.com/watch?v=i2SfKTf02gk",
+              "spotifyUrl": "https://open.spotify.com/artist/3CkwG7cwsw7hY8Hb3bzj6s",
+              "instagramUrl": "https://www.instagram.com/promkinks/",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051745b104bd9ab98eff15f14daf8"
             }
           },
           {
@@ -1805,7 +2150,9 @@ const rawAgendaFestData: any = {
               "description": "Folk metal zaragozano de temática histórica celta-ibera. Vientos tradicionales y riffs de metal se fusionan en directo.",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=ZmB5Pqv2gWE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=ZmB5Pqv2gWE",
+              "instagramUrl": "https://www.instagram.com/salduieofficial/",
+              "facebookUrl": "https://www.facebook.com/SalduieOficial"
             }
           }
         ]
@@ -1833,7 +2180,11 @@ const rawAgendaFestData: any = {
               "description": "Glam rock y goth punk teatral de influencia ochentera. Creeper presentará un directo magnético y oscuro.",
               "country": "Reino Unido",
               "genre": "Goth Punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=cHIA1JcBBZ4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=cHIA1JcBBZ4",
+              "spotifyUrl": "https://open.spotify.com/artist/0nV7SiEIVtPLTSJ6NwWDGj",
+              "instagramUrl": "https://www.instagram.com/creepercult/",
+              "facebookUrl": "https://www.facebook.com/creepercult",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517426ce4d13792697b06bed82a1"
             }
           },
           {
@@ -1861,7 +2212,11 @@ const rawAgendaFestData: any = {
               "description": "Los enmascarados de Cleveland combinan metal industrial, alternativo y gótico en un directo teatral con doble batería de agua.",
               "country": "EEUU",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=7iJ7oj-dAVY"
+              "youtubeUrl": "https://www.youtube.com/watch?v=7iJ7oj-dAVY",
+              "spotifyUrl": "https://open.spotify.com/artist/18absyD7lQaXUDBXnyzU8M",
+              "instagramUrl": "https://www.instagram.com/mushroomheadofficial/",
+              "facebookUrl": "https://www.facebook.com/mushroomheadofficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517448e3d9fdff3ef62439099d24"
             }
           },
           {
@@ -1875,7 +2230,10 @@ const rawAgendaFestData: any = {
               "description": "Desde Asturias, Aneuma se ha convertido en una de las bandas emergentes más potentes del metal nacional desde su creación hace un lustro. Su mezcla de death metal con metalcore intensa y fresca les llevó a tocar en el Wacken Open Air hace unos años, lugar en el que lograron un histórico segundo puesto en la competición internacional 🤘  Con tres discos lanzados hasta la fecha, el quinteto de Puerto de Vega ha demostrado que la vigencia del sonido de Gotemburgo es atemporal, y que su fórmula incluso es renovar y traer al presente poniendo esmero y dedicación. Nos lo demostrarán como solamente ellxs saben el miércoles 1 de julio en el Ritual Stage 🙌",
               "country": "España",
               "genre": "Death Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc"
+              "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc",
+              "spotifyUrl": "https://open.spotify.com/artist/7bxj5hQmURF8Y1DB3Zalfl",
+              "facebookUrl": "https://www.facebook.com/profile.php?id=100085118077210",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517422a922aee0225190714f9c3d"
             }
           },
           {
@@ -1889,7 +2247,11 @@ const rawAgendaFestData: any = {
               "description": "Líderes mundiales del metalcore progresivo y la electrónica industrial. Presentarán su potente directo tecnológico.",
               "country": "Australia",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=h4e40N3We-U"
+              "youtubeUrl": "https://www.youtube.com/watch?v=h4e40N3We-U",
+              "spotifyUrl": "https://open.spotify.com/artist/3qyg72RGnGdF521zMU02u9",
+              "instagramUrl": "https://www.instagram.com/northlane/",
+              "facebookUrl": "https://www.facebook.com/northlane",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174f9dc3a82b666097cf2f48031"
             }
           },
           {
@@ -1917,7 +2279,11 @@ const rawAgendaFestData: any = {
               "description": "Pioneros del sonido de Gotemburgo, liderados por Mikael Stanne, traerán su melancólica y veloz maestría melódica.",
               "country": "Suecia",
               "genre": "Death Metal Melódico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=pBsVsLRSgfE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=pBsVsLRSgfE",
+              "spotifyUrl": "https://open.spotify.com/artist/5EHvXKnNz78jkAVgTQLQ5O",
+              "instagramUrl": "https://www.instagram.com/darktranquillityofficial/",
+              "facebookUrl": "https://www.facebook.com/dtofficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174473898d318f6958efb692c2f"
             }
           },
           {
@@ -1931,7 +2297,9 @@ const rawAgendaFestData: any = {
               "description": "Thrash metal rápido, agresivo y de altísima calidad técnica procedente de Murcia.",
               "country": "España",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=UzvtL6WFfk4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=UzvtL6WFfk4",
+              "instagramUrl": "https://www.instagram.com/injector_official/",
+              "facebookUrl": "https://www.facebook.com/InjectorThrash"
             }
           },
           {
@@ -1945,7 +2313,11 @@ const rawAgendaFestData: any = {
               "description": "Sully Erna y los suyos descargarán himnos del rock alternativo y post-grunge de finales de los noventa y dos mil.",
               "country": "EEUU",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=fG9F0IwwJeU"
+              "youtubeUrl": "https://www.youtube.com/watch?v=fG9F0IwwJeU",
+              "spotifyUrl": "https://open.spotify.com/artist/6gZq1Q6bdOxsUPUG1TaFbF",
+              "instagramUrl": "https://www.instagram.com/godsmack/",
+              "facebookUrl": "https://www.facebook.com/Godsmack",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174e024531c06e7de54f84ea6fd"
             }
           },
           {
@@ -1959,7 +2331,10 @@ const rawAgendaFestData: any = {
               "description": "Leyenda del heavy metal madrileño de los años ochenta, listos para revivir himnos como \"Animal de ciudad\".",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=IMqsA0G2uoI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=IMqsA0G2uoI",
+              "spotifyUrl": "https://open.spotify.com/artist/3n3jrBZETHY0ONCdKzbYeY",
+              "instagramUrl": "https://www.instagram.com/evoband/",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d5d8417f6ba6e61e4444304b"
             }
           },
           {
@@ -1973,7 +2348,11 @@ const rawAgendaFestData: any = {
               "description": "Liderados por la imponente Alissa White-Gluz y Michael Amott a las guitarras, Arch Enemy son los reyes indiscutibles del death metal melódico global.",
               "country": "Suecia",
               "genre": "Death Metal Melódico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=cJBmX5aU1DA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=cJBmX5aU1DA",
+              "spotifyUrl": "https://open.spotify.com/artist/0DCw6lHkzh9t7f8Hb4Z0Sx",
+              "instagramUrl": "https://www.instagram.com/archenemyofficial/",
+              "facebookUrl": "https://www.facebook.com/archenemyofficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c6790f344338cb196c00660d"
             }
           },
           {
@@ -2001,7 +2380,11 @@ const rawAgendaFestData: any = {
               "description": "Folk rock de temática mosquetera. Espadas, violines y estribillos épicos cantados en alemán.",
               "country": "Alemania",
               "genre": "Folk Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=KPlYOA8UMrs"
+              "youtubeUrl": "https://www.youtube.com/watch?v=KPlYOA8UMrs",
+              "spotifyUrl": "https://open.spotify.com/artist/7Lj8CmxeAuJ2c2I6YxA6AJ",
+              "instagramUrl": "https://www.instagram.com/dartagnan_official/",
+              "facebookUrl": "https://www.facebook.com/dartagnan.de",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051746dc569d5f616c2ccb08fd6e9"
             }
           },
           {
@@ -2015,7 +2398,11 @@ const rawAgendaFestData: any = {
               "description": "Huesca metalcore y dubstep fusionados en una bomba de energía brutal.",
               "country": "España",
               "genre": "Metalcore/Electronic",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Fz6qnMiu4LQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Fz6qnMiu4LQ",
+              "spotifyUrl": "https://open.spotify.com/artist/7rDC5oTEVCLYkVeaE7168p",
+              "instagramUrl": "https://www.instagram.com/bolu2death_official/",
+              "facebookUrl": "https://www.facebook.com/Bolu2death",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c38079b6ba9c4d5983d25ec8"
             }
           },
           {
@@ -2029,7 +2416,11 @@ const rawAgendaFestData: any = {
               "description": "Folk metal cervecero y festivo desde Castellón. La fiesta está asegurada con sus melodías y ritmos pegadizos.",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Yk7noXH_9do"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Yk7noXH_9do",
+              "spotifyUrl": "https://open.spotify.com/artist/1UM5OPJuE5dGDgyPSNSAqH",
+              "instagramUrl": "https://www.instagram.com/lepokafolk/",
+              "facebookUrl": "https://www.facebook.com/lepokafolk",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744365a2ae1fd4c4c95c236563"
             }
           }
         ]
@@ -2057,7 +2448,11 @@ const rawAgendaFestData: any = {
               "description": "La gran voz del hard rock melódico ochentero actual. Chez Kane y su banda nos transportarán a la era dorada del AOR.",
               "country": "Reino Unido",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Oc-p6U_uA3E"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Oc-p6U_uA3E",
+              "spotifyUrl": "https://open.spotify.com/artist/23QdQy5SrwG2X1mvnMzYeP",
+              "instagramUrl": "https://www.instagram.com/chez_kane/",
+              "facebookUrl": "https://www.facebook.com/ChezKaneVocalist",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174516bbe592d49e78c6395d2c7"
             }
           },
           {
@@ -2071,7 +2466,9 @@ const rawAgendaFestData: any = {
               "description": "Banda vallisoletana de metal sinfónico y alternativo, con grandes melodías vocales a cargo de Marina Sweet.",
               "country": "España",
               "genre": "Metal Sinfónico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Ow3K7MopO2k"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Ow3K7MopO2k",
+              "spotifyUrl": "https://open.spotify.com/artist/0qqry49HR1XCCzn7NFHzMN",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741804c4301093d03104dee1ab"
             }
           },
           {
@@ -2085,7 +2482,11 @@ const rawAgendaFestData: any = {
               "description": "Trío alemán de post-hardcore y metal alternativo liderado por Maria Lessing, con melodías emocionales y breakdowns pesados.",
               "country": "Alemania",
               "genre": "Post-Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=mJ47ISNx0lE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=mJ47ISNx0lE",
+              "spotifyUrl": "https://open.spotify.com/artist/4QnuZOyl4C9d1keyOZXJ21",
+              "instagramUrl": "https://www.instagram.com/futurepalaceofficial/",
+              "facebookUrl": "https://www.facebook.com/futurepalace",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174d822b3210878eeaf64ae5bf4"
             }
           },
           {
@@ -2099,7 +2500,11 @@ const rawAgendaFestData: any = {
               "description": "Hard rock clásico y heavy metal de la costa oeste con riffs potentes y voz espectacular.",
               "country": "EEUU",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=iwbUG29dDd4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=iwbUG29dDd4",
+              "spotifyUrl": "https://open.spotify.com/artist/0y43lCvntQtyFlhCABGb0T",
+              "instagramUrl": "https://www.instagram.com/wingsofsteelband/",
+              "facebookUrl": "https://www.facebook.com/OfficialWingsofSteel",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174f0ec514bb1af4546a9f63f24"
             }
           },
           {
@@ -2113,7 +2518,11 @@ const rawAgendaFestData: any = {
               "description": "¡Pura dinamita en directo! La banda de punk rock sueca liderada por la electrizante Cecilia Boström ofrecerá uno de los shows más enérgicos dsus conciertos.",
               "country": "Suecia",
               "genre": "Punk Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=r9lhoupFbKw"
+              "youtubeUrl": "https://www.youtube.com/watch?v=r9lhoupFbKw",
+              "spotifyUrl": "https://open.spotify.com/artist/7Fh1k3NlvVj1Oj6kpfQf9f",
+              "instagramUrl": "https://www.instagram.com/thebaboonshowofficial/",
+              "facebookUrl": "https://www.facebook.com/thebaboonshow",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174f915d1cbe39bb89e25851d27"
             }
           },
           {
@@ -2127,7 +2536,11 @@ const rawAgendaFestData: any = {
               "description": "Banda de metal sinfónico y progresivo que destaca por sus composiciones complejas e intensas atmósferas.",
               "country": "España",
               "genre": "Metal Sinfónico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=L8sLjb3nGGM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=L8sLjb3nGGM",
+              "spotifyUrl": "https://open.spotify.com/artist/2yoaZdFiI362NRtFPF3YTN",
+              "instagramUrl": "https://www.instagram.com/againstmyselfofficial/",
+              "facebookUrl": "https://www.facebook.com/pages/AGAINST-MYSELF/203937595534",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174df662920ed5206484971ffb6"
             }
           },
           {
@@ -2141,7 +2554,9 @@ const rawAgendaFestData: any = {
               "description": "La apisonadora del heavy metal español. Tete Novoa, Jero Ramiro y Niko del Hierro repasarán sus mayores clásicos.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=8nRdOSVX2VI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=8nRdOSVX2VI",
+              "spotifyUrl": "https://open.spotify.com/artist/0pFExKST1wGbE6DBSNK6ox",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051744f5370fae0e1fb6cd2f88d53"
             }
           },
           {
@@ -2155,7 +2570,11 @@ const rawAgendaFestData: any = {
               "description": "Desde el Reino Unido llega uno de los directos de metalcore y hardcore más pesados y viscerales de la actualidad.",
               "country": "Reino Unido",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Ut1AcpPPOS0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Ut1AcpPPOS0",
+              "spotifyUrl": "https://open.spotify.com/artist/58d50jBQXhOetEGuSBgu64",
+              "instagramUrl": "https://www.instagram.com/employedtoserve/",
+              "facebookUrl": "https://www.facebook.com/employedtoserve",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517409bf6e7ed2ae0cd614ca19e7"
             }
           },
           {
@@ -2169,7 +2588,11 @@ const rawAgendaFestData: any = {
               "description": "Los padres finlandeses del power metal sinfónico descargarán himnos inmortales como \"Hunting High and Low\" y \"Black Diamond\".",
               "country": "Finlandia",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=kG4uQ6Tk7fY"
+              "youtubeUrl": "https://www.youtube.com/watch?v=kG4uQ6Tk7fY",
+              "spotifyUrl": "https://open.spotify.com/artist/1O8CSXsPwEqxcoBE360PPO",
+              "instagramUrl": "https://www.instagram.com/stratovariusofficial/",
+              "facebookUrl": "https://www.facebook.com/stratovarius",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744733f393ad04f47b31edaadb"
             }
           },
           {
@@ -2183,7 +2606,11 @@ const rawAgendaFestData: any = {
               "description": "Heavy metal moderno y alternativo con potentes guitarras y una impecable ejecución vocal.",
               "country": "España",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=OdtC4CsbydA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=OdtC4CsbydA",
+              "spotifyUrl": "https://open.spotify.com/artist/1Ohy5ahjQyXh0TTPH5WV3Y",
+              "instagramUrl": "https://www.instagram.com/daeriaoficial/",
+              "facebookUrl": "https://www.facebook.com/DAERIAOFICIAL",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174da10f52aaa76416bf04fff32"
             }
           },
           {
@@ -2197,7 +2624,11 @@ const rawAgendaFestData: any = {
               "description": "Una de las bandas más influyentes de la historia del metal. De inventores del death metal melódico a gigantes del metal alternativo moderno.",
               "country": "Suecia",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=qnLunQEcMn0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=qnLunQEcMn0",
+              "spotifyUrl": "https://open.spotify.com/artist/57ylwQTnFnIhJh4nu4rxCs",
+              "instagramUrl": "https://www.instagram.com/inflames/",
+              "facebookUrl": "https://www.facebook.com/inflames",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051745c3bd919d1344a738af14136"
             }
           },
           {
@@ -2211,7 +2642,11 @@ const rawAgendaFestData: any = {
               "description": "Banda de metal industrial con tres vocalistas (masculino, femenino y gutural) que crean una mezcla de voces única.",
               "country": "España",
               "genre": "Metal Industrial",
-              "youtubeUrl": "https://www.youtube.com/watch?v=j51TIMwxriI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=j51TIMwxriI",
+              "spotifyUrl": "https://open.spotify.com/artist/7vDMECFl5RLKV0QywC1pmX",
+              "instagramUrl": "https://www.instagram.com/mind_driller/",
+              "facebookUrl": "https://www.facebook.com/MindDriller",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517452b01b011dd2cb45ccc5a4c2"
             }
           },
           {
@@ -2225,7 +2660,9 @@ const rawAgendaFestData: any = {
               "description": "Juglares, saltimbanquis e historias mágicas en una producción visual inigualable. Saurom presentará su concierto especial de gran formato en los escenarios.",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=F0f5i1vK760"
+              "youtubeUrl": "https://www.youtube.com/watch?v=F0f5i1vK760",
+              "spotifyUrl": "https://open.spotify.com/artist/4B2Iosqk1yAbGbx08My1fM",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747d38cff2be55d8e1f06896d0"
             }
           },
           {
@@ -2239,7 +2676,9 @@ const rawAgendaFestData: any = {
               "description": "El creador de contenido y melómano Jordi Wild cerrará la noche del viernes con un DJ Set cargado de clásicos del rock y el metal.",
               "country": "España",
               "genre": "DJ Set",
-              "youtubeUrl": "https://www.youtube.com/watch?v=bV0FxNR0yhQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=bV0FxNR0yhQ",
+              "spotifyUrl": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746b134287e3095d2c84b7932a"
             }
           },
           {
@@ -2253,7 +2692,10 @@ const rawAgendaFestData: any = {
               "description": "Pioneros del metal sinfónico y neoclásico en España, con una larga trayectoria internacional.",
               "country": "España",
               "genre": "Metal Sinfónico",
-              "youtubeUrl": "https://www.youtube.com/@DarkMoorofficial/videos"
+              "youtubeUrl": "https://www.youtube.com/@DarkMoorofficial/videos",
+              "spotifyUrl": "https://open.spotify.com/artist/0YWKRTzA4kBceGwjywtMkh",
+              "facebookUrl": "https://www.facebook.com/official.darkmoor?sid=6286",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741c7310cc250682db4e9748aa"
             }
           }
         ]
@@ -2295,7 +2737,11 @@ const rawAgendaFestData: any = {
               "description": "Banda de death melódico liderada por Hynphernia, que destaca por su contundencia y atmósfera oscura.",
               "country": "España",
               "genre": "Death Metal Melódico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=eiEl-mbPpj4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=eiEl-mbPpj4",
+              "spotifyUrl": "https://open.spotify.com/artist/3HsJjtbbQkhb2pcdRXmZbk",
+              "instagramUrl": "https://www.instagram.com/death_and_legacy/",
+              "facebookUrl": "https://www.facebook.com/deathandlegacy",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749b2d4451c09ad404176ee1cb"
             }
           },
           {
@@ -2309,7 +2755,11 @@ const rawAgendaFestData: any = {
               "description": "Folk pagano nórdico mezclado con ritmos electrónicos de techno y trance. ¡Una experiencia ritual y bailable única!",
               "country": "Francia",
               "genre": "Pagan Folk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Nf_LAdo_oiE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Nf_LAdo_oiE",
+              "spotifyUrl": "https://open.spotify.com/artist/2VFxoCJQPfQauZujESPjQK",
+              "instagramUrl": "https://www.instagram.com/eihwar.music/",
+              "facebookUrl": "https://www.facebook.com/eihwar.music",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743a98c334ce4cd9c8db848fa0"
             }
           },
           {
@@ -2323,7 +2773,9 @@ const rawAgendaFestData: any = {
               "description": "Con su estilo entre el post-hardcore y metalcore, la banda madrileña es un ejemplo de constancia y amor por la música. Desde su creación hace aproximadamente una década hasta hoy, y con dos discos por medio, su música ha llegado tanto a varios países de Europa como Latinoamérica gracias a dos álbumes top publicados en 2018 y 2025 🙌  En 2025 estuvieron en el Hellfest, pero nosotros ya los tuvimos por nuestros escenarios en 2024. Este mismo año Fallen At Dawn nos volverán a visitar para darlo todo en el Ritual el jueves 2 de julio",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0",
+              "instagramUrl": "https://www.instagram.com/fallenatdawnofficial/",
+              "facebookUrl": "https://www.facebook.com/FallenAtDawnOfficial"
             }
           },
           {
@@ -2337,7 +2789,11 @@ const rawAgendaFestData: any = {
               "description": "Liderados por el infame Glen Benton, los reyes del death metal satánico clásico descargarán su brutal repertorio blasfemo.",
               "country": "EEUU",
               "genre": "Death Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=-l-OiglL460"
+              "youtubeUrl": "https://www.youtube.com/watch?v=-l-OiglL460",
+              "spotifyUrl": "https://open.spotify.com/artist/2K3GorTixXKAiwe2t9lO89",
+              "instagramUrl": "https://www.instagram.com/deicideofficial/",
+              "facebookUrl": "https://www.facebook.com/OfficialDeicide",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174afad0c8cde6dbb7de81c77ab"
             }
           },
           {
@@ -2351,7 +2807,9 @@ const rawAgendaFestData: any = {
               "description": "Mítica banda de heavy metal euskaldun, listos para recordar clásicos atemporales.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=WNmUqMR_hkE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=WNmUqMR_hkE",
+              "spotifyUrl": "https://open.spotify.com/artist/6QpMNQzCXdUFCTxE9u4xAc",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741c111d5c2a504c62911fe99b"
             }
           },
           {
@@ -2365,7 +2823,11 @@ const rawAgendaFestData: any = {
               "description": "La apisonadora alemana de death metal melódico y metalcore desatará una tormenta de moshpits épicos.",
               "country": "Alemania",
               "genre": "Melodic Death Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=TTkZt8r2lko"
+              "youtubeUrl": "https://www.youtube.com/watch?v=TTkZt8r2lko",
+              "spotifyUrl": "https://open.spotify.com/artist/4sy5qWfwUwpGYBnCKnwfcW",
+              "instagramUrl": "https://www.instagram.com/heavenshallburnofficial/",
+              "facebookUrl": "https://www.facebook.com/officialheavenshallburn",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517424b3a97c9907e54b66852aeb"
             }
           },
           {
@@ -2379,7 +2841,8 @@ const rawAgendaFestData: any = {
               "description": "El cantante Johnny Gioeli lidera esta banda de hard rock melódico nacida en los noventa.",
               "country": "EEUU",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=I9n1_vRYYoc"
+              "youtubeUrl": "https://www.youtube.com/watch?v=I9n1_vRYYoc",
+              "facebookUrl": "https://www.facebook.com/pages/Hardline/113309705346323"
             }
           },
           {
@@ -2393,7 +2856,11 @@ const rawAgendaFestData: any = {
               "description": "¡El cabeza de cartel indiscutible! Los creadores del power metal Helloween regresan con su show completo de aniversario para reinar en directo.",
               "country": "Alemania",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=LZ6YKR6K_zU"
+              "youtubeUrl": "https://www.youtube.com/watch?v=LZ6YKR6K_zU",
+              "spotifyUrl": "https://open.spotify.com/artist/4pQN0GB0fNEEOfQCaWotsY",
+              "instagramUrl": "https://www.instagram.com/helloweenofficial/",
+              "facebookUrl": "https://www.facebook.com/helloweenofficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051747d6b878498239115a09316d3"
             }
           },
           {
@@ -2407,7 +2874,11 @@ const rawAgendaFestData: any = {
               "description": "Metal oscuro y deathcore de vanguardia con toques industriales y breakdowns opresivos.",
               "country": "Francia",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=LElq1WEBQRY"
+              "youtubeUrl": "https://www.youtube.com/watch?v=LElq1WEBQRY",
+              "spotifyUrl": "https://open.spotify.com/artist/28dpy0DQotTkBXcTlniQii",
+              "instagramUrl": "https://www.instagram.com/ten56hq/",
+              "facebookUrl": "https://www.facebook.com/ten56hq",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ff6c889753c279dcf636a8ad"
             }
           },
           {
@@ -2421,7 +2892,11 @@ const rawAgendaFestData: any = {
               "description": "Metalcore experimental y agresivo firmado por uno de los nuevos estandartes del sello Arising Empire.",
               "country": "Alemania",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=1vwJfeXJRmQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=1vwJfeXJRmQ",
+              "spotifyUrl": "https://open.spotify.com/artist/4LNvQot1CDYC3kWGW144XC",
+              "instagramUrl": "https://www.instagram.com/half_me.mp3/",
+              "facebookUrl": "https://www.facebook.com/halfmeband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174f8b894798a13b12187b96078"
             }
           },
           {
@@ -2435,7 +2910,11 @@ const rawAgendaFestData: any = {
               "description": "Víctor García y sus chicos regresan en directo para descargar sus himnos inmortales de heavy metal coreados por miles de almas.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=UJaW2Z5DxS8"
+              "youtubeUrl": "https://www.youtube.com/watch?v=UJaW2Z5DxS8",
+              "spotifyUrl": "https://open.spotify.com/artist/3hMTlMf2UGZTeP6DSUUl09",
+              "instagramUrl": "https://www.instagram.com/warcryoficial/",
+              "facebookUrl": "https://www.facebook.com/WarCryOficial",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741bab293f26bfa4001d6c57a7"
             }
           },
           {
@@ -2449,7 +2928,11 @@ const rawAgendaFestData: any = {
               "description": "Metal extremo oscuro e inquietante directo desde Copenhague.",
               "country": "Dinamarca",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=amj49T04FCQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=amj49T04FCQ",
+              "spotifyUrl": "https://open.spotify.com/artist/2bfK6ltXa60B2egnErJvlO",
+              "instagramUrl": "https://www.instagram.com/cabalcph/",
+              "facebookUrl": "https://www.facebook.com/cabalcph",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517411facedf8b7d7902c85f291d"
             }
           },
           {
@@ -2463,7 +2946,10 @@ const rawAgendaFestData: any = {
               "description": "Gran banda madrileña de heavy metal clásico con tintes power metal y la inconfundible voz de Pacho Brea.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=l_9LU_Qrlfs"
+              "youtubeUrl": "https://www.youtube.com/watch?v=l_9LU_Qrlfs",
+              "spotifyUrl": "https://open.spotify.com/artist/4c0CmlfLtocEfBgq5w289e",
+              "facebookUrl": "https://www.facebook.com/profile.php?id=100063786306898",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051748a34aa0363ad8133950ab334"
             }
           }
         ]
@@ -2554,7 +3040,10 @@ const rawAgendaFestData: any = {
               "description": "Leyenda alemana de la guitarra, exmiembro de Scorpions y pionero del metal neoclásico.",
               "country": "Alemania",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=2TzFm9u2U9Y"
+              "youtubeUrl": "https://www.youtube.com/watch?v=2TzFm9u2U9Y",
+              "spotifyUrl": "https://open.spotify.com/artist/2VoP4JXyxNPIoYAFdB5ssQ",
+              "facebookUrl": "https://www.facebook.com/Uli-Jon-Roth-403059233077097",
+              "imageUrl": "https://i.scdn.co/image/2526875cb953ea6d353eb5e8787647f9a3cdf0c5"
             }
           },
           {
@@ -2568,7 +3057,8 @@ const rawAgendaFestData: any = {
               "description": "Destacada formación italiana de power metal melódico con una extensa trayectoria en la escena europea.",
               "country": "Italia",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=p4vW7h443kE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=p4vW7h443kE",
+              "facebookUrl": "https://www.facebook.com/secretsphere"
             }
           }
         ]
@@ -2610,7 +3100,11 @@ const rawAgendaFestData: any = {
               "description": "Potente banda británica de heavy metal clásico con riffs dinámicos y gran puesta en escena.",
               "country": "UK",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=P9C9Y_MeklA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=P9C9Y_MeklA",
+              "spotifyUrl": "https://open.spotify.com/artist/0WodW8A13GujZQyAUynr82",
+              "instagramUrl": "https://www.instagram.com/furyoffic1al/",
+              "facebookUrl": "https://www.facebook.com/furyofficial",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517405e5c32722b5ae52c4f8376b"
             }
           },
           {
@@ -2624,7 +3118,9 @@ const rawAgendaFestData: any = {
               "description": "Proyecto de power metal comandado por el prestigioso productor Sascha Paeth y el vocalista Tommy Heart.",
               "country": "Alemania",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=qXgUq6P57fE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=qXgUq6P57fE",
+              "spotifyUrl": "https://open.spotify.com/artist/0nKiNlJFtcGhZXZlNkOstJ",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02aa45ec1a8328e81af490b4a4"
             }
           },
           {
@@ -2638,7 +3134,11 @@ const rawAgendaFestData: any = {
               "description": "Veterana banda asturiana de heavy metal melódico con canciones llenas de épica y fuerza.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=wXW5Zl2_Jxs"
+              "youtubeUrl": "https://www.youtube.com/watch?v=wXW5Zl2_Jxs",
+              "spotifyUrl": "https://open.spotify.com/artist/1t20wYnTiAT0Bs7H1hv9Wt",
+              "instagramUrl": "https://www.instagram.com/iameden/",
+              "facebookUrl": "https://www.facebook.com/iameden",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517461f85b0265f8496c97063a38"
             }
           },
           {
@@ -2652,7 +3152,10 @@ const rawAgendaFestData: any = {
               "description": "Referentes indiscutibles del sleaze rock y el hard rock sueco con un directo demoledor.",
               "country": "Suecia",
               "genre": "Sleaze Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=269_4m8lC1c"
+              "youtubeUrl": "https://www.youtube.com/watch?v=269_4m8lC1c",
+              "spotifyUrl": "https://open.spotify.com/artist/57b3sKD9pGilMb2QlMqArq",
+              "facebookUrl": "https://www.facebook.com/OfficialHardcoreSuperstar",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174386dd5a6a0a787b2ef167702"
             }
           },
           {
@@ -2666,7 +3169,11 @@ const rawAgendaFestData: any = {
               "description": "Joven y salvaje promesa barcelonesa de speed y heavy metal tradicional de corte ochentero.",
               "country": "España",
               "genre": "Speed Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=F_f-z7-p2lA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=F_f-z7-p2lA",
+              "spotifyUrl": "https://open.spotify.com/artist/0l4rDRLl3nXp2qfQROmrme",
+              "instagramUrl": "https://www.instagram.com/savaged_official/",
+              "facebookUrl": "https://www.facebook.com/savagedheavy",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051745cba8908ce1e2e767f9e7b3c"
             }
           },
           {
@@ -2680,7 +3187,11 @@ const rawAgendaFestData: any = {
               "description": "Pioneros indiscutibles del thrash metal estadounidense procedentes de Nueva Jersey.",
               "country": "EEUU",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=uK1zYlqR5W4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=uK1zYlqR5W4",
+              "spotifyUrl": "https://open.spotify.com/artist/0NmYchKQ8JIR9QHYJA0FRe",
+              "instagramUrl": "https://www.instagram.com/overkillofficial/",
+              "facebookUrl": "https://www.facebook.com/OverkillWreckingCrew",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517403cb77f96e45ca6fdb18debe"
             }
           },
           {
@@ -2694,7 +3205,9 @@ const rawAgendaFestData: any = {
               "description": "Banda murciana de heavy metal tradicional, aclamada internacionalmente por su sonido NWOTHM.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yYn9N56eSxs"
+              "youtubeUrl": "https://www.youtube.com/watch?v=yYn9N56eSxs",
+              "spotifyUrl": "https://open.spotify.com/artist/78LVpk0xhPtf6ptfZjaw5h",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051747f48b37e97817f9965ad2cfd"
             }
           },
           {
@@ -2708,7 +3221,11 @@ const rawAgendaFestData: any = {
               "description": "Formación de power metal progresivo fundada por Tim Hansen, heredera del sonido clásico del género.",
               "country": "Alemania",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Vl3rPrcSg9Y"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Vl3rPrcSg9Y",
+              "spotifyUrl": "https://open.spotify.com/artist/5mPSuVF1DeqeY3SpIt2f00",
+              "instagramUrl": "https://www.instagram.com/inductionofficial/",
+              "facebookUrl": "https://www.facebook.com/inductionofficial",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741bf64d84a5f034bee6855e8e"
             }
           }
         ]
@@ -2736,7 +3253,8 @@ const rawAgendaFestData: any = {
               "description": "Banda madrileña pionera del folk metal castellano que fusiona rock pesado con dulzaina y pito castellano.",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Kz4M0XF8L8s"
+              "youtubeUrl": "https://www.youtube.com/watch?v=Kz4M0XF8L8s",
+              "facebookUrl": "https://www.facebook.com/ArsAmandiRock"
             }
           },
           {
@@ -2750,7 +3268,11 @@ const rawAgendaFestData: any = {
               "description": "Banda burgalesa de thrash y death metal con un directo arrollador y riffs contundentes.",
               "country": "España",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=YwL3i_9oFmQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=YwL3i_9oFmQ",
+              "spotifyUrl": "https://open.spotify.com/artist/6uG9Od49dC2XZyHVJS9aEZ",
+              "instagramUrl": "https://www.instagram.com/bloodstain.official/",
+              "facebookUrl": "https://www.facebook.com/profile.php?id=61555780541728",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174a240a99d353796c334cae25a"
             }
           },
           {
@@ -2764,7 +3286,8 @@ const rawAgendaFestData: any = {
               "description": "Exitoso grupo sueco de glam metal y hard rock melódico con estribillos pegadizos y gran producción.",
               "country": "Suecia",
               "genre": "Glam Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=wBwA4wz_G98"
+              "youtubeUrl": "https://www.youtube.com/watch?v=wBwA4wz_G98",
+              "facebookUrl": "https://www.facebook.com/thepoodles"
             }
           },
           {
@@ -2806,7 +3329,11 @@ const rawAgendaFestData: any = {
               "description": "Moderno cuarteto parisino que combina metal alternativo, rock melódico y matices electrónicos.",
               "country": "Francia",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=mE98Zc21lB0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=mE98Zc21lB0",
+              "spotifyUrl": "https://open.spotify.com/artist/1mnVffOIDOAeCLxjZ1jOQj",
+              "instagramUrl": "https://www.instagram.com/odc_official_/",
+              "facebookUrl": "https://www.facebook.com/ODCOfficiel",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174510624ce3ecb6e7d0bdb7d09"
             }
           },
           {
@@ -2820,7 +3347,11 @@ const rawAgendaFestData: any = {
               "description": "Doro Pesch, la indiscutible reina del heavy metal mundial, con una carrera legendaria e himnos atemporales.",
               "country": "Alemania",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=vV9W5aP-e_4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=vV9W5aP-e_4",
+              "spotifyUrl": "https://open.spotify.com/artist/5GLeyUhj8B8f5pJxqZllKl",
+              "instagramUrl": "https://www.instagram.com/DoroMetalQueen/",
+              "facebookUrl": "https://www.facebook.com/DoroPeschOfficialGerman",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051740f0c71fd8ca7477c0a7de478"
             }
           },
           {
@@ -2834,7 +3365,11 @@ const rawAgendaFestData: any = {
               "description": "Banda sueca que revive el auténtico espíritu del heavy metal clásico al estilo de AC/DC y Accept.",
               "country": "Suecia",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=17X2e_O8Jzo"
+              "youtubeUrl": "https://www.youtube.com/watch?v=17X2e_O8Jzo",
+              "spotifyUrl": "https://open.spotify.com/artist/6e8DrBevl7KCm0Kfse6fvB",
+              "instagramUrl": "https://www.instagram.com/bullet_official/",
+              "facebookUrl": "https://www.facebook.com/bulletband",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743f0cc19264baa64fb8b7fbd7"
             }
           },
           {
