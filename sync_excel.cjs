@@ -87,6 +87,7 @@ artistasData.forEach(art => {
   const country = art['País'] ? String(art['País']).trim() : '';
   const genre = art['Género principal'] ? String(art['Género principal']).trim() : '';
   const rawDesc = art['Descripción'] ? String(art['Descripción']).trim() : '';
+  const rawBio = art['Bio'] ? String(art['Bio']).trim() : '';
   const youtubeUrl = art['YouTube'] ? String(art['YouTube']).trim() : '';
   const imageUrl = art['Imagen'] ? String(art['Imagen']).trim() : '';
   const spotifyUrl = art['Spotify'] ? String(art['Spotify']).trim() : '';
@@ -94,11 +95,12 @@ artistasData.forEach(art => {
   const facebookUrl = art['Facebook'] ? String(art['Facebook']).trim() : '';
   
   const { title, description } = extractTitleAndDescription(rawDesc);
+  const finalDescription = rawBio || description;
   
   artistsMap[id] = {
     name,
-    title,
-    description,
+    title: rawBio ? '' : title, // Hide the promotional title if a generic bio is used
+    description: finalDescription,
     country,
     genre,
     youtubeUrl,
