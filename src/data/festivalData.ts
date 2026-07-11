@@ -2473,6 +2473,398 @@ const rawAgendaFestData: any = {
         "noticia": "Arranca la edición 2026 de Leyendas del Rock en Villena con el mejor heavy metal nacional e internacional. Revisa los horarios y escenarios."
       }
     ]
+  },
+  "zurbaran-fest-2026": {
+    "config": {
+      "festivalId": "zurbaran-fest",
+      "edicionId": "zurbaran-fest-2026",
+      "festivalName": "Zurbaran Fest",
+      "visibleName": "Zurbaran Fest",
+      "year": 2026,
+      "startDate": "2026-07-10",
+      "endDate": "2026-07-12",
+      "location": "Burgos",
+      "timezone": "Europe/Madrid",
+      "logo": "logozurbaran2026.jpg",
+      "cartel": "cartelzurbaran2026.jpg",
+      "mapa": "mapazurbaran2026.jpg",
+      "dayStartHour": 14,
+      "dayEndHour": 4,
+      "aftermovieUrl": "https://www.youtube.com/watch?v=D6OtLn8joyM"
+    },
+    "stages": [
+      {
+        "id": "diario-burgos-stage",
+        "name": "Diario de Burgos",
+        "order": 1,
+        "color": "#d3133c"
+      },
+      {
+        "id": "fundacion-caja-stage",
+        "name": "Fundación Caja Rural",
+        "order": 2,
+        "color": "#2b8be3"
+      },
+      {
+        "id": "fundacion-circulo-stage",
+        "name": "Fundación Círculo",
+        "order": 3,
+        "color": "#9c1fb8"
+      }
+    ],
+    "days": [
+      {
+        "id": "2026-07-10",
+        "dayNumber": 1,
+        "dayLabel": "Viernes 10",
+        "weekdayEs": "Viernes",
+        "doors": "19:00",
+        "stages": [
+          "Diario de Burgos",
+          "Fundación Caja Rural",
+          "Fundación Círculo"
+        ],
+        "acts": [
+          {
+            "band": "Rockerizos",
+            "stage": "Diario de Burgos",
+            "start": "19:30",
+            "end": "20:30",
+            "bio": {
+              "name": "Rockerizos",
+              "title": "",
+              "description": "Banda local burgalesa de hard rock y heavy metal clásico, conocidos por su energía y pasión sobre el escenario.",
+              "country": "España",
+              "genre": "Hard Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=k5lGswUaBgo"
+            }
+          },
+          {
+            "band": "Uli Jon Roth",
+            "stage": "Diario de Burgos",
+            "start": "20:45",
+            "end": "22:05",
+            "bio": {
+              "name": "Uli Jon Roth",
+              "title": "",
+              "description": "Leyenda alemana de la guitarra, exmiembro de Scorpions y pionero del metal neoclásico.",
+              "country": "Alemania",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=2TzFm9u2U9Y"
+            }
+          },
+          {
+            "band": "Secret Sphere",
+            "stage": "Diario de Burgos",
+            "start": "22:30",
+            "end": "23:45",
+            "bio": {
+              "name": "Secret Sphere",
+              "title": "",
+              "description": "Destacada formación italiana de power metal melódico con una extensa trayectoria en la escena europea.",
+              "country": "Italia",
+              "genre": "Power Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=p4vW7h443kE"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-07-11",
+        "dayNumber": 2,
+        "dayLabel": "Sábado 11",
+        "weekdayEs": "Sábado",
+        "doors": "16:30",
+        "stages": [
+          "Diario de Burgos",
+          "Fundación Caja Rural",
+          "Fundación Círculo"
+        ],
+        "acts": [
+          {
+            "band": "Azrael",
+            "stage": "Diario de Burgos",
+            "start": "17:00",
+            "end": "18:00",
+            "bio": {
+              "name": "Azrael",
+              "title": "",
+              "description": "Histórica banda granadina de heavy metal y power metal en castellano con más de tres décadas de trayectoria.",
+              "country": "España",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=N65sJitF7q0"
+            }
+          },
+          {
+            "band": "Fury",
+            "stage": "Fundación Caja Rural",
+            "start": "18:00",
+            "end": "19:00",
+            "bio": {
+              "name": "Fury",
+              "title": "",
+              "description": "Potente banda británica de heavy metal clásico con riffs dinámicos y gran puesta en escena.",
+              "country": "UK",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=P9C9Y_MeklA"
+            }
+          },
+          {
+            "band": "Masters of Ceremony",
+            "stage": "Diario de Burgos",
+            "start": "19:00",
+            "end": "20:05",
+            "bio": {
+              "name": "Masters of Ceremony",
+              "title": "",
+              "description": "Proyecto de power metal comandado por el prestigioso productor Sascha Paeth y el vocalista Tommy Heart.",
+              "country": "Alemania",
+              "genre": "Power Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=qXgUq6P57fE"
+            }
+          },
+          {
+            "band": "Eden",
+            "stage": "Fundación Caja Rural",
+            "start": "20:05",
+            "end": "21:00",
+            "bio": {
+              "name": "Eden",
+              "title": "",
+              "description": "Veterana banda asturiana de heavy metal melódico con canciones llenas de épica y fuerza.",
+              "country": "España",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=wXW5Zl2_Jxs"
+            }
+          },
+          {
+            "band": "Hardcore Superstar",
+            "stage": "Diario de Burgos",
+            "start": "21:00",
+            "end": "22:20",
+            "bio": {
+              "name": "Hardcore Superstar",
+              "title": "",
+              "description": "Referentes indiscutibles del sleaze rock y el hard rock sueco con un directo demoledor.",
+              "country": "Suecia",
+              "genre": "Sleaze Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=269_4m8lC1c"
+            }
+          },
+          {
+            "band": "Savaged",
+            "stage": "Fundación Caja Rural",
+            "start": "22:20",
+            "end": "23:15",
+            "bio": {
+              "name": "Savaged",
+              "title": "",
+              "description": "Joven y salvaje promesa barcelonesa de speed y heavy metal tradicional de corte ochentero.",
+              "country": "España",
+              "genre": "Speed Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=F_f-z7-p2lA"
+            }
+          },
+          {
+            "band": "Overkill",
+            "stage": "Diario de Burgos",
+            "start": "23:15",
+            "end": "00:55",
+            "bio": {
+              "name": "Overkill",
+              "title": "",
+              "description": "Pioneros indiscutibles del thrash metal estadounidense procedentes de Nueva Jersey.",
+              "country": "EEUU",
+              "genre": "Thrash Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=uK1zYlqR5W4"
+            }
+          },
+          {
+            "band": "Hitten",
+            "stage": "Fundación Caja Rural",
+            "start": "00:55",
+            "end": "02:00",
+            "bio": {
+              "name": "Hitten",
+              "title": "",
+              "description": "Banda murciana de heavy metal tradicional, aclamada internacionalmente por su sonido NWOTHM.",
+              "country": "España",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=yYn9N56eSxs"
+            }
+          },
+          {
+            "band": "Induction",
+            "stage": "Diario de Burgos",
+            "start": "02:00",
+            "end": "03:15",
+            "bio": {
+              "name": "Induction",
+              "title": "",
+              "description": "Formación de power metal progresivo fundada por Tim Hansen, heredera del sonido clásico del género.",
+              "country": "Alemania",
+              "genre": "Power Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Vl3rPrcSg9Y"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-07-12",
+        "dayNumber": 3,
+        "dayLabel": "Domingo 12",
+        "weekdayEs": "Domingo",
+        "doors": "16:00",
+        "stages": [
+          "Diario de Burgos",
+          "Fundación Caja Rural",
+          "Fundación Círculo"
+        ],
+        "acts": [
+          {
+            "band": "Ars Amandi",
+            "stage": "Diario de Burgos",
+            "start": "16:30",
+            "end": "17:35",
+            "bio": {
+              "name": "Ars Amandi",
+              "title": "",
+              "description": "Banda madrileña pionera del folk metal castellano que fusiona rock pesado con dulzaina y pito castellano.",
+              "country": "España",
+              "genre": "Folk Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Kz4M0XF8L8s"
+            }
+          },
+          {
+            "band": "Bloodstain",
+            "stage": "Fundación Caja Rural",
+            "start": "17:35",
+            "end": "18:40",
+            "bio": {
+              "name": "Bloodstain",
+              "title": "",
+              "description": "Banda burgalesa de thrash y death metal con un directo arrollador y riffs contundentes.",
+              "country": "España",
+              "genre": "Thrash Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=YwL3i_9oFmQ"
+            }
+          },
+          {
+            "band": "The Poodles",
+            "stage": "Diario de Burgos",
+            "start": "18:40",
+            "end": "20:00",
+            "bio": {
+              "name": "The Poodles",
+              "title": "",
+              "description": "Exitoso grupo sueco de glam metal y hard rock melódico con estribillos pegadizos y gran producción.",
+              "country": "Suecia",
+              "genre": "Glam Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=wBwA4wz_G98"
+            }
+          },
+          {
+            "band": "Khorea",
+            "stage": "Fundación Caja Rural",
+            "start": "20:00",
+            "end": "20:55",
+            "bio": {
+              "name": "Khorea",
+              "title": "",
+              "description": "Banda de metal alternativo y metalcore procedente de Burgos con letras reflexivas y bases pesadas.",
+              "country": "España",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=4kO2vY14csw"
+            }
+          },
+          {
+            "band": "Heavens Gate",
+            "stage": "Diario de Burgos",
+            "start": "20:55",
+            "end": "22:05",
+            "bio": {
+              "name": "Heavens Gate",
+              "title": "",
+              "description": "Legendaria formación alemana de power metal de finales de los 80, muy influyente en el género.",
+              "country": "Alemania",
+              "genre": "Power Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=gT8jV7C2L0o"
+            }
+          },
+          {
+            "band": "ODC",
+            "stage": "Fundación Caja Rural",
+            "start": "22:05",
+            "end": "23:05",
+            "bio": {
+              "name": "ODC",
+              "title": "",
+              "description": "Moderno cuarteto parisino que combina metal alternativo, rock melódico y matices electrónicos.",
+              "country": "Francia",
+              "genre": "Metal Alternativo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=mE98Zc21lB0"
+            }
+          },
+          {
+            "band": "Doro",
+            "stage": "Diario de Burgos",
+            "start": "23:05",
+            "end": "00:40",
+            "bio": {
+              "name": "Doro",
+              "title": "",
+              "description": "Doro Pesch, la indiscutible reina del heavy metal mundial, con una carrera legendaria e himnos atemporales.",
+              "country": "Alemania",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vV9W5aP-e_4"
+            }
+          },
+          {
+            "band": "Bullet",
+            "stage": "Fundación Caja Rural",
+            "start": "00:40",
+            "end": "01:50",
+            "bio": {
+              "name": "Bullet",
+              "title": "",
+              "description": "Banda sueca que revive el auténtico espíritu del heavy metal clásico al estilo de AC/DC y Accept.",
+              "country": "Suecia",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=17X2e_O8Jzo"
+            }
+          },
+          {
+            "band": "Vindicta",
+            "stage": "Diario de Burgos",
+            "start": "01:50",
+            "end": "03:00",
+            "bio": {
+              "name": "Vindicta",
+              "title": "",
+              "description": "Banda española de heavy metal tradicional con letras combativas y sonido de la vieja escuela.",
+              "country": "España",
+              "genre": "Heavy Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=p4vW7h443kE"
+            }
+          },
+          {
+            "band": "Heavens Gate",
+            "stage": "Fundación Círculo",
+            "start": "13:30",
+            "end": "14:30",
+            "bio": {
+              "name": "Heavens Gate",
+              "title": "",
+              "description": "Legendaria formación alemana de power metal de finales de los 80, muy influyente en el género.",
+              "country": "Alemania",
+              "genre": "Power Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=gT8jV7C2L0o"
+            }
+          }
+        ]
+      }
+    ],
+    "noticias": []
   }
 };
 
