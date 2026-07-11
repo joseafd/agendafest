@@ -3344,7 +3344,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Doro",
               "title": "",
-              "description": "Doro Pesch, la indiscutible reina del heavy metal mundial, con una carrera legendaria e himnos atemporales.",
+              "description": "Dorothee Pesch, más conocida por su nombre artístico Doro Pesch (Düsseldorf; 3 de junio de 1964), es una cantante de heavy metal alemana.​ Formó parte de las agrupaciones Warlock y Snakebite y se desempeña como solista. Fue una de las primeras cantantes de metal en los años 1980, cuando los hombres dominaban este tipo de música. Se la considera la indiscutible Reina del Metal a nivel mundial, habiendo inspirado a múltiples generaciones.",
               "country": "Alemania",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=vV9W5aP-e_4",
