@@ -42,7 +42,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   const defaultStages = useMemo(() => edition.stages.map(s => s.name), [edition.stages]);
 
   // Helper to determine the initial day based on current date-time and the Jornada schedule
-  const getInitialDayId = (): string => {
+  const getInitialDayId = useCallback((): string => {
     const now = new Date();
     if (!days || days.length === 0) {
       return edicionConfig.startDate;
@@ -65,7 +65,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     }
 
     return days[days.length - 1].id;
-  };
+  }, [days, edicionConfig]);
 
   // 1. App Navigation State (home, agenda, map, news)
   const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'news'>('home');
@@ -343,17 +343,23 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   // During festival dates: only show it on the matching day.
   const shouldShowLive = useMemo(() => {
     const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
-    const dateStr = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+    if (!days || days.length === 0) return false;
     
-    const isFestivalPeriod = dateStr >= edicionConfig.startDate && dateStr <= edicionConfig.endDate;
+    // Check if we are within the festival period (from startDate start hour to endDate end of last day's jornada)
+    const firstDay = days[0];
+    const [startY, startM, startD] = firstDay.id.split('-').map(Number);
+    const startOfFestival = new Date(startY, startM - 1, startD, edicionConfig.dayStartHour, 0, 0);
+    
+    const lastDay = days[days.length - 1];
+    const [endY, endM, endD] = lastDay.id.split('-').map(Number);
+    const endOfFestival = new Date(endY, endM - 1, endD + 1, edicionConfig.dayEndHour, 0, 0);
+    
+    const isFestivalPeriod = now >= startOfFestival && now <= endOfFestival;
     if (isFestivalPeriod) {
-      return selectedDayId === dateStr;
+      return selectedDayId === getInitialDayId();
     }
     return true; // Simulate live mode on any selected day outside festival dates
-  }, [selectedDayId, edicionConfig]);
+  }, [selectedDayId, getInitialDayId, days, edicionConfig]);
 
   // Determine if the festival is completely over (passed Sunday morning of the last day's jornada)
   const isFestivalOver = useMemo(() => {
