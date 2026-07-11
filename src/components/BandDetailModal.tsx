@@ -1,5 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { X, Clock, Calendar, MapPin, Globe, Music, PenTool } from 'lucide-react';
+
+// Standard Feather-equivalent SVGs for social media icons
+const InstagramIcon = ({ size = 20 }: { size?: number }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const FacebookIcon = ({ size = 20 }: { size?: number }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+);
+
+const YoutubeIcon = ({ size = 20 }: { size?: number }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 11.54a29 29 0 0 0 .46 5.12 2.78 2.78 0 0 0 1.95 1.96C5.12 19 12 19 12 19s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 11.54a29 29 0 0 0-.46-5.12z"></path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+  </svg>
+);
+
+// Convert band name to standardized uppercase filename
+const getBandImageName = (name: string): string => {
+  return name
+    .toUpperCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^A-Z0-9\s-]/g, "")
+    .trim()
+    .replace(/[\s-]+/g, " ");
+};
 import type { Act, FestivalDay, StageConfig } from '../data/festivalData';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -51,12 +84,30 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
   editionStages,
   language,
 }) => {
-  const [imgError, setImgError] = useState<boolean>(false);
+  const imageName = act ? getBandImageName(act.band) : '';
 
-  // Reset image error status when another act is clicked
+  const [imgError, setImgError] = useState<boolean>(false);
+  const [currentImageUrl, setCurrentImageUrl] = useState<string>('');
+
+  // Reset image error status and determine primary image source
   useEffect(() => {
     setImgError(false);
-  }, [act]);
+    if (act?.bio?.imageUrl) {
+      setCurrentImageUrl(act.bio.imageUrl);
+    } else if (act) {
+      setCurrentImageUrl(`./images/${imageName}.jpg`);
+    }
+  }, [act, imageName]);
+
+  const handleImageError = () => {
+    if (act?.bio?.imageUrl && currentImageUrl === act.bio.imageUrl && imageName) {
+      // Fallback to local image if Spotify image fails
+      setCurrentImageUrl(`./images/${imageName}.jpg`);
+    } else {
+      // Both failed, show initials placeholder
+      setImgError(true);
+    }
+  };
 
   // Find other favorited acts that overlap with this one
   const conflictingActs = React.useMemo(() => {
@@ -91,16 +142,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
       .toUpperCase();
   };
 
-  // Convert band name to standardized uppercase filename
-  const getBandImageName = (name: string): string => {
-    return name
-      .toUpperCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^A-Z0-9\s-]/g, "")
-      .trim()
-      .replace(/[\s-]+/g, " ");
-  };
+
 
   // Helper to format localized day label
   const getLocalizedDayDescription = (id: string, lang: Language): string => {
@@ -145,8 +187,6 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
     const prep = t(lang, 'de');
     return `${localizedWeekday} ${date} ${prep} ${localizedMonth}`;
   };
-
-  const imageName = getBandImageName(act.band);
 
   return (
     <div
@@ -205,9 +245,9 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
           {/* Background Band Image */}
           {!imgError ? (
             <img
-              src={`./images/${imageName}.jpg`}
+              src={currentImageUrl}
               alt={act.band}
-              onError={() => setImgError(true)}
+              onError={handleImageError}
               style={{
                 position: 'absolute',
                 top: 0,
@@ -386,6 +426,161 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
               )}
             </div>
           </div>
+
+          {/* Social Links Row */}
+          {(act.bio?.spotifyUrl || act.bio?.instagramUrl || act.bio?.facebookUrl || act.bio?.youtubeUrl) && (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '16px',
+                background: 'rgba(255,255,255,0.02)',
+                padding: '12px',
+                borderRadius: '14px',
+                border: '1px solid var(--border-color)',
+                marginTop: '-4px',
+              }}
+            >
+              {act.bio.spotifyUrl && (
+                <a
+                  href={act.bio.spotifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive"
+                  title="Spotify"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: 'rgba(29, 185, 84, 0.1)',
+                    border: '1px solid rgba(29, 185, 84, 0.4)',
+                    color: '#1db954',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = '#1db954';
+                    e.currentTarget.style.color = '#ffffff';
+                    e.currentTarget.style.boxShadow = '0 0 10px rgba(29, 185, 84, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(29, 185, 84, 0.1)';
+                    e.currentTarget.style.color = '#1db954';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.563.387-.857.207-2.377-1.454-5.37-1.783-8.892-.982-.336.076-.67-.135-.746-.47-.077-.337.135-.67.47-.747 3.847-.876 7.143-.5 9.818 1.137.294.18.386.563.207.855zm1.223-2.723c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.08-1.182-.413.125-.847-.107-.972-.52-.125-.413.107-.847.52-.972 3.676-1.115 8.243-.57 11.346 1.334.367.227.487.707.26 1.08zm.106-2.833C14.384 8.71 8.563 8.52 5.176 9.547c-.528.16-1.083-.14-1.243-.67-.16-.527.14-1.082.67-1.243 3.882-1.178 10.315-.956 14.39 1.462.476.282.63.896.347 1.372-.283.475-.897.63-1.373.348z"/>
+                  </svg>
+                </a>
+              )}
+
+              {act.bio.instagramUrl && (
+                <a
+                  href={act.bio.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive"
+                  title="Instagram"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: 'rgba(225, 48, 108, 0.1)',
+                    border: '1px solid rgba(225, 48, 108, 0.4)',
+                    color: '#e1306c',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)';
+                    e.currentTarget.style.color = '#ffffff';
+                    e.currentTarget.style.boxShadow = '0 0 10px rgba(225, 48, 108, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(225, 48, 108, 0.1)';
+                    e.currentTarget.style.color = '#e1306c';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <InstagramIcon size={20} />
+                </a>
+              )}
+
+              {act.bio.facebookUrl && (
+                <a
+                  href={act.bio.facebookUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive"
+                  title="Facebook"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: 'rgba(24, 119, 242, 0.1)',
+                    border: '1px solid rgba(24, 119, 242, 0.4)',
+                    color: '#1877f2',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = '#1877f2';
+                    e.currentTarget.style.color = '#ffffff';
+                    e.currentTarget.style.boxShadow = '0 0 10px rgba(24, 119, 242, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(24, 119, 242, 0.1)';
+                    e.currentTarget.style.color = '#1877f2';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <FacebookIcon size={20} />
+                </a>
+              )}
+
+              {act.bio.youtubeUrl && (
+                <a
+                  href={act.bio.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive"
+                  title="YouTube"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    background: 'rgba(255, 0, 0, 0.1)',
+                    border: '1px solid rgba(255, 0, 0, 0.4)',
+                    color: '#ff0000',
+                    transition: 'all 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = '#ff0000';
+                    e.currentTarget.style.color = '#ffffff';
+                    e.currentTarget.style.boxShadow = '0 0 10px rgba(255, 0, 0, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 0, 0, 0.1)';
+                    e.currentTarget.style.color = '#ff0000';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <YoutubeIcon size={20} />
+                </a>
+              )}
+            </div>
+          )}
 
           {/* Prominent Signing Session Banner */}
           {act.bio?.signingSession && (

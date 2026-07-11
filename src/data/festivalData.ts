@@ -33,6 +33,10 @@ export interface BandBio {
   country?: string;
   genre?: string;
   youtubeUrl?: string;
+  spotifyUrl?: string;
+  instagramUrl?: string;
+  facebookUrl?: string;
+  imageUrl?: string;
   signingSession?: string;
 }
 

@@ -88,6 +88,10 @@ artistasData.forEach(art => {
   const genre = art['Género principal'] ? String(art['Género principal']).trim() : '';
   const rawDesc = art['Descripción'] ? String(art['Descripción']).trim() : '';
   const youtubeUrl = art['YouTube'] ? String(art['YouTube']).trim() : '';
+  const imageUrl = art['Imagen'] ? String(art['Imagen']).trim() : '';
+  const spotifyUrl = art['Spotify'] ? String(art['Spotify']).trim() : '';
+  const instagramUrl = art['Instagram'] ? String(art['Instagram']).trim() : '';
+  const facebookUrl = art['Facebook'] ? String(art['Facebook']).trim() : '';
   
   const { title, description } = extractTitleAndDescription(rawDesc);
   
@@ -97,7 +101,11 @@ artistasData.forEach(art => {
     description,
     country,
     genre,
-    youtubeUrl
+    youtubeUrl,
+    imageUrl,
+    spotifyUrl,
+    instagramUrl,
+    facebookUrl
   };
 });
 
@@ -261,6 +269,10 @@ edicionData.forEach(edRow => {
       country: artistInfo.country || undefined,
       genre: artistInfo.genre || undefined,
       youtubeUrl: artistInfo.youtubeUrl || undefined,
+      spotifyUrl: artistInfo.spotifyUrl || undefined,
+      instagramUrl: artistInfo.instagramUrl || undefined,
+      facebookUrl: artistInfo.facebookUrl || undefined,
+      imageUrl: artistInfo.imageUrl || undefined,
       signingSession: signingSession || undefined
     };
     
@@ -356,6 +368,10 @@ export interface BandBio {
   country?: string;
   genre?: string;
   youtubeUrl?: string;
+  spotifyUrl?: string;
+  instagramUrl?: string;
+  facebookUrl?: string;
+  imageUrl?: string;
   signingSession?: string;
 }
 
