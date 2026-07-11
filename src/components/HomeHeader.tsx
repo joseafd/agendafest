@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Zap, Menu, X, HelpCircle, Info, Map, Calendar, Search, Newspaper, Smartphone } from 'lucide-react';
+import { Menu, X, HelpCircle, Info, Map, Calendar, Search, Newspaper, Smartphone } from 'lucide-react';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 
@@ -68,7 +68,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
               boxShadow: '0 0 10px rgba(255, 42, 133, 0.3)',
             }}
           >
-            <Zap size={16} color="#ff2a85" fill="#ff2a85" />
+            <img src="./images/favicon.png" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
           </div>
           <span
             className="font-metal"
@@ -280,7 +280,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
                 }}
                 className="btn-interactive"
               >
-                <Zap size={18} color="#ffd600" />
+                <img src="./images/favicon.png" alt="" style={{ width: '18px', height: '18px', objectFit: 'contain' }} />
                 <span>{t(language, 'createYourAgenda')}</span>
               </button>
 

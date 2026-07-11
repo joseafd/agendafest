@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useMemo } from 'react';
-import { Zap } from 'lucide-react';
+
 import type { Act, StageConfig } from '../data/festivalData';
 
 const getStageGlassStyle = (color: string, isPlayingNow: boolean, isFavorite: boolean) => {
@@ -362,14 +362,15 @@ export const StagesView: React.FC<StagesViewProps> = ({
                                 justifyContent: 'center',
                               }}
                             >
-                              <Zap
-                                size={14}
-                                fill={isFavorite ? '#ffd600' : 'none'}
-                                stroke={isFavorite ? '#ffd600' : '#ffffff'}
-                                strokeWidth={2.5}
-                                style={{
-                                  filter: isFavorite ? 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.8))' : 'none',
-                                }}
+                              <img 
+                                src="./images/favicon.png" 
+                                alt="" 
+                                style={{ 
+                                  width: '14px', 
+                                  height: '14px', 
+                                  objectFit: 'contain', 
+                                  filter: isFavorite ? 'drop-shadow(0 0 3px rgba(255, 42, 133, 0.7))' : 'grayscale(100%) opacity(0.3) brightness(1.5)' 
+                                }} 
                               />
                             </button>
                           </div>

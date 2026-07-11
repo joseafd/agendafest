@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Calendar, ArrowRight, Bookmark } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight } from 'lucide-react';
 import type { FestivalEdition } from '../data/festivalData';
 import { t, formatDatesByLang } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -128,9 +128,9 @@ export const UpcomingFestivalRow: React.FC<UpcomingFestivalRowProps> = ({
               onToggleFollow(e);
             }}
             style={{
-              background: isFollowed ? 'rgba(255, 214, 0, 0.15)' : 'rgba(255, 255, 255, 0.02)',
-              border: isFollowed ? '1px solid #ffd600' : '1px solid var(--border-color)',
-              color: isFollowed ? '#ffd600' : 'var(--text-secondary)',
+              background: isFollowed ? 'rgba(255, 42, 133, 0.15)' : 'rgba(255, 255, 255, 0.02)',
+              border: isFollowed ? '1px solid #ff2a85' : '1px solid var(--border-color)',
+              color: isFollowed ? '#ff2a85' : 'var(--text-secondary)',
               borderRadius: '6px',
               padding: '6px',
               cursor: 'pointer',
@@ -142,7 +142,16 @@ export const UpcomingFestivalRow: React.FC<UpcomingFestivalRowProps> = ({
             className="btn-interactive"
             title={isFollowed ? 'Quitar de mis favoritos' : 'Añadir a mis favoritos'}
           >
-            <Bookmark size={12} fill={isFollowed ? '#ffd600' : 'none'} />
+            <img 
+              src="./images/favicon.png" 
+              alt="" 
+              style={{ 
+                width: '12px', 
+                height: '12px', 
+                objectFit: 'contain', 
+                filter: isFollowed ? 'none' : 'grayscale(100%) opacity(0.4) brightness(1.5)' 
+              }} 
+            />
           </button>
         )}
         <span

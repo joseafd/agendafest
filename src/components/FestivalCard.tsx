@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Calendar, Bookmark } from 'lucide-react';
+import { MapPin, Calendar } from 'lucide-react';
 import type { FestivalEdition } from '../data/festivalData';
 import { t, formatDatesByLang } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -109,10 +109,10 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
             left: '12px',
             width: '28px',
             height: '28px',
-            background: isFollowed ? 'rgba(255, 214, 0, 0.2)' : 'rgba(15, 17, 24, 0.75)',
-            border: isFollowed ? '1px solid #ffd600' : '1px solid var(--border-color)',
+            background: isFollowed ? 'rgba(255, 42, 133, 0.2)' : 'rgba(15, 17, 24, 0.75)',
+            border: isFollowed ? '1px solid #ff2a85' : '1px solid var(--border-color)',
             borderRadius: '8px',
-            color: isFollowed ? '#ffd600' : 'var(--text-secondary)',
+            color: isFollowed ? '#ff2a85' : 'var(--text-secondary)',
             cursor: 'pointer',
             zIndex: 10,
             display: 'flex',
@@ -122,7 +122,16 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
           }}
           className="btn-interactive"
         >
-          <Bookmark size={14} fill={isFollowed ? '#ffd600' : 'none'} />
+          <img 
+            src="./images/favicon.png" 
+            alt="" 
+            style={{ 
+              width: '14px', 
+              height: '14px', 
+              objectFit: 'contain', 
+              filter: isFollowed ? 'none' : 'grayscale(100%) opacity(0.4) brightness(1.5)' 
+            }} 
+          />
         </button>
       )}
 

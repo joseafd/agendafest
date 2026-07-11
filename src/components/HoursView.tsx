@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Clock, MapPin } from 'lucide-react';
+import { Clock, MapPin } from 'lucide-react';
 import type { Act, StageConfig, FestivalDay } from '../data/festivalData';
 
 const getStageGlassStyle = (color: string, isPlayingNow: boolean, isFavorite: boolean) => {
@@ -307,13 +307,16 @@ export const HoursView: React.FC<HoursViewProps> = ({
                         onMouseDown={(e) => { e.stopPropagation(); e.currentTarget.style.transform = 'scale(0.85)'; }}
                         onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
                       >
-                        <Zap
-                          size={20}
-                          fill={isFavorite ? '#ffd600' : 'none'}
-                          stroke={isFavorite ? '#ffd600' : '#ffffff'}
-                          strokeWidth={2.2}
+                        <img
+                          src="./images/favicon.png"
+                          alt=""
                           style={{
-                            filter: isFavorite ? 'drop-shadow(0 0 6px rgba(255, 255, 255, 0.8))' : 'none',
+                            width: '20px',
+                            height: '20px',
+                            objectFit: 'contain',
+                            filter: isFavorite 
+                              ? 'drop-shadow(0 0 5px rgba(255, 42, 133, 0.7))' 
+                              : 'grayscale(100%) opacity(0.3) brightness(1.5)',
                           }}
                         />
                       </button>

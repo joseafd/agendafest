@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Zap, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff, ChevronDown, ChevronUp, Globe, Music } from 'lucide-react';
+import { X, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff, ChevronDown, ChevronUp, Globe, Music } from 'lucide-react';
 import type { StageConfig } from '../data/festivalData';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -199,7 +199,7 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             
             <div className="switch-container">
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Zap size={16} color="var(--accent-red)" fill="var(--accent-red)" />
+                <img src="./images/favicon.png" alt="" style={{ width: '16px', height: '16px', objectFit: 'contain' }} />
                 <span style={{ fontSize: '0.88rem', fontWeight: '600' }}>{t(language, 'filterFavorites')}</span>
               </div>
               <label className="switch">

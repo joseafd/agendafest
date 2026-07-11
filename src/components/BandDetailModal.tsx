@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Zap, Clock, Calendar, MapPin, Globe, Music, PenTool } from 'lucide-react';
+import { X, Clock, Calendar, MapPin, Globe, Music, PenTool } from 'lucide-react';
 import type { Act, FestivalDay, StageConfig } from '../data/festivalData';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -465,7 +465,16 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
             onMouseDown={(e) => { e.currentTarget.style.transform = 'scale(0.96)'; }}
             onMouseUp={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
           >
-            <Zap size={18} fill={isFavorite ? '#ffd600' : 'none'} stroke={isFavorite ? '#ffd600' : '#ffffff'} />
+            <img 
+              src="./images/favicon.png" 
+              alt="" 
+              style={{ 
+                width: '18px', 
+                height: '18px', 
+                objectFit: 'contain',
+                filter: isFavorite ? 'none' : 'grayscale(100%) opacity(0.5) brightness(2)' 
+              }} 
+            />
             {isFavorite ? t(language, 'removeFavorites') : t(language, 'addFavorites')}
           </button>
 
