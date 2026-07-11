@@ -175,7 +175,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ANNISOKAY",
               "title": "",
-              "description": "ANNISOKAY es una banda de metalcore originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Annisokay es una banda alemana de post-hardcore de Halle, Sajonia-Anhalt. Hasta la fecha, la banda ha publicado dos demos, dos EPs y cinco álbumes de estudio: The Lucid Dream[er] se autoeditó en 2012 (en 2013 a través de Radtone Records en Japón) y se reeditó en 2014 cuando la banda firmó un contrato con el sello SPV GmbH. º 68 en las listas de éxitos alemanas. La banda realizó varias giras por Alemania y tocó junto a artistas como Silverstein, Callejon y Electric Callboy. Tocaron en la edición de 2014 del Summer Breeze Open Air y en el Festival Mair1 de Montabaur.",
               "country": "Alemania",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=6T4JAn4lFL0",
@@ -193,7 +193,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CROWDED",
               "title": "",
-              "description": "CROWDED es una banda de metal alternativo originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Crowded es una banda española de metal alternativo y grunge. Formada por músicos con una amplia experiencia, su sonido se caracteriza por guitarras potentes con mucha distorsión, ritmos densos y voces melódicas y expresivas influenciadas por el rock de los 90.",
               "country": "España",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=5LrDrFgDyl4",
@@ -211,7 +211,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ANEUMA",
               "title": "",
-              "description": "ANEUMA es una banda de death metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Art Gates Records es un sello discográfico independiente español fundado en mayo de 2012 en la provincia de Valencia.​ La discográfica está especializada principalmente en la producción, promoción y distribución internacional de música metal y sus diferentes subgéneros.​",
               "country": "España",
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc",
@@ -228,7 +228,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MAN WITH A MISSION",
               "title": "",
-              "description": "MAN WITH A MISSION es una banda de rock alternativo originaria de Japón. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "​ Muchos de sus sencillos han sido usados como temas para una variedad de animes, películas, y videojuegos.",
               "country": "Japón",
               "genre": "Rock Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=FrXAUcLWYZ4",
@@ -246,7 +246,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GOD COMPLEX",
               "title": "",
-              "description": "GOD COMPLEX es una banda de metalcore originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "El complejo de Dios (The God Complex) es el undécimo episodio de la sexta temporada moderna de la serie británica de ciencia ficción Doctor Who, emitido originalmente el 17 de septiembre de 2011.",
               "country": "UK",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=uBU8_O8G9IM",
@@ -264,7 +264,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "TSS",
               "title": "",
-              "description": "TSS es una banda de metal moderno originaria de Francia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "TSS es una banda de metal moderno originaria de Francia.",
               "country": "Francia",
               "genre": "Metal Moderno",
               "youtubeUrl": "https://www.youtube.com/watch?v=EBAdqbbioZ8",
@@ -282,7 +282,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLACK MARACAS",
               "title": "",
-              "description": "BLACK MARACAS es una banda de garaje rock originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Acquiring the taste fue el segundo disco de la banda británica de rock progresivo Gentle Giant, publicado el 16 de julio de 1971. Considerado como uno de los mejores álbumes de la banda por sus fanes, este álbum representa una gran mejora en cuanto a arreglos y producción con respecto al álbum de debut de la banda, Gentle Giant.​",
               "country": "España",
               "genre": "Garaje Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=nUX-xW182EI"
@@ -296,7 +296,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "PRESIDENT",
               "title": "",
-              "description": "PRESIDENT es una banda de hard rock originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "President (estilizado en mayúsculas como PRESIDENT) es una banda británica anónima de hard rock y metal alternativo formada en 2025. ​ Lanzaron su primer EP, King of Terrors, en 2025 que superó los 50 millones de reproducciones en Spotify dentro de los seis meses posteriores a su lanzamiento.",
               "country": "UK",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=aczq-iCfFOk"
@@ -310,7 +310,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "IMMORTAL DISFIGUREMENT",
               "title": "",
-              "description": "IMMORTAL DISFIGUREMENT es una banda de deathcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Immortal Disfigurement is an estadounidense deathcore band, formada en 2021 by vocalist CJ McCreery and guitarist Josh Freeman. The band is known as part of the symphonic deathcore scene. The group currently consists of CJ McCreery on vocals, Josh Freeman and Jacob Toy on guitars, Shane Slade on bass and Suki on drums.",
               "country": "EEUU",
               "genre": "Deathcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=myEyI0gT6r8",
@@ -328,7 +328,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE PRETTY WILD",
               "title": "",
-              "description": "THE PRETTY WILD es una banda de metal alternativo originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Pretty Wild es un dúo musical estadounidense formada desde Las Vegas, Nevada en 2022 y está compuesta por las hermanas Jyl y Jules Wylde. La banda tiene contrato con Sumerian Records.​",
               "country": "EEUU",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=3V9isTmCQRo",
@@ -345,7 +345,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CARDIAC",
               "title": "",
-              "description": "CARDIAC es una banda de hardcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Cardiac Arrest es un bootleg en vivo de la banda británica Queen. Fue publicada originalmente en formato CD a mediados de los 80s por Green Hippo Records.​ El álbum fue relanzado en 2020 por Soul Flux Recordings en Japón, como un lanzamiento de edición limitada.​",
               "country": "España",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=l-Rv5riBvc8&t=3s"
@@ -359,7 +359,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE SCRATCH",
               "title": "",
-              "description": "THE SCRATCH es una banda de folk rock originaria de Irlanda. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Scratch es una banda irlandesa de rock acústico y folk metal formada en Dublín. Fusionando la velocidad y agresividad del metal clásico con la instrumentación acústica tradicional irlandesa, su sonido único destaca por el uso de guitarras acústicas percusivas y coros enérgicos.",
               "country": "Irlanda",
               "genre": "Folk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=MfDZlUD_1WU",
@@ -377,7 +377,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THROWN",
               "title": "",
-              "description": "THROWN es una banda de hardcore punk originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Thrown es una banda sueca de hardcore punk y metalcore formada en Stockholm, Suecia en 2019 y firmada con Arising Empire. El grupo está compuesto por el vocalista Marcus Lundqvist, los guitarristas Johan Liljeblad y Andreas Malm, y el baterista y productor Buster Odeholm (Humanity's Last Breath y Vildhjärta). La banda lanzó su primer álbum Excessive Guilt (estilizado en mayúsculas) en agosto de 2024 compuesto por 11 canciones con una duración total de poco más de 20 minutos.​",
               "country": "Suecia",
               "genre": "Hardcore Punk",
               "youtubeUrl": "https://www.youtube.com/watch?v=DqBzOVCmIdM",
@@ -396,7 +396,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE BROWNING",
               "title": "",
-              "description": "THE BROWNING es una banda de metalcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Browning is an estadounidense electronicore band formed in Kansas City, Missouri, in 2005. The band's musical style is characterized by an eclectic blending of electronicore, deathcore, and metalcore. The group currently consists of vocalist Jonny McBee, drummer Keenan Bivens, and bassist/guitarist Akeem Bivens. They are currently signed to FiXT. The band has released six studio albums and two EPs.",
               "country": "EEUU",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=_DEdsCEUpaI",
@@ -414,7 +414,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LAST TRAIN",
               "title": "",
-              "description": "LAST TRAIN es una banda de rock alternativo originaria de Francia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Last Train es una banda francesa de rock alternativo e indie rock formada en 2007. El cuarteto destaca por su propuesta de rock clásico y crudo, cargada de intensidad emocional, riffs de guitarra atmosféricos y potentes directos que les han ganado reconocimiento en Europa.",
               "country": "Francia",
               "genre": "Rock alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=UTwRqGlIaIs",
@@ -432,7 +432,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "A DAY TO REMEMBER",
               "title": "",
-              "description": "A DAY TO REMEMBER es una banda de metalcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "A Day to Remember (abreviado comúnmente ADTR) es una banda estadounidense de Pop Punk y Metalcore formada en Ocala, Florida, en 2003. Se caracterizan por la fusión del metalcore con el pop punk. El grupo se encuentra actualmente formado por Jeremy McKinnon (voz), Neil Westfall (guitarra rítmica), Alex Shelnutt (batería) y Kevin Skaff (guitarra principal).",
               "country": "EEUU",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=jGxykN8cx7w",
@@ -450,7 +450,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GET THE SHOT",
               "title": "",
-              "description": "GET THE SHOT es una banda de hardcore originaria de Canada. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Get the Shot es una banda de hardcore punk originaria de Quebec, Canadá. Formada en 2009, su música destaca por una violenta mezcla de thrash metal y hardcore de la vieja escuela, con ritmos rápidos, breakdowns pesados y letras de crítica social.",
               "country": "Canada",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=UvncAul5sEI",
@@ -468,7 +468,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SELF DECEPTION",
               "title": "",
-              "description": "SELF DECEPTION es una banda de metalcore originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Self Deception es una banda de rock moderno y metal alternativo formada en Estocolmo, Suecia, en 2005. Con un sonido dinámico que combina riffs de guitarra pesados, estribillos melódicos memorables y elementos electrónicos, tienen una amplia presencia en plataformas de streaming.",
               "country": "Suecia",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=VcoSyfcqYSY",
@@ -486,7 +486,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LAMPR3A",
               "title": "",
-              "description": "LAMPR3A es una banda de metal progresivo originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Art Gates Records es un sello discográfico independiente español fundado en mayo de 2012 en la provincia de Valencia.​ La discográfica está especializada principalmente en la producción, promoción y distribución internacional de música metal y sus diferentes subgéneros.​",
               "country": "España",
               "genre": "Metal Progresivo",
               "youtubeUrl": "https://www.youtube.com/watch?v=er6nWXylNHE",
@@ -504,7 +504,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SABATON",
               "title": "",
-              "description": "SABATON es una banda de power metal originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Sabaton es una banda sueca de power metal formada en 1999 en la ciudad de Falun. El grupo se caracteriza por su estética militarizada y sus letras de contenido histórico-bélico.​ Su nombre proviene de una pieza de armadura medieval que cubre el empeine del pie, conocida como escarpe en español.",
               "country": "Suecia",
               "genre": "Power Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=Dfh1aSdxr9U",
@@ -522,7 +522,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HIGH-VIS",
               "title": "",
-              "description": "HIGH-VIS es una banda de hardcore punk originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "La BRIT School para las Artes Escénicas y la Tecnología es un colegio situado en Croydon, Inglaterra, centrado en proveer educación y entrenamiento vocacional para la actuación, los medios, el arte y el diseño y la tecnología que hace todo eso posible. El colegio es notable por su elevado número de alumnos reconocidos, incluyendo a las cantantes Amy Winehouse, Leona Lewis, Adele, Jessie J y FKA Twigs.",
               "country": "UK",
               "genre": "Hardcore Punk",
               "youtubeUrl": "https://www.youtube.com/watch?v=147BrDp-XuA",
@@ -540,7 +540,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FAETOOTH",
               "title": "",
-              "description": "FAETOOTH es una banda de doom originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "FAETOOTH es una banda de metal originaria de estadounidense doom. Their sound features elements de sludge metal, shoegaze and post-metal, and many of their lyrics deal with themes of folklore and spirituality; the band describes their musical style as \"fairy-doom metal\".",
               "country": "EEUU",
               "genre": "Doom",
               "youtubeUrl": "https://www.youtube.com/watch?v=nytv1O2yvG8",
@@ -558,7 +558,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "TESTAMENT",
               "title": "",
-              "description": "TESTAMENT es una banda de thrash metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Testament (estilizado TestAmenT) es una banda estadounidense de thrash metal de Berkeley, California. Hasta la fecha han publicado trece álbumes de estudio, cuatro álbumes en vivo y seis álbumes recopilatorios, tiene tres discos que entraron en el top-50 en las listas inglesas y en 1999 con el disco The Gathering entró en el top-50 alemán.",
               "country": "EEUU",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=Gtw3lcQvyPU",
@@ -591,7 +591,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ARSON TIDES",
               "title": "",
-              "description": "ARSON TIDES es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Down es una banda estadounidense de metal que basa su estilo en el sludge metal y doom metal fusionado con rock sureño y stoner rock, además de elementos de swamp blues y louisiana blues. Se formaron en el año 1991 en Nueva Orleans, Luisiana. La formación actual de la banda consiste en el vocalista Phil Anselmo, los guitarristas Pepper Keenan y Kirk Windstein, el bajista Pat Bruders y el batería Jimmy Bower. Desde su formación, Down se ha separado y reformado en dos ocasiones.",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=x8Ku8xs3LJA&list=RDEMx9F7gSD6CPp5z3JPCDu3FA&start_radio=1",
@@ -608,7 +608,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FALLEN AT DAWN",
               "title": "",
-              "description": "FALLEN AT DAWN es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Fallen at Dawn es una banda española de metalcore formada en Madrid. Con influencias de grupos de metal moderno y post-hardcore, la formación destaca por su directo potente, alternando voces melódicas y guturales con riffs de guitarra agresivos y bases rítmicas contundentes.",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0",
@@ -624,7 +624,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FUET!",
               "title": "",
-              "description": "FUET! es una banda de hardcore melódico originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Las fiestas patronales de Menorca son de tradición centenaria que tienen su origen en las Fiestas de San Juan, que se celebran en Ciudadela, isla de Menorca, en España, desde el siglo XIV. El principal protagonista de las fiestas es el caballo. Los jinetes cajeros (o caixers), vestidos de blanco y negro, van sobre sus caballos por las calles del pueblo, hasta que una vez recogidos todos y después de la misa, se celebra el tradicional jaleo (no debe confundirse con el jaleo, cante y baile flamenco).",
               "country": "España",
               "genre": "Hardcore Melódico",
               "youtubeUrl": "https://www.youtube.com/watch?v=735VrHSslAA",
@@ -640,7 +640,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HER ANXIETY",
               "title": "",
-              "description": "HER ANXIETY es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Her Anxiety es una banda española de metalcore y metal alternativo formada en Vigo, Galicia. Liderada por una vocalista femenina con una gran versatilidad de registros, la banda fusiona melodías pegadizas con breakdowns pesados y texturas electrónicas contemporáneas.",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=MQi07wk7xms",
@@ -657,7 +657,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SILLY GOOSE",
               "title": "",
-              "description": "SILLY GOOSE es una banda de nu metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Silly Goose es una banda estadounidense de rap metal y nu metal formada en Atlanta, Georgia. Conocidos por sus improvisadas actuaciones callejeras sobre remolques de camiones y su energía rebelde, rescatan la esencia del rapcore de finales de los noventa.",
               "country": "EEUU",
               "genre": "Nu Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=UuSXoG2ncME",
@@ -674,7 +674,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CASKETS",
               "title": "",
-              "description": "CASKETS es una banda de post hardcore originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Caskets es una banda británica de post-hardcore de Leeds, formada en 2018. La banda tiene contrato con SharpTone Records y actualmente está formada por el vocalista principal Matthew Flood, el guitarrista principal Benjamin Wilson, el guitarrista rítmico Craig Robinson y el baterista James Lazenby.",
               "country": "UK",
               "genre": "Post Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=kT36IN83gGI",
@@ -692,7 +692,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLOOD COMMAND",
               "title": "",
-              "description": "BLOOD COMMAND es una banda de punk rock originaria de Noruega. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Blood Command es una banda de punk rock y deathpop originaria de Bergen, Noruega. Formada en 2008, su música destaca por una explosiva mezcla de ritmos de batería de alta velocidad, riffs gancheros y voces enérgicas llenas de actitud punk.",
               "country": "Noruega",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=hcDyDii-Low",
@@ -710,7 +710,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BURNING WITCHES",
               "title": "",
-              "description": "BURNING WITCHES es una banda de heavy metal originaria de Suiza. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Burning witch fue una banda musical estadounidense proveniente de Seattle, Washington, de Doom metal, formada en el año 1995. Burning Witch fue una banda estadounidense de doom / sludge metal originaria de Seattle , Washington , activa entre 1995 y 1998. Además de EPs y lanzamientos compartidos, la banda publicó un álbum recopilatorio llamado Crippled Lucifer , que incluía canciones de sus primeros EPs.",
               "country": "Suiza",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=RwomV4za97A",
@@ -728,7 +728,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLUES PILLS",
               "title": "",
-              "description": "BLUES PILLS es una banda de psicodelia originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Blues Pills es una banda de blues-rock formada por la vocalista sueca Elin Larsson, el guitarrista estadounidense Zack Anderson, el bajista Kristoffer Schander y el batería sueco André Kvarnström, quien sustituyó a Cory Berry poco después del lanzamiento del álbum Blues Pills.​ El guitarrista francés Dorian Sorriaux, miembro original de la banda, dejó la formación a finales de 2018 y su puesto en la guitarra fue tomado por el hasta entonces bajista Zack Anderson.​",
               "country": "Suecia",
               "genre": "Psicodelia",
               "youtubeUrl": "https://www.youtube.com/watch?v=lZK5xfbZXNw",
@@ -746,7 +746,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ANGELUS APATRIDA",
               "title": "",
-              "description": "ANGELUS APATRIDA es una banda de thrash metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "ANGELUS APATRIDA es una banda de thrash metal originaria de España.",
               "country": "España",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=xb50ooBETEc",
@@ -764,7 +764,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE FUNERAL PORTRAIT",
               "title": "",
-              "description": "THE FUNERAL PORTRAIT es una banda de post hardcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Funeral Portrait es una banda estadounidense de post-hardcore formada en Atlanta, Georgia. El grupo se formó en 2014 y actualmente está compuesto por Lee Jennings (voz), Cody Weissinger (guitarra principal), Caleb Freihaut (guitarra rítmica/auxiliar), Robert Weston (bajo) y Homer Umbanhower (batería).",
               "country": "EEUU",
               "genre": "Post Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=a8DP5vhiDTk",
@@ -782,7 +782,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BELVEDERE",
               "title": "",
-              "description": "BELVEDERE es una banda de punk rock originaria de Canada. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Belvedere es una banda de punk rock canadiense formada en 1995. Bien conocida por su velocidad y sus voces melódicas. La banda consiguió ganarse un hueco en la escena de culto punk canadiense. La banda llegó a tocar en el Warped Tour y en el Groezrock Festival.",
               "country": "Canada",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=9SFlXVpZfsg",
@@ -799,7 +799,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CICLONAUTAS",
               "title": "",
-              "description": "CICLONAUTAS es una banda de rock originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Ciclonautas es un grupo hispanoargentino de música rock formado en 2013 en Navarra por el argentino Mariano 'Mai' Medina y los españoles Javier 'Txo' Pintor y Alén Ayerdi.",
               "country": "España",
               "genre": "Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=nQlua3uDfts"
@@ -813,7 +813,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "IRON MAIDEN",
               "title": "",
-              "description": "IRON MAIDEN es una banda de heavy metal originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Iron Maiden es una banda británica de heavy metal fundada en Londres en 1975 por el bajista Steve Harris. Considerada una de las agrupaciones más importantes y representativas del género, han vendido más de 180 millones de discos en el mundo,​ a pesar de haber contado con poco apoyo de los medios de comunicación masiva durante la mayor parte de su carrera. ​​ La agrupación ha obtenido reconocimientos como el Premio Ivor Novello en la categoría de «Logro Internacional» en 2002. En 2005 fueron incluidos en el Hollywood's RockWalk en Sunset Boulevard, Los Ángeles.",
               "country": "UK",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=aAsrFetnHzM",
@@ -831,7 +831,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE CALLOUS DAOBOYS",
               "title": "",
-              "description": "THE CALLOUS DAOBOYS es una banda de metalcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Callous Daoboys es una banda estadounidense de metalcore formada en Atlanta, Georgia en 2016. Su nombre es un \"spoonerism\" del equipo de fútbol americano Dallas Cowboys.",
               "country": "EEUU",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=4l5qLn2NrnE",
@@ -849,7 +849,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "VULVARINE",
               "title": "",
-              "description": "VULVARINE es una banda de hard rock originaria de Austria. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "VULVARINE es una banda de hard rock originaria de Austria.",
               "country": "Austria",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=6joGJzYX_Rc",
@@ -867,7 +867,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CALIBAN",
               "title": "",
-              "description": "CALIBAN es una banda de metalcore originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Caliban es una banda alemana de metalcore originaria de Hattingen, Renania del Norte-Westfalia que lleva nueve álbumes lanzados hasta el momento. Aunque la banda tiene un sonido metalcore ellos declaran que son un grupo de hardcore.",
               "country": "Alemania",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=z4DXIoWCr1Q",
@@ -886,7 +886,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LIONHEART",
               "title": "",
-              "description": "LIONHEART es una banda de hardcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "LIONHEART es una banda de hardcore originaria de EEUU.",
               "country": "EEUU",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=VeP1OmL5fNQ",
@@ -904,7 +904,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ANTHRAX",
               "title": "",
-              "description": "ANTHRAX es una banda de thrash metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Anthrax es una banda estadounidense de thrash metal formada en Nueva York en 1981, por el guitarrista Scott Ian y el bajista Dan Lilker.​ Está considerado como uno de los grupos principales de la escena thrash junto a Metallica, Megadeth y Slayer.​​ Entre 1991 y 2004, vendió cerca de 2,5 millones de copias únicamente en los Estados Unidos y 10 millones en todo el mundo.​​ En 1983, Anthrax firmó un contrato con la discográfica independiente Megaforce Records, a través de la cual publicó su álbum debut con su actual batería, Charlie Benante.​ Lilker pronto abandonó la formación y le reemplazó Frank Bello, sobrino de Benante,​​ además, el vocalista Joey Belladonna también ingresó.​ Con la llegada de estos nuevos integrantes, la banda lanzó al mercado Spreading the Disease (1985) y Among the Living (1987), aunque Belladonna dejó el conjunto en 1992 y le sustituyó John Bush, con el cual grabó Sound of White Noise (1993),​ que alcanzó la séptima posición del Billboard 200.​ Sus tres siguientes trabajos —Stomp 442 (1995), Volume 8: The Threat Is Real (1998) y We've Come for You All (2003)— no tuvieron el éxito comercial de su antecesor y en 2005,​ Belladonna y el guitarrista Dan Spitz regresaron a la banda para una esporádica reunión.​ En 2010, después de varios cambios de vocalista, Belladonna regresó al grupo una vez más para grabar Worship Music (2011) y For All Kings (2016).​",
               "country": "EEUU",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=Pj5u8OagODo",
@@ -922,7 +922,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "PSYCHONAUT",
               "title": "",
-              "description": "PSYCHONAUT es una banda de post metal originaria de Bélgica. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Psychonaut 4 es una banda georgiana de depressive suicidal black metal formada en 2010.​ El nombre de la banda deriva del término «psiconauta», que describe a una persona que consume drogas psicodélicas con frecuencia, mientras que el número cuatro hace referencia a los cuatro niveles de euforia asociados al uso de dextrometorfano.​ Las letras de la banda suelen estar en georgiano, ruso e inglés.​​​ La banda ha publicado cinco álbumes de estudio; el más reciente es «...of Mourning», de 2024.​ Para 2020, ya se había presentado en 24 países.​",
               "country": "Bélgica",
               "genre": "Post Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=x2lxwwzkLCM",
@@ -940,7 +940,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "AUTHORITY ZERO",
               "title": "",
-              "description": "AUTHORITY ZERO es una banda de punk rock originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Coca-Cola Zero (Coca-Cola Zero Azúcar​ en España) es una bebida producida por The Coca-Cola Company, que es una versión de Coca-Cola sin azúcar. Su eslogan es «Zero calorías»,​ sin embargo, en otros países también se conoce como «Zero azúcar» o «Zero sugar».",
               "country": "EEUU",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=XmhN3t4wLFA",
@@ -958,7 +958,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FEUERSCHWANZ",
               "title": "",
-              "description": "FEUERSCHWANZ es una banda de folk metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Feuerschwanz (en español: «Cola de Fuego») es una banda alemana de folk metal, proveniente de Erlangen. Fundada en 2004 por el músico Peter Henrici, junto con Tobias Heindl y Andre Linke. La agrupación comenzó siendo una banda de rock cómico que hacía burla de la escena de rock y metal medieval. Con el tiempo la banda ha cambiado su sonido hacia el folk metal y en ocasiones con temáticas más serias, siendo una de las agrupaciones alemanas de Folk metal más aclamadas en la actualidad.​",
               "country": "Alemania",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=-rKOoM7S6mw",
@@ -991,7 +991,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "NUKORE",
               "title": "",
-              "description": "NUKORE es una banda de hardcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "NUKORE es una banda de hardcore originaria de España.",
               "country": "España",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=EmnfimPvST0",
@@ -1007,7 +1007,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE FALL OF ATLANTIS",
               "title": "",
-              "description": "THE FALL OF ATLANTIS es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Fall of Atlantis es una banda de metalcore y deathcore originaria de España. Sus composiciones se caracterizan por una gran agresividad sonora, ritmos técnicos de batería, breakdowns demoledores y temáticas oscuras en sus letras.",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=zNDcD3oSt3U",
@@ -1022,7 +1022,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "NEVERTEL",
               "title": "",
-              "description": "NEVERTEL es una banda de metalcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Nevertel es una banda estadounidense de nu metal formada en Tampa, Florida en 2014.​ Su música está inspirada en una variedad de géneros que incluyen metalcore, hip-hop y EDM.​​ El grupo está formado por el vocalista Jeremy Michael, el guitarrista y rapero Raul Lopez y el guitarrista Alec Davis.​",
               "country": "EEUU",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=Jp6-SoqXp_s",
@@ -1040,7 +1040,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "PANTS OFF",
               "title": "",
-              "description": "PANTS OFF es una banda de punk rock originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Pants Off es una banda española de punk rock formada en Barcelona. Con un estilo fuertemente influenciado por el punk pop de los años 90 y bandas como Blink-182, sus composiciones destacan por su dinamismo, letras pegadizas y un directo divertido.",
               "country": "España",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=AO4JQ3_zPXE",
@@ -1055,7 +1055,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "NOT YET",
               "title": "",
-              "description": "NOT YET es una banda de post hardcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Not Yet es una banda española de post-hardcore y metal alternativo. Formada por jóvenes músicos, el grupo destaca por su capacidad de mezclar pasajes melódicos emocionales con secciones pesadas de gran contundencia sonora.",
               "country": "España",
               "genre": "Post Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=GljyxhhdFqU"
@@ -1069,7 +1069,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MADMESS",
               "title": "",
-              "description": "MADMESS es una banda de rock psicodélico originaria de Portugal. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "ArcTanGent Festival (also known as ATG) is a three-day británica rock festival held annually at Fernhill Farm in Somerset, England since 2013. It is the most popular británica summer festival for math rock, post rock, progressive metal and experimental music. The festival is named after the Earthtone9 album arc'tan'gent (2000). Previous performers include Heilung, Mogwai, Meshuggah, Devin Townsend, Explosions in the Sky, Coheed & Cambria, Opeth, Glassjaw, Godspeed You!",
               "country": "Portugal",
               "genre": "Rock Psicodélico",
               "youtubeUrl": "https://www.youtube.com/watch?v=sNi_YmGT7Cw",
@@ -1087,7 +1087,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE RASMUS",
               "title": "",
-              "description": "THE RASMUS es una banda de rock melodico originaria de Finlandia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Rasmus es una banda finlandesa de rock gótico formada en Helsinki en 1994. Los miembros originales de la banda son Lauri Ylönen (vocalista y compositor), Pauli Rantasalmi (guitarra) –quien dejó la banda a principios de 2022, siendo reemplazado por Emilia Suhonen–, Eero Heinonen (bajo) y Jarno Lahti (batería), siendo este último reemplazado por Janne Heiskanen en 1995. Heiskanen dejaría la banda poco después, en 1998, tras lo cual Aki Hakala ocupó su lugar. En 2022 representaron a su país en el Festival de la Canción de Eurovisión con el tema Jezebel.",
               "country": "Finlandia",
               "genre": "Rock Melodico",
               "youtubeUrl": "https://www.youtube.com/watch?v=uY4vweIBFcY",
@@ -1106,7 +1106,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "OSLO OVNIES",
               "title": "",
-              "description": "OSLO OVNIES es una banda de rock alternativo originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "OSLO OVNIES es una banda de rock alternativo originaria de España.",
               "country": "España",
               "genre": "Rock alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=TgWSiiCQU1I",
@@ -1124,7 +1124,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "OKKULTIST",
               "title": "",
-              "description": "OKKULTIST es una banda de death metal originaria de Portugal. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Dimmu Borgir es una banda noruega de black metal sinfónico, fundada en 1993 por Ian Kenneth Åkesson (Tjodalv), Stian Thoresen (Shagrath) y Sven Atle Kopperud (Silenoz) en la ciudad de Oslo. Estos dos últimos han sido los únicos miembros estables desde entonces. [1] Desde su debut en 1994, la banda ha recibido tres premios Spellemann (conocidos como el Grammy noruego): en 2001 por Puritanical Euphoric Misanthropia, en 2003 por Death Cult Armageddon y en 2007 por el videoclip de «The Serpentine Offering»; también han participado en festivales como el Inferno Festival, Ozzfest, Download Festival, Dynamo Open Air y el Wacken Open Air.",
               "country": "Portugal",
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=9mJu2r_v7FE"
@@ -1138,7 +1138,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MOURIR",
               "title": "",
-              "description": "MOURIR es una banda de black metal originaria de Francia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Mourir es un proyecto francés de black metal y sludge metal. Formado por miembros de la escena underground francesa, su propuesta destaca por crear atmósferas asfixiantes, densas y oscuras que combinan la velocidad del black con el peso del sludge.",
               "country": "Francia",
               "genre": "Black Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=yq483_-C5tA",
@@ -1154,7 +1154,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLEED FROM WITHIN",
               "title": "",
-              "description": "BLEED FROM WITHIN es una banda de metal originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Bleed de Within are a Scottish metalcore band de Glasgow, formada en 2005. The band's current lineup consists of lead vocalist Scott Kennedy, drummer Ali Richardson, bassist Davie Provan, lead guitarist Craig Gowans, and rhythm guitarist, clean vocalist Steven Jones. The band has released seven studio albums and three EPs, with their latest Zenith released in 2025 through Nuclear Blast.",
               "country": "UK",
               "genre": "Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=42-e9zFmgPA",
@@ -1172,7 +1172,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "INITIATE",
               "title": "",
-              "description": "INITIATE es una banda de hardcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Initiate es una banda estadounidense de hardcore punk originaria de California. Con una propuesta directa y llena de convicción, destacan por sus letras sociales y políticas, la crudeza de sus guitarras y la intensidad escénica de su vocalista.",
               "country": "EEUU",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=KH0PrtJIkIo",
@@ -1187,7 +1187,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HULDER",
               "title": "",
-              "description": "HULDER es una banda de black metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Hulder es un proyecto unipersonal de black metal tradicional fundado por la artista belga Marz Riesterer en Oregón, Estados Unidos. Su música rinde homenaje al crudo black metal de los años noventa, con atmósferas medievales y voces desgarradoras.",
               "country": "EEUU",
               "genre": "Black Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=Q2gttZHbJsw",
@@ -1204,7 +1204,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ROSALIE CUNNINGHAM",
               "title": "",
-              "description": "ROSALIE CUNNINGHAM es una banda de rock psicodélico originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Lucifer es una agrupación de heavy metal formada en Berlín, Alemania en 2014 por la cantante Johanna Sadonis. Tras varios cambios, Sadonis se mantiene como la única integrante original. La agrupación está establecida actualmente en Estocolmo.",
               "country": "UK",
               "genre": "Rock Psicodélico",
               "youtubeUrl": "https://www.youtube.com/watch?v=8YehoejPll8&list=RDEM71BufWZpq5YI695VOCH1Xw&start_radio=1",
@@ -1222,7 +1222,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "TRIVIUM",
               "title": "",
-              "description": "TRIVIUM es una banda de metalcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Trivium es una banda de Metalcore procedente de Orlando, Estados Unidos. ​ Tres años después lanzaron un demo que les ayudó a acordar un contrato con Lifeforce, donde lanzaron su álbum debut Ember to Inferno. Más tarde firmaron con Roadrunner Records y lanzaron Ascendancy. Mientras que sus dos primeros álbumes fueron de metalcore, desarrollaron un sonido más cercano al thrash metal en los dos siguientes, The Crusade y Shogun. En su álbum In Waves han adoptado un estilo mucho más personal, mostrando una combinación de los estilos que ha trabajado con anterioridad.",
               "country": "EEUU",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=IIgswpHNZik",
@@ -1240,7 +1240,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DYING WISH",
               "title": "",
-              "description": "DYING WISH es una banda de metalcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Dying Wish es una banda estadounidense de metalcore formada en Sacramento, California en 2016. La banda está formada por la vocalista Emma Boster, los guitarristas Sam Reynolds y Pedro Carrillo, el baterista Jeff Yambra y el bajista Jon Mackey.",
               "country": "EEUU",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=U1g8yXXOmOQ",
@@ -1258,7 +1258,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GAEREA",
               "title": "",
-              "description": "GAEREA es una banda de black metal originaria de Portugal. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Winterfylleth is an inglesa black metal band de Manchester. Since their inception in 2006, the band has released nine studio albums and have become a popular act in both the inglesa underground metal scene and the wider international metal arena. Winterfylleth are self-described as \"inglesa Heritage Black Metal\" and are often considered to be musical 'brothers-in-arms' with fellow inglesa black metal band Wodensthrone owing to the common lyrical and aesthetic themes they share.",
               "country": "Portugal",
               "genre": "Black Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=NpdWlHP_pns",
@@ -1276,7 +1276,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "RETURN TO DUST",
               "title": "",
-              "description": "RETURN TO DUST es una banda de rock originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Return to Dust es una banda estadounidense de grunge y rock alternativo formada en Los Ángeles, California. Su sonido captura la crudeza melancólica y los pesados acordes de la escena de Seattle de los noventa, con influencias de Alice in Chains.",
               "country": "EEUU",
               "genre": "Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=r_TvbkwN4I4",
@@ -1293,7 +1293,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "END IT",
               "title": "",
-              "description": "END IT es una banda de hardcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "End It es una banda de hardcore punk originaria de Baltimore, Maryland. Formados en 2017, la banda destaca por su propuesta veloz de hardcore clásico de la Costa Este, actitud desenfadada, líricas cargadas de sarcasmo y conciertos sumamente enérgicos.",
               "country": "EEUU",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=xuhVpPAx0bA",
@@ -1311,7 +1311,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LIMP BIZKIT",
               "title": "",
-              "description": "LIMP BIZKIT es una banda de nu metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Limp Bizkit es una banda estadounidense de nu metal y rap metal formada en la ciudad de Jacksonville, Florida, en 1994. Sus creadores son el líder y vocalista Fred Durst y el bajista Sam Rivers. Posteriormente se unirían el primo de Rivers John Otto como baterista, y el guitarrista Rob Waters, sustituido más tarde por Wes Borland. Un tiempo después se unió el exmiembro de House of Pain DJ Lethal, completando la formación. La banda ha vendido hasta la fecha más de 40 millones de copias en todo el mundo.",
               "country": "EEUU",
               "genre": "Nu Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=bSTX2xVpfPw",
@@ -1329,7 +1329,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLAZE THE TRAIL",
               "title": "",
-              "description": "BLAZE THE TRAIL es una banda de hardcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Los Portland Trail Blazers (en español, Pioneros de Portland), también conocidos simplemente como Blazers, son un equipo profesional de baloncesto de los Estados Unidos con sede en Portland, Oregón. ​ Seis jugadores que pertenecen al Basketball Hall of Fame han vestido la camiseta de los Blazers (Lenny Wilkens, Bill Walton, Clyde Drexler, Dražen Petrović, Arvydas Sabonis y Scottie Pippen)​ y cuatro han sido reconocido por la NBA como uno de los 50 mejores jugadores de la historia de la liga (Scottie Pippen, Lenny Wilkens, Bill Walton y Clyde Drexler).",
               "country": "España",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=6l5TIlI4tdg"
@@ -1343,7 +1343,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BORKNAGAR",
               "title": "",
-              "description": "BORKNAGAR es una banda de black metal originaria de Noruega. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Borknagar es un grupo noruego de black metal progresivo y experimental, formado en 1995 en la ciudad de Bergen. Es considerado un supergrupo, dado que a su obra han contribuido una enorme cantidad de talentos del black metal. Su estilo se caracteriza por la compleja combinación de elementos típicos del black metal noruego con elementos folclóricos y progresivos.",
               "country": "Noruega",
               "genre": "Black Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=7hxKHRqCRdA",
@@ -1361,7 +1361,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CAVALERA CONSPIRACY",
               "title": "",
-              "description": "CAVALERA CONSPIRACY es una banda de groove metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Cavalera Conspiracy es una banda estadounidense de groove metal formada en 2007 por los hermanos brasileños Max Cavalera en voz y guitarra rítmica e Igor Cavalera en batería, ambos ex-Sepultura, Marc Rizzo (guitarrista de Soulfly) y Joe Duplantier en el bajo (voz y guitarrista de Gojira). Si bien originalmente se llamaron Inflikted, la banda cambió su nombre a Cavalera Conspiracy por razones legales. Su álbum debut, Inflikted, fue lanzado por Roadrunner Records el 24 de marzo de 2008. Fue grabado en Undercity Studios en Los Ángeles.",
               "country": "EEUU",
               "genre": "Groove Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=qCMz704soB4",
@@ -1379,7 +1379,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HOUSE OF PROTECTION",
               "title": "",
-              "description": "HOUSE OF PROTECTION es una banda de punk originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "House of Protection es un dueto de rock electrónico estadounidense que se formó en Los Ángeles, California en 2024. El duo está conformado por Stephen Harrison y Aric Improta tras dejar Fever 333 en 2022. Actualmente tienen contrato con Red Bull Records.",
               "country": "EEUU",
               "genre": "Punk",
               "youtubeUrl": "https://www.youtube.com/watch?v=5QbMOtl_SRo",
@@ -1413,7 +1413,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ISCREAM NEVER GROUND",
               "title": "",
-              "description": "ISCREAM NEVER GROUND es una banda de metalcore originaria de Japón. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "ISCREAM NEVER GROUND es una banda de metalcore originaria de Japón.",
               "country": "Japón",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=H_-leVD654w",
@@ -1430,7 +1430,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DOWN TO SUFFER",
               "title": "",
-              "description": "DOWN TO SUFFER es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Poison – Box Set (Collector's Edition) lanzado en el 20 de enero de 2009, es una compilación de la banda de Hard rock, Poison. Contiene 3 discos con las canciones más exitosas de la banda.",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=7Uk_uG26VT4",
@@ -1446,7 +1446,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "STELLVRIS",
               "title": "",
-              "description": "STELLVRIS es una banda de modern metal originaria de Chequia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "STELLVRIS es una banda de modern metal originaria de Chequia.",
               "country": "Chequia",
               "genre": "Modern Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=yAnEyq8iOzY",
@@ -1463,7 +1463,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DONUTS HOLE",
               "title": "",
-              "description": "DONUTS HOLE es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Los discos ilustrados (o pictodiscos) son un tipo de discos fonográficos que muestran imágenes en su superficie de reproducción, en lugar de ser de vinilo negro o de otro color uniforme. Los coleccionistas reservan tradicionalmente el término disco ilustrado (\"picture disc\" en inglés) para denominar a aquellos discos con imágenes que se extienden al menos en parte al área ocupada por los surcos sonoros, distinguiéndolos de los discos con etiqueta ilustrada (\"picture label discs\"), que incluyen una etiqueta (a veces más grande de lo normal) con algún diseño gráfico especial, y de los discos con una cara de imagen (\"picture back discs\"), con un lado completo ilustrado pero sin contenido sonoro.",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=DqcHLdIygpk",
@@ -1479,7 +1479,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HAMLET",
               "title": "",
-              "description": "HAMLET es una banda de thrash metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Hamlet es una banda de metal alternativo, thrash metal y groove metal de Madrid (España), en activo desde 1987. El nombre del grupo se lo deben a un antiguo batería de la agrupación, que llegó a un ensayo con la obra Hamlet de William Shakespeare, y decidieron darle al grupo dicho nombre.",
               "country": "España",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=HGozdu9dfZ8",
@@ -1497,7 +1497,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "KRUDDÖ",
               "title": "",
-              "description": "KRUDDÖ es una banda de stoner originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "KRUDDÖ es una banda de stoner originaria de España.",
               "country": "España",
               "genre": "Stoner",
               "youtubeUrl": "https://www.youtube.com/watch?v=nRJeIUhuNmE",
@@ -1513,7 +1513,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "TODOMAL",
               "title": "",
-              "description": "TODOMAL es una banda de doom metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "TODOMAL es una banda de doom metal originaria de España.",
               "country": "España",
               "genre": "Doom Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=v3KnTgn_XJ8",
@@ -1529,7 +1529,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE FAMILY MEN",
               "title": "",
-              "description": "THE FAMILY MEN es una banda de rock industrial originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Kelly Family es una banda pop / folk / rock con más de cuarenta años de carrera y más de veinte millones de discos vendidos en Europa, formada por un grupo de nueve hermanos y hermanas nacidos en Estados Unidos, España, Irlanda y Alemania: Bárbara Ann (Mama, 1946-10 de octubre de 1982);​ Kathy (Kathleen Ann, 1963), Johnny (John Michael, 1967), Patricia (María Patricia, 1969), Jimmy (James Víctor, 1971), Joey (Joseph María, 1972), Barby (Barbara Ann, 1975-15 de abril de 2021),​ Paddy (Michael Patrick, 1977), Maite (Maite Star, 1979) y Angelo (Angelo Gabriele, 1981).",
               "country": "Suecia",
               "genre": "Rock Industrial",
               "youtubeUrl": "https://www.youtube.com/watch?v=Y-v9rBFMsSY",
@@ -1547,7 +1547,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "IMMINENCE",
               "title": "",
-              "description": "IMMINENCE es una banda de metalcore originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Imminence es una banda sueca de Metalcore formada en Malmö y Trelleborg en 2009.​ El grupo está formado por el vocalista Eddie Berg, el guitarrista rítmico Harald Barrett, el guitarrista principal Alex Arnoldsson, el bajista Christian Höijer y el baterista Mikael Norén.",
               "country": "Suecia",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=7b-VTfpGFUQ",
@@ -1566,7 +1566,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE GEMS",
               "title": "",
-              "description": "THE GEMS es una banda de hard rock originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Gems es un disco recopilatorio lanzado en 1988 por Aerosmith, bajo el sello Columbia. Contiene material menos comercial que el disco Greatest Hits. La banda optó por incluir más canciones \"heavy\", que gozaron de poca radiodifusión.",
               "country": "Suecia",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=CZzpb-MYrsg",
@@ -1584,7 +1584,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HAND OF JUNO",
               "title": "",
-              "description": "HAND OF JUNO es una banda de metal industrial originaria de Italia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Alice Pandini (Lodi, Italia, 27 de febrero de 1989), más conocida como Alice Lane, es una bajista y compositora italiana. Es la actual bajista de las bandas Infected Rain y Hand of Juno. Nació en Lodi, Italia, el 27 de febrero de 1989. ​ Fue una de las fundadoras de Iconist, y en 2017 se unió a la banda Killin’ Baudelaire. ​ En 2023 se unió a Infected Rain, con quienes grabaría el disco TIME al año siguiente.",
               "country": "Italia",
               "genre": "Metal Industrial",
               "youtubeUrl": "https://www.youtube.com/watch?v=0fSoJaU6rTE",
@@ -1602,7 +1602,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FRONTIERER",
               "title": "",
-              "description": "FRONTIERER es una banda de noise hardcore originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Better Lovers es una banda estadounidense de hardcore punk formada en Búfalo, Nueva York en 2023 tras la disolución de Every Time I Die, el grupo está compuesto por el vocalista Greg Puciato, los guitarristas Jordan Buckley y Will Putney, el bajista Stephen Micciche y el baterista Clayton Holyoak. A menudo catalogado como un supergrupo, la banda cuenta con miembros de Every Time I Die (Buckley, Micciche y Holyoak) y The Dillinger Escape Plan (Puciato), así como un miembro actual de Fit for an Autopsy (Putney).",
               "country": "UK",
               "genre": "Noise Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=wI4mG1MwgpM",
@@ -1620,7 +1620,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "P.O.D.",
               "title": "",
-              "description": "P.O.D. es una banda de nu metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "P.O.D. (siglas de Payable On Death) es una banda estadounidense de rapcore y nu metal originaria de San Diego, California, fundada en 1992. Aunque su música integra elementos de rock, metal, ritmos latinos y reggae, sus miembros también la han identificado con géneros como el punk. Las iniciales P.O.D. significan Pagadero al morir, un término bancario que el grupo adoptó para reflejar sus creencias cristianas.​ La formación actual está compuesta por Sonny Sandoval (voz), Traa Daniels (bajo) y Marcos Curiel (guitarra).",
               "country": "EEUU",
               "genre": "Nu Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=_ocD7BsrjrU",
@@ -1639,7 +1639,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CWFEN",
               "title": "",
-              "description": "CWFEN es una banda de doom metal originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Sorrows is the debut studio album by Scottish doom metal band Cwfen. It was released on 30 May 2025, through New Heavy Sounds. Mastered by James Plotkin, it consists of ten tracks with a total runtime of approximately forty-three minutes. Seven tracks range between four and six minutes each, while the remaining three \"Fragment\" tracks are under a minute each. The album was produced by Kevin Hare and the band, composed of lead vocalist Agnes Alder, guitarist Guy DeNuit, drummer Rös Ranquinn, and bassist Mary Thomas Baker.",
               "country": "UK",
               "genre": "Doom Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=R4ElqI1RZGM",
@@ -1657,7 +1657,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DISTANT",
               "title": "",
-              "description": "DISTANT es una banda de deathcore originaria de Paises Bajos. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Distant Project es una banda de Synth pop surgida en el año 2002, Está formada por Fab Soutus (Phoenix – AZ - US) en sintetizadores, bajos, programaciones y voz, Wal Yunker (Paraná - E. Ríos - ARG), sintetizadores, programación y baterías, y Clau Spiritelli (Paraná - E. Ríos - ARG), guitarras. La denominación de la banda proviene precisamente por la particularidad de vivir todos en ciudades diferentes.",
               "country": "Paises Bajos",
               "genre": "Deathcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=PHZFd5mKPks",
@@ -1675,7 +1675,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GRIDIRON",
               "title": "",
-              "description": "GRIDIRON es una banda de hardcore melódico originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Gridiron es una banda estadounidense de hardcore y rap metal formada en Pensilvania. Fusionando el hardcore más pesado y directo con rimas de rap y ritmos machacones, se han posicionado como una fuerza emergente en la escena underground americana.",
               "country": "EEUU",
               "genre": "Hardcore Melódico",
               "youtubeUrl": "https://www.youtube.com/watch?v=t3yEQRc5tPc",
@@ -1692,7 +1692,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MASTODON",
               "title": "",
-              "description": "MASTODON es una banda de metal progresivo originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Mastodon es una banda estadounidense de metal progresivo fundada el 13 de enero de 1999 por los guitarristas Brent Hinds y Bill Kelliher, el batería Brann Dailor y el bajista Troy Sanders en Atlanta. Aunque comenzaron como quinteto, con el vocalista Eric Saner, la banda se caracteriza por ser un cuarteto en el que los miembros comparten las labores vocales en los distintos temas. Con la excepción de su álbum debut, Remission, todos los trabajos de la banda han entrado en el Billboard 200; a destacar los top 10 alcanzados por The Hunter y Once More 'Round the Sun.",
               "country": "EEUU",
               "genre": "Metal Progresivo",
               "youtubeUrl": "https://www.youtube.com/watch?v=WTQR-RvexVk",
@@ -1710,7 +1710,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "AA WILLIAMS",
               "title": "",
-              "description": "AA WILLIAMS es una banda de dark folk originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "La Asociación Atlética Banda Norte, también conocida por sus siglas AABN, es una entidad polideportiva argentina con sede en la ciudad de Río Cuarto, Córdoba. Pese a su carácter polideportivo, que le lleva a tener secciones de disciplinas como el fútbol, el tenis o la gimnasia artística, su principal sección es la de básquet masculino, de carácter profesional y que compitió en el Torneo Nacional de Ascenso, la segunda competición en importancia del baloncesto argentino desde la temporada 2010/11 hasta el TNA 2013/14 inclusive.",
               "country": "UK",
               "genre": "Dark Folk",
               "youtubeUrl": "https://www.youtube.com/watch?v=nqD7OauxaTo",
@@ -1726,7 +1726,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DOGMA",
               "title": "",
-              "description": "DOGMA es una banda de heavy metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Dogma SS fue una banda de hardcore metal originaria de la ciudad de Lima (Perú), que existió entre los años 1993 y 1996, es decir, durante los años de transición inmediatamente posteriores al fin de la movida del rock subterráneo en septiembre de 1992.",
               "country": "EEUU",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=1f6GEWdSz-s",
@@ -1743,7 +1743,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CONVERGE",
               "title": "",
-              "description": "CONVERGE es una banda de hardcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Converge es una banda de Hardcore proveniente de Boston. Fue formada en 1990 por el vocalista Jacob Bannon, el guitarrista Kurt Ballou, el bajista Jeff Feinburg y el batería Damon Bellorado. En la actualidad continúan Jacob Bannon y Kurt Ballou y toca la batería Ben Koller y el bajo Nate Newton. Es uno de los grupos más prolíficos y que más influencia ha ejercido en la historia reciente del hardcore. Su sonido es un llamativa y original mezcla de elementos del hardcore punk con los de metal extremo.",
               "country": "EEUU",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=qxelfxGa2oo",
@@ -1762,7 +1762,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MARILYN MANSON",
               "title": "",
-              "description": "MARILYN MANSON es una banda de metal industrial originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Marilyn Manson es una banda estadounidense de metal industrial/alternativo​ formada en el año 1989 por el cantante homónimo Marilyn Manson y el guitarrista Scott Putesky, inicialmente bajo el nombre de Marilyn Manson & The Spooky Kids. ​ Sin embargo, aunque su supuesta influencia se desmintió, decidieron alejarse de los escenarios hasta el año 2000, cuando regresaron con el disco Holy Wood (In the Shadow of the Valley of Death).",
               "country": "EEUU",
               "genre": "Metal Industrial",
               "youtubeUrl": "https://www.youtube.com/watch?v=yjWtkQSF8dA",
@@ -1780,7 +1780,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE VINTAGE CARAVAN",
               "title": "",
-              "description": "THE VINTAGE CARAVAN es una banda de hard rock originaria de Islandia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Vintage Caravan es una banda de rock de Álftanes, Islandia. La banda fue formada en 2006 por Óskar Logi Ágústsson y Guðjón Reynisson antes de que el bajista Alexander Örn Númason se uniera después del primer álbum de estudio. A partir de 2011, la banda ha lanzado cinco álbumes de estudio y actualmente están firmados con Napalm Records.",
               "country": "Islandia",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=7a5loP5tjp8",
@@ -1798,7 +1798,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLOOD INCANTATION",
               "title": "",
-              "description": "BLOOD INCANTATION es una banda de death metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Incantation es una banda estadounidense de death metal que fue formada por John McEntee y Paul Lendley en 1989. Son uno de los líderes en la escena del death metal neoyorquino junto con Suffocation, Mortician e Immolation aunque actualmente la banda reside en Johnstown, Pensilvania. A la fecha, la banda ha lanzado trece larga duración, dos álbumes en vivo, cuatro EP’s, dos singles, tres splits, un DVD y tres demos. Durante más de 30 años, Incantation se ha mantenido constantemente como una de las bandas underground más influyentes y respetadas del género.",
               "country": "EEUU",
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=O9WYceFbHw4",
@@ -1816,7 +1816,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ELWOOD STRAY",
               "title": "",
-              "description": "ELWOOD STRAY es una banda de hardcore originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "ZZ Top es una banda estadounidense de blues rock y hard rock formada en 1969 en Houston, Texas. Este power trio lo conforman Billy Gibbons en la guitarra y la voz, Dusty Hill en el bajo, los teclados y la voz, y Frank Beard en la batería. Tienen el mérito de ser uno de los pocos grupos de rock que todavía conservaba sus miembros originales después de cincuenta años (hasta la muerte de Hill en el 2021), y además de haber mantenido un número casi similar de años al mismo mánager y productor, Bill Ham.",
               "country": "Alemania",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=JVF6e_LSO2k",
@@ -1909,7 +1909,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "TAILGUNNER",
               "title": "",
-              "description": "TAILGUNNER es una banda de heavy metal originaria de Reino Unido. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Tailgunner es una banda de heavy metal originaria de Reino Unido. Inspirados por la clásica Nueva Ola del Heavy Metal Británico (NWOBHM), su propuesta musical destaca por guitarras gemelas veloces, agudos falsetes y temáticas bélicas e históricas.",
               "country": "Reino Unido",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=nnsTQq_8mR8",
@@ -1927,7 +1927,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HELEVEN",
               "title": "",
-              "description": "HELEVEN es una banda de metal alternativo originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Heleven es una banda española de metal alternativo y progresivo fundada en Granada en 2016. Su sonido destaca por su complejidad técnica, riffs afinados en tonos bajos y una mezcla de pasajes melódicos oscuros con momentos de gran agresividad.",
               "country": "España",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=ycFGTB04mO0"
@@ -1941,7 +1941,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THUNDERMOTHER",
               "title": "",
-              "description": "THUNDERMOTHER es una banda de hard rock originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Thundermother es una banda sueca de hard rock clásico fundada en Växjö en 2009 por la guitarrista Filippa Nässil. Con un sonido fuertemente influenciado por AC/DC y Motörhead, el grupo destaca por su rock enérgico y directo, coros potentes y sus giras mundiales.",
               "country": "Suecia",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=gyL8pHR2UPk",
@@ -1959,7 +1959,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "KILLUS",
               "title": "",
-              "description": "KILLUS es una banda de metal industrial originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Killus ( /kɪləs/ ) es una banda de metal industrial formada en 1997 en Villarreal, España. Se caracteriza por su sonido agresivo, inspirado por bandas como Nine Inch Nails, Marilyn Manson, White Zombie o Ministry, y por su estética oscura y teatral, que combina el metal con elementos electrónicos y visuales impactantes.​ Después de haber tenido diferentes configuraciones, actualmente está formada por cuatro miembros: Ruk como guitarrista, Premutoxx al bajo, Javi Ssagittar voz principal y Anhell Stixx a la batería.",
               "country": "España",
               "genre": "Metal Industrial",
               "youtubeUrl": "https://www.youtube.com/playlist?list=OLAK5uy_l9fRGqB0eRiw0WBkqiKQ3nEV5ezIc87qY",
@@ -1977,7 +1977,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ORBIT CULTURE",
               "title": "",
-              "description": "ORBIT CULTURE es una banda de death metal melódico originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Orbit Culture es una banda de death metal melódico sueco de Eksjö, formada en 2013. La banda está conformado por el vocalista y guitarrista rítmico Niklas Karlsson, al guitarrista principal Richard Hansson, al bajista Fredrik Lennartsson y al baterista Christopher Wallerstedt. Entre sus antiguos miembros se encuentran el guitarrista principal Maximilian Zinsmeister, el bajista Christoffer Olsson y el baterista Markus Bladh. La banda ha publicado cinco álbumes de estudio y cuatro EP.",
               "country": "Suecia",
               "genre": "Death Metal Melódico",
               "youtubeUrl": "https://www.youtube.com/watch?v=Y5SpGQMoaUU",
@@ -1995,7 +1995,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HADADANZA",
               "title": "",
-              "description": "HADADANZA es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Leyendas del Rock es un festival de música heavy metal y rock duro que se celebra anualmente desde 2006. ​ En los inicios del festival la gran mayoría de bandas que actuaban eran españolas, aunque en la actualidad participan muchas bandas del panorama internacional. El festival no tiene una duración fija, y mientras que el primer año todos los conciertos se celebraron en un solo día, el resto de ediciones han durado dos, tres o cuatro días.",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=A-nN5-V2q-w"
@@ -2009,7 +2009,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BLACK LABEL SOCIETY",
               "title": "",
-              "description": "BLACK LABEL SOCIETY es una banda de heavy metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Black Label Society es una banda estadounidense de metal proveniente de Los Ángeles, California (USA), formada por el guitarrista Zakk Wylde en 1998 bajo el nombre inicial de Hell's Kitchen. A la fecha la banda ha publicado 12 álbumes de estudio, dos discos en vivo, dos compilados, y tres DVDs.​",
               "country": "EEUU",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=l47At7wrhyI",
@@ -2026,7 +2026,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SIGNS OF THE SWARM",
               "title": "",
-              "description": "SIGNS OF THE SWARM es una banda de deathcore originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Avatar es una banda sueca de metal, fundada en Gotemburgo en el año 2001. En 2004 publicó su primer demo titulado Personal Observations, seguido de un EP en ese mismo año llamado 4 Reasons to Die.​ En 2006 lanzaron su álbum debut, Thoughts of No Tomorrow. Hasta la fecha han publicado nueve álbumes de estudio, siendo Don't Go In The Forest el más reciente de ellos.",
               "country": "EEUU",
               "genre": "Deathcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=kYJ_U9L15-8",
@@ -2044,7 +2044,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SAVATAGE",
               "title": "",
-              "description": "SAVATAGE es una banda de metal progresivo originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Savatage es un grupo estadounidense de heavy metal. Fue fundado por los hermanos Jon y Criss Oliva en 1979. La banda es reconocida por grabar algunos álbumes conceptuales. Sus orígenes pueden ser atribuidos al heavy metal más clásico, influenciados por bandas como Judas Priest, Iron Maiden, Dio, Black Sabbath y Rush, lo que se puede apreciar claramente en su álbum debut, Sirens.​​ El guitarrista Criss Oliva falleció en un accidente automovilístico el 17 de octubre de 1993.​",
               "country": "EEUU",
               "genre": "Metal Progresivo",
               "youtubeUrl": "https://www.youtube.com/watch?v=k-a8H8758Dk",
@@ -2062,7 +2062,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DEATHBATS",
               "title": "",
-              "description": "DEATHBATS es una banda de tributo a7x originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Avenged Sevenfold (abbreviated as A7X) is an estadounidense heavy metal band de Huntington Beach, California, formada en 1999. The band's current lineup consists of vocalist M. Shadows, guitarists Zacky Vengeance and Synyster Gates, bassist Johnny Christ, and drummer Brooks Wackerman. Avenged Sevenfold are known for their diverse rock sound and dramatic imagery in album covers and merchandise. The band emerged with a metalcore sound on their debut album Sounding the Seventh Trumpet; they largely continued this sound through their second album Waking the Fallen.",
               "country": "España",
               "genre": "Tributo A7X",
               "youtubeUrl": "https://www.youtube.com/watch?v=jW93n2e7cCA"
@@ -2076,7 +2076,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SLAUGHTER TO PREVAIL",
               "title": "",
-              "description": "SLAUGHTER TO PREVAIL es una banda de deathcore originaria de Rusia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Slaughter to Prevail es una banda rusa de deathcore formada en 2014, originaria de la ciudad de Ekaterimburgo y actualmente con sede en Orlando, Florida.​ El grupo debutó con su EP titulado Chapters of Misery en 2015 y dos años después lanzó Misery Sermon. Su segundo álbum, Kostolom, fue lanzado en 2021. Actualmente, la banda se encuentra en el sello Sumerian Records y ha realizado giras por EE. UU., Latinoamérica, Europa,​​ y Asia.​",
               "country": "Rusia",
               "genre": "Deathcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=QrpI-1TmOqM",
@@ -2094,7 +2094,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CHAINED SAINT",
               "title": "",
-              "description": "CHAINED SAINT es una banda de thrash metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Chained Saint es una banda estadounidense de thrash metal formada en Florida. Compuesta por jóvenes músicos apasionados por el metal clásico, su música revive la velocidad y agresión del thrash clásico de la Bay Area de los años ochenta.",
               "country": "EEUU",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=_UBlWbLTVSE",
@@ -2112,7 +2112,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SEPULTURA",
               "title": "",
-              "description": "SEPULTURA es una banda de thrash metal originaria de Brasil. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "D. ​ La formación actual de Sepultura está integrada por el bajista Paulo Jr.",
               "country": "Brasil",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=c7Z8Ww1EmMk",
@@ -2130,7 +2130,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "PROM KINKS",
               "title": "",
-              "description": "PROM KINKS es una banda de rock originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Prom Kinks es una banda de rock alternativo originaria de España. Su estilo combina riffs enérgicos de guitarra con melodías accesibles y pegadizas, destacando por un sonido moderno e influencias del rock de garaje internacional.",
               "country": "España",
               "genre": "Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=i2SfKTf02gk",
@@ -2147,7 +2147,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SALDUIE",
               "title": "",
-              "description": "SALDUIE es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Salduie (en escritura íbera ) es una banda española de folk metal originaria de la ciudad de Zaragoza y fundada en el año 2010. Sus letras se caracterizan por tratar sobre las culturas prerromanas de la península ibérica, incluyendo los celtíberos, los iberos, los lusitanos y la conquista romana.​",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=ZmB5Pqv2gWE",
@@ -2177,7 +2177,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CREEPER",
               "title": "",
-              "description": "CREEPER es una banda de goth punk originaria de Reino Unido. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Creeper es una banda inglesa de punk rock formada en 2014, conformado por el vocalista Will Gould, el guitarrista Ian Miles, la tecladista y segunda vocalista Hannah Greenwood, el bajista Sean Scott y el baterista Jake Fogarty. Creeper lanzó su auto-titulado debut (EP) Creeper en 2014, que fue seguido por The Callous Heart y The Stranger en Roadrunner Records en 2015 y 2016, respectivamente.",
               "country": "Reino Unido",
               "genre": "Goth Punk",
               "youtubeUrl": "https://www.youtube.com/watch?v=cHIA1JcBBZ4",
@@ -2195,7 +2195,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "EKYRIAN",
               "title": "",
-              "description": "EKYRIAN es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "EKYRIAN es una banda de folk metal originaria de España.",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=NSMn_Z_45CM"
@@ -2209,7 +2209,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MUSHROOMHEAD",
               "title": "",
-              "description": "MUSHROOMHEAD es una banda de metal alternativo originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Mushroomhead es una banda estadounidense de metal alternativo e industrial formada en Cleveland, Ohio, en 1993. Conocidos por sus llamativas máscaras de temática teatral y sus uniformes oscuros, fusionan géneros que van del nu metal al avant-garde.",
               "country": "EEUU",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=7iJ7oj-dAVY",
@@ -2227,7 +2227,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ANEUMA",
               "title": "",
-              "description": "ANEUMA es una banda de death metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Art Gates Records es un sello discográfico independiente español fundado en mayo de 2012 en la provincia de Valencia.​ La discográfica está especializada principalmente en la producción, promoción y distribución internacional de música metal y sus diferentes subgéneros.​",
               "country": "España",
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc",
@@ -2244,7 +2244,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "NORTHLANE",
               "title": "",
-              "description": "NORTHLANE es una banda de metalcore originaria de Australia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Northlane es una banda de metalcore procedente de Sídney, Australia; formada en el año 2009. La banda cuenta con los guitarristas Jon Deiley y Josh Smith, el bajista Brendon Padjasek, el batería Nic Pettersen y el vocalista Marcus Bridge, quién reemplazó al vocalista fundador Adrian Fitipaldes a finales de 2014. La banda ha publicado seis álbumes de estudio: Discoveries (2011), Singularity (2013), Node (2015), Mesmer (2017), Alien (2019), y Obsidian (2022). En los ARIA Music Awards of 2015 el grupo ganó el premio al \"Mejor álbum de hard rock o heavy metal\".",
               "country": "Australia",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=h4e40N3We-U",
@@ -2262,7 +2262,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LÁNDEVIR",
               "title": "",
-              "description": "LÁNDEVIR es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Lándevir es un grupo español de folk metal con influencias de power metal y rock celta fundado en 1998 en Elda (Alicante).",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=cg0BbHDZQ9Y"
@@ -2276,7 +2276,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DARK TRANQUILLITY",
               "title": "",
-              "description": "DARK TRANQUILLITY es una banda de death metal melódico originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Dark Tranquillity es una banda de death metal melódico formada en 1989 en Gotemburgo, Suecia. Poseen una extensa carrera desde 1989 hasta nuestros días, en la que han sido nominados a diversos premios, entre ellos el Grammy por su álbum Projector. Están íntimamente ligados a la historia de In Flames ya que Niklas Sundin, uno de los miembros de Dark Tranquillity, escribió las letras de dos álbumes de In Flames, Whoracle y The Jester Race. Además, desde 1993, el vocalista original de In Flames es el actual de Dark Tranquillity y viceversa.",
               "country": "Suecia",
               "genre": "Death Metal Melódico",
               "youtubeUrl": "https://www.youtube.com/watch?v=pBsVsLRSgfE",
@@ -2294,7 +2294,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "INJECTOR",
               "title": "",
-              "description": "INJECTOR es una banda de thrash metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Art Gates Records es un sello discográfico independiente español fundado en mayo de 2012 en la provincia de Valencia.​ La discográfica está especializada principalmente en la producción, promoción y distribución internacional de música metal y sus diferentes subgéneros.​",
               "country": "España",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=UzvtL6WFfk4",
@@ -2310,7 +2310,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GODSMACK",
               "title": "",
-              "description": "GODSMACK es una banda de metal alternativo originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Godsmack es una banda estadounidense de metal alternativo originaria de Lawrence, Massachusetts, formada en 1995 e integrada por el líder, vocalista y compositor principal de la banda Sully Erna, el guitarrista Tony Rombola, el bajista Robbie Merrill y el batería Shannon Larkin. Desde sus inicios, Godsmack ha lanzado seis álbumes de estudio, un EP, cuatro DVD, un álbum recopilatorio, y un álbum en directo (Live and Inspired). La banda ha tenido tres álbumes números uno consecutivos (Faceless, IV y The Oracle) en la lista Billboard 200.",
               "country": "EEUU",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=fG9F0IwwJeU",
@@ -2328,7 +2328,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "EVO",
               "title": "",
-              "description": "EVO es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "EVO es una banda de heavy metal originaria de España.",
               "country": "España",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=IMqsA0G2uoI",
@@ -2345,7 +2345,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ARCH ENEMY",
               "title": "",
-              "description": "ARCH ENEMY es una banda de death metal melódico originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Arch Enemy es una banda sueca de death metal melódico formada en Halmstad en 1995. En sus inicios exploró el death metal original, pero sufrió una transformación musical después del cambio de integrantes que tuvo, comenzando a abarcar un sonido más melódico que continúa vigente a día de hoy. Sus letras hablan de rebelión y suelen criticar a la sociedad y a la religión cristiana​ La banda es procedente de Suecia, formada en 1996 por el guitarrista Michael Amott​ junto al vocalista Johan Liiva. La banda ha publicado diez álbumes de estudio, dos en directo, tres EP y dos DVD.",
               "country": "Suecia",
               "genre": "Death Metal Melódico",
               "youtubeUrl": "https://www.youtube.com/watch?v=cJBmX5aU1DA",
@@ -2363,7 +2363,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CELTIBEERIAN",
               "title": "",
-              "description": "CELTIBEERIAN es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Jonne Järvelä (n. 3 de junio de 1974) es el vocalista y guitarrista de la banda finlandesa Korpiklaani, y del proyecto anterior Shaman. Es conocido en la escena Folk Metal por su yoiking. Además contribuyó en los álbumes de las bandas Finntroll (Jaktens Tid) y Skiltron (Beheading The Liars).",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=M8_wLm_5s_Y"
@@ -2377,7 +2377,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DARTAGNAN",
               "title": "",
-              "description": "DARTAGNAN es una banda de folk rock originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "dArtagnan es una banda alemana de folk rock, proveniente de Núremberg, liderada por el cantante Ben Metzner. Fundada en 2015, la agrupación mezcla géneros de música folclórica europea con un sonido Hard rock e incluso Heavy metal.",
               "country": "Alemania",
               "genre": "Folk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=KPlYOA8UMrs",
@@ -2395,7 +2395,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "BOLU2 DEATH",
               "title": "",
-              "description": "BOLU2 DEATH es una banda de metalcore/electronic originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Resurrection Fest is a rock music festival that takes place in Viveiro, region of Lugo, Spain. This festival has been held annually since 2006 during July or early August and features mainly heavy metal, hardcore punk and punk rock bands. Since its emergence it has become one of the most important music festivals in Spain due to its genre specialization. 3 million euros in the region. 15-million euros impact.",
               "country": "España",
               "genre": "Metalcore/Electronic",
               "youtubeUrl": "https://www.youtube.com/watch?v=Fz6qnMiu4LQ",
@@ -2413,7 +2413,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LÈPOKA",
               "title": "",
-              "description": "LÈPOKA es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Art Gates Records es un sello discográfico independiente español fundado en mayo de 2012 en la provincia de Valencia.​ La discográfica está especializada principalmente en la producción, promoción y distribución internacional de música metal y sus diferentes subgéneros.​",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=Yk7noXH_9do",
@@ -2445,7 +2445,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CHEZ KANE",
               "title": "",
-              "description": "CHEZ KANE es una banda de hard rock originaria de Reino Unido. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Chez Kane es una vocalista y compositora británica de hard rock y AOR. Conocida también como la vocalista de la banda familiar Kane'd, ha destacado con sus álbumes en solitario que reviven el espíritu festivo y los coros del rock de los ochenta.",
               "country": "Reino Unido",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=Oc-p6U_uA3E",
@@ -2463,7 +2463,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "XERIA",
               "title": "",
-              "description": "XERIA es una banda de metal sinfónico originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Art Gates Records es un sello discográfico independiente español fundado en mayo de 2012 en la provincia de Valencia.​ La discográfica está especializada principalmente en la producción, promoción y distribución internacional de música metal y sus diferentes subgéneros.​",
               "country": "España",
               "genre": "Metal Sinfónico",
               "youtubeUrl": "https://www.youtube.com/watch?v=Ow3K7MopO2k",
@@ -2479,7 +2479,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FUTURE PALACE",
               "title": "",
-              "description": "FUTURE PALACE es una banda de post-hardcore originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Future Palace es una banda alemana de post-hardcore y metal alternativo formada en Berlín en 2018. El trío, liderado por la vocalista Maria Lessing, destaca por su sonido emotivo que aborda líricamente temáticas como la salud mental y la superación.",
               "country": "Alemania",
               "genre": "Post-Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=mJ47ISNx0lE",
@@ -2497,7 +2497,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "WINGS OF STEEL",
               "title": "",
-              "description": "WINGS OF STEEL es una banda de hard rock originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Wings of Steel es una banda estadounidense de hard rock y heavy metal clásico formada en Los Ángeles, California, en 2019. Liderados por el vocalista Leo Valeri, su música destaca por sus agudos falsetes y riffs reminiscentes de la NWOBHM.",
               "country": "EEUU",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=iwbUG29dDd4",
@@ -2515,7 +2515,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "THE BABOON SHOW",
               "title": "",
-              "description": "THE BABOON SHOW es una banda de punk rock originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "The Baboon Show es una banda sueca de punk rock formada en Estocolmo en 2003. Famosos por sus giras incansables y la increíble presencia escénica de su líder Cecilia Boström, su sonido mezcla punk, rock clásico y letras con un gran contenido político.",
               "country": "Suecia",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=r9lhoupFbKw",
@@ -2533,7 +2533,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "AGAINST MYSELF",
               "title": "",
-              "description": "AGAINST MYSELF es una banda de metal sinfónico originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Against Myself es una banda española de metal sinfónico formada en Ciudad Real en 2009. Su estilo destaca por la instrumentación orquestal de teclado, guitarras pesadas y la virtuosa voz femenina de su cantante, con atmósferas de metal progresivo.",
               "country": "España",
               "genre": "Metal Sinfónico",
               "youtubeUrl": "https://www.youtube.com/watch?v=L8sLjb3nGGM",
@@ -2551,7 +2551,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SARATOGA",
               "title": "",
-              "description": "SARATOGA es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Saratoga es una banda de heavy metal española originaria de Madrid. Fue formada en 1992 por el bajista Niko del Hierro y el guitarrista Jero Ramiro. La banda ha contado con diversas formaciones. La última la conforman Niko del Hierro (único miembro que ha permanecido en el grupo durante toda su historia), Tete Novoa, Charlie Parra del Riego y Arnau Martí.",
               "country": "España",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=8nRdOSVX2VI",
@@ -2567,7 +2567,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "EMPLOYED TO SERVE",
               "title": "",
-              "description": "EMPLOYED TO SERVE es una banda de metalcore originaria de Reino Unido. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Employed to Serve es una banda británica de metalcore y mathcore formada en Woking, Inglaterra, en 2013. Su música combina la pesadez de los acordes de afinación baja con estructuras rítmicas complejas y las potentes voces de Justine Jones.",
               "country": "Reino Unido",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=Ut1AcpPPOS0",
@@ -2585,7 +2585,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "STRATOVARIUS",
               "title": "",
-              "description": "STRATOVARIUS es una banda de power metal originaria de Finlandia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Stratovarius es una banda finlandesa de power metal melódico con elementos de música clásica, formada en 1984 en la ciudad de Helsinki por Tuomo Lassila, John Vihervä y Staffan Stråhlman bajo el nombre Black Water. Ha publicado dieciséis álbumes de estudio, seis DVD y seis álbumes en vivo. ​ La influencia de Stratovarius en la década de 1990 tuvo un enorme impacto en la escena europea, con su estilo veloz, melódico y virtuoso, inspiró a bandas como Sonata Arctica, DragonForce,​ Galneryus, Heavenly, Children of Bodom,​ Wintersun,​ Twilight Force,​ Majestica,​ Nightwish, entre otras.",
               "country": "Finlandia",
               "genre": "Power Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=kG4uQ6Tk7fY",
@@ -2603,7 +2603,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DAERIA",
               "title": "",
-              "description": "DAERIA es una banda de metal alternativo originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Art Gates Records es un sello discográfico independiente español fundado en mayo de 2012 en la provincia de Valencia.​ La discográfica está especializada principalmente en la producción, promoción y distribución internacional de música metal y sus diferentes subgéneros.​",
               "country": "España",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=OdtC4CsbydA",
@@ -2621,7 +2621,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "IN FLAMES",
               "title": "",
-              "description": "IN FLAMES es una banda de metal alternativo originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "In Flames es una banda de death metal melódico. Formada en Gotemburgo, Suecia en 1990, es considerada pionera e influyente en el género. Desde la concepción de la banda en 1990, han recibido numerosos premios, publicado doce álbumes de estudio y un DVD en vivo. La banda ha gozado de mayor popularidad en los últimos años, tanto en su nativa Suecia como internacionalmente. La banda ha vendido más de tres millones de discos en todo el mundo.​",
               "country": "Suecia",
               "genre": "Metal Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=qnLunQEcMn0",
@@ -2639,7 +2639,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "MIND DRILLER",
               "title": "",
-              "description": "MIND DRILLER es una banda de metal industrial originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Mind Driller es una banda española de metal industrial originaria de Alicante, fundada en el año 2011 por el guitarrista Javier Oriente (integrante de los grupos Blood, Hasswut y Stoneheads). Q. a las voces, Javix a la guitarra, Pharaoh al bajo y Reimon a la batería. El estilo musical de \"Mind Driller\" es definido como base de metal industrial variado y potente que a diferencia de otras bandas del mismo género cuenta con tres vocalistas.",
               "country": "España",
               "genre": "Metal Industrial",
               "youtubeUrl": "https://www.youtube.com/watch?v=j51TIMwxriI",
@@ -2657,7 +2657,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SAUROM",
               "title": "",
-              "description": "SAUROM es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Saurom (anteriormente denominado Saurom Lamderth)​ es un grupo español de folk metal. Fue fundado en 1996 por Narci Lara y Antonio Ruíz. Denominan su estilo como «juglar metal», un conglomerado de música metal, folk y celta, aderezado con letras basadas en la literatura, principalmente en leyendas, poemas, romances y cuentos tradicionales, con un trasfondo crítico, cultural y social. Algunas de sus letras tienen una temática relacionada con la novela El Señor de los Anillos, de J. R. R. Tolkien y con la literatura clásica y tradicional andaluza.",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=N_8V6XW-n_w",
@@ -2673,7 +2673,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "JORDI WILD DJ SET",
               "title": "",
-              "description": "JORDI WILD DJ SET es una banda de dj set originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Jordi Wild DJ Set es el proyecto de música de baile y rock presentado por el conocido creador de contenido digital, podcaster y youtuber español Jordi Wild. Sus sesiones combinan el rock, metal y punk clásicos con mezclas de música electrónica de alta energía.",
               "country": "España",
               "genre": "DJ Set",
               "youtubeUrl": "https://www.youtube.com/watch?v=bV0FxNR0yhQ",
@@ -2689,7 +2689,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DARK MOOR",
               "title": "",
-              "description": "DARK MOOR es una banda de metal sinfónico originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "​ La agrupación fue de las primeras bandas españolas de power metal, y son influenciados por grupos como Stratovarius, Blind Guardian y Helloween. El grupo ha ido evolucionando su sonido, teniendo una fuerte inspiración de música clásica durante sus primeros álbumes, pasando a un sonido de metal sinfónico e incluso folk metal en sus últimos trabajos. Las temáticas de sus canciones suelen hablar de novelas clásicas, personajes históricos, antiguas leyendas y mitos.",
               "country": "España",
               "genre": "Metal Sinfónico",
               "youtubeUrl": "https://www.youtube.com/watch?v=kR2eX4uQ32c",
@@ -2720,7 +2720,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GUILT TRIP",
               "title": "",
-              "description": "GUILT TRIP es una banda de hardcore originaria de Reino Unido. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Nero es un trío británico de música electrónica procedente de Londres, Inglaterra. Está integrado por los productores Daniel Stephens y Joseph Ray junto a su vocalista, Alana Watson, como miembro estable de la banda. ​ También se los suele nombrar Nero UK para evitar confusiones con bandas del mismo nombre. El 6 de diciembre de 2010, Nero fue anunciado como uno de los nominados de la encuesta Sound of 2011 realizada por la BBC.",
               "country": "Reino Unido",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=O0dlwcJL-aE"
@@ -2734,7 +2734,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DEATH AND LEGACY",
               "title": "",
-              "description": "DEATH AND LEGACY es una banda de death metal melódico originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Testament (estilizado TestAmenT) es una banda estadounidense de thrash metal de Berkeley, California. Hasta la fecha han publicado trece álbumes de estudio, cuatro álbumes en vivo y seis álbumes recopilatorios, tiene tres discos que entraron en el top-50 en las listas inglesas y en 1999 con el disco The Gathering entró en el top-50 alemán.",
               "country": "España",
               "genre": "Death Metal Melódico",
               "youtubeUrl": "https://www.youtube.com/watch?v=eiEl-mbPpj4",
@@ -2752,7 +2752,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "EIHWAR",
               "title": "",
-              "description": "EIHWAR es una banda de pagan folk originaria de Francia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "a Festival) is a music and art festival, held in Sibiu, a town in Romania. The festival, one of the most important projects developed by ARTmania, was first organized in the summer of 2006 and has been held every summer since. The main attraction of the festival is the music: bands perform in the Large Square (Piaţa Mare) during the first two days weekend of the festival. Major bands have performed at the festival including Nightwish, HIM, Opeth, Amorphis, Anathema, Lacrimosa, Tiamat, My Dying Bride and Within Temptation and the festival grows each year.",
               "country": "Francia",
               "genre": "Pagan Folk",
               "youtubeUrl": "https://www.youtube.com/watch?v=Nf_LAdo_oiE",
@@ -2770,7 +2770,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FALLEN AT DAWN",
               "title": "",
-              "description": "FALLEN AT DAWN es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Fallen at Dawn es una banda española de metalcore formada en Madrid. Con influencias de grupos de metal moderno y post-hardcore, la formación destaca por su directo potente, alternando voces melódicas y guturales con riffs de guitarra agresivos y bases rítmicas contundentes.",
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0",
@@ -2786,7 +2786,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DEICIDE",
               "title": "",
-              "description": "DEICIDE es una banda de death metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Deicide (en español Deicidio del latín deicīda, «dícese de los que dieron muerte a un dios»), es una banda estadounidense de death metal originaria de Tampa, Florida, formada en 1987 por el vocalista y bajista Glen Benton, los hermanos y guitarristas Eric y Brian Hoffman, y el baterista Steve Asheim. ​ La polémica ha acompañado a la banda desde sus inicios, dado lo explícito de sus letras anticristianas y satánicas, que hacen una fuerte crítica hacia el mundo moderno y la idea de Dios, como por varias declaraciones y hechos diversos llevados a cabo por su líder Benton.",
               "country": "EEUU",
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=-l-OiglL460",
@@ -2804,7 +2804,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LATZEN",
               "title": "",
-              "description": "LATZEN es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Su Ta Gar es un grupo de heavy metal formado en 1987 en la ciudad de Éibar. En castellano, \"Su ta Gar\" podría traducirse literalmente como \"fuego y llama\", pero en realidad es una locución vasca con más de un significado. El significado más importante es similar a otras locuciones como \"Jo ta Ke\" (una de sus canciones más conocidas) o \"buru-belarri\", que vienen a usarse en euskera como equivalentes a \"Dale duro\", \"Con ahínco\" o \"Sin descanso\". Sugieren una gran intensidad en la acción y una prolongación en el tiempo, a pesar de toda resistencia o dificultad.",
               "country": "España",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=WNmUqMR_hkE",
@@ -2820,7 +2820,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HEAVEN SHALL BURN",
               "title": "",
-              "description": "HEAVEN SHALL BURN es una banda de melodic death metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Heaven Shall Burn es una banda alemana de metal extremo proveniente de Saalfeld, Alemania. Combinan la agresividad del metal con letras antirracistas y contra la injusticia social. Cuatro miembros de la banda son veganos y Straight Edge, siendo Alexander Dietz (guitarra) el único integrante de la banda que no ha adoptado estas ideas. Sin embargo, esto no parece ser motivo de discordia dentro de la misma. Su estilo musical es descrito como una mezcla de death metal melódico y metalcore.",
               "country": "Alemania",
               "genre": "Melodic Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=TTkZt8r2lko",
@@ -2853,7 +2853,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HELLOWEEN",
               "title": "",
-              "description": "HELLOWEEN es una banda de power metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Helloween es una influyente banda alemana de power metal fundada en Hamburgo en 1984. Considerados como los padres fundadores del género power metal, destacan por sus guitarras gemelas a alta velocidad, coros épicos y melodías alegres.",
               "country": "Alemania",
               "genre": "Power Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=LZ6YKR6K_zU",
@@ -2871,7 +2871,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "TEN56.",
               "title": "",
-              "description": "TEN56. es una banda de deathcore originaria de Francia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "ten56. es una banda francesa de deathcore formada en 2020 por el vocalista Aaron Matts tras su salida de Betraying The Martyrs. Junto a Matts, el grupo está compuesto por los guitarristas Quentin Godet y Luka Garotin, el bajo Steeves Hostin y el batería Arnaud Verrier.",
               "country": "Francia",
               "genre": "Deathcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=LElq1WEBQRY",
@@ -2889,7 +2889,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HALF ME",
               "title": "",
-              "description": "HALF ME es una banda de metalcore originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Half Me es una banda alemana de metalcore formada en Hamburgo en 2018. Conocidos por un sonido extremadamente denso y agresivo, incorporan elementos de nu metal y deathcore en sus producciones, con letras oscuras y ritmos con gran dinámica.",
               "country": "Alemania",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=1vwJfeXJRmQ",
@@ -2907,7 +2907,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "WARCRY",
               "title": "",
-              "description": "WARCRY es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "WarCry es una banda de power metal fundada en 2002 en Oviedo (Asturias, España), cuando el vocalista Víctor García y el baterista Alberto Ardines fueron expulsados de Avalanch. Pablo García y Fernando Mon aparecieron como guitarristas invitados en el álbum debut homónimo, pero se hicieron miembros oficiales en 2002 junto con el bajista Álvaro Jardón y el pianista Manuel Ramil. Jardón abandonó la banda a finales de 2003, siendo reemplazado por Roberto García tres meses después.",
               "country": "España",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=UJaW2Z5DxS8",
@@ -2925,7 +2925,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CABAL",
               "title": "",
-              "description": "CABAL es una banda de deathcore originaria de Dinamarca. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Cabal es una banda de deathcore y metal extremo originaria de Copenhague, Dinamarca. Formada en 2015, destacan por un sonido brutal que mezcla el peso del deathcore con atmósferas opresivas procedentes del black metal y el sludge.",
               "country": "Dinamarca",
               "genre": "Deathcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=amj49T04FCQ",
@@ -2943,7 +2943,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ANKHARA",
               "title": "",
-              "description": "ANKHARA es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Ankhara es un grupo español de heavy metal con influencias de power metal y metal progresivo. Fundado en 1995, se disolvió en 2004 y en 2013 se reúne nuevamente.",
               "country": "España",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=l_9LU_Qrlfs",
@@ -3023,9 +3023,11 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Rockerizos",
               "title": "",
-              "description": "Rockerizos es una banda de hard rock originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Banda local burgalesa de hard rock y heavy metal clásico, conocidos por su energía y pasión sobre el escenario.",
               "country": "España",
-              "genre": "Hard Rock"
+              "genre": "Hard Rock",
+              "instagramUrl": "https://www.instagram.com/rockerizos_",
+              "facebookUrl": "https://www.facebook.com/Rockerazos"
             }
           },
           {
@@ -3036,11 +3038,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Uli Jon Roth",
               "title": "",
-              "description": "Uli Jon Roth es una banda de heavy metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Leyenda alemana de la guitarra, exmiembro de Scorpions y pionero del metal neoclásico.",
               "country": "Alemania",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=y4velOF3ff8",
+              "youtubeUrl": "https://www.youtube.com/watch?v=5UgaW0MVqVw",
               "spotifyUrl": "https://open.spotify.com/artist/2VoP4JXyxNPIoYAFdB5ssQ",
+              "instagramUrl": "https://www.instagram.com/ulijonroth/",
               "facebookUrl": "https://www.facebook.com/Uli-Jon-Roth-403059233077097",
               "imageUrl": "https://i.scdn.co/image/2526875cb953ea6d353eb5e8787647f9a3cdf0c5"
             }
@@ -3056,7 +3059,9 @@ const rawAgendaFestData: any = {
               "description": "Secret Sphere es un grupo de power metal italiano, procedentes de la región de Alessandria. Comenzaron su actividad en el verano de 1997 gracias al talentoso guitarrista Aldo Lonobile. Después de algunos cambios de formación durante los primeros días, la formación actual del grupo grabaron su álbum debut \"Mistress Of The Shadowlight\" en 1999. En el año 2000 Secret Sphere apareció en prestigioso homenaje a Helloween \"Keepers Of Jericho\" junto a grandes nombres como Sonata Arctica, Rhapsody, Trick or Treat entre otras.",
               "country": "Italia",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=RPy2hKop0y4",
+              "youtubeUrl": "https://www.youtube.com/watch?v=NOK3sZ5epkU",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/6RW3PIbCsvSVIB5dzx9MV8",
+              "instagramUrl": "https://www.instagram.com/secretsphere/",
               "facebookUrl": "https://www.facebook.com/secretsphere"
             }
           }
@@ -3082,10 +3087,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Azrael",
               "title": "",
-              "description": "Azrael es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Histórica banda granadina de heavy metal y power metal en castellano con más de tres décadas de trayectoria.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=zSHoeFg-uhQ"
+              "youtubeUrl": "https://www.youtube.com/watch?v=9BZoM49iEKU",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/3MbI60af17wgl3P9EXQJQb",
+              "instagramUrl": "https://www.instagram.com/azraelmetaloficial/",
+              "facebookUrl": "https://www.facebook.com/azraelmetalband"
             }
           },
           {
@@ -3096,10 +3104,10 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Fury",
               "title": "",
-              "description": "Fury es una banda de heavy metal originaria de UK. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Potente banda británica de heavy metal clásico con riffs dinámicos y gran puesta en escena.",
               "country": "UK",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=6Bd5LDEJqH4",
+              "youtubeUrl": "https://www.youtube.com/watch?v=acCkBUtYK68",
               "spotifyUrl": "https://open.spotify.com/artist/0WodW8A13GujZQyAUynr82",
               "instagramUrl": "https://www.instagram.com/furyoffic1al/",
               "facebookUrl": "https://www.facebook.com/furyofficial",
@@ -3114,11 +3122,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Masters of Ceremony",
               "title": "",
-              "description": "Masters of Ceremony es una banda de power metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Proyecto de power metal comandado por el prestigioso productor Sascha Paeth y el vocalista Tommy Heart.",
               "country": "Alemania",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=QtpOm5yFxw0",
-              "spotifyUrl": "https://open.spotify.com/artist/0nKiNlJFtcGhZXZlNkOstJ",
+              "youtubeUrl": "https://www.youtube.com/watch?v=cCMc7vZWuAk",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/3z2BhxE5Fn5OaLLPMnXzK8",
+              "instagramUrl": "https://www.instagram.com/mastersofceremony.official/",
+              "facebookUrl": "https://www.facebook.com/saschapaethsmastersofceremony",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02aa45ec1a8328e81af490b4a4"
             }
           },
@@ -3130,13 +3140,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Eden",
               "title": "",
-              "description": "Eden es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Veterana banda asturiana de heavy metal melódico con canciones llenas de épica y fuerza.",
               "country": "España",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=Msf6zSd0jS8",
-              "spotifyUrl": "https://open.spotify.com/artist/1t20wYnTiAT0Bs7H1hv9Wt",
-              "instagramUrl": "https://www.instagram.com/iameden/",
-              "facebookUrl": "https://www.facebook.com/iameden",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/4ZCwQot86SbeHASevLgQmr",
+              "instagramUrl": "https://www.instagram.com/edenmetalband/",
+              "facebookUrl": "https://www.facebook.com/EDENMETALBAND",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517461f85b0265f8496c97063a38"
             }
           },
@@ -3148,11 +3158,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Hardcore Superstar",
               "title": "",
-              "description": "Hardcore Superstar es una banda de sleaze rock originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Referentes indiscutibles del sleaze rock y el hard rock sueco con un directo demoledor.",
               "country": "Suecia",
               "genre": "Sleaze Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=oRJtSNUDL14",
               "spotifyUrl": "https://open.spotify.com/artist/57b3sKD9pGilMb2QlMqArq",
+              "instagramUrl": "https://www.instagram.com/hardcoresuperstarofficial/",
               "facebookUrl": "https://www.facebook.com/OfficialHardcoreSuperstar",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174386dd5a6a0a787b2ef167702"
             }
@@ -3165,7 +3176,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Savaged",
               "title": "",
-              "description": "Savaged es una banda de speed metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Joven y salvaje promesa barcelonesa de speed y heavy metal tradicional de corte ochentero.",
               "country": "España",
               "genre": "Speed Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=TuZsz183Hsw",
@@ -3183,10 +3194,10 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Overkill",
               "title": "",
-              "description": "Overkill es una banda de thrash metal originaria de EEUU. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Pioneros indiscutibles del thrash metal estadounidense procedentes de Nueva Jersey.",
               "country": "EEUU",
               "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=VoMCka5bBdU",
+              "youtubeUrl": "https://www.youtube.com/watch?v=NZ8XxTkXc2c",
               "spotifyUrl": "https://open.spotify.com/artist/0NmYchKQ8JIR9QHYJA0FRe",
               "instagramUrl": "https://www.instagram.com/overkillofficial/",
               "facebookUrl": "https://www.facebook.com/OverkillWreckingCrew",
@@ -3201,11 +3212,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Hitten",
               "title": "",
-              "description": "Hitten es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Banda murciana de heavy metal tradicional, aclamada internacionalmente por su sonido NWOTHM.",
               "country": "España",
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=HKipMJUzoTA",
               "spotifyUrl": "https://open.spotify.com/artist/78LVpk0xhPtf6ptfZjaw5h",
+              "instagramUrl": "https://www.instagram.com/hittenofficial/",
+              "facebookUrl": "https://www.facebook.com/hittenofficial",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051747f48b37e97817f9965ad2cfd"
             }
           },
@@ -3217,10 +3230,10 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Induction",
               "title": "",
-              "description": "Induction es una banda de power metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Formación de power metal progresivo fundada por Tim Hansen, heredera del sonido clásico del género.",
               "country": "Alemania",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Rs1lI8XRFNs",
+              "youtubeUrl": "https://www.youtube.com/watch?v=3RUweV_Tl3w",
               "spotifyUrl": "https://open.spotify.com/artist/5mPSuVF1DeqeY3SpIt2f00",
               "instagramUrl": "https://www.instagram.com/inductionofficial/",
               "facebookUrl": "https://www.facebook.com/inductionofficial",
@@ -3249,10 +3262,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Ars Amandi",
               "title": "",
-              "description": "Ars Amandi es una banda de folk metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Banda madrileña pionera del folk metal castellano que fusiona rock pesado con dulzaina y pito castellano.",
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=1cgBNwOAlME",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/77KiwIxgTb2kX0wDMKqnmj",
+              "instagramUrl": "https://www.instagram.com/arsamandirock/",
               "facebookUrl": "https://www.facebook.com/ArsAmandiRock"
             }
           },
@@ -3264,7 +3279,7 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Bloodstain",
               "title": "",
-              "description": "Bloodstain es una banda de thrash metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Banda burgalesa de thrash y death metal con un directo arrollador y riffs contundentes.",
               "country": "España",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=z9tALtxd6LA",
@@ -3282,10 +3297,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "The Poodles",
               "title": "",
-              "description": "The Poodles es una banda de glam metal originaria de Suecia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Exitoso grupo sueco de glam metal y hard rock melódico con estribillos pegadizos y gran producción.",
               "country": "Suecia",
               "genre": "Glam Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=pvqarSnBQN8",
+              "youtubeUrl": "https://www.youtube.com/watch?v=8XQorbAqzVg",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/56qqwnRK5BjH8okTscHtY9",
+              "instagramUrl": "https://www.instagram.com/the_poodles_sweden/",
               "facebookUrl": "https://www.facebook.com/thepoodles"
             }
           },
@@ -3297,10 +3314,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Khorea",
               "title": "",
-              "description": "Khorea es una banda de metalcore originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Banda de metal alternativo y metalcore procedente de Burgos con letras reflexivas y bases pesadas.",
               "country": "España",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Y__C9IKkEz4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=JgIuDD4_s80",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/4zDokiOegUyKQI68NsajnP",
+              "instagramUrl": "https://www.instagram.com/khoreaband/",
+              "facebookUrl": "https://www.facebook.com/profile.php?id=61571130271291&locale=es_ES"
             }
           },
           {
@@ -3311,10 +3331,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Heavens Gate",
               "title": "",
-              "description": "Heavens Gate es una banda de power metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Legendaria formación alemana de power metal de finales de los 80, muy influyente en el género.",
               "country": "Alemania",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=kYJvM9e2V34"
+              "youtubeUrl": "https://www.youtube.com/watch?v=GFOCqLAKiTc",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/4bJlNp8kcrWMSIM4NObk2D",
+              "facebookUrl": "https://www.facebook.com/heavensgatemetal"
             }
           },
           {
@@ -3325,10 +3347,10 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ODC",
               "title": "",
-              "description": "ODC es una banda de metal alternativo originaria de Francia. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Moderno cuarteto parisino que combina metal alternativo, rock melódico y matices electrónicos.",
               "country": "Francia",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=A2WpC9Uo3S8",
+              "youtubeUrl": "https://www.youtube.com/watch?v=DRqJdqpjXnM",
               "spotifyUrl": "https://open.spotify.com/artist/1mnVffOIDOAeCLxjZ1jOQj",
               "instagramUrl": "https://www.instagram.com/odc_official_/",
               "facebookUrl": "https://www.facebook.com/ODCOfficiel",
@@ -3343,10 +3365,10 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Doro",
               "title": "",
-              "description": "Doro es una banda de heavy metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Dorothee Pesch, más conocida por su nombre artístico Doro Pesch (Düsseldorf; 3 de junio de 1964), es una cantante de heavy metal alemana.​ Formó parte de las agrupaciones Warlock y Snakebite y se desempeña como solista. Fue una de las primeras cantantes de metal en los años 1980, cuando los hombres dominaban este tipo de música. Se la considera la indiscutible Reina del Metal a nivel mundial, habiendo inspirado a múltiples generaciones.",
               "country": "Alemania",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=kH3Ml0jiPFA",
+              "youtubeUrl": "https://www.youtube.com/watch?v=A857YBw8u30",
               "spotifyUrl": "https://open.spotify.com/artist/5GLeyUhj8B8f5pJxqZllKl",
               "instagramUrl": "https://www.instagram.com/DoroMetalQueen/",
               "facebookUrl": "https://www.facebook.com/DoroPeschOfficialGerman",
@@ -3379,10 +3401,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Vindicta",
               "title": "",
-              "description": "Vindicta es una banda de heavy metal originaria de España. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Banda española de heavy metal tradicional con letras combativas y sonido de la vieja escuela.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=D0w_NZodwX4"
+              "youtubeUrl": "https://www.youtube.com/watch?v=82fuY5yiXRA",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/2ts6YtBKLFEySkArj0lyR5",
+              "instagramUrl": "https://www.instagram.com/officialvindicta",
+              "facebookUrl": "https://www.facebook.com/officialvindictaband"
             }
           },
           {
@@ -3393,10 +3418,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Heavens Gate",
               "title": "",
-              "description": "Heavens Gate es una banda de power metal originaria de Alemania. Cuenta con una destacada trayectoria en la escena musical alternativa, habiendo editado diversos trabajos discográficos y girado extensamente compartiendo su música con sus seguidores a nivel internacional.",
+              "description": "Legendaria formación alemana de power metal de finales de los 80, muy influyente en el género.",
               "country": "Alemania",
               "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=kYJvM9e2V34"
+              "youtubeUrl": "https://www.youtube.com/watch?v=GFOCqLAKiTc",
+              "spotifyUrl": "https://open.spotify.com/intl-es/artist/4bJlNp8kcrWMSIM4NObk2D",
+              "facebookUrl": "https://www.facebook.com/heavensgatemetal"
             }
           }
         ]
