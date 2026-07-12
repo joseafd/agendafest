@@ -141,9 +141,11 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   }, [editions, searchQuery]);
 
 
-  // Filter editions that have saved favorites
+  // Filter editions that have saved favorites AND are not yet finished
   const editionsWithFavs = useMemo(() => {
     return editions.filter((ed) => {
+      // Excluir festivales ya finalizados
+      if (ed.config.endDate < todayStr) return false;
       try {
         const favsStr = window.localStorage.getItem(`af_${ed.config.edicionId}_favorites`);
         if (favsStr) {
@@ -155,7 +157,7 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
       }
       return false;
     });
-  }, [editions]);
+  }, [editions, todayStr]);
 
   // Handle Quick Access - Mi Agenda click
   const handleOpenAgenda = () => {

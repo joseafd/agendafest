@@ -85,6 +85,9 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
 
       if (!Array.isArray(favs) || favs.length === 0) return;
 
+      // Ignorar festivales ya finalizados
+      if (ed.config.endDate < todayStr) return;
+
       // Calculate clashes count and conflict IDs
       let clashesCount = 0;
       const favActs = ed.days.flatMap(d => d.acts.filter(a => favs.includes(a.id)));
@@ -221,6 +224,20 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
   }, [editions, nowState]);
 
   const primaryAgenda = editionsWithFavs[0];
+
+  // Detect if the user HAS favorites but only in finished festivals
+  const allFinishedWithFavs = useMemo(() => {
+    return editions.some((ed) => {
+      try {
+        const favsStr = window.localStorage.getItem(`af_${ed.config.edicionId}_favorites`);
+        if (favsStr) {
+          const favs = JSON.parse(favsStr);
+          return Array.isArray(favs) && favs.length > 0;
+        }
+      } catch (e) { /* ignore */ }
+      return false;
+    });
+  }, [editions]);
 
   const handleContinueClick = () => {
     if (primaryAgenda) {
@@ -440,7 +457,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
           )}
         </div>
       ) : (
-        /* Alternative CTA: Create Your Agenda */
+        /* Alternative CTA: Create Your Agenda (or "no upcoming agenda") */
         <div
           className="glass"
           style={{
@@ -457,11 +474,21 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <Zap size={18} color="#ffd600" fill="#ffd600" />
             <h4 style={{ fontSize: '1.05rem', fontWeight: '800', color: '#ffffff', margin: 0 }}>
-              {t(language, 'createYourAgenda')}
+              {allFinishedWithFavs
+                ? (language === 'es' ? 'Tu agenda ha concluido' : language === 'en' ? 'Your agenda has ended' : 'Votre agenda est terminé')
+                : t(language, 'createYourAgenda')
+              }
             </h4>
           </div>
           <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.35 }}>
-            {t(language, 'createYourAgendaDesc')}
+            {allFinishedWithFavs
+              ? (language === 'es'
+                  ? 'Los festivales de tu agenda ya han finalizado. Explora los próximos festivales y empieza a planificar.'
+                  : language === 'en'
+                  ? 'The festivals in your schedule have already ended. Explore upcoming festivals and start planning.'
+                  : 'Les festivals de votre agenda sont terminés. Explorez les prochains festivals et commencez à planifier.')
+              : t(language, 'createYourAgendaDesc')
+            }
           </p>
           <button
             onClick={onScrollToMyFestivals}
@@ -478,7 +505,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
             }}
             className="btn-interactive"
           >
-            {t(language, 'startNow')}
+            {language === 'es' ? 'Ver próximos festivales' : language === 'en' ? 'See upcoming festivals' : 'Voir les prochains festivals'}
           </button>
         </div>
       )}
