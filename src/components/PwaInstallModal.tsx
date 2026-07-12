@@ -352,44 +352,71 @@ export const PwaInstallModal: React.FC<PwaInstallModalProps> = ({
             <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
               {t(language, 'creditsDesc')}
             </p>
-            
-            <div
+                        <div
               style={{
                 marginTop: '12px',
                 background: 'rgba(255, 255, 255, 0.01)',
                 border: '1px solid rgba(255, 255, 255, 0.03)',
-                borderRadius: '12px',
-                padding: '10px 12px',
+                borderRadius: '16px',
+                padding: '16px',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
+                flexDirection: 'column',
+                gap: '12px',
               }}
             >
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <span style={{ fontSize: '0.62rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{t(language, 'officialPhoto')}</span>
-                <span style={{ fontSize: '0.78rem', color: '#ffffff', fontWeight: 700 }}>Jose Antonio Fernández</span>
+                <span style={{ fontSize: '0.85rem', color: '#ffffff', fontWeight: 800 }}>Jose Antonio Fernández</span>
               </div>
-              <a
-                href="https://www.instagram.com/joseantoniofd.photo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
-                  color: '#ffffff',
-                  textDecoration: 'none',
-                  borderRadius: '8px',
-                  padding: '6px 10px',
-                  fontSize: '0.72rem',
-                  fontWeight: '800',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  boxShadow: '0 2px 6px rgba(220, 39, 67, 0.2)',
-                }}
-                className="btn-interactive"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> Instagram <ArrowUpRight size={10} />
-              </a>
+              <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+                <a
+                  href="https://www.instagram.com/joseantoniofd.photo/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    flex: 1,
+                    background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    borderRadius: '8px',
+                    padding: '8px',
+                    fontSize: '0.75rem',
+                    fontWeight: '800',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '4px',
+                    boxShadow: '0 2px 6px rgba(220, 39, 67, 0.2)',
+                  }}
+                  className="btn-interactive"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg> Instagram <ArrowUpRight size={10} />
+                </a>
+
+                <a
+                  href="https://www.facebook.com/joseantoniofernandezphoto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    flex: 1,
+                    background: '#1877f2',
+                    color: '#ffffff',
+                    textDecoration: 'none',
+                    borderRadius: '8px',
+                    padding: '8px',
+                    fontSize: '0.75rem',
+                    fontWeight: '800',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '4px',
+                    boxShadow: '0 2px 6px rgba(24, 119, 242, 0.2)',
+                  }}
+                  className="btn-interactive"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'block' }}><path d="M18 2h-3a5 5 0 0 0 -5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook <ArrowUpRight size={10} />
+                </a>
+              </div>
             </div>
           </div>
 
