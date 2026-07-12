@@ -302,7 +302,7 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
                       left: 0,
                       right: 0,
                       bottom: 0,
-                      backgroundImage: `url(./images/${ed.config.cartel})`,
+                      backgroundImage: `url(./images/${ed.config.cartel}?v=2)`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       opacity: 0.25,
@@ -376,7 +376,7 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
                         }}
                       >
                         <img
-                          src={`./images/${ed.config.logo}`}
+                          src={`./images/${ed.config.logo}?v=2`}
                           alt="Logo"
                           style={{ width: '80%', height: '80%', objectFit: 'contain' }}
                           onError={(e) => {
@@ -463,7 +463,7 @@ export const FestivalSelector: React.FC<FestivalSelectorProps> = ({
                       }}
                     >
                       <img
-                        src={`./images/${ed.config.logo}`}
+                        src={`./images/${ed.config.logo}?v=2`}
                         alt="Logo"
                         style={{ width: '80%', height: '80%', objectFit: 'contain' }}
                       />

@@ -88,7 +88,7 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: `url(./images/${config.cartel})`,
+          backgroundImage: `url(./images/${config.cartel}?v=2)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.22,
@@ -204,7 +204,7 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
             }}
           >
             <img
-              src={`./images/${config.logo}`}
+              src={`./images/${config.logo}?v=2`}
               alt=""
               style={{ width: '80%', height: '80%', objectFit: 'contain' }}
               onError={(e) => {

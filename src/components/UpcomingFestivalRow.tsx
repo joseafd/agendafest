@@ -82,7 +82,7 @@ export const UpcomingFestivalRow: React.FC<UpcomingFestivalRowProps> = ({
           }}
         >
           <img
-            src={`./images/${config.logo}`}
+            src={`./images/${config.logo}?v=2`}
             alt=""
             style={{ width: '80%', height: '80%', objectFit: 'contain' }}
             onError={(e) => {

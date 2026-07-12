@@ -944,7 +944,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               </div>
             ) : (
               <img
-                src={`./images/${edicionConfig.cartel}`}
+                src={`./images/${edicionConfig.cartel}?v=2`}
                 alt={`Cartel ${edicionConfig.festivalName}`}
                 style={{
                   width: '100%',
@@ -1201,7 +1201,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
           >
             <div className="glass-gradient-border-portada neon-glow" style={{ maxWidth: '600px', width: '100%', overflow: 'hidden' }}>
               <img
-                src={`./images/${edicionConfig.mapa}`}
+                src={`./images/${edicionConfig.mapa}?v=2`}
                 alt={`Mapa del ${edicionConfig.festivalName} ${edicionConfig.year}`}
                 style={{
                   width: '100%',
@@ -1281,7 +1281,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
           >
             <div className="glass-gradient-border-portada neon-glow" style={{ maxWidth: '500px', width: '100%', overflow: 'hidden', borderRadius: '16px' }}>
               <img
-                src={`./images/${edicionConfig.cartel}`}
+                src={`./images/${edicionConfig.cartel}?v=2`}
                 alt={`Cartel de ${edicionConfig.visibleName}`}
                 style={{
                   width: '100%',
