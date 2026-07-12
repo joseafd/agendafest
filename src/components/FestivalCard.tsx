@@ -154,6 +154,10 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
           display: 'flex',
           alignItems: 'center',
           gap: '4px',
+          maxWidth: 'calc(100% - 60px)',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
         }}
       >
         {status.pulse && (
