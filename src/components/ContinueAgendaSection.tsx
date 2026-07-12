@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { AlertTriangle, Zap, ArrowRight } from 'lucide-react';
 import type { FestivalEdition, Act } from '../data/festivalData';
 import { t, tFormat } from '../utils/translations';
@@ -17,6 +17,37 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
   onSelectEdition,
   onScrollToMyFestivals,
 }) => {
+  const [nowState, setNowState] = useState(() => new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNowState(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatCountdown = (startTime: Date, now: Date, lang: Language): string => {
+    const diffMs = startTime.getTime() - now.getTime();
+    if (diffMs <= 0) return '00:00';
+
+    const diffSecs = Math.floor(diffMs / 1000);
+    const days = Math.floor(diffSecs / 86400);
+    const hours = Math.floor((diffSecs % 86400) / 3600);
+    const mins = Math.floor((diffSecs % 3600) / 60);
+    const secs = diffSecs % 60;
+
+    const pad = (n: number) => String(n).padStart(2, '0');
+
+    if (days > 0) {
+      const daysWord = lang === 'en' ? 'days' : lang === 'fr' ? 'jours' : 'días';
+      return `${days} ${daysWord} ${pad(hours)}:${pad(mins)}:${pad(secs)}`;
+    }
+    if (hours > 0) {
+      return `${pad(hours)}:${pad(mins)}:${pad(secs)}`;
+    }
+    return `${pad(mins)}:${pad(secs)}`;
+  };
+
   // 1. Gather all favorites and conflict counts per edition
   const getCleanSigningText = (sigStr: string) => {
     if (!sigStr) return '';
@@ -34,10 +65,10 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       clashesCount: number;
       lastOpenedTime: number;
       closenessDays: number;
-      nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number; hasConflict: boolean } | null;
+      nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number; hasConflict: boolean; absoluteStart: Date } | null;
     }> = [];
 
-    const now = new Date();
+    const now = nowState;
     const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
 
     editions.forEach((ed) => {
@@ -89,7 +120,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       const closenessDays = Math.abs(startDateTime - now.getTime());
 
       // Next / Live favorite act calculation
-      let nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number; hasConflict: boolean } | null = null;
+      let nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number; hasConflict: boolean; absoluteStart: Date } | null = null;
       
       // Determine simulation time (consistent with FestivalDashboard logic)
       const getSimulatedOrRealTime = (realTime: Date): Date => {
@@ -157,6 +188,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
           status: upcomingFavsList[0].status,
           minutesToStart: upcomingFavsList[0].minutesToStart,
           hasConflict: conflictActIds.has(targetAct.id),
+          absoluteStart: upcomingFavsList[0].startTime,
         };
       }
 
@@ -186,7 +218,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
     });
 
     return list;
-  }, [editions]);
+  }, [editions, nowState]);
 
   const primaryAgenda = editionsWithFavs[0];
 
@@ -331,23 +363,21 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
                       : (language === 'es' ? 'Próximo concierto' : language === 'en' ? 'Next Concert' : 'Prochain concert')}
                   </span>
                 </div>
-                
-                {/* Countdown / time left */}
+                       {/* Countdown / time left */}
                 {primaryAgenda.nextOrLiveAct.status === 'upcoming' && (
-                  <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: '600' }}>
-                    {primaryAgenda.nextOrLiveAct.minutesToStart >= 1440
-                      ? (language === 'en' 
-                          ? `in ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} days` 
-                          : language === 'fr' 
-                          ? `dans ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} jours` 
-                          : `en ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} días`)
-                      : (language === 'en'
-                          ? `in ${primaryAgenda.nextOrLiveAct.minutesToStart} min`
-                          : language === 'fr'
-                          ? `dans ${primaryAgenda.nextOrLiveAct.minutesToStart} min`
-                          : `en ${primaryAgenda.nextOrLiveAct.minutesToStart} min`
-                        )
-                    }
+                  <span 
+                    style={{ 
+                      fontSize: '0.75rem', 
+                      color: '#ffd600', 
+                      fontWeight: '800', 
+                      fontFamily: 'monospace',
+                      background: 'rgba(255, 214, 0, 0.08)',
+                      padding: '2px 8px',
+                      borderRadius: '6px',
+                      border: '1px solid rgba(255, 214, 0, 0.2)',
+                    }}
+                  >
+                    {formatCountdown(primaryAgenda.nextOrLiveAct.absoluteStart, nowState, language)}
                   </span>
                 )}
               </div>
