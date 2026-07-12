@@ -18,6 +18,15 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
   onScrollToMyFestivals,
 }) => {
   // 1. Gather all favorites and conflict counts per edition
+  const getCleanSigningText = (sigStr: string) => {
+    if (!sigStr) return '';
+    const parts = sigStr.split(' - ');
+    if (parts.length >= 3) {
+      return `✍️ Firmas: ${parts[2].replace(' A ', ' - ')}`;
+    }
+    return `✍️ ${sigStr.replace('SESIONES DE FIRMAS - ', '')}`;
+  };
+
   const editionsWithFavs = useMemo(() => {
     const list: Array<{
       edition: FestivalEdition;
@@ -25,7 +34,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       clashesCount: number;
       lastOpenedTime: number;
       closenessDays: number;
-      nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number } | null;
+      nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number; hasConflict: boolean } | null;
     }> = [];
 
     const now = new Date();
@@ -45,23 +54,28 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
 
       if (!Array.isArray(favs) || favs.length === 0) return;
 
-      // Calculate clashes count
+      // Calculate clashes count and conflict IDs
       let clashesCount = 0;
       const favActs = ed.days.flatMap(d => d.acts.filter(a => favs.includes(a.id)));
       const sortedActs = [...favActs].sort((a, b) => a.startMinutes - b.startMinutes);
+      const conflictActIds = new Set<string>();
       for (let i = 0; i < sortedActs.length; i++) {
+        let actHasOverlap = false;
         for (let j = i + 1; j < sortedActs.length; j++) {
           const a = sortedActs[i];
           const b = sortedActs[j];
-          // Check if same day (first 10 chars of id represent day id)
           const sameDay = a.id.substring(0, 10) === b.id.substring(0, 10);
           if (sameDay) {
             const overlap = a.startMinutes < b.endMinutes && b.startMinutes < a.endMinutes;
             if (overlap) {
-              clashesCount++;
-              break; // count once per act
+              actHasOverlap = true;
+              conflictActIds.add(a.id);
+              conflictActIds.add(b.id);
             }
           }
+        }
+        if (actHasOverlap) {
+          clashesCount++;
         }
       }
 
@@ -75,7 +89,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       const closenessDays = Math.abs(startDateTime - now.getTime());
 
       // Next / Live favorite act calculation
-      let nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number } | null = null;
+      let nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number; hasConflict: boolean } | null = null;
       
       // Determine simulation time (consistent with FestivalDashboard logic)
       const getSimulatedOrRealTime = (realTime: Date): Date => {
@@ -137,10 +151,12 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
           if (x.status !== 'live' && y.status === 'live') return 1;
           return x.startTime.getTime() - y.startTime.getTime();
         });
+        const targetAct = upcomingFavsList[0].act;
         nextOrLiveAct = {
-          act: upcomingFavsList[0].act,
+          act: targetAct,
           status: upcomingFavsList[0].status,
           minutesToStart: upcomingFavsList[0].minutesToStart,
+          hasConflict: conflictActIds.has(targetAct.id),
         };
       }
 
@@ -282,37 +298,114 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
           {primaryAgenda.nextOrLiveAct && (
             <div
               style={{
-                paddingTop: '12px',
-                borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+                padding: '14px',
+                background: 'rgba(0, 0, 0, 0.25)',
+                borderRadius: '12px',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
                 display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
+                flexDirection: 'column',
+                gap: '8px',
+                marginTop: '4px',
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                handleContinueClick();
               }}
             >
-              <div
-                style={{
-                  width: '6px',
-                  height: '6px',
-                  borderRadius: '50%',
-                  background: primaryAgenda.nextOrLiveAct.status === 'live' ? '#ff003c' : '#ffd600',
-                  boxShadow: `0 0 6px ${primaryAgenda.nextOrLiveAct.status === 'live' ? '#ff003c' : '#ffd600'}`,
-                  animation: 'pulseYellow 1.5s infinite ease-in-out',
-                }}
-              />
-              <span style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--text-primary)' }}>
-                {primaryAgenda.nextOrLiveAct.status === 'live'
-                  ? tFormat(language, 'enDirectoHome', { band: primaryAgenda.nextOrLiveAct.act.band })
-                  : tFormat(language, 'proximoHome', { 
-                      band: primaryAgenda.nextOrLiveAct.act.band, 
-                      time: primaryAgenda.nextOrLiveAct.minutesToStart >= 1440
-                        ? (language === 'en' 
-                            ? `${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} days left` 
-                            : language === 'fr' 
-                            ? `Dans ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} jours` 
-                            : `Faltan ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} días`)
-                        : primaryAgenda.nextOrLiveAct.act.start 
-                    })}
-              </span>
+              {/* Status Header */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span
+                    style={{
+                      width: '6px',
+                      height: '6px',
+                      borderRadius: '50%',
+                      background: primaryAgenda.nextOrLiveAct.status === 'live' ? '#ff003c' : '#ffd600',
+                      boxShadow: `0 0 6px ${primaryAgenda.nextOrLiveAct.status === 'live' ? '#ff003c' : '#ffd600'}`,
+                      animation: 'pulseYellow 1.5s infinite ease-in-out',
+                    }}
+                  />
+                  <span style={{ fontSize: '0.68rem', fontWeight: '800', color: primaryAgenda.nextOrLiveAct.status === 'live' ? '#ff003c' : '#ffd600', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    {primaryAgenda.nextOrLiveAct.status === 'live' 
+                      ? (language === 'es' ? 'Ahora en directo' : language === 'en' ? 'Live Now' : 'En direct') 
+                      : (language === 'es' ? 'Próximo concierto' : language === 'en' ? 'Next Concert' : 'Prochain concert')}
+                  </span>
+                </div>
+                
+                {/* Countdown / time left */}
+                {primaryAgenda.nextOrLiveAct.status === 'upcoming' && (
+                  <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: '600' }}>
+                    {primaryAgenda.nextOrLiveAct.minutesToStart >= 1440
+                      ? (language === 'en' 
+                          ? `in ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} days` 
+                          : language === 'fr' 
+                          ? `dans ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} jours` 
+                          : `en ${Math.round(primaryAgenda.nextOrLiveAct.minutesToStart / 1440)} días`)
+                      : (language === 'en'
+                          ? `in ${primaryAgenda.nextOrLiveAct.minutesToStart} min`
+                          : language === 'fr'
+                          ? `dans ${primaryAgenda.nextOrLiveAct.minutesToStart} min`
+                          : `en ${primaryAgenda.nextOrLiveAct.minutesToStart} min`
+                        )
+                    }
+                  </span>
+                )}
+              </div>
+
+              {/* Band name */}
+              <div style={{ fontSize: '1.25rem', fontWeight: '900', color: '#ffffff', letterSpacing: '0.3px', lineHeight: 1.1 }}>
+                {primaryAgenda.nextOrLiveAct.act.band}
+              </div>
+
+              {/* Time & Stage */}
+              <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', fontWeight: '600', display: 'flex', flexWrap: 'wrap', gap: '6px', alignItems: 'center' }}>
+                <span>{primaryAgenda.nextOrLiveAct.act.start} - {primaryAgenda.nextOrLiveAct.act.end}</span>
+                <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
+                <span style={{ color: 'var(--text-muted)' }}>{primaryAgenda.nextOrLiveAct.act.stage}</span>
+              </div>
+
+              {/* Badges row */}
+              {(primaryAgenda.nextOrLiveAct.hasConflict || primaryAgenda.nextOrLiveAct.act.bio?.signingSession) && (
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '4px' }}>
+                  {primaryAgenda.nextOrLiveAct.hasConflict && (
+                    <span
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                        fontSize: '0.65rem',
+                        color: '#ff7a00',
+                        background: 'rgba(255, 122, 0, 0.08)',
+                        border: '1px solid rgba(255, 122, 0, 0.2)',
+                        padding: '2px 8px',
+                        borderRadius: '6px',
+                        fontWeight: '700',
+                      }}
+                    >
+                      <AlertTriangle size={10} />
+                      {language === 'es' ? 'Solape' : 'Clash'}
+                    </span>
+                  )}
+                  {primaryAgenda.nextOrLiveAct.act.bio?.signingSession && (
+                    <span
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                        fontSize: '0.65rem',
+                        color: '#ff2a85',
+                        background: 'rgba(255, 42, 133, 0.08)',
+                        border: '1px solid rgba(255, 42, 133, 0.2)',
+                        padding: '2px 8px',
+                        borderRadius: '6px',
+                        fontWeight: '700',
+                      }}
+                    >
+                      {getCleanSigningText(primaryAgenda.nextOrLiveAct.act.bio.signingSession)}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </div>
