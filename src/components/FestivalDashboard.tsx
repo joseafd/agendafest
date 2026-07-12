@@ -1544,7 +1544,6 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
         isOpen={isPwaModalOpen}
         onClose={() => setIsPwaModalOpen(false)}
         festivalName={edicionConfig.visibleName}
-        year={edicionConfig.year}
         language={language}
       />
     </div>

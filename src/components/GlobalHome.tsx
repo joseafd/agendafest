@@ -329,7 +329,6 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
         isOpen={isPwaOpen}
         onClose={() => setIsPwaOpen(false)}
         festivalName="AgendaFest"
-        year={2026}
         language={language}
       />
 
