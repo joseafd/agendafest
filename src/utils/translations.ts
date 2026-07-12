@@ -235,7 +235,7 @@ export const translations: Record<Language, TranslationDict> = {
     shareText: "Compartir por WhatsApp, Redes, etc.",
     creditsTitle: "📷 Créditos y Autoría",
     creditsDesc: "Esta aplicación no oficial ha sido desarrollada para facilitar la consulta de horarios y escenarios.",
-    officialPhoto: "Fotografía oficial",
+    officialPhoto: "Autor",
     copied: "Copiado",
     copy: "Copiar",
 
@@ -369,7 +369,7 @@ export const translations: Record<Language, TranslationDict> = {
     shareText: "Share via WhatsApp, Social Media, etc.",
     creditsTitle: "📷 Credits & Authorship",
     creditsDesc: "This unofficial app has been developed to make checking schedules and stages easy.",
-    officialPhoto: "Official Photography",
+    officialPhoto: "Author",
     copied: "Copied",
     copy: "Copy",
 
@@ -503,7 +503,7 @@ export const translations: Record<Language, TranslationDict> = {
     shareText: "Partager via WhatsApp, Réseaux Sociaux, etc.",
     creditsTitle: "📷 Crédits & Auteurs",
     creditsDesc: "Cette application non officielle a été développée pour faciliter la consultation des horaires et des scènes.",
-    officialPhoto: "Photographie Officielle",
+    officialPhoto: "Auteur",
     copied: "Copié",
     copy: "Copier",
 
