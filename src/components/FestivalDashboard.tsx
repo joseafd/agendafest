@@ -8,8 +8,7 @@ import { BandDetailModal } from './BandDetailModal';
 import { NewsView } from './NewsView';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { Calendar, Map, ArrowLeft, Share2, Newspaper, Image } from 'lucide-react';
-import { agendaFestData } from '../data/festivalData';
-import type { Act, FestivalEdition, NoticiaItem } from '../data/festivalData';
+import type { Act, FestivalEdition } from '../data/festivalData';
 import { PwaInstallModal } from './PwaInstallModal';
 import { t, tFormat } from '../utils/translations';
 import type { Language } from '../utils/translations';
@@ -38,26 +37,17 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
 }) => {
   const edicionConfig = edition.config;
   const days = edition.days;
-  const allGlobalNews = useMemo(() => {
+
+  const localNewsSorted = useMemo(() => {
     const parseDDMMYYYY = (dateStr: string): Date => {
       const [d, m, y] = dateStr.split('/').map(Number);
       return new Date(y, m - 1, d);
     };
+    return [...(edition.noticias || [])].sort(
+      (a, b) => parseDDMMYYYY(b.fecha).getTime() - parseDDMMYYYY(a.fecha).getTime()
+    );
+  }, [edition.noticias]);
 
-    const newsList: NoticiaItem[] = [];
-    const editionsList = Object.values(agendaFestData) as FestivalEdition[];
-    editionsList.forEach((ed: FestivalEdition) => {
-      if (ed.noticias && Array.isArray(ed.noticias)) {
-        ed.noticias.forEach((item: NoticiaItem) => {
-          newsList.push(item);
-        });
-      }
-    });
-
-    return newsList
-      .sort((a, b) => parseDDMMYYYY(b.fecha).getTime() - parseDDMMYYYY(a.fecha).getTime())
-      .slice(0, 5);
-  }, []);
 
   const defaultStages = useMemo(() => edition.stages.map(s => s.name), [edition.stages]);
 
@@ -1299,9 +1289,9 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
       {/* VIEW 5: NEWS VIEWER */}
       {activeTab === 'news' && (
         <NewsView
-          noticias={allGlobalNews}
+          noticias={localNewsSorted}
           onBackToHome={() => setActiveTab('home')}
-          festivalName=""
+          festivalName={edicionConfig.visibleName}
           language={language}
         />
       )}
