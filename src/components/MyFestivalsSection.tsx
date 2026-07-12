@@ -23,8 +23,13 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
   followedEditions,
   onToggleFollow,
 }) => {
-  // Determine which festivals belong to "My Festivals" and sort chronologically
-  const myEditions = useMemo(() => {
+  const todayStr = useMemo(() => {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  }, []);
+
+  // Filter followed/favorited festivals of all time (past, active, or future)
+  const allMyEditions = useMemo(() => {
     const filtered = editions.filter(ed => {
       const edId = ed.config.edicionId;
       const isFollowed = followedEditions.includes(edId);
@@ -45,6 +50,14 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
 
     return filtered.sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
   }, [editions, followedEditions]);
+
+  // Filter followed/favorited festivals that are active or upcoming (endDate >= todayStr)
+  const myActiveOrFutureEditions = useMemo(() => {
+    return allMyEditions.filter(ed => ed.config.endDate >= todayStr);
+  }, [allMyEditions, todayStr]);
+
+  // Show up to 2 cards on the home page
+  const displayedMyFestivals = myActiveOrFutureEditions.slice(0, 2);
 
   return (
     <section
@@ -72,23 +85,28 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
         >
           {t(language, 'myFestivals')}
         </h3>
-        <button
-          onClick={onShowAll}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--accent-red)',
-            fontSize: '0.8rem',
-            fontWeight: '700',
-            cursor: 'pointer',
-            padding: '4px 8px',
-          }}
-        >
-          {t(language, 'verTodos')}
-        </button>
+
+        {/* Ver todos button (shown if total followed/favorited editions of all time > 2) */}
+        {allMyEditions.length > 2 && (
+          <button
+            onClick={onShowAll}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--accent-red)',
+              fontSize: '0.8rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              padding: '4px 8px',
+            }}
+            className="btn-interactive"
+          >
+            {t(language, 'verTodos')}
+          </button>
+        )}
       </div>
 
-      {myEditions.length === 0 ? (
+      {myActiveOrFutureEditions.length === 0 ? (
         /* Empty State */
         <div
           style={{
@@ -127,7 +145,7 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
           </button>
         </div>
       ) : (
-        /* Grid Display */
+        /* Grid Display (up to 2 cards) */
         <div
           style={{
             display: 'grid',
@@ -136,7 +154,7 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
             width: '100%',
           }}
         >
-          {myEditions.map(ed => (
+          {displayedMyFestivals.map(ed => (
             <FestivalCard
               key={ed.config.edicionId}
               edition={ed}

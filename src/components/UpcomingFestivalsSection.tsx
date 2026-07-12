@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import type { FestivalEdition } from '../data/festivalData';
-import { UpcomingFestivalRow } from './UpcomingFestivalRow';
+import { FestivalCard } from './FestivalCard';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 
@@ -21,43 +21,20 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
   followedEditions,
   onToggleFollow,
 }) => {
-  // Determine which festivals are already in "My Festivals" to exclude them
-  const myEditionsIds = useMemo(() => {
-    return editions.filter(ed => {
-      const edId = ed.config.edicionId;
-      const isFollowed = followedEditions.includes(edId);
-
-      let hasFavs = false;
-      try {
-        const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
-        if (favsStr) {
-          const favs = JSON.parse(favsStr);
-          hasFavs = Array.isArray(favs) && favs.length > 0;
-        }
-      } catch (e) {
-        // ignore
-      }
-
-      return isFollowed || hasFavs;
-    }).map(ed => ed.config.edicionId);
-  }, [editions, followedEditions]);
-
-  const upcomingEditions = useMemo(() => {
+  const todayStr = useMemo(() => {
     const now = new Date();
-    const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  }, []);
 
-    // Exclude myEditionsIds and exclude past editions (endDate must be >= todayStr)
-    let filtered = editions.filter(ed => !myEditionsIds.includes(ed.config.edicionId));
-    filtered = filtered.filter(ed => ed.config.endDate >= todayStr);
+  // Filter active or future editions and sort chronologically ascending
+  const upcomingEditions = useMemo(() => {
+    return editions
+      .filter(ed => ed.config.endDate >= todayStr)
+      .sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
+  }, [editions, todayStr]);
 
-    if (filtered.length === 0) {
-      // Fallback: show all active/future editions even if they are followed/opened
-      filtered = editions.filter(ed => ed.config.endDate >= todayStr);
-    }
-
-    // Sort by start date ascending
-    return filtered.sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
-  }, [editions, myEditionsIds]);
+  // Show up to 2 on the home page
+  const displayedUpcoming = upcomingEditions.slice(0, 2);
 
   return (
     <section
@@ -71,6 +48,7 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
         animation: 'fadeIn 0.4s ease-out 0.4s both',
       }}
     >
+      {/* Title block */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h3
           style={{
@@ -84,23 +62,29 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
         >
           {t(language, 'upcomingFestivals')}
         </h3>
-        <button
-          onClick={onShowAll}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: 'var(--accent-red)',
-            fontSize: '0.8rem',
-            fontWeight: '700',
-            cursor: 'pointer',
-            padding: '4px 8px',
-          }}
-        >
-          {t(language, 'verTodos')}
-        </button>
+
+        {/* Ver todos button (shown if total editions in the system > 2) */}
+        {editions.length > 2 && (
+          <button
+            onClick={onShowAll}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--accent-red)',
+              fontSize: '0.8rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              padding: '4px 8px',
+            }}
+            className="btn-interactive"
+          >
+            {t(language, 'verTodos')}
+          </button>
+        )}
       </div>
 
       {upcomingEditions.length === 0 ? (
+        /* Empty State */
         <div
           style={{
             display: 'flex',
@@ -118,9 +102,17 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
           </span>
         </div>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%' }}>
-          {upcomingEditions.map(ed => (
-            <UpcomingFestivalRow
+        /* Grid Display (up to 2 cards) */
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+            gap: '12px',
+            width: '100%',
+          }}
+        >
+          {displayedUpcoming.map(ed => (
+            <FestivalCard
               key={ed.config.edicionId}
               edition={ed}
               language={language}
