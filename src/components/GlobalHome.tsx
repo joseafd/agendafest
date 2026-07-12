@@ -29,7 +29,7 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [isPwaOpen, setIsPwaOpen] = useState(false);
   const [isCreditsOpen, setIsCreditsOpen] = useState(false);
-  const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | 'savedFinished' | 'historical' | null>(null);
+  const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | 'finished' | null>(null);
 
   // Load followed editions from localStorage
   const [followedEditions, setFollowedEditions] = useState<string[]>(() => {
@@ -47,32 +47,10 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   }, []);
 
   const finishedEditions = useMemo(() => {
-    return editions.filter(ed => ed.config.endDate < todayStr);
+    return editions
+      .filter(ed => ed.config.endDate < todayStr)
+      .sort((a, b) => b.config.endDate.localeCompare(a.config.endDate));
   }, [editions, todayStr]);
-
-  const finishedWithFavsOrFollowed = useMemo(() => {
-    return finishedEditions.filter(ed => {
-      const edId = ed.config.edicionId;
-      const isFollowed = followedEditions.includes(edId);
-      
-      let hasFavs = false;
-      try {
-        const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
-        if (favsStr) {
-          const favs = JSON.parse(favsStr);
-          hasFavs = Array.isArray(favs) && favs.length > 0;
-        }
-      } catch (e) {
-        // ignore
-      }
-      return isFollowed || hasFavs;
-    });
-  }, [finishedEditions, followedEditions]);
-
-  const historicalEditions = useMemo(() => {
-    const savedIds = finishedWithFavsOrFollowed.map(ed => ed.config.edicionId);
-    return finishedEditions.filter(ed => !savedIds.includes(ed.config.edicionId));
-  }, [finishedEditions, finishedWithFavsOrFollowed]);
 
   const handleToggleFollow = (edId: string) => {
     setFollowedEditions((prev) => {
@@ -312,8 +290,7 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               onSelectEdition={onSelectEdition}
               followedEditions={followedEditions}
               onToggleFollow={handleToggleFollow}
-              onOpenSavedModal={() => setActiveSelectorModal('savedFinished')}
-              onOpenHistoricalModal={() => setActiveSelectorModal('historical')}
+              onOpenAllFinishedModal={() => setActiveSelectorModal('finished')}
             />
 
             {/* 6. Accesos rápidos */}
@@ -382,10 +359,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
                   ? (language === 'es' ? 'Selecciona una agenda' : language === 'en' ? 'Select a schedule' : 'Sélectionner un agenda')
                   : activeSelectorModal === 'map'
                   ? (language === 'es' ? 'Selecciona un mapa' : language === 'en' ? 'Select a map' : 'Sélectionner un plan')
-                  : activeSelectorModal === 'savedFinished'
-                  ? (language === 'es' ? 'Agendas de festivales finalizados' : language === 'en' ? 'Past Festival Schedules' : 'Agendas de festivals terminés')
-                  : activeSelectorModal === 'historical'
-                  ? (language === 'es' ? 'Histórico de festivales' : language === 'en' ? 'Festival Archive' : 'Historique des festivals')
+                  : activeSelectorModal === 'finished'
+                  ? (language === 'es' ? 'Festivales finalizados' : language === 'en' ? 'Past Festivals' : 'Festivals terminés')
                   : (language === 'es' ? 'Selecciona un festival' : language === 'en' ? 'Select a festival' : 'Sélectionner un festival')
                 }
               </h4>
@@ -403,10 +378,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
                 let list = editions;
                 if (activeSelectorModal === 'agenda') {
                   list = editionsWithFavs;
-                } else if (activeSelectorModal === 'savedFinished') {
-                  list = finishedWithFavsOrFollowed;
-                } else if (activeSelectorModal === 'historical') {
-                  list = historicalEditions;
+                } else if (activeSelectorModal === 'finished') {
+                  list = finishedEditions;
                 }
                 return list.map((ed) => (
                   <button
@@ -429,11 +402,11 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
                     }}
                     className="btn-interactive"
                   >
-                    {activeSelectorModal === 'agenda' || activeSelectorModal === 'savedFinished' ? (
+                    {activeSelectorModal === 'agenda' ? (
                       <Calendar size={16} color="#ff2a85" />
                     ) : activeSelectorModal === 'map' ? (
                       <Map size={16} color="#e67e22" />
-                    ) : activeSelectorModal === 'historical' ? (
+                    ) : activeSelectorModal === 'finished' ? (
                       <Calendar size={16} color="#94a3b8" />
                     ) : (
                       <Newspaper size={16} color="#2b8be3" />
