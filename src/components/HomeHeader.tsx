@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, HelpCircle, Info, Map, Calendar, Search, Newspaper, Smartphone } from 'lucide-react';
+import { Menu, X, HelpCircle, Info, Calendar, Search, Newspaper, Smartphone, Send } from 'lucide-react';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 
@@ -10,7 +10,6 @@ interface HomeHeaderProps {
   onScrollToSection: (sectionId: string) => void;
   onFocusSearch: () => void;
   onOpenQuickAgenda: () => void;
-  onOpenLastMap: () => void;
   onOpenLastNews: () => void;
   onOpenCredits: () => void;
 }
@@ -22,7 +21,6 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
   onScrollToSection,
   onFocusSearch,
   onOpenQuickAgenda,
-  onOpenLastMap,
   onOpenLastNews,
   onOpenCredits,
 }) => {
@@ -332,29 +330,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
                 <span>{language === 'es' ? 'Noticias' : language === 'en' ? 'News' : 'Actualités'}</span>
               </button>
 
-              {/* Mapa */}
-              <button
-                onClick={() => handleMenuClick(onOpenLastMap)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  background: 'transparent',
-                  border: 'none',
-                  color: '#ffffff',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  padding: '12px 10px',
-                  borderRadius: '10px',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  width: '100%',
-                }}
-                className="btn-interactive"
-              >
-                <Map size={18} color="#e67e22" />
-                <span>{language === 'es' ? 'Mapa' : language === 'en' ? 'Venue Map' : 'Plan du site'}</span>
-              </button>
+              <hr style={{ border: 'none', borderBottom: '1px solid var(--border-color)', margin: '12px 0' }} />
 
               {/* Instalar App */}
               <button
@@ -379,8 +355,6 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
                 <Smartphone size={18} color="#00e676" />
                 <span>{language === 'es' ? 'Instalar app' : language === 'en' ? 'Install app' : 'Installer app'}</span>
               </button>
-
-              <hr style={{ border: 'none', borderBottom: '1px solid var(--border-color)', margin: '12px 0' }} />
 
               {/* Idioma */}
               <button
@@ -432,6 +406,32 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
               >
                 <HelpCircle size={18} color="var(--text-secondary)" />
                 <span>{language === 'es' ? 'Ayuda e instalación' : language === 'en' ? 'Help & install' : "Aide & install"}</span>
+              </button>
+
+              {/* Sugerencias */}
+              <button
+                onClick={() => handleMenuClick(() => {
+                  window.location.href = 'mailto:joseafd@gmail.com?subject=AgendaFest%20Sugerencia';
+                })}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  background: 'transparent',
+                  border: 'none',
+                  color: '#ffffff',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  padding: '12px 10px',
+                  borderRadius: '10px',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  width: '100%',
+                }}
+                className="btn-interactive"
+              >
+                <Send size={18} color="#ff2a85" />
+                <span>{t(language, 'suggestions')}</span>
               </button>
 
               {/* Créditos */}

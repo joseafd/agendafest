@@ -58,7 +58,7 @@ export function NewsView({ noticias, onBackToHome, festivalName, language }: New
 
         <div style={{ textAlign: 'center' }}>
           <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>
-            {t(language, 'newsTitle')} {festivalName}
+            {t(language, 'newsTitle')}{festivalName ? ` ${festivalName}` : ''}
           </h1>
           <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>
             {language === 'en' ? 'LATEST UPDATES' : language === 'fr' ? 'DERNIÈRES NOUVELLES' : 'ÚLTIMAS NOVEDADES'}

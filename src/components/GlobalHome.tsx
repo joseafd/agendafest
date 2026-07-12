@@ -4,9 +4,9 @@ import { GlobalSearchBar } from './GlobalSearchBar';
 import { MyFestivalsSection } from './MyFestivalsSection';
 import { ContinueAgendaSection } from './ContinueAgendaSection';
 import { UpcomingFestivalsSection } from './UpcomingFestivalsSection';
-import { QuickAccessSection } from './QuickAccessSection';
 import { FestivalCard } from './FestivalCard';
 import { PwaInstallModal } from './PwaInstallModal';
+import { NewsView } from './NewsView';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 import type { FestivalEdition } from '../data/festivalData';
@@ -29,7 +29,28 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [isPwaOpen, setIsPwaOpen] = useState(false);
   const [isCreditsOpen, setIsCreditsOpen] = useState(false);
+  const [isNewsOpen, setIsNewsOpen] = useState(false);
   const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | 'finished' | 'myFestivals' | 'allSystem' | null>(null);
+
+  const allGlobalNews = useMemo(() => {
+    const parseDDMMYYYY = (dateStr: string): Date => {
+      const [d, m, y] = dateStr.split('/').map(Number);
+      return new Date(y, m - 1, d);
+    };
+
+    const newsList: any[] = [];
+    editions.forEach((ed) => {
+      if (ed.noticias && Array.isArray(ed.noticias)) {
+        ed.noticias.forEach((item) => {
+          newsList.push(item);
+        });
+      }
+    });
+
+    return newsList
+      .sort((a, b) => parseDDMMYYYY(b.fecha).getTime() - parseDDMMYYYY(a.fecha).getTime())
+      .slice(0, 5);
+  }, [editions]);
 
   // Load followed editions from localStorage
   const [followedEditions, setFollowedEditions] = useState<string[]>(() => {
@@ -119,8 +140,6 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
     });
   }, [editions, searchQuery]);
 
-  // Determine last opened festival ID
-  const lastOpenedEdId = window.localStorage.getItem('af_last_opened_edition');
 
   // Filter editions that have saved favorites
   const editionsWithFavs = useMemo(() => {
@@ -153,24 +172,10 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
     }
   };
 
-  // Handle Quick Access - Mapa click
-  const handleOpenMap = () => {
-    if (lastOpenedEdId && editions.some(e => e.config.edicionId === lastOpenedEdId)) {
-      window.localStorage.setItem(`af_${lastOpenedEdId}_open_map`, 'true');
-      onSelectEdition(lastOpenedEdId);
-    } else {
-      setActiveSelectorModal('map');
-    }
-  };
 
   // Handle Quick Access - Noticias click
   const handleOpenNews = () => {
-    if (lastOpenedEdId && editions.some(e => e.config.edicionId === lastOpenedEdId)) {
-      window.localStorage.setItem(`af_${lastOpenedEdId}_open_news`, 'true');
-      onSelectEdition(lastOpenedEdId);
-    } else {
-      setActiveSelectorModal('news');
-    }
+    setIsNewsOpen(true);
   };
 
   const handleSelectEditionFromModal = (edId: string) => {
@@ -216,7 +221,6 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
           onScrollToSection={handleScrollToSection}
           onFocusSearch={handleFocusSearch}
           onOpenQuickAgenda={handleOpenAgenda}
-          onOpenLastMap={handleOpenMap}
           onOpenLastNews={handleOpenNews}
           onOpenCredits={() => setIsCreditsOpen(true)}
         />
@@ -316,17 +320,6 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               onOpenAllFinishedModal={() => setActiveSelectorModal('finished')}
             />
 
-            {/* 6. Accesos rápidos */}
-            <QuickAccessSection
-              language={language}
-              onChangeLanguage={onChangeLanguage}
-              onFocusSearch={handleFocusSearch}
-              onOpenQuickAgenda={handleOpenAgenda}
-              onOpenLastMap={handleOpenMap}
-              onOpenLastNews={handleOpenNews}
-              onOpenPwaGuide={() => setIsPwaOpen(true)}
-              onOpenCredits={() => setIsCreditsOpen(true)}
-            />
           </>
         )}
       </div>
@@ -524,6 +517,17 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               <strong>Diseño:</strong> Neomorphic Glass UI
             </div>
           </div>
+        </div>
+      )}
+
+      {isNewsOpen && (
+        <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 999999 }}>
+          <NewsView
+            noticias={allGlobalNews}
+            onBackToHome={() => setIsNewsOpen(false)}
+            festivalName=""
+            language={language}
+          />
         </div>
       )}
     </div>
