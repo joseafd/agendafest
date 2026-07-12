@@ -13,6 +13,13 @@ interface NewsViewProps {
 
 export function NewsView({ noticias, onBackToHome, festivalName, language }: NewsViewProps) {
   const [selectedNews, setSelectedNews] = useState<NoticiaItem | null>(null);
+  const [failedImages, setFailedImages] = useState<Record<number, boolean>>({});
+  const [detailImageFailed, setDetailImageFailed] = useState(false);
+
+  const handleSelectNews = (item: NoticiaItem) => {
+    setDetailImageFailed(false);
+    setSelectedNews(item);
+  };
 
   return (
     <div className="app-container animate-fade-in" style={{ background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -79,7 +86,7 @@ export function NewsView({ noticias, onBackToHome, festivalName, language }: New
           noticias.map((item, index) => (
             <div
               key={index}
-              onClick={() => setSelectedNews(item)}
+              onClick={() => handleSelectNews(item)}
               style={{
                 background: 'rgba(255, 255, 255, 0.02)',
                 border: '1px solid rgba(255, 255, 255, 0.06)',
@@ -93,12 +100,15 @@ export function NewsView({ noticias, onBackToHome, festivalName, language }: New
               }}
               className="news-card btn-interactive"
             >
-              {item.imagen && (
+              {item.imagen && !failedImages[index] ? (
                 <div style={{ width: '100%', height: '160px', overflow: 'hidden', position: 'relative' }}>
                   <img
                     src={item.imagen}
                     alt={item.entradilla}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    onError={() => {
+                      setFailedImages(prev => ({ ...prev, [index]: true }));
+                    }}
                   />
                   <div
                     style={{
@@ -123,10 +133,10 @@ export function NewsView({ noticias, onBackToHome, festivalName, language }: New
                     {item.fecha}
                   </div>
                 </div>
-              )}
+              ) : null}
               
               <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {!item.imagen && (
+                {(!item.imagen || failedImages[index]) && (
                   <div style={{ fontSize: '0.68rem', color: 'var(--color-primary)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '4px', marginBottom: '4px' }}>
                     <Calendar size={10} />
                     {item.fecha}
@@ -208,12 +218,13 @@ export function NewsView({ noticias, onBackToHome, festivalName, language }: New
               <X size={16} />
             </button>
 
-            {selectedNews.imagen && (
+            {selectedNews.imagen && !detailImageFailed && (
               <div style={{ width: '100%', overflow: 'hidden', position: 'relative', borderTopLeftRadius: '24px', borderTopRightRadius: '24px', background: '#000000' }}>
                 <img
                   src={selectedNews.imagen}
                   alt={selectedNews.entradilla}
                   style={{ width: '100%', height: 'auto', display: 'block' }}
+                  onError={() => setDetailImageFailed(true)}
                 />
               </div>
             )}

@@ -7,7 +7,7 @@ import { FilterDrawer } from './FilterDrawer';
 import { BandDetailModal } from './BandDetailModal';
 import { NewsView } from './NewsView';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { Calendar, Map, ArrowLeft, Download, Share2, Newspaper } from 'lucide-react';
+import { Calendar, Map, ArrowLeft, Share2, Newspaper, Image } from 'lucide-react';
 import { agendaFestData } from '../data/festivalData';
 import type { Act, FestivalEdition, NoticiaItem } from '../data/festivalData';
 import { PwaInstallModal } from './PwaInstallModal';
@@ -87,8 +87,8 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     return days[days.length - 1].id;
   }, [days, edicionConfig]);
 
-  // 1. App Navigation State (home, agenda, map, news)
-  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'news'>('home');
+  // 1. App Navigation State (home, agenda, map, news, poster)
+  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'news' | 'poster'>('home');
   const [isPwaModalOpen, setIsPwaModalOpen] = useState<boolean>(false);
 
   // 2. Persistent State
@@ -978,6 +978,30 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 zIndex: 10,
               }}
             >
+              {/* Cartel Icon */}
+              <button
+                onClick={() => setActiveTab('poster')}
+                aria-label="Cartel"
+                title="Cartel"
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: 'rgba(0, 230, 118, 0.15)',
+                  border: '2px solid rgba(0, 230, 118, 0.8)',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 12px rgba(0, 230, 118, 0.4)',
+                  transition: 'transform 0.1s, background-color 0.2s',
+                }}
+                className="btn-interactive"
+              >
+                <Image size={20} color="#00e676" />
+              </button>
+
               {/* Agenda Icon */}
               <button
                 onClick={() => setActiveTab('agenda')}
@@ -1048,30 +1072,6 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 className="btn-interactive"
               >
                 <Map size={20} color="#ffd600" />
-              </button>
-
-              {/* Instalar App Icon */}
-              <button
-                onClick={() => setIsPwaModalOpen(true)}
-                aria-label="Instalar App"
-                title="Instalar App"
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '50%',
-                  background: 'rgba(0, 230, 118, 0.15)',
-                  border: '2px solid rgba(0, 230, 118, 0.8)',
-                  color: '#ffffff',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 0 12px rgba(0, 230, 118, 0.4)',
-                  transition: 'transform 0.1s, background-color 0.2s',
-                }}
-                className="btn-interactive"
-              >
-                <Download size={20} color="#00e676" />
               </button>
             </div>
           </div>
@@ -1203,6 +1203,86 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
               <img
                 src={`./images/${edicionConfig.mapa}`}
                 alt={`Mapa del ${edicionConfig.festivalName} ${edicionConfig.year}`}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                }}
+              />
+            </div>
+          </main>
+        </div>
+      )}
+
+
+
+      {/* VIEW 6: POSTER VIEWER */}
+      {activeTab === 'poster' && (
+        <div className="app-container animate-fade-in" style={{ background: 'var(--bg-primary)', display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <header
+            style={{
+              position: 'sticky',
+              top: 0,
+              zIndex: 50,
+              padding: '12px 16px',
+              background: 'rgba(13, 15, 20, 0.75)',
+              backdropFilter: 'blur(16px)',
+              WebkitBackdropFilter: 'blur(16px)',
+              borderBottom: '1px solid var(--border-color)',
+              borderTop: 'var(--safe-top) solid transparent',
+              width: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
+            <button
+              onClick={() => setActiveTab('home')}
+              aria-label={language === 'es' ? 'Volver al inicio' : 'Back to home'}
+              style={{
+                background: 'rgba(255, 255, 255, 0.04)',
+                border: '1px solid var(--border-color)',
+                color: 'var(--text-primary)',
+                padding: '10px',
+                borderRadius: '12px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s',
+              }}
+              className="btn-interactive"
+            >
+              <ArrowLeft size={18} />
+            </button>
+
+            <div style={{ textAlign: 'center' }}>
+              <h1 className="font-metal neon-text-glow" style={{ fontSize: '1.15rem', lineHeight: 1.1, textTransform: 'uppercase' }}>
+                {language === 'es' ? 'Cartel Oficial' : language === 'en' ? 'Official Poster' : 'Affiche Officielle'}
+              </h1>
+              <span style={{ fontSize: '0.62rem', letterSpacing: '2px', color: 'var(--text-secondary)', fontWeight: 800 }}>
+                {edicionConfig.visibleName}
+              </span>
+            </div>
+
+            <div style={{ width: '38px' }} />
+          </header>
+
+          <main
+            style={{
+              flex: 1,
+              overflow: 'auto',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '24px',
+              background: 'var(--bg-primary)',
+            }}
+          >
+            <div className="glass-gradient-border-portada neon-glow" style={{ maxWidth: '500px', width: '100%', overflow: 'hidden', borderRadius: '16px' }}>
+              <img
+                src={`./images/${edicionConfig.cartel}`}
+                alt={`Cartel de ${edicionConfig.visibleName}`}
                 style={{
                   width: '100%',
                   height: 'auto',
