@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, HelpCircle, Info, Calendar, Search, Newspaper, Smartphone, Send, Share2 } from 'lucide-react';
+import { Menu, X, Info, Calendar, Search, Newspaper, Smartphone, Send, Share2 } from 'lucide-react';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 
@@ -421,30 +421,6 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
                 <span>
                   {language === 'es' ? 'Idioma: Español' : language === 'en' ? 'Language: English' : 'Langue: Français'}
                 </span>
-              </button>
-
-              {/* Ayuda */}
-              <button
-                onClick={() => handleMenuClick(onOpenPwaGuide)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  background: 'transparent',
-                  border: 'none',
-                  color: '#ffffff',
-                  fontSize: '0.95rem',
-                  fontWeight: '600',
-                  padding: '12px 10px',
-                  borderRadius: '10px',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  width: '100%',
-                }}
-                className="btn-interactive"
-              >
-                <HelpCircle size={18} color="var(--text-secondary)" />
-                <span>{language === 'es' ? 'Ayuda e instalación' : language === 'en' ? 'Help & install' : "Aide & install"}</span>
               </button>
 
               {/* Sugerencias */}
