@@ -7,7 +7,7 @@ import { FilterDrawer } from './FilterDrawer';
 import { BandDetailModal } from './BandDetailModal';
 import { NewsView } from './NewsView';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { Calendar, Map, ArrowLeft, Share2, Newspaper, Image } from 'lucide-react';
+import { Calendar, Map, ArrowLeft, Share2, Newspaper, Image, Smartphone } from 'lucide-react';
 import type { Act, FestivalEdition } from '../data/festivalData';
 import { PwaInstallModal } from './PwaInstallModal';
 import { t, tFormat } from '../utils/translations';
@@ -1092,7 +1092,66 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
             {t(language, 'backToSelector')}
           </button>
 
+          {/* Utility Actions: Instalar App + Compartir */}
+          <div
+            style={{
+              marginTop: '12px',
+              display: 'flex',
+              gap: '10px',
+              maxWidth: '320px',
+              width: '100%',
+            }}
+          >
+            {/* Instalar App */}
+            <button
+              onClick={() => setIsPwaModalOpen(true)}
+              style={{
+                flex: 1,
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                color: 'var(--text-secondary)',
+                borderRadius: '12px',
+                padding: '10px 12px',
+                fontSize: '0.78rem',
+                fontWeight: '700',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+                transition: 'background 0.2s',
+              }}
+              className="btn-interactive"
+            >
+              <Smartphone size={15} />
+              {language === 'en' ? 'Install App' : language === 'fr' ? 'Installer' : 'Instalar App'}
+            </button>
 
+            {/* Compartir mi agenda */}
+            <button
+              onClick={handleShareFavorites}
+              style={{
+                flex: 1,
+                background: 'rgba(255, 255, 255, 0.02)',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                color: 'var(--text-secondary)',
+                borderRadius: '12px',
+                padding: '10px 12px',
+                fontSize: '0.78rem',
+                fontWeight: '700',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+                transition: 'background 0.2s',
+              }}
+              className="btn-interactive"
+            >
+              <Share2 size={15} />
+              {language === 'en' ? 'Share' : language === 'fr' ? 'Partager' : 'Compartir'}
+            </button>
+          </div>
 
           {/* Visitor Counter Badge */}
           {visitCount !== null && (
