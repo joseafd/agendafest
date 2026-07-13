@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, HelpCircle, Info, Calendar, Search, Newspaper, Smartphone, Send } from 'lucide-react';
+import { Menu, X, HelpCircle, Info, Calendar, Search, Newspaper, Smartphone, Send, Share2 } from 'lucide-react';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 
@@ -354,6 +354,45 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
               >
                 <Smartphone size={18} color="#00e676" />
                 <span>{language === 'es' ? 'Instalar app' : language === 'en' ? 'Install app' : 'Installer app'}</span>
+              </button>
+
+              {/* Compartir */}
+              <button
+                onClick={() => handleMenuClick(() => {
+                  const shareData = {
+                    title: 'AgendaFest',
+                    text: language === 'es'
+                      ? 'Monta tu agenda de festivales de rock y metal con AgendaFest'
+                      : language === 'en'
+                      ? 'Build your rock & metal festival schedule with AgendaFest'
+                      : 'Créez votre agenda de festivals rock et métal avec AgendaFest',
+                    url: window.location.origin + window.location.pathname,
+                  };
+                  if (navigator.share) {
+                    navigator.share(shareData).catch(() => {});
+                  } else {
+                    navigator.clipboard.writeText(shareData.url).catch(() => {});
+                  }
+                })}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  background: 'transparent',
+                  border: 'none',
+                  color: '#ffffff',
+                  fontSize: '0.95rem',
+                  fontWeight: '600',
+                  padding: '12px 10px',
+                  borderRadius: '10px',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  width: '100%',
+                }}
+                className="btn-interactive"
+              >
+                <Share2 size={18} color="#00c6ff" />
+                <span>{language === 'es' ? 'Compartir' : language === 'en' ? 'Share' : 'Partager'}</span>
               </button>
 
               {/* Idioma */}
