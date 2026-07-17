@@ -3261,7 +3261,7 @@ const rawAgendaFestData: any = {
       "mapa": "mapavendaval2026.jpg",
       "dayStartHour": 18,
       "dayEndHour": 5,
-      "aftermovieUrl": ""
+      "aftermovieUrl": "https://www.youtube.com/watch?v=BGOmwtxKRDE"
     },
     "stages": [
       {
@@ -3277,22 +3277,230 @@ const rawAgendaFestData: any = {
         "dayNumber": 1,
         "dayLabel": "Viernes 24",
         "weekdayEs": "Viernes",
-        "doors": "15:00",
+        "doors": "18:45",
         "stages": [
           "Vendaval"
         ],
-        "acts": []
+        "acts": [
+          {
+            "band": "Demenzia Sozial",
+            "stage": "Vendaval",
+            "start": "19:15",
+            "end": "20:00",
+            "bio": {
+              "name": "Demenzia Sozial",
+              "title": "",
+              "description": "Demenzia Sozial es una banda de punk rock procedente del País Vasco, activa desde los años 90. Con letras combativas en euskera y castellano, su sonido directo y energético les ha convertido en referentes del punk estatal.",
+              "country": "España",
+              "genre": "Punk Rock",
+              "spotifyUrl": "https://open.spotify.com/artist/2iGNWJXXKSikzt5vXMiGQx",
+              "instagramUrl": "https://www.instagram.com/demenziasozial/",
+              "facebookUrl": "https://www.facebook.com/DemenziaSozial"
+            }
+          },
+          {
+            "band": "HAMLET",
+            "stage": "Vendaval",
+            "start": "20:30",
+            "end": "21:45",
+            "bio": {
+              "name": "HAMLET",
+              "title": "",
+              "description": "Hamlet es una banda de metal alternativo, thrash metal y groove metal de Madrid (España), en activo desde 1987. El nombre del grupo se lo deben a un antiguo batería de la agrupación, que llegó a un ensayo con la obra Hamlet de William Shakespeare, y decidieron darle al grupo dicho nombre.",
+              "country": "España",
+              "genre": "Thrash Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=HGozdu9dfZ8",
+              "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
+              "instagramUrl": "https://www.instagram.com/hamletband/",
+              "facebookUrl": "https://www.facebook.com/hamletband",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747e1b69bc4f40b05b6a7052cd"
+            }
+          },
+          {
+            "band": "Dakidarria",
+            "stage": "Vendaval",
+            "start": "22:15",
+            "end": "23:45",
+            "bio": {
+              "name": "Dakidarria",
+              "title": "",
+              "description": "Dakidarria es un grupo gallego de folk-rock fundado en 1993 en Lugo. Fusionan el rock con la música tradicional gallega, incorporando gaita y zanfona, creando un sonido único que les ha llevado a ser una de las bandas más reconocidas de la escena gallega.",
+              "country": "España",
+              "genre": "Folk Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=rCqFqCZwKnQ",
+              "spotifyUrl": "https://open.spotify.com/artist/1kV3YKCDm2VjMKABjQQDQn",
+              "instagramUrl": "https://www.instagram.com/dakidarria/",
+              "facebookUrl": "https://www.facebook.com/Dakidarria"
+            }
+          },
+          {
+            "band": "The Real McKenzies",
+            "stage": "Vendaval",
+            "start": "00:15",
+            "end": "01:30",
+            "bio": {
+              "name": "The Real McKenzies",
+              "title": "",
+              "description": "The Real McKenzies son una banda canadiense de celtic punk formada en Vancouver en 1992 por Paul McKenzie. Combinan punk rock acelerado con gaitas escocesas, creando himnos festivos que les han convertido en leyendas del género a nivel mundial.",
+              "country": "Canadá",
+              "genre": "Celtic Punk",
+              "youtubeUrl": "https://www.youtube.com/watch?v=wNlpQlBKoYQ",
+              "spotifyUrl": "https://open.spotify.com/artist/0Fz7CWhXEiGMlPqVCmb2a3",
+              "instagramUrl": "https://www.instagram.com/therealmckenzies/",
+              "facebookUrl": "https://www.facebook.com/therealmckenzies"
+            }
+          },
+          {
+            "band": "Ruxe Ruxe",
+            "stage": "Vendaval",
+            "start": "02:00",
+            "end": "03:00",
+            "bio": {
+              "name": "Ruxe Ruxe",
+              "title": "",
+              "description": "Ruxe Ruxe es una banda gallega que fusiona punk, ska y música tradicional gallega. Con letras reivindicativas en gallego y un directo explosivo, son habituales en los festivales del noroeste peninsular.",
+              "country": "España",
+              "genre": "Punk / Ska",
+              "spotifyUrl": "https://open.spotify.com/artist/2cfFuVXAOBbFoGmhJZLm14",
+              "instagramUrl": "https://www.instagram.com/ruxeruxe/",
+              "facebookUrl": "https://www.facebook.com/ruxeruxe"
+            }
+          },
+          {
+            "band": "DJ Tralla",
+            "stage": "Vendaval",
+            "start": "03:00",
+            "end": "04:30",
+            "bio": {
+              "name": "DJ Tralla",
+              "title": "",
+              "description": "DJ Tralla es el disc jockey residente del Vendaval Fest, encargado de mantener la fiesta entre conciertos y cerrar cada jornada con sesiones de rock, punk y metal.",
+              "country": "España",
+              "genre": "DJ / Rock"
+            }
+          }
+        ]
       },
       {
         "id": "2026-07-25",
         "dayNumber": 2,
         "dayLabel": "Sábado 25",
         "weekdayEs": "Sábado",
-        "doors": "15:00",
+        "doors": "18:30",
         "stages": [
           "Vendaval"
         ],
-        "acts": []
+        "acts": [
+          {
+            "band": "Ochobre",
+            "stage": "Vendaval",
+            "start": "19:00",
+            "end": "19:45",
+            "bio": {
+              "name": "Ochobre",
+              "title": "",
+              "description": "Ochobre es una banda gallega de rock alternativo que canta en gallego. Con un sonido que combina indie rock, post-punk y pop oscuro, se han convertido en una de las propuestas más interesantes de la música gallega contemporánea.",
+              "country": "España",
+              "genre": "Rock Alternativo",
+              "spotifyUrl": "https://open.spotify.com/artist/0Y6q5L8bLPyV2K7rmQnPmV",
+              "instagramUrl": "https://www.instagram.com/ochobre_/",
+              "facebookUrl": "https://www.facebook.com/ochobre"
+            }
+          },
+          {
+            "band": "Hermana Furia",
+            "stage": "Vendaval",
+            "start": "20:15",
+            "end": "21:15",
+            "bio": {
+              "name": "Hermana Furia",
+              "title": "",
+              "description": "Hermana Furia es una banda española de rock alternativo y stoner rock. Con riffs potentes y una actitud visceral, su música bebe del grunge, el desert rock y el punk, ofreciendo directos intensos y contundentes.",
+              "country": "España",
+              "genre": "Stoner Rock",
+              "spotifyUrl": "https://open.spotify.com/artist/6lK7Vc50r2gs7H9YVOFldp",
+              "instagramUrl": "https://www.instagram.com/hermanafuria/",
+              "facebookUrl": "https://www.facebook.com/hermanafuria"
+            }
+          },
+          {
+            "band": "El Drogas",
+            "stage": "Vendaval",
+            "start": "21:45",
+            "end": "23:15",
+            "bio": {
+              "name": "El Drogas",
+              "title": "",
+              "description": "Enrique Villarreal 'El Drogas' es un músico navarro, fundador y líder de la legendaria banda Barricada durante más de 30 años. Tras la disolución del grupo, continúa su carrera en solitario con un rock directo, visceral y comprometido que le mantiene como una de las figuras más respetadas del rock español.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=_DaqCJVIhIc",
+              "spotifyUrl": "https://open.spotify.com/artist/2eOdEDrZaWzDxSHyMYYPwO",
+              "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
+              "facebookUrl": "https://www.facebook.com/ElDrogasOficial"
+            }
+          },
+          {
+            "band": "Benito Kamelas",
+            "stage": "Vendaval",
+            "start": "23:45",
+            "end": "01:15",
+            "bio": {
+              "name": "Benito Kamelas",
+              "title": "",
+              "description": "Benito Kamelas es una banda de punk rock española formada en Córdoba en 1993. Con más de tres décadas de trayectoria, son uno de los grupos más emblemáticos del punk-rock festivo nacional, conocidos por sus directos enérgicos y su espíritu de fiesta.",
+              "country": "España",
+              "genre": "Punk Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=rQPBYxSCmTU",
+              "spotifyUrl": "https://open.spotify.com/artist/20HaUVeZgXFXfclU0j96As",
+              "instagramUrl": "https://www.instagram.com/benitokamelas_oficial/",
+              "facebookUrl": "https://www.facebook.com/benitokamelasoficial"
+            }
+          },
+          {
+            "band": "The Lizards",
+            "stage": "Vendaval",
+            "start": "01:45",
+            "end": "02:30",
+            "bio": {
+              "name": "The Lizards",
+              "title": "",
+              "description": "The Lizards son una banda de garage rock y rock and roll crudo. Con influencias del rock clásico de los 60 y 70, ofrecen un directo salvaje y desenfadado.",
+              "country": "España",
+              "genre": "Garage Rock",
+              "spotifyUrl": "https://open.spotify.com/artist/3gUqMYWbzAQc4jNNNxaDgk",
+              "instagramUrl": "https://www.instagram.com/thelizardsband/"
+            }
+          },
+          {
+            "band": "Las Moskas Retrompeteras",
+            "stage": "Vendaval",
+            "start": "03:00",
+            "end": "04:00",
+            "bio": {
+              "name": "Las Moskas Retrompeteras",
+              "title": "",
+              "description": "Las Moskas Retrompeteras son una formación festiva que mezcla ska, fanfarria callejera y punk con instrumentos de viento. Su música está diseñada para el baile y la celebración, siendo habituales en festivales y fiestas populares del norte de España.",
+              "country": "España",
+              "genre": "Ska / Fanfarria",
+              "instagramUrl": "https://www.instagram.com/lasmoskasretrompeteras/",
+              "facebookUrl": "https://www.facebook.com/LasMoskasRetrompeteras"
+            }
+          },
+          {
+            "band": "DJ Tralla",
+            "stage": "Vendaval",
+            "start": "04:00",
+            "end": "05:00",
+            "bio": {
+              "name": "DJ Tralla",
+              "title": "",
+              "description": "DJ Tralla es el disc jockey residente del Vendaval Fest, encargado de mantener la fiesta entre conciertos y cerrar cada jornada con sesiones de rock, punk y metal.",
+              "country": "España",
+              "genre": "DJ / Rock"
+            }
+          }
+        ]
       }
     ],
     "noticias": []
