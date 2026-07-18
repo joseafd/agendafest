@@ -18,6 +18,12 @@ async function loadStatus() {
     document.getElementById('modelName').textContent = data.aiProvider === 'mock'
       ? `${data.aiProvider} (Mock Mode)`
       : `${data.aiProvider} (${data.modelConfig?.model || 'modelo configurado'})`;
+    const spotifyBadge = document.getElementById('spotifyConfigStatus');
+    const youtubeBadge = document.getElementById('youtubeConfigStatus');
+    spotifyBadge.textContent = data.spotifyConfigured ? 'Configurado' : 'No configurado';
+    spotifyBadge.className = `status-badge ${data.spotifyConfigured ? 'status-online' : 'status-warning'}`;
+    youtubeBadge.textContent = data.youtubeConfigured ? 'Configurada' : 'No configurada';
+    youtubeBadge.className = `status-badge ${data.youtubeConfigured ? 'status-online' : 'status-warning'}`;
 
     // Check if publication is enabled
     const configRes = await fetch('/api/publish/config');
@@ -114,6 +120,18 @@ function renderCompletionStatus(missingFields, completeLabel) {
     <span class="completion-status completion-status--pending">Faltan:</span>
     <span class="missing-fields">${missingFields.map(escapeHtml).join(', ')}</span>
   `;
+}
+
+function renderMetadataSources(item, hasSocial) {
+  const sources = [];
+  if (item.youtubeUrl) sources.push(`Vídeo: ${item.youtubeSource || 'verificado'}`);
+  else if (item.youtubeStatus === 'not_configured') sources.push('Vídeo: YouTube API no configurada');
+  else if (item.youtubeStatus === 'not_found') sources.push('Vídeo: no encontrado');
+  else if (item.youtubeStatus === 'api_error') sources.push('Vídeo: error temporal');
+  if (hasSocial) sources.push(`RRSS: ${item.socialSource || 'verificada'}`);
+  return sources.length
+    ? `<span class="metadata-sources">${sources.map(escapeHtml).join(' · ')}</span>`
+    : '';
 }
 
 async function startImport() {
@@ -256,7 +274,7 @@ function renderReviewTable(result) {
       <td style="padding: 8px;" contenteditable="true" data-field="country">${escapeHtml(item.country || '')}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="genre">${escapeHtml(item.genre || '')}</td>
       <td class="completion-cell" title="${basicComplete ? 'País, género y bio disponibles' : `Faltan: ${basicMissing.join(', ')}`}">${renderCompletionStatus(basicMissing, 'Completa')}</td>
-      <td class="completion-cell" title="${contentComplete ? 'Vídeo, imagen y RRSS disponibles' : `Faltan: ${contentMissing.join(', ')}`}">${renderCompletionStatus(contentMissing, 'Completo')}</td>
+      <td class="completion-cell" title="${contentComplete ? 'Vídeo, imagen y RRSS disponibles' : `Faltan: ${contentMissing.join(', ')}`}">${renderCompletionStatus(contentMissing, 'Completo')}${renderMetadataSources(item, hasSocial)}</td>
       <td style="padding: 8px; min-width:220px;" data-field="validation"></td>
       <td style="padding: 8px; color: #9ca3af;">${item.spotifyPopularity !== undefined ? item.spotifyPopularity : '-'}</td>
       <td style="padding: 8px; text-align: center;">
