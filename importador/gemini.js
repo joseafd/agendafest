@@ -6,6 +6,15 @@ function getModelCandidates(configuredModel = process.env.IA_MODEL) {
   return [...new Set([configuredModel, DEFAULT_GEMINI_MODEL].filter(Boolean))];
 }
 
+function parseRetryDelayMs(message) {
+  const match = /retry in\s+([\d.]+)s/i.exec(String(message || ''));
+  return match ? Math.ceil(Number(match[1]) * 1000) : 60000;
+}
+
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function callGeminiApi(model, apiKey, payload, timeout = 120000) {
   return new Promise((resolve, reject) => {
     const requestBody = JSON.stringify(payload);
@@ -31,6 +40,7 @@ function callGeminiApi(model, apiKey, payload, timeout = 120000) {
           } catch (_) {}
           const err = new Error(`Gemini respondió HTTP ${res.statusCode}${apiMessage ? `: ${apiMessage}` : '.'}`);
           err.statusCode = res.statusCode;
+          if (res.statusCode === 429) err.retryAfterMs = parseRetryDelayMs(apiMessage);
           return reject(err);
         }
         try {
@@ -54,16 +64,49 @@ async function callGeminiWithModelFallback(apiKey, payload, timeout) {
   const candidates = getModelCandidates();
   let lastError;
   for (let index = 0; index < candidates.length; index++) {
-    try {
-      return { text: await callGeminiApi(candidates[index], apiKey, payload, timeout), model: candidates[index] };
-    } catch (err) {
-      lastError = err;
-      // Sólo una retirada/no disponibilidad del modelo permite cambiar de
-      // modelo. Los errores de cuota, autenticación o contenido nunca se ocultan.
-      if (err.statusCode !== 404 || index === candidates.length - 1) throw err;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        return { text: await callGeminiApi(candidates[index], apiKey, payload, timeout), model: candidates[index] };
+      } catch (err) {
+        lastError = err;
+        if (err.statusCode === 429 && attempt < 2) {
+          await wait(Math.min(Math.max(err.retryAfterMs || 60000, 1000), 65000));
+          continue;
+        }
+        // Sólo una retirada/no disponibilidad del modelo permite cambiar de
+        // modelo. Los errores de autenticación o contenido nunca se ocultan.
+        if (err.statusCode !== 404 || index === candidates.length - 1) throw err;
+        break;
+      }
     }
   }
   throw lastError;
+}
+
+const artistResponseSchema = {
+  type: 'OBJECT',
+  properties: {
+    artists: {
+      type: 'ARRAY',
+      items: {
+        type: 'OBJECT',
+        properties: {
+          artistName: { type: 'STRING' }, country: { type: 'STRING' }, genre: { type: 'STRING' },
+          description: { type: 'STRING' }, bio: { type: 'STRING' }, youtubeUrl: { type: 'STRING' },
+          imageUrl: { type: 'STRING' }, officialWebsite: { type: 'STRING' }, instagramUrl: { type: 'STRING' },
+          facebookUrl: { type: 'STRING' }, xUrl: { type: 'STRING' }, tiktokUrl: { type: 'STRING' },
+          sourceUrls: { type: 'ARRAY', items: { type: 'STRING' } }
+        },
+        required: ['artistName', 'country', 'genre', 'description', 'bio', 'youtubeUrl', 'imageUrl',
+          'officialWebsite', 'instagramUrl', 'facebookUrl', 'xUrl', 'tiktokUrl', 'sourceUrls']
+      }
+    }
+  },
+  required: ['artists']
+};
+
+function getArtistBatchSize(allowPaidSearch) {
+  return allowPaidSearch ? 8 : 32;
 }
 
 async function enrichArtistsWithAi(lineup, edition) {
@@ -73,47 +116,31 @@ async function enrichArtistsWithAi(lineup, edition) {
 
   const uniqueNames = [...new Set(lineup.map(item => item.artistName.trim()).filter(Boolean))];
   const metadata = new Map();
-  for (let offset = 0; offset < uniqueNames.length; offset += 8) {
-    const names = uniqueNames.slice(offset, offset + 8);
-    const allowPaidSearch = process.env.GEMINI_SEARCH_GROUNDING === 'true';
+  const allowPaidSearch = process.env.GEMINI_SEARCH_GROUNDING === 'true';
+  const batchSize = getArtistBatchSize(allowPaidSearch);
+  for (let offset = 0; offset < uniqueNames.length; offset += batchSize) {
+    const names = uniqueNames.slice(offset, offset + batchSize);
     const researchPrompt = `${allowPaidSearch ? 'Investiga mediante Google Search' : 'Identifica usando únicamente conocimientos fiables'} estos artistas que actúan en ${edition.name} (${edition.year}): ${names.join(', ')}.\n` +
       'No inventes datos ni URLs. Deja vacío todo dato que no puedas asegurar. ' +
       'Para cada nombre aporta país, género principal, descripción breve, biografía, vídeo de YouTube, imagen pública, web oficial, Instagram, Facebook, X y TikTok. ' +
       `${allowPaidSearch ? 'Incluye también las URLs de las fuentes.' : 'No cites fuentes ni enlaces recordados de memoria.'}`;
-    const researchPayload = {
-      contents: [{ role: 'user', parts: [{ text: researchPrompt }] }],
-    };
-    if (allowPaidSearch) researchPayload.tools = [{ google_search: {} }];
-    const { text: research } = await callGeminiWithModelFallback(apiKey, researchPayload);
+    let notes = '';
+    if (allowPaidSearch) {
+      const { text } = await callGeminiWithModelFallback(apiKey, {
+        contents: [{ role: 'user', parts: [{ text: researchPrompt }] }],
+        tools: [{ google_search: {} }]
+      });
+      notes = `\nNotas de investigación:\n${text}`;
+    }
 
     const { text: structuredText } = await callGeminiWithModelFallback(apiKey, {
       contents: [{ role: 'user', parts: [{ text:
-        `Convierte estas notas de investigación en JSON. Conserva exactamente los nombres solicitados. ` +
-        `Usa cadena vacía para cualquier dato no verificado.\nNombres: ${JSON.stringify(names)}\nNotas:\n${research}`
+        `${researchPrompt}\nDevuelve directamente el JSON solicitado y conserva exactamente los nombres. ` +
+        `Usa cadena vacía para cualquier dato no verificado.\nNombres: ${JSON.stringify(names)}${notes}`
       }] }],
       generationConfig: {
         responseMimeType: 'application/json',
-        responseSchema: {
-          type: 'OBJECT',
-          properties: {
-            artists: {
-              type: 'ARRAY',
-              items: {
-                type: 'OBJECT',
-                properties: {
-                  artistName: { type: 'STRING' }, country: { type: 'STRING' }, genre: { type: 'STRING' },
-                  description: { type: 'STRING' }, bio: { type: 'STRING' }, youtubeUrl: { type: 'STRING' },
-                  imageUrl: { type: 'STRING' }, officialWebsite: { type: 'STRING' }, instagramUrl: { type: 'STRING' },
-                  facebookUrl: { type: 'STRING' }, xUrl: { type: 'STRING' }, tiktokUrl: { type: 'STRING' },
-                  sourceUrls: { type: 'ARRAY', items: { type: 'STRING' } }
-                },
-                required: ['artistName', 'country', 'genre', 'description', 'bio', 'youtubeUrl', 'imageUrl',
-                  'officialWebsite', 'instagramUrl', 'facebookUrl', 'xUrl', 'tiktokUrl', 'sourceUrls']
-              }
-            }
-          },
-          required: ['artists']
-        }
+        responseSchema: artistResponseSchema
       }
     });
     const parsed = JSON.parse(structuredText);
@@ -262,5 +289,7 @@ module.exports = {
   extractLineupWithAi,
   enrichArtistsWithAi,
   getModelCandidates,
-  DEFAULT_GEMINI_MODEL
+  DEFAULT_GEMINI_MODEL,
+  parseRetryDelayMs,
+  getArtistBatchSize
 };
