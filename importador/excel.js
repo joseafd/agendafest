@@ -85,6 +85,24 @@ function toTitleCase(name) {
     .join(' ');
 }
 
+function slugify(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+function isoDateToExcelSerial(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(value || ''))) {
+    throw new Error(`Fecha inválida: "${value}". Debe usar YYYY-MM-DD.`);
+  }
+  const milliseconds = Date.parse(`${value}T00:00:00Z`);
+  if (!Number.isFinite(milliseconds)) throw new Error(`Fecha inválida: "${value}".`);
+  return milliseconds / 86400000 + 25569;
+}
+
 /**
  * Safe cell value writer that prevents formula injection by setting cell type to String explicitly
  * when the value starts with formula characters.
@@ -158,6 +176,11 @@ async function saveImportToExcel(approvedData, user, importId) {
     const edicionSheet = workbook.getWorksheet('Edición');
     const artistasSheet = workbook.getWorksheet('Artistas');
     const actuacionesSheet = workbook.getWorksheet('Actuaciones');
+    let escenariosSheet = workbook.getWorksheet('Escenarios');
+    if (!escenariosSheet) {
+      escenariosSheet = workbook.addWorksheet('Escenarios');
+      escenariosSheet.addRow(['Edicion ID', 'ID', 'Nombre', 'Orden', 'Color']);
+    }
 
     // 1. Ensure new columns exist
     // Edición: URL Oficial
@@ -177,7 +200,7 @@ async function saveImportToExcel(approvedData, user, importId) {
     let artHeaders = artRow1.values;
     const newArtCols = [
       'Nombre normalizado', 'Spotify Artist ID', 'MusicBrainz ID', 'Wikidata ID', 
-      'Web Oficial Artista', 'TikTok', 'X URL', 'Imagen Aprobada'
+      'Web Oficial Artista', 'TikTok', 'X URL', 'Imagen Aprobada', 'Fuentes artista'
     ];
     newArtCols.forEach(col => {
       if (artHeaders.indexOf(col) === -1) {
@@ -204,23 +227,65 @@ async function saveImportToExcel(approvedData, user, importId) {
     const freshArtHeaders = artistasSheet.getRow(1).values;
     const freshActHeaders = actuacionesSheet.getRow(1).values;
 
-    // Get festival startDate to map dates logical days
-    let startDateSerial = 46204; // fallback 2026-07-17
-    const edicionId = approvedData.edition.id || 'resurrection-fest-2026';
-    const festivalId = approvedData.edition.festivalId || 'resurrection-fest';
+    const edition = approvedData.edition || {};
+    const editionName = String(edition.name || '').trim();
+    const editionYear = Number(edition.year);
+    if (!editionName || !Number.isInteger(editionYear)) {
+      throw new Error('La importación no contiene nombre y año válidos para la nueva edición.');
+    }
+    const festivalId = edition.festivalId || slugify(editionName.replace(new RegExp(`\\s*${editionYear}\\s*$`), ''));
+    const edicionId = edition.id || `${festivalId}-${editionYear}`;
+    if (!festivalId || !edicionId || edicionId === 'resurrection-fest-2026' && festivalId !== 'resurrection-fest') {
+      throw new Error('No se pudo generar una identidad segura para el festival.');
+    }
+
+    let startDateSerial = null;
+    let editionRow = null;
 
     edicionSheet.eachRow((row, rowNumber) => {
       if (rowNumber === 1) return;
       if (row.getCell(edIdIdx).value === edicionId) {
-        // Update URL Oficial
-        writeCellSafely(row.getCell(freshEdHeaders.indexOf('URL Oficial')), approvedData.edition.url);
-        
+        editionRow = row;
         const serialVal = row.getCell(startDateIdx).value;
         if (typeof serialVal === 'number') {
           startDateSerial = serialVal;
         }
       }
     });
+
+    if (!editionRow) {
+      const startSerial = isoDateToExcelSerial(edition.startDate);
+      const endSerial = isoDateToExcelSerial(edition.endDate);
+      if (endSerial < startSerial) throw new Error('La fecha final de la edición es anterior a la inicial.');
+      startDateSerial = startSerial;
+      editionRow = edicionSheet.addRow([]);
+      const editionValues = {
+        'Festival ID': festivalId,
+        'Edicion ID': edicionId,
+        'Nombre Festival': editionName,
+        'Nombre visible': editionName,
+        'Año': editionYear,
+        'Fecha inicio': startSerial,
+        'Fecha fin': endSerial,
+        'Localidad': edition.location || '',
+        'Zona horaria': edition.timezone || 'Europe/Madrid',
+        'Inicio cuenta atrás': startSerial,
+        'Hora inicio parrilla': 14 / 24,
+        'Hora fin parrilla': 4 / 24,
+        'URL Oficial': edition.url
+      };
+      for (const [header, value] of Object.entries(editionValues)) {
+        const column = freshEdHeaders.indexOf(header);
+        if (column > 0) writeCellSafely(editionRow.getCell(column), value);
+      }
+      editionRow.commit();
+    } else {
+      writeCellSafely(editionRow.getCell(freshEdHeaders.indexOf('URL Oficial')), edition.url);
+    }
+
+    if (!Number.isFinite(startDateSerial)) {
+      throw new Error(`La edición ${edicionId} no tiene una fecha inicial válida.`);
+    }
 
     const auditLogs = [];
     const addAuditLog = (entidadTipo, entidadId, campo, valAnt, valProp, valAprob, decision = 'Aprobado', motivo = '') => {
@@ -255,6 +320,22 @@ async function saveImportToExcel(approvedData, user, importId) {
       const dateRevCol = freshArtHeaders.indexOf('Fecha Revisión');
       const revCol = freshArtHeaders.indexOf('Revisado');
       const imgApprovedCol = freshArtHeaders.indexOf('Imagen Aprobada');
+      const metadataComplete = Boolean(item.country && item.genre && item.bio);
+      const artistValues = {
+        'País': item.country || '',
+        'Género principal': item.genre || item.spotifyGenres?.[0] || '',
+        'Descripción': item.description || '',
+        'YouTube': item.youtubeUrl || '',
+        'Imagen': item.imageUrl || '',
+        'Spotify': item.spotifyUrl || '',
+        'Instagram': item.instagramUrl || '',
+        'Facebook': item.facebookUrl || '',
+        'Bio': item.bio || '',
+        'Web Oficial Artista': item.officialWebsite || '',
+        'TikTok': item.tiktokUrl || '',
+        'X URL': item.xUrl || '',
+        'Fuentes artista': Array.isArray(item.sourceUrls) ? item.sourceUrls.join(' | ') : ''
+      };
 
       if (artistRow) {
         // Log changes if values differ
@@ -267,9 +348,13 @@ async function saveImportToExcel(approvedData, user, importId) {
         // Update existing row
         writeCellSafely(artistRow.getCell(spIdCol), newSpId);
         writeCellSafely(artistRow.getCell(normNameCol), normName);
+        for (const [header, value] of Object.entries(artistValues)) {
+          const column = freshArtHeaders.indexOf(header);
+          if (column > 0 && value) writeCellSafely(artistRow.getCell(column), value);
+        }
         writeCellSafely(artistRow.getCell(dateRevCol), new Date().toISOString().substring(0, 10));
-        writeCellSafely(artistRow.getCell(revCol), true);
-        writeCellSafely(artistRow.getCell(imgApprovedCol), true);
+        writeCellSafely(artistRow.getCell(revCol), metadataComplete);
+        writeCellSafely(artistRow.getCell(imgApprovedCol), false);
       } else {
         // High Alta - new row
         const newRow = artistasSheet.addRow([]);
@@ -278,11 +363,13 @@ async function saveImportToExcel(approvedData, user, importId) {
         writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Nombre')), artistName.toUpperCase());
         writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Nombre normalizado')), normName);
         writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Spotify Artist ID')), item.spotifyId || '');
-        writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Spotify')), item.spotifyUrl || '');
-        writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Bio')), `Banda importada desde ${approvedData.edition.name}.`);
-        writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Revisado')), true);
+        for (const [header, value] of Object.entries(artistValues)) {
+          const column = freshArtHeaders.indexOf(header);
+          if (column > 0) writeCellSafely(newRow.getCell(column), value);
+        }
+        writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Revisado')), metadataComplete);
         writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Fecha Revisión')), new Date().toISOString().substring(0, 10));
-        writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Imagen Aprobada')), true);
+        writeCellSafely(newRow.getCell(freshArtHeaders.indexOf('Imagen Aprobada')), false);
 
         newRow.commit();
         addAuditLog('Artistas', artistId, 'Artista ID', '', artistId, artistId, 'Aprobado', 'Alta de nuevo artista');
@@ -297,25 +384,10 @@ async function saveImportToExcel(approvedData, user, importId) {
       return (hours * 60 + minutes) / 1440;
     };
 
-    // Helper to resolve day serial
-    const getDaySerial = (dayStr) => {
-      const d = dayStr.toLowerCase();
-      if (d.includes('sábado') || d.includes('sabado')) {
-        return startDateSerial + 1;
-      }
-      if (d.includes('domingo')) {
-        return startDateSerial + 2;
-      }
-      if (d.includes('lunes')) {
-        return startDateSerial + 3;
-      }
-      return startDateSerial; // default first day (e.g. Viernes o Jueves)
-    };
-
     // 3. Write Actuaciones
     approvedData.lineup.forEach(item => {
       const artistId = item.artistName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      const daySerial = getDaySerial(item.day);
+      const daySerial = isoDateToExcelSerial(item.day);
       const startFraction = timeToFraction(item.startTime);
       const endFraction = timeToFraction(item.endTime);
 
@@ -384,6 +456,31 @@ async function saveImportToExcel(approvedData, user, importId) {
 
         addAuditLog('Actuaciones', artistId, 'Actuacion ID', '', actId, actId, 'Aprobado', 'Nueva actuación agregada');
       }
+    });
+
+    // 3b. Register every stage used by the new edition.
+    const stageHeaders = escenariosSheet.getRow(1).values;
+    const stageEditionCol = stageHeaders.indexOf('Edicion ID');
+    const stageIdCol = stageHeaders.indexOf('ID');
+    const stageNameCol = stageHeaders.indexOf('Nombre');
+    const stageOrderCol = stageHeaders.indexOf('Orden');
+    const stageColorCol = stageHeaders.indexOf('Color');
+    const existingStages = new Set();
+    escenariosSheet.eachRow((row, rowNumber) => {
+      if (rowNumber > 1 && row.getCell(stageEditionCol).value === edicionId) {
+        existingStages.add(String(row.getCell(stageNameCol).value).toLowerCase());
+      }
+    });
+    const colors = ['#d3133c', '#2b8be3', '#9c1fb8', '#059669', '#eab308', '#ea580c'];
+    [...new Set(approvedData.lineup.map(item => item.stage.trim()).filter(Boolean))].forEach((stageName, index) => {
+      if (existingStages.has(stageName.toLowerCase())) return;
+      const row = escenariosSheet.addRow([]);
+      writeCellSafely(row.getCell(stageEditionCol), edicionId);
+      writeCellSafely(row.getCell(stageIdCol), slugify(stageName));
+      writeCellSafely(row.getCell(stageNameCol), stageName);
+      writeCellSafely(row.getCell(stageOrderCol), index + 1);
+      writeCellSafely(row.getCell(stageColorCol), colors[index % colors.length]);
+      row.commit();
     });
 
     // 4. Write Importaciones row

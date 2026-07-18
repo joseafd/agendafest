@@ -111,7 +111,7 @@ async function runBusinessTests() {
     // Annisokay match
     const annis = lineupResult.lineup.find(a => a.artistName === 'Annisokay');
     assert.ok(annis);
-    assert.strictEqual(annis.day, 'Viernes');
+    assert.match(annis.day, /^\d{4}-\d{2}-\d{2}$/);
     assert.strictEqual(annis.stage, 'Main Stage');
     assert.strictEqual(annis.startTime, '19:00');
   });
@@ -127,6 +127,16 @@ async function runBusinessTests() {
     assert.ok(randomData);
     assert.strictEqual(randomData.name, 'Unknown Local Band');
     assert.ok(randomData.spotifyId.length === 22); // Check hex hash padding length
+  });
+
+  await runTestAsync('Spotify no inventa identificadores cuando faltan credenciales reales', async () => {
+    const previousProvider = process.env.AI_PROVIDER;
+    process.env.AI_PROVIDER = 'gemini';
+    delete process.env.SPOTIFY_CLIENT_ID;
+    delete process.env.SPOTIFY_CLIENT_SECRET;
+    const result = await searchSpotifyArtist('Unknown Local Band');
+    assert.strictEqual(result, null);
+    process.env.AI_PROVIDER = previousProvider || 'mock';
   });
 
   console.log('\n==================================================');

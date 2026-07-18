@@ -17,7 +17,7 @@ const {
 } = require('./security');
 
 const { scrapeFestival } = require('./scraper');
-const { extractLineupWithAi } = require('./gemini');
+const { extractLineupWithAi, enrichArtistsWithAi } = require('./gemini');
 const { searchSpotifyArtist } = require('./spotify');
 const { saveImportToExcel } = require('./excel');
 const publish = require('./publish');
@@ -35,6 +35,62 @@ function getFileSha256(filePath) {
 }
 
 const activeImports = {};
+
+function slugify(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
+function normalizeAndValidateImport(result, sourceUrl) {
+  if (!result || !result.edition || !Array.isArray(result.lineup) || result.lineup.length === 0) {
+    throw new Error('Gemini no devolvió una edición con actuaciones verificables.');
+  }
+  const edition = result.edition;
+  edition.name = String(edition.name || '').trim();
+  edition.year = Number(edition.year);
+  edition.url = sourceUrl;
+  if (!edition.name || !Number.isInteger(edition.year)) {
+    throw new Error('Faltan el nombre o el año de la edición.');
+  }
+  for (const field of ['startDate', 'endDate']) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(edition[field] || ''))) {
+      throw new Error(`La edición no contiene ${field} en formato YYYY-MM-DD.`);
+    }
+  }
+  const start = Date.parse(`${edition.startDate}T00:00:00Z`);
+  const end = Date.parse(`${edition.endDate}T00:00:00Z`);
+  if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) {
+    throw new Error('El intervalo de fechas de la edición no es válido.');
+  }
+  if (!String(edition.location || '').trim() || !String(edition.timezone || '').trim()) {
+    throw new Error('Faltan la localidad o la zona horaria de la edición.');
+  }
+  edition.festivalId = slugify(edition.name.replace(new RegExp(`\\s*${edition.year}\\s*$`), ''));
+  edition.id = `${edition.festivalId}-${edition.year}`;
+  if (!edition.festivalId) throw new Error('No se pudo generar el identificador del festival.');
+
+  result.lineup.forEach((item, index) => {
+    const validTime = value => {
+      const match = /^(\d{2}):(\d{2})$/.exec(String(value || ''));
+      return Boolean(match && Number(match[1]) <= 23 && Number(match[2]) <= 59);
+    };
+    if (!item.artistName || !item.stage || !validTime(item.startTime) || !validTime(item.endTime)) {
+      throw new Error(`La actuación ${index + 1} tiene campos obligatorios inválidos.`);
+    }
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(String(item.day || ''))) {
+      throw new Error(`La actuación ${index + 1} no tiene fecha YYYY-MM-DD.`);
+    }
+    const actDate = Date.parse(`${item.day}T00:00:00Z`);
+    if (!Number.isFinite(actDate) || actDate < start || actDate > end) {
+      throw new Error(`La actuación ${index + 1} queda fuera de las fechas de la edición.`);
+    }
+  });
+  return result;
+}
 
 const app = express();
 const PORT = process.env.PORT || 3030;
@@ -148,7 +204,7 @@ app.get('/api/status', requireAuth, (req, res) => {
     status: 'online',
     version: '1.0.0',
     aiProvider: process.env.AI_PROVIDER || 'mock',
-    modelConfig: { model: 'mock-model', inputCostPm: 0.0, outputCostPm: 0.0 }
+    modelConfig: { model: process.env.IA_MODEL || 'mock-model', inputCostPm: 0.0, outputCostPm: 0.0 }
   });
 });
 
@@ -352,11 +408,16 @@ app.post('/api/import/process', requireAuth, (req, res) => {
       // 2. Structuring with Gemini AI
       transaction.logs.push(`[${new Date().toISOString()}] Analizando contenidos con inteligencia artificial (Gemini)...`);
       const lineupResult = await extractLineupWithAi(scrapedData);
+      normalizeAndValidateImport(lineupResult, transaction.url);
       if (!Array.isArray(lineupResult.lineup) || lineupResult.lineup.length === 0) {
         transaction.logs.push(`[${new Date().toISOString()}] No se detectaron actuaciones. El borrador requiere más fuentes o revisión.`);
       } else {
         transaction.logs.push(`[${new Date().toISOString()}] ${lineupResult.lineup.length} actuaciones estructuradas. Procesando artistas...`);
       }
+
+      transaction.logs.push(`[${new Date().toISOString()}] Investigando país, género, bio, vídeo, imagen y redes sociales con fuentes web...`);
+      lineupResult.lineup = await enrichArtistsWithAi(lineupResult.lineup, lineupResult.edition);
+      transaction.logs.push(`[${new Date().toISOString()}] Metadatos artísticos investigados. Completando identificadores musicales...`);
 
       // 3. Spotify enrichment
       transaction.logs.push(`[${new Date().toISOString()}] Consultando identificadores de Spotify para artistas...`);
@@ -369,6 +430,8 @@ app.post('/api/import/process', requireAuth, (req, res) => {
             artist.spotifyGenres = spotifyData.genres;
             artist.spotifyPopularity = spotifyData.popularity;
             artist.spotifyUrl = spotifyData.url;
+            artist.genre = artist.genre || spotifyData.genres?.[0] || '';
+            artist.imageUrl = artist.imageUrl || spotifyData.imageUrl || '';
             transaction.logs.push(`[${new Date().toISOString()}] Spotify ID encontrado para ${artist.artistName}: ${spotifyData.spotifyId}`);
           } else {
             artist.spotifyId = '';
@@ -420,6 +483,7 @@ app.post('/api/import/save', requireAuth, async (req, res) => {
     
     // Update the transaction in-memory lineup with approved user edits
     transaction.result.lineup = lineup;
+    normalizeAndValidateImport(transaction.result, transaction.url);
 
     // Save to excel
     await saveImportToExcel(transaction.result, 'joseafd', importId);

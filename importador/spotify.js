@@ -76,7 +76,7 @@ function searchSpotifyArtist(artistName) {
 
     const cleanName = artistName.trim();
 
-    if (provider === 'mock' || !clientId || !clientSecret) {
+    if (provider === 'mock') {
       // Deterministic Mock Database for typical bands
       const lower = cleanName.toLowerCase();
       
@@ -126,6 +126,8 @@ function searchSpotifyArtist(artistName) {
       });
     }
 
+    if (!clientId || !clientSecret) return resolve(null);
+
     // Call real Spotify API
     getSpotifyAccessToken()
       .then((token) => {
@@ -168,7 +170,8 @@ function searchSpotifyArtist(artistName) {
                 name: bestMatch.name,
                 popularity: bestMatch.popularity,
                 genres: bestMatch.genres,
-                url: bestMatch.external_urls.spotify
+                url: bestMatch.external_urls.spotify,
+                imageUrl: bestMatch.images?.[0]?.url || ''
               });
             } catch (e) {
               resolve(null);

@@ -15,7 +15,9 @@ async function loadStatus() {
       return;
     }
     const data = await res.json();
-    document.getElementById('modelName').textContent = `${data.aiProvider} (Mock Mode)`;
+    document.getElementById('modelName').textContent = data.aiProvider === 'mock'
+      ? `${data.aiProvider} (Mock Mode)`
+      : `${data.aiProvider} (${data.modelConfig?.model || 'modelo configurado'})`;
 
     // Check if publication is enabled
     const configRes = await fetch('/api/publish/config');
@@ -192,14 +194,23 @@ async function pollImportStatus() {
 function renderReviewTable(result) {
   const tbody = document.getElementById('lineupTableBody');
   const approveButton = document.getElementById('btnApproveImport');
+  const editionSummary = document.getElementById('editionSummary');
   tbody.innerHTML = '';
   approveButton.disabled = true;
 
-  if (!result || !result.lineup || result.lineup.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:15px;">No se detectaron actuaciones.</td></tr>';
+  const edition = result && result.edition;
+  if (edition) {
+    editionSummary.textContent = `${edition.name} · ${edition.startDate} → ${edition.endDate} · ${edition.location || ''} · ID: ${edition.id || ''}`;
+  } else {
+    editionSummary.textContent = 'Faltan los datos obligatorios de la edición.';
+  }
+
+  if (!result || !result.lineup || result.lineup.length === 0 || !edition || !edition.id || !edition.startDate || !edition.endDate) {
+    tbody.innerHTML = '<tr><td colspan="11" style="text-align:center; padding:15px;">No se detectaron actuaciones.</td></tr>';
     return;
   }
 
+  reviewLineup = result.lineup;
   result.lineup.forEach((item, index) => {
     const tr = document.createElement('tr');
     tr.style.borderBottom = '1px solid var(--border-color)';
@@ -209,13 +220,18 @@ function renderReviewTable(result) {
       tr.style.backgroundColor = 'rgba(245, 158, 11, 0.05)';
     }
 
+    tr.dataset.index = String(index);
+    const complete = Boolean(item.country && item.genre && item.bio);
     tr.innerHTML = `
-      <td style="padding: 8px;" contenteditable="true" data-field="artistName">${item.artistName}</td>
-      <td style="padding: 8px;" contenteditable="true" data-field="day">${item.day}</td>
-      <td style="padding: 8px;" contenteditable="true" data-field="stage">${item.stage}</td>
-      <td style="padding: 8px;" contenteditable="true" data-field="startTime">${item.startTime}</td>
-      <td style="padding: 8px;" contenteditable="true" data-field="endTime">${item.endTime}</td>
-      <td style="padding: 8px; font-family: monospace;" contenteditable="true" data-field="spotifyId">${item.spotifyId || ''}</td>
+      <td style="padding: 8px;" contenteditable="true" data-field="artistName">${escapeHtml(item.artistName)}</td>
+      <td style="padding: 8px;" contenteditable="true" data-field="day">${escapeHtml(item.day)}</td>
+      <td style="padding: 8px;" contenteditable="true" data-field="stage">${escapeHtml(item.stage)}</td>
+      <td style="padding: 8px;" contenteditable="true" data-field="startTime">${escapeHtml(item.startTime)}</td>
+      <td style="padding: 8px;" contenteditable="true" data-field="endTime">${escapeHtml(item.endTime)}</td>
+      <td style="padding: 8px; font-family: monospace;" contenteditable="true" data-field="spotifyId">${escapeHtml(item.spotifyId || '')}</td>
+      <td style="padding: 8px;" contenteditable="true" data-field="country">${escapeHtml(item.country || '')}</td>
+      <td style="padding: 8px;" contenteditable="true" data-field="genre">${escapeHtml(item.genre || '')}</td>
+      <td style="padding: 8px; color:${complete ? '#10b981' : '#eab308'};">${complete ? 'Completa' : 'Pendiente'}</td>
       <td style="padding: 8px; color: #9ca3af;">${item.spotifyPopularity !== undefined ? item.spotifyPopularity : '-'}</td>
       <td style="padding: 8px; text-align: center;">
         <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 11px;" onclick="deleteRow(this)">Borrar</button>
@@ -224,6 +240,14 @@ function renderReviewTable(result) {
     tbody.appendChild(tr);
   });
   approveButton.disabled = false;
+}
+
+let reviewLineup = [];
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>'"]/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+  })[character]);
 }
 
 function deleteRow(btn) {
@@ -248,8 +272,11 @@ async function approveImport() {
       const startTime = row.querySelector('[data-field="startTime"]').textContent.trim();
       const endTime = row.querySelector('[data-field="endTime"]').textContent.trim();
       const spotifyId = row.querySelector('[data-field="spotifyId"]').textContent.trim();
+      const country = row.querySelector('[data-field="country"]').textContent.trim();
+      const genre = row.querySelector('[data-field="genre"]').textContent.trim();
+      const original = reviewLineup[Number(row.dataset.index)] || {};
 
-      approvedLineup.push({ artistName, day, stage, startTime, endTime, spotifyId });
+      approvedLineup.push({ ...original, artistName, day, stage, startTime, endTime, spotifyId, country, genre });
     }
   });
 

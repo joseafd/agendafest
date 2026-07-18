@@ -76,9 +76,9 @@ async function runExcelTests() {
   // TEST 2: Sanitización y prevención de inyección de fórmulas
   await runTestAsync('Las celdas con caracteres de fórmula se fuerzan como tipo String para evitar inyecciones', async () => {
     const approvedData = {
-      edition: { festivalId: 'resurrection-fest', id: 'resurrection-fest-2026', name: 'Resurrection Fest 2026', url: 'https://www.resurrectionfest.es/' },
+      edition: { festivalId: 'resurrection-fest', id: 'resurrection-fest-2026', name: 'Resurrection Fest', year: 2026, startDate: '2026-07-01', endDate: '2026-07-04', location: 'Viveiro', timezone: 'Europe/Madrid', url: 'https://www.resurrectionfest.es/' },
       lineup: [
-        { artistName: '=DangerousFormula', day: 'Viernes', stage: 'Main Stage', startTime: '19:00', endTime: '20:00', spotifyId: '7lAi1Cv19DsukgGjbZQxFg', spotifyUrl: 'https://spotify/annis' }
+        { artistName: '=DangerousFormula', day: '2026-07-01', stage: 'Main Stage', startTime: '19:00', endTime: '20:00', spotifyId: '7lAi1Cv19DsukgGjbZQxFg', spotifyUrl: 'https://spotify/annis' }
       ]
     };
 
@@ -107,11 +107,11 @@ async function runExcelTests() {
   // TEST 3: Trazabilidad, Nuevas hojas y formato de horas
   await runTestAsync('La importación crea hojas de trazabilidad y escribe horas en formato decimal de Excel', async () => {
     const approvedData = {
-      edition: { festivalId: 'resurrection-fest', id: 'resurrection-fest-2026', name: 'Resurrection Fest 2026', url: 'https://www.resurrectionfest.es/' },
+      edition: { festivalId: 'resurrection-fest', id: 'resurrection-fest-2026', name: 'Resurrection Fest', year: 2026, startDate: '2026-07-01', endDate: '2026-07-04', location: 'Viveiro', timezone: 'Europe/Madrid', url: 'https://www.resurrectionfest.es/' },
       lineup: [
         // Update annisokay time, and add rise-against with a late-night show (01:00)
-        { artistName: 'Annisokay', day: 'Viernes', stage: 'Main Stage', startTime: '15:00', endTime: '16:00', spotifyId: '7lAi1Cv19DsukgGjbZQxFg', spotifyUrl: 'https://spotify/annis' },
-        { artistName: 'Rise Against', day: 'Sábado', stage: 'Main Stage', startTime: '01:00', endTime: '02:00', spotifyId: '6ue0W5wPr4pmKVbgui45bp', spotifyUrl: 'https://spotify/rise' }
+        { artistName: 'Annisokay', day: '2026-07-01', stage: 'Main Stage', startTime: '15:00', endTime: '16:00', spotifyId: '7lAi1Cv19DsukgGjbZQxFg', spotifyUrl: 'https://spotify/annis' },
+        { artistName: 'Rise Against', day: '2026-07-02', stage: 'Main Stage', startTime: '01:00', endTime: '02:00', spotifyId: '6ue0W5wPr4pmKVbgui45bp', spotifyUrl: 'https://spotify/rise' }
       ]
     };
 
@@ -155,7 +155,7 @@ async function runExcelTests() {
     assert.strictEqual(startMin, 0, 'Los minutos de inicio deberían ser 0');
     assert.strictEqual(riseActRow.getCell(5).numFmt, 'hh:mm', 'La celda de hora debe tener el formato hh:mm');
     
-    // Sábado logical day date check: 46204 is Friday, Sábado must be 46205
+    // Exact ISO date check: 2026-07-02 maps to serial 46205
     assert.strictEqual(Number(riseActRow.getCell(3).value), 46205, 'Sábado debe corresponder al serial de fecha inicio + 1');
 
     // Check Trazabilidad entries
@@ -167,6 +167,88 @@ async function runExcelTests() {
       }
     });
     assert.ok(auditEntries.length > 0, 'Debería haber registros de trazabilidad para la importación IMP-test-123');
+  });
+
+  await runTestAsync('Una URL nueva crea su propia edición, escenarios y actuaciones sin usar Resurrection', async () => {
+    const beforeWorkbook = new ExcelJS.Workbook();
+    await beforeWorkbook.xlsx.readFile(excelPath);
+    const beforeActs = beforeWorkbook.getWorksheet('Actuaciones');
+    let resurrectionBefore = 0;
+    beforeActs.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(1).value === 'resurrection-fest-2026') resurrectionBefore++;
+    });
+    const approvedData = {
+      edition: {
+        name: 'Rockstadt Extreme Fest', year: 2026,
+        startDate: '2026-07-27', endDate: '2026-08-02',
+        location: 'Râșnov, Romania', timezone: 'Europe/Bucharest',
+        url: 'https://rockstadtextremefest.ro/'
+      },
+      lineup: [
+        {
+          artistName: 'Test Rockstadt Band', day: '2026-08-01', stage: 'Andrei Calmuc Stage', startTime: '02:00', endTime: '03:00',
+          country: 'Rumanía', genre: 'Metal', description: 'Banda de prueba.', bio: 'Biografía verificada de prueba.',
+          youtubeUrl: 'https://youtube.com/watch?v=test', imageUrl: 'https://example.com/image.jpg',
+          instagramUrl: 'https://instagram.com/test', facebookUrl: 'https://facebook.com/test',
+          sourceUrls: ['https://example.com/source']
+        }
+      ]
+    };
+
+    await saveImportToExcel(approvedData, 'test-user', 'IMP-rockstadt');
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(excelPath);
+    const edition = workbook.getWorksheet('Edición');
+    const acts = workbook.getWorksheet('Actuaciones');
+    const stages = workbook.getWorksheet('Escenarios');
+    const artists = workbook.getWorksheet('Artistas');
+
+    const editionIds = [];
+    edition.eachRow((row, rn) => { if (rn > 1) editionIds.push(row.getCell(2).value); });
+    assert.ok(editionIds.includes('rockstadt-extreme-fest-2026'));
+
+    let rockstadtAct = null;
+    acts.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(1).value === 'rockstadt-extreme-fest-2026') rockstadtAct = row;
+    });
+    assert.ok(rockstadtAct, 'La actuación debe pertenecer a Rockstadt');
+
+    let rockstadtStage = null;
+    stages.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(1).value === 'rockstadt-extreme-fest-2026') rockstadtStage = row;
+    });
+    assert.ok(rockstadtStage, 'El escenario debe pertenecer a Rockstadt');
+
+    const artistHeaders = artists.getRow(1).values;
+    let rockstadtArtist = null;
+    artists.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(artistHeaders.indexOf('Artista ID')).value === 'test-rockstadt-band') rockstadtArtist = row;
+    });
+    assert.ok(rockstadtArtist, 'El artista nuevo debe existir');
+    assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('País')).value, 'Rumanía');
+    assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Género principal')).value, 'Metal');
+    assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Bio')).value, 'Biografía verificada de prueba.');
+    assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Revisado')).value, true);
+    assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Imagen Aprobada')).value, false);
+
+    let resurrectionAfter = 0;
+    acts.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(1).value === 'resurrection-fest-2026') resurrectionAfter++;
+    });
+    assert.strictEqual(resurrectionAfter, resurrectionBefore, 'Rockstadt no debe modificar actuaciones de Resurrection');
+  });
+
+  await runTestAsync('Una edición inválida se rechaza y restaura el Excel sin cambios parciales', async () => {
+    const before = fs.readFileSync(excelPath);
+    await assert.rejects(
+      saveImportToExcel({
+        edition: { name: 'Festival sin fechas', year: 2026, url: 'https://example.com/' },
+        lineup: [{ artistName: 'No debe guardarse', day: 'Viernes', stage: 'Main', startTime: '10:00', endTime: '11:00' }]
+      }, 'test-user', 'IMP-invalid'),
+      /Fecha inválida/
+    );
+    const after = fs.readFileSync(excelPath);
+    assert.deepStrictEqual(after, before, 'El Excel debe quedar idéntico tras el rollback');
   });
 
   // TEST 4: Retención máxima de 10 copias de seguridad
