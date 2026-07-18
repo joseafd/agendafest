@@ -105,6 +105,17 @@ async function logout() {
 let activeImportId = null;
 let statusPollInterval = null;
 
+function renderCompletionStatus(missingFields, completeLabel) {
+  if (missingFields.length === 0) {
+    return `<span class="completion-status completion-status--complete">${escapeHtml(completeLabel)}</span>`;
+  }
+
+  return `
+    <span class="completion-status completion-status--pending">Faltan:</span>
+    <span class="missing-fields">${missingFields.map(escapeHtml).join(', ')}</span>
+  `;
+}
+
 async function startImport() {
   const url = document.getElementById('importUrl').value;
   const progressDiv = document.getElementById('importProgress');
@@ -224,7 +235,7 @@ function renderReviewTable(result) {
     const basicMissing = [!item.country && 'país', !item.genre && 'género', !item.bio && 'bio'].filter(Boolean);
     const basicComplete = basicMissing.length === 0;
     const hasSocial = Boolean(item.instagramUrl || item.facebookUrl || item.xUrl || item.tiktokUrl);
-    const contentMissing = [...basicMissing, !item.youtubeUrl && 'vídeo', !item.imageUrl && 'imagen', !hasSocial && 'RRSS'].filter(Boolean);
+    const contentMissing = [!item.youtubeUrl && 'vídeo', !item.imageUrl && 'imagen', !hasSocial && 'RRSS'].filter(Boolean);
     const contentComplete = contentMissing.length === 0;
     const spotifyStates = {
       found: ['Encontrado', '#10b981'],
@@ -244,8 +255,8 @@ function renderReviewTable(result) {
       <td style="padding: 8px; color:${spotifyState[1]};">${spotifyState[0]}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="country">${escapeHtml(item.country || '')}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="genre">${escapeHtml(item.genre || '')}</td>
-      <td title="${basicComplete ? 'País, género y bio disponibles' : `Faltan: ${basicMissing.join(', ')}`}" style="padding: 8px; color:${basicComplete ? '#10b981' : '#eab308'};">${basicComplete ? 'Completa' : `Pendiente (${basicMissing.length})`}</td>
-      <td title="${contentComplete ? 'Ficha básica, vídeo, imagen y RRSS disponibles' : `Faltan: ${contentMissing.join(', ')}`}" style="padding: 8px; color:${contentComplete ? '#10b981' : '#eab308'};">${contentComplete ? 'Completo' : `Pendiente (${contentMissing.length})`}</td>
+      <td class="completion-cell" title="${basicComplete ? 'País, género y bio disponibles' : `Faltan: ${basicMissing.join(', ')}`}">${renderCompletionStatus(basicMissing, 'Completa')}</td>
+      <td class="completion-cell" title="${contentComplete ? 'Vídeo, imagen y RRSS disponibles' : `Faltan: ${contentMissing.join(', ')}`}">${renderCompletionStatus(contentMissing, 'Completo')}</td>
       <td style="padding: 8px; min-width:220px;" data-field="validation"></td>
       <td style="padding: 8px; color: #9ca3af;">${item.spotifyPopularity !== undefined ? item.spotifyPopularity : '-'}</td>
       <td style="padding: 8px; text-align: center;">
