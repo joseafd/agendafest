@@ -206,7 +206,7 @@ function renderReviewTable(result) {
   }
 
   if (!result || !result.lineup || result.lineup.length === 0 || !edition || !edition.id || !edition.startDate || !edition.endDate) {
-    tbody.innerHTML = '<tr><td colspan="11" style="text-align:center; padding:15px;">No se detectaron actuaciones.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="12" style="text-align:center; padding:15px;">No se detectaron actuaciones.</td></tr>';
     return;
   }
 
@@ -232,14 +232,16 @@ function renderReviewTable(result) {
       <td style="padding: 8px;" contenteditable="true" data-field="country">${escapeHtml(item.country || '')}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="genre">${escapeHtml(item.genre || '')}</td>
       <td style="padding: 8px; color:${complete ? '#10b981' : '#eab308'};">${complete ? 'Completa' : 'Pendiente'}</td>
+      <td style="padding: 8px; min-width:220px;" data-field="validation"></td>
       <td style="padding: 8px; color: #9ca3af;">${item.spotifyPopularity !== undefined ? item.spotifyPopularity : '-'}</td>
       <td style="padding: 8px; text-align: center;">
         <button class="btn btn-secondary" style="padding: 4px 8px; font-size: 11px;" onclick="deleteRow(this)">Borrar</button>
       </td>
     `;
     tbody.appendChild(tr);
+    tr.querySelectorAll('td[contenteditable="true"]').forEach(cell => cell.addEventListener('input', validateReviewRows));
   });
-  approveButton.disabled = false;
+  validateReviewRows();
 }
 
 let reviewLineup = [];
@@ -253,8 +255,51 @@ function escapeHtml(value) {
 function deleteRow(btn) {
   const row = btn.parentNode.parentNode;
   row.parentNode.removeChild(row);
-  document.getElementById('btnApproveImport').disabled =
-    document.querySelectorAll('#lineupTableBody td[contenteditable="true"]').length === 0;
+  validateReviewRows();
+}
+
+function validateReviewRows() {
+  const edition = document.getElementById('editionSummary').textContent;
+  const editionMatch = edition.match(/(\d{4}-\d{2}-\d{2}) → (\d{4}-\d{2}-\d{2})/);
+  const startDate = editionMatch ? editionMatch[1] : '';
+  const endDate = editionMatch ? editionMatch[2] : '';
+  const rows = [...document.querySelectorAll('#lineupTableBody tr[data-index]')];
+  let invalidRows = 0;
+
+  rows.forEach((row, rowIndex) => {
+    const value = field => row.querySelector(`[data-field="${field}"]`)?.textContent.trim() || '';
+    const issues = [];
+    const day = value('day');
+    const validTime = time => {
+      const match = /^(\d{2}):(\d{2})$/.exec(time);
+      return Boolean(match && Number(match[1]) <= 23 && Number(match[2]) <= 59);
+    };
+    if (!value('artistName')) issues.push('sin artista');
+    if (!value('stage')) issues.push('sin escenario');
+    if (!validTime(value('startTime')) || !validTime(value('endTime'))) issues.push('hora inválida');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) issues.push('fecha no ISO');
+    else if (startDate && endDate && (day < startDate || day > endDate)) {
+      issues.push(`${day} fuera de ${startDate}–${endDate}`);
+    }
+
+    const validationCell = row.querySelector('[data-field="validation"]');
+    validationCell.textContent = issues.length ? `Fila ${rowIndex + 1}: ${issues.join('; ')}` : 'Correcta';
+    validationCell.style.color = issues.length ? '#fca5a5' : '#10b981';
+    if (issues.length) {
+      invalidRows++;
+      row.style.backgroundColor = 'rgba(239, 68, 68, 0.12)';
+    } else if (!value('spotifyId')) {
+      row.style.backgroundColor = 'rgba(245, 158, 11, 0.05)';
+    } else {
+      row.style.backgroundColor = '';
+    }
+  });
+
+  const summary = document.getElementById('reviewValidation');
+  summary.style.display = invalidRows ? 'block' : 'none';
+  summary.textContent = invalidRows ? `${invalidRows} actuación(es) requieren corrección. Las filas aparecen resaltadas en rojo.` : '';
+  document.getElementById('btnApproveImport').disabled = rows.length === 0 || invalidRows > 0;
+  return invalidRows === 0 && rows.length > 0;
 }
 
 async function approveImport() {
@@ -262,6 +307,13 @@ async function approveImport() {
   const rows = tbody.querySelectorAll('tr');
   const approvedLineup = [];
   const feedback = document.getElementById('saveFeedback');
+
+  if (!validateReviewRows()) {
+    feedback.style.display = 'block';
+    feedback.style.color = '#ef4444';
+    feedback.textContent = 'Corrige primero todas las filas resaltadas en rojo.';
+    return;
+  }
 
   rows.forEach(row => {
     const cells = row.querySelectorAll('td[contenteditable="true"]');

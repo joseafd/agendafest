@@ -9,7 +9,7 @@ process.env.PORT = 3039;
 process.env.AI_PROVIDER = 'mock';
 process.env.PUBLISH_ENABLED = 'false'; // Keep disabled as required by safety rules
 
-const { server, getPairingCode } = require('../server');
+const { server, getPairingCode, normalizeAndValidateImport } = require('../server');
 const { validateGitStatus, pollGitHubAction } = require('../publish');
 const { unlinkWithRetry } = require('../excel');
 
@@ -231,6 +231,26 @@ async function runRemediationTests() {
         e.message.includes('no coincide')
       );
     }
+  });
+
+  await runTestAsync('Una actuación fuera de rango llega a revisión con artista, fila, fecha y motivo', async () => {
+    const result = {
+      edition: {
+        name: 'Rockstadt Extreme Fest', year: 2026,
+        startDate: '2026-07-27', endDate: '2026-08-02',
+        location: 'Râșnov, Romania', timezone: 'Europe/Bucharest'
+      },
+      lineup: [
+        { artistName: 'Actuación correcta', day: '2026-08-02', stage: 'Main', startTime: '22:00', endTime: '23:00' },
+        { artistName: 'Actuación nocturna', day: '2026-08-03', stage: 'Main', startTime: '01:00', endTime: '02:00' }
+      ]
+    };
+    assert.doesNotThrow(() => normalizeAndValidateImport(result, 'https://rockstadtextremefest.ro/'));
+    assert.strictEqual(result.validationIssues.length, 1);
+    assert.strictEqual(result.validationIssues[0].row, 2);
+    assert.strictEqual(result.validationIssues[0].artistName, 'Actuación nocturna');
+    assert.strictEqual(result.validationIssues[0].day, '2026-08-03');
+    assert.ok(result.validationIssues[0].reasons[0].includes('2026-07-27–2026-08-02'));
   });
 
   console.log('\n==================================================');

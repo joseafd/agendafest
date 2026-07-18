@@ -73,22 +73,36 @@ function normalizeAndValidateImport(result, sourceUrl) {
   edition.id = `${edition.festivalId}-${edition.year}`;
   if (!edition.festivalId) throw new Error('No se pudo generar el identificador del festival.');
 
+  const validationIssues = [];
   result.lineup.forEach((item, index) => {
+    const rowIssues = [];
     const validTime = value => {
       const match = /^(\d{2}):(\d{2})$/.exec(String(value || ''));
       return Boolean(match && Number(match[1]) <= 23 && Number(match[2]) <= 59);
     };
     if (!item.artistName || !item.stage || !validTime(item.startTime) || !validTime(item.endTime)) {
-      throw new Error(`La actuación ${index + 1} tiene campos obligatorios inválidos.`);
+      rowIssues.push('faltan artista, escenario u horas válidas');
     }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(String(item.day || ''))) {
-      throw new Error(`La actuación ${index + 1} no tiene fecha YYYY-MM-DD.`);
+      rowIssues.push('la fecha no usa YYYY-MM-DD');
+    } else {
+      const actDate = Date.parse(`${item.day}T00:00:00Z`);
+      if (!Number.isFinite(actDate) || actDate < start || actDate > end) {
+        rowIssues.push(`fecha ${item.day} fuera del intervalo ${edition.startDate}–${edition.endDate}`);
+      }
     }
-    const actDate = Date.parse(`${item.day}T00:00:00Z`);
-    if (!Number.isFinite(actDate) || actDate < start || actDate > end) {
-      throw new Error(`La actuación ${index + 1} queda fuera de las fechas de la edición.`);
+    item.validationIssues = rowIssues;
+    if (rowIssues.length > 0) {
+      validationIssues.push({
+        row: index + 1,
+        artistName: item.artistName || '(sin artista)',
+        day: item.day || '',
+        stage: item.stage || '',
+        reasons: rowIssues
+      });
     }
   });
+  result.validationIssues = validationIssues;
   return result;
 }
 
@@ -409,6 +423,10 @@ app.post('/api/import/process', requireAuth, (req, res) => {
       transaction.logs.push(`[${new Date().toISOString()}] Analizando contenidos con inteligencia artificial (Gemini)...`);
       const lineupResult = await extractLineupWithAi(scrapedData);
       normalizeAndValidateImport(lineupResult, transaction.url);
+      if (lineupResult.validationIssues.length > 0) {
+        const firstIssue = lineupResult.validationIssues[0];
+        transaction.logs.push(`[${new Date().toISOString()}] ${lineupResult.validationIssues.length} actuación(es) requieren corrección manual. Primera: fila ${firstIssue.row}, ${firstIssue.artistName}, ${firstIssue.reasons.join('; ')}.`);
+      }
       if (!Array.isArray(lineupResult.lineup) || lineupResult.lineup.length === 0) {
         transaction.logs.push(`[${new Date().toISOString()}] No se detectaron actuaciones. El borrador requiere más fuentes o revisión.`);
       } else {
@@ -484,6 +502,10 @@ app.post('/api/import/save', requireAuth, async (req, res) => {
     // Update the transaction in-memory lineup with approved user edits
     transaction.result.lineup = lineup;
     normalizeAndValidateImport(transaction.result, transaction.url);
+    if (transaction.result.validationIssues.length > 0) {
+      const issue = transaction.result.validationIssues[0];
+      throw new Error(`No se puede guardar: fila ${issue.row}, ${issue.artistName}: ${issue.reasons.join('; ')}.`);
+    }
 
     // Save to excel
     await saveImportToExcel(transaction.result, 'joseafd', importId);
@@ -711,5 +733,6 @@ module.exports = {
   getPairingCode: () => pairingCode,
   getSessionToken: () => require('./security').getSessionToken(),
   getActivePlan: () => activePublicationPlan,
-  setActivePlan: (val) => { activePublicationPlan = val; }
+  setActivePlan: (val) => { activePublicationPlan = val; },
+  normalizeAndValidateImport
 };
