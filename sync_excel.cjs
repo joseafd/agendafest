@@ -45,7 +45,7 @@ function getWeekdayLabel(dateSerial) {
   const dateStr = excelDateToYYYYMMDD(dateSerial);
   const dateObj = new Date(dateStr);
   const weekdayEsList = ['DOMINGO', 'LUNES', 'MARTES', 'MIERCOLES', 'JUEVES', 'VIERNES', 'SABADO'];
-  return `${weekdayEsList[dateObj.getDay()]} ${dateObj.getDate()}`;
+  return `${weekdayEsList[dateObj.getUTCDay()]} ${dateObj.getUTCDate()}`;
 }
 
 function extractTitleAndDescription(desc) {
@@ -62,6 +62,21 @@ function extractTitleAndDescription(desc) {
   }
   
   return { title: '', description: desc.trim() };
+}
+
+function normalizeAssetFilename(value, fallback) {
+  const filename = value ? String(value).trim() : fallback;
+  return path.basename(filename.replace(/,([a-z0-9]{2,5})$/i, '.$1'));
+}
+
+function syncResourceAsset(filename) {
+  const source = path.join(__dirname, 'Recursos', filename);
+  if (!fs.existsSync(source)) return;
+
+  const publicImagesDir = path.join(__dirname, 'public', 'images');
+  const target = path.join(publicImagesDir, filename);
+  fs.mkdirSync(publicImagesDir, { recursive: true });
+  fs.copyFileSync(source, target);
 }
 
 // 2. Read sheets
@@ -127,13 +142,17 @@ edicionData.forEach(edRow => {
     endDate: edRow['Fecha fin'] ? excelDateToYYYYMMDD(edRow['Fecha fin']) : '2026-07-04',
     location: edRow['Localidad'] ? String(edRow['Localidad']).trim() : '',
     timezone: edRow['Zona horaria'] ? String(edRow['Zona horaria']).trim() : 'Europe/Madrid',
-    logo: edRow['Logo'] ? String(edRow['Logo']).trim() : 'logo.svg',
-    cartel: edRow['Cartel'] ? String(edRow['Cartel']).trim() : 'PORTADA.jpg',
-    mapa: edRow['Mapa'] ? String(edRow['Mapa']).trim() : 'MAPA.jpg',
+    logo: normalizeAssetFilename(edRow['Logo'], 'logo.svg'),
+    cartel: normalizeAssetFilename(edRow['Cartel'], 'PORTADA.jpg'),
+    mapa: normalizeAssetFilename(edRow['Mapa'], 'MAPA.jpg'),
     dayStartHour: excelFractionalDayToHour(edRow['Hora inicio parrilla']),
     dayEndHour: excelFractionalDayToHour(edRow['Hora fin parrilla']),
     aftermovieUrl: edRow['Aftermovie'] ? String(edRow['Aftermovie']).trim() : '',
   };
+
+  syncResourceAsset(edicionConfig.logo);
+  syncResourceAsset(edicionConfig.cartel);
+  syncResourceAsset(edicionConfig.mapa);
 
   const startHour = edicionConfig.dayStartHour;
 
@@ -214,13 +233,13 @@ edicionData.forEach(edRow => {
   let dayNum = 1;
 
   while (currentDay <= endDay) {
-    const y = currentDay.getFullYear();
-    const m = String(currentDay.getMonth() + 1).padStart(2, '0');
-    const d = String(currentDay.getDate()).padStart(2, '0');
+    const y = currentDay.getUTCFullYear();
+    const m = String(currentDay.getUTCMonth() + 1).padStart(2, '0');
+    const d = String(currentDay.getUTCDate()).padStart(2, '0');
     const dateId = `${y}-${m}-${d}`;
     
-    const weekdayEs = weekdayEsList[currentDay.getDay()];
-    const dayLabel = `${weekdayEs} ${currentDay.getDate()}`;
+    const weekdayEs = weekdayEsList[currentDay.getUTCDay()];
+    const dayLabel = `${weekdayEs} ${currentDay.getUTCDate()}`;
     
     daysConfig.push({
       id: dateId,
@@ -229,7 +248,7 @@ edicionData.forEach(edRow => {
       weekdayEs
     });
     
-    currentDay.setDate(currentDay.getDate() + 1);
+    currentDay.setUTCDate(currentDay.getUTCDate() + 1);
     dayNum++;
   }
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'resu2026-cache-v17';
+const CACHE_NAME = 'agendafest-cache-v18';
 
 // Static assets to precache immediately
 const PRECACHE_ASSETS = [
