@@ -253,6 +253,19 @@ async function runRemediationTests() {
     assert.ok(result.validationIssues[0].reasons[0].includes('2026-07-27–2026-08-02'));
   });
 
+  await runTestAsync('La revisión muestra los campos pendientes y distingue horario de popularidad', async () => {
+    const appContent = fs.readFileSync(path.join(__dirname, '..', 'public', 'app.js'), 'utf8');
+    const htmlContent = fs.readFileSync(path.join(__dirname, '..', 'public', 'index.html'), 'utf8');
+
+    assert.ok(appContent.includes('class="missing-fields"'), 'Debe mostrar la lista visible de campos pendientes');
+    assert.ok(appContent.includes("!item.youtubeUrl && 'vídeo'"), 'Debe identificar el vídeo pendiente');
+    assert.ok(appContent.includes("!item.imageUrl && 'imagen'"), 'Debe identificar la imagen pendiente');
+    assert.ok(appContent.includes("!hasSocial && 'RRSS'"), 'Debe identificar las redes sociales pendientes');
+    assert.ok(htmlContent.includes('Inicio<br><small>(HH:MM)</small>'), 'Debe etiquetar claramente la hora de inicio');
+    assert.ok(htmlContent.includes('Fin<br><small>(HH:MM)</small>'), 'Debe etiquetar claramente la hora de fin');
+    assert.ok(htmlContent.includes('Vídeo · imagen · RRSS'), 'Debe explicar qué incluye la columna Contenido');
+  });
+
   console.log('\n==================================================');
   console.log(`Remediación: ${passedCount} / ${testCount} superadas.`);
   console.log('==================================================');
