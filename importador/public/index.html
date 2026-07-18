@@ -161,6 +161,43 @@
       white-space: pre-wrap;
       margin-top: 15px;
     }
+
+    .review-table {
+      min-width: 1560px;
+    }
+
+    .review-table th {
+      white-space: nowrap;
+      vertical-align: bottom;
+    }
+
+    .completion-cell {
+      min-width: 145px;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    .completion-status {
+      display: block;
+      font-weight: 700;
+    }
+
+    .completion-status--complete {
+      color: var(--success-color);
+    }
+
+    .completion-status--pending,
+    .missing-fields {
+      color: var(--warning-color);
+    }
+
+    .missing-fields {
+      display: block;
+      margin-top: 4px;
+      line-height: 1.35;
+      font-size: 12px;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -213,22 +250,22 @@
       <div id="importReview" style="display: none; margin-top: 25px;">
         <h3>Revisión de Datos del Cartel</h3>
         <div id="editionSummary" style="margin: 12px 0; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px;"></div>
-        <p style="color:#9ca3af; font-size:13px;">Haz doble clic en los campos para editarlos. Corrige cualquier error antes de procesar.</p>
+        <p style="color:#9ca3af; font-size:13px;">Haz doble clic en los campos para editarlos. Inicio y Fin se muestran en formato HH:MM. Los campos pendientes aparecen escritos directamente en cada fila.</p>
         <div style="overflow-x: auto;">
-          <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px;">
+          <table class="review-table" style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px;">
             <thead>
               <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
                 <th style="padding: 8px;">Artista</th>
                 <th style="padding: 8px;">Día</th>
                 <th style="padding: 8px;">Escenario</th>
-                <th style="padding: 8px;">Inicio</th>
-                <th style="padding: 8px;">Fin</th>
+                <th style="padding: 8px;">Inicio<br><small>(HH:MM)</small></th>
+                <th style="padding: 8px;">Fin<br><small>(HH:MM)</small></th>
                 <th style="padding: 8px;">Spotify ID (opcional)</th>
                 <th style="padding: 8px;">Estado Spotify</th>
                 <th style="padding: 8px;">País</th>
                 <th style="padding: 8px;">Género</th>
-                <th style="padding: 8px;">Ficha básica</th>
-                <th style="padding: 8px;">Contenido</th>
+                <th style="padding: 8px;">Ficha básica<br><small>País · género · bio</small></th>
+                <th style="padding: 8px;">Contenido<br><small>Vídeo · imagen · RRSS</small></th>
                 <th style="padding: 8px;">Validación</th>
                 <th style="padding: 8px;">Pop.</th>
                 <th style="padding: 8px; width: 60px;">Acción</th>
