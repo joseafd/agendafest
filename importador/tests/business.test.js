@@ -124,8 +124,8 @@ async function runBusinessTests() {
   await runTestAsync('Gemini usa 3.5 Flash y conserva fallback ante modelos retirados', async () => {
     assert.strictEqual(DEFAULT_GEMINI_MODEL, 'gemini-3.5-flash');
     assert.strictEqual(ENRICHMENT_GEMINI_MODEL, 'gemini-3.1-flash-lite');
-    assert.deepStrictEqual(getModelCandidates('gemini-2.5-flash'), ['gemini-2.5-flash', 'gemini-3.5-flash']);
-    assert.deepStrictEqual(getModelCandidates('gemini-3.5-flash'), ['gemini-3.5-flash']);
+    assert.deepStrictEqual(getModelCandidates('gemini-2.5-flash'), ['gemini-2.5-flash', 'gemini-3.5-flash', 'gemini-3.1-flash-lite']);
+    assert.deepStrictEqual(getModelCandidates('gemini-3.5-flash'), ['gemini-3.5-flash', 'gemini-3.1-flash-lite']);
     assert.deepStrictEqual(getModelCandidates(ENRICHMENT_GEMINI_MODEL), ['gemini-3.1-flash-lite', 'gemini-3.5-flash']);
   });
 

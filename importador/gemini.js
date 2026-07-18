@@ -6,7 +6,7 @@ const FREE_TIER_MIN_INTERVAL_MS = 3500;
 let nextFreeTierRequestAt = 0;
 
 function getModelCandidates(configuredModel = process.env.IA_MODEL) {
-  return [...new Set([configuredModel, DEFAULT_GEMINI_MODEL].filter(Boolean))];
+  return [...new Set([configuredModel, DEFAULT_GEMINI_MODEL, ENRICHMENT_GEMINI_MODEL].filter(Boolean))];
 }
 
 function parseRetryDelayMs(message) {
