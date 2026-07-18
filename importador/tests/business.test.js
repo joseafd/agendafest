@@ -2,7 +2,10 @@ process.env.NODE_ENV = 'test';
 const assert = require('assert');
 const http = require('http');
 const { scrapeFestival } = require('../scraper');
-const { extractLineupWithAi, getModelCandidates, DEFAULT_GEMINI_MODEL, parseRetryDelayMs, getArtistBatchSize } = require('../gemini');
+const {
+  extractLineupWithAi, getModelCandidates, DEFAULT_GEMINI_MODEL,
+  parseRetryDelayMs, getArtistBatchSize, getRetryWaitMs, FREE_TIER_MIN_INTERVAL_MS
+} = require('../gemini');
 const { searchSpotifyArtist } = require('../spotify');
 
 // Start a mock target server on port 3032
@@ -128,6 +131,9 @@ async function runBusinessTests() {
     assert.strictEqual(getArtistBatchSize(true), 8);
     assert.strictEqual(parseRetryDelayMs('Please retry in 26.857275787s.'), 26858);
     assert.strictEqual(parseRetryDelayMs('sin tiempo indicado'), 60000);
+    assert.strictEqual(getRetryWaitMs(59735), 62235);
+    assert.strictEqual(getRetryWaitMs(120000), 70000);
+    assert.strictEqual(FREE_TIER_MIN_INTERVAL_MS, 3500);
   });
 
   // TEST 5: Búsqueda Spotify en modo Mock

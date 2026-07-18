@@ -1,6 +1,8 @@
 const https = require('https');
 
 const DEFAULT_GEMINI_MODEL = 'gemini-3.5-flash';
+const FREE_TIER_MIN_INTERVAL_MS = 3500;
+let nextFreeTierRequestAt = 0;
 
 function getModelCandidates(configuredModel = process.env.IA_MODEL) {
   return [...new Set([configuredModel, DEFAULT_GEMINI_MODEL].filter(Boolean))];
@@ -13,6 +15,19 @@ function parseRetryDelayMs(message) {
 
 function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+function getRetryWaitMs(retryAfterMs) {
+  // Gemini puede indicar el instante exacto del cierre de la ventana. Añadir
+  // margen evita que latencia/reloj local provoquen otro 429 inmediato.
+  return Math.min(Math.max(retryAfterMs || 60000, 1000) + 2500, 70000);
+}
+
+async function throttleFreeTier() {
+  if (process.env.GEMINI_SEARCH_GROUNDING === 'true') return;
+  const delay = Math.max(0, nextFreeTierRequestAt - Date.now());
+  if (delay > 0) await wait(delay);
+  nextFreeTierRequestAt = Date.now() + FREE_TIER_MIN_INTERVAL_MS;
 }
 
 function callGeminiApi(model, apiKey, payload, timeout = 120000) {
@@ -64,13 +79,15 @@ async function callGeminiWithModelFallback(apiKey, payload, timeout) {
   const candidates = getModelCandidates();
   let lastError;
   for (let index = 0; index < candidates.length; index++) {
-    for (let attempt = 0; attempt < 3; attempt++) {
+    for (let attempt = 0; attempt < 5; attempt++) {
       try {
+        await throttleFreeTier();
         return { text: await callGeminiApi(candidates[index], apiKey, payload, timeout), model: candidates[index] };
       } catch (err) {
         lastError = err;
-        if (err.statusCode === 429 && attempt < 2) {
-          await wait(Math.min(Math.max(err.retryAfterMs || 60000, 1000), 65000));
+        if (err.statusCode === 429 && attempt < 4) {
+          await wait(getRetryWaitMs(err.retryAfterMs));
+          nextFreeTierRequestAt = Date.now() + FREE_TIER_MIN_INTERVAL_MS;
           continue;
         }
         // Sólo una retirada/no disponibilidad del modelo permite cambiar de
@@ -291,5 +308,7 @@ module.exports = {
   getModelCandidates,
   DEFAULT_GEMINI_MODEL,
   parseRetryDelayMs,
-  getArtistBatchSize
+  getArtistBatchSize,
+  getRetryWaitMs,
+  FREE_TIER_MIN_INTERVAL_MS
 };
