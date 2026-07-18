@@ -23,6 +23,20 @@ const YoutubeIcon = ({ size = 20 }: { size?: number }) => (
   </svg>
 );
 
+const TikTokIcon = ({ size = 20 }: { size?: number }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
+    <path d="M16.6 5.82a4.85 4.85 0 0 1-1.12-3.18h-3.29v13.19a2.77 2.77 0 1 1-2.39-2.75V9.75a6.07 6.07 0 1 0 5.68 6.05V9.11a8.1 8.1 0 0 0 4.72 1.51V7.34a4.89 4.89 0 0 1-3.6-1.52z" />
+  </svg>
+);
+
+const XIcon = ({ size = 20 }: { size?: number }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
+    <path d="M18.24 2H21l-6.04 6.9L22.06 22h-5.57l-4.36-5.7L7.15 22H4.38l6.46-7.38L4.03 2H9.74l3.94 5.21L18.24 2zm-.97 17.7h1.53L8.91 4.18H7.27L17.27 19.7z" />
+  </svg>
+);
+
+const isExternalUrl = (value?: string): value is string => /^https?:\/\//i.test(value?.trim() || '');
+
 // Convert band name to standardized uppercase filename
 const getBandImageName = (name: string): string => {
   return name
@@ -34,6 +48,7 @@ const getBandImageName = (name: string): string => {
     .replace(/[\s-]+/g, " ");
 };
 import type { Act, FestivalDay, StageConfig } from '../data/festivalData';
+import { getArtistSocialLinks } from '../data/artistSocialLinks';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
 
@@ -128,6 +143,8 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
   }, [act, isFavorite, conflictActIds, favorites, days]);
 
   if (!isOpen || !act) return null;
+
+  const socialLinks = getArtistSocialLinks(act.band);
 
   const stageObj = editionStages.find(s => s.name === act.stage);
   const stageColor = stageObj ? stageObj.color : '#ffffff';
@@ -428,13 +445,15 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
           </div>
 
           {/* Social Links Row */}
-          {(act.bio?.spotifyUrl || act.bio?.instagramUrl || act.bio?.facebookUrl || act.bio?.youtubeUrl) && (
+          {(act.bio?.spotifyUrl || act.bio?.instagramUrl || act.bio?.facebookUrl || act.bio?.youtubeUrl ||
+            isExternalUrl(socialLinks.officialWebsite) || isExternalUrl(socialLinks.tiktokUrl) || isExternalUrl(socialLinks.xUrl)) && (
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                gap: '16px',
+                flexWrap: 'wrap',
+                gap: '12px',
                 background: 'rgba(255,255,255,0.02)',
                 padding: '12px',
                 borderRadius: '14px',
@@ -442,9 +461,9 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                 marginTop: '-4px',
               }}
             >
-              {act.bio.spotifyUrl && (
+              {act.bio?.spotifyUrl && (
                 <a
-                  href={act.bio.spotifyUrl}
+                  href={act.bio?.spotifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-interactive"
@@ -478,9 +497,9 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                 </a>
               )}
 
-              {act.bio.instagramUrl && (
+              {act.bio?.instagramUrl && (
                 <a
-                  href={act.bio.instagramUrl}
+                  href={act.bio?.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-interactive"
@@ -512,9 +531,9 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                 </a>
               )}
 
-              {act.bio.facebookUrl && (
+              {act.bio?.facebookUrl && (
                 <a
-                  href={act.bio.facebookUrl}
+                  href={act.bio?.facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-interactive"
@@ -546,9 +565,9 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                 </a>
               )}
 
-              {act.bio.youtubeUrl && (
+              {act.bio?.youtubeUrl && (
                 <a
-                  href={act.bio.youtubeUrl}
+                  href={act.bio?.youtubeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-interactive"
@@ -577,6 +596,66 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   }}
                 >
                   <YoutubeIcon size={20} />
+                </a>
+              )}
+
+              {isExternalUrl(socialLinks.officialWebsite) && (
+                <a
+                  href={socialLinks.officialWebsite}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive"
+                  title="Web oficial"
+                  aria-label={`Web oficial de ${act.band}`}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    width: '40px', height: '40px', borderRadius: '50%',
+                    background: 'rgba(148, 163, 184, 0.1)',
+                    border: '1px solid rgba(148, 163, 184, 0.45)',
+                    color: '#cbd5e1', transition: 'all 0.2s',
+                  }}
+                >
+                  <Globe size={20} />
+                </a>
+              )}
+
+              {isExternalUrl(socialLinks.tiktokUrl) && (
+                <a
+                  href={socialLinks.tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive"
+                  title="TikTok"
+                  aria-label={`TikTok de ${act.band}`}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    width: '40px', height: '40px', borderRadius: '50%',
+                    background: 'rgba(37, 244, 238, 0.08)',
+                    border: '1px solid rgba(254, 44, 85, 0.45)',
+                    color: '#25f4ee', transition: 'all 0.2s',
+                  }}
+                >
+                  <TikTokIcon size={20} />
+                </a>
+              )}
+
+              {isExternalUrl(socialLinks.xUrl) && (
+                <a
+                  href={socialLinks.xUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-interactive"
+                  title="X"
+                  aria-label={`X de ${act.band}`}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    width: '40px', height: '40px', borderRadius: '50%',
+                    background: 'rgba(255, 255, 255, 0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.35)',
+                    color: '#ffffff', transition: 'all 0.2s',
+                  }}
+                >
+                  <XIcon size={19} />
                 </a>
               )}
             </div>

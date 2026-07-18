@@ -294,6 +294,24 @@ async function runRemediationTests() {
     );
   });
 
+  await runTestAsync('La ficha de banda incorpora Web, TikTok y X solo con URL válida', async () => {
+    const projectRoot = path.join(__dirname, '..', '..');
+    const syncContent = fs.readFileSync(path.join(projectRoot, 'sync_excel.cjs'), 'utf8');
+    const modalContent = fs.readFileSync(path.join(projectRoot, 'src', 'components', 'BandDetailModal.tsx'), 'utf8');
+    const socialDataContent = fs.readFileSync(path.join(projectRoot, 'src', 'data', 'artistSocialLinks.ts'), 'utf8');
+
+    assert.ok(syncContent.includes("art['Web Oficial Artista']"), 'Debe sincronizar la web oficial desde Excel');
+    assert.ok(syncContent.includes("art['TikTok']"), 'Debe sincronizar TikTok desde Excel');
+    assert.ok(syncContent.includes("art['X URL']"), 'Debe sincronizar X desde Excel');
+    assert.ok(socialDataContent.includes('officialWebsite?: string'), 'El modelo generado debe incluir la web oficial');
+    assert.ok(socialDataContent.includes('tiktokUrl?: string'), 'El modelo generado debe incluir TikTok');
+    assert.ok(socialDataContent.includes('xUrl?: string'), 'El modelo generado debe incluir X');
+    assert.ok(modalContent.includes('isExternalUrl(socialLinks.officialWebsite)'), 'La web solo debe mostrarse con URL válida');
+    assert.ok(modalContent.includes('isExternalUrl(socialLinks.tiktokUrl)'), 'TikTok solo debe mostrarse con URL válida');
+    assert.ok(modalContent.includes('isExternalUrl(socialLinks.xUrl)'), 'X solo debe mostrarse con URL válida');
+    assert.ok(modalContent.includes('flexWrap'), 'La fila de iconos debe adaptarse a pantallas estrechas');
+  });
+
   console.log('\n==================================================');
   console.log(`Remediación: ${passedCount} / ${testCount} superadas.`);
   console.log('==================================================');
