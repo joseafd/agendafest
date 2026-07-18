@@ -2,7 +2,7 @@ process.env.NODE_ENV = 'test';
 const assert = require('assert');
 const http = require('http');
 const { scrapeFestival } = require('../scraper');
-const { extractLineupWithAi } = require('../gemini');
+const { extractLineupWithAi, getModelCandidates, DEFAULT_GEMINI_MODEL } = require('../gemini');
 const { searchSpotifyArtist } = require('../spotify');
 
 // Start a mock target server on port 3032
@@ -117,6 +117,13 @@ async function runBusinessTests() {
   });
 
   // TEST 3: Búsqueda Spotify en modo Mock
+  await runTestAsync('Gemini usa 3.5 Flash y conserva fallback ante modelos retirados', async () => {
+    assert.strictEqual(DEFAULT_GEMINI_MODEL, 'gemini-3.5-flash');
+    assert.deepStrictEqual(getModelCandidates('gemini-2.5-flash'), ['gemini-2.5-flash', 'gemini-3.5-flash']);
+    assert.deepStrictEqual(getModelCandidates('gemini-3.5-flash'), ['gemini-3.5-flash']);
+  });
+
+  // TEST 4: Búsqueda Spotify en modo Mock
   await runTestAsync('Spotify en modo Mock busca artistas y resuelve IDs deterministas', async () => {
     const annisData = await searchSpotifyArtist('Annisokay');
     assert.ok(annisData);

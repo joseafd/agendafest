@@ -1,5 +1,11 @@
 const https = require('https');
 
+const DEFAULT_GEMINI_MODEL = 'gemini-3.5-flash';
+
+function getModelCandidates(configuredModel = process.env.IA_MODEL) {
+  return [...new Set([configuredModel, DEFAULT_GEMINI_MODEL].filter(Boolean))];
+}
+
 function callGeminiApi(model, apiKey, payload, timeout = 120000) {
   return new Promise((resolve, reject) => {
     const requestBody = JSON.stringify(payload);
@@ -18,7 +24,15 @@ function callGeminiApi(model, apiKey, payload, timeout = 120000) {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
-        if (res.statusCode !== 200) return reject(new Error(`Gemini respondió HTTP ${res.statusCode}.`));
+        if (res.statusCode !== 200) {
+          let apiMessage = '';
+          try {
+            apiMessage = JSON.parse(data)?.error?.message || '';
+          } catch (_) {}
+          const err = new Error(`Gemini respondió HTTP ${res.statusCode}${apiMessage ? `: ${apiMessage}` : '.'}`);
+          err.statusCode = res.statusCode;
+          return reject(err);
+        }
         try {
           const body = JSON.parse(data);
           const text = body.candidates?.[0]?.content?.parts?.map(part => part.text || '').join('') || '';
@@ -36,26 +50,43 @@ function callGeminiApi(model, apiKey, payload, timeout = 120000) {
   });
 }
 
+async function callGeminiWithModelFallback(apiKey, payload, timeout) {
+  const candidates = getModelCandidates();
+  let lastError;
+  for (let index = 0; index < candidates.length; index++) {
+    try {
+      return { text: await callGeminiApi(candidates[index], apiKey, payload, timeout), model: candidates[index] };
+    } catch (err) {
+      lastError = err;
+      // Sólo una retirada/no disponibilidad del modelo permite cambiar de
+      // modelo. Los errores de cuota, autenticación o contenido nunca se ocultan.
+      if (err.statusCode !== 404 || index === candidates.length - 1) throw err;
+    }
+  }
+  throw lastError;
+}
+
 async function enrichArtistsWithAi(lineup, edition) {
   const apiKey = process.env.GEMINI_API_KEY;
   const provider = process.env.AI_PROVIDER || 'mock';
-  const model = process.env.IA_MODEL || 'gemini-2.5-flash';
   if (provider === 'mock' || !apiKey) return lineup;
 
   const uniqueNames = [...new Set(lineup.map(item => item.artistName.trim()).filter(Boolean))];
   const metadata = new Map();
   for (let offset = 0; offset < uniqueNames.length; offset += 8) {
     const names = uniqueNames.slice(offset, offset + 8);
-    const researchPrompt = `Investiga mediante Google Search estos artistas que actúan en ${edition.name} (${edition.year}): ${names.join(', ')}.\n` +
-      'Usa fuentes oficiales, perfiles sociales oficiales, Spotify, MusicBrainz o Wikipedia. No inventes datos. ' +
+    const allowPaidSearch = process.env.GEMINI_SEARCH_GROUNDING === 'true';
+    const researchPrompt = `${allowPaidSearch ? 'Investiga mediante Google Search' : 'Identifica usando únicamente conocimientos fiables'} estos artistas que actúan en ${edition.name} (${edition.year}): ${names.join(', ')}.\n` +
+      'No inventes datos ni URLs. Deja vacío todo dato que no puedas asegurar. ' +
       'Para cada nombre aporta país, género principal, descripción breve, biografía, vídeo de YouTube, imagen pública, web oficial, Instagram, Facebook, X y TikTok. ' +
-      'Incluye también las URLs de las fuentes. Si un dato no puede verificarse, indícalo como desconocido.';
-    const research = await callGeminiApi(model, apiKey, {
+      `${allowPaidSearch ? 'Incluye también las URLs de las fuentes.' : 'No cites fuentes ni enlaces recordados de memoria.'}`;
+    const researchPayload = {
       contents: [{ role: 'user', parts: [{ text: researchPrompt }] }],
-      tools: [{ google_search: {} }]
-    });
+    };
+    if (allowPaidSearch) researchPayload.tools = [{ google_search: {} }];
+    const { text: research } = await callGeminiWithModelFallback(apiKey, researchPayload);
 
-    const structuredText = await callGeminiApi(model, apiKey, {
+    const { text: structuredText } = await callGeminiWithModelFallback(apiKey, {
       contents: [{ role: 'user', parts: [{ text:
         `Convierte estas notas de investigación en JSON. Conserva exactamente los nombres solicitados. ` +
         `Usa cadena vacía para cualquier dato no verificado.\nNombres: ${JSON.stringify(names)}\nNotas:\n${research}`
@@ -97,11 +128,9 @@ async function enrichArtistsWithAi(lineup, edition) {
  * @param {object} scrapedData Output from scrapeFestival.
  * @returns {Promise<object>} Structured lineup JSON.
  */
-function extractLineupWithAi(scrapedData) {
-  return new Promise((resolve, reject) => {
+async function extractLineupWithAi(scrapedData) {
     const apiKey = process.env.GEMINI_API_KEY;
     const provider = process.env.AI_PROVIDER || 'mock';
-    const model = process.env.IA_MODEL || 'gemini-2.5-flash';
 
     const textToAnalyze = [
       `URL del festival: ${scrapedData.url}`,
@@ -135,7 +164,7 @@ function extractLineupWithAi(scrapedData) {
         );
       }
 
-      return resolve({
+      return {
         edition: {
           name: 'Festival Mock Edition',
           year: new Date().getFullYear(),
@@ -149,7 +178,7 @@ function extractLineupWithAi(scrapedData) {
           ...item,
           day: `${new Date().getFullYear()}-07-${String(17 + Math.min(index, 2)).padStart(2, '0')}`
         }))
-      });
+      };
     }
 
     // Call real Gemini API
@@ -170,7 +199,7 @@ function extractLineupWithAi(scrapedData) {
         inlineData: { mimeType: image.mimeType, data: image.data }
       }));
 
-    const requestBody = JSON.stringify({
+    const requestBody = {
       contents: [
         {
           role: 'user',
@@ -216,64 +245,22 @@ function extractLineupWithAi(scrapedData) {
           required: ['edition', 'lineup']
         }
       }
-    });
-
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-    
-    let parsedUrl;
-    try {
-      parsedUrl = new URL(apiUrl);
-    } catch (e) {
-      return reject(new Error('URL de API de Gemini inválida.'));
-    }
-
-    const options = {
-      hostname: parsedUrl.hostname,
-      port: 443,
-      path: parsedUrl.pathname + parsedUrl.search,
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-goog-api-key': apiKey,
-        'Content-Length': Buffer.byteLength(requestBody)
-      },
-      timeout: 120000
     };
 
-    const req = https.request(options, (res) => {
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        if (res.statusCode !== 200) {
-          return reject(new Error(`Error de API de Gemini (HTTP ${res.statusCode}): ${data}`));
-        }
-
-        try {
-          const parsedResponse = JSON.parse(data);
-          const candidates = parsedResponse.candidates;
-          if (!candidates || candidates.length === 0) {
-            return reject(new Error('La API de Gemini no ha devuelto respuestas.'));
-          }
-
-          const textResponse = candidates[0].content.parts[0].text;
-          const extractedData = JSON.parse(textResponse);
-          resolve(extractedData);
-        } catch (err) {
-          reject(new Error('Fallo al procesar la respuesta estructurada de Gemini: ' + err.message));
-        }
-      });
-    });
-
-    req.on('error', (err) => {
-      reject(new Error('Error de conexión con la API de Gemini: ' + err.message));
-    });
-
-    req.write(requestBody);
-    req.end();
-  });
+    try {
+      const { text } = await callGeminiWithModelFallback(apiKey, requestBody);
+      return JSON.parse(text);
+    } catch (err) {
+      if (err instanceof SyntaxError) {
+        throw new Error('Fallo al procesar la respuesta estructurada de Gemini: JSON inválido.');
+      }
+      throw err;
+    }
 }
 
 module.exports = {
   extractLineupWithAi,
-  enrichArtistsWithAi
+  enrichArtistsWithAi,
+  getModelCandidates,
+  DEFAULT_GEMINI_MODEL
 };
