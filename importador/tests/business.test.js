@@ -4,7 +4,8 @@ const http = require('http');
 const { scrapeFestival } = require('../scraper');
 const {
   extractLineupWithAi, getModelCandidates, DEFAULT_GEMINI_MODEL,
-  parseRetryDelayMs, getArtistBatchSize, getRetryWaitMs, FREE_TIER_MIN_INTERVAL_MS
+  ENRICHMENT_GEMINI_MODEL, parseRetryDelayMs, getArtistBatchSize,
+  getRetryWaitMs, FREE_TIER_MIN_INTERVAL_MS
 } = require('../gemini');
 const { searchSpotifyArtist } = require('../spotify');
 
@@ -122,8 +123,10 @@ async function runBusinessTests() {
   // TEST 3: Búsqueda Spotify en modo Mock
   await runTestAsync('Gemini usa 3.5 Flash y conserva fallback ante modelos retirados', async () => {
     assert.strictEqual(DEFAULT_GEMINI_MODEL, 'gemini-3.5-flash');
+    assert.strictEqual(ENRICHMENT_GEMINI_MODEL, 'gemini-3.1-flash-lite');
     assert.deepStrictEqual(getModelCandidates('gemini-2.5-flash'), ['gemini-2.5-flash', 'gemini-3.5-flash']);
     assert.deepStrictEqual(getModelCandidates('gemini-3.5-flash'), ['gemini-3.5-flash']);
+    assert.deepStrictEqual(getModelCandidates(ENRICHMENT_GEMINI_MODEL), ['gemini-3.1-flash-lite', 'gemini-3.5-flash']);
   });
 
   await runTestAsync('El modo gratuito agrupa artistas y respeta la espera indicada por un 429', async () => {

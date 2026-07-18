@@ -1,6 +1,7 @@
 const https = require('https');
 
 const DEFAULT_GEMINI_MODEL = 'gemini-3.5-flash';
+const ENRICHMENT_GEMINI_MODEL = 'gemini-3.1-flash-lite';
 const FREE_TIER_MIN_INTERVAL_MS = 3500;
 let nextFreeTierRequestAt = 0;
 
@@ -75,8 +76,8 @@ function callGeminiApi(model, apiKey, payload, timeout = 120000) {
   });
 }
 
-async function callGeminiWithModelFallback(apiKey, payload, timeout) {
-  const candidates = getModelCandidates();
+async function callGeminiWithModelFallback(apiKey, payload, timeout, preferredModel) {
+  const candidates = getModelCandidates(preferredModel || process.env.IA_MODEL);
   let lastError;
   for (let index = 0; index < candidates.length; index++) {
     for (let attempt = 0; attempt < 5; attempt++) {
@@ -85,11 +86,14 @@ async function callGeminiWithModelFallback(apiKey, payload, timeout) {
         return { text: await callGeminiApi(candidates[index], apiKey, payload, timeout), model: candidates[index] };
       } catch (err) {
         lastError = err;
-        if (err.statusCode === 429 && attempt < 4) {
+        if (err.statusCode === 429 && attempt < 1) {
           await wait(getRetryWaitMs(err.retryAfterMs));
           nextFreeTierRequestAt = Date.now() + FREE_TIER_MIN_INTERVAL_MS;
           continue;
         }
+        // Si la cuota de un modelo continúa agotada, usa la cuota independiente
+        // del modelo alternativo en lugar de detener toda la importación.
+        if (err.statusCode === 429 && index < candidates.length - 1) break;
         // Sólo una retirada/no disponibilidad del modelo permite cambiar de
         // modelo. Los errores de autenticación o contenido nunca se ocultan.
         if (err.statusCode !== 404 || index === candidates.length - 1) throw err;
@@ -159,7 +163,7 @@ async function enrichArtistsWithAi(lineup, edition) {
         responseMimeType: 'application/json',
         responseSchema: artistResponseSchema
       }
-    });
+    }, undefined, allowPaidSearch ? undefined : ENRICHMENT_GEMINI_MODEL);
     const parsed = JSON.parse(structuredText);
     for (const artist of parsed.artists || []) metadata.set(artist.artistName.toLowerCase(), artist);
   }
@@ -307,6 +311,7 @@ module.exports = {
   enrichArtistsWithAi,
   getModelCandidates,
   DEFAULT_GEMINI_MODEL,
+  ENRICHMENT_GEMINI_MODEL,
   parseRetryDelayMs,
   getArtistBatchSize,
   getRetryWaitMs,
