@@ -282,12 +282,17 @@ function renderReviewTable(result) {
       </td>
     `;
     tbody.appendChild(tr);
-    tr.querySelectorAll('td[contenteditable="true"]').forEach(cell => cell.addEventListener('input', validateReviewRows));
+    tr.querySelectorAll('td[contenteditable="true"]').forEach(cell => cell.addEventListener('input', () => {
+      invalidateExcelComparison();
+      validateReviewRows();
+    }));
   });
+  renderExcelComparison(result.excelPreview);
   validateReviewRows();
 }
 
 let reviewLineup = [];
+let currentPreviewHash = '';
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, character => ({
@@ -298,7 +303,102 @@ function escapeHtml(value) {
 function deleteRow(btn) {
   const row = btn.parentNode.parentNode;
   row.parentNode.removeChild(row);
+  invalidateExcelComparison();
   validateReviewRows();
+}
+
+function collectApprovedLineup() {
+  const approvedLineup = [];
+  document.querySelectorAll('#lineupTableBody tr[data-index]').forEach(row => {
+    const get = field => row.querySelector(`[data-field="${field}"]`)?.textContent.trim() || '';
+    const original = reviewLineup[Number(row.dataset.index)] || {};
+    approvedLineup.push({
+      ...original,
+      artistName: get('artistName'), day: get('day'), stage: get('stage'),
+      startTime: get('startTime'), endTime: get('endTime'), spotifyId: get('spotifyId'),
+      country: get('country'), genre: get('genre')
+    });
+  });
+  return approvedLineup;
+}
+
+function invalidateExcelComparison() {
+  currentPreviewHash = '';
+  const checkbox = document.getElementById('comparisonReviewed');
+  checkbox.checked = false;
+  checkbox.disabled = true;
+  document.getElementById('comparisonSummary').textContent = 'Los datos editados ya no coinciden con la comparación. Pulsa “Actualizar comparación”.';
+}
+
+function renderExcelComparison(preview) {
+  const summary = document.getElementById('comparisonSummary');
+  const content = document.getElementById('comparisonContent');
+  const checkbox = document.getElementById('comparisonReviewed');
+  content.innerHTML = '';
+  currentPreviewHash = preview?.previewHash || '';
+  checkbox.checked = false;
+  checkbox.disabled = !currentPreviewHash;
+
+  if (!preview || !Array.isArray(preview.artists)) {
+    summary.textContent = 'No se pudo generar la comparación. Pulsa “Actualizar comparación”.';
+    return;
+  }
+  const totals = preview.totals || {};
+  summary.textContent = `${preview.artists.length} artistas: ${totals.newArtists || 0} nuevos · ${totals.additions || 0} campos añadidos · ${totals.updates || 0} actualizados · ${totals.preserved || 0} valores existentes conservados.`;
+
+  const labels = {
+    nuevo: ['NUEVO', '#60a5fa'], añadir: ['AÑADIR', '#10b981'], actualizar: ['ACTUALIZAR', '#f59e0b'],
+    mantener: ['MANTENER', '#a78bfa'], sin_cambios: ['SIN CAMBIOS', '#9ca3af'], sin_dato: ['SIN DATO', '#6b7280']
+  };
+  preview.artists.forEach(artist => {
+    const visibleFields = (artist.fields || []).filter(field => field.decision !== 'sin_cambios' && field.decision !== 'sin_dato');
+    const details = document.createElement('details');
+    details.style.cssText = 'border-top:1px solid var(--border-color); padding:9px 0;';
+    const status = artist.status === 'nuevo' ? 'NUEVO' : artist.status === 'actualizar' ? 'CAMBIOS' : 'SIN CAMBIOS';
+    details.innerHTML = `<summary style="cursor:pointer; font-weight:600;">${escapeHtml(artist.artistName)} <span style="color:#9ca3af; font-weight:400;">· ${status} · ${visibleFields.length} campo(s) relevante(s)</span></summary>`;
+    if (visibleFields.length) {
+      const table = document.createElement('table');
+      table.style.cssText = 'width:100%; margin-top:8px; border-collapse:collapse; font-size:12px;';
+      table.innerHTML = '<thead><tr><th style="text-align:left;padding:5px;">Campo</th><th style="text-align:left;padding:5px;">Actual en Excel</th><th style="text-align:left;padding:5px;">Propuesto</th><th style="text-align:left;padding:5px;">Decisión</th></tr></thead>';
+      const body = document.createElement('tbody');
+      visibleFields.forEach(field => {
+        const [label, color] = labels[field.decision] || [field.decision, '#9ca3af'];
+        const row = document.createElement('tr');
+        row.style.borderTop = '1px solid var(--border-color)';
+        row.innerHTML = `<td style="padding:5px;">${escapeHtml(field.field)}</td><td style="padding:5px;word-break:break-word;">${escapeHtml(field.current || '—')}</td><td style="padding:5px;word-break:break-word;">${escapeHtml(field.proposed || '—')}</td><td style="padding:5px;color:${color};font-weight:700;">${label}</td>`;
+        body.appendChild(row);
+      });
+      table.appendChild(body);
+      details.appendChild(table);
+    }
+    content.appendChild(details);
+  });
+}
+
+async function refreshExcelComparison() {
+  const feedback = document.getElementById('saveFeedback');
+  if (!validateReviewRows()) return;
+  const button = document.getElementById('btnRefreshComparison');
+  button.disabled = true;
+  document.getElementById('comparisonSummary').textContent = 'Comparando, sin modificar el Excel…';
+  try {
+    const res = await fetch('/api/import/preview', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ importId: activeImportId, lineup: collectApprovedLineup() })
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'No se pudo generar la comparación.');
+    renderExcelComparison(data.preview);
+    feedback.style.display = 'none';
+  } catch (err) {
+    invalidateExcelComparison();
+    feedback.style.display = 'block';
+    feedback.style.color = '#ef4444';
+    feedback.textContent = `Error al comparar: ${err.message}`;
+  } finally {
+    button.disabled = false;
+    validateReviewRows();
+  }
 }
 
 function validateReviewRows() {
@@ -341,14 +441,13 @@ function validateReviewRows() {
   const summary = document.getElementById('reviewValidation');
   summary.style.display = invalidRows ? 'block' : 'none';
   summary.textContent = invalidRows ? `${invalidRows} actuación(es) requieren corrección. Las filas aparecen resaltadas en rojo.` : '';
-  document.getElementById('btnApproveImport').disabled = rows.length === 0 || invalidRows > 0;
+  const comparisonReviewed = document.getElementById('comparisonReviewed')?.checked;
+  document.getElementById('btnApproveImport').disabled = rows.length === 0 || invalidRows > 0 || !currentPreviewHash || !comparisonReviewed;
   return invalidRows === 0 && rows.length > 0;
 }
 
 async function approveImport() {
-  const tbody = document.getElementById('lineupTableBody');
-  const rows = tbody.querySelectorAll('tr');
-  const approvedLineup = [];
+  const approvedLineup = collectApprovedLineup();
   const feedback = document.getElementById('saveFeedback');
 
   if (!validateReviewRows()) {
@@ -357,23 +456,6 @@ async function approveImport() {
     feedback.textContent = 'Corrige primero todas las filas resaltadas en rojo.';
     return;
   }
-
-  rows.forEach(row => {
-    const cells = row.querySelectorAll('td[contenteditable="true"]');
-    if (cells.length > 0) {
-      const artistName = row.querySelector('[data-field="artistName"]').textContent.trim();
-      const day = row.querySelector('[data-field="day"]').textContent.trim();
-      const stage = row.querySelector('[data-field="stage"]').textContent.trim();
-      const startTime = row.querySelector('[data-field="startTime"]').textContent.trim();
-      const endTime = row.querySelector('[data-field="endTime"]').textContent.trim();
-      const spotifyId = row.querySelector('[data-field="spotifyId"]').textContent.trim();
-      const country = row.querySelector('[data-field="country"]').textContent.trim();
-      const genre = row.querySelector('[data-field="genre"]').textContent.trim();
-      const original = reviewLineup[Number(row.dataset.index)] || {};
-
-      approvedLineup.push({ ...original, artistName, day, stage, startTime, endTime, spotifyId, country, genre });
-    }
-  });
 
   if (approvedLineup.length === 0) {
     feedback.style.display = 'block';
@@ -392,7 +474,8 @@ async function approveImport() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         importId: activeImportId,
-        lineup: approvedLineup
+        lineup: approvedLineup,
+        previewHash: currentPreviewHash
       })
     });
     
@@ -420,6 +503,7 @@ let publishPollInterval = null;
 function resetImport() {
   activeImportId = null;
   activePlanId = null;
+  currentPreviewHash = '';
   if (statusPollInterval) clearInterval(statusPollInterval);
   if (publishPollInterval) clearInterval(publishPollInterval);
   document.getElementById('importProgress').style.display = 'none';

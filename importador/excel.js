@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const ExcelJS = require('exceljs');
 
 const excelPath = path.join(__dirname, '..', 'AgendaFest.xlsx');
@@ -92,6 +93,112 @@ function slugify(value) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/(^-|-$)/g, '');
+}
+
+function cellText(value) {
+  if (value === undefined || value === null) return '';
+  if (typeof value === 'object') {
+    if (typeof value.text === 'string') return value.text.trim();
+    if (typeof value.hyperlink === 'string') return value.hyperlink.trim();
+    if (Array.isArray(value.richText)) return value.richText.map(part => part.text || '').join('').trim();
+  }
+  return String(value).trim();
+}
+
+const ARTIST_PREVIEW_FIELDS = [
+  ['Spotify Artist ID', item => item.spotifyId],
+  ['País', item => item.country],
+  ['Género principal', item => item.genre || item.spotifyGenres?.[0]],
+  ['Descripción', item => item.description],
+  ['Bio', item => item.bio],
+  ['YouTube', item => item.youtubeUrl],
+  ['Imagen', item => item.imageUrl],
+  ['Spotify', item => item.spotifyUrl],
+  ['Instagram', item => item.instagramUrl],
+  ['Facebook', item => item.facebookUrl],
+  ['Web Oficial Artista', item => item.officialWebsite],
+  ['TikTok', item => item.tiktokUrl],
+  ['X URL', item => item.xUrl],
+  ['Fuentes artista', item => Array.isArray(item.sourceUrls) ? item.sourceUrls.join(' | ') : '']
+];
+
+/**
+ * Builds a read-only, field-level comparison with the current workbook.
+ * Empty proposed values always mean "keep": the preview never proposes data loss.
+ */
+async function buildImportPreview(approvedData) {
+  if (!approvedData || !Array.isArray(approvedData.lineup)) {
+    throw new Error('No hay datos válidos para comparar con AgendaFest.xlsx.');
+  }
+  const workbook = new ExcelJS.Workbook();
+  await workbook.xlsx.readFile(excelPath);
+  const artistasSheet = workbook.getWorksheet('Artistas');
+  if (!artistasSheet) throw new Error('AgendaFest.xlsx no contiene la hoja Artistas.');
+
+  const headers = artistasSheet.getRow(1).values;
+  const artistIdColumn = headers.indexOf('Artista ID');
+  const rowsByArtistId = new Map();
+  artistasSheet.eachRow((row, rowNumber) => {
+    if (rowNumber === 1) return;
+    const id = cellText(row.getCell(artistIdColumn).value).toLowerCase();
+    if (id) rowsByArtistId.set(id, row);
+  });
+
+  const uniqueArtists = new Map();
+  approvedData.lineup.forEach(item => {
+    const artistName = String(item.artistName || '').trim();
+    if (!artistName) return;
+    const artistId = slugify(artistName);
+    if (!uniqueArtists.has(artistId)) uniqueArtists.set(artistId, item);
+  });
+
+  const artists = [];
+  const totals = { newArtists: 0, unchanged: 0, additions: 0, updates: 0, preserved: 0 };
+  for (const [artistId, item] of uniqueArtists) {
+    const existingRow = rowsByArtistId.get(artistId) || null;
+    const fields = [];
+    let changedFields = 0;
+    for (const [header, getProposed] of ARTIST_PREVIEW_FIELDS) {
+      const column = headers.indexOf(header);
+      const current = existingRow && column > 0 ? cellText(existingRow.getCell(column).value) : '';
+      const proposed = cellText(getProposed(item));
+      let decision;
+      if (!existingRow) {
+        decision = proposed ? 'nuevo' : 'sin_dato';
+      } else if (!proposed && current) {
+        decision = 'mantener';
+        totals.preserved++;
+      } else if (!proposed && !current || proposed === current) {
+        decision = 'sin_cambios';
+        totals.unchanged++;
+      } else if (!current) {
+        decision = 'añadir';
+        totals.additions++;
+        changedFields++;
+      } else {
+        decision = 'actualizar';
+        totals.updates++;
+        changedFields++;
+      }
+      fields.push({ field: header, current, proposed, decision });
+    }
+    if (!existingRow) totals.newArtists++;
+    artists.push({
+      artistId,
+      artistName: String(item.artistName || '').trim(),
+      status: existingRow ? (changedFields ? 'actualizar' : 'existente') : 'nuevo',
+      fields
+    });
+  }
+
+  const stat = fs.statSync(excelPath);
+  const fingerprint = {
+    excel: { size: stat.size, mtimeMs: Math.trunc(stat.mtimeMs) },
+    edition: approvedData.edition || {},
+    lineup: approvedData.lineup
+  };
+  const previewHash = crypto.createHash('sha256').update(JSON.stringify(fingerprint)).digest('hex');
+  return { previewHash, generatedAt: new Date().toISOString(), totals, artists };
 }
 
 function isoDateToExcelSerial(value) {
@@ -280,7 +387,7 @@ async function saveImportToExcel(approvedData, user, importId) {
       }
       editionRow.commit();
     } else {
-      writeCellSafely(editionRow.getCell(freshEdHeaders.indexOf('URL Oficial')), edition.url);
+      if (edition.url) writeCellSafely(editionRow.getCell(freshEdHeaders.indexOf('URL Oficial')), edition.url);
     }
 
     if (!Number.isFinite(startDateSerial)) {
@@ -347,15 +454,16 @@ async function saveImportToExcel(approvedData, user, importId) {
         }
 
         // Update existing row
-        writeCellSafely(artistRow.getCell(spIdCol), newSpId);
+        // Never replace a known identifier with an empty lookup result.
+        if (newSpId) writeCellSafely(artistRow.getCell(spIdCol), newSpId);
         writeCellSafely(artistRow.getCell(normNameCol), normName);
         for (const [header, value] of Object.entries(artistValues)) {
           const column = freshArtHeaders.indexOf(header);
           if (column > 0 && value) writeCellSafely(artistRow.getCell(column), value);
         }
         writeCellSafely(artistRow.getCell(dateRevCol), new Date().toISOString().substring(0, 10));
-        writeCellSafely(artistRow.getCell(revCol), metadataComplete);
-        writeCellSafely(artistRow.getCell(imgApprovedCol), false);
+        // Importing incomplete metadata must not downgrade manual editorial decisions.
+        if (metadataComplete) writeCellSafely(artistRow.getCell(revCol), true);
       } else {
         // High Alta - new row
         const newRow = artistasSheet.addRow([]);
@@ -542,6 +650,7 @@ async function saveImportToExcel(approvedData, user, importId) {
 module.exports = {
   isExcelLocked,
   saveImportToExcel,
+  buildImportPreview,
   cleanBackups,
   unlinkWithRetry
 };

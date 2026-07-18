@@ -20,7 +20,7 @@ const { scrapeFestival } = require('./scraper');
 const { extractLineupWithAi, enrichArtistsWithAi } = require('./gemini');
 const { searchSpotifyArtistDetailed, isSpotifyConfigured } = require('./spotify');
 const { enrichArtistsWithOpenMetadata } = require('./open-metadata');
-const { saveImportToExcel } = require('./excel');
+const { saveImportToExcel, buildImportPreview } = require('./excel');
 const publish = require('./publish');
 
 const PUBLISH_ENABLED = process.env.PUBLISH_ENABLED === 'true';
@@ -489,6 +489,9 @@ app.post('/api/import/process', requireAuth, (req, res) => {
         logger: message => transaction.logs.push(`[${new Date().toISOString()}] ${message}`)
       });
 
+      transaction.logs.push(`[${new Date().toISOString()}] Comparando la propuesta con los artistas existentes en AgendaFest.xlsx...`);
+      lineupResult.excelPreview = await buildImportPreview(lineupResult);
+
       transaction.logs.push(`[${new Date().toISOString()}] Proceso completado. Listo para revisión del administrador.`);
       transaction.result = lineupResult;
       transaction.state = 'PENDIENTE_REVISION';
@@ -511,9 +514,31 @@ app.get('/api/import/status/:id', requireAuth, (req, res) => {
   res.json(transaction);
 });
 
+// POST /api/import/preview - read-only comparison; never writes the workbook.
+app.post('/api/import/preview', requireAuth, async (req, res) => {
+  const { importId, lineup } = req.body;
+  const transaction = activeImports[importId];
+  if (!transaction) return res.status(404).json({ error: 'Transacción no encontrada.' });
+  if (!Array.isArray(lineup) || lineup.length === 0) {
+    return res.status(400).json({ error: 'Datos de cartel inválidos.' });
+  }
+  try {
+    const candidate = { ...transaction.result, lineup };
+    normalizeAndValidateImport(candidate, transaction.url);
+    if (candidate.validationIssues.length > 0) {
+      const issue = candidate.validationIssues[0];
+      throw new Error(`No se puede comparar: fila ${issue.row}, ${issue.artistName}: ${issue.reasons.join('; ')}.`);
+    }
+    const preview = await buildImportPreview(candidate);
+    res.json({ success: true, preview });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 // POST /api/import/save
 app.post('/api/import/save', requireAuth, async (req, res) => {
-  const { importId, lineup } = req.body;
+  const { importId, lineup, previewHash } = req.body;
   const transaction = activeImports[importId];
 
   if (!transaction) {
@@ -533,6 +558,14 @@ app.post('/api/import/save', requireAuth, async (req, res) => {
     if (transaction.result.validationIssues.length > 0) {
       const issue = transaction.result.validationIssues[0];
       throw new Error(`No se puede guardar: fila ${issue.row}, ${issue.artistName}: ${issue.reasons.join('; ')}.`);
+    }
+
+    if (!previewHash) {
+      throw new Error('Debes generar y revisar la comparación con Excel antes de confirmar.');
+    }
+    const currentPreview = await buildImportPreview(transaction.result);
+    if (currentPreview.previewHash !== previewHash) {
+      throw new Error('La comparación ha caducado porque cambiaron los datos o el Excel. Vuelve a generarla antes de confirmar.');
     }
 
     // Save to excel

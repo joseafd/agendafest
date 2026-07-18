@@ -266,6 +266,18 @@ async function runRemediationTests() {
     assert.ok(htmlContent.includes('Vídeo · imagen · RRSS'), 'Debe explicar qué incluye la columna Contenido');
   });
 
+  await runTestAsync('La confirmación exige una comparación visual vigente con el Excel', async () => {
+    const serverContent = fs.readFileSync(path.join(__dirname, '..', 'server.js'), 'utf8');
+    const appContent = fs.readFileSync(path.join(__dirname, '..', 'public', 'app.js'), 'utf8');
+    const htmlContent = fs.readFileSync(path.join(__dirname, '..', 'public', 'index.html'), 'utf8');
+    assert.ok(serverContent.includes("app.post('/api/import/preview'"), 'Debe existir una comparación de solo lectura');
+    assert.ok(serverContent.includes('currentPreview.previewHash !== previewHash'), 'Debe rechazar comparaciones caducadas');
+    assert.ok(appContent.includes('invalidateExcelComparison'), 'Editar una fila debe invalidar la comparación');
+    assert.ok(appContent.includes('previewHash: currentPreviewHash'), 'La confirmación debe enviar el hash revisado');
+    assert.ok(htmlContent.includes('Comparación con AgendaFest.xlsx'), 'La comparación debe ser visible');
+    assert.ok(htmlContent.includes('comparisonReviewed'), 'El usuario debe confirmar que revisó los cambios');
+  });
+
   console.log('\n==================================================');
   console.log(`Remediación: ${passedCount} / ${testCount} superadas.`);
   console.log('==================================================');

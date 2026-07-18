@@ -3,7 +3,7 @@ const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
 const ExcelJS = require('exceljs');
-const { isExcelLocked, saveImportToExcel, cleanBackups, unlinkWithRetry } = require('../excel');
+const { isExcelLocked, saveImportToExcel, buildImportPreview, cleanBackups, unlinkWithRetry } = require('../excel');
 
 const excelPath = path.join(__dirname, '..', '..', 'AgendaFest.xlsx');
 const realBackupPath = path.join(__dirname, '..', '..', 'AgendaFest.xlsx.real_backup');
@@ -18,11 +18,11 @@ async function createMockWorkbook(filePath) {
   edicion.addRow(['resurrection-fest', 'resurrection-fest-2026', 'Resurrection Fest', 'Resurrection Fest E.G.', 2026, 46204, 46207]);
 
   const artistas = workbook.addWorksheet('Artistas');
-  artistas.addRow(['Artista ID', 'Nombre', 'País', 'Género principal', 'Descripción', 'YouTube', 'Imagen', 'Spotify', 'Instagram', 'Facebook', 'Bio', 'Fecha Revisión', 'Revisado']);
+  artistas.addRow(['Artista ID', 'Nombre', 'País', 'Género principal', 'Descripción', 'YouTube', 'Imagen', 'Spotify', 'Instagram', 'Facebook', 'Bio', 'Fecha Revisión', 'Revisado', 'Spotify Artist ID']);
   artistas.addRow([
     'annisokay', 'ANNISOKAY', 'Alemania', 'Metalcore', 'La formación alemana...', 
     'https://youtube.com/...', 'https://spotify/...', 'https://open.spotify.com/artist/7lAi1Cv19DsukgGjbZQxFg', 
-    'https://instagram.com/...', 'https://facebook.com/...', 'Bio de la banda...', '2026-07-12', true
+    'https://instagram.com/...', 'https://facebook.com/...', 'Bio de la banda...', '2026-07-12', true, '7lAi1Cv19DsukgGjbZQxFg'
   ]);
 
   const actuaciones = workbook.addWorksheet('Actuaciones');
@@ -71,6 +71,46 @@ async function runExcelTests() {
     const notLocked = isExcelLocked(excelPath);
 
     assert.strictEqual(notLocked, false, 'No debería estar bloqueado después de cerrar el FD');
+  });
+
+  await runTestAsync('La comparación previa muestra valores actuales, propuestas y campos que se conservarán', async () => {
+    const proposal = {
+      edition: {
+        festivalId: 'resurrection-fest', id: 'resurrection-fest-2026', name: 'Resurrection Fest', year: 2026,
+        startDate: '2026-07-01', endDate: '2026-07-04', location: 'Viveiro', timezone: 'Europe/Madrid',
+        url: 'https://www.resurrectionfest.es/'
+      },
+      lineup: [{
+        artistName: 'Annisokay', spotifyId: '', country: 'Alemania', genre: 'Modern Metalcore',
+        instagramUrl: '', bio: 'Bio de la banda...', day: '2026-07-01', stage: 'Main Stage',
+        startTime: '15:00', endTime: '16:00'
+      }]
+    };
+    const preview = await buildImportPreview(proposal);
+    assert.ok(preview.previewHash, 'La comparación debe quedar vinculada al Excel y la propuesta');
+    const artist = preview.artists.find(item => item.artistId === 'annisokay');
+    assert.ok(artist, 'Debe comparar al artista existente');
+    const spotify = artist.fields.find(field => field.field === 'Spotify Artist ID');
+    const genre = artist.fields.find(field => field.field === 'Género principal');
+    const instagram = artist.fields.find(field => field.field === 'Instagram');
+    assert.strictEqual(spotify.decision, 'mantener', 'Un ID existente no se debe proponer para borrado');
+    assert.strictEqual(spotify.current, '7lAi1Cv19DsukgGjbZQxFg');
+    assert.strictEqual(genre.decision, 'actualizar');
+    assert.strictEqual(genre.current, 'Metalcore');
+    assert.strictEqual(genre.proposed, 'Modern Metalcore');
+    assert.strictEqual(instagram.decision, 'mantener');
+
+    await saveImportToExcel(proposal, 'test-user', 'IMP-preview-preserve');
+    const verify = new ExcelJS.Workbook();
+    await verify.xlsx.readFile(excelPath);
+    const artists = verify.getWorksheet('Artistas');
+    const verifyHeaders = artists.getRow(1).values;
+    let existing = null;
+    artists.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(verifyHeaders.indexOf('Artista ID')).value === 'annisokay') existing = row;
+    });
+    assert.strictEqual(existing.getCell(verifyHeaders.indexOf('Spotify Artist ID')).value, '7lAi1Cv19DsukgGjbZQxFg');
+    assert.strictEqual(existing.getCell(verifyHeaders.indexOf('Revisado')).value, true, 'No debe degradar la revisión manual');
   });
 
   // TEST 2: Sanitización y prevención de inyección de fórmulas

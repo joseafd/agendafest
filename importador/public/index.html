@@ -286,6 +286,20 @@
           </table>
         </div>
         <div id="reviewValidation" style="margin-top:12px; color:#fca5a5; display:none;"></div>
+        <section id="excelComparison" style="margin-top:20px; padding:14px; border:1px solid var(--border-color); border-radius:6px;">
+          <div style="display:flex; gap:12px; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+            <div>
+              <h3 style="margin:0 0 5px 0;">Comparación con AgendaFest.xlsx</h3>
+              <p id="comparisonSummary" style="margin:0; color:#9ca3af; font-size:13px;">Generando comparación de solo lectura…</p>
+            </div>
+            <button class="btn btn-secondary" id="btnRefreshComparison" onclick="refreshExcelComparison()">Actualizar comparación</button>
+          </div>
+          <div id="comparisonContent" style="margin-top:12px;"></div>
+          <label style="display:flex; gap:8px; align-items:flex-start; margin-top:14px; color:#d1d5db;">
+            <input type="checkbox" id="comparisonReviewed" disabled onchange="validateReviewRows()">
+            <span>He revisado los valores actuales, los propuestos y qué campos se mantendrán o actualizarán.</span>
+          </label>
+        </section>
         <div style="margin-top: 20px; display: flex; gap: 10px;">
           <button class="btn" id="btnApproveImport" onclick="approveImport()" disabled>Confirmar e Importar</button>
           <button class="btn btn-secondary" onclick="resetImport()">Cancelar</button>
