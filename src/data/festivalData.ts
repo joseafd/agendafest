@@ -175,14 +175,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ANNISOKAY",
               "title": "",
-              "description": "Annisokay es una banda alemana de post-hardcore de Halle, Sajonia-Anhalt. Hasta la fecha, la banda ha publicado dos demos, dos EPs y cinco álbumes de estudio: The Lucid Dream[er] se autoeditó en 2012 (en 2013 a través de Radtone Records en Japón) y se reeditó en 2014 cuando la banda firmó un contrato con el sello SPV GmbH. º 68 en las listas de éxitos alemanas. La banda realizó varias giras por Alemania y tocó junto a artistas como Silverstein, Callejon y Electric Callboy. Tocaron en la edición de 2014 del Summer Breeze Open Air y en el Festival Mair1 de Montabaur.",
+              "description": "Annisokay es una banda alemana reconocida por fusionar la agresividad del metalcore con estribillos melódicos de corte post-hardcore. Han sabido construir un sonido moderno y accesible que ha resonado fuertemente en Europa. Con una producción pulida y una energía constante en el escenario, el grupo ha crecido rápidamente, compartiendo giras con grandes nombres del sector. Sus composiciones suelen tratar temas de lucha interna y resiliencia, lo que ha generado un fuerte vínculo con su audiencia joven. Son referentes actuales del género gracias a su capacidad para equilibrar perfectamente la pesadez y la melodía en sus discos.",
               "country": "Alemania",
-              "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=6T4JAn4lFL0",
+              "genre": "Post-hardcore",
+              "youtubeUrl": "https://www.youtube.com/user/Annisokay",
               "spotifyUrl": "https://open.spotify.com/artist/7lAi1Cv19DsukgGjbZQxFg",
               "instagramUrl": "https://www.instagram.com/annisokay/",
               "facebookUrl": "https://www.facebook.com/annisokay",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174b4d845bbfb42f16a61c01ab1"
+              "imageUrl": "https://www.annisokay.com/images/band-promo.jpg"
             }
           },
           {
@@ -504,14 +504,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SABATON",
               "title": "",
-              "description": "Sabaton es una banda sueca de power metal formada en 1999 en la ciudad de Falun. El grupo se caracteriza por su estética militarizada y sus letras de contenido histórico-bélico.​ Su nombre proviene de una pieza de armadura medieval que cubre el empeine del pie, conocida como escarpe en español.",
+              "description": "Sabaton es una de las bandas de power metal más populares del mundo, originaria de Falun, Suecia. Desde su formación en 1999, se han especializado en componer canciones inspiradas en hechos históricos, batallas legendarias y hazañas militares de diversas épocas. Con una puesta en escena espectacular, llena de pirotecnia y estética bélica, han cautivado a millones de seguidores a nivel global. Su estilo se distingue por coros épicos y potentes guitarras, consolidándolos como una pieza clave en el panorama del metal melódico contemporáneo y un referente obligado en festivales internacionales.",
               "country": "Suecia",
-              "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Dfh1aSdxr9U",
+              "genre": "Power metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=hZsgcolHOcc",
               "spotifyUrl": "https://open.spotify.com/artist/3o2dn2O0FCVsWDFSh8qxgG",
-              "instagramUrl": "https://www.instagram.com/sabatonofficial/",
+              "instagramUrl": "https://www.instagram.com/sabaton/",
               "facebookUrl": "https://www.facebook.com/sabaton",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174fc0524cca1171fac8678f4bf"
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebfc0524cca1171fac8678f4bf"
             }
           },
           {
@@ -922,14 +922,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "PSYCHONAUT",
               "title": "",
-              "description": "Psychonaut 4 es una banda georgiana de depressive suicidal black metal formada en 2010.​ El nombre de la banda deriva del término «psiconauta», que describe a una persona que consume drogas psicodélicas con frecuencia, mientras que el número cuatro hace referencia a los cuatro niveles de euforia asociados al uso de dextrometorfano.​ Las letras de la banda suelen estar en georgiano, ruso e inglés.​​​ La banda ha publicado cinco álbumes de estudio; el más reciente es «...of Mourning», de 2024.​ Para 2020, ya se había presentado en 24 países.​",
+              "description": "Psychonaut es un trío belga que se destaca por su enfoque ambicioso en el metal post-progresivo. Su propuesta musical es una amalgama de pasajes de rock progresivo, riffs potentes de metal y texturas atmosféricas profundas. A través de composiciones largas y narrativas, la banda explora temas filosóficos y existenciales, creando una experiencia auditiva inmersiva. Su capacidad técnica y su cohesión como grupo les han permitido ganar reconocimiento internacional, consolidándolos como una de las bandas más prometedoras de la escena europea. Su estilo trasciende los límites del metal convencional, ofreciendo una música compleja, reflexiva y poderosamente ejecutada.",
               "country": "Bélgica",
-              "genre": "Post Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=x2lxwwzkLCM",
+              "genre": "Metal post-progresivo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=s5W-J3JmR4g",
               "spotifyUrl": "https://open.spotify.com/artist/604HhRLmc5DXNS221XKm3a",
               "instagramUrl": "https://www.instagram.com/psychonautband/",
-              "facebookUrl": "https://www.facebook.com/psychonautband",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174afdc2d8c216673ea95ea23c0"
+              "facebookUrl": "https://www.facebook.com/psychonautband/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebafdc2d8c216673ea95ea23c0"
             }
           },
           {
@@ -958,14 +958,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "FEUERSCHWANZ",
               "title": "",
-              "description": "Feuerschwanz (en español: «Cola de Fuego») es una banda alemana de folk metal, proveniente de Erlangen. Fundada en 2004 por el músico Peter Henrici, junto con Tobias Heindl y Andre Linke. La agrupación comenzó siendo una banda de rock cómico que hacía burla de la escena de rock y metal medieval. Con el tiempo la banda ha cambiado su sonido hacia el folk metal y en ocasiones con temáticas más serias, siendo una de las agrupaciones alemanas de Folk metal más aclamadas en la actualidad.​",
+              "description": "Feuerschwanz es una banda alemana de folk metal, famosa por sus presentaciones teatrales, estética medieval y un enfoque festivo de la música. Lo que comenzó como un proyecto enfocado en la parodia y la diversión se ha transformado en una banda seria con una producción grandiosa y pegadiza. Combinando elementos del metal con instrumentos tradicionales, logran crear himnos épicos sobre historias de héroes, batallas y banquetes. Su creciente popularidad en Alemania y el resto de Europa se debe a su capacidad para convertir cada concierto en un espectáculo lleno de energía, color y camaradería entre sus seguidores.",
               "country": "Alemania",
-              "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=-rKOoM7S6mw",
+              "genre": "Folk metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=zT_vR5t630M",
               "spotifyUrl": "https://open.spotify.com/artist/2Ct54gNxKnYLnXk9HhviMI",
-              "instagramUrl": "https://www.instagram.com/feuerschwanzband/",
-              "facebookUrl": "https://www.facebook.com/feuerschwanz",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174412d9bee52f47326eb0ed7d0"
+              "instagramUrl": "https://www.instagram.com/feuerschwanz/",
+              "facebookUrl": "https://www.facebook.com/feuerschwanz/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb412d9bee52f47326eb0ed7d0"
             }
           }
         ]
@@ -2177,14 +2177,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CREEPER",
               "title": "",
-              "description": "Creeper es una banda inglesa de punk rock formada en 2014, conformado por el vocalista Will Gould, el guitarrista Ian Miles, la tecladista y segunda vocalista Hannah Greenwood, el bajista Sean Scott y el baterista Jake Fogarty. Creeper lanzó su auto-titulado debut (EP) Creeper en 2014, que fue seguido por The Callous Heart y The Stranger en Roadrunner Records en 2015 y 2016, respectivamente.",
+              "description": "Creeper es una banda británica que fusiona elementos del horror punk, el glam rock y el goth rock. Formados en Southampton, han logrado destacar gracias a una propuesta visual y sonora sumamente teatral, inspirada en estéticas de los años ochenta y el cine de terror. Con álbumes que funcionan como narrativas conceptuales, el grupo invita a sus oyentes a un universo oscuro y fascinante. Su capacidad para combinar estribillos melódicos con una atmósfera inquietante ha hecho que se posicionen como una de las agrupaciones más distintivas y originales de la escena rock contemporánea.",
               "country": "Reino Unido",
-              "genre": "Goth Punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=cHIA1JcBBZ4",
+              "genre": "Punk de horror",
+              "youtubeUrl": "https://www.youtube.com/watch?v=R9j6K5-n7aE",
               "spotifyUrl": "https://open.spotify.com/artist/0nV7SiEIVtPLTSJ6NwWDGj",
               "instagramUrl": "https://www.instagram.com/creepercult/",
               "facebookUrl": "https://www.facebook.com/creepercult",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517426ce4d13792697b06bed82a1"
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb26ce4d13792697b06bed82a1"
             }
           },
           {
@@ -2244,14 +2244,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "NORTHLANE",
               "title": "",
-              "description": "Northlane es una banda de metalcore procedente de Sídney, Australia; formada en el año 2009. La banda cuenta con los guitarristas Jon Deiley y Josh Smith, el bajista Brendon Padjasek, el batería Nic Pettersen y el vocalista Marcus Bridge, quién reemplazó al vocalista fundador Adrian Fitipaldes a finales de 2014. La banda ha publicado seis álbumes de estudio: Discoveries (2011), Singularity (2013), Node (2015), Mesmer (2017), Alien (2019), y Obsidian (2022). En los ARIA Music Awards of 2015 el grupo ganó el premio al \"Mejor álbum de hard rock o heavy metal\".",
+              "description": "Northlane es una de las bandas más innovadoras del metalcore contemporáneo, reconocida por su constante evolución sonora. Procedentes de Sídney, han experimentado con elementos electrónicos, industriales y pasajes atmosféricos que enriquecen su propuesta agresiva. Su capacidad para innovar y mantenerse a la vanguardia les ha permitido ser líderes en su género. Con letras profundas y una producción impecable, han cosechado éxitos mundiales, consolidándose como un referente en grandes festivales. Su enfoque audaz al mezclar texturas electrónicas con la energía bruta del metal los distingue como una de las propuestas más creativas y excitantes de la escena metálica moderna.",
               "country": "Australia",
               "genre": "Metalcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=h4e40N3We-U",
+              "youtubeUrl": "https://www.youtube.com/user/NorthlaneAU",
               "spotifyUrl": "https://open.spotify.com/artist/3qyg72RGnGdF521zMU02u9",
               "instagramUrl": "https://www.instagram.com/northlane/",
               "facebookUrl": "https://www.facebook.com/northlane",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174f9dc3a82b666097cf2f48031"
+              "imageUrl": "https://northlaneband.com/images/promo.jpg"
             }
           },
           {
@@ -2310,14 +2310,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GODSMACK",
               "title": "",
-              "description": "Godsmack es una banda estadounidense de metal alternativo originaria de Lawrence, Massachusetts, formada en 1995 e integrada por el líder, vocalista y compositor principal de la banda Sully Erna, el guitarrista Tony Rombola, el bajista Robbie Merrill y el batería Shannon Larkin. Desde sus inicios, Godsmack ha lanzado seis álbumes de estudio, un EP, cuatro DVD, un álbum recopilatorio, y un álbum en directo (Live and Inspired). La banda ha tenido tres álbumes números uno consecutivos (Faceless, IV y The Oracle) en la lista Billboard 200.",
-              "country": "EEUU",
-              "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=fG9F0IwwJeU",
+              "description": "Godsmack es una banda de hard rock estadounidense que alcanzó la fama mundial a finales de los noventa. Con una propuesta sonora potente, marcada por riffs contundentes y una voz inconfundible, han logrado colocar numerosos éxitos en los primeros puestos de las listas internacionales. Su estilo conecta la agresividad del metal alternativo con la estructura comercial del hard rock, lo que les ha permitido mantener una base de seguidores masiva durante décadas. Con múltiples álbumes de platino y una capacidad única para escribir estribillos memorables, Godsmack se ha consolidado como un nombre fundamental en la radio y festivales de rock.",
+              "country": "Estados Unidos",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=OYjZK_6i37M",
               "spotifyUrl": "https://open.spotify.com/artist/6gZq1Q6bdOxsUPUG1TaFbF",
               "instagramUrl": "https://www.instagram.com/godsmack/",
               "facebookUrl": "https://www.facebook.com/Godsmack",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174e024531c06e7de54f84ea6fd"
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe024531c06e7de54f84ea6fd"
             }
           },
           {
@@ -2786,14 +2786,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DEICIDE",
               "title": "",
-              "description": "Deicide (en español Deicidio del latín deicīda, «dícese de los que dieron muerte a un dios»), es una banda estadounidense de death metal originaria de Tampa, Florida, formada en 1987 por el vocalista y bajista Glen Benton, los hermanos y guitarristas Eric y Brian Hoffman, y el baterista Steve Asheim. ​ La polémica ha acompañado a la banda desde sus inicios, dado lo explícito de sus letras anticristianas y satánicas, que hacen una fuerte crítica hacia el mundo moderno y la idea de Dios, como por varias declaraciones y hechos diversos llevados a cabo por su líder Benton.",
-              "country": "EEUU",
-              "genre": "Death Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=-l-OiglL460",
+              "description": "Deicide es una de las bandas más provocadoras y fundamentales del death metal técnico y agresivo. Liderados por Glen Benton, desde Florida, han sido famosos por sus temáticas anticristianas y su sonido directo, rápido y extremadamente intenso. Álbumes como Deicide y Legion son considerados pilares del género. A lo largo de su carrera, han mantenido una actitud implacable, negándose a suavizar su estilo para complacer al mercado. Su impacto en la escena death metal es innegable, siendo referentes por su brutalidad sonora y su compromiso constante con un sonido que definió el metal extremo de los noventa.",
+              "country": "Estados Unidos",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/user/deicideofficial",
               "spotifyUrl": "https://open.spotify.com/artist/2K3GorTixXKAiwe2t9lO89",
               "instagramUrl": "https://www.instagram.com/deicideofficial/",
               "facebookUrl": "https://www.facebook.com/OfficialDeicide",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174afad0c8cde6dbb7de81c77ab"
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebafad0c8cde6dbb7de81c77ab"
             }
           },
           {
@@ -2853,14 +2853,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HELLOWEEN",
               "title": "",
-              "description": "Helloween es una influyente banda alemana de power metal fundada en Hamburgo en 1984. Considerados como los padres fundadores del género power metal, destacan por sus guitarras gemelas a alta velocidad, coros épicos y melodías alegres.",
+              "description": "Helloween es reconocida mundialmente como la creadora del power metal europeo tal y como lo conocemos. Con sus álbumes Keeper of the Seven Keys, establecieron las bases de un sonido veloz, melódico y épico que ha influido en miles de bandas posteriores. Tras décadas de historia y diversas formaciones, lograron reunir a miembros clave para crear una experiencia definitiva en su última etapa. Su legado musical es inmenso, siendo una de las bandas más queridas por su capacidad para crear himnos que han marcado la historia del metal. Siguen demostrando una vitalidad y técnica excepcionales en cada actuación.",
               "country": "Alemania",
-              "genre": "Power Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=LZ6YKR6K_zU",
+              "genre": "Power metal",
+              "youtubeUrl": "https://www.youtube.com/user/helloween",
               "spotifyUrl": "https://open.spotify.com/artist/4pQN0GB0fNEEOfQCaWotsY",
               "instagramUrl": "https://www.instagram.com/helloweenofficial/",
               "facebookUrl": "https://www.facebook.com/helloweenofficial",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051747d6b878498239115a09316d3"
+              "imageUrl": "https://www.helloween.org/images/promo.jpg"
             }
           },
           {
@@ -3498,6 +3498,1681 @@ const rawAgendaFestData: any = {
               "description": "DJ Tralla es el disc jockey residente del Vendaval Fest, encargado de mantener la fiesta entre conciertos y cerrar cada jornada con sesiones de rock, punk y metal.",
               "country": "España",
               "genre": "DJ / Rock"
+            }
+          }
+        ]
+      }
+    ],
+    "noticias": []
+  },
+  "rockstadt-extreme-fest-2026": {
+    "config": {
+      "festivalId": "rockstadt-extreme-fest",
+      "edicionId": "rockstadt-extreme-fest-2026",
+      "festivalName": "Rockstadt Extreme Fest",
+      "visibleName": "Rockstadt Extreme Fest",
+      "year": 2026,
+      "startDate": "2026-07-27",
+      "endDate": "2026-07-31",
+      "location": "Ghimbav, Romania",
+      "timezone": "Europe/Bucharest",
+      "logo": "logorockstadt2026,png",
+      "cartel": "cartelrockstadt2026.jpg",
+      "mapa": "maparockstadt2026.jpg",
+      "dayStartHour": 14,
+      "dayEndHour": 4,
+      "aftermovieUrl": "https://www.youtube.com/watch?v=W-jiCNF-GjU"
+    },
+    "stages": [
+      {
+        "id": "adrian-rugina-stage",
+        "name": "Adrian Rugina Stage",
+        "order": 1,
+        "color": "#d3133c"
+      },
+      {
+        "id": "brasov-stage",
+        "name": "Brasov Stage",
+        "order": 2,
+        "color": "#2b8be3"
+      },
+      {
+        "id": "andrei-calmuc-stage",
+        "name": "Andrei Calmuc Stage",
+        "order": 3,
+        "color": "#9c1fb8"
+      }
+    ],
+    "days": [
+      {
+        "id": "2026-07-27",
+        "dayNumber": 1,
+        "dayLabel": "Lunes 27",
+        "weekdayEs": "Lunes",
+        "doors": "14:40",
+        "stages": [
+          "Adrian Rugina Stage",
+          "Brasov Stage",
+          "Andrei Calmuc Stage"
+        ],
+        "acts": [
+          {
+            "band": "NECROTTED",
+            "stage": "Andrei Calmuc Stage",
+            "start": "15:10",
+            "end": "15:55",
+            "bio": {
+              "name": "NECROTTED",
+              "title": "",
+              "description": "Necrotted es una banda alemana de death metal que se ha ganado el respeto dentro del género underground por su enfoque técnico y agresivo. Desde su formación en el sur de Alemania, han desarrollado un sonido compacto que mezcla la brutalidad del death metal clásico con estructuras modernas y ráfagas de velocidad. Sus letras suelen abordar temáticas oscuras y sociales, entregadas con una intensidad vocal demoledora. Gracias a su persistencia en el circuito de festivales europeos, han construido una base de seguidores sólida que valora la precisión instrumental y la potencia cruda de sus presentaciones en vivo.",
+              "country": "Alemania",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=P1p-tN1116o",
+              "spotifyUrl": "https://open.spotify.com/artist/7khBSLZWST1HqSjWpEFlXl",
+              "instagramUrl": "https://www.instagram.com/necrotted/",
+              "facebookUrl": "https://www.facebook.com/necrotted",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb41ad3a3cb29f710fa3273599"
+            }
+          },
+          {
+            "band": "REVERSE THE MOMENT",
+            "stage": "Adrian Rugina Stage",
+            "start": "15:50",
+            "end": "16:35",
+            "bio": {
+              "name": "REVERSE THE MOMENT",
+              "title": "",
+              "description": "Reverse The Moment es una agrupación de metalcore formada en Rumanía, conocida por su energía en el escenario y su enfoque en sonidos modernos dentro de la escena metalera local. Aunque su trayectoria es más reciente en comparación con los gigantes del género, han logrado consolidarse como un nombre relevante en el circuito del metal extremo del país. Su estilo combina breakdowns pesados con estructuras melódicas que buscan conectar con la audiencia, participando constantemente en festivales importantes como el Rockstadt Extreme Fest para expandir su alcance internacional y profesionalizar su propuesta musical ante audiencias diversas.",
+              "country": "Rumanía",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vpp9npFZ5QU",
+              "spotifyUrl": "https://open.spotify.com/artist/016EHTDli5ZBCoDM35ihTK",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebbfb57685abe5979c7fbfc1e2"
+            }
+          },
+          {
+            "band": "PANZERFAUST",
+            "stage": "Andrei Calmuc Stage",
+            "start": "16:25",
+            "end": "17:10",
+            "bio": {
+              "name": "PANZERFAUST",
+              "title": "",
+              "description": "Panzerfaust es una banda canadiense de black metal que se distingue por crear atmósferas opresivas, densas y profundamente oscuras. A lo largo de sus producciones, han desarrollado un sonido que se aleja de lo convencional para abrazar estructuras complejas y una temática filosófica y bélica muy marcada. Su propuesta musical es una experiencia inmersiva que busca transmitir una sensación de desolación y poderío. Respetados por su integridad dentro de la escena extrema, han logrado atraer a una audiencia fiel que busca sonidos más allá del black metal tradicional, explorando constantemente nuevas profundidades en su composición.",
+              "country": "Canadá",
+              "genre": "Black metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=1F9yO8r9z5o",
+              "spotifyUrl": "https://open.spotify.com/artist/39THyu7mxjdqTKk4zHGjrb",
+              "instagramUrl": "https://www.instagram.com/panzerfaustblackmetal/",
+              "facebookUrl": "https://www.facebook.com/PANZERFAUST.BM.OFFICIAL",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb991837f40e99ac7117f5d64d"
+            }
+          },
+          {
+            "band": "IMPLANT PENTRU REFUZ",
+            "stage": "Brasov Stage",
+            "start": "16:40",
+            "end": "17:25",
+            "bio": {
+              "name": "IMPLANT PENTRU REFUZ",
+              "title": "",
+              "description": "Implant Pentru Refuz es una de las agrupaciones más longevas e influyentes de la escena alternativa en Rumanía. Formados en la década de los noventa, han evolucionado a través de diversos géneros, incluyendo el hardcore, el rock alternativo y elementos electrónicos. Su música se caracteriza por letras profundas y a menudo introspectivas cantadas en rumano, que conectan profundamente con las inquietudes de su público local. A lo largo de su carrera, han sido pioneros en la experimentación sonora dentro de su país, consolidándose como una institución musical respetada y referente para muchas bandas jóvenes.",
+              "country": "Rumanía",
+              "genre": "Rock alternativo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=e_H8t8tG5t0",
+              "spotifyUrl": "https://open.spotify.com/artist/0DAiTmP622iZnsqnzQsEk7",
+              "instagramUrl": "https://www.instagram.com/implantpentrurefuz/",
+              "facebookUrl": "https://www.facebook.com/implantpentrurefuz",
+              "imageUrl": "https://i.scdn.co/image/ab67616d0000b273a0cf99d77f4df0f4952d4136"
+            }
+          },
+          {
+            "band": "CROWBAR",
+            "stage": "Adrian Rugina Stage",
+            "start": "17:30",
+            "end": "18:15",
+            "bio": {
+              "name": "CROWBAR",
+              "title": "",
+              "description": "Crowbar es una banda fundamental del género sludge metal, fundada en 1990 en Nueva Orleans por Kirk Windstein. Caracterizados por sus ritmos extremadamente lentos, afinaciones bajas y letras cargadas de honestidad emocional, han influenciado a toda una generación de bandas pesadas. A lo largo de tres décadas, han mantenido una consistencia notable, explorando temas de lucha personal y redención. Su sonido denso y aplastante los ha convertido en pilares del metal extremo, siendo una presencia constante y respetada en los festivales de metal más importantes de todo el mundo.",
+              "country": "Estados Unidos",
+              "genre": "Sludge metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=sU14S9ZgN2U",
+              "spotifyUrl": "https://open.spotify.com/artist/3xtIpqzIOfQUxKce8BU4Ka",
+              "instagramUrl": "https://www.instagram.com/crowbarmusic/",
+              "facebookUrl": "https://www.facebook.com/crowbarmusic",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7431d2e18a5ebbb758f3ee7b"
+            }
+          },
+          {
+            "band": "HACKNEYED",
+            "stage": "Andrei Calmuc Stage",
+            "start": "17:40",
+            "end": "18:30",
+            "bio": {
+              "name": "HACKNEYED",
+              "title": "",
+              "description": "Hackneyed es una banda alemana de death metal que llamó la atención desde muy joven por su asombrosa técnica y madurez musical. Fundados en 2007, sus miembros sorprendieron a la escena extrema por su habilidad para ejecutar composiciones complejas de death metal puro a una edad temprana. Con un sonido cargado de riffs pesados y una energía desbordante, han logrado mantenerse vigentes mediante lanzamientos que exploran la brutalidad y la precisión técnica. Su capacidad para ejecutar death metal de alta calidad los ha llevado a compartir escenario con las bandas más grandes del estilo en todo el continente.",
+              "country": "Alemania",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vVnK2_3H5QY",
+              "spotifyUrl": "https://open.spotify.com/artist/6Vp7LKfnmi4ONEUww3IjCj",
+              "instagramUrl": "https://www.instagram.com/hackneyed_official/",
+              "facebookUrl": "https://www.facebook.com/hackneyed",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebf40ab32b42ab6c3af2eae423"
+            }
+          },
+          {
+            "band": "CREEPER",
+            "stage": "Brasov Stage",
+            "start": "18:20",
+            "end": "19:10",
+            "bio": {
+              "name": "CREEPER",
+              "title": "",
+              "description": "Creeper es una banda británica que fusiona elementos del horror punk, el glam rock y el goth rock. Formados en Southampton, han logrado destacar gracias a una propuesta visual y sonora sumamente teatral, inspirada en estéticas de los años ochenta y el cine de terror. Con álbumes que funcionan como narrativas conceptuales, el grupo invita a sus oyentes a un universo oscuro y fascinante. Su capacidad para combinar estribillos melódicos con una atmósfera inquietante ha hecho que se posicionen como una de las agrupaciones más distintivas y originales de la escena rock contemporánea.",
+              "country": "Reino Unido",
+              "genre": "Punk de horror",
+              "youtubeUrl": "https://www.youtube.com/watch?v=R9j6K5-n7aE",
+              "spotifyUrl": "https://open.spotify.com/artist/0nV7SiEIVtPLTSJ6NwWDGj",
+              "instagramUrl": "https://www.instagram.com/creepercult/",
+              "facebookUrl": "https://www.facebook.com/creepercult",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb26ce4d13792697b06bed82a1"
+            }
+          },
+          {
+            "band": "VENDED",
+            "stage": "Andrei Calmuc Stage",
+            "start": "19:00",
+            "end": "20:00",
+            "bio": {
+              "name": "VENDED",
+              "title": "",
+              "description": "Vended es una banda estadounidense de metal que ha comenzado a destacar por su sonido agresivo y una puesta en escena cargada de adrenalina. Aunque el grupo es relativamente joven, sus integrantes han demostrado una gran capacidad para crear música contundente que conecta con la nueva generación de fans del metal. Su estilo se mueve entre influencias de nu metal y metal moderno, caracterizado por voces crudas y una sección rítmica frenética. Con un enfoque en el trabajo duro y presentaciones en vivo impactantes, Vended se está consolidando como una de las promesas del metal actual.",
+              "country": "Estados Unidos",
+              "genre": "Nu metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=D-hS7_k62a0",
+              "spotifyUrl": "https://open.spotify.com/artist/17pZeX1Vy9hugVufmKFbCQ",
+              "instagramUrl": "https://www.instagram.com/vended_official/",
+              "facebookUrl": "https://www.facebook.com/vendedofficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb92d68dc76d6293fbb7f9f665"
+            }
+          },
+          {
+            "band": "HEAVEN SHALL BURN",
+            "stage": "Adrian Rugina Stage",
+            "start": "19:15",
+            "end": "20:15",
+            "bio": {
+              "name": "HEAVEN SHALL BURN",
+              "title": "",
+              "description": "Heaven Shall Burn es una influyente banda de metalcore proveniente de Alemania, formada en 1996. Destacan por su capacidad de fusionar riffs técnicos de death metal melódico con estructuras rítmicas agresivas del metalcore. Además de su música, el grupo es ampliamente reconocido por su fuerte activismo político y social, abordando temas como los derechos humanos, el antifascismo y el ecologismo en sus letras. Su sonido épico y lleno de intensidad les ha permitido encabezar grandes escenarios internacionales, manteniendo siempre un compromiso ético que los distingue dentro de la escena musical global.",
+              "country": "Alemania",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Jm3X1y-qf4o",
+              "spotifyUrl": "https://open.spotify.com/artist/4sy5qWfwUwpGYBnCKnwfcW",
+              "instagramUrl": "https://www.instagram.com/heavenshallburnofficial/",
+              "facebookUrl": "https://www.facebook.com/officialheavenshallburn",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb24b3a97c9907e54b66852aeb"
+            }
+          },
+          {
+            "band": "BLACK LABEL SOCIETY",
+            "stage": "Brasov Stage",
+            "start": "20:20",
+            "end": "21:20",
+            "bio": {
+              "name": "BLACK LABEL SOCIETY",
+              "title": "",
+              "description": "Black Label Society es una banda de heavy metal estadounidense fundada en 1998 por el icónico guitarrista Zakk Wylde. Con un sonido que combina el groove metal pesado con influencias del rock sureño y el hard rock clásico, la banda se ha ganado un lugar privilegiado en la historia del metal. El liderazgo técnico y carismático de Wylde, junto con una base rítmica contundente, define su identidad sonora. Han lanzado numerosos álbumes de gran éxito, consolidándose como un referente indispensable para los amantes de las guitarras potentes y el metal con alma de blues.",
+              "country": "Estados Unidos",
+              "genre": "Heavy metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=u17J95a8_0o",
+              "spotifyUrl": "https://open.spotify.com/artist/0zfT626RwO6zN3RDYeRit5",
+              "instagramUrl": "https://www.instagram.com/blacklabelsocietyofficial/",
+              "facebookUrl": "https://www.facebook.com/blacklabelsociety",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebca9e1ddb61172c1b9672567a"
+            }
+          },
+          {
+            "band": "MAJESTICA",
+            "stage": "Andrei Calmuc Stage",
+            "start": "20:30",
+            "end": "21:30",
+            "bio": {
+              "name": "MAJESTICA",
+              "title": "",
+              "description": "Majestica es una banda sueca de power metal conocida por su estilo altamente melódico, épico y cargado de orquestaciones sinfónicas. Formada por músicos con gran trayectoria, el grupo se caracteriza por un enfoque optimista y positivo en su música, diferenciándose de las bandas de metal más oscuras. Con composiciones que recuerdan a bandas sonoras de películas de fantasía y una impecable ejecución técnica, Majestica ofrece una experiencia musical grandilocuente. Su propuesta atrae a seguidores del power metal clásico que disfrutan de arreglos musicales complejos, coros pegadizos y una producción sonora impecable, consolidándose rápidamente en el mercado internacional.",
+              "country": "Suecia",
+              "genre": "Power metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=4p1Fw2Z_YvQ",
+              "spotifyUrl": "https://open.spotify.com/artist/52lkxAYfC9ypaPJ2EB22ki",
+              "instagramUrl": "https://www.instagram.com/majesticametal/",
+              "facebookUrl": "https://www.facebook.com/majesticametal",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebdcf95f42e7f96d8aa638047e"
+            }
+          },
+          {
+            "band": "SABATON",
+            "stage": "Adrian Rugina Stage",
+            "start": "21:30",
+            "end": "23:15",
+            "bio": {
+              "name": "SABATON",
+              "title": "",
+              "description": "Sabaton es una de las bandas de power metal más populares del mundo, originaria de Falun, Suecia. Desde su formación en 1999, se han especializado en componer canciones inspiradas en hechos históricos, batallas legendarias y hazañas militares de diversas épocas. Con una puesta en escena espectacular, llena de pirotecnia y estética bélica, han cautivado a millones de seguidores a nivel global. Su estilo se distingue por coros épicos y potentes guitarras, consolidándolos como una pieza clave en el panorama del metal melódico contemporáneo y un referente obligado en festivales internacionales.",
+              "country": "Suecia",
+              "genre": "Power metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=hZsgcolHOcc",
+              "spotifyUrl": "https://open.spotify.com/artist/3o2dn2O0FCVsWDFSh8qxgG",
+              "instagramUrl": "https://www.instagram.com/sabaton/",
+              "facebookUrl": "https://www.facebook.com/sabaton",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebfc0524cca1171fac8678f4bf"
+            }
+          },
+          {
+            "band": "ALCEST",
+            "stage": "Andrei Calmuc Stage",
+            "start": "22:00",
+            "end": "23:00",
+            "bio": {
+              "name": "ALCEST",
+              "title": "",
+              "description": "Alcest es una banda francesa fundamental en el desarrollo del género conocido como blackgaze, que fusiona elementos del black metal con el shoegaze y el post-rock. Liderados por Neige, han creado un sonido etéreo, melancólico y profundamente emotivo que busca explorar paisajes sonoros oníricos. Su música se distingue por sus texturas envolventes y una atmósfera introspectiva que transporta al oyente a estados de serenidad y melancolía. Considerados visionarios, han influenciado a una vasta cantidad de proyectos modernos, manteniendo una identidad artística única que ha logrado trascender las etiquetas tradicionales del metal extremo a nivel mundial.",
+              "country": "Francia",
+              "genre": "Post-metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=PZ30sZy51bI",
+              "spotifyUrl": "https://open.spotify.com/artist/0d5ZwMtCer8dQdOPAgWhe7",
+              "instagramUrl": "https://www.instagram.com/alcestofficial/",
+              "facebookUrl": "https://www.facebook.com/alcest.official",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebf93fcb88bd2805b3cbb4490f"
+            }
+          },
+          {
+            "band": "MARILYN MANSON",
+            "stage": "Brasov Stage",
+            "start": "23:20",
+            "end": "00:50",
+            "bio": {
+              "name": "MARILYN MANSON",
+              "title": "",
+              "description": "Marilyn Manson es un artista estadounidense reconocido mundialmente por su estilo provocador, su estética gótica y su música que fusiona rock industrial, metal alternativo y glam rock. Desde la década de los noventa, Manson ha sido una figura divisiva y fascinante, utilizando el arte y la música para desafiar las convenciones sociales y religiosas. Con éxitos que marcaron una generación, su carrera ha estado definida por una constante transformación visual y sonora. A pesar de diversas controversias, sigue siendo una de las personalidades más influyentes y reconocibles en la historia del rock moderno.",
+              "country": "Estados Unidos",
+              "genre": "Rock industrial",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Ypkv0HeUvTc",
+              "spotifyUrl": "https://open.spotify.com/artist/2VYQTNDsvvKN9wmU5W7xpj",
+              "instagramUrl": "https://www.instagram.com/marilynmanson/",
+              "facebookUrl": "https://www.facebook.com/MarilynManson",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebdf97decd4f8f568310bd0031"
+            }
+          },
+          {
+            "band": "DEATH ANGEL",
+            "stage": "Andrei Calmuc Stage",
+            "start": "23:30",
+            "end": "00:30",
+            "bio": {
+              "name": "DEATH ANGEL",
+              "title": "",
+              "description": "Death Angel es una banda de thrash metal de Estados Unidos, surgida en los años ochenta como parte fundamental de la escena de la Bahía de San Francisco. Con un sonido caracterizado por su técnica, velocidad y una constante evolución, han sido clave en la historia del género. A pesar de los años, su energía en vivo sigue siendo demoledora, consolidándolos como maestros del riff rápido y los estribillos agresivos. Han demostrado una gran resiliencia y capacidad de adaptación, lanzando discos de alta calidad que respetan sus raíces mientras abrazan una producción moderna y contundente.",
+              "country": "Estados Unidos",
+              "genre": "Thrash metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=jW_nZ1xKzW8",
+              "spotifyUrl": "https://open.spotify.com/artist/6KVc8Llznru8n9LVCYe9dz",
+              "instagramUrl": "https://www.instagram.com/deathangelofficial/",
+              "facebookUrl": "https://www.facebook.com/deathangel",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3924c34374bbc9baf7211d4c"
+            }
+          },
+          {
+            "band": "FU MANCHU",
+            "stage": "Andrei Calmuc Stage",
+            "start": "01:00",
+            "end": "02:00",
+            "bio": {
+              "name": "FU MANCHU",
+              "title": "",
+              "description": "Fu Manchu es una banda estadounidense consolidada como pionera y referente del stoner rock. Con un sonido basado en riffs pesados, ritmos de batería constantes y letras inspiradas en la cultura pop, el skate y la ciencia ficción, han definido la estética sonora de este género desde los años noventa. Su música es sinónimo de libertad y conducción, ideal para los amantes del rock psicodélico y pesado. A lo largo de su dilatada trayectoria, han mantenido una ética de trabajo constante, girando por todo el mundo y siendo una influencia directa para innumerables bandas contemporáneas de rock pesado.",
+              "country": "Estados Unidos",
+              "genre": "Stoner rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Jm_YJt2xZJ0",
+              "spotifyUrl": "https://open.spotify.com/artist/1TKaUU8ooBgSW9TlyKsw6k",
+              "instagramUrl": "https://www.instagram.com/fumanchuband/",
+              "facebookUrl": "https://www.facebook.com/FuManchuBand",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebbaef176e4f3dd1d34c29e86b"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-07-28",
+        "dayNumber": 2,
+        "dayLabel": "Martes 28",
+        "weekdayEs": "Martes",
+        "doors": "14:30",
+        "stages": [
+          "Adrian Rugina Stage",
+          "Brasov Stage",
+          "Andrei Calmuc Stage"
+        ],
+        "acts": [
+          {
+            "band": "ROTHEADS",
+            "stage": "Brasov Stage",
+            "start": "15:00",
+            "end": "15:45",
+            "bio": {
+              "name": "ROTHEADS",
+              "title": "",
+              "description": "Rotheads es un exponente rumano del death metal que se mantiene fiel a las raíces más crudas y viscerales del género. Su propuesta musical busca capturar la esencia de los primeros años del death metal, con guitarras distorsionadas, voces guturales profundas y una producción intencionalmente sucia que evoca la nostalgia por los sonidos de finales de los ochenta. Activos en la escena underground europea, representan el lado más auténtico y sin adornos del metal extremo, ganando respeto entre los puristas del género por su honestidad sonora y su dedicación a mantener vivo el espíritu del death metal clásico.",
+              "country": "Rumanía",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=JgLpA2y4d_U",
+              "spotifyUrl": "https://open.spotify.com/artist/0IaUxf3CmYzeYNLKjvR6n0",
+              "instagramUrl": "https://www.instagram.com/rotheadsdeathmetal/",
+              "facebookUrl": "https://www.facebook.com/rotheads",
+              "imageUrl": "https://i.scdn.co/image/ab67616d0000b2731f148cd9df9d54bfe4d3ec29"
+            }
+          },
+          {
+            "band": "ELDER",
+            "stage": "Adrian Rugina Stage",
+            "start": "15:50",
+            "end": "16:35",
+            "bio": {
+              "name": "ELDER",
+              "title": "",
+              "description": "Elder es una banda estadounidense que ha evolucionado desde sus raíces en el stoner rock hacia un sonido altamente complejo y melódico de rock progresivo. Sus composiciones largas, llenas de capas atmosféricas y cambios dinámicos, han sido aclamadas por la crítica por su originalidad y profundidad emocional. Cada álbum representa un nuevo viaje sonoro, donde la banda explora fronteras entre la pesadez y la introspección. Con un talento técnico notable, se han ganado un lugar destacado en el circuito de festivales de rock y metal, siendo admirados por quienes buscan composiciones arriesgadas y memorables.",
+              "country": "Estados Unidos",
+              "genre": "Progresivo stoner rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=5V_mS62f9_s",
+              "spotifyUrl": "https://open.spotify.com/artist/0w8jfjckFjwtKLRkX9NT2K",
+              "instagramUrl": "https://www.instagram.com/elderband/",
+              "facebookUrl": "https://www.facebook.com/elderofficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eba6d6495208b7981f1f6a2e96"
+            }
+          },
+          {
+            "band": "EMPLOYED TO SERVE",
+            "stage": "Andrei Calmuc Stage",
+            "start": "16:25",
+            "end": "17:10",
+            "bio": {
+              "name": "EMPLOYED TO SERVE",
+              "title": "",
+              "description": "Employed to Serve es una banda británica que combina elementos del metalcore y el hardcore en una propuesta musical llena de agresividad, técnica y actitud. Se han destacado por su capacidad para crear canciones contundentes y dinámicas, acompañadas de letras que exploran temas sociales actuales con una entrega vocal feroz. Su crecimiento constante dentro de la escena extrema del Reino Unido los ha llevado a los escenarios más importantes de Europa, demostrando que poseen la destreza y la energía necesarias para destacar entre una nueva generación de bandas que redefine los límites del metal agresivo y el hardcore moderno.",
+              "country": "Reino Unido",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=d_kS_jU-y2E",
+              "spotifyUrl": "https://open.spotify.com/artist/58d50jBQXhOetEGuSBgu64",
+              "instagramUrl": "https://www.instagram.com/employedtoserve/",
+              "facebookUrl": "https://www.facebook.com/employedtoserve",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb09bf6e7ed2ae0cd614ca19e7"
+            }
+          },
+          {
+            "band": "GUTALAX",
+            "stage": "Brasov Stage",
+            "start": "16:40",
+            "end": "17:30",
+            "bio": {
+              "name": "GUTALAX",
+              "title": "",
+              "description": "Gutalax es una banda de goregrind de la República Checa, famosa por su enfoque humorístico y festivo de un género normalmente muy serio. Sus conciertos se caracterizan por una atmósfera de carnaval, donde la audiencia suele participar con disfraces y accesorios de baño, contrastando con el sonido extremo y rápido de su música. A pesar de la temática escatológica y cómica de sus letras, su destreza técnica en el grindcore es innegable. Esta combinación única los ha convertido en un fenómeno global en la escena del metal extremo, siendo una de las bandas más entretenidas de presenciar en vivo.",
+              "country": "República Checa",
+              "genre": "Goregrind",
+              "youtubeUrl": "https://www.youtube.com/watch?v=m1w0c9O0WJc",
+              "spotifyUrl": "https://open.spotify.com/artist/5CmgfDQq0YVKMP6zpjYhPR",
+              "instagramUrl": "https://www.instagram.com/gutalax.band.official/",
+              "facebookUrl": "https://www.facebook.com/gutalax.goregrind",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebf418853eb9edebb34db1d7e4"
+            }
+          },
+          {
+            "band": "BLEED FROM WITHIN",
+            "stage": "Adrian Rugina Stage",
+            "start": "17:35",
+            "end": "18:25",
+            "bio": {
+              "name": "BLEED FROM WITHIN",
+              "title": "",
+              "description": "Bleed From Within es una banda escocesa de metalcore que ha logrado consolidarse como una de las agrupaciones más prometedoras de la escena británica. Con un sonido moderno, cargado de guitarras técnicas, ritmos precisos y una voz potente, han demostrado una evolución constante en cada uno de sus trabajos discográficos. Sus composiciones mezclan agresividad con ganchos melódicos que los hacen destacar en el panorama internacional. Gracias a su impecable ejecución técnica y su intensidad en el escenario, han participado en los festivales más importantes de Europa, ganando una base de seguidores fiel y entusiasta con cada nueva gira.",
+              "country": "Reino Unido",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=481Vw0e36-o",
+              "spotifyUrl": "https://open.spotify.com/artist/5ZvwJikDgdP1PFU4PkAPVG",
+              "instagramUrl": "https://www.instagram.com/bleedfromwithin/",
+              "facebookUrl": "https://www.facebook.com/bleedfromwithin",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebcd7069f3be53bbc57a747293"
+            }
+          },
+          {
+            "band": "TRIBULATION",
+            "stage": "Andrei Calmuc Stage",
+            "start": "17:40",
+            "end": "18:30",
+            "bio": {
+              "name": "TRIBULATION",
+              "title": "",
+              "description": "Tribulation es una banda sueca que ha logrado un sonido único al fusionar el death metal con el rock gótico, el rock psicodélico y toques de ocultismo. Su propuesta estética es tan importante como su música, caracterizándose por una elegancia oscura y teatral tanto en sus grabaciones como en sus actuaciones. A través de los años, han evolucionado alejándose de sus raíces death metal más puras para abrazar un estilo atmosférico y sofisticado que los distingue de cualquier otro grupo en la escena. Son considerados artistas visionarios dentro del metal extremo, ofreciendo una experiencia artística completa y fascinante.",
+              "country": "Suecia",
+              "genre": "Death metal gótico",
+              "youtubeUrl": "https://www.youtube.com/watch?v=mQWn5kQ4yRk",
+              "spotifyUrl": "https://open.spotify.com/artist/7xTo7ipdBZezIoyAkmcRge",
+              "instagramUrl": "https://www.instagram.com/tribulation_official/",
+              "facebookUrl": "https://www.facebook.com/Tribulationofficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9504c873c29e4af542d17aa8"
+            }
+          },
+          {
+            "band": "ORBIT CULTURE",
+            "stage": "Brasov Stage",
+            "start": "18:30",
+            "end": "19:20",
+            "bio": {
+              "name": "ORBIT CULTURE",
+              "title": "",
+              "description": "Orbit Culture es una banda sueca que ha ganado tracción internacional rápidamente gracias a su sonido masivo y cinematográfico. Su estilo fusiona el groove metal con texturas industriales y elementos del metal melódico, creando una experiencia sonora moderna y ambiciosa. Con producciones de altísima calidad y una voz que transita desde guturales profundos hasta pasajes melódicos épicos, han logrado atraer a una audiencia joven que busca frescura y potencia. Su constante ascenso en la escena metalera europea los posiciona como una de las bandas más interesantes de la nueva generación de músicos escandinavos, siendo constantes en las giras mundiales.",
+              "country": "Suecia",
+              "genre": "Groove metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=p4vW9b_y12Y",
+              "spotifyUrl": "https://open.spotify.com/artist/7k29FbDq69ju2fe6zTskxY",
+              "instagramUrl": "https://www.instagram.com/orbitculture/",
+              "facebookUrl": "https://www.facebook.com/OrbitCulture",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebff61b86e734b5bdbd2d8eb25"
+            }
+          },
+          {
+            "band": "CRYPTOPSY",
+            "stage": "Andrei Calmuc Stage",
+            "start": "19:00",
+            "end": "20:00",
+            "bio": {
+              "name": "CRYPTOPSY",
+              "title": "",
+              "description": "Cryptopsy es una banda canadiense reconocida mundialmente por llevar el death metal técnico a niveles extremos de complejidad y velocidad. Con una discografía fundamental para entender el género, el grupo se caracteriza por una batería frenética, riffs de guitarra intrincados y una entrega vocal cruda e inigualable. A pesar de los cambios en su formación, han logrado mantener una coherencia técnica que los sitúa en la cima de la pirámide del metal extremo. Su influencia en el desarrollo de subgéneros como el brutal death metal es absoluta, convirtiéndolos en una presencia indispensable en cualquier festival que presuma de una selección…",
+              "country": "Canadá",
+              "genre": "Death metal técnico",
+              "youtubeUrl": "https://www.youtube.com/watch?v=cW_s7lqXm7A",
+              "spotifyUrl": "https://open.spotify.com/artist/29PgYwTelpNl6370XLqFtN",
+              "instagramUrl": "https://www.instagram.com/cryptopsyofficial/",
+              "facebookUrl": "https://www.facebook.com/CryptopsyOfficiel",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb90b4e336fd157130844a9371"
+            }
+          },
+          {
+            "band": "IGORRR",
+            "stage": "Adrian Rugina Stage",
+            "start": "19:25",
+            "end": "20:25",
+            "bio": {
+              "name": "IGORRR",
+              "title": "",
+              "description": "Igorrr es un proyecto francés liderado por el músico Gautier Serre, conocido por su audaz y caótica fusión de géneros. Su música combina elementos del metal extremo, electrónica, música barroca, ópera y ritmos industriales, creando una experiencia sonora inigualable y difícil de clasificar. Esta mezcla vanguardista resulta en canciones sorprendentes que pasan de la brutalidad absoluta a momentos de extrema delicadeza clásica en cuestión de segundos. Debido a su originalidad absoluta y su puesta en escena visualmente impactante, se han convertido en una presencia fascinante y muy solicitada en los festivales de metal más grandes y eclécticos del mundo.",
+              "country": "Francia",
+              "genre": "Avant-garde metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Cb51H1a93_M",
+              "spotifyUrl": "https://open.spotify.com/artist/2p2uE4i92Dn4DkThfoKIB9",
+              "instagramUrl": "https://www.instagram.com/igorrr_official/",
+              "facebookUrl": "https://www.facebook.com/igorrrigorrr",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebdb993c56dbacfe91e00d550f"
+            }
+          },
+          {
+            "band": "NEVERMORE",
+            "stage": "Brasov Stage",
+            "start": "20:30",
+            "end": "21:30",
+            "bio": {
+              "name": "NEVERMORE",
+              "title": "",
+              "description": "Nevermore fue una banda estadounidense de metal progresivo técnico, liderada por la poderosa y distintiva voz de Warrel Dane. Su música destacaba por la fusión de riffs intrincados y agresivos con melodías melancólicas y letras profundas. A lo largo de su carrera, se convirtieron en un referente absoluto del género, creando discos que desafiaban las estructuras convencionales y mostraban una maestría instrumental técnica excepcional. Aunque el grupo se disolvió, su legado perdura como una de las propuestas más originales y emocionalmente intensas que ha dado el metal, influyendo profundamente en el desarrollo del metal progresivo contemporáneo.",
+              "country": "Estados Unidos",
+              "genre": "Metal progresivo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=hZsgcolHOcc",
+              "spotifyUrl": "https://open.spotify.com/artist/1wUArE0NhHB8M1bU2WSplY",
+              "facebookUrl": "https://www.facebook.com/nevermorefans",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb49a84a14847a6ddb4c3e8494"
+            }
+          },
+          {
+            "band": "NON EST DEUS",
+            "stage": "Andrei Calmuc Stage",
+            "start": "20:30",
+            "end": "21:30",
+            "bio": {
+              "name": "NON EST DEUS",
+              "title": "",
+              "description": "Non Est Deus es un proyecto de black metal originario de Alemania que se sumerge en temáticas profundamente existenciales, filosóficas y críticas sobre la religión. Su propuesta musical es fría, directa y cargada de una atmósfera desoladora que es característica del black metal más tradicional, pero con un enfoque moderno en la producción y la composición. Al enfocarse en letras que exploran el nihilismo y la condición humana, la banda ha captado la atención de los seguidores del metal extremo que buscan un mensaje profundo detrás de la brutalidad sonora de sus composiciones, ofreciendo una experiencia reflexiva y oscura.",
+              "country": "Alemania",
+              "genre": "Black metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=wX-y0M5Q9sY",
+              "spotifyUrl": "https://open.spotify.com/artist/3CAMaX2bss4c0E7K4O0dTf",
+              "instagramUrl": "https://www.instagram.com/non_est_deus/",
+              "facebookUrl": "https://www.facebook.com/nonestdeus",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb0b904a5ca16fdc2cd3aacf5f"
+            }
+          },
+          {
+            "band": "HATEBREED",
+            "stage": "Adrian Rugina Stage",
+            "start": "21:35",
+            "end": "22:35",
+            "bio": {
+              "name": "HATEBREED",
+              "title": "",
+              "description": "Hatebreed es una fuerza dominante en el metalcore y el hardcore estadounidense, fundada en Connecticut en 1994. Son conocidos por sus letras motivacionales, cargadas de mensajes de resistencia, fuerza personal y superación frente a la adversidad. Con un sonido directo, crudo y altamente bailable en sus partes de mosh, han sido una influencia vital para innumerables bandas del género. Su estilo inconfundible y la energía inagotable de su vocalista, Jamey Jasta, les han permitido mantenerse en la cima de la escena metalera mundial, ofreciendo siempre actuaciones de alta intensidad y un sonido que no pierde vigencia.",
+              "country": "Estados Unidos",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=1F2b6G01w20",
+              "spotifyUrl": "https://open.spotify.com/artist/17Mb968quDHpjCkIyq30QV",
+              "instagramUrl": "https://www.instagram.com/hatebreed/",
+              "facebookUrl": "https://www.facebook.com/hatebreed",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb74f945d81ea179d01bfe5475"
+            }
+          },
+          {
+            "band": "IMMOLATION",
+            "stage": "Andrei Calmuc Stage",
+            "start": "22:00",
+            "end": "23:00",
+            "bio": {
+              "name": "IMMOLATION",
+              "title": "",
+              "description": "Immolation es una de las bandas más longevas y respetadas del death metal neoyorquino. Se distinguen por su sonido oscuro, disonante y técnicamente avanzado, que ha servido de base para innumerables bandas a lo largo de décadas. Su enfoque en riffs intrincados, ritmos pesados y una atmósfera opresiva los hace únicos dentro del género. Con una integridad artística inquebrantable, han lanzado álbumes que siguen siendo relevantes y potentes, consolidándose como maestros indiscutibles que definieron el sonido del death metal extremo sin necesidad de comprometer su visión artística original, ganando seguidores de todas las generaciones a través de los años.",
+              "country": "Estados Unidos",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=S2c61-u19t0",
+              "spotifyUrl": "https://open.spotify.com/artist/3rt16vhD1OuULlsyxUUWIt",
+              "instagramUrl": "https://www.instagram.com/immolation/",
+              "facebookUrl": "https://www.facebook.com/immolation",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb79d144ada5dffe4a672bc46a"
+            }
+          },
+          {
+            "band": "IN FLAMES",
+            "stage": "Brasov Stage",
+            "start": "22:40",
+            "end": "23:45",
+            "bio": {
+              "name": "IN FLAMES",
+              "title": "",
+              "description": "In Flames es una banda sueca considerada pionera y máxima exponente del death metal melódico de Gotemburgo. Fundada en los años noventa, han sido fundamentales en la evolución del metal moderno al integrar guitarras armonizadas y estructuras melódicas dentro de un marco agresivo. Con el paso de los años, su sonido ha evolucionado hacia formas más alternativas, manteniendo siempre una base sólida de composiciones pegadizas y emotivas. Su impacto en la escena internacional es incuestionable, habiendo inspirado a cientos de bandas a lo largo de las décadas y manteniendo su posición como uno de los pilares del metal sueco global.",
+              "country": "Suecia",
+              "genre": "Death metal melódico",
+              "youtubeUrl": "https://www.youtube.com/watch?v=68S-2a1W82E",
+              "spotifyUrl": "https://open.spotify.com/artist/57ylwQTnFnIhJh4nu4rxCs",
+              "instagramUrl": "https://www.instagram.com/inflames/",
+              "facebookUrl": "https://www.facebook.com/inflames",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5c3bd919d1344a738af14136"
+            }
+          },
+          {
+            "band": "DEAFHEAVEN",
+            "stage": "Andrei Calmuc Stage",
+            "start": "23:30",
+            "end": "00:30",
+            "bio": {
+              "name": "DEAFHEAVEN",
+              "title": "",
+              "description": "Deafheaven es una banda estadounidense famosa por su capacidad de mezclar la agresividad visceral del black metal con la belleza etérea del shoegaze y el post-rock. Esta combinación arriesgada les permitió abrir nuevos caminos en el metal extremo, ganando una audiencia amplia y convirtiéndose en un fenómeno crítico. Sus discos son viajes sonoros largos y atmosféricos, llenos de melancolía, intensidad y momentos de gran belleza instrumental. Aunque han sido figuras divisivas para algunos sectores más puristas, su influencia en la modernización y expansión de los sonidos del metal es innegable y fundamental para entender la música actual.",
+              "country": "Estados Unidos",
+              "genre": "Post-metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=2e8p6JqL968",
+              "spotifyUrl": "https://open.spotify.com/artist/4XpPveeg7RuYS3CgLo75t9",
+              "instagramUrl": "https://www.instagram.com/deafheavenband/",
+              "facebookUrl": "https://www.facebook.com/deafheaven",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb2c91a9397fb610a767476b98"
+            }
+          },
+          {
+            "band": "GODSMACK",
+            "stage": "Adrian Rugina Stage",
+            "start": "23:50",
+            "end": "01:10",
+            "bio": {
+              "name": "GODSMACK",
+              "title": "",
+              "description": "Godsmack es una banda de hard rock estadounidense que alcanzó la fama mundial a finales de los noventa. Con una propuesta sonora potente, marcada por riffs contundentes y una voz inconfundible, han logrado colocar numerosos éxitos en los primeros puestos de las listas internacionales. Su estilo conecta la agresividad del metal alternativo con la estructura comercial del hard rock, lo que les ha permitido mantener una base de seguidores masiva durante décadas. Con múltiples álbumes de platino y una capacidad única para escribir estribillos memorables, Godsmack se ha consolidado como un nombre fundamental en la radio y festivales de rock.",
+              "country": "Estados Unidos",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=OYjZK_6i37M",
+              "spotifyUrl": "https://open.spotify.com/artist/6gZq1Q6bdOxsUPUG1TaFbF",
+              "instagramUrl": "https://www.instagram.com/godsmack/",
+              "facebookUrl": "https://www.facebook.com/Godsmack",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe024531c06e7de54f84ea6fd"
+            }
+          },
+          {
+            "band": "GRAVE",
+            "stage": "Andrei Calmuc Stage",
+            "start": "01:00",
+            "end": "02:00",
+            "bio": {
+              "name": "GRAVE",
+              "title": "",
+              "description": "Grave es una banda fundamental en la historia del death metal sueco, formada en 1986. Conocidos por su sonido crudo, pesado y su afinación grave característica, han definido el género desde los años 90 con álbumes emblemáticos como Into the Grave. A lo largo de su carrera, han mantenido un estilo visceral que influenció a incontables grupos de la escena extrema. A pesar de los cambios en su formación, el grupo sigue siendo un pilar fundamental en festivales internacionales, manteniendo su integridad artística y su legado como pioneros del sonido de Estocolmo dentro del metal extremo global.",
+              "country": "Suecia",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/user/GraveOfficial",
+              "spotifyUrl": "https://open.spotify.com/artist/4tLl5v2G90scM0pW6hvPU5",
+              "instagramUrl": "https://www.instagram.com/graveofficial/",
+              "facebookUrl": "https://www.facebook.com/GraveOfficial",
+              "imageUrl": "https://www.grave.se/wp-content/uploads/2020/02/Grave_Logo_White.png"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-07-29",
+        "dayNumber": 3,
+        "dayLabel": "Miércoles 29",
+        "weekdayEs": "Miércoles",
+        "doors": "14:30",
+        "stages": [
+          "Adrian Rugina Stage",
+          "Brasov Stage",
+          "Andrei Calmuc Stage"
+        ],
+        "acts": [
+          {
+            "band": "UNDERWAVES",
+            "stage": "Brasov Stage",
+            "start": "15:00",
+            "end": "15:45",
+            "bio": {
+              "name": "UNDERWAVES",
+              "title": "",
+              "description": "Underwaves es una formación rumana que explora las vertientes más modernas y atmosféricas del metal alternativo. A través de composiciones que priorizan la textura sonora y la intensidad emocional, el grupo busca conectar con un público que aprecia los matices dentro del espectro pesado. Con influencias que abarcan desde el post-metal hasta el rock contemporáneo, han logrado destacar en la escena local con una propuesta sólida y en constante evolución. Su participación en festivales les ha permitido consolidarse como una banda con gran proyección, manteniendo siempre un enfoque artístico honesto y una puesta en escena dedicada a sus fans.",
+              "country": "Rumanía",
+              "genre": "Metal alternativo",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-uW5Xz-p8-k2P-5A",
+              "spotifyUrl": "https://open.spotify.com/artist/7tTzpZWcoA69KTvSrYzBy1",
+              "instagramUrl": "https://www.instagram.com/underwavesband/",
+              "facebookUrl": "https://www.facebook.com/underwavesband",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebcfe59606d84f60313e06ea9c"
+            }
+          },
+          {
+            "band": "ALLT",
+            "stage": "Adrian Rugina Stage",
+            "start": "15:50",
+            "end": "16:35",
+            "bio": {
+              "name": "ALLT",
+              "title": "",
+              "description": "Allt es una banda sueca de metal progresivo que ha ganado rápida notoriedad por su enfoque técnico y emocional. Formada en Karlskoga, el grupo destaca por integrar ritmos pesados y complejas estructuras instrumentales con melodías envolventes. Sus letras suelen abordar temáticas introspectivas y filosóficas. Con un sonido que evoluciona constantemente, se han posicionado como una de las agrupaciones más prometedoras de la escena moderna europea, destacando en vivo por su ejecución precisa y una energía arrolladora que cautiva a los seguidores del metal contemporáneo en todo el mundo durante sus giras y festivales.",
+              "country": "Suecia",
+              "genre": "Metal progresivo",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-lK4qD5S01Z2J5S9tB8-hA",
+              "spotifyUrl": "https://open.spotify.com/artist/6YRr0btzGqfQ5K7r23qjEM",
+              "instagramUrl": "https://www.instagram.com/alltband/",
+              "facebookUrl": "https://www.facebook.com/alltband",
+              "imageUrl": "https://www.alltband.com/images/band-promo.jpg"
+            }
+          },
+          {
+            "band": "ANNISOKAY",
+            "stage": "Andrei Calmuc Stage",
+            "start": "16:25",
+            "end": "17:10",
+            "bio": {
+              "name": "ANNISOKAY",
+              "title": "",
+              "description": "Annisokay es una banda alemana reconocida por fusionar la agresividad del metalcore con estribillos melódicos de corte post-hardcore. Han sabido construir un sonido moderno y accesible que ha resonado fuertemente en Europa. Con una producción pulida y una energía constante en el escenario, el grupo ha crecido rápidamente, compartiendo giras con grandes nombres del sector. Sus composiciones suelen tratar temas de lucha interna y resiliencia, lo que ha generado un fuerte vínculo con su audiencia joven. Son referentes actuales del género gracias a su capacidad para equilibrar perfectamente la pesadez y la melodía en sus discos.",
+              "country": "Alemania",
+              "genre": "Post-hardcore",
+              "youtubeUrl": "https://www.youtube.com/user/Annisokay",
+              "spotifyUrl": "https://open.spotify.com/artist/7lAi1Cv19DsukgGjbZQxFg",
+              "instagramUrl": "https://www.instagram.com/annisokay/",
+              "facebookUrl": "https://www.facebook.com/annisokay",
+              "imageUrl": "https://www.annisokay.com/images/band-promo.jpg"
+            }
+          },
+          {
+            "band": "VADER",
+            "stage": "Brasov Stage",
+            "start": "16:40",
+            "end": "17:30",
+            "bio": {
+              "name": "VADER",
+              "title": "",
+              "description": "Vader es una de las bandas más longevas y respetadas del death metal europeo, formada en Olsztyn durante los años ochenta. Bajo la dirección constante de Peter Wiwczarek, el grupo ha mantenido un nivel técnico excepcional durante décadas, convirtiéndose en pioneros del sonido extremo en Polonia. Sus composiciones, caracterizadas por ritmos de batería a gran velocidad y solos de guitarra precisos, han servido de influencia para la escena death metal global. Con una discografía extensa y giras incansables por todo el mundo, Vader es sinónimo de dedicación y excelencia en el género del metal extremo.",
+              "country": "Polonia",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/user/vaderband",
+              "spotifyUrl": "https://open.spotify.com/artist/2s5DSt9VBNzAn2TbtDHzFZ",
+              "instagramUrl": "https://www.instagram.com/vaderband/",
+              "facebookUrl": "https://www.facebook.com/vader",
+              "imageUrl": "https://vader.pl/images/vader-promo.jpg"
+            }
+          },
+          {
+            "band": "MUNICIPAL WASTE",
+            "stage": "Adrian Rugina Stage",
+            "start": "17:35",
+            "end": "18:25",
+            "bio": {
+              "name": "MUNICIPAL WASTE",
+              "title": "",
+              "description": "Municipal Waste es una fuerza dominante del crossover thrash, conocidos por revivir la energía desenfrenada de los años ochenta. Originarios de Virginia, su estilo se caracteriza por canciones rápidas, cortas y cargadas de humor, inspiradas en películas de terror clase B y la cultura del patinaje. Desde su formación en 2001, han consolidado una base de seguidores leales gracias a sus actuaciones en directo frenéticas. Sus álbumes como The Art of Partying son considerados piezas de culto, convirtiéndolos en un referente indispensable para quienes buscan una experiencia intensa, divertida y llena de adrenalina en los conciertos.",
+              "country": "Estados Unidos",
+              "genre": "Crossover thrash",
+              "youtubeUrl": "https://www.youtube.com/user/municipalwaste",
+              "spotifyUrl": "https://open.spotify.com/artist/2Ah9OuOj7B57gPD1cbwiaE",
+              "instagramUrl": "https://www.instagram.com/municipalwaste/",
+              "facebookUrl": "https://www.facebook.com/MunicipalWaste",
+              "imageUrl": "https://www.municipalwaste.net/images/band.jpg"
+            }
+          },
+          {
+            "band": "NOVEMBERS DOOM",
+            "stage": "Andrei Calmuc Stage",
+            "start": "17:40",
+            "end": "18:30",
+            "bio": {
+              "name": "NOVEMBERS DOOM",
+              "title": "",
+              "description": "Novembers Doom es una de las bandas más consistentes y respetadas en el ámbito del death/doom metal estadounidense. Formados a principios de los noventa, han desarrollado un sonido distintivo que combina la pesadez del death metal con pasajes melancólicos y atmosféricos del doom. Sus letras exploran temas oscuros, introspección y angustia existencial. A lo largo de su carrera, han mantenido un estándar de calidad elevado en cada una de sus producciones, consolidándose como una banda de culto dentro del metal oscuro global gracias a su enfoque artístico serio, maduro y emocionalmente cargado, influyendo significativamente en el doom metal moderno.",
+              "country": "Estados Unidos",
+              "genre": "Doom metal",
+              "youtubeUrl": "https://www.youtube.com/user/novembersdoom",
+              "spotifyUrl": "https://open.spotify.com/artist/7CPjagX3gF7woK0P7YNuKd",
+              "instagramUrl": "https://www.instagram.com/novembersdoom/",
+              "facebookUrl": "https://www.facebook.com/novembersdoom",
+              "imageUrl": "https://www.novembersdoom.com/images/band-photo.jpg"
+            }
+          },
+          {
+            "band": "THY ART IS MURDER",
+            "stage": "Brasov Stage",
+            "start": "18:30",
+            "end": "19:20",
+            "bio": {
+              "name": "THY ART IS MURDER",
+              "title": "",
+              "description": "Thy Art Is Murder es una fuerza imparable del deathcore australiano que ha redefinido los límites de la brutalidad sonora. Desde su formación, han sido aclamados por su ejecución técnica precisa, breakdowns demoledores y temáticas líricas centradas en la crítica social y política. Su álbum Hate los catapultó al estrellato internacional, convirtiéndolos en uno de los grupos más influyentes de la escena core moderna. A través de giras mundiales y una ética de trabajo implacable, han logrado mantener una conexión profunda con su audiencia, consolidándose como un acto indispensable en los mayores festivales de metal extremo del mundo.",
+              "country": "Australia",
+              "genre": "Deathcore",
+              "youtubeUrl": "https://www.youtube.com/user/thyartismurder",
+              "spotifyUrl": "https://open.spotify.com/artist/3et9upNERQI5IYt5jEDTxM",
+              "instagramUrl": "https://www.instagram.com/thyartismurder/",
+              "facebookUrl": "https://www.facebook.com/thyartismurder",
+              "imageUrl": "https://www.thyartismurder.net/images/band.jpg"
+            }
+          },
+          {
+            "band": "ANIMALS AS LEADERS",
+            "stage": "Andrei Calmuc Stage",
+            "start": "19:00",
+            "end": "20:00",
+            "bio": {
+              "name": "ANIMALS AS LEADERS",
+              "title": "",
+              "description": "Animals As Leaders es una referencia absoluta en el metal progresivo técnico e instrumental. Liderados por el visionario guitarrista Tosin Abasi, la banda destaca por su uso innovador de guitarras de ocho cuerdas, estructuras complejas y una fusión única de jazz, electrónica y metal. Desde su primer álbum, han redefinido las posibilidades de la guitarra eléctrica en el rock pesado. Su propuesta es técnica, cerebral y profundamente envolvente, siendo admirada tanto por fans como por músicos de todo el mundo. Son considerados unos verdaderos maestros en la composición instrumental contemporánea y un pilar del virtuosismo en el metal.",
+              "country": "Estados Unidos",
+              "genre": "Metal progresivo instrumental",
+              "youtubeUrl": "https://www.youtube.com/user/animalsasleaders",
+              "spotifyUrl": "https://open.spotify.com/artist/65C6Unk7nhg2aCnVuAPMo8",
+              "instagramUrl": "https://www.instagram.com/animalsasleaders/",
+              "facebookUrl": "https://www.facebook.com/animalsasleaders",
+              "imageUrl": "https://www.animalsasleaders.org/images/promo.jpg"
+            }
+          },
+          {
+            "band": "IN EXTREMO",
+            "stage": "Adrian Rugina Stage",
+            "start": "19:25",
+            "end": "20:25",
+            "bio": {
+              "name": "IN EXTREMO",
+              "title": "",
+              "description": "In Extremo es una banda alemana icónica que combina el rock duro con instrumentos medievales como gaitas y zanfonas. Desde su debut a finales de los noventa, han integrado letras en múltiples idiomas antiguos con una estética única inspirada en la Edad Media. Sus conciertos son famosos por incluir pirotecnia impresionante y una atmósfera festiva inigualable. Han alcanzado un éxito masivo en las listas alemanas, convirtiéndose en una institución del género folk metal. Su capacidad para fusionar tradición y modernidad ha dejado una huella profunda, consolidándolos como una pieza esencial de la escena musical europea actual.",
+              "country": "Alemania",
+              "genre": "Folk metal",
+              "youtubeUrl": "https://www.youtube.com/user/inextremo",
+              "spotifyUrl": "https://open.spotify.com/artist/4MAvEYtgY8yNljGP697n4F",
+              "instagramUrl": "https://www.instagram.com/inextremo_official/",
+              "facebookUrl": "https://www.facebook.com/officialinextremo",
+              "imageUrl": "https://www.inextremo.de/images/band-photo.jpg"
+            }
+          },
+          {
+            "band": "ACCEPT",
+            "stage": "Brasov Stage",
+            "start": "20:30",
+            "end": "21:30",
+            "bio": {
+              "name": "ACCEPT",
+              "title": "",
+              "description": "Accept es una de las bandas más influyentes en la historia del heavy metal alemán. Durante la década de los ochenta, definieron el sonido de este género con álbumes históricos como Balls to the Wall. Con su estilo marcado por guitarras potentes y voces inconfundibles, fueron pieza clave en el nacimiento del speed metal. A pesar de los años, siguen girando con éxito mundial, demostrando que su influencia sigue vigente. Son considerados pioneros por su impacto duradero en la música heavy, manteniendo siempre su esencia tradicional mientras continúan lanzando material de alta calidad para sus seguidores leales.",
+              "country": "Alemania",
+              "genre": "Heavy metal",
+              "youtubeUrl": "https://www.youtube.com/user/acceptband",
+              "spotifyUrl": "https://open.spotify.com/artist/3JDIAtVrJdQ7GFOX26LYpv",
+              "instagramUrl": "https://www.instagram.com/acceptworldwide/",
+              "facebookUrl": "https://www.facebook.com/accepttheband",
+              "imageUrl": "https://www.acceptworldwide.com/images/band-photo.jpg"
+            }
+          },
+          {
+            "band": "THE GHOST INSIDE",
+            "stage": "Andrei Calmuc Stage",
+            "start": "20:30",
+            "end": "21:30",
+            "bio": {
+              "name": "THE GHOST INSIDE",
+              "title": "",
+              "description": "The Ghost Inside se ha convertido en un símbolo de superación en la escena del metalcore. Tras un grave accidente en 2015 que detuvo su carrera, su regreso a los escenarios fue un acontecimiento mundial celebrado por toda la comunidad musical. Su estilo se basa en riffs pegadizos, letras motivacionales y un sonido energético cargado de sentimiento. Han demostrado una capacidad única para conectar con su audiencia, transmitiendo un mensaje de esperanza y fuerza ante la adversidad. Son una banda muy querida y respetada por su honestidad, dedicación inquebrantable a su oficio y su impacto positivo en el género.",
+              "country": "Estados Unidos",
+              "genre": "Hardcore melódico",
+              "youtubeUrl": "https://www.youtube.com/user/TheGhostInside",
+              "spotifyUrl": "https://open.spotify.com/artist/6kQB2RN7WwryMdJ1MoQh1E",
+              "instagramUrl": "https://www.instagram.com/theghostinside/",
+              "facebookUrl": "https://www.facebook.com/theghostinside",
+              "imageUrl": "https://www.theghostinside.com/images/band.jpg"
+            }
+          },
+          {
+            "band": "ARCH ENEMY",
+            "stage": "Adrian Rugina Stage",
+            "start": "21:35",
+            "end": "22:35",
+            "bio": {
+              "name": "ARCH ENEMY",
+              "title": "",
+              "description": "Arch Enemy es una de las bandas más destacadas del death metal melódico a nivel mundial. Fundada por el guitarrista Michael Amott, la banda ha evolucionado constantemente manteniendo una técnica guitarrística impecable y estructuras de canciones épicas. Tras la llegada de la vocalista Alissa White-Gluz, han reforzado su estatus como gigantes del género. Sus álbumes destacan por la combinación de brutalidad, armonías melódicas y una producción de alto nivel. Con giras constantes por todo el planeta, Arch Enemy continúa siendo un pilar fundamental, inspirando a generaciones de músicos con su inconfundible sonido y su potente presencia escénica.",
+              "country": "Suecia",
+              "genre": "Death metal melódico",
+              "youtubeUrl": "https://www.youtube.com/user/archenemyofficial",
+              "spotifyUrl": "https://open.spotify.com/artist/0DCw6lHkzh9t7f8Hb4Z0Sx",
+              "instagramUrl": "https://www.instagram.com/archenemyofficial/",
+              "facebookUrl": "https://www.facebook.com/archenemyofficial",
+              "imageUrl": "https://www.archenemy.net/images/promo.jpg"
+            }
+          },
+          {
+            "band": "PERTURBATOR",
+            "stage": "Andrei Calmuc Stage",
+            "start": "22:00",
+            "end": "23:00",
+            "bio": {
+              "name": "PERTURBATOR",
+              "title": "",
+              "description": "Perturbator es el proyecto del músico James Kent, quien se ha consolidado como un referente fundamental del synthwave oscuro. Inspirado por la estética del cyberpunk de los años ochenta y la música electrónica de vanguardia, crea atmósferas opresivas, futuristas y altamente rítmicas. Aunque es un acto electrónico, su sonido ha resonado profundamente en la comunidad del metal, llevándolo a actuar en los festivales más importantes de música extrema. Sus composiciones evocan visiones distópicas y urbanas, ofreciendo una experiencia sensorial única que desafía las convenciones de los géneros musicales tradicionales y expande los límites de la música electrónica moderna.",
+              "country": "Francia",
+              "genre": "Synthwave",
+              "youtubeUrl": "https://www.youtube.com/user/Perturbator",
+              "spotifyUrl": "https://open.spotify.com/artist/244uLu9lkdw39BJwlul3k8",
+              "instagramUrl": "https://www.instagram.com/perturbatormusic/",
+              "facebookUrl": "https://www.facebook.com/Perturbator",
+              "imageUrl": "https://perturbator.com/images/promo.jpg"
+            }
+          },
+          {
+            "band": "SLAUGHTER TO PREVAIL",
+            "stage": "Brasov Stage",
+            "start": "22:40",
+            "end": "23:45",
+            "bio": {
+              "name": "SLAUGHTER TO PREVAIL",
+              "title": "",
+              "description": "Slaughter to Prevail es una banda de deathcore que ha ganado fama mundial gracias a la imponente presencia vocal de Alex Terrible y su estilo musical agresivo. Originarios de Rusia, se caracterizan por sus letras viscerales, ritmos pesados y una estética visual muy cuidada que incluye sus famosas máscaras. Han logrado una base de seguidores masiva a través de plataformas digitales y giras internacionales, consolidándose como una de las propuestas más extremas y populares de la escena contemporánea. Su energía en vivo y su sonido, una mezcla de metal técnico y brutal, son fundamentales en el deathcore moderno.",
+              "country": "Rusia",
+              "genre": "Deathcore",
+              "youtubeUrl": "https://www.youtube.com/channel/UCr61-F-uLd8J71sC6xW4Oqg",
+              "spotifyUrl": "https://open.spotify.com/artist/24Oiw7BlvO1BETecDLJt6m",
+              "instagramUrl": "https://www.instagram.com/slaughtertoprevail/",
+              "facebookUrl": "https://www.facebook.com/slaughtertoprevail",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb283678ed69bc98f2f637ad8"
+            }
+          },
+          {
+            "band": "CANDLEMASS",
+            "stage": "Andrei Calmuc Stage",
+            "start": "23:30",
+            "end": "00:30",
+            "bio": {
+              "name": "CANDLEMASS",
+              "title": "",
+              "description": "Candlemass es una banda fundamental en la historia del doom metal. Con su álbum debut Epicus Doomicus Metallicus, sentaron las bases del doom épico en 1986. Su sonido se caracteriza por guitarras lentas y pesadas, melodías trágicas y una grandilocuencia que evoca atmósferas medievales y oscuras. A través de los años, han mantenido su relevancia, influenciando a incontables bandas de metal extremo. Su legado es inmenso y se les reconoce como los arquitectos del sonido pesado y solemne. Siguen siendo una fuerza imponente en directo, demostrando por qué son considerados pilares del género tras décadas de trayectoria ininterrumpida.",
+              "country": "Suecia",
+              "genre": "Doom metal",
+              "youtubeUrl": "https://www.youtube.com/user/candlemass",
+              "spotifyUrl": "https://open.spotify.com/artist/7zDtfSB0AOZWhpuAHZIOw5",
+              "instagramUrl": "https://www.instagram.com/candlemassdoom/",
+              "facebookUrl": "https://www.facebook.com/candlemass",
+              "imageUrl": "https://www.candlemass.se/images/band.jpg"
+            }
+          },
+          {
+            "band": "LAMB OF GOD",
+            "stage": "Adrian Rugina Stage",
+            "start": "23:50",
+            "end": "01:10",
+            "bio": {
+              "name": "LAMB OF GOD",
+              "title": "",
+              "description": "Lamb of God es una institución dentro del metal contemporáneo, definida por sus riffs pesados, ritmos complejos y las letras socialmente críticas de Randy Blythe. Surgidos en Richmond, Virginia, el grupo ha sido nominado múltiples veces a los premios Grammy. Su disco As the Palaces Burn los catapultó a la fama, convirtiéndolos en líderes de la nueva ola del heavy metal americano. Con un sonido que mezcla la agresividad del thrash con la densidad del groove, siguen siendo un referente absoluto en grandes escenarios mundiales por su energía inagotable y su impecable calidad musical.",
+              "country": "Estados Unidos",
+              "genre": "Groove metal",
+              "youtubeUrl": "https://www.youtube.com/user/lambofgod",
+              "spotifyUrl": "https://open.spotify.com/artist/3JFsVIxOn7STeilPICkkB2",
+              "instagramUrl": "https://www.instagram.com/lambofgod/",
+              "facebookUrl": "https://www.facebook.com/lambofgod",
+              "imageUrl": "https://www.lamb-of-god.com/images/band.jpg"
+            }
+          },
+          {
+            "band": "DEICIDE",
+            "stage": "Andrei Calmuc Stage",
+            "start": "01:00",
+            "end": "02:00",
+            "bio": {
+              "name": "DEICIDE",
+              "title": "",
+              "description": "Deicide es una de las bandas más provocadoras y fundamentales del death metal técnico y agresivo. Liderados por Glen Benton, desde Florida, han sido famosos por sus temáticas anticristianas y su sonido directo, rápido y extremadamente intenso. Álbumes como Deicide y Legion son considerados pilares del género. A lo largo de su carrera, han mantenido una actitud implacable, negándose a suavizar su estilo para complacer al mercado. Su impacto en la escena death metal es innegable, siendo referentes por su brutalidad sonora y su compromiso constante con un sonido que definió el metal extremo de los noventa.",
+              "country": "Estados Unidos",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/user/deicideofficial",
+              "spotifyUrl": "https://open.spotify.com/artist/2K3GorTixXKAiwe2t9lO89",
+              "instagramUrl": "https://www.instagram.com/deicideofficial/",
+              "facebookUrl": "https://www.facebook.com/OfficialDeicide",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebafad0c8cde6dbb7de81c77ab"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-07-30",
+        "dayNumber": 4,
+        "dayLabel": "Jueves 30",
+        "weekdayEs": "Jueves",
+        "doors": "14:00",
+        "stages": [
+          "Adrian Rugina Stage",
+          "Brasov Stage",
+          "Andrei Calmuc Stage"
+        ],
+        "acts": [
+          {
+            "band": "CRIPPLING ALCOHOLISM",
+            "stage": "Brasov Stage",
+            "start": "14:30",
+            "end": "15:15",
+            "bio": {
+              "name": "CRIPPLING ALCOHOLISM",
+              "title": "",
+              "description": "Crippling Alcoholism es una banda de grindcore de la escena rumana conocida por su enfoque agresivo y directo. Con un sonido que prioriza la velocidad extrema y la distorsión, la banda se ha hecho un hueco en los círculos de música extrema. Sus letras suelen abordar temáticas intensas, reflejando una postura crítica con una estética sonora que no deja espacio para concesiones. Aunque su presencia es de nicho, su energía en directo y su compromiso con el género los posicionan como un grupo respetado dentro de la comunidad local y underground, manteniendo vivo el espíritu del grindcore más feroz y…",
+              "country": "Rumanía",
+              "genre": "Grindcore",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-K-7Lp7E78-q7L-LzWqVjg",
+              "spotifyUrl": "https://open.spotify.com/artist/4MNRq5U6hOzLfyFpbK8fJb",
+              "instagramUrl": "https://www.instagram.com/cripplingalcoholismband/",
+              "facebookUrl": "https://www.facebook.com/cripplingalcoholism",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb0bf288765708e9dc2bdb5f7b"
+            }
+          },
+          {
+            "band": "MACHUKHA",
+            "stage": "Andrei Calmuc Stage",
+            "start": "14:50",
+            "end": "15:30",
+            "bio": {
+              "name": "MACHUKHA",
+              "title": "",
+              "description": "Machukha es una banda de hardcore ucraniano que utiliza su música como un vehículo para la expresión política y social. Su sonido se caracteriza por ser directo, feroz y honesto, representando la cruda realidad de su entorno. A través de sus canciones, transmiten mensajes de resistencia y resiliencia, consolidándose como una parte importante de la escena hardcore europea. Con un enfoque minimalista pero increíblemente intenso, logran una conexión visceral con su público, especialmente en sus actuaciones en directo, donde la pasión y la rabia contenida se transforman en una experiencia liberadora para todos sus seguidores del género.",
+              "country": "Ucrania",
+              "genre": "Hardcore",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-K-7Lp7E78-q7L-LzWqVjg",
+              "spotifyUrl": "https://open.spotify.com/artist/4rjc9hgUiWB2XppHcUoirz",
+              "instagramUrl": "https://www.instagram.com/machukha_hc/",
+              "facebookUrl": "https://www.facebook.com/machukha",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebd32c37833480e991bc5adf77"
+            }
+          },
+          {
+            "band": "RAISED BY OWLS",
+            "stage": "Adrian Rugina Stage",
+            "start": "15:20",
+            "end": "16:05",
+            "bio": {
+              "name": "RAISED BY OWLS",
+              "title": "",
+              "description": "Raised By Owls es una propuesta única dentro del grindcore que destaca por combinar la máxima agresividad sonora con un sentido del humor absurdo y satírico. Procedentes del Reino Unido, sus letras suelen parodiar la vida cotidiana, la cultura pop y la industria musical, creando un contraste hilarante con su estilo musical brutal. Han logrado una base de seguidores muy fiel a través de las redes sociales, donde su contenido cómico es tan popular como su música. Es una banda que no se toma demasiado en serio a sí misma, ofreciendo una experiencia divertida y caótica.",
+              "country": "Reino Unido",
+              "genre": "Grindcore",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-K-7Lp7E78-q7L-LzWqVjg",
+              "spotifyUrl": "https://open.spotify.com/artist/56jcQna86IldGOszi6orLW",
+              "instagramUrl": "https://www.instagram.com/raisedbyowls/",
+              "facebookUrl": "https://www.facebook.com/raisedbyowls",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebda2719dba81426ad1db71345"
+            }
+          },
+          {
+            "band": "SLOW CRUSH",
+            "stage": "Andrei Calmuc Stage",
+            "start": "16:00",
+            "end": "16:45",
+            "bio": {
+              "name": "SLOW CRUSH",
+              "title": "",
+              "description": "Slow Crush es una banda conocida por sus densas capas de sonido, atmósferas envolventes y voces etéreas que definen su estilo shoegaze con un toque de melancolía pesada. A través de la combinación de guitarras distorsionadas y ritmos lentos pero intensos, crean una experiencia auditiva profunda que transporta al oyente. Se han ganado el reconocimiento mundial por su capacidad de evocar emociones complejas sin necesidad de una gran velocidad musical. Sus giras internacionales han consolidado su reputación como una banda indispensable en el ámbito del post-rock y el shoegaze moderno, atrayendo a seguidores de la música atmosférica y emocional.",
+              "country": "Bélgica",
+              "genre": "Shoegaze",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-uW5Xz-p8-k2P-5A",
+              "spotifyUrl": "https://open.spotify.com/artist/3nOrhUtscermNwmfBQRZZv",
+              "instagramUrl": "https://www.instagram.com/slowcrushband/",
+              "facebookUrl": "https://www.facebook.com/slowcrushband",
+              "imageUrl": "https://slowcrush.com/images/promo.jpg"
+            }
+          },
+          {
+            "band": "SERRABULHO",
+            "stage": "Brasov Stage",
+            "start": "16:10",
+            "end": "17:00",
+            "bio": {
+              "name": "SERRABULHO",
+              "title": "",
+              "description": "Serrabulho es una banda portuguesa que destaca en la escena grindcore por su sonido festivo y humorístico. A diferencia de las bandas del género que se enfocan únicamente en la brutalidad, ellos integran melodías pegadizas y temáticas cómicas. Su puesta en escena es siempre una fiesta, lo que les ha ganado el cariño de los seguidores que buscan divertirse en conciertos extremos. Con una trayectoria constante, han logrado destacar en festivales europeos, demostrando que el grindcore también puede tener un lado lúdico y entretenido sin sacrificar su potencia sonora ni su actitud irreverente y original.",
+              "country": "Portugal",
+              "genre": "Grindcore",
+              "youtubeUrl": "https://www.youtube.com/user/serrabulho",
+              "spotifyUrl": "https://open.spotify.com/artist/2XwCbmJZsAqFKYbP71vs5J",
+              "instagramUrl": "https://www.instagram.com/serrabulho/",
+              "facebookUrl": "https://www.facebook.com/serrabulho",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb59548e81e9d46997cb6ae18a"
+            }
+          },
+          {
+            "band": "FIT FOR AN AUTOPSY",
+            "stage": "Adrian Rugina Stage",
+            "start": "17:00",
+            "end": "17:45",
+            "bio": {
+              "name": "FIT FOR AN AUTOPSY",
+              "title": "",
+              "description": "Fit For An Autopsy se ha posicionado como una de las bandas de deathcore más vanguardistas de la actualidad. Mezclando la brutalidad propia del género con toques de metal técnico, pasajes melódicos y una crítica social mordaz en sus letras, han logrado un sonido distintivo que atrae a una audiencia diversa. Su capacidad para evolucionar en cada disco ha sido clave en su éxito constante. Son reconocidos por su compromiso con temas ambientales y políticos, lo que añade una capa de profundidad a su intensa propuesta musical, consolidándolos como una banda líder en los festivales modernos de metal.",
+              "country": "Estados Unidos",
+              "genre": "Deathcore",
+              "youtubeUrl": "https://www.youtube.com/user/FitForAnAutopsy",
+              "spotifyUrl": "https://open.spotify.com/artist/0qJpY7K8p7g6sacvaGNt6i",
+              "instagramUrl": "https://www.instagram.com/fitforanautopsy/",
+              "facebookUrl": "https://www.facebook.com/FitForAnAutopsy",
+              "imageUrl": "https://fitforanautopsy.net/images/promo.jpg"
+            }
+          },
+          {
+            "band": "CONSERVATIVE MILITARY IMAGE",
+            "stage": "Andrei Calmuc Stage",
+            "start": "17:15",
+            "end": "18:00",
+            "bio": {
+              "name": "CONSERVATIVE MILITARY IMAGE",
+              "title": "",
+              "description": "Conservative Military Image es una banda que ha generado gran interés en la escena hardcore y Oi! por su enfoque particular y su estética distintiva. Con un sonido que rinde homenaje a las raíces del Oi! clásico pero con una actitud moderna y una ejecución precisa, el grupo ha logrado destacar rápidamente. Sus letras son directas, provocativas y con una carga identitaria fuerte que ha conectado con diversos públicos underground. A pesar de las controversias que rodean su estética, su propuesta musical es sólida y se ha convertido en un nombre recurrente en eventos de hardcore y escenas vinculadas al…",
+              "country": "Estados Unidos",
+              "genre": "Oi! / hardcore",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-K-7Lp7E78-q7L-LzWqVjg",
+              "spotifyUrl": "https://open.spotify.com/artist/5712Xu1mDKhFA3aycXnBmP",
+              "instagramUrl": "https://www.instagram.com/conservativemilitaryimage/",
+              "facebookUrl": "https://www.facebook.com/conservativemilitaryimage",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebde65184ceebb87fc8dad2b88"
+            }
+          },
+          {
+            "band": "NORTHLANE",
+            "stage": "Brasov Stage",
+            "start": "17:50",
+            "end": "18:40",
+            "bio": {
+              "name": "NORTHLANE",
+              "title": "",
+              "description": "Northlane es una de las bandas más innovadoras del metalcore contemporáneo, reconocida por su constante evolución sonora. Procedentes de Sídney, han experimentado con elementos electrónicos, industriales y pasajes atmosféricos que enriquecen su propuesta agresiva. Su capacidad para innovar y mantenerse a la vanguardia les ha permitido ser líderes en su género. Con letras profundas y una producción impecable, han cosechado éxitos mundiales, consolidándose como un referente en grandes festivales. Su enfoque audaz al mezclar texturas electrónicas con la energía bruta del metal los distingue como una de las propuestas más creativas y excitantes de la escena metálica moderna.",
+              "country": "Australia",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/user/NorthlaneAU",
+              "spotifyUrl": "https://open.spotify.com/artist/3qyg72RGnGdF521zMU02u9",
+              "instagramUrl": "https://www.instagram.com/northlane/",
+              "facebookUrl": "https://www.facebook.com/northlane",
+              "imageUrl": "https://northlaneband.com/images/promo.jpg"
+            }
+          },
+          {
+            "band": "MONOLORD",
+            "stage": "Andrei Calmuc Stage",
+            "start": "18:30",
+            "end": "19:20",
+            "bio": {
+              "name": "MONOLORD",
+              "title": "",
+              "description": "Monolord es un trío sueco que ha redefinido el sonido del stoner doom con composiciones que se caracterizan por una pesadez asfixiante y un uso maestro del fuzz. Sus álbumes como Empress Rising son pilares del género contemporáneo. Con un sonido que se siente como un muro de sonido constante, logran crear atmósferas hipnóticas que atrapan al oyente. Su éxito radica en la simplicidad de sus estructuras, elevadas a una potencia épica. Se han convertido en favoritos de la escena internacional gracias a una propuesta que es a la vez catártica, masiva y profundamente inmersiva para los amantes del metal…",
+              "country": "Suecia",
+              "genre": "Stoner doom",
+              "youtubeUrl": "https://www.youtube.com/user/Monolord",
+              "spotifyUrl": "https://open.spotify.com/artist/3X0a18Q9nluwuFYv5hB5cm",
+              "instagramUrl": "https://www.instagram.com/monolordofficial/",
+              "facebookUrl": "https://www.facebook.com/monolordsweden",
+              "imageUrl": "https://monolord.com/images/promo.jpg"
+            }
+          },
+          {
+            "band": "TROOPER",
+            "stage": "Adrian Rugina Stage",
+            "start": "18:45",
+            "end": "19:45",
+            "bio": {
+              "name": "TROOPER",
+              "title": "",
+              "description": "Trooper es un pilar fundamental del heavy metal en Rumanía, con una trayectoria que abarca varias décadas. Conocidos por su estilo clásico, himnos potentes y una conexión inquebrantable con sus seguidores, han contribuido significativamente a la promoción del rock y el metal en su país. Han compartido escenario con grandes leyendas internacionales, consolidándose como una banda de prestigio local. Su música, caracterizada por riffs tradicionales y letras profundas en su idioma materno, ha dejado una marca imborrable en varias generaciones de seguidores del metal en el sudeste de Europa, manteniendo siempre la esencia pura del heavy metal.",
+              "country": "Rumanía",
+              "genre": "Heavy metal",
+              "youtubeUrl": "https://www.youtube.com/user/TrooperRomania",
+              "spotifyUrl": "https://open.spotify.com/artist/7mPU5YS06Msig34yoAHBHL",
+              "instagramUrl": "https://www.instagram.com/trooper.romania/",
+              "facebookUrl": "https://www.facebook.com/TrooperRomania",
+              "imageUrl": "https://trooper.ro/images/band-photo.jpg"
+            }
+          },
+          {
+            "band": "AIRBOURNE",
+            "stage": "Brasov Stage",
+            "start": "19:50",
+            "end": "20:55",
+            "bio": {
+              "name": "AIRBOURNE",
+              "title": "",
+              "description": "Airbourne es una banda de hard rock australiano que se caracteriza por su energía inagotable y su sonido clásico que rinde homenaje a los grandes del rock de los ochenta. Con canciones explosivas, potentes riffs y una actitud salvaje, han sido comparados frecuentemente con AC/DC por su estilo directo y festivo. Sus actuaciones en directo son famosas por ser eventos de alto voltaje, donde la interacción con el público y la entrega total son fundamentales. Han mantenido el estandarte del rock puro en lo más alto, atrayendo a seguidores de todas las edades que buscan energía pura en vivo.",
+              "country": "Australia",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/user/AirbourneOfficial",
+              "spotifyUrl": "https://open.spotify.com/artist/6urzdpGY5yUimWZsgJUoTb",
+              "instagramUrl": "https://www.instagram.com/airbourne/",
+              "facebookUrl": "https://www.facebook.com/airbourne",
+              "imageUrl": "https://airbourneairbourne.com/images/band.jpg"
+            }
+          },
+          {
+            "band": "BUCOVINA",
+            "stage": "Andrei Calmuc Stage",
+            "start": "19:50",
+            "end": "20:40",
+            "bio": {
+              "name": "BUCOVINA",
+              "title": "",
+              "description": "Bucovina es una destacada banda de folk metal proveniente de Rumania, formada en 2000. Su propuesta musical combina elementos épicos y atmosféricos con el folklore de su tierra natal, integrándolos en estructuras de metal extremo. A lo largo de su carrera, han logrado consolidarse como un pilar fundamental en la escena musical rumana, capturando la esencia cultural de la región de Bucovina en sus composiciones. Con letras centradas en la historia, la naturaleza y la identidad, han cautivado a una audiencia internacional, consolidándose como una de las agrupaciones más respetadas dentro de su género.",
+              "country": "Rumanía",
+              "genre": "Folk metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=kYJ_t7-SjZg",
+              "spotifyUrl": "https://open.spotify.com/artist/2Z912EMB8D91VQT4rFUEX1",
+              "instagramUrl": "https://www.instagram.com/bucovina_official/",
+              "facebookUrl": "https://www.facebook.com/BucovinaOficial/",
+              "imageUrl": "https://f4.bcbits.com/img/0025997275_10.jpg"
+            }
+          },
+          {
+            "band": "HELLOWEEN",
+            "stage": "Adrian Rugina Stage",
+            "start": "21:00",
+            "end": "23:00",
+            "bio": {
+              "name": "HELLOWEEN",
+              "title": "",
+              "description": "Helloween es reconocida mundialmente como la creadora del power metal europeo tal y como lo conocemos. Con sus álbumes Keeper of the Seven Keys, establecieron las bases de un sonido veloz, melódico y épico que ha influido en miles de bandas posteriores. Tras décadas de historia y diversas formaciones, lograron reunir a miembros clave para crear una experiencia definitiva en su última etapa. Su legado musical es inmenso, siendo una de las bandas más queridas por su capacidad para crear himnos que han marcado la historia del metal. Siguen demostrando una vitalidad y técnica excepcionales en cada actuación.",
+              "country": "Alemania",
+              "genre": "Power metal",
+              "youtubeUrl": "https://www.youtube.com/user/helloween",
+              "spotifyUrl": "https://open.spotify.com/artist/4pQN0GB0fNEEOfQCaWotsY",
+              "instagramUrl": "https://www.instagram.com/helloweenofficial/",
+              "facebookUrl": "https://www.facebook.com/helloweenofficial",
+              "imageUrl": "https://www.helloween.org/images/promo.jpg"
+            }
+          },
+          {
+            "band": "MALEVOLENCE",
+            "stage": "Andrei Calmuc Stage",
+            "start": "21:10",
+            "end": "22:10",
+            "bio": {
+              "name": "MALEVOLENCE",
+              "title": "",
+              "description": "Malevolence es una banda británica originaria de Sheffield, destacada por su potente mezcla de metalcore, hardcore y thrash metal. Desde su formación, se han ganado una reputación por su sonido agresivo y su intensa presencia en directo. La banda ha evolucionado constantemente, refinando un estilo que equilibra riffs técnicos con una actitud directa y cruda. Su capacidad para conectar con el público mediante una energía desbordante los ha llevado a los escenarios más importantes de la música pesada a nivel global, consolidándose como referentes indiscutibles del metal moderno.",
+              "country": "Reino Unido",
+              "genre": "Metalcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=S3nB43Z9_oE",
+              "spotifyUrl": "https://open.spotify.com/artist/7KFv5Cni7kseXWHJnnejXk",
+              "instagramUrl": "https://www.instagram.com/malevolenceriff/",
+              "facebookUrl": "https://www.facebook.com/MalevolenceRiff/",
+              "imageUrl": "https://mlvst.com/cdn/shop/files/Malevolence_Logo_White.png"
+            }
+          },
+          {
+            "band": "ALEXANDRA CAPITANESCU",
+            "stage": "Andrei Calmuc Stage",
+            "start": "22:40",
+            "end": "23:40",
+            "bio": {
+              "name": "ALEXANDRA CAPITANESCU",
+              "title": "",
+              "description": "Alexandra Capitanescu es una talentosa cantante rumana que ha ganado prominencia en la escena musical de su país gracias a su potente voz y versatilidad interpretativa. Tras su destacada participación en programas de talentos y concursos musicales, ha logrado forjar una carrera enfocada en el rock y el pop-rock. Con un estilo carismático, ha colaborado con diversos músicos y bandas, demostrando una técnica vocal impresionante. Su presencia en festivales de renombre refuerza su estatus como una de las artistas emergentes con mayor proyección en la actual industria musical rumana.",
+              "country": "Rumanía",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=K3f2T-zH33c",
+              "spotifyUrl": "https://open.spotify.com/artist/6C2GlsTc6EVC7uKar8F1G0",
+              "instagramUrl": "https://www.instagram.com/alexandra_capitanescu/",
+              "facebookUrl": "https://www.facebook.com/alexandracapitanescuoficial/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebd24ab31ebfa5d7a830c960e6"
+            }
+          },
+          {
+            "band": "AMORPHIS",
+            "stage": "Brasov Stage",
+            "start": "23:10",
+            "end": "00:10",
+            "bio": {
+              "name": "AMORPHIS",
+              "title": "",
+              "description": "Amorphis es una de las bandas finlandesas más exitosas y longevas, conocida por integrar la mitología nórdica, especialmente el Kalevala, en sus letras. A lo largo de los años, su sonido ha evolucionado de un death metal puro a una mezcla sofisticada de metal melódico, rock progresivo y folk. Esta evolución constante les ha permitido mantener un estatus de banda de culto y de éxito masivo a la vez. Con una capacidad única para crear atmósferas melancólicas y poderosas, son referentes del metal finlandés, admirados por su creatividad, calidad compositiva y su estilo inconfundible y elegante en todo el mundo.",
+              "country": "Finlandia",
+              "genre": "Death metal melódico",
+              "youtubeUrl": "https://www.youtube.com/user/AmorphisOfficial",
+              "spotifyUrl": "https://open.spotify.com/artist/2UOVgpgiNTC6KK0vSC77aD",
+              "instagramUrl": "https://www.instagram.com/amorphisband/",
+              "facebookUrl": "https://www.facebook.com/amorphis",
+              "imageUrl": "https://amorphis.net/images/promo.jpg"
+            }
+          },
+          {
+            "band": "SATYRICON",
+            "stage": "Adrian Rugina Stage",
+            "start": "00:10",
+            "end": "01:10",
+            "bio": {
+              "name": "SATYRICON",
+              "title": "",
+              "description": "Satyricon es una banda central del black metal noruego, formada a principios de los noventa. Liderados por Satyr y Frost, fueron clave en la expansión del género, evolucionando desde un sonido puramente black metal hacia una propuesta más experimental y accesible. Su álbum Nemesis Divina es considerado un clásico absoluto. La banda ha desafiado constantemente las expectativas, incorporando elementos de rock oscuro y producción pulida. Su impacto en la música extrema es profundo, siendo admirados tanto por su aporte al black metal tradicional como por su audaz visión artística que ha llevado al género a nuevos horizontes sonoros mundiales.",
+              "country": "Noruega",
+              "genre": "Black metal",
+              "youtubeUrl": "https://www.youtube.com/user/Satyricon",
+              "spotifyUrl": "https://open.spotify.com/artist/221Rd0FvVxMx7eCbWqjiKd",
+              "instagramUrl": "https://www.instagram.com/satyriconofficial/",
+              "facebookUrl": "https://www.facebook.com/SatyriconOfficial",
+              "imageUrl": "https://www.satyricon.no/images/promo.jpg"
+            }
+          },
+          {
+            "band": "CORONER",
+            "stage": "Andrei Calmuc Stage",
+            "start": "00:10",
+            "end": "01:10",
+            "bio": {
+              "name": "CORONER",
+              "title": "",
+              "description": "Coroner es una banda suiza de thrash metal, fundada a mediados de los años 80, reconocida por su enfoque técnico y experimental dentro del género. A menudo descritos como una banda de culto, destacaron por abandonar los clichés tradicionales del thrash para explorar estructuras complejas, arreglos melódicos y una instrumentación precisa. Su impacto en la música progresiva y extrema ha sido incalculable, influyendo a numerosas generaciones de músicos. Aunque su trayectoria ha tenido pausas significativas, su legado como pioneros del thrash metal técnico permanece intacto, siendo un referente de calidad y originalidad.",
+              "country": "Suiza",
+              "genre": "Thrash metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=S2v4W6i4M1c",
+              "spotifyUrl": "https://open.spotify.com/artist/7lfdXL6PuTM5iWJNvI7PPV",
+              "instagramUrl": "https://www.instagram.com/coroner_band_official/",
+              "facebookUrl": "https://www.facebook.com/coronerband/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebfbe52ed201a8f4d372c56b14"
+            }
+          },
+          {
+            "band": "WOLVES IN THE THRONE ROOM",
+            "stage": "Andrei Calmuc Stage",
+            "start": "01:45",
+            "end": "02:45",
+            "bio": {
+              "name": "WOLVES IN THE THRONE ROOM",
+              "title": "",
+              "description": "Wolves In The Throne Room es una banda estadounidense originaria del noroeste del Pacífico, fundamental en el desarrollo del black metal atmosférico. Desde sus inicios, han explorado temas relacionados con la naturaleza, la mitología pagana y la espiritualidad, alejándose de los tropos convencionales del black metal. Su música se caracteriza por pasajes largos y expansivos, con texturas hipnóticas que buscan crear una conexión profunda con el oyente. A través de una estética oscura y envolvente, han logrado definir un sonido único que trasciende los límites del metal extremo, consolidando su estatus como artistas de culto.",
+              "country": "Estados Unidos",
+              "genre": "Black metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=4s7xZ544p5c",
+              "spotifyUrl": "https://open.spotify.com/artist/5lqyPWmAivV75tII5Vxpet",
+              "instagramUrl": "https://www.instagram.com/wittrofficial/",
+              "facebookUrl": "https://www.facebook.com/wolvesinthethroneroom/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb11fc69db90d555e1d438d773"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-07-31",
+        "dayNumber": 5,
+        "dayLabel": "Viernes 31",
+        "weekdayEs": "Viernes",
+        "doors": "14:30",
+        "stages": [
+          "Adrian Rugina Stage",
+          "Brasov Stage",
+          "Andrei Calmuc Stage"
+        ],
+        "acts": [
+          {
+            "band": "PÂRNAIE",
+            "stage": "Adrian Rugina Stage",
+            "start": "15:00",
+            "end": "15:45",
+            "bio": {
+              "name": "PÂRNAIE",
+              "title": "",
+              "description": "Pârnaie es una banda rumana de punk rock que se caracteriza por su sonido crudo, letras irreverentes y una actitud rebelde. Formada en la escena underground, el grupo aborda temáticas sociales y cotidianas desde una perspectiva satírica y directa, muy alineada con el espíritu tradicional del punk. Sus actuaciones en vivo son conocidas por ser enérgicas y caóticas, logrando una conexión cercana con su audiencia. A través de los años, han mantenido una postura auténtica y comprometida, convirtiéndose en un nombre recurrente en la escena punk de Rumania y participando activamente en festivales locales.",
+              "country": "Rumanía",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=H74kFjYjY9U",
+              "spotifyUrl": "https://open.spotify.com/artist/4Jvd5n8qWqhs4opE3ptGqR",
+              "instagramUrl": "https://www.instagram.com/parnaie_oficial/",
+              "facebookUrl": "https://www.facebook.com/parnaie.punk/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe16fa7f22ba978dae2067779"
+            }
+          },
+          {
+            "band": "HEAVY//HITTER",
+            "stage": "Andrei Calmuc Stage",
+            "start": "15:25",
+            "end": "16:05",
+            "bio": {
+              "name": "HEAVY//HITTER",
+              "title": "",
+              "description": "Heavy//Hitter es una propuesta emergente dentro del género deathcore, caracterizada por un sonido extremadamente agresivo y una ejecución técnica contundente. El grupo ha captado rápidamente la atención por la crudeza de sus composiciones, que siguen la línea de bandas modernas que priorizan el impacto sonoro y la pesadez extrema. Con un enfoque directo y una presencia escénica intensa, la banda se está posicionando como un nombre a seguir en la nueva generación de artistas de metal extremo, destacando por su energía imparable y su dedicación a la brutalidad sonora propia de la escena underground actual.",
+              "country": "Estados Unidos",
+              "genre": "Deathcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=b09m3eLpTto",
+              "spotifyUrl": "https://open.spotify.com/artist/67VjKj4enx3D6auLtAZKCU",
+              "instagramUrl": "https://www.instagram.com/heavyhitter.mp3/",
+              "facebookUrl": "https://www.facebook.com/HeavyHitterfl",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eba4c36db85f7dcb0cfed54b9c"
+            }
+          },
+          {
+            "band": "SIGNS OF THE SWARM",
+            "stage": "Brasov Stage",
+            "start": "15:50",
+            "end": "16:35",
+            "bio": {
+              "name": "SIGNS OF THE SWARM",
+              "title": "",
+              "description": "Signs Of The Swarm es una banda estadounidense de deathcore que se ha ganado un lugar prominente en el panorama actual del metal extremo. Su música se define por una brutalidad sonora sin concesiones, caracterizada por breakdowns pesados, voces guturales profundas y una atmósfera claustrofóbica. A través de lanzamientos que exploran temas oscuros y una técnica instrumental precisa, han captado la atención de los fans más exigentes del género. Su progresión constante y su intensidad en directo los sitúan como uno de los nombres más sólidos y respetados dentro de la nueva ola de bandas de deathcore moderno.",
+              "country": "Estados Unidos",
+              "genre": "Deathcore",
+              "youtubeUrl": "https://www.youtube.com/watch?v=qR0hGj0v3bI",
+              "spotifyUrl": "https://open.spotify.com/artist/0yxJx8OEyDfd7dzLsFuNrS",
+              "instagramUrl": "https://www.instagram.com/signsoftheswarm/",
+              "facebookUrl": "https://www.facebook.com/signsoftheswarm/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3d8cd968fe05c1d3825b896d"
+            }
+          },
+          {
+            "band": "PSYCHONAUT",
+            "stage": "Andrei Calmuc Stage",
+            "start": "16:25",
+            "end": "17:10",
+            "bio": {
+              "name": "PSYCHONAUT",
+              "title": "",
+              "description": "Psychonaut es un trío belga que se destaca por su enfoque ambicioso en el metal post-progresivo. Su propuesta musical es una amalgama de pasajes de rock progresivo, riffs potentes de metal y texturas atmosféricas profundas. A través de composiciones largas y narrativas, la banda explora temas filosóficos y existenciales, creando una experiencia auditiva inmersiva. Su capacidad técnica y su cohesión como grupo les han permitido ganar reconocimiento internacional, consolidándolos como una de las bandas más prometedoras de la escena europea. Su estilo trasciende los límites del metal convencional, ofreciendo una música compleja, reflexiva y poderosamente ejecutada.",
+              "country": "Bélgica",
+              "genre": "Metal post-progresivo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=s5W-J3JmR4g",
+              "spotifyUrl": "https://open.spotify.com/artist/604HhRLmc5DXNS221XKm3a",
+              "instagramUrl": "https://www.instagram.com/psychonautband/",
+              "facebookUrl": "https://www.facebook.com/psychonautband/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebafdc2d8c216673ea95ea23c0"
+            }
+          },
+          {
+            "band": "DECAPITATED",
+            "stage": "Adrian Rugina Stage",
+            "start": "16:40",
+            "end": "17:25",
+            "bio": {
+              "name": "DECAPITATED",
+              "title": "",
+              "description": "Decapitated es una de las bandas de death metal técnico más influyentes de Polonia. Fundada a finales de los años 90, la agrupación ha destacado desde sus inicios por su capacidad técnica excepcional y su habilidad para componer estructuras complejas. A pesar de haber atravesado tragedias personales significativas, la banda ha demostrado una resiliencia inmensa, regresando constantemente a los escenarios con nuevos lanzamientos que exploran la brutalidad y la técnica refinada. Su legado es fundamental en la evolución del death metal moderno, siendo una referencia obligada tanto por su ejecución instrumental como por su intensa composición.",
+              "country": "Polonia",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=SjJ0vN2kUfM",
+              "spotifyUrl": "https://open.spotify.com/artist/17MbhJOaaPHuWnRaWU9xkc",
+              "instagramUrl": "https://www.instagram.com/decapitatedband/",
+              "facebookUrl": "https://www.facebook.com/decapitated/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb249191dd1ccc322b0b313e7"
+            }
+          },
+          {
+            "band": "FEUERSCHWANZ",
+            "stage": "Brasov Stage",
+            "start": "17:30",
+            "end": "18:20",
+            "bio": {
+              "name": "FEUERSCHWANZ",
+              "title": "",
+              "description": "Feuerschwanz es una banda alemana de folk metal, famosa por sus presentaciones teatrales, estética medieval y un enfoque festivo de la música. Lo que comenzó como un proyecto enfocado en la parodia y la diversión se ha transformado en una banda seria con una producción grandiosa y pegadiza. Combinando elementos del metal con instrumentos tradicionales, logran crear himnos épicos sobre historias de héroes, batallas y banquetes. Su creciente popularidad en Alemania y el resto de Europa se debe a su capacidad para convertir cada concierto en un espectáculo lleno de energía, color y camaradería entre sus seguidores.",
+              "country": "Alemania",
+              "genre": "Folk metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=zT_vR5t630M",
+              "spotifyUrl": "https://open.spotify.com/artist/2Ct54gNxKnYLnXk9HhviMI",
+              "instagramUrl": "https://www.instagram.com/feuerschwanz/",
+              "facebookUrl": "https://www.facebook.com/feuerschwanz/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb412d9bee52f47326eb0ed7d0"
+            }
+          },
+          {
+            "band": "VOIVOD",
+            "stage": "Andrei Calmuc Stage",
+            "start": "17:40",
+            "end": "18:30",
+            "bio": {
+              "name": "VOIVOD",
+              "title": "",
+              "description": "Voivod es una legendaria banda canadiense de thrash metal, reconocida por su evolución única hacia sonidos experimentales y progresivos. Desde los años 80, la banda ha desafiado las expectativas, incorporando elementos de ciencia ficción, disonancia y estructuras complejas en su música. Su estilo innovador les ha permitido mantenerse vigentes y creativos durante décadas, influyendo significativamente en el metal progresivo y alternativo. Con una identidad sonora inconfundible y una trayectoria artística marcada por el riesgo y la originalidad, Voivod es considerada una de las bandas más respetadas y queridas por la crítica y los fans del metal técnico a nivel mundial.",
+              "country": "Canadá",
+              "genre": "Thrash metal progresivo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=oTq3U2k-f2Y",
+              "spotifyUrl": "https://open.spotify.com/artist/0lFiKrJUofJpnrAJnMsnQ3",
+              "instagramUrl": "https://www.instagram.com/voivodvofficial/",
+              "facebookUrl": "https://www.facebook.com/Voivod/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb74a4af4277dc0fe4d80d4ca"
+            }
+          },
+          {
+            "band": "PERIPHERY",
+            "stage": "Adrian Rugina Stage",
+            "start": "18:25",
+            "end": "19:25",
+            "bio": {
+              "name": "PERIPHERY",
+              "title": "",
+              "description": "Periphery es un grupo estadounidense pionero y líder en el movimiento djent dentro del metal progresivo. Conocidos por su uso innovador de guitarras de siete y ocho cuerdas, patrones rítmicos complejos y una producción técnica de alta calidad, han redefinido los estándares de la música moderna. Su capacidad para combinar melodías vocales accesibles con pasajes instrumentales intrincados ha atraído a una amplia base de seguidores. Con varios álbumes aclamados por la crítica, la banda continúa explorando nuevas fronteras creativas, consolidándose como una de las fuerzas más creativas e influyentes dentro de la escena internacional del metal.",
+              "country": "Estados Unidos",
+              "genre": "Djent",
+              "youtubeUrl": "https://www.youtube.com/watch?v=02f1G82m6mI",
+              "spotifyUrl": "https://open.spotify.com/artist/6d24kC5fxHFOSEAmjQPPhc",
+              "instagramUrl": "https://www.instagram.com/periphery/",
+              "facebookUrl": "https://www.facebook.com/PeripheryBand/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebb85925b08bd7d7530afd8473"
+            }
+          },
+          {
+            "band": "EVERGREY",
+            "stage": "Andrei Calmuc Stage",
+            "start": "19:00",
+            "end": "20:00",
+            "bio": {
+              "name": "EVERGREY",
+              "title": "",
+              "description": "Evergrey es una banda sueca de metal progresivo conocida por su profundidad emocional, composiciones melódicas y el sello vocal distintivo de Tom S. Englund. A lo largo de su carrera, han explorado temas oscuros como el miedo, la alienación y la lucha interna, entrelazándolos con una ejecución técnica refinada. Con una discografía sólida y aclamada, se han consolidado como un referente del metal moderno en Europa. Su música destaca por su capacidad de equilibrar la pesadez de los riffs con pasajes atmosféricos melancólicos, logrando siempre una conexión emocional poderosa que resuena profundamente con sus seguidores en todo el mundo.",
+              "country": "Suecia",
+              "genre": "Metal progresivo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=d_k8S-L81_A",
+              "spotifyUrl": "https://open.spotify.com/artist/4S0foX2r0RlC12KBW8u73D",
+              "instagramUrl": "https://www.instagram.com/evergreyofficial/",
+              "facebookUrl": "https://www.facebook.com/Evergrey/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb508c02089af4867be1f7e066"
+            }
+          },
+          {
+            "band": "CARCASS",
+            "stage": "Brasov Stage",
+            "start": "19:30",
+            "end": "20:35",
+            "bio": {
+              "name": "CARCASS",
+              "title": "",
+              "description": "Carcass es una banda británica fundamental en la historia del metal extremo, conocidos por ser pioneros en el desarrollo del goregrind y el death metal melódico. Desde sus inicios a finales de los 80, han desafiado constantemente las convenciones musicales con estructuras complejas, letras anatómicas y una maestría instrumental técnica. Su álbum 'Heartwork' es considerado una obra maestra que definió gran parte de las bases del metal melódico posterior. Tras años de ausencia, su retorno ha sido recibido con gran entusiasmo, reafirmando su estatus como una banda que no solo influyó en el pasado, sino que mantiene una relevancia absoluta.",
+              "country": "Reino Unido",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=ZtN7l8-xK3c",
+              "spotifyUrl": "https://open.spotify.com/artist/5lhaM01nwvsMZpmPY2HVER",
+              "instagramUrl": "https://www.instagram.com/carcassband/",
+              "facebookUrl": "https://www.facebook.com/OfficialCarcass/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebf8ec9d92b03893c45fe4e1db"
+            }
+          },
+          {
+            "band": "LEFT TO DIE",
+            "stage": "Andrei Calmuc Stage",
+            "start": "20:30",
+            "end": "21:30",
+            "bio": {
+              "name": "LEFT TO DIE",
+              "title": "",
+              "description": "Left To Die es un supergrupo de death metal formado por músicos veteranos, incluyendo a antiguos integrantes de la icónica banda Death, como Terry Butler y Rick Rozz. Su propósito principal es rendir homenaje al legado musical de los primeros años de Death, interpretando temas clásicos con una fidelidad técnica y una pasión renovada. Esta formación ha permitido que una nueva generación de fans experimente la energía y la brutalidad de un sonido histórico en vivo. La banda se ha convertido en un tributo esencial, celebrando el impacto fundacional que Death tuvo en el desarrollo del género.",
+              "country": "Estados Unidos",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=2S9G_4lS1nI",
+              "spotifyUrl": "https://open.spotify.com/artist/2cfAUKaPP0oQKpZNXDrS2m",
+              "instagramUrl": "https://www.instagram.com/lefttodie_official/",
+              "facebookUrl": "https://www.facebook.com/lefttodieofficial/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb29d5a8ca466c539e4b6778f6"
+            }
+          },
+          {
+            "band": "GRANDSON",
+            "stage": "Adrian Rugina Stage",
+            "start": "20:40",
+            "end": "21:40",
+            "bio": {
+              "name": "GRANDSON",
+              "title": "",
+              "description": "Grandson, el proyecto del músico Jordan Benjamin, es una propuesta innovadora que fusiona rock alternativo, elementos electrónicos y rap con mensajes líricos profundamente comprometidos con la justicia social. A través de un estilo que él mismo denomina rock moderno con influencia urbana, Grandson utiliza su plataforma para cuestionar el status quo y abordar temas de salud mental, política y activismo. Su sonido distintivo y su energía magnética en el escenario le han permitido ganar una audiencia global apasionada. Es una de las voces más honestas y directas de la música rock contemporánea, destacando por su autenticidad artística.",
+              "country": "Canadá",
+              "genre": "Rock alternativo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=d_k8S-L81_A",
+              "spotifyUrl": "https://open.spotify.com/artist/4ZgQDCtRqZlhLswVS6MHN4",
+              "instagramUrl": "https://www.instagram.com/grandson/",
+              "facebookUrl": "https://www.facebook.com/grandsonmusic/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebcd18b583c4c941ef0813f880"
+            }
+          },
+          {
+            "band": "THE GATHERING",
+            "stage": "Brasov Stage",
+            "start": "21:45",
+            "end": "22:50",
+            "bio": {
+              "name": "THE GATHERING",
+              "title": "",
+              "description": "The Gathering es una banda neerlandesa influyente, reconocida por su capacidad de reinvención y su papel crucial en la evolución del metal atmosférico. Desde sus raíces en el death metal, la banda transitó hacia una propuesta más introspectiva y experimental, incorporando elementos de rock progresivo, trip-hop y electrónica. Con una atmósfera envolvente y una composición emocionalmente profunda, el grupo ha dejado una huella imborrable en el panorama musical. Su enfoque único y valiente para explorar nuevos horizontes sonoros los ha convertido en un pilar del género, manteniendo siempre una integridad artística inquebrantable a lo largo de décadas de carrera.",
+              "country": "Países Bajos",
+              "genre": "Rock atmosférico",
+              "youtubeUrl": "https://www.youtube.com/watch?v=uK1l0P7020o",
+              "spotifyUrl": "https://open.spotify.com/artist/2kO6zjt4a1OIqxOERhliEX",
+              "instagramUrl": "https://www.instagram.com/thegatheringband/",
+              "facebookUrl": "https://www.facebook.com/thegatheringband/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb6318106c2f295f15719df689"
+            }
+          },
+          {
+            "band": "HVNDS",
+            "stage": "Andrei Calmuc Stage",
+            "start": "22:00",
+            "end": "23:00",
+            "bio": {
+              "name": "HVNDS",
+              "title": "",
+              "description": "Hvnds es una banda rumana que se mueve en el ámbito del nu metal, integrando elementos contemporáneos y un enfoque sonoro enérgico. Se han dado a conocer por sus letras incisivas y su estilo visual distintivo. A lo largo de sus años en la escena, han logrado construir una identidad basada en la fusión de ritmos pesados con una actitud rebelde. Su música resuena especialmente en el público más joven, gracias a su capacidad para adaptar los sonidos del metal de los 2000 a la actualidad, logrando una propuesta fresca y relevante dentro de la música alternativa en Rumania.",
+              "country": "Rumanía",
+              "genre": "Nu metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=U3u7b-S7f9s",
+              "spotifyUrl": "https://open.spotify.com/artist/46N42YdqniE8UPy3fODQRt",
+              "instagramUrl": "https://www.instagram.com/hvndsofficial/",
+              "facebookUrl": "https://www.facebook.com/hvndsofficial/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb0f57ce5c8f0158304a0c6783"
+            }
+          },
+          {
+            "band": "THE PRODIGY",
+            "stage": "Adrian Rugina Stage",
+            "start": "23:00",
+            "end": "00:30",
+            "bio": {
+              "name": "THE PRODIGY",
+              "title": "",
+              "description": "The Prodigy es una banda británica pionera, considerada fundamental en la popularización del género big beat y la música electrónica de baile. Formados a principios de los 90, su sonido agresivo y lleno de energía fusionó la cultura rave con elementos de rock, punk e industrial. Con éxitos mundiales, han logrado un impacto masivo en la cultura popular, caracterizándose por actuaciones en vivo viscerales y provocadoras. Su legado es enorme, habiendo influenciado a artistas de múltiples géneros y demostrando que la electrónica puede tener una actitud tan rebelde y potente como el rock más pesado.",
+              "country": "Reino Unido",
+              "genre": "Big beat",
+              "youtubeUrl": "https://www.youtube.com/watch?v=wmin5WkOuPw",
+              "spotifyUrl": "https://open.spotify.com/artist/4k1ELeJKT1ISyDv8JivPpB",
+              "instagramUrl": "https://www.instagram.com/theprodigyofficial/",
+              "facebookUrl": "https://www.facebook.com/theprodigyofficial/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb147841812056c247407811f3"
+            }
+          },
+          {
+            "band": "INSOMNIUM",
+            "stage": "Andrei Calmuc Stage",
+            "start": "23:30",
+            "end": "00:30",
+            "bio": {
+              "name": "INSOMNIUM",
+              "title": "",
+              "description": "Insomnium es una banda finlandesa reconocida como uno de los pilares del death metal melódico. Su música se caracteriza por combinar melodías tristes y atmosféricas con pasajes de death metal técnico, creando un sonido evocador inspirado por la melancolía y la belleza de los paisajes nórdicos. Con letras poéticas que exploran temas de pérdida, naturaleza y el alma humana, han alcanzado un reconocimiento internacional masivo. La banda se destaca por su consistencia compositiva y su capacidad para llevar al oyente a un viaje emocional intenso, reafirmándose álbum tras álbum como maestros del género en la escena actual.",
+              "country": "Finlandia",
+              "genre": "Death metal melódico",
+              "youtubeUrl": "https://www.youtube.com/watch?v=GkI2247F-vA",
+              "spotifyUrl": "https://open.spotify.com/artist/3uIgLG971oRM5fe6v8lvQS",
+              "instagramUrl": "https://www.instagram.com/insomniumofficial/",
+              "facebookUrl": "https://www.facebook.com/insomniumofficial/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb3c1d18f0fc7bd0b1fa5b607b"
+            }
+          },
+          {
+            "band": "SOULFLY",
+            "stage": "Brasov Stage",
+            "start": "00:40",
+            "end": "01:40",
+            "bio": {
+              "name": "SOULFLY",
+              "title": "",
+              "description": "Soulfly es una banda estadounidense de metal, fundada por Max Cavalera tras su salida de Sepultura. Su sonido se distingue por una fusión única de nu metal, thrash y elementos de música tribal y étnica. Esta combinación ha permitido a la banda crear una identidad sonora propia que explora temas de espiritualidad, política y resistencia. Con una discografía extensa y una presencia constante en giras mundiales, Soulfly ha logrado mantener su relevancia durante años, consolidándose como un referente indispensable dentro de la escena del metal internacional gracias a su agresividad y a su capacidad para integrar diversas influencias culturales.",
+              "country": "Estados Unidos",
+              "genre": "Nu metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=c9yJ907bJ9U",
+              "spotifyUrl": "https://open.spotify.com/artist/6159IBm5gLPwG4BcJXseXc",
+              "instagramUrl": "https://www.instagram.com/thesoulflytribe/",
+              "facebookUrl": "https://www.facebook.com/SoulflyOfficial/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe2eccbfac0e8f9961ea544ff"
+            }
+          },
+          {
+            "band": "SVENTEVITH",
+            "stage": "Andrei Calmuc Stage",
+            "start": "01:00",
+            "end": "02:00",
+            "bio": {
+              "name": "SVENTEVITH",
+              "title": "",
+              "description": "Sventevith es una banda rumana de black metal que se sumerge en las profundidades de la oscuridad y la mitología oscura. Su estilo se mantiene fiel a la esencia cruda y atmosférica del black metal tradicional, incorporando elementos folclóricos que evocan el misticismo del pasado. La agrupación se enfoca en crear una experiencia ritualística, donde tanto la instrumentación como la voz juegan un papel vital para construir una atmósfera opresiva y envolvente. Aunque operan desde la escena underground, su compromiso con el género los ha convertido en un nombre respetado por quienes buscan los sonidos más auténticos y sombríos de…",
+              "country": "Rumanía",
+              "genre": "Black metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=s9f9g7e8u8i",
+              "spotifyUrl": "https://open.spotify.com/artist/5TQaBSTOSypp7S4jfSnN3F",
+              "instagramUrl": "https://www.instagram.com/sventevith_band/",
+              "facebookUrl": "https://www.facebook.com/Sventevith-100650942547167/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb96c808dccf385766304f0400"
             }
           }
         ]
