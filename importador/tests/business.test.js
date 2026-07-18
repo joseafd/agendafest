@@ -30,11 +30,18 @@ const targetServer = http.createServer((req, res) => {
             <tr><td>Annisokay</td><td>Main Stage</td><td>19:00 - 20:00</td></tr>
             <tr><td>Gojira</td><td>Main Stage</td><td>22:00 - 23:30</td></tr>
           </table>
+          <a href="/the-timetable">The timetable is here!</a>
           <a href="/horarios.pdf">Descargar PDF de Horarios</a>
           <img src="/logo.png" />
         </body>
       </html>
     `);
+  } else if (req.url === '/the-timetable') {
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end('<html><head><title>Timetable</title></head><body><img src="/day-1.jpg" alt="Day 1 timetable"></body></html>');
+  } else if (req.url === '/day-1.jpg') {
+    res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+    res.end(Buffer.from([0xff, 0xd8, 0xff, 0xd9]));
   } else if (req.url === '/horarios.pdf') {
     // Return empty mock file as PDF (since pdf-parse will fail, it handles gracefully or we can mock it)
     res.writeHead(200, { 'Content-Type': 'application/pdf' });
@@ -81,6 +88,9 @@ async function runBusinessTests() {
     
     // Check images
     assert.ok(data.images.some(img => img.url.includes('logo.png')));
+    assert.ok(data.pages.some(page => page.url.includes('/the-timetable')));
+    const timetableImage = data.images.find(img => img.url.includes('/day-1.jpg'));
+    assert.ok(timetableImage && timetableImage.data && timetableImage.mimeType === 'image/jpeg');
   });
 
   // TEST 2: Extractor Gemini en modo Mock

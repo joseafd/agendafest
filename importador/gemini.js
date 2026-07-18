@@ -13,6 +13,7 @@ function extractLineupWithAi(scrapedData) {
 
     const textToAnalyze = [
       `URL del festival: ${scrapedData.url}`,
+      (scrapedData.pages || []).map(p => `Página descubierta (${p.url}):\n${p.text || ''}`).join('\n\n'),
       `Tablas y contenidos HTML de horarios:\n${scrapedData.tablesText}`,
       scrapedData.pdfs.map(p => `Contenido de PDF (${p.url}):\n${p.text || ''}`).join('\n\n')
     ].join('\n\n');
@@ -63,11 +64,17 @@ function extractLineupWithAi(scrapedData) {
       `Por favor extrae y estructura la programación del festival a partir de los siguientes datos:\n\n` +
       `<scraped_data>\n${textToAnalyze}\n</scraped_data>`;
 
+    const imageParts = (scrapedData.images || [])
+      .filter(image => image.data && image.mimeType)
+      .map(image => ({
+        inlineData: { mimeType: image.mimeType, data: image.data }
+      }));
+
     const requestBody = JSON.stringify({
       contents: [
         {
           role: 'user',
-          parts: [{ text: promptText }]
+          parts: [{ text: promptText }, ...imageParts]
         }
       ],
       systemInstruction: {
@@ -107,7 +114,7 @@ function extractLineupWithAi(scrapedData) {
       }
     });
 
-    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
     
     let parsedUrl;
     try {
@@ -123,9 +130,10 @@ function extractLineupWithAi(scrapedData) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'x-goog-api-key': apiKey,
         'Content-Length': Buffer.byteLength(requestBody)
       },
-      timeout: 30000 // 30s timeout
+      timeout: 120000
     };
 
     const req = https.request(options, (res) => {

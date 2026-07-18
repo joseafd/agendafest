@@ -191,7 +191,9 @@ async function pollImportStatus() {
 
 function renderReviewTable(result) {
   const tbody = document.getElementById('lineupTableBody');
+  const approveButton = document.getElementById('btnApproveImport');
   tbody.innerHTML = '';
+  approveButton.disabled = true;
 
   if (!result || !result.lineup || result.lineup.length === 0) {
     tbody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding:15px;">No se detectaron actuaciones.</td></tr>';
@@ -221,11 +223,14 @@ function renderReviewTable(result) {
     `;
     tbody.appendChild(tr);
   });
+  approveButton.disabled = false;
 }
 
 function deleteRow(btn) {
   const row = btn.parentNode.parentNode;
   row.parentNode.removeChild(row);
+  document.getElementById('btnApproveImport').disabled =
+    document.querySelectorAll('#lineupTableBody td[contenteditable="true"]').length === 0;
 }
 
 async function approveImport() {
@@ -247,6 +252,13 @@ async function approveImport() {
       approvedLineup.push({ artistName, day, stage, startTime, endTime, spotifyId });
     }
   });
+
+  if (approvedLineup.length === 0) {
+    feedback.style.display = 'block';
+    feedback.style.color = '#ef4444';
+    feedback.textContent = 'No hay actuaciones válidas para importar.';
+    return;
+  }
 
   feedback.style.display = 'block';
   feedback.style.color = '#eab308'; // Warning color (yellow)

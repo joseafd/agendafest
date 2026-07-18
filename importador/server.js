@@ -347,11 +347,16 @@ app.post('/api/import/process', requireAuth, (req, res) => {
       if (scrapedData.pdfs.length > 0) {
         transaction.logs.push(`[${new Date().toISOString()}] Detección de ${scrapedData.pdfs.length} archivo(s) PDF. Texto extraído.`);
       }
+      transaction.logs.push(`[${new Date().toISOString()}] Enlaces internos relevantes: ${Math.max(0, scrapedData.pages.length - 1)}. Imágenes enviadas a Gemini: ${scrapedData.images.filter(image => image.data).length}.`);
       
       // 2. Structuring with Gemini AI
       transaction.logs.push(`[${new Date().toISOString()}] Analizando contenidos con inteligencia artificial (Gemini)...`);
       const lineupResult = await extractLineupWithAi(scrapedData);
-      transaction.logs.push(`[${new Date().toISOString()}] Cartel y horarios estructurados con éxito. Procesando artistas...`);
+      if (!Array.isArray(lineupResult.lineup) || lineupResult.lineup.length === 0) {
+        transaction.logs.push(`[${new Date().toISOString()}] No se detectaron actuaciones. El borrador requiere más fuentes o revisión.`);
+      } else {
+        transaction.logs.push(`[${new Date().toISOString()}] ${lineupResult.lineup.length} actuaciones estructuradas. Procesando artistas...`);
+      }
 
       // 3. Spotify enrichment
       transaction.logs.push(`[${new Date().toISOString()}] Consultando identificadores de Spotify para artistas...`);
@@ -406,7 +411,7 @@ app.post('/api/import/save', requireAuth, async (req, res) => {
     return res.status(404).json({ error: 'Transacción no encontrada.' });
   }
 
-  if (!lineup || !Array.isArray(lineup)) {
+  if (!lineup || !Array.isArray(lineup) || lineup.length === 0) {
     return res.status(400).json({ error: 'Datos de cartel inválidos.' });
   }
 
