@@ -5,6 +5,85 @@ const ENRICHMENT_GEMINI_MODEL = 'gemini-3.1-flash-lite';
 const FREE_TIER_MIN_INTERVAL_MS = 3500;
 let nextFreeTierRequestAt = 0;
 
+const COUNTRY_TO_SPANISH = new Map(Object.entries({
+  'argentina': 'Argentina', 'australia': 'Australia', 'austria': 'Austria', 'belgium': 'Bélgica',
+  'brazil': 'Brasil', 'canada': 'Canadá', 'chile': 'Chile', 'colombia': 'Colombia',
+  'croatia': 'Croacia', 'czech republic': 'República Checa', 'czechia': 'Chequia', 'denmark': 'Dinamarca',
+  'finland': 'Finlandia', 'france': 'Francia', 'germany': 'Alemania', 'greece': 'Grecia',
+  'hungary': 'Hungría', 'iceland': 'Islandia', 'ireland': 'Irlanda', 'italy': 'Italia',
+  'japan': 'Japón', 'mexico': 'México', 'netherlands': 'Países Bajos', 'the netherlands': 'Países Bajos',
+  'new zealand': 'Nueva Zelanda', 'norway': 'Noruega', 'poland': 'Polonia', 'portugal': 'Portugal',
+  'romania': 'Rumanía', 'rumania': 'Rumanía', 'rumanía': 'Rumanía', 'russia': 'Rusia',
+  'serbia': 'Serbia', 'slovakia': 'Eslovaquia', 'slovenia': 'Eslovenia', 'spain': 'España',
+  'sweden': 'Suecia', 'switzerland': 'Suiza', 'turkey': 'Turquía', 'ukraine': 'Ucrania',
+  'united kingdom': 'Reino Unido', 'uk': 'Reino Unido', 'u.k.': 'Reino Unido', 'england': 'Inglaterra',
+  'scotland': 'Escocia', 'wales': 'Gales', 'united states': 'Estados Unidos', 'united states of america': 'Estados Unidos',
+  'usa': 'Estados Unidos', 'u.s.a.': 'Estados Unidos', 'us': 'Estados Unidos', 'south africa': 'Sudáfrica'
+}));
+
+const GENRE_TO_SPANISH = new Map(Object.entries({
+  'german metalcore': 'Metalcore alemán', 'french metal': 'Metal francés',
+  'french death metal': 'Death metal francés', 'swedish death metal': 'Death metal sueco',
+  'norwegian black metal': 'Black metal noruego', 'american metalcore': 'Metalcore estadounidense',
+  'alternative metal': 'Metal alternativo', 'alternative rock': 'Rock alternativo',
+  'melodic death metal': 'Death metal melódico', 'technical death metal': 'Death metal técnico',
+  'progressive death metal': 'Death metal progresivo', 'symphonic metal': 'Metal sinfónico',
+  'progressive metal': 'Metal progresivo', 'progressive rock': 'Rock progresivo',
+  'modern rock': 'Rock moderno', 'industrial metal': 'Metal industrial', 'industrial rock': 'Rock industrial',
+  'gothic metal': 'Metal gótico', 'gothic rock': 'Rock gótico', 'folk metal': 'Folk metal',
+  'power metal': 'Power metal', 'heavy metal': 'Heavy metal', 'death metal': 'Death metal',
+  'black metal': 'Black metal', 'thrash metal': 'Thrash metal', 'doom metal': 'Doom metal',
+  'sludge metal': 'Sludge metal', 'nu metal': 'Nu metal', 'metalcore': 'Metalcore',
+  'deathcore': 'Deathcore', 'hardcore': 'Hardcore', 'melodic hardcore': 'Hardcore melódico',
+  'post-hardcore': 'Post-hardcore', 'punk rock': 'Punk rock', 'horror punk': 'Punk de horror',
+  'rock': 'Rock', 'punk': 'Punk', 'metal': 'Metal'
+}));
+
+function normalizeKey(value) {
+  return String(value || '').trim().toLowerCase().replace(/\s+/g, ' ');
+}
+
+function translateCountryToSpanish(value) {
+  const original = String(value || '').trim();
+  return COUNTRY_TO_SPANISH.get(normalizeKey(original)) || original;
+}
+
+function translateGenreToSpanish(value) {
+  const original = String(value || '').trim();
+  if (!original) return '';
+  const key = normalizeKey(original);
+  if (GENRE_TO_SPANISH.has(key)) return GENRE_TO_SPANISH.get(key);
+  const translated = key
+    .replace(/\bgerman\b/g, 'alemán').replace(/\bfrench\b/g, 'francés')
+    .replace(/\bswedish\b/g, 'sueco').replace(/\bnorwegian\b/g, 'noruego')
+    .replace(/\bamerican\b/g, 'estadounidense').replace(/\bbritish\b/g, 'británico')
+    .replace(/\bspanish\b/g, 'español').replace(/\bitalian\b/g, 'italiano')
+    .replace(/\bmelodic\b/g, 'melódico').replace(/\bprogressive\b/g, 'progresivo')
+    .replace(/\balternative\b/g, 'alternativo').replace(/\bsymphonic\b/g, 'sinfónico')
+    .replace(/\btechnical\b/g, 'técnico').replace(/\bmodern\b/g, 'moderno')
+    .replace(/\bexperimental\b/g, 'experimental');
+  return translated.charAt(0).toUpperCase() + translated.slice(1);
+}
+
+function limitWords(value, maximum = 100) {
+  const words = String(value || '').trim().split(/\s+/).filter(Boolean);
+  if (words.length <= maximum) return words.join(' ');
+  return `${words.slice(0, maximum).join(' ').replace(/[,:;.!?…-]+$/, '')}…`;
+}
+
+function countWords(value) {
+  return String(value || '').trim().split(/\s+/).filter(Boolean).length;
+}
+
+function normalizeSpanishArtistMetadata(item) {
+  return {
+    ...item,
+    country: translateCountryToSpanish(item.country),
+    genre: translateGenreToSpanish(item.genre || item.spotifyGenres?.[0] || ''),
+    bio: limitWords(item.bio, 100)
+  };
+}
+
 function getModelCandidates(configuredModel = process.env.IA_MODEL) {
   return [...new Set([configuredModel, DEFAULT_GEMINI_MODEL, ENRICHMENT_GEMINI_MODEL].filter(Boolean))];
 }
@@ -112,8 +191,9 @@ const artistResponseSchema = {
       items: {
         type: 'OBJECT',
         properties: {
-          artistName: { type: 'STRING' }, country: { type: 'STRING' }, genre: { type: 'STRING' },
-          description: { type: 'STRING' }, bio: { type: 'STRING' }, youtubeUrl: { type: 'STRING' },
+          artistName: { type: 'STRING' }, country: { type: 'STRING', description: 'Nombre del país en español' },
+          genre: { type: 'STRING', description: 'Género musical principal expresado en español' },
+          description: { type: 'STRING' }, bio: { type: 'STRING', description: 'Biografía en español de 60 a 100 palabras' }, youtubeUrl: { type: 'STRING' },
           imageUrl: { type: 'STRING' }, officialWebsite: { type: 'STRING' }, instagramUrl: { type: 'STRING' },
           facebookUrl: { type: 'STRING' }, xUrl: { type: 'STRING' }, tiktokUrl: { type: 'STRING' },
           sourceUrls: { type: 'ARRAY', items: { type: 'STRING' } }
@@ -144,6 +224,7 @@ async function enrichArtistsWithAi(lineup, edition) {
     const researchPrompt = `${allowPaidSearch ? 'Investiga mediante Google Search' : 'Identifica usando únicamente conocimientos fiables'} estos artistas que actúan en ${edition.name} (${edition.year}): ${names.join(', ')}.\n` +
       'No inventes datos ni URLs. Deja vacío todo dato que no puedas asegurar. ' +
       'Para cada nombre aporta país, género principal, descripción breve, biografía, vídeo de YouTube, imagen pública, web oficial, Instagram, Facebook, X y TikTok. ' +
+      'El país, el género y la biografía deben estar escritos en español. La biografía debe ser informativa, verificable y tener entre 60 y 100 palabras, sin superar nunca las 100 palabras. ' +
       `${allowPaidSearch ? 'Incluye también las URLs de las fuentes.' : 'No cites fuentes ni enlaces recordados de memoria.'}`;
     let notes = '';
     if (allowPaidSearch) {
@@ -168,7 +249,7 @@ async function enrichArtistsWithAi(lineup, edition) {
     for (const artist of parsed.artists || []) metadata.set(artist.artistName.toLowerCase(), artist);
   }
 
-  return lineup.map(item => ({ ...item, ...(metadata.get(item.artistName.toLowerCase()) || {}) }));
+  return lineup.map(item => normalizeSpanishArtistMetadata({ ...item, ...(metadata.get(item.artistName.toLowerCase()) || {}) }));
 }
 
 /**
@@ -315,5 +396,10 @@ module.exports = {
   parseRetryDelayMs,
   getArtistBatchSize,
   getRetryWaitMs,
+  translateCountryToSpanish,
+  translateGenreToSpanish,
+  limitWords,
+  countWords,
+  normalizeSpanishArtistMetadata,
   FREE_TIER_MIN_INTERVAL_MS
 };

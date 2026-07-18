@@ -268,7 +268,7 @@ async function runExcelTests() {
     assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('País')).value, 'Rumanía');
     assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Género principal')).value, 'Metal');
     assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Bio')).value, 'Biografía verificada de prueba.');
-    assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Revisado')).value, true);
+    assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Revisado')).value, false, 'Una bio demasiado corta no debe marcar la ficha como completa');
     assert.strictEqual(rockstadtArtist.getCell(artistHeaders.indexOf('Imagen Aprobada')).value, false);
 
     let resurrectionAfter = 0;

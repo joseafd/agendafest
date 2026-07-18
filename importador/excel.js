@@ -428,7 +428,8 @@ async function saveImportToExcel(approvedData, user, importId) {
       const revCol = freshArtHeaders.indexOf('Revisado');
       const imgApprovedCol = freshArtHeaders.indexOf('Imagen Aprobada');
       const hasSocial = Boolean(item.instagramUrl || item.facebookUrl || item.xUrl || item.tiktokUrl);
-      const metadataComplete = Boolean(item.country && item.genre && item.bio && item.youtubeUrl && item.imageUrl && hasSocial);
+      const bioWordCount = String(item.bio || '').trim().split(/\s+/).filter(Boolean).length;
+      const metadataComplete = Boolean(item.country && item.genre && bioWordCount >= 60 && bioWordCount <= 100 && item.youtubeUrl && item.imageUrl && hasSocial);
       const artistValues = {
         'País': item.country || '',
         'Género principal': item.genre || item.spotifyGenres?.[0] || '',

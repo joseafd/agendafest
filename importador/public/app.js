@@ -250,7 +250,12 @@ function renderReviewTable(result) {
     }
 
     tr.dataset.index = String(index);
-    const basicMissing = [!item.country && 'país', !item.genre && 'género', !item.bio && 'bio'].filter(Boolean);
+    const bioWordCount = String(item.bio || '').trim().split(/\s+/).filter(Boolean).length;
+    const basicMissing = [
+      !item.country && 'país',
+      !item.genre && 'género',
+      !item.bio ? 'bio' : bioWordCount < 60 ? `bio demasiado corta (${bioWordCount}/60 palabras)` : false
+    ].filter(Boolean);
     const basicComplete = basicMissing.length === 0;
     const hasSocial = Boolean(item.instagramUrl || item.facebookUrl || item.xUrl || item.tiktokUrl);
     const contentMissing = [!item.youtubeUrl && 'vídeo', !item.imageUrl && 'imagen', !hasSocial && 'RRSS'].filter(Boolean);

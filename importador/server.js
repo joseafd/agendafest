@@ -17,7 +17,7 @@ const {
 } = require('./security');
 
 const { scrapeFestival } = require('./scraper');
-const { extractLineupWithAi, enrichArtistsWithAi } = require('./gemini');
+const { extractLineupWithAi, enrichArtistsWithAi, normalizeSpanishArtistMetadata } = require('./gemini');
 const { searchSpotifyArtistDetailed, isSpotifyConfigured } = require('./spotify');
 const { enrichArtistsWithOpenMetadata } = require('./open-metadata');
 const { saveImportToExcel, buildImportPreview } = require('./excel');
@@ -436,7 +436,7 @@ app.post('/api/import/process', requireAuth, (req, res) => {
         transaction.logs.push(`[${new Date().toISOString()}] ${lineupResult.lineup.length} actuaciones estructuradas. Procesando artistas...`);
       }
 
-      transaction.logs.push(`[${new Date().toISOString()}] Investigando país, género, bio, vídeo, imagen y redes sociales con fuentes web...`);
+      transaction.logs.push(`[${new Date().toISOString()}] Investigando país, género y biografía en español, además de vídeo, imagen y redes sociales...`);
       lineupResult.lineup = await enrichArtistsWithAi(lineupResult.lineup, lineupResult.edition);
       transaction.logs.push(`[${new Date().toISOString()}] Metadatos artísticos investigados. Completando identificadores musicales...`);
 
@@ -488,6 +488,7 @@ app.post('/api/import/process', requireAuth, (req, res) => {
       lineupResult.lineup = await enrichArtistsWithOpenMetadata(lineupResult.lineup, {
         logger: message => transaction.logs.push(`[${new Date().toISOString()}] ${message}`)
       });
+      lineupResult.lineup = lineupResult.lineup.map(normalizeSpanishArtistMetadata);
 
       transaction.logs.push(`[${new Date().toISOString()}] Comparando la propuesta con los artistas existentes en AgendaFest.xlsx...`);
       lineupResult.excelPreview = await buildImportPreview(lineupResult);

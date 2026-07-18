@@ -5,7 +5,8 @@ const { scrapeFestival } = require('../scraper');
 const {
   extractLineupWithAi, getModelCandidates, DEFAULT_GEMINI_MODEL,
   ENRICHMENT_GEMINI_MODEL, parseRetryDelayMs, getArtistBatchSize,
-  getRetryWaitMs, FREE_TIER_MIN_INTERVAL_MS
+  getRetryWaitMs, translateCountryToSpanish, translateGenreToSpanish,
+  limitWords, countWords, normalizeSpanishArtistMetadata, FREE_TIER_MIN_INTERVAL_MS
 } = require('../gemini');
 const { searchSpotifyArtist, searchSpotifyArtistDetailed, isSpotifyConfigured } = require('../spotify');
 
@@ -137,6 +138,21 @@ async function runBusinessTests() {
     assert.strictEqual(getRetryWaitMs(59735), 62235);
     assert.strictEqual(getRetryWaitMs(120000), 70000);
     assert.strictEqual(FREE_TIER_MIN_INTERVAL_MS, 3500);
+  });
+
+  await runTestAsync('País, género y biografía se normalizan en español y la bio no supera 100 palabras', async () => {
+    assert.strictEqual(translateCountryToSpanish('United States'), 'Estados Unidos');
+    assert.strictEqual(translateCountryToSpanish('Germany'), 'Alemania');
+    assert.strictEqual(translateCountryToSpanish('Romania'), 'Rumanía');
+    assert.strictEqual(translateGenreToSpanish('alternative metal'), 'Metal alternativo');
+    assert.strictEqual(translateGenreToSpanish('german metalcore'), 'Metalcore alemán');
+    assert.strictEqual(translateGenreToSpanish('melodic death metal'), 'Death metal melódico');
+    const longBio = Array.from({ length: 125 }, (_, index) => `palabra${index + 1}`).join(' ');
+    assert.strictEqual(countWords(limitWords(longBio)), 100);
+    const normalized = normalizeSpanishArtistMetadata({ country: 'Sweden', genre: 'progressive metal', bio: longBio });
+    assert.strictEqual(normalized.country, 'Suecia');
+    assert.strictEqual(normalized.genre, 'Metal progresivo');
+    assert.strictEqual(countWords(normalized.bio), 100);
   });
 
   // TEST 5: Búsqueda Spotify en modo Mock
