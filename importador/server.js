@@ -19,6 +19,7 @@ const {
 const { scrapeFestival } = require('./scraper');
 const { extractLineupWithAi, enrichArtistsWithAi } = require('./gemini');
 const { searchSpotifyArtistDetailed, isSpotifyConfigured } = require('./spotify');
+const { enrichArtistsWithOpenMetadata } = require('./open-metadata');
 const { saveImportToExcel } = require('./excel');
 const publish = require('./publish');
 
@@ -218,7 +219,9 @@ app.get('/api/status', requireAuth, (req, res) => {
     status: 'online',
     version: '1.0.0',
     aiProvider: process.env.AI_PROVIDER || 'mock',
-    modelConfig: { model: process.env.IA_MODEL || 'mock-model', inputCostPm: 0.0, outputCostPm: 0.0 }
+    modelConfig: { model: process.env.IA_MODEL || 'mock-model', inputCostPm: 0.0, outputCostPm: 0.0 },
+    spotifyConfigured: isSpotifyConfigured(),
+    youtubeConfigured: Boolean(process.env.YOUTUBE_API_KEY)
   });
 });
 
@@ -480,6 +483,11 @@ app.post('/api/import/process', requireAuth, (req, res) => {
           }
         }
       }
+
+      transaction.logs.push(`[${new Date().toISOString()}] Buscando vídeos y RRSS en fuentes abiertas verificables...`);
+      lineupResult.lineup = await enrichArtistsWithOpenMetadata(lineupResult.lineup, {
+        logger: message => transaction.logs.push(`[${new Date().toISOString()}] ${message}`)
+      });
 
       transaction.logs.push(`[${new Date().toISOString()}] Proceso completado. Listo para revisión del administrador.`);
       transaction.result = lineupResult;
