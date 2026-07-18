@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AgendaFest - Importador Local</title>
+  <style>
+    :root {
+      --bg-color: #0d0d0f;
+      --card-bg: #151518;
+      --text-color: #f3f4f6;
+      --accent-color: #d3133c;
+      --accent-hover: #b00f31;
+      --border-color: #2a2a30;
+      --input-bg: #1e1e24;
+      --success-color: #10b981;
+      --warning-color: #f59e0b;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--card-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 1px solid var(--border-color);
+      color: #9ca3af;
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-color);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 18px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .status-online {
+      background-color: rgba(16, 185, 129, 0.1);
+      color: var(--success-color);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .status-warning {
+      background-color: rgba(245, 158, 11, 0.1);
+      color: var(--warning-color);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .info-list {
+      margin: 15px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .info-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dotted var(--border-color);
+      font-size: 14px;
+    }
+
+    .info-list li span:first-child {
+      color: #9ca3af;
+    }
+
+    .form-group {
+      margin-top: 15px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: var(--text-color);
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .console {
+      background-color: #060608;
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 12px;
+      color: #a78bfa;
+      height: 150px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🤘 AgendaFest <span>• Importador Local</span></h1>
+    <button class="btn btn-secondary" onclick="logout()">Cerrar Sesión</button>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Servidor de Seguridad & Estado (Incremento 1)</h2>
+      <p>Este panel demuestra que el servidor local está funcionando en <code>127.0.0.1</code> de manera segura.</p>
+      
+      <div class="grid">
+        <div>
+          <h3>Entorno</h3>
+          <ul class="info-list">
+            <li><span>Estado de Conexión</span> <span class="status-badge status-online">Conectado</span></li>
+            <li><span>Servidor API</span> <span>127.0.0.1</span></li>
+            <li><span>Versión Sistema</span> <span>v1.0.0</span></li>
+            <li><span>Modelo IA Configurado</span> <span id="modelName">-</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Estado del Repositorio</h3>
+          <ul class="info-list">
+            <li><span>Repositorio Limpio</span> <span id="gitStatusBadge" class="status-badge">-</span></li>
+            <li><span>Publicación V3</span> <span id="gitPublishBadge" class="status-badge">-</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Asistente de Alta Semiautomática (Incremento 2)</h2>
+      <p>Introduce la URL oficial de un festival para iniciar el proceso de descubrimiento y extracción escalonada.</p>
+      <div class="form-group">
+        <label for="importUrl" style="display:block; margin-bottom: 5px; color: #9ca3af;">URL del Festival:</label>
+        <input type="text" id="importUrl" value="https://www.resurrectionfest.es/" placeholder="https://ejemplo.com">
+      </div>
+      <div class="form-group" style="margin-top: 15px;">
+        <button class="btn" onclick="startImport()">Iniciar Alta de Festival</button>
+      </div>
+
+      <div id="importProgress" style="display: none; margin-top: 20px;">
+        <h3>Progreso de Importación (<span id="importState">CREADA</span>)</h3>
+        <div class="console" id="importLogs" style="height: 150px; color: #6ee7b7; border-color: #059669;">Listo.</div>
+      </div>
+
+      <div id="importReview" style="display: none; margin-top: 25px;">
+        <h3>Revisión de Datos del Cartel</h3>
+        <p style="color:#9ca3af; font-size:13px;">Haz doble clic en los campos para editarlos. Corrige cualquier error antes de procesar.</p>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); text-align: left;">
+                <th style="padding: 8px;">Artista</th>
+                <th style="padding: 8px;">Día</th>
+                <th style="padding: 8px;">Escenario</th>
+                <th style="padding: 8px;">Inicio</th>
+                <th style="padding: 8px;">Fin</th>
+                <th style="padding: 8px;">Spotify ID</th>
+                <th style="padding: 8px;">Pop.</th>
+                <th style="padding: 8px; width: 60px;">Acción</th>
+              </tr>
+            </thead>
+            <tbody id="lineupTableBody">
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top: 20px; display: flex; gap: 10px;">
+          <button class="btn" onclick="approveImport()">Confirmar e Importar</button>
+          <button class="btn btn-secondary" onclick="resetImport()">Cancelar</button>
+        </div>
+        <div id="saveFeedback" style="margin-top: 15px; font-weight: bold; color: var(--success-color); display: none;"></div>
+      </div>
+    </div>
+
+    <div class="card" id="publishCard" style="display: none;">
+      <h2>Despliegue y Publicación V3</h2>
+      <p>Tras guardar los cambios locales en el archivo Excel, debes sincronizar las bases de datos y desplegar la nueva versión del portal en producción.</p>
+      
+      <div id="realPublishStatus" style="padding: 12px; border-radius: 6px; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #fca5a5; font-weight: bold; margin-top: 15px; margin-bottom: 15px; display: none;">
+        ⚠️ Publicación real desactivada (PUBLISH_ENABLED=false).
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 15px; margin-top: 15px;">
+        <!-- Step 1: Build -->
+        <div style="border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; background: rgba(255, 255, 255, 0.01);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h3 style="margin: 0;">Paso 1: Sincronizar y Compilar</h3>
+              <p style="color: #9ca3af; font-size: 13px; margin: 5px 0 0 0;">Ejecuta sync_excel.cjs y realiza la compilación de Vite localmente.</p>
+            </div>
+            <button class="btn" id="btnBuild" onclick="publishBuild()">Compilar Local</button>
+          </div>
+          <div class="console" id="buildLogs" style="height: 120px; display: none; margin-top: 10px; font-size: 12px;"></div>
+        </div>
+
+        <!-- Step 2: Deploy -->
+        <div style="border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; background: rgba(255, 255, 255, 0.01);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h3 style="margin: 0;">Paso 2: Plan y Confirmación de Publicación</h3>
+              <p style="color: #9ca3af; font-size: 13px; margin: 5px 0 0 0;">Genera el plan de publicación de un solo uso y confirma los hashes de los archivos.</p>
+            </div>
+            <button class="btn btn-secondary" id="btnGeneratePlan" onclick="generatePublishPlan()" disabled>Generar Plan</button>
+          </div>
+          
+          <div id="planDetails" style="display: none; border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; margin-top: 15px; background: rgba(255, 255, 255, 0.02);">
+            <h4 style="margin: 0 0 10px 0;">Plan de Publicación Activo:</h4>
+            <p style="font-size: 13px; margin: 5px 0;"><strong>ID del Plan:</strong> <span id="planIdText" style="color: #60a5fa;">-</span></p>
+            <p style="font-size: 13px; margin: 5px 0;"><strong>Mensaje Commit:</strong> <span id="planCommitMsg" style="color: #9ca3af;">-</span></p>
+            <p style="font-size: 13px; margin: 5px 0;"><strong>Expiración:</strong> <span id="planExpiry" style="color: #f87171;">-</span></p>
+            <div style="font-size: 12px; color: #9ca3af; margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px;">
+              <strong>Archivos a comprometer (con SHA-256):</strong>
+              <ul id="planFilesList" style="list-style: none; padding: 0; margin: 5px 0 0 0; display: flex; flex-direction: column; gap: 5px;">
+              </ul>
+            </div>
+            <div style="margin-top: 15px; display: flex; gap: 10px;">
+              <button class="btn" id="btnConfirmDeploy" onclick="publishDeploy()">Confirmar y Desplegar (Git Push)</button>
+              <button class="btn btn-secondary" onclick="resetPublishPlan()">Cancelar Plan</button>
+            </div>
+          </div>
+          <div class="console" id="deployLogs" style="height: 120px; display: none; margin-top: 10px; font-size: 12px;"></div>
+        </div>
+
+        <!-- Step 3: Validation V3 -->
+        <div style="border: 1px solid var(--border-color); padding: 15px; border-radius: 6px; background: rgba(255, 255, 255, 0.01);">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <h3 style="margin: 0;">Paso 3: Verificación remota V3</h3>
+              <p style="color: #9ca3af; font-size: 13px; margin: 5px 0 0 0;">Audita el despliegue final verificando el manifiesto, SW y la caché PWA remota.</p>
+            </div>
+            <button class="btn btn-secondary" id="btnValidate" onclick="publishValidate()" disabled>Iniciar Validación V3</button>
+          </div>
+          
+          <div id="v3Checks" style="display: none; margin-top: 15px;">
+            <h4 style="margin: 0 0 10px 0;">Checklist de Validación V3:</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+              <li style="display: flex; align-items: center; gap: 10px;">
+                <span id="chkWeb" class="status-badge" style="background-color: #374151;">-</span>
+                <span>Servidor web responde con HTTP 200</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: 10px;">
+                <span id="chkManifest" class="status-badge" style="background-color: #374151;">-</span>
+                <span>Manifiesto PWA (manifest.json) válido</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: 10px;">
+                <span id="chkSW" class="status-badge" style="background-color: #374151;">-</span>
+                <span>Service Worker (sw.js) registrado</span>
+              </li>
+              <li style="display: flex; align-items: center; gap: 10px;">
+                <span id="chkEdition" class="status-badge" style="background-color: #374151;">-</span>
+                <span>Nueva Edición ID integrada en producción</span>
+              </li>
+            </ul>
+            <div id="validationFeedback" style="margin-top: 15px; font-weight: bold; display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Prueba de Petición Segura (SSRF / DNS Rebinding Safe)</h2>
+      <p>Envía una petición de scraping a través del servidor local. Las IPs locales o privadas serán bloqueadas de forma inmediata por el motor de seguridad.</p>
+      
+      <div class="form-group">
+        <input type="text" id="targetUrl" value="https://www.google.com" placeholder="Introduce la URL del festival o recurso">
+      </div>
+      <div class="form-group">
+        <button class="btn" onclick="testUrl()">Testear URL con Scraper</button>
+      </div>
+
+      <div class="console" id="consoleOutput">Listo para realizar pruebas...</div>
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

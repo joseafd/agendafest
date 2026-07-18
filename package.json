@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "sync-excel": "node sync_excel.cjs"
+    "sync-excel": "node sync_excel.cjs",
+    "import-ui": "node importador/server.js"
   },
   "dependencies": {
     "lucide-react": "^1.21.0",
