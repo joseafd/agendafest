@@ -4,6 +4,10 @@ const https = require('https');
 let cachedAccessToken = null;
 let tokenExpiresAt = 0;
 
+function isSpotifyConfigured() {
+  return Boolean(process.env.SPOTIFY_CLIENT_ID && process.env.SPOTIFY_CLIENT_SECRET);
+}
+
 /**
  * Retrieves Spotify access token using Client Credentials Flow.
  * @returns {Promise<string>}
@@ -68,8 +72,8 @@ function getSpotifyAccessToken() {
  * @param {string} artistName
  * @returns {Promise<object|null>} Artist metadata or null.
  */
-function searchSpotifyArtist(artistName) {
-  return new Promise((resolve) => {
+function searchSpotifyArtistDetailed(artistName) {
+  return new Promise((resolve, reject) => {
     const clientId = process.env.SPOTIFY_CLIENT_ID;
     const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
     const provider = process.env.AI_PROVIDER || 'mock';
@@ -126,7 +130,11 @@ function searchSpotifyArtist(artistName) {
       });
     }
 
-    if (!clientId || !clientSecret) return resolve(null);
+    if (!clientId || !clientSecret) {
+      const err = new Error('Spotify no está configurado.');
+      err.code = 'SPOTIFY_NOT_CONFIGURED';
+      return reject(err);
+    }
 
     // Call real Spotify API
     getSpotifyAccessToken()
@@ -149,8 +157,9 @@ function searchSpotifyArtist(artistName) {
           res.on('data', (chunk) => data += chunk);
           res.on('end', () => {
             if (res.statusCode !== 200) {
-              // Return null on API failures to not break the scraper flow
-              return resolve(null);
+              const err = new Error(`Spotify respondió HTTP ${res.statusCode}.`);
+              err.code = res.statusCode === 401 ? 'SPOTIFY_AUTH_ERROR' : 'SPOTIFY_API_ERROR';
+              return reject(err);
             }
 
             try {
@@ -174,20 +183,39 @@ function searchSpotifyArtist(artistName) {
                 imageUrl: bestMatch.images?.[0]?.url || ''
               });
             } catch (e) {
-              resolve(null);
+              const err = new Error('Spotify devolvió una respuesta inválida.');
+              err.code = 'SPOTIFY_API_ERROR';
+              reject(err);
             }
           });
         });
 
-        req.on('error', () => resolve(null));
+        req.on('error', () => {
+          const err = new Error('No se pudo conectar con Spotify.');
+          err.code = 'SPOTIFY_API_ERROR';
+          reject(err);
+        });
         req.end();
       })
-      .catch(() => {
-        resolve(null); // Resolve to null so scraper can keep going on auth failure
+      .catch((cause) => {
+        const err = new Error('Spotify rechazó las credenciales configuradas.');
+        err.code = cause.code || 'SPOTIFY_AUTH_ERROR';
+        reject(err);
       });
   });
 }
 
+// Compatibilidad con consumidores que sólo necesitan datos o null.
+async function searchSpotifyArtist(artistName) {
+  try {
+    return await searchSpotifyArtistDetailed(artistName);
+  } catch (_) {
+    return null;
+  }
+}
+
 module.exports = {
-  searchSpotifyArtist
+  searchSpotifyArtist,
+  searchSpotifyArtistDetailed,
+  isSpotifyConfigured
 };

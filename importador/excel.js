@@ -320,7 +320,8 @@ async function saveImportToExcel(approvedData, user, importId) {
       const dateRevCol = freshArtHeaders.indexOf('Fecha Revisión');
       const revCol = freshArtHeaders.indexOf('Revisado');
       const imgApprovedCol = freshArtHeaders.indexOf('Imagen Aprobada');
-      const metadataComplete = Boolean(item.country && item.genre && item.bio);
+      const hasSocial = Boolean(item.instagramUrl || item.facebookUrl || item.xUrl || item.tiktokUrl);
+      const metadataComplete = Boolean(item.country && item.genre && item.bio && item.youtubeUrl && item.imageUrl && hasSocial);
       const artistValues = {
         'País': item.country || '',
         'Género principal': item.genre || item.spotifyGenres?.[0] || '',

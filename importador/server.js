@@ -18,7 +18,7 @@ const {
 
 const { scrapeFestival } = require('./scraper');
 const { extractLineupWithAi, enrichArtistsWithAi } = require('./gemini');
-const { searchSpotifyArtist } = require('./spotify');
+const { searchSpotifyArtistDetailed, isSpotifyConfigured } = require('./spotify');
 const { saveImportToExcel } = require('./excel');
 const publish = require('./publish');
 
@@ -439,10 +439,19 @@ app.post('/api/import/process', requireAuth, (req, res) => {
 
       // 3. Spotify enrichment
       transaction.logs.push(`[${new Date().toISOString()}] Consultando identificadores de Spotify para artistas...`);
+      const spotifyConfigured = isSpotifyConfigured();
+      if (!spotifyConfigured) {
+        transaction.logs.push(`[${new Date().toISOString()}] Spotify no configurado: los ID quedarán vacíos y no bloquearán la importación.`);
+      }
       for (const artist of lineupResult.lineup) {
+        if (!spotifyConfigured) {
+          artist.spotifyId = '';
+          artist.spotifyStatus = 'not_configured';
+          continue;
+        }
         transaction.logs.push(`[${new Date().toISOString()}] Buscando en Spotify: ${artist.artistName}`);
         try {
-          const spotifyData = await searchSpotifyArtist(artist.artistName);
+          const spotifyData = await searchSpotifyArtistDetailed(artist.artistName);
           if (spotifyData) {
             artist.spotifyId = spotifyData.spotifyId;
             artist.spotifyGenres = spotifyData.genres;
@@ -450,14 +459,25 @@ app.post('/api/import/process', requireAuth, (req, res) => {
             artist.spotifyUrl = spotifyData.url;
             artist.genre = artist.genre || spotifyData.genres?.[0] || '';
             artist.imageUrl = artist.imageUrl || spotifyData.imageUrl || '';
+            artist.spotifyStatus = 'found';
             transaction.logs.push(`[${new Date().toISOString()}] Spotify ID encontrado para ${artist.artistName}: ${spotifyData.spotifyId}`);
           } else {
             artist.spotifyId = '';
+            artist.spotifyStatus = 'not_found';
             transaction.logs.push(`[${new Date().toISOString()}] No se encontró perfil de Spotify para ${artist.artistName}`);
           }
         } catch (e) {
           artist.spotifyId = '';
-          transaction.logs.push(`[${new Date().toISOString()}] Error consultando Spotify para ${artist.artistName}: ${e.message}`);
+          if (e.code === 'SPOTIFY_NOT_CONFIGURED') {
+            artist.spotifyStatus = 'not_configured';
+            transaction.logs.push(`[${new Date().toISOString()}] Spotify no configurado: se conserva vacío para ${artist.artistName}`);
+          } else if (e.code === 'SPOTIFY_AUTH_ERROR') {
+            artist.spotifyStatus = 'auth_error';
+            transaction.logs.push(`[${new Date().toISOString()}] Spotify rechazó las credenciales; no se buscó ${artist.artistName}`);
+          } else {
+            artist.spotifyStatus = 'api_error';
+            transaction.logs.push(`[${new Date().toISOString()}] Error temporal de Spotify al buscar ${artist.artistName}`);
+          }
         }
       }
 

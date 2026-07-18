@@ -7,7 +7,7 @@ const {
   ENRICHMENT_GEMINI_MODEL, parseRetryDelayMs, getArtistBatchSize,
   getRetryWaitMs, FREE_TIER_MIN_INTERVAL_MS
 } = require('../gemini');
-const { searchSpotifyArtist } = require('../spotify');
+const { searchSpotifyArtist, searchSpotifyArtistDetailed, isSpotifyConfigured } = require('../spotify');
 
 // Start a mock target server on port 3032
 const targetServer = http.createServer((req, res) => {
@@ -157,8 +157,13 @@ async function runBusinessTests() {
     process.env.AI_PROVIDER = 'gemini';
     delete process.env.SPOTIFY_CLIENT_ID;
     delete process.env.SPOTIFY_CLIENT_SECRET;
+    assert.strictEqual(isSpotifyConfigured(), false);
     const result = await searchSpotifyArtist('Unknown Local Band');
     assert.strictEqual(result, null);
+    await assert.rejects(
+      searchSpotifyArtistDetailed('Unknown Local Band'),
+      err => err.code === 'SPOTIFY_NOT_CONFIGURED'
+    );
     process.env.AI_PROVIDER = previousProvider || 'mock';
   });
 

@@ -206,7 +206,7 @@ function renderReviewTable(result) {
   }
 
   if (!result || !result.lineup || result.lineup.length === 0 || !edition || !edition.id || !edition.startDate || !edition.endDate) {
-    tbody.innerHTML = '<tr><td colspan="12" style="text-align:center; padding:15px;">No se detectaron actuaciones.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="14" style="text-align:center; padding:15px;">No se detectaron actuaciones.</td></tr>';
     return;
   }
 
@@ -221,7 +221,19 @@ function renderReviewTable(result) {
     }
 
     tr.dataset.index = String(index);
-    const complete = Boolean(item.country && item.genre && item.bio);
+    const basicMissing = [!item.country && 'país', !item.genre && 'género', !item.bio && 'bio'].filter(Boolean);
+    const basicComplete = basicMissing.length === 0;
+    const hasSocial = Boolean(item.instagramUrl || item.facebookUrl || item.xUrl || item.tiktokUrl);
+    const contentMissing = [...basicMissing, !item.youtubeUrl && 'vídeo', !item.imageUrl && 'imagen', !hasSocial && 'RRSS'].filter(Boolean);
+    const contentComplete = contentMissing.length === 0;
+    const spotifyStates = {
+      found: ['Encontrado', '#10b981'],
+      not_found: ['No encontrado', '#eab308'],
+      not_configured: ['No configurado', '#9ca3af'],
+      auth_error: ['Credenciales inválidas', '#ef4444'],
+      api_error: ['Error temporal', '#ef4444']
+    };
+    const spotifyState = spotifyStates[item.spotifyStatus] || [item.spotifyId ? 'Encontrado' : 'Sin comprobar', '#9ca3af'];
     tr.innerHTML = `
       <td style="padding: 8px;" contenteditable="true" data-field="artistName">${escapeHtml(item.artistName)}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="day">${escapeHtml(item.day)}</td>
@@ -229,9 +241,11 @@ function renderReviewTable(result) {
       <td style="padding: 8px;" contenteditable="true" data-field="startTime">${escapeHtml(item.startTime)}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="endTime">${escapeHtml(item.endTime)}</td>
       <td style="padding: 8px; font-family: monospace;" contenteditable="true" data-field="spotifyId">${escapeHtml(item.spotifyId || '')}</td>
+      <td style="padding: 8px; color:${spotifyState[1]};">${spotifyState[0]}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="country">${escapeHtml(item.country || '')}</td>
       <td style="padding: 8px;" contenteditable="true" data-field="genre">${escapeHtml(item.genre || '')}</td>
-      <td style="padding: 8px; color:${complete ? '#10b981' : '#eab308'};">${complete ? 'Completa' : 'Pendiente'}</td>
+      <td title="${basicComplete ? 'País, género y bio disponibles' : `Faltan: ${basicMissing.join(', ')}`}" style="padding: 8px; color:${basicComplete ? '#10b981' : '#eab308'};">${basicComplete ? 'Completa' : `Pendiente (${basicMissing.length})`}</td>
+      <td title="${contentComplete ? 'Ficha básica, vídeo, imagen y RRSS disponibles' : `Faltan: ${contentMissing.join(', ')}`}" style="padding: 8px; color:${contentComplete ? '#10b981' : '#eab308'};">${contentComplete ? 'Completo' : `Pendiente (${contentMissing.length})`}</td>
       <td style="padding: 8px; min-width:220px;" data-field="validation"></td>
       <td style="padding: 8px; color: #9ca3af;">${item.spotifyPopularity !== undefined ? item.spotifyPopularity : '-'}</td>
       <td style="padding: 8px; text-align: center;">
