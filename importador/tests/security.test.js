@@ -407,6 +407,25 @@ async function runTests() {
     assert.ok(!resObj.body.includes(token));
   });
 
+  await runTestAsync('El servidor acepta una importación enriquecida mayor de 100 KB', async () => {
+    const resObj = await makeRequest({
+      hostname: '127.0.0.1', port: 3031, path: '/api/fetch-url', method: 'POST',
+      headers: { 'Cookie': sessionCookie, 'Content-Type': 'application/json' }
+    }, { url: 'http://127.0.0.1:3032/ok', metadata: 'x'.repeat(200 * 1024) });
+    assert.strictEqual(resObj.res.statusCode, 200, 'Debe llegar al endpoint y completar la petición, no ser rechazada por tamaño');
+    assert.ok(!resObj.body.includes('límite seguro de 2 MB'));
+  });
+
+  await runTestAsync('El servidor rechaza de forma explícita cuerpos superiores a 2 MB', async () => {
+    const resObj = await makeRequest({
+      hostname: '127.0.0.1', port: 3031, path: '/api/fetch-url', method: 'POST',
+      headers: { 'Cookie': sessionCookie, 'Content-Type': 'application/json' }
+    }, { url: 'https://example.com/', metadata: 'x'.repeat(2 * 1024 * 1024 + 1) });
+    assert.strictEqual(resObj.res.statusCode, 413);
+    assert.ok(resObj.body.includes('límite seguro de 2 MB'));
+    assert.ok(!resObj.body.includes('Error interno del servidor'));
+  });
+
   // TEST 17: Cookie antigua es rechazada tras reinicio (o limpieza) - Se ejecuta al final de los tests autenticados
   await runTestAsync('Cookie antigua es rechazada si la sesión en memoria se invalida', async () => {
     security.clearSession();

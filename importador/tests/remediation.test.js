@@ -278,6 +278,22 @@ async function runRemediationTests() {
     assert.ok(htmlContent.includes('comparisonReviewed'), 'El usuario debe confirmar que revisó los cambios');
   });
 
+  await runTestAsync('El límite ampliado sigue acotando el número máximo de actuaciones', async () => {
+    const result = {
+      edition: {
+        name: 'Festival masivo', year: 2026, startDate: '2026-07-01', endDate: '2026-07-02',
+        location: 'Viveiro, España', timezone: 'Europe/Madrid'
+      },
+      lineup: Array.from({ length: 501 }, (_, index) => ({
+        artistName: `Artista ${index}`, day: '2026-07-01', stage: 'Principal', startTime: '12:00', endTime: '13:00'
+      }))
+    };
+    assert.throws(
+      () => normalizeAndValidateImport(result, 'https://example.com/'),
+      /máximo permitido es 500/
+    );
+  });
+
   console.log('\n==================================================');
   console.log(`Remediación: ${passedCount} / ${testCount} superadas.`);
   console.log('==================================================');

@@ -25,6 +25,8 @@ const publish = require('./publish');
 
 const PUBLISH_ENABLED = process.env.PUBLISH_ENABLED === 'true';
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
+const JSON_BODY_LIMIT = '2mb';
+const MAX_IMPORT_ROWS = 500;
 
 let activePublicationPlan = null;
 const crypto = require('crypto');
@@ -49,6 +51,9 @@ function slugify(value) {
 function normalizeAndValidateImport(result, sourceUrl) {
   if (!result || !result.edition || !Array.isArray(result.lineup) || result.lineup.length === 0) {
     throw new Error('Gemini no devolvió una edición con actuaciones verificables.');
+  }
+  if (result.lineup.length > MAX_IMPORT_ROWS) {
+    throw new Error(`La importación contiene ${result.lineup.length} actuaciones; el máximo permitido es ${MAX_IMPORT_ROWS}.`);
   }
   const edition = result.edition;
   edition.name = String(edition.name || '').trim();
@@ -112,7 +117,10 @@ const PORT = process.env.PORT || 3030;
 const HOST = '127.0.0.1'; // Escuchar exclusivamente en localhost IPv4
 
 // Middleware
-app.use(express.json());
+// 100 KB (valor predeterminado de Express) no basta para carteles grandes con
+// biografías y URLs. Se amplía de forma acotada y se limita también el número
+// de actuaciones para evitar consumo de memoria sin límites.
+app.use(express.json({ limit: JSON_BODY_LIMIT, strict: true }));
 app.use(cookieParser());
 app.use(validateOrigin);
 
@@ -769,6 +777,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Global Fallback Error Handler (prevents stack traces from leaking)
 app.use((err, req, res, next) => {
+  if (err && err.type === 'entity.too.large') {
+    return res.status(413).json({ error: 'La importación supera el límite seguro de 2 MB. Reduce el cartel o los textos y vuelve a intentarlo.' });
+  }
+  if (err && err.type === 'entity.parse.failed') {
+    return res.status(400).json({ error: 'La petición contiene JSON inválido.' });
+  }
   res.status(500).json({ error: 'Error interno del servidor' });
 });
 
@@ -796,5 +810,7 @@ module.exports = {
   getSessionToken: () => require('./security').getSessionToken(),
   getActivePlan: () => activePublicationPlan,
   setActivePlan: (val) => { activePublicationPlan = val; },
-  normalizeAndValidateImport
+  normalizeAndValidateImport,
+  JSON_BODY_LIMIT,
+  MAX_IMPORT_ROWS
 };
