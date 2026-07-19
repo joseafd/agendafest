@@ -24,8 +24,9 @@ const normalizeBandImageName = (band: string) => band
 
 const LineupImage: React.FC<{ act: Act }> = ({ act }) => {
   const localImage = `./images/${normalizeBandImageName(act.band)}.jpg`;
-  const candidates = [act.bio?.imageUrl, localImage, './images/FONDO.jpg'].filter(Boolean) as string[];
+  const candidates = [act.bio?.imageUrl, localImage, './icon.svg'].filter(Boolean) as string[];
   const [candidateIndex, setCandidateIndex] = useState(0);
+  const isAppLogo = candidateIndex === candidates.length - 1;
 
   useEffect(() => setCandidateIndex(0), [act.id]);
 
@@ -35,7 +36,16 @@ const LineupImage: React.FC<{ act: Act }> = ({ act }) => {
       alt={act.band}
       loading="lazy"
       onError={() => setCandidateIndex((current) => Math.min(current + 1, candidates.length - 1))}
-      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      style={{
+        width: '100%',
+        height: '100%',
+        objectFit: isAppLogo ? 'contain' : 'cover',
+        padding: isAppLogo ? '22%' : 0,
+        background: isAppLogo
+          ? 'radial-gradient(circle at center, rgba(255, 0, 60, 0.16), #08090d 68%)'
+          : '#11141a',
+        display: 'block',
+      }}
     />
   );
 };

@@ -993,30 +993,6 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 <Image size={20} color="#00e676" />
               </button>
 
-              {/* Agenda Icon */}
-              <button
-                onClick={() => setActiveTab('agenda')}
-                aria-label="Agenda"
-                title="Agenda"
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '50%',
-                  background: 'rgba(255, 42, 133, 0.15)',
-                  border: '2px solid rgba(255, 42, 133, 0.8)',
-                  color: '#ffffff',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 0 12px rgba(255, 42, 133, 0.4)',
-                  transition: 'transform 0.1s, background-color 0.2s',
-                }}
-                className="btn-interactive"
-              >
-                <Calendar size={20} color="#ff2a85" />
-              </button>
-
               {/* Line-up Icon */}
               <button
                 onClick={() => setActiveTab('lineup')}
@@ -1039,6 +1015,30 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 className="btn-interactive"
               >
                 <Music size={20} color="#00c6ff" />
+              </button>
+
+              {/* Agenda Icon */}
+              <button
+                onClick={() => setActiveTab('agenda')}
+                aria-label="Agenda"
+                title="Agenda"
+                style={{
+                  width: '48px',
+                  height: '48px',
+                  borderRadius: '50%',
+                  background: 'rgba(255, 42, 133, 0.15)',
+                  border: '2px solid rgba(255, 42, 133, 0.8)',
+                  color: '#ffffff',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 0 12px rgba(255, 42, 133, 0.4)',
+                  transition: 'transform 0.1s, background-color 0.2s',
+                }}
+                className="btn-interactive"
+              >
+                <Calendar size={20} color="#ff2a85" />
               </button>
 
               {/* Mapa Icon */}

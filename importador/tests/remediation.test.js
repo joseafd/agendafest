@@ -348,11 +348,15 @@ async function runRemediationTests() {
     assert.ok(dashboardContent.includes("setActiveTab('lineup')"), 'La portada debe abrir el Line-up');
     assert.ok(dashboardContent.includes("activeTab === 'lineup'"), 'Debe renderizarse una vista propia de Line-up');
     assert.ok(!dashboardContent.includes('onClick={() => setActiveTab(\'news\')}\n                aria-label="Noticias"'), 'Noticias no debe aparecer entre los iconos de la ficha');
+    const iconOrder = ['aria-label="Cartel"', 'aria-label="Line-up"', 'aria-label="Agenda"', 'aria-label="Mapa"']
+      .map((label) => dashboardContent.indexOf(label));
+    assert.ok(iconOrder.every((position) => position >= 0), 'Deben existir los cuatro accesos de la ficha');
+    assert.deepStrictEqual([...iconOrder].sort((a, b) => a - b), iconOrder, 'El orden debe ser Cartel, Line-up, Agenda y Mapa');
     assert.ok(lineupContent.includes("useState('ALL')"), 'Debe existir el filtro TODOS');
     assert.ok(lineupContent.includes('onSelectDay(day.id)'), 'Debe permitir filtrar por día');
     assert.ok(lineupContent.includes('act.stage === selectedStage'), 'Debe permitir filtrar por escenario');
     assert.ok(lineupContent.includes("selectedStage === 'ALL' &&"), 'El escenario debe mostrarse en la vista TODOS');
-    assert.ok(lineupContent.includes("'./images/FONDO.jpg'"), 'Debe utilizar el recurso gráfico predeterminado como último fallback');
+    assert.ok(lineupContent.includes("'./icon.svg'"), 'Debe utilizar el rayo rojo de AgendaFest como último fallback');
     assert.ok(lineupContent.includes('onSelectAct(act)'), 'Cada banda debe abrir su ficha existente');
     assert.ok(cssContent.includes('grid-template-columns: repeat(2'), 'El Line-up debe mostrar dos columnas en móvil');
   });
