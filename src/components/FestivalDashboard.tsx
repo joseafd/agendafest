@@ -1305,6 +1305,8 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
           selectedDayId={selectedDayId}
           onSelectDay={setSelectedDayId}
           onSelectAct={handleSelectAct}
+          favorites={favorites}
+          onToggleFavorite={handleToggleFavorite}
           onBackToHome={() => setActiveTab('home')}
           festivalName={edicionConfig.visibleName}
           language={language}

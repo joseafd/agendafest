@@ -353,12 +353,20 @@ async function runRemediationTests() {
     assert.ok(iconOrder.every((position) => position >= 0), 'Deben existir los cuatro accesos de la ficha');
     assert.deepStrictEqual([...iconOrder].sort((a, b) => a - b), iconOrder, 'El orden debe ser Cartel, Line-up, Agenda y Mapa');
     assert.ok(lineupContent.includes("useState('ALL')"), 'Debe existir el filtro TODOS');
-    assert.ok(lineupContent.includes('onSelectDay(day.id)'), 'Debe permitir filtrar por día');
+    assert.ok(lineupContent.includes('handleDayChange(day.id)'), 'Debe permitir filtrar por día');
+    assert.ok(lineupContent.includes('setSelectedStage(\'ALL\')'), 'Cambiar de día debe restaurar el filtro TODOS');
+    assert.ok(lineupContent.includes("scrollTo({ top: 0"), 'Cambiar de día debe restaurar la posición vertical');
     assert.ok(lineupContent.includes('act.stage === selectedStage'), 'Debe permitir filtrar por escenario');
     assert.ok(lineupContent.includes("selectedStage === 'ALL' &&"), 'El escenario debe mostrarse en la vista TODOS');
     assert.ok(lineupContent.includes("'./icon.svg'"), 'Debe utilizar el rayo rojo de AgendaFest como último fallback');
     assert.ok(lineupContent.includes('onSelectAct(act)'), 'Cada banda debe abrir su ficha existente');
+    assert.ok(lineupContent.includes('favorites.includes(act.id)'), 'Cada actuación debe reflejar su estado de favorito');
+    assert.ok(lineupContent.includes('onToggleFavorite(act.id, event)'), 'El rayo debe permitir marcar y desmarcar favoritos');
+    assert.ok(lineupContent.includes('aria-pressed={isFavorite}'), 'El favorito debe exponer su estado a tecnologías de asistencia');
+    assert.ok(dashboardContent.includes('favorites={favorites}'), 'El Line-up debe compartir los favoritos de la agenda');
+    assert.ok(cssContent.includes('.lineup-favorite'), 'El rayo de favorito debe tener un control visible sobre la tarjeta');
     assert.ok(cssContent.includes('grid-template-columns: repeat(2'), 'El Line-up debe mostrar dos columnas en móvil');
+    assert.ok(cssContent.includes('.lineup-sticky-shell'), 'Cabecera y filtros deben permanecer unidos sin solaparse');
   });
 
   console.log('\n==================================================');
