@@ -159,6 +159,180 @@ h1, h2, h3 {
   -webkit-text-fill-color: transparent;
 }
 
+/* Festival line-up */
+.lineup-view {
+  overflow-y: auto;
+  background: #090b0f;
+}
+
+.lineup-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  min-height: 72px;
+  padding: calc(12px + var(--safe-top)) 16px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(9, 11, 15, 0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lineup-back {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.04);
+  color: white;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.lineup-heading { text-align: center; min-width: 0; }
+.lineup-heading h1 {
+  color: var(--accent-red);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+.lineup-heading span {
+  display: block;
+  margin-top: 5px;
+  max-width: 68vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.lineup-header-spacer { width: 42px; }
+
+.lineup-day-tabs,
+.lineup-stage-tabs {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: #15171c;
+}
+.lineup-day-tabs::-webkit-scrollbar,
+.lineup-stage-tabs::-webkit-scrollbar { display: none; }
+
+.lineup-day-tabs {
+  position: sticky;
+  top: calc(72px + var(--safe-top));
+  z-index: 35;
+  justify-content: flex-start;
+  gap: 4px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.lineup-day-tabs button,
+.lineup-stage-tabs button {
+  flex: 0 0 auto;
+  border: 0;
+  color: #c7cbd3;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.lineup-day-tabs button {
+  min-width: 92px;
+  padding: 8px 13px;
+  border-radius: 12px;
+  background: transparent;
+}
+.lineup-day-tabs button strong { display: block; font-size: 0.78rem; }
+.lineup-day-tabs button span { display: block; margin-top: 2px; color: var(--text-muted); font-size: 0.62rem; }
+.lineup-day-tabs button.active { color: white; background: var(--accent-red); }
+.lineup-day-tabs button.active span { color: rgba(255, 255, 255, 0.78); }
+
+.lineup-stage-tabs {
+  position: sticky;
+  top: calc(132px + var(--safe-top));
+  z-index: 34;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(30, 32, 38, 0.97);
+}
+.lineup-stage-tabs button {
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: transparent;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+.lineup-stage-tabs button.active { color: white; background: var(--accent-red); }
+
+.lineup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, 1180px);
+  margin: 0 auto;
+}
+.lineup-card {
+  position: relative;
+  aspect-ratio: 1 / 1.08;
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  background: #11141a;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+}
+.lineup-card-shade {
+  position: absolute;
+  inset: 32% 0 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.94));
+  pointer-events: none;
+}
+.lineup-card-copy {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  right: 10px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-shadow: 0 2px 5px black;
+}
+.lineup-card-copy strong {
+  font-family: var(--font-display);
+  font-size: clamp(0.82rem, 3.7vw, 1.2rem);
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+.lineup-card-copy span { font-size: clamp(0.76rem, 3.3vw, 1rem); font-weight: 650; }
+.lineup-card-copy .lineup-card-stage { color: #e5e7eb; }
+.lineup-empty {
+  grid-column: 1 / -1;
+  padding: 64px 24px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+@media (min-width: 700px) {
+  .lineup-day-tabs { justify-content: center; }
+  .lineup-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; padding: 2px; }
+  .lineup-card { aspect-ratio: 1.08 / 1; border-radius: 4px; }
+  .lineup-card-copy strong { font-size: 1.1rem; }
+  .lineup-card-copy span { font-size: 0.92rem; }
+}
+
+@media (min-width: 1050px) {
+  .lineup-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
 /* Stage color helper classes */
 .badge-stage {
   font-size: 0.75rem; /* Aumentado */

@@ -339,6 +339,24 @@ async function runRemediationTests() {
     assert.ok(modalContent.includes('flexWrap'), 'La fila de iconos debe adaptarse a pantallas estrechas');
   });
 
+  await runTestAsync('La ficha del festival sustituye Noticias por un Line-up filtrable', async () => {
+    const projectRoot = path.join(__dirname, '..', '..');
+    const dashboardContent = fs.readFileSync(path.join(projectRoot, 'src', 'components', 'FestivalDashboard.tsx'), 'utf8');
+    const lineupContent = fs.readFileSync(path.join(projectRoot, 'src', 'components', 'LineupView.tsx'), 'utf8');
+    const cssContent = fs.readFileSync(path.join(projectRoot, 'src', 'index.css'), 'utf8');
+
+    assert.ok(dashboardContent.includes("setActiveTab('lineup')"), 'La portada debe abrir el Line-up');
+    assert.ok(dashboardContent.includes("activeTab === 'lineup'"), 'Debe renderizarse una vista propia de Line-up');
+    assert.ok(!dashboardContent.includes('onClick={() => setActiveTab(\'news\')}\n                aria-label="Noticias"'), 'Noticias no debe aparecer entre los iconos de la ficha');
+    assert.ok(lineupContent.includes("useState('ALL')"), 'Debe existir el filtro TODOS');
+    assert.ok(lineupContent.includes('onSelectDay(day.id)'), 'Debe permitir filtrar por día');
+    assert.ok(lineupContent.includes('act.stage === selectedStage'), 'Debe permitir filtrar por escenario');
+    assert.ok(lineupContent.includes("selectedStage === 'ALL' &&"), 'El escenario debe mostrarse en la vista TODOS');
+    assert.ok(lineupContent.includes("'./images/FONDO.jpg'"), 'Debe utilizar el recurso gráfico predeterminado como último fallback');
+    assert.ok(lineupContent.includes('onSelectAct(act)'), 'Cada banda debe abrir su ficha existente');
+    assert.ok(cssContent.includes('grid-template-columns: repeat(2'), 'El Line-up debe mostrar dos columnas en móvil');
+  });
+
   console.log('\n==================================================');
   console.log(`Remediación: ${passedCount} / ${testCount} superadas.`);
   console.log('==================================================');

@@ -6,8 +6,9 @@ import { StagesView } from './StagesView';
 import { FilterDrawer } from './FilterDrawer';
 import { BandDetailModal } from './BandDetailModal';
 import { NewsView } from './NewsView';
+import { LineupView } from './LineupView';
 import { useLocalStorage } from '../hooks/useLocalStorage';
-import { Calendar, Map, ArrowLeft, Share2, Newspaper, Image } from 'lucide-react';
+import { Calendar, Map, ArrowLeft, Share2, Music, Image } from 'lucide-react';
 import type { Act, FestivalEdition } from '../data/festivalData';
 import { PwaInstallModal } from './PwaInstallModal';
 import { t, tFormat } from '../utils/translations';
@@ -77,8 +78,8 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     return days[days.length - 1].id;
   }, [days, edicionConfig]);
 
-  // 1. App Navigation State (home, agenda, map, news, poster)
-  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'map' | 'news' | 'poster'>('home');
+  // 1. App Navigation State
+  const [activeTab, setActiveTab] = useState<'home' | 'agenda' | 'lineup' | 'map' | 'news' | 'poster'>('home');
   const [isPwaModalOpen, setIsPwaModalOpen] = useState<boolean>(false);
 
   // 2. Persistent State
@@ -1016,11 +1017,11 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 <Calendar size={20} color="#ff2a85" />
               </button>
 
-              {/* Noticias Icon */}
+              {/* Line-up Icon */}
               <button
-                onClick={() => setActiveTab('news')}
-                aria-label="Noticias"
-                title="Noticias"
+                onClick={() => setActiveTab('lineup')}
+                aria-label="Line-up"
+                title="Line-up"
                 style={{
                   width: '48px',
                   height: '48px',
@@ -1037,7 +1038,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
                 }}
                 className="btn-interactive"
               >
-                <Newspaper size={20} color="#00c6ff" />
+                <Music size={20} color="#00c6ff" />
               </button>
 
               {/* Mapa Icon */}
@@ -1290,6 +1291,20 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
       {activeTab === 'news' && (
         <NewsView
           noticias={localNewsSorted}
+          onBackToHome={() => setActiveTab('home')}
+          festivalName={edicionConfig.visibleName}
+          language={language}
+        />
+      )}
+
+      {/* VIEW 7: FESTIVAL LINE-UP */}
+      {activeTab === 'lineup' && (
+        <LineupView
+          days={days}
+          stages={edition.stages}
+          selectedDayId={selectedDayId}
+          onSelectDay={setSelectedDayId}
+          onSelectAct={handleSelectAct}
           onBackToHome={() => setActiveTab('home')}
           festivalName={edicionConfig.visibleName}
           language={language}
