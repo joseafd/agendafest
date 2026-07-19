@@ -10,7 +10,7 @@ process.env.AI_PROVIDER = 'mock';
 process.env.PUBLISH_ENABLED = 'false'; // Keep disabled as required by safety rules
 
 const { server, getPairingCode, normalizeAndValidateImport } = require('../server');
-const { validateGitStatus, pollGitHubAction } = require('../publish');
+const { validateGitStatus, pollGitHubAction, parseGitStatus, isAuthorizedPublicationFile } = require('../publish');
 const { unlinkWithRetry } = require('../excel');
 
 function makeRequest(options, postData = null) {
@@ -34,7 +34,11 @@ async function runRemediationTests() {
   const publishModule = require('../publish');
   const originalValidateGitStatus = publishModule.validateGitStatus;
   publishModule.validateGitStatus = async () => {
-    return { branch: 'main', remote: 'https://github.com/joseafd/agendafest.git' };
+    return {
+      branch: 'main',
+      remote: 'https://github.com/joseafd/agendafest.git',
+      changedFiles: ['AgendaFest.xlsx', 'src/data/festivalData.ts']
+    };
   };
 
   let testCount = 0;
@@ -65,6 +69,29 @@ async function runRemediationTests() {
     const publishContent = fs.readFileSync(path.join(__dirname, '..', 'publish.js'), 'utf8');
     assert.strictEqual(publishContent.includes("require('child_process').exec"), false, 'No debería requerir exec directamente');
     assert.strictEqual(publishContent.includes(" exec("), false, 'No debería usar la función exec');
+  });
+
+  await runTestAsync('Git porcelain conserva el nombre completo AgendaFest.xlsx', async () => {
+    const files = parseGitStatus(
+      ' M AgendaFest.xlsx\0 M src/data/festivalData.ts\0?? public/images/cartel-nuevo.jpg\0'
+    );
+    assert.deepStrictEqual(files, [
+      'AgendaFest.xlsx',
+      'src/data/festivalData.ts',
+      'public/images/cartel-nuevo.jpg'
+    ]);
+  });
+
+  await runTestAsync('La lista blanca admite solo datos e imágenes de publicación', async () => {
+    assert.strictEqual(isAuthorizedPublicationFile('AgendaFest.xlsx'), true);
+    assert.strictEqual(isAuthorizedPublicationFile('src/data/festivalData.ts'), true);
+    assert.strictEqual(isAuthorizedPublicationFile('src/data/artistSocialLinks.ts'), true);
+    assert.strictEqual(isAuthorizedPublicationFile('public/images/cartel-nuevo.webp'), true);
+    assert.strictEqual(isAuthorizedPublicationFile('Recursos/mapa-nuevo.png'), true);
+    assert.strictEqual(isAuthorizedPublicationFile('importador/.env'), false);
+    assert.strictEqual(isAuthorizedPublicationFile('dist/assets/index.js'), false);
+    assert.strictEqual(isAuthorizedPublicationFile('public/images/../sw.js'), false);
+    assert.strictEqual(isAuthorizedPublicationFile('Recursos/script.js'), false);
   });
 
   // Authenticate once to obtain sessionCookie for all endpoint tests

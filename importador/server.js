@@ -599,13 +599,19 @@ app.get('/api/publish/config', requireAuth, (req, res) => {
 app.post('/api/publish/plan', requireAuth, async (req, res) => {
   const { importId } = req.body;
   try {
-    await publish.validateGitStatus();
+    const gitState = await publish.validateGitStatus();
+    if (!gitState.changedFiles || gitState.changedFiles.length === 0) {
+      throw new Error('No hay cambios pendientes para publicar.');
+    }
 
-    const excelFile = path.join(__dirname, '..', 'AgendaFest.xlsx');
-    const tsFile = path.join(__dirname, '..', 'src', 'data', 'festivalData.ts');
-
-    const excelSha = getFileSha256(excelFile);
-    const tsSha = getFileSha256(tsFile);
+    const projectRoot = path.join(__dirname, '..');
+    const planFiles = gitState.changedFiles.map((name) => {
+      const filePath = path.resolve(projectRoot, name);
+      if (!filePath.startsWith(path.resolve(projectRoot) + path.sep)) {
+        throw new Error(`Ruta de publicación no válida: "${name}"`);
+      }
+      return { name, sha256: getFileSha256(filePath), path: filePath };
+    });
 
     const planId = 'PLAN-' + crypto.randomBytes(8).toString('hex').toUpperCase();
     const expiresAt = Date.now() + 600000; // 10 minutes
@@ -623,10 +629,7 @@ app.post('/api/publish/plan', requireAuth, async (req, res) => {
       importId,
       state: 'PENDING',
       expiresAt,
-      files: [
-        { name: 'AgendaFest.xlsx', sha256: excelSha, path: excelFile },
-        { name: 'src/data/festivalData.ts', sha256: tsSha, path: tsFile }
-      ],
+      files: planFiles,
       commitMessage: `feat: importacion festival [${importId || 'MANUAL'}]`,
       targetUrl,
       edicionId,
@@ -700,11 +703,23 @@ app.post('/api/publish/deploy', requireAuth, async (req, res) => {
     return res.status(400).json({ error: 'El estado de Git ha cambiado desde la generación del plan: ' + err.message });
   }
 
+  const plannedFiles = activePublicationPlan.files.map(file => file.name).sort();
+  const currentFiles = [...gitState.changedFiles].sort();
+  if (plannedFiles.length !== currentFiles.length || plannedFiles.some((file, index) => file !== currentFiles[index])) {
+    activePublicationPlan.state = 'ERROR_DESPLIEGUE';
+    activePublicationPlan.logs.push('La lista de archivos cambió después de generar el plan.');
+    return res.status(400).json({ error: 'La lista de archivos cambió después de generar el plan. Genere un plan nuevo.' });
+  }
+
   try {
     activePublicationPlan.state = 'DEPLOYING';
     activePublicationPlan.logs.push('Iniciando commit y push Git...');
 
-    const deployResult = await publish.runGitDeploy(activePublicationPlan.importId || 'MANUAL', gitState.branch);
+    const deployResult = await publish.runGitDeploy(
+      activePublicationPlan.importId || 'MANUAL',
+      gitState.branch,
+      activePublicationPlan.files.map(file => file.name)
+    );
     
     activePublicationPlan.commitSha = deployResult.sha;
     activePublicationPlan.state = 'PUSHED';

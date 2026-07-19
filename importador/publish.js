@@ -13,15 +13,48 @@ const rootDir = path.join(__dirname, '..');
  * @param {number} timeout Timeout in milliseconds.
  * @returns {Promise<string>} stdout output.
  */
-function runGitCommand(args, timeout = 30000) {
+function runGitCommand(args, timeout = 30000, options = {}) {
   return new Promise((resolve, reject) => {
     execFile('git', args, { cwd: rootDir, timeout, maxBuffer: 1024 * 1024 }, (err, stdout, stderr) => {
       if (err) {
         return reject(new Error(stderr.trim() || stdout.trim() || err.message));
       }
-      resolve(stdout.trim());
+      resolve(options.preserveLeading ? stdout.replace(/\s+$/, '') : stdout.trim());
     });
   });
+}
+
+const FIXED_PUBLICATION_FILES = new Set([
+  'AgendaFest.xlsx',
+  'src/data/festivalData.ts',
+  'src/data/artistSocialLinks.ts'
+]);
+const PUBLICATION_IMAGE_PATTERN = /^(?:public\/images|Recursos)\/[^/]+\.(?:png|jpe?g|webp|gif|svg)$/i;
+
+function isAuthorizedPublicationFile(file) {
+  const normalized = String(file || '').replace(/\\/g, '/');
+  return FIXED_PUBLICATION_FILES.has(normalized) || PUBLICATION_IMAGE_PATTERN.test(normalized);
+}
+
+function parseGitStatus(status) {
+  if (!status) return [];
+  const tokens = status.split('\0').filter(Boolean);
+  const files = [];
+
+  for (let index = 0; index < tokens.length; index += 1) {
+    const entry = tokens[index];
+    const code = entry.slice(0, 2);
+    const file = entry.slice(3).replace(/\\/g, '/');
+    if (code.includes('R') || code.includes('C')) {
+      throw new Error(`No se permiten renombrados o copias durante la publicación: "${file}"`);
+    }
+    if (code.includes('D')) {
+      throw new Error(`No se permiten eliminaciones durante la publicación: "${file}"`);
+    }
+    files.push(file);
+  }
+
+  return files;
 }
 
 /**
@@ -45,7 +78,7 @@ function runNodeCommand(file, args, timeout = 60000) {
 
 /**
  * Validates Git repository status, branch, conflicts, remote, and commits behind.
- * @returns {Promise<{branch: string, remote: string}>}
+ * @returns {Promise<{branch: string, remote: string, changedFiles: string[]}>}
  */
 async function validateGitStatus() {
   // 1. Root top level check
@@ -69,14 +102,11 @@ async function validateGitStatus() {
   }
 
   // 4. Dirty files / uncommitted check (allow modifications ONLY to AgendaFest.xlsx and src/data/festivalData.ts)
-  const status = await runGitCommand(['status', '--porcelain']);
-  if (status) {
-    const lines = status.split('\n');
-    for (const line of lines) {
-      if (!line) continue;
-      const file = line.substring(3).trim();
-      // Ignore vscode extensions recommend if modified, but keep strict on project code
-      if (file !== 'AgendaFest.xlsx' && file !== 'src/data/festivalData.ts') {
+  const status = await runGitCommand(['status', '--porcelain=v1', '-z'], 30000, { preserveLeading: true });
+  const changedFiles = parseGitStatus(status);
+  if (changedFiles.length > 0) {
+    for (const file of changedFiles) {
+      if (!isAuthorizedPublicationFile(file)) {
         throw new Error(`El repositorio contiene cambios sucios en archivos no autorizados: "${file}"`);
       }
     }
@@ -100,7 +130,7 @@ async function validateGitStatus() {
     throw new Error(`La rama local está retrasada por ${behindCount} commits respecto a origin/${branch}. Ejecuta git pull.`);
   }
 
-  return { branch, remote };
+  return { branch, remote, changedFiles };
 }
 
 /**
@@ -119,9 +149,17 @@ async function runLocalBuild() {
  * @param {string} branch Active branch name.
  * @returns {Promise<{sha: string, logs: string}>} Git push logs and commit SHA.
  */
-async function runGitDeploy(importId, branch) {
+async function runGitDeploy(importId, branch, files) {
+  if (!Array.isArray(files) || files.length === 0) {
+    throw new Error('No hay archivos autorizados en el plan de publicación.');
+  }
+  for (const file of files) {
+    if (!isAuthorizedPublicationFile(file)) {
+      throw new Error(`Archivo no autorizado en el despliegue: "${file}"`);
+    }
+  }
   // Add exactly the authorized files only (dist/ must NEVER be added to main!)
-  await runGitCommand(['add', 'AgendaFest.xlsx', 'src/data/festivalData.ts']);
+  await runGitCommand(['add', '--', ...files]);
   await runGitCommand(['commit', '-m', `feat: importacion festival [${importId}]`]);
   const pushLogs = await runGitCommand(['push', 'origin', branch]);
   const sha = await runGitCommand(['rev-parse', 'HEAD']);
@@ -374,6 +412,8 @@ async function runV3Validation(baseUrl, edicionId) {
 }
 
 module.exports = {
+  isAuthorizedPublicationFile,
+  parseGitStatus,
   validateGitStatus,
   runLocalBuild,
   runGitDeploy,
