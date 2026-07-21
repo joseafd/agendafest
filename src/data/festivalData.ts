@@ -1479,14 +1479,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HAMLET",
               "title": "",
-              "description": "Hamlet es una banda de metal alternativo, thrash metal y groove metal de Madrid (España), en activo desde 1987. El nombre del grupo se lo deben a un antiguo batería de la agrupación, que llegó a un ensayo con la obra Hamlet de William Shakespeare, y decidieron darle al grupo dicho nombre.",
+              "description": "Hamlet es una banda de metal alternativo formada en Madrid a finales de los años 80. Han sido pioneros en la profesionalización del metal en España, explorando sonidos desde el groove metal hasta el nu-metal. Con álbumes icónicos como 'Sanatorio de Muñecos' o 'Insomnio', la banda ha definido el sonido de varias generaciones de rockeros. Su líder, J. Molly, y el guitarrista Luis Tárraga mantienen una propuesta musical intensa, marcada por letras introspectivas y viscerales, lo que les ha permitido mantenerse vigentes y respetados en la escena musical española durante más de tres décadas de carrera.",
               "country": "España",
-              "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=HGozdu9dfZ8",
+              "genre": "Metal alternativo",
+              "youtubeUrl": "https://www.youtube.com/@hamletband",
               "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
-              "instagramUrl": "https://www.instagram.com/hamletband/",
-              "facebookUrl": "https://www.facebook.com/hamletband",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747e1b69bc4f40b05b6a7052cd"
+              "instagramUrl": "https://www.instagram.com/hamletbanda/",
+              "facebookUrl": "https://www.facebook.com/Hamletbanda",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7e1b69bc4f40b05b6a7052cd"
             }
           },
           {
@@ -2789,7 +2789,7 @@ const rawAgendaFestData: any = {
               "description": "Deicide es una de las bandas más provocadoras y fundamentales del death metal técnico y agresivo. Liderados por Glen Benton, desde Florida, han sido famosos por sus temáticas anticristianas y su sonido directo, rápido y extremadamente intenso. Álbumes como Deicide y Legion son considerados pilares del género. A lo largo de su carrera, han mantenido una actitud implacable, negándose a suavizar su estilo para complacer al mercado. Su impacto en la escena death metal es innegable, siendo referentes por su brutalidad sonora y su compromiso constante con un sonido que definió el metal extremo de los noventa.",
               "country": "Estados Unidos",
               "genre": "Death metal",
-              "youtubeUrl": "https://www.youtube.com/user/deicideofficial",
+              "youtubeUrl": "https://www.youtube.com/watch?v=-WnNowJKN9A",
               "spotifyUrl": "https://open.spotify.com/artist/2K3GorTixXKAiwe2t9lO89",
               "instagramUrl": "https://www.instagram.com/deicideofficial/",
               "facebookUrl": "https://www.facebook.com/OfficialDeicide",
@@ -2856,7 +2856,7 @@ const rawAgendaFestData: any = {
               "description": "Helloween es reconocida mundialmente como la creadora del power metal europeo tal y como lo conocemos. Con sus álbumes Keeper of the Seven Keys, establecieron las bases de un sonido veloz, melódico y épico que ha influido en miles de bandas posteriores. Tras décadas de historia y diversas formaciones, lograron reunir a miembros clave para crear una experiencia definitiva en su última etapa. Su legado musical es inmenso, siendo una de las bandas más queridas por su capacidad para crear himnos que han marcado la historia del metal. Siguen demostrando una vitalidad y técnica excepcionales en cada actuación.",
               "country": "Alemania",
               "genre": "Power metal",
-              "youtubeUrl": "https://www.youtube.com/user/helloween",
+              "youtubeUrl": "https://www.youtube.com/watch?v=88Nn7CIpmWQ",
               "spotifyUrl": "https://open.spotify.com/artist/4pQN0GB0fNEEOfQCaWotsY",
               "instagramUrl": "https://www.instagram.com/helloweenofficial/",
               "facebookUrl": "https://www.facebook.com/helloweenofficial",
@@ -2910,7 +2910,7 @@ const rawAgendaFestData: any = {
               "description": "WarCry es una banda de power metal fundada en 2002 en Oviedo (Asturias, España), cuando el vocalista Víctor García y el baterista Alberto Ardines fueron expulsados de Avalanch. Pablo García y Fernando Mon aparecieron como guitarristas invitados en el álbum debut homónimo, pero se hicieron miembros oficiales en 2002 junto con el bajista Álvaro Jardón y el pianista Manuel Ramil. Jardón abandonó la banda a finales de 2003, siendo reemplazado por Roberto García tres meses después.",
               "country": "España",
               "genre": "Heavy Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=UJaW2Z5DxS8",
+              "youtubeUrl": "https://www.youtube.com/watch?v=gjt3Qi8V3v8",
               "spotifyUrl": "https://open.spotify.com/artist/3hMTlMf2UGZTeP6DSUUl09",
               "instagramUrl": "https://www.instagram.com/warcryoficial/",
               "facebookUrl": "https://www.facebook.com/WarCryOficial",
@@ -3269,6 +3269,18 @@ const rawAgendaFestData: any = {
         "name": "Vendaval",
         "order": 1,
         "color": "#00c9a7"
+      },
+      {
+        "id": "escenario-principal",
+        "name": "Escenario Principal",
+        "order": 1,
+        "color": "#d3133c"
+      },
+      {
+        "id": "principal",
+        "name": "Principal",
+        "order": 1,
+        "color": "#d3133c"
       }
     ],
     "days": [
@@ -3279,7 +3291,9 @@ const rawAgendaFestData: any = {
         "weekdayEs": "Viernes",
         "doors": "18:45",
         "stages": [
-          "Vendaval"
+          "Vendaval",
+          "Escenario Principal",
+          "Principal"
         ],
         "acts": [
           {
@@ -3290,12 +3304,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Demenzia Sozial",
               "title": "",
-              "description": "Demenzia Sozial es una banda de punk rock procedente del País Vasco, activa desde los años 90. Con letras combativas en euskera y castellano, su sonido directo y energético les ha convertido en referentes del punk estatal.",
+              "description": "Demenzia Sozial es una formación de punk rock procedente de Galicia que destaca por su sonido crudo y directo. La banda se ha consolidado dentro de la escena independiente gracias a unas letras cargadas de crítica social y una energía arrolladora en directo. A lo largo de su trayectoria, han mantenido una actitud firme y autogestionada, participando en diversos festivales y eventos del circuito punk estatal. Su propuesta musical conecta profundamente con el público que busca autenticidad, compromiso y una actitud rebelde frente a las estructuras establecidas, consolidándose como un referente regional en su género.",
               "country": "España",
-              "genre": "Punk Rock",
-              "spotifyUrl": "https://open.spotify.com/artist/2iGNWJXXKSikzt5vXMiGQx",
+              "genre": "Punk",
+              "youtubeUrl": "https://www.youtube.com/watch?v=yywSko_dMsI",
+              "spotifyUrl": "https://open.spotify.com/artist/7HRSS0s7sgWTvK4q7MDy2O",
               "instagramUrl": "https://www.instagram.com/demenziasozial/",
-              "facebookUrl": "https://www.facebook.com/DemenziaSozial"
+              "facebookUrl": "https://www.facebook.com/DemenziaSozial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9be767d486bf71f9da537c0c"
+            }
+          },
+          {
+            "band": "Demenzia Sozial",
+            "stage": "Escenario Principal",
+            "start": "19:15",
+            "end": "20:00",
+            "bio": {
+              "name": "Demenzia Sozial",
+              "title": "",
+              "description": "Demenzia Sozial es una formación de punk rock procedente de Galicia que destaca por su sonido crudo y directo. La banda se ha consolidado dentro de la escena independiente gracias a unas letras cargadas de crítica social y una energía arrolladora en directo. A lo largo de su trayectoria, han mantenido una actitud firme y autogestionada, participando en diversos festivales y eventos del circuito punk estatal. Su propuesta musical conecta profundamente con el público que busca autenticidad, compromiso y una actitud rebelde frente a las estructuras establecidas, consolidándose como un referente regional en su género.",
+              "country": "España",
+              "genre": "Punk",
+              "youtubeUrl": "https://www.youtube.com/watch?v=yywSko_dMsI",
+              "spotifyUrl": "https://open.spotify.com/artist/7HRSS0s7sgWTvK4q7MDy2O",
+              "instagramUrl": "https://www.instagram.com/demenziasozial/",
+              "facebookUrl": "https://www.facebook.com/DemenziaSozial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9be767d486bf71f9da537c0c"
+            }
+          },
+          {
+            "band": "Demenzia Sozial",
+            "stage": "Principal",
+            "start": "19:15",
+            "end": "20:00",
+            "bio": {
+              "name": "Demenzia Sozial",
+              "title": "",
+              "description": "Demenzia Sozial es una formación de punk rock procedente de Galicia que destaca por su sonido crudo y directo. La banda se ha consolidado dentro de la escena independiente gracias a unas letras cargadas de crítica social y una energía arrolladora en directo. A lo largo de su trayectoria, han mantenido una actitud firme y autogestionada, participando en diversos festivales y eventos del circuito punk estatal. Su propuesta musical conecta profundamente con el público que busca autenticidad, compromiso y una actitud rebelde frente a las estructuras establecidas, consolidándose como un referente regional en su género.",
+              "country": "España",
+              "genre": "Punk",
+              "youtubeUrl": "https://www.youtube.com/watch?v=yywSko_dMsI",
+              "spotifyUrl": "https://open.spotify.com/artist/7HRSS0s7sgWTvK4q7MDy2O",
+              "instagramUrl": "https://www.instagram.com/demenziasozial/",
+              "facebookUrl": "https://www.facebook.com/DemenziaSozial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9be767d486bf71f9da537c0c"
             }
           },
           {
@@ -3306,14 +3358,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "HAMLET",
               "title": "",
-              "description": "Hamlet es una banda de metal alternativo, thrash metal y groove metal de Madrid (España), en activo desde 1987. El nombre del grupo se lo deben a un antiguo batería de la agrupación, que llegó a un ensayo con la obra Hamlet de William Shakespeare, y decidieron darle al grupo dicho nombre.",
+              "description": "Hamlet es una banda de metal alternativo formada en Madrid a finales de los años 80. Han sido pioneros en la profesionalización del metal en España, explorando sonidos desde el groove metal hasta el nu-metal. Con álbumes icónicos como 'Sanatorio de Muñecos' o 'Insomnio', la banda ha definido el sonido de varias generaciones de rockeros. Su líder, J. Molly, y el guitarrista Luis Tárraga mantienen una propuesta musical intensa, marcada por letras introspectivas y viscerales, lo que les ha permitido mantenerse vigentes y respetados en la escena musical española durante más de tres décadas de carrera.",
               "country": "España",
-              "genre": "Thrash Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=HGozdu9dfZ8",
+              "genre": "Metal alternativo",
+              "youtubeUrl": "https://www.youtube.com/@hamletband",
               "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
-              "instagramUrl": "https://www.instagram.com/hamletband/",
-              "facebookUrl": "https://www.facebook.com/hamletband",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747e1b69bc4f40b05b6a7052cd"
+              "instagramUrl": "https://www.instagram.com/hamletbanda/",
+              "facebookUrl": "https://www.facebook.com/Hamletbanda",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7e1b69bc4f40b05b6a7052cd"
+            }
+          },
+          {
+            "band": "HAMLET",
+            "stage": "Escenario Principal",
+            "start": "20:30",
+            "end": "21:45",
+            "bio": {
+              "name": "HAMLET",
+              "title": "",
+              "description": "Hamlet es una banda de metal alternativo formada en Madrid a finales de los años 80. Han sido pioneros en la profesionalización del metal en España, explorando sonidos desde el groove metal hasta el nu-metal. Con álbumes icónicos como 'Sanatorio de Muñecos' o 'Insomnio', la banda ha definido el sonido de varias generaciones de rockeros. Su líder, J. Molly, y el guitarrista Luis Tárraga mantienen una propuesta musical intensa, marcada por letras introspectivas y viscerales, lo que les ha permitido mantenerse vigentes y respetados en la escena musical española durante más de tres décadas de carrera.",
+              "country": "España",
+              "genre": "Metal alternativo",
+              "youtubeUrl": "https://www.youtube.com/@hamletband",
+              "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
+              "instagramUrl": "https://www.instagram.com/hamletbanda/",
+              "facebookUrl": "https://www.facebook.com/Hamletbanda",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7e1b69bc4f40b05b6a7052cd"
+            }
+          },
+          {
+            "band": "HAMLET",
+            "stage": "Principal",
+            "start": "20:30",
+            "end": "21:45",
+            "bio": {
+              "name": "HAMLET",
+              "title": "",
+              "description": "Hamlet es una banda de metal alternativo formada en Madrid a finales de los años 80. Han sido pioneros en la profesionalización del metal en España, explorando sonidos desde el groove metal hasta el nu-metal. Con álbumes icónicos como 'Sanatorio de Muñecos' o 'Insomnio', la banda ha definido el sonido de varias generaciones de rockeros. Su líder, J. Molly, y el guitarrista Luis Tárraga mantienen una propuesta musical intensa, marcada por letras introspectivas y viscerales, lo que les ha permitido mantenerse vigentes y respetados en la escena musical española durante más de tres décadas de carrera.",
+              "country": "España",
+              "genre": "Metal alternativo",
+              "youtubeUrl": "https://www.youtube.com/@hamletband",
+              "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
+              "instagramUrl": "https://www.instagram.com/hamletbanda/",
+              "facebookUrl": "https://www.facebook.com/Hamletbanda",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7e1b69bc4f40b05b6a7052cd"
             }
           },
           {
@@ -3334,6 +3422,42 @@ const rawAgendaFestData: any = {
             }
           },
           {
+            "band": "DAKIDARRÍA",
+            "stage": "Escenario Principal",
+            "start": "22:15",
+            "end": "23:45",
+            "bio": {
+              "name": "DAKIDARRÍA",
+              "title": "",
+              "description": "Dakidarría es una banda gallega que destaca por su explosiva mezcla de ska, punk y reggae, siempre acompañada de letras con un marcado carácter social y festivo. Desde sus inicios, han apostado por la energía en el escenario, logrando una complicidad inmediata con el público. Su música, cantada principalmente en gallego, trasciende barreras idiomáticas gracias a su capacidad para convertir cada concierto en un evento participativo. Con numerosos discos a sus espaldas, han logrado posicionarse como una de las bandas más solicitadas en los festivales de verano de toda la península ibérica.",
+              "country": "España",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/watch?v=OsJ8g_OJLCo",
+              "spotifyUrl": "https://open.spotify.com/artist/2t4UlDofSDxweW751EVw9d",
+              "instagramUrl": "https://www.instagram.com/dakidarria/",
+              "facebookUrl": "https://www.facebook.com/dakidarria",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebef81f75e6ef4a4f84453a00c"
+            }
+          },
+          {
+            "band": "DAKIDARRÍA",
+            "stage": "Principal",
+            "start": "22:15",
+            "end": "23:45",
+            "bio": {
+              "name": "DAKIDARRÍA",
+              "title": "",
+              "description": "Dakidarría es una banda gallega que destaca por su explosiva mezcla de ska, punk y reggae, siempre acompañada de letras con un marcado carácter social y festivo. Desde sus inicios, han apostado por la energía en el escenario, logrando una complicidad inmediata con el público. Su música, cantada principalmente en gallego, trasciende barreras idiomáticas gracias a su capacidad para convertir cada concierto en un evento participativo. Con numerosos discos a sus espaldas, han logrado posicionarse como una de las bandas más solicitadas en los festivales de verano de toda la península ibérica.",
+              "country": "España",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/watch?v=OsJ8g_OJLCo",
+              "spotifyUrl": "https://open.spotify.com/artist/2t4UlDofSDxweW751EVw9d",
+              "instagramUrl": "https://www.instagram.com/dakidarria/",
+              "facebookUrl": "https://www.facebook.com/dakidarria",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebef81f75e6ef4a4f84453a00c"
+            }
+          },
+          {
             "band": "The Real McKenzies",
             "stage": "Vendaval",
             "start": "00:15",
@@ -3341,13 +3465,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "The Real McKenzies",
               "title": "",
-              "description": "The Real McKenzies son una banda canadiense de celtic punk formada en Vancouver en 1992 por Paul McKenzie. Combinan punk rock acelerado con gaitas escocesas, creando himnos festivos que les han convertido en leyendas del género a nivel mundial.",
+              "description": "The Real McKenzies es una banda canadiense conocida por ser pionera en el género del punk celta. Fundados en Vancouver en 1992, integran elementos del folclore tradicional escocés, incluyendo la gaita, con la agresividad y velocidad del punk rock. Con una extensa discografía y giras constantes por todo el mundo, han sido comparados a menudo con Dropkick Murphys o Flogging Molly. Su estilo inconfundible y su estética, a menudo incluyendo faldas escocesas, les han ganado una base de seguidores leales que valoran su capacidad para mantener vivas las tradiciones celtas con una actitud urbana y rebelde.",
               "country": "Canadá",
-              "genre": "Celtic Punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=wNlpQlBKoYQ",
-              "spotifyUrl": "https://open.spotify.com/artist/0Fz7CWhXEiGMlPqVCmb2a3",
+              "genre": "Punk celta",
+              "youtubeUrl": "https://www.youtube.com/watch?v=C7l8EuFNuTM",
+              "spotifyUrl": "https://open.spotify.com/artist/1YczG6BNjM9XAnw64RqnXi",
               "instagramUrl": "https://www.instagram.com/therealmckenzies/",
-              "facebookUrl": "https://www.facebook.com/therealmckenzies"
+              "facebookUrl": "https://www.facebook.com/therealmckenzies",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebde9500892362fec349dc392d"
+            }
+          },
+          {
+            "band": "The Real McKenzies",
+            "stage": "Escenario Principal",
+            "start": "00:15",
+            "end": "01:30",
+            "bio": {
+              "name": "The Real McKenzies",
+              "title": "",
+              "description": "The Real McKenzies es una banda canadiense conocida por ser pionera en el género del punk celta. Fundados en Vancouver en 1992, integran elementos del folclore tradicional escocés, incluyendo la gaita, con la agresividad y velocidad del punk rock. Con una extensa discografía y giras constantes por todo el mundo, han sido comparados a menudo con Dropkick Murphys o Flogging Molly. Su estilo inconfundible y su estética, a menudo incluyendo faldas escocesas, les han ganado una base de seguidores leales que valoran su capacidad para mantener vivas las tradiciones celtas con una actitud urbana y rebelde.",
+              "country": "Canadá",
+              "genre": "Punk celta",
+              "youtubeUrl": "https://www.youtube.com/watch?v=C7l8EuFNuTM",
+              "spotifyUrl": "https://open.spotify.com/artist/1YczG6BNjM9XAnw64RqnXi",
+              "instagramUrl": "https://www.instagram.com/therealmckenzies/",
+              "facebookUrl": "https://www.facebook.com/therealmckenzies",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebde9500892362fec349dc392d"
+            }
+          },
+          {
+            "band": "The Real McKenzies",
+            "stage": "Principal",
+            "start": "00:15",
+            "end": "01:30",
+            "bio": {
+              "name": "The Real McKenzies",
+              "title": "",
+              "description": "The Real McKenzies es una banda canadiense conocida por ser pionera en el género del punk celta. Fundados en Vancouver en 1992, integran elementos del folclore tradicional escocés, incluyendo la gaita, con la agresividad y velocidad del punk rock. Con una extensa discografía y giras constantes por todo el mundo, han sido comparados a menudo con Dropkick Murphys o Flogging Molly. Su estilo inconfundible y su estética, a menudo incluyendo faldas escocesas, les han ganado una base de seguidores leales que valoran su capacidad para mantener vivas las tradiciones celtas con una actitud urbana y rebelde.",
+              "country": "Canadá",
+              "genre": "Punk celta",
+              "youtubeUrl": "https://www.youtube.com/watch?v=C7l8EuFNuTM",
+              "spotifyUrl": "https://open.spotify.com/artist/1YczG6BNjM9XAnw64RqnXi",
+              "instagramUrl": "https://www.instagram.com/therealmckenzies/",
+              "facebookUrl": "https://www.facebook.com/therealmckenzies",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebde9500892362fec349dc392d"
             }
           },
           {
@@ -3358,12 +3519,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Ruxe Ruxe",
               "title": "",
-              "description": "Ruxe Ruxe es una banda gallega que fusiona punk, ska y música tradicional gallega. Con letras reivindicativas en gallego y un directo explosivo, son habituales en los festivales del noroeste peninsular.",
+              "description": "Ruxe Ruxe es un referente indispensable de la música gallega contemporánea. Formados en 1996, su propuesta musical combina el rock con elementos tradicionales de la música folk, creando un sonido propio que ellos mismos han definido como rock bravú. A lo largo de su dilatada trayectoria, han recorrido innumerables escenarios, convirtiéndose en un símbolo de la identidad cultural gallega. Sus composiciones, cargadas de ironía y compromiso social, siguen resonando entre el público, consolidando su legado como una de las bandas más longevas y queridas dentro del panorama musical alternativo del noroeste de España.",
               "country": "España",
-              "genre": "Punk / Ska",
-              "spotifyUrl": "https://open.spotify.com/artist/2cfFuVXAOBbFoGmhJZLm14",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Q5epRujyhr0",
+              "spotifyUrl": "https://open.spotify.com/artist/1YFrhov5H4KBd13rWQvzpe",
               "instagramUrl": "https://www.instagram.com/ruxeruxe/",
-              "facebookUrl": "https://www.facebook.com/ruxeruxe"
+              "facebookUrl": "https://www.facebook.com/ruxeruxe",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebadd73c05c888e31901606816"
+            }
+          },
+          {
+            "band": "Ruxe Ruxe",
+            "stage": "Escenario Principal",
+            "start": "02:00",
+            "end": "03:00",
+            "bio": {
+              "name": "Ruxe Ruxe",
+              "title": "",
+              "description": "Ruxe Ruxe es un referente indispensable de la música gallega contemporánea. Formados en 1996, su propuesta musical combina el rock con elementos tradicionales de la música folk, creando un sonido propio que ellos mismos han definido como rock bravú. A lo largo de su dilatada trayectoria, han recorrido innumerables escenarios, convirtiéndose en un símbolo de la identidad cultural gallega. Sus composiciones, cargadas de ironía y compromiso social, siguen resonando entre el público, consolidando su legado como una de las bandas más longevas y queridas dentro del panorama musical alternativo del noroeste de España.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Q5epRujyhr0",
+              "spotifyUrl": "https://open.spotify.com/artist/1YFrhov5H4KBd13rWQvzpe",
+              "instagramUrl": "https://www.instagram.com/ruxeruxe/",
+              "facebookUrl": "https://www.facebook.com/ruxeruxe",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebadd73c05c888e31901606816"
+            }
+          },
+          {
+            "band": "Ruxe Ruxe",
+            "stage": "Principal",
+            "start": "02:00",
+            "end": "03:00",
+            "bio": {
+              "name": "Ruxe Ruxe",
+              "title": "",
+              "description": "Ruxe Ruxe es un referente indispensable de la música gallega contemporánea. Formados en 1996, su propuesta musical combina el rock con elementos tradicionales de la música folk, creando un sonido propio que ellos mismos han definido como rock bravú. A lo largo de su dilatada trayectoria, han recorrido innumerables escenarios, convirtiéndose en un símbolo de la identidad cultural gallega. Sus composiciones, cargadas de ironía y compromiso social, siguen resonando entre el público, consolidando su legado como una de las bandas más longevas y queridas dentro del panorama musical alternativo del noroeste de España.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Q5epRujyhr0",
+              "spotifyUrl": "https://open.spotify.com/artist/1YFrhov5H4KBd13rWQvzpe",
+              "instagramUrl": "https://www.instagram.com/ruxeruxe/",
+              "facebookUrl": "https://www.facebook.com/ruxeruxe",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebadd73c05c888e31901606816"
             }
           },
           {
@@ -3374,9 +3573,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DJ Tralla",
               "title": "",
-              "description": "DJ Tralla es el disc jockey residente del Vendaval Fest, encargado de mantener la fiesta entre conciertos y cerrar cada jornada con sesiones de rock, punk y metal.",
+              "description": "DJ Tralla es un artista versátil que se mueve en el ámbito de la música festiva y los ritmos urbanos. Con una trayectoria enfocada en dinamizar festivales y eventos, sus sesiones se caracterizan por una selección musical que mezcla diversos estilos para lograr el máximo impacto en el público. Su capacidad para conectar con la audiencia mediante una energía constante lo ha llevado a formar parte de numerosos carteles de festivales de rock y música alternativa en España, donde su presencia asegura un ambiente de celebración continua durante toda la actuación.",
               "country": "España",
-              "genre": "DJ / Rock"
+              "genre": "Electrónica",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Fi2YI5aeMv8",
+              "spotifyUrl": "https://open.spotify.com/artist/5rChNZRJnV2MciNb9U6HyH",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb8406c890d80515a1f8ee7702"
             }
           }
         ]
@@ -3388,7 +3590,9 @@ const rawAgendaFestData: any = {
         "weekdayEs": "Sábado",
         "doors": "18:30",
         "stages": [
-          "Vendaval"
+          "Vendaval",
+          "Escenario Principal",
+          "Principal"
         ],
         "acts": [
           {
@@ -3399,12 +3603,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Ochobre",
               "title": "",
-              "description": "Ochobre es una banda gallega de rock alternativo que canta en gallego. Con un sonido que combina indie rock, post-punk y pop oscuro, se han convertido en una de las propuestas más interesantes de la música gallega contemporánea.",
+              "description": "Ochobre es una banda asturiana que se dedica a la investigación y difusión del folclore tradicional bajo una óptica contemporánea. Utilizando instrumentos clásicos como la gaita, pero integrándolos en estructuras de rock y pop, han logrado revitalizar la música de raíz de Asturias para audiencias modernas. Su trabajo no solo se limita a la interpretación, sino que también realizan una labor de recuperación cultural. Con una sólida trayectoria en festivales de folk y músicas del mundo, Ochobre destaca por su calidad técnica y su capacidad para conectar el pasado con el presente musical.",
               "country": "España",
-              "genre": "Rock Alternativo",
-              "spotifyUrl": "https://open.spotify.com/artist/0Y6q5L8bLPyV2K7rmQnPmV",
-              "instagramUrl": "https://www.instagram.com/ochobre_/",
-              "facebookUrl": "https://www.facebook.com/ochobre"
+              "genre": "Folk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=zKlpOY8n5aY",
+              "spotifyUrl": "https://open.spotify.com/artist/2stjCg32t7aeyXT0L5bd0i",
+              "instagramUrl": "https://www.instagram.com/ochobrefolk/",
+              "facebookUrl": "https://www.facebook.com/ochobrefolk",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb832e1bc16c19e9fa9020b660"
+            }
+          },
+          {
+            "band": "Ochobre",
+            "stage": "Escenario Principal",
+            "start": "19:00",
+            "end": "19:45",
+            "bio": {
+              "name": "Ochobre",
+              "title": "",
+              "description": "Ochobre es una banda asturiana que se dedica a la investigación y difusión del folclore tradicional bajo una óptica contemporánea. Utilizando instrumentos clásicos como la gaita, pero integrándolos en estructuras de rock y pop, han logrado revitalizar la música de raíz de Asturias para audiencias modernas. Su trabajo no solo se limita a la interpretación, sino que también realizan una labor de recuperación cultural. Con una sólida trayectoria en festivales de folk y músicas del mundo, Ochobre destaca por su calidad técnica y su capacidad para conectar el pasado con el presente musical.",
+              "country": "España",
+              "genre": "Folk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=zKlpOY8n5aY",
+              "spotifyUrl": "https://open.spotify.com/artist/2stjCg32t7aeyXT0L5bd0i",
+              "instagramUrl": "https://www.instagram.com/ochobrefolk/",
+              "facebookUrl": "https://www.facebook.com/ochobrefolk",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb832e1bc16c19e9fa9020b660"
+            }
+          },
+          {
+            "band": "Ochobre",
+            "stage": "Principal",
+            "start": "19:00",
+            "end": "19:45",
+            "bio": {
+              "name": "Ochobre",
+              "title": "",
+              "description": "Ochobre es una banda asturiana que se dedica a la investigación y difusión del folclore tradicional bajo una óptica contemporánea. Utilizando instrumentos clásicos como la gaita, pero integrándolos en estructuras de rock y pop, han logrado revitalizar la música de raíz de Asturias para audiencias modernas. Su trabajo no solo se limita a la interpretación, sino que también realizan una labor de recuperación cultural. Con una sólida trayectoria en festivales de folk y músicas del mundo, Ochobre destaca por su calidad técnica y su capacidad para conectar el pasado con el presente musical.",
+              "country": "España",
+              "genre": "Folk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=zKlpOY8n5aY",
+              "spotifyUrl": "https://open.spotify.com/artist/2stjCg32t7aeyXT0L5bd0i",
+              "instagramUrl": "https://www.instagram.com/ochobrefolk/",
+              "facebookUrl": "https://www.facebook.com/ochobrefolk",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb832e1bc16c19e9fa9020b660"
             }
           },
           {
@@ -3415,12 +3657,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Hermana Furia",
               "title": "",
-              "description": "Hermana Furia es una banda española de rock alternativo y stoner rock. Con riffs potentes y una actitud visceral, su música bebe del grunge, el desert rock y el punk, ofreciendo directos intensos y contundentes.",
+              "description": "Hermana Furia es una banda de hard rock nacida en Madrid que se ha hecho notar rápidamente por su contundencia y fuerza. Con una propuesta sonora cargada de riffs poderosos y una voz cargada de actitud, el grupo busca rescatar el espíritu más crudo y auténtico del rock and roll. A pesar de su juventud como proyecto, han demostrado una enorme capacidad para el directo, logrando captar la atención de la crítica especializada. Su estilo combina influencias del rock clásico con una producción moderna, posicionándolos como una de las apuestas más interesantes dentro del panorama rockero nacional.",
               "country": "España",
-              "genre": "Stoner Rock",
-              "spotifyUrl": "https://open.spotify.com/artist/6lK7Vc50r2gs7H9YVOFldp",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vRwlcrCNm00",
+              "spotifyUrl": "https://open.spotify.com/artist/4HDtqal17o1XyKuLwA4aWK",
               "instagramUrl": "https://www.instagram.com/hermanafuria/",
-              "facebookUrl": "https://www.facebook.com/hermanafuria"
+              "facebookUrl": "https://www.facebook.com/hermanafuria",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5c92f6290b2955427b9a407a"
+            }
+          },
+          {
+            "band": "Hermana Furia",
+            "stage": "Escenario Principal",
+            "start": "20:15",
+            "end": "21:15",
+            "bio": {
+              "name": "Hermana Furia",
+              "title": "",
+              "description": "Hermana Furia es una banda de hard rock nacida en Madrid que se ha hecho notar rápidamente por su contundencia y fuerza. Con una propuesta sonora cargada de riffs poderosos y una voz cargada de actitud, el grupo busca rescatar el espíritu más crudo y auténtico del rock and roll. A pesar de su juventud como proyecto, han demostrado una enorme capacidad para el directo, logrando captar la atención de la crítica especializada. Su estilo combina influencias del rock clásico con una producción moderna, posicionándolos como una de las apuestas más interesantes dentro del panorama rockero nacional.",
+              "country": "España",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vRwlcrCNm00",
+              "spotifyUrl": "https://open.spotify.com/artist/4HDtqal17o1XyKuLwA4aWK",
+              "instagramUrl": "https://www.instagram.com/hermanafuria/",
+              "facebookUrl": "https://www.facebook.com/hermanafuria",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5c92f6290b2955427b9a407a"
+            }
+          },
+          {
+            "band": "Hermana Furia",
+            "stage": "Principal",
+            "start": "20:15",
+            "end": "21:15",
+            "bio": {
+              "name": "Hermana Furia",
+              "title": "",
+              "description": "Hermana Furia es una banda de hard rock nacida en Madrid que se ha hecho notar rápidamente por su contundencia y fuerza. Con una propuesta sonora cargada de riffs poderosos y una voz cargada de actitud, el grupo busca rescatar el espíritu más crudo y auténtico del rock and roll. A pesar de su juventud como proyecto, han demostrado una enorme capacidad para el directo, logrando captar la atención de la crítica especializada. Su estilo combina influencias del rock clásico con una producción moderna, posicionándolos como una de las apuestas más interesantes dentro del panorama rockero nacional.",
+              "country": "España",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vRwlcrCNm00",
+              "spotifyUrl": "https://open.spotify.com/artist/4HDtqal17o1XyKuLwA4aWK",
+              "instagramUrl": "https://www.instagram.com/hermanafuria/",
+              "facebookUrl": "https://www.facebook.com/hermanafuria",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5c92f6290b2955427b9a407a"
             }
           },
           {
@@ -3431,13 +3711,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "El Drogas",
               "title": "",
-              "description": "Enrique Villarreal 'El Drogas' es un músico navarro, fundador y líder de la legendaria banda Barricada durante más de 30 años. Tras la disolución del grupo, continúa su carrera en solitario con un rock directo, visceral y comprometido que le mantiene como una de las figuras más respetadas del rock español.",
+              "description": "Enrique Villarreal, conocido popularmente como El Drogas, es una de las figuras más importantes de la historia del rock en español. Tras su etapa fundamental como bajista y vocalista de Barricada, ha desarrollado una prolífica carrera en solitario que abarca múltiples facetas musicales, desde el rock más duro hasta incursiones experimentales. Reconocido por su capacidad como letrista, sus canciones retratan la realidad social con una mirada crítica y poética. Con décadas de trayectoria, El Drogas sigue siendo un referente indispensable, manteniendo una intensidad inigualable en sus directos que continúan atrayendo a varias generaciones de seguidores.",
               "country": "España",
               "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=_DaqCJVIhIc",
-              "spotifyUrl": "https://open.spotify.com/artist/2eOdEDrZaWzDxSHyMYYPwO",
+              "youtubeUrl": "https://www.youtube.com/watch?v=rgshBZ4d2jQ",
+              "spotifyUrl": "https://open.spotify.com/artist/5jJWnRLQeU7fe9VaDjpIWK",
               "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
-              "facebookUrl": "https://www.facebook.com/ElDrogasOficial"
+              "facebookUrl": "https://www.facebook.com/elDrogasOficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5710509841030fa63a87ad79"
+            }
+          },
+          {
+            "band": "El Drogas",
+            "stage": "Escenario Principal",
+            "start": "21:45",
+            "end": "23:15",
+            "bio": {
+              "name": "El Drogas",
+              "title": "",
+              "description": "Enrique Villarreal, conocido popularmente como El Drogas, es una de las figuras más importantes de la historia del rock en español. Tras su etapa fundamental como bajista y vocalista de Barricada, ha desarrollado una prolífica carrera en solitario que abarca múltiples facetas musicales, desde el rock más duro hasta incursiones experimentales. Reconocido por su capacidad como letrista, sus canciones retratan la realidad social con una mirada crítica y poética. Con décadas de trayectoria, El Drogas sigue siendo un referente indispensable, manteniendo una intensidad inigualable en sus directos que continúan atrayendo a varias generaciones de seguidores.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=rgshBZ4d2jQ",
+              "spotifyUrl": "https://open.spotify.com/artist/5jJWnRLQeU7fe9VaDjpIWK",
+              "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
+              "facebookUrl": "https://www.facebook.com/elDrogasOficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5710509841030fa63a87ad79"
+            }
+          },
+          {
+            "band": "El Drogas",
+            "stage": "Principal",
+            "start": "21:45",
+            "end": "23:15",
+            "bio": {
+              "name": "El Drogas",
+              "title": "",
+              "description": "Enrique Villarreal, conocido popularmente como El Drogas, es una de las figuras más importantes de la historia del rock en español. Tras su etapa fundamental como bajista y vocalista de Barricada, ha desarrollado una prolífica carrera en solitario que abarca múltiples facetas musicales, desde el rock más duro hasta incursiones experimentales. Reconocido por su capacidad como letrista, sus canciones retratan la realidad social con una mirada crítica y poética. Con décadas de trayectoria, El Drogas sigue siendo un referente indispensable, manteniendo una intensidad inigualable en sus directos que continúan atrayendo a varias generaciones de seguidores.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=rgshBZ4d2jQ",
+              "spotifyUrl": "https://open.spotify.com/artist/5jJWnRLQeU7fe9VaDjpIWK",
+              "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
+              "facebookUrl": "https://www.facebook.com/elDrogasOficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5710509841030fa63a87ad79"
             }
           },
           {
@@ -3448,13 +3765,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Benito Kamelas",
               "title": "",
-              "description": "Benito Kamelas es una banda de punk rock española formada en Córdoba en 1993. Con más de tres décadas de trayectoria, son uno de los grupos más emblemáticos del punk-rock festivo nacional, conocidos por sus directos enérgicos y su espíritu de fiesta.",
+              "description": "Benito Kamelas es una banda de rock urbano originaria de Valencia que ha sabido ganarse el respeto del público español a base de trabajo constante y canciones directas. Con una carrera que comenzó a finales de los años 90, su sonido combina letras que hablan de la cotidianidad y problemas sociales con melodías pegadizas. Han logrado mantenerse en la carretera durante más de dos décadas, consolidándose como un grupo imprescindible en los festivales de rock estatal. Su honestidad sobre el escenario y su conexión con la clase trabajadora son los pilares fundamentales de su duradera carrera musical.",
               "country": "España",
-              "genre": "Punk Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=rQPBYxSCmTU",
-              "spotifyUrl": "https://open.spotify.com/artist/20HaUVeZgXFXfclU0j96As",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vnXkyue8Mpc",
+              "spotifyUrl": "https://open.spotify.com/artist/6pds73TcYgdgd1UOBWHRqn",
               "instagramUrl": "https://www.instagram.com/benitokamelas_oficial/",
-              "facebookUrl": "https://www.facebook.com/benitokamelasoficial"
+              "facebookUrl": "https://www.facebook.com/benitokamelas",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb65afd492c1ac42db2018901f"
+            }
+          },
+          {
+            "band": "Benito Kamelas",
+            "stage": "Escenario Principal",
+            "start": "23:45",
+            "end": "01:15",
+            "bio": {
+              "name": "Benito Kamelas",
+              "title": "",
+              "description": "Benito Kamelas es una banda de rock urbano originaria de Valencia que ha sabido ganarse el respeto del público español a base de trabajo constante y canciones directas. Con una carrera que comenzó a finales de los años 90, su sonido combina letras que hablan de la cotidianidad y problemas sociales con melodías pegadizas. Han logrado mantenerse en la carretera durante más de dos décadas, consolidándose como un grupo imprescindible en los festivales de rock estatal. Su honestidad sobre el escenario y su conexión con la clase trabajadora son los pilares fundamentales de su duradera carrera musical.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vnXkyue8Mpc",
+              "spotifyUrl": "https://open.spotify.com/artist/6pds73TcYgdgd1UOBWHRqn",
+              "instagramUrl": "https://www.instagram.com/benitokamelas_oficial/",
+              "facebookUrl": "https://www.facebook.com/benitokamelas",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb65afd492c1ac42db2018901f"
+            }
+          },
+          {
+            "band": "Benito Kamelas",
+            "stage": "Principal",
+            "start": "23:45",
+            "end": "01:15",
+            "bio": {
+              "name": "Benito Kamelas",
+              "title": "",
+              "description": "Benito Kamelas es una banda de rock urbano originaria de Valencia que ha sabido ganarse el respeto del público español a base de trabajo constante y canciones directas. Con una carrera que comenzó a finales de los años 90, su sonido combina letras que hablan de la cotidianidad y problemas sociales con melodías pegadizas. Han logrado mantenerse en la carretera durante más de dos décadas, consolidándose como un grupo imprescindible en los festivales de rock estatal. Su honestidad sobre el escenario y su conexión con la clase trabajadora son los pilares fundamentales de su duradera carrera musical.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=vnXkyue8Mpc",
+              "spotifyUrl": "https://open.spotify.com/artist/6pds73TcYgdgd1UOBWHRqn",
+              "instagramUrl": "https://www.instagram.com/benitokamelas_oficial/",
+              "facebookUrl": "https://www.facebook.com/benitokamelas",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb65afd492c1ac42db2018901f"
             }
           },
           {
@@ -3465,11 +3819,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "The Lizards",
               "title": "",
-              "description": "The Lizards son una banda de garage rock y rock and roll crudo. Con influencias del rock clásico de los 60 y 70, ofrecen un directo salvaje y desenfadado.",
+              "description": "The Lizards es un trío de rock procedente de Barcelona que se caracteriza por un sonido lleno de energía, influenciado tanto por el hard rock clásico como por el punk rock de los años 70 y 80. Con un formato sencillo pero extremadamente efectivo, la banda destaca por la potente ejecución de sus guitarras y la contundencia de su base rítmica. Han girado intensamente por Europa y España, participando en grandes festivales, lo que ha demostrado su gran capacidad para defender su repertorio en directo ante audiencias masivas, consolidándose como un grupo sólido y enérgico.",
               "country": "España",
-              "genre": "Garage Rock",
-              "spotifyUrl": "https://open.spotify.com/artist/3gUqMYWbzAQc4jNNNxaDgk",
-              "instagramUrl": "https://www.instagram.com/thelizardsband/"
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=sUEB6jjjpTE",
+              "spotifyUrl": "https://open.spotify.com/artist/01rt3is86SUxjThPSYMUFI",
+              "instagramUrl": "https://www.instagram.com/thelizardsbcn/",
+              "facebookUrl": "https://www.facebook.com/thelizardsmusic",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb909f93466d1be24a36efff22"
+            }
+          },
+          {
+            "band": "The Lizards",
+            "stage": "Escenario Principal",
+            "start": "01:45",
+            "end": "02:30",
+            "bio": {
+              "name": "The Lizards",
+              "title": "",
+              "description": "The Lizards es un trío de rock procedente de Barcelona que se caracteriza por un sonido lleno de energía, influenciado tanto por el hard rock clásico como por el punk rock de los años 70 y 80. Con un formato sencillo pero extremadamente efectivo, la banda destaca por la potente ejecución de sus guitarras y la contundencia de su base rítmica. Han girado intensamente por Europa y España, participando en grandes festivales, lo que ha demostrado su gran capacidad para defender su repertorio en directo ante audiencias masivas, consolidándose como un grupo sólido y enérgico.",
+              "country": "España",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=sUEB6jjjpTE",
+              "spotifyUrl": "https://open.spotify.com/artist/01rt3is86SUxjThPSYMUFI",
+              "instagramUrl": "https://www.instagram.com/thelizardsbcn/",
+              "facebookUrl": "https://www.facebook.com/thelizardsmusic",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb909f93466d1be24a36efff22"
+            }
+          },
+          {
+            "band": "The Lizards",
+            "stage": "Principal",
+            "start": "01:45",
+            "end": "02:30",
+            "bio": {
+              "name": "The Lizards",
+              "title": "",
+              "description": "The Lizards es un trío de rock procedente de Barcelona que se caracteriza por un sonido lleno de energía, influenciado tanto por el hard rock clásico como por el punk rock de los años 70 y 80. Con un formato sencillo pero extremadamente efectivo, la banda destaca por la potente ejecución de sus guitarras y la contundencia de su base rítmica. Han girado intensamente por Europa y España, participando en grandes festivales, lo que ha demostrado su gran capacidad para defender su repertorio en directo ante audiencias masivas, consolidándose como un grupo sólido y enérgico.",
+              "country": "España",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=sUEB6jjjpTE",
+              "spotifyUrl": "https://open.spotify.com/artist/01rt3is86SUxjThPSYMUFI",
+              "instagramUrl": "https://www.instagram.com/thelizardsbcn/",
+              "facebookUrl": "https://www.facebook.com/thelizardsmusic",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb909f93466d1be24a36efff22"
             }
           },
           {
@@ -3480,11 +3873,50 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "Las Moskas Retrompeteras",
               "title": "",
-              "description": "Las Moskas Retrompeteras son una formación festiva que mezcla ska, fanfarria callejera y punk con instrumentos de viento. Su música está diseñada para el baile y la celebración, siendo habituales en festivales y fiestas populares del norte de España.",
+              "description": "Las Moskas Retrompeteras es un grupo de punk rock que se caracteriza por su propuesta musical directa y su actitud desenfadada. A través de sus canciones, exploran temas de la vida cotidiana y críticas sociales, siempre desde un enfoque festivo que busca la participación activa del público en sus conciertos. Aunque se mueven en un circuito más local o underground, su presencia en diversos escenarios les ha permitido forjar una identidad reconocible. Su propuesta es ideal para quienes buscan el lado más divertido y rebelde del punk, sin perder la esencia de la autogestión y la energía propia del género.",
               "country": "España",
-              "genre": "Ska / Fanfarria",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=NENoHYjB89c",
+              "spotifyUrl": "https://open.spotify.com/artist/5RvARyYjzutysfArIiqiNy",
               "instagramUrl": "https://www.instagram.com/lasmoskasretrompeteras/",
-              "facebookUrl": "https://www.facebook.com/LasMoskasRetrompeteras"
+              "facebookUrl": "https://www.facebook.com/LasMoskasRetrompeteras",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebabd540434f5d00df7a0bbc94"
+            }
+          },
+          {
+            "band": "Las Moskas Retrompeteras",
+            "stage": "Escenario Principal",
+            "start": "03:00",
+            "end": "04:00",
+            "bio": {
+              "name": "Las Moskas Retrompeteras",
+              "title": "",
+              "description": "Las Moskas Retrompeteras es un grupo de punk rock que se caracteriza por su propuesta musical directa y su actitud desenfadada. A través de sus canciones, exploran temas de la vida cotidiana y críticas sociales, siempre desde un enfoque festivo que busca la participación activa del público en sus conciertos. Aunque se mueven en un circuito más local o underground, su presencia en diversos escenarios les ha permitido forjar una identidad reconocible. Su propuesta es ideal para quienes buscan el lado más divertido y rebelde del punk, sin perder la esencia de la autogestión y la energía propia del género.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=NENoHYjB89c",
+              "spotifyUrl": "https://open.spotify.com/artist/5RvARyYjzutysfArIiqiNy",
+              "instagramUrl": "https://www.instagram.com/lasmoskasretrompeteras/",
+              "facebookUrl": "https://www.facebook.com/LasMoskasRetrompeteras",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebabd540434f5d00df7a0bbc94"
+            }
+          },
+          {
+            "band": "Las Moskas Retrompeteras",
+            "stage": "Principal",
+            "start": "03:00",
+            "end": "04:00",
+            "bio": {
+              "name": "Las Moskas Retrompeteras",
+              "title": "",
+              "description": "Las Moskas Retrompeteras es un grupo de punk rock que se caracteriza por su propuesta musical directa y su actitud desenfadada. A través de sus canciones, exploran temas de la vida cotidiana y críticas sociales, siempre desde un enfoque festivo que busca la participación activa del público en sus conciertos. Aunque se mueven en un circuito más local o underground, su presencia en diversos escenarios les ha permitido forjar una identidad reconocible. Su propuesta es ideal para quienes buscan el lado más divertido y rebelde del punk, sin perder la esencia de la autogestión y la energía propia del género.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=NENoHYjB89c",
+              "spotifyUrl": "https://open.spotify.com/artist/5RvARyYjzutysfArIiqiNy",
+              "instagramUrl": "https://www.instagram.com/lasmoskasretrompeteras/",
+              "facebookUrl": "https://www.facebook.com/LasMoskasRetrompeteras",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebabd540434f5d00df7a0bbc94"
             }
           },
           {
@@ -3495,9 +3927,28 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DJ Tralla",
               "title": "",
-              "description": "DJ Tralla es el disc jockey residente del Vendaval Fest, encargado de mantener la fiesta entre conciertos y cerrar cada jornada con sesiones de rock, punk y metal.",
+              "description": "DJ Tralla es un artista versátil que se mueve en el ámbito de la música festiva y los ritmos urbanos. Con una trayectoria enfocada en dinamizar festivales y eventos, sus sesiones se caracterizan por una selección musical que mezcla diversos estilos para lograr el máximo impacto en el público. Su capacidad para conectar con la audiencia mediante una energía constante lo ha llevado a formar parte de numerosos carteles de festivales de rock y música alternativa en España, donde su presencia asegura un ambiente de celebración continua durante toda la actuación.",
               "country": "España",
-              "genre": "DJ / Rock"
+              "genre": "Electrónica",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Fi2YI5aeMv8",
+              "spotifyUrl": "https://open.spotify.com/artist/5rChNZRJnV2MciNb9U6HyH",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb8406c890d80515a1f8ee7702"
+            }
+          },
+          {
+            "band": "DJ Tralla",
+            "stage": "Escenario Principal",
+            "start": "04:00",
+            "end": "04:30",
+            "bio": {
+              "name": "DJ Tralla",
+              "title": "",
+              "description": "DJ Tralla es un artista versátil que se mueve en el ámbito de la música festiva y los ritmos urbanos. Con una trayectoria enfocada en dinamizar festivales y eventos, sus sesiones se caracterizan por una selección musical que mezcla diversos estilos para lograr el máximo impacto en el público. Su capacidad para conectar con la audiencia mediante una energía constante lo ha llevado a formar parte de numerosos carteles de festivales de rock y música alternativa en España, donde su presencia asegura un ambiente de celebración continua durante toda la actuación.",
+              "country": "España",
+              "genre": "Electrónica",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Fi2YI5aeMv8",
+              "spotifyUrl": "https://open.spotify.com/artist/5rChNZRJnV2MciNb9U6HyH",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb8406c890d80515a1f8ee7702"
             }
           }
         ]
@@ -3516,7 +3967,7 @@ const rawAgendaFestData: any = {
       "endDate": "2026-07-31",
       "location": "Ghimbav, Romania",
       "timezone": "Europe/Bucharest",
-      "logo": "logorockstadt2026,png",
+      "logo": "logorockstadt2026.png",
       "cartel": "cartelrockstadt2026.jpg",
       "mapa": "maparockstadt2026.jpg",
       "dayStartHour": 14,
@@ -4154,7 +4605,7 @@ const rawAgendaFestData: any = {
               "description": "Grave es una banda fundamental en la historia del death metal sueco, formada en 1986. Conocidos por su sonido crudo, pesado y su afinación grave característica, han definido el género desde los años 90 con álbumes emblemáticos como Into the Grave. A lo largo de su carrera, han mantenido un estilo visceral que influenció a incontables grupos de la escena extrema. A pesar de los cambios en su formación, el grupo sigue siendo un pilar fundamental en festivales internacionales, manteniendo su integridad artística y su legado como pioneros del sonido de Estocolmo dentro del metal extremo global.",
               "country": "Suecia",
               "genre": "Death metal",
-              "youtubeUrl": "https://www.youtube.com/user/GraveOfficial",
+              "youtubeUrl": "https://www.youtube.com/watch?v=_nzVxcC07lk",
               "spotifyUrl": "https://open.spotify.com/artist/4tLl5v2G90scM0pW6hvPU5",
               "instagramUrl": "https://www.instagram.com/graveofficial/",
               "facebookUrl": "https://www.facebook.com/GraveOfficial",
@@ -4240,7 +4691,7 @@ const rawAgendaFestData: any = {
               "description": "Vader es una de las bandas más longevas y respetadas del death metal europeo, formada en Olsztyn durante los años ochenta. Bajo la dirección constante de Peter Wiwczarek, el grupo ha mantenido un nivel técnico excepcional durante décadas, convirtiéndose en pioneros del sonido extremo en Polonia. Sus composiciones, caracterizadas por ritmos de batería a gran velocidad y solos de guitarra precisos, han servido de influencia para la escena death metal global. Con una discografía extensa y giras incansables por todo el mundo, Vader es sinónimo de dedicación y excelencia en el género del metal extremo.",
               "country": "Polonia",
               "genre": "Death metal",
-              "youtubeUrl": "https://www.youtube.com/user/vaderband",
+              "youtubeUrl": "https://www.youtube.com/watch?v=WoIZS0jx3hY",
               "spotifyUrl": "https://open.spotify.com/artist/2s5DSt9VBNzAn2TbtDHzFZ",
               "instagramUrl": "https://www.instagram.com/vaderband/",
               "facebookUrl": "https://www.facebook.com/vader",
@@ -4258,7 +4709,7 @@ const rawAgendaFestData: any = {
               "description": "Municipal Waste es una fuerza dominante del crossover thrash, conocidos por revivir la energía desenfrenada de los años ochenta. Originarios de Virginia, su estilo se caracteriza por canciones rápidas, cortas y cargadas de humor, inspiradas en películas de terror clase B y la cultura del patinaje. Desde su formación en 2001, han consolidado una base de seguidores leales gracias a sus actuaciones en directo frenéticas. Sus álbumes como The Art of Partying son considerados piezas de culto, convirtiéndolos en un referente indispensable para quienes buscan una experiencia intensa, divertida y llena de adrenalina en los conciertos.",
               "country": "Estados Unidos",
               "genre": "Crossover thrash",
-              "youtubeUrl": "https://www.youtube.com/user/municipalwaste",
+              "youtubeUrl": "https://www.youtube.com/watch?v=ixd0u8ygOT8",
               "spotifyUrl": "https://open.spotify.com/artist/2Ah9OuOj7B57gPD1cbwiaE",
               "instagramUrl": "https://www.instagram.com/municipalwaste/",
               "facebookUrl": "https://www.facebook.com/MunicipalWaste",
@@ -4294,7 +4745,7 @@ const rawAgendaFestData: any = {
               "description": "Thy Art Is Murder es una fuerza imparable del deathcore australiano que ha redefinido los límites de la brutalidad sonora. Desde su formación, han sido aclamados por su ejecución técnica precisa, breakdowns demoledores y temáticas líricas centradas en la crítica social y política. Su álbum Hate los catapultó al estrellato internacional, convirtiéndolos en uno de los grupos más influyentes de la escena core moderna. A través de giras mundiales y una ética de trabajo implacable, han logrado mantener una conexión profunda con su audiencia, consolidándose como un acto indispensable en los mayores festivales de metal extremo del mundo.",
               "country": "Australia",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.youtube.com/user/thyartismurder",
+              "youtubeUrl": "https://www.youtube.com/watch?v=RI_HeZpo6g8",
               "spotifyUrl": "https://open.spotify.com/artist/3et9upNERQI5IYt5jEDTxM",
               "instagramUrl": "https://www.instagram.com/thyartismurder/",
               "facebookUrl": "https://www.facebook.com/thyartismurder",
@@ -4330,7 +4781,7 @@ const rawAgendaFestData: any = {
               "description": "In Extremo es una banda alemana icónica que combina el rock duro con instrumentos medievales como gaitas y zanfonas. Desde su debut a finales de los noventa, han integrado letras en múltiples idiomas antiguos con una estética única inspirada en la Edad Media. Sus conciertos son famosos por incluir pirotecnia impresionante y una atmósfera festiva inigualable. Han alcanzado un éxito masivo en las listas alemanas, convirtiéndose en una institución del género folk metal. Su capacidad para fusionar tradición y modernidad ha dejado una huella profunda, consolidándolos como una pieza esencial de la escena musical europea actual.",
               "country": "Alemania",
               "genre": "Folk metal",
-              "youtubeUrl": "https://www.youtube.com/user/inextremo",
+              "youtubeUrl": "https://www.youtube.com/watch?v=EejbTglzkSM",
               "spotifyUrl": "https://open.spotify.com/artist/4MAvEYtgY8yNljGP697n4F",
               "instagramUrl": "https://www.instagram.com/inextremo_official/",
               "facebookUrl": "https://www.facebook.com/officialinextremo",
@@ -4348,7 +4799,7 @@ const rawAgendaFestData: any = {
               "description": "Accept es una de las bandas más influyentes en la historia del heavy metal alemán. Durante la década de los ochenta, definieron el sonido de este género con álbumes históricos como Balls to the Wall. Con su estilo marcado por guitarras potentes y voces inconfundibles, fueron pieza clave en el nacimiento del speed metal. A pesar de los años, siguen girando con éxito mundial, demostrando que su influencia sigue vigente. Son considerados pioneros por su impacto duradero en la música heavy, manteniendo siempre su esencia tradicional mientras continúan lanzando material de alta calidad para sus seguidores leales.",
               "country": "Alemania",
               "genre": "Heavy metal",
-              "youtubeUrl": "https://www.youtube.com/user/acceptband",
+              "youtubeUrl": "https://www.youtube.com/watch?v=yV8USmxRzw0",
               "spotifyUrl": "https://open.spotify.com/artist/3JDIAtVrJdQ7GFOX26LYpv",
               "instagramUrl": "https://www.instagram.com/acceptworldwide/",
               "facebookUrl": "https://www.facebook.com/accepttheband",
@@ -4384,7 +4835,7 @@ const rawAgendaFestData: any = {
               "description": "Arch Enemy es una de las bandas más destacadas del death metal melódico a nivel mundial. Fundada por el guitarrista Michael Amott, la banda ha evolucionado constantemente manteniendo una técnica guitarrística impecable y estructuras de canciones épicas. Tras la llegada de la vocalista Alissa White-Gluz, han reforzado su estatus como gigantes del género. Sus álbumes destacan por la combinación de brutalidad, armonías melódicas y una producción de alto nivel. Con giras constantes por todo el planeta, Arch Enemy continúa siendo un pilar fundamental, inspirando a generaciones de músicos con su inconfundible sonido y su potente presencia escénica.",
               "country": "Suecia",
               "genre": "Death metal melódico",
-              "youtubeUrl": "https://www.youtube.com/user/archenemyofficial",
+              "youtubeUrl": "https://www.youtube.com/watch?v=WujjCSEJcDk",
               "spotifyUrl": "https://open.spotify.com/artist/0DCw6lHkzh9t7f8Hb4Z0Sx",
               "instagramUrl": "https://www.instagram.com/archenemyofficial/",
               "facebookUrl": "https://www.facebook.com/archenemyofficial",
@@ -4456,7 +4907,7 @@ const rawAgendaFestData: any = {
               "description": "Lamb of God es una institución dentro del metal contemporáneo, definida por sus riffs pesados, ritmos complejos y las letras socialmente críticas de Randy Blythe. Surgidos en Richmond, Virginia, el grupo ha sido nominado múltiples veces a los premios Grammy. Su disco As the Palaces Burn los catapultó a la fama, convirtiéndolos en líderes de la nueva ola del heavy metal americano. Con un sonido que mezcla la agresividad del thrash con la densidad del groove, siguen siendo un referente absoluto en grandes escenarios mundiales por su energía inagotable y su impecable calidad musical.",
               "country": "Estados Unidos",
               "genre": "Groove metal",
-              "youtubeUrl": "https://www.youtube.com/user/lambofgod",
+              "youtubeUrl": "https://www.youtube.com/watch?v=8Alu6zyuTp4",
               "spotifyUrl": "https://open.spotify.com/artist/3JFsVIxOn7STeilPICkkB2",
               "instagramUrl": "https://www.instagram.com/lambofgod/",
               "facebookUrl": "https://www.facebook.com/lambofgod",
@@ -4474,7 +4925,7 @@ const rawAgendaFestData: any = {
               "description": "Deicide es una de las bandas más provocadoras y fundamentales del death metal técnico y agresivo. Liderados por Glen Benton, desde Florida, han sido famosos por sus temáticas anticristianas y su sonido directo, rápido y extremadamente intenso. Álbumes como Deicide y Legion son considerados pilares del género. A lo largo de su carrera, han mantenido una actitud implacable, negándose a suavizar su estilo para complacer al mercado. Su impacto en la escena death metal es innegable, siendo referentes por su brutalidad sonora y su compromiso constante con un sonido que definió el metal extremo de los noventa.",
               "country": "Estados Unidos",
               "genre": "Death metal",
-              "youtubeUrl": "https://www.youtube.com/user/deicideofficial",
+              "youtubeUrl": "https://www.youtube.com/watch?v=-WnNowJKN9A",
               "spotifyUrl": "https://open.spotify.com/artist/2K3GorTixXKAiwe2t9lO89",
               "instagramUrl": "https://www.instagram.com/deicideofficial/",
               "facebookUrl": "https://www.facebook.com/OfficialDeicide",
@@ -4578,7 +5029,7 @@ const rawAgendaFestData: any = {
               "description": "Serrabulho es una banda portuguesa que destaca en la escena grindcore por su sonido festivo y humorístico. A diferencia de las bandas del género que se enfocan únicamente en la brutalidad, ellos integran melodías pegadizas y temáticas cómicas. Su puesta en escena es siempre una fiesta, lo que les ha ganado el cariño de los seguidores que buscan divertirse en conciertos extremos. Con una trayectoria constante, han logrado destacar en festivales europeos, demostrando que el grindcore también puede tener un lado lúdico y entretenido sin sacrificar su potencia sonora ni su actitud irreverente y original.",
               "country": "Portugal",
               "genre": "Grindcore",
-              "youtubeUrl": "https://www.youtube.com/user/serrabulho",
+              "youtubeUrl": "https://www.youtube.com/watch?v=B_worevquyM",
               "spotifyUrl": "https://open.spotify.com/artist/2XwCbmJZsAqFKYbP71vs5J",
               "instagramUrl": "https://www.instagram.com/serrabulho/",
               "facebookUrl": "https://www.facebook.com/serrabulho",
@@ -4596,7 +5047,7 @@ const rawAgendaFestData: any = {
               "description": "Fit For An Autopsy se ha posicionado como una de las bandas de deathcore más vanguardistas de la actualidad. Mezclando la brutalidad propia del género con toques de metal técnico, pasajes melódicos y una crítica social mordaz en sus letras, han logrado un sonido distintivo que atrae a una audiencia diversa. Su capacidad para evolucionar en cada disco ha sido clave en su éxito constante. Son reconocidos por su compromiso con temas ambientales y políticos, lo que añade una capa de profundidad a su intensa propuesta musical, consolidándolos como una banda líder en los festivales modernos de metal.",
               "country": "Estados Unidos",
               "genre": "Deathcore",
-              "youtubeUrl": "https://www.youtube.com/user/FitForAnAutopsy",
+              "youtubeUrl": "https://www.youtube.com/watch?v=OEicHBvqd2Y",
               "spotifyUrl": "https://open.spotify.com/artist/0qJpY7K8p7g6sacvaGNt6i",
               "instagramUrl": "https://www.instagram.com/fitforanautopsy/",
               "facebookUrl": "https://www.facebook.com/FitForAnAutopsy",
@@ -4650,7 +5101,7 @@ const rawAgendaFestData: any = {
               "description": "Monolord es un trío sueco que ha redefinido el sonido del stoner doom con composiciones que se caracterizan por una pesadez asfixiante y un uso maestro del fuzz. Sus álbumes como Empress Rising son pilares del género contemporáneo. Con un sonido que se siente como un muro de sonido constante, logran crear atmósferas hipnóticas que atrapan al oyente. Su éxito radica en la simplicidad de sus estructuras, elevadas a una potencia épica. Se han convertido en favoritos de la escena internacional gracias a una propuesta que es a la vez catártica, masiva y profundamente inmersiva para los amantes del metal…",
               "country": "Suecia",
               "genre": "Stoner doom",
-              "youtubeUrl": "https://www.youtube.com/user/Monolord",
+              "youtubeUrl": "https://www.youtube.com/watch?v=N-dfIpmX-xo",
               "spotifyUrl": "https://open.spotify.com/artist/3X0a18Q9nluwuFYv5hB5cm",
               "instagramUrl": "https://www.instagram.com/monolordofficial/",
               "facebookUrl": "https://www.facebook.com/monolordsweden",
@@ -4668,7 +5119,7 @@ const rawAgendaFestData: any = {
               "description": "Trooper es un pilar fundamental del heavy metal en Rumanía, con una trayectoria que abarca varias décadas. Conocidos por su estilo clásico, himnos potentes y una conexión inquebrantable con sus seguidores, han contribuido significativamente a la promoción del rock y el metal en su país. Han compartido escenario con grandes leyendas internacionales, consolidándose como una banda de prestigio local. Su música, caracterizada por riffs tradicionales y letras profundas en su idioma materno, ha dejado una marca imborrable en varias generaciones de seguidores del metal en el sudeste de Europa, manteniendo siempre la esencia pura del heavy metal.",
               "country": "Rumanía",
               "genre": "Heavy metal",
-              "youtubeUrl": "https://www.youtube.com/user/TrooperRomania",
+              "youtubeUrl": "https://www.youtube.com/watch?v=Zt6aDMsT1r0",
               "spotifyUrl": "https://open.spotify.com/artist/7mPU5YS06Msig34yoAHBHL",
               "instagramUrl": "https://www.instagram.com/trooper.romania/",
               "facebookUrl": "https://www.facebook.com/TrooperRomania",
@@ -4686,7 +5137,7 @@ const rawAgendaFestData: any = {
               "description": "Airbourne es una banda de hard rock australiano que se caracteriza por su energía inagotable y su sonido clásico que rinde homenaje a los grandes del rock de los ochenta. Con canciones explosivas, potentes riffs y una actitud salvaje, han sido comparados frecuentemente con AC/DC por su estilo directo y festivo. Sus actuaciones en directo son famosas por ser eventos de alto voltaje, donde la interacción con el público y la entrega total son fundamentales. Han mantenido el estandarte del rock puro en lo más alto, atrayendo a seguidores de todas las edades que buscan energía pura en vivo.",
               "country": "Australia",
               "genre": "Hard rock",
-              "youtubeUrl": "https://www.youtube.com/user/AirbourneOfficial",
+              "youtubeUrl": "https://www.youtube.com/watch?v=6IMg6TRZK-k",
               "spotifyUrl": "https://open.spotify.com/artist/6urzdpGY5yUimWZsgJUoTb",
               "instagramUrl": "https://www.instagram.com/airbourne/",
               "facebookUrl": "https://www.facebook.com/airbourne",
@@ -4722,7 +5173,7 @@ const rawAgendaFestData: any = {
               "description": "Helloween es reconocida mundialmente como la creadora del power metal europeo tal y como lo conocemos. Con sus álbumes Keeper of the Seven Keys, establecieron las bases de un sonido veloz, melódico y épico que ha influido en miles de bandas posteriores. Tras décadas de historia y diversas formaciones, lograron reunir a miembros clave para crear una experiencia definitiva en su última etapa. Su legado musical es inmenso, siendo una de las bandas más queridas por su capacidad para crear himnos que han marcado la historia del metal. Siguen demostrando una vitalidad y técnica excepcionales en cada actuación.",
               "country": "Alemania",
               "genre": "Power metal",
-              "youtubeUrl": "https://www.youtube.com/user/helloween",
+              "youtubeUrl": "https://www.youtube.com/watch?v=88Nn7CIpmWQ",
               "spotifyUrl": "https://open.spotify.com/artist/4pQN0GB0fNEEOfQCaWotsY",
               "instagramUrl": "https://www.instagram.com/helloweenofficial/",
               "facebookUrl": "https://www.facebook.com/helloweenofficial",
@@ -4776,7 +5227,7 @@ const rawAgendaFestData: any = {
               "description": "Amorphis es una de las bandas finlandesas más exitosas y longevas, conocida por integrar la mitología nórdica, especialmente el Kalevala, en sus letras. A lo largo de los años, su sonido ha evolucionado de un death metal puro a una mezcla sofisticada de metal melódico, rock progresivo y folk. Esta evolución constante les ha permitido mantener un estatus de banda de culto y de éxito masivo a la vez. Con una capacidad única para crear atmósferas melancólicas y poderosas, son referentes del metal finlandés, admirados por su creatividad, calidad compositiva y su estilo inconfundible y elegante en todo el mundo.",
               "country": "Finlandia",
               "genre": "Death metal melódico",
-              "youtubeUrl": "https://www.youtube.com/user/AmorphisOfficial",
+              "youtubeUrl": "https://www.youtube.com/watch?v=WpSNEY9mfPg",
               "spotifyUrl": "https://open.spotify.com/artist/2UOVgpgiNTC6KK0vSC77aD",
               "instagramUrl": "https://www.instagram.com/amorphisband/",
               "facebookUrl": "https://www.facebook.com/amorphis",
@@ -4794,7 +5245,7 @@ const rawAgendaFestData: any = {
               "description": "Satyricon es una banda central del black metal noruego, formada a principios de los noventa. Liderados por Satyr y Frost, fueron clave en la expansión del género, evolucionando desde un sonido puramente black metal hacia una propuesta más experimental y accesible. Su álbum Nemesis Divina es considerado un clásico absoluto. La banda ha desafiado constantemente las expectativas, incorporando elementos de rock oscuro y producción pulida. Su impacto en la música extrema es profundo, siendo admirados tanto por su aporte al black metal tradicional como por su audaz visión artística que ha llevado al género a nuevos horizontes sonoros mundiales.",
               "country": "Noruega",
               "genre": "Black metal",
-              "youtubeUrl": "https://www.youtube.com/user/Satyricon",
+              "youtubeUrl": "https://www.youtube.com/watch?v=i5GhFL0OWq8",
               "spotifyUrl": "https://open.spotify.com/artist/221Rd0FvVxMx7eCbWqjiKd",
               "instagramUrl": "https://www.instagram.com/satyriconofficial/",
               "facebookUrl": "https://www.facebook.com/SatyriconOfficial",

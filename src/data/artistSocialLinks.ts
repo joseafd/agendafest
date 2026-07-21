@@ -28,6 +28,11 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "tiktokUrl": "",
     "xUrl": "https://x.com/metundmiezen"
   },
+  "hamlet": {
+    "officialWebsite": "http://www.hamlet1.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/Hamlet_Band"
+  },
   "creeper": {
     "officialWebsite": "https://creepercult.com/",
     "tiktokUrl": "",
@@ -52,6 +57,41 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "officialWebsite": "https://www.helloween.org/",
     "tiktokUrl": "",
     "xUrl": "https://x.com/helloween"
+  },
+  "therealmckenzies": {
+    "officialWebsite": "http://therealmckenzies.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/RealMcKenzies"
+  },
+  "ruxeruxe": {
+    "officialWebsite": "http://www.ruxeruxe.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/RuxeRuxe"
+  },
+  "ochobre": {
+    "officialWebsite": "https://ochobre.es/",
+    "tiktokUrl": "",
+    "xUrl": ""
+  },
+  "hermanafuria": {
+    "officialWebsite": "https://hermanafuria.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/hermanafuria"
+  },
+  "eldrogas": {
+    "officialWebsite": "https://www.eldrogas.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/ElDrogo"
+  },
+  "benitokamelas": {
+    "officialWebsite": "https://benitokamelas.es/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/benitokamelas"
+  },
+  "thelizards": {
+    "officialWebsite": "https://thelizards.bandcamp.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/TheLizardsBCN"
   },
   "crowbar": {
     "officialWebsite": "https://crowbarmusic.com/",
@@ -412,6 +452,11 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "officialWebsite": "http://www.cocoon.net/svenvath",
     "tiktokUrl": "",
     "xUrl": "https://x.com/svenvaeth"
+  },
+  "dakidarria": {
+    "officialWebsite": "https://dakidarria.gal/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/dakidarria"
   }
 };
 
