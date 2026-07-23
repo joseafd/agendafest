@@ -7,6 +7,7 @@ import { FilterDrawer } from './FilterDrawer';
 import { BandDetailModal } from './BandDetailModal';
 import { NewsView } from './NewsView';
 import { LineupView } from './LineupView';
+import { FavoriteConflictDialog } from './FavoriteConflictDialog';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import { Calendar, Map, ArrowLeft, Share2, Music, Image } from 'lucide-react';
 import type { Act, FestivalEdition } from '../data/festivalData';
@@ -16,6 +17,12 @@ import type { Language } from '../utils/translations';
 import { storage } from '../services/storage';
 import { platform } from '../services/platform';
 import type { PlatformNotificationPermission } from '../services/platform';
+import {
+  findConflictsForCandidate,
+  findFavoriteConflicts,
+  getConflictingActIds,
+} from '../services/scheduleConflicts';
+import type { ScheduleConflict } from '../services/scheduleConflicts';
 
 const getYoutubeId = (url: string) => {
   if (!url) return '';
@@ -106,6 +113,10 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   const [pendingImport, setPendingImport] = useState<string[] | null>(null);
   const [visitCount, setVisitCount] = useState<number | null>(null);
   const [nextFavImgError, setNextFavImgError] = useState<boolean>(false);
+  const [pendingFavoriteConflict, setPendingFavoriteConflict] = useState<{
+    candidate: Act;
+    conflicts: ScheduleConflict[];
+  } | null>(null);
   const [notificationPermission, setNotificationPermission] = useState<PlatformNotificationPermission>(
     platform.getNotificationPermission()
   );
@@ -441,35 +452,14 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   }, [days, edicionConfig]);
 
   // 7. Favorite Timing Conflicts Detector
-  const conflictActIds = useMemo(() => {
-    const conflicts = new Set<string>();
-    
-    // Group favorites by day
-    const favsByDay: Record<string, Act[]> = {};
-    days.forEach((day) => {
-      favsByDay[day.id] = day.acts.filter((act) => favorites.includes(act.id));
-    });
-
-    // Check adjacent overlaps per day
-    Object.values(favsByDay).forEach((dayActs) => {
-      const sorted = [...dayActs].sort((a, b) => a.startMinutes - b.startMinutes);
-      for (let i = 0; i < sorted.length; i++) {
-        for (let j = i + 1; j < sorted.length; j++) {
-          const actA = sorted[i];
-          const actB = sorted[j];
-          // If Act B starts before Act A ends, we have an overlap!
-          if (actB.startMinutes < actA.endMinutes) {
-            conflicts.add(actA.id);
-            conflicts.add(actB.id);
-          } else {
-            break; // Sorted by start time, so no subsequent band can start before A ends
-          }
-        }
-      }
-    });
-
-    return conflicts;
-  }, [days, favorites]);
+  const favoriteConflicts = useMemo(
+    () => findFavoriteConflicts(days, favorites),
+    [days, favorites],
+  );
+  const conflictActIds = useMemo(
+    () => getConflictingActIds(favoriteConflicts),
+    [favoriteConflicts],
+  );
 
   // 8. Share Favorites Handler
   const handleShareFavorites = () => {
@@ -547,9 +537,24 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
 
   const handleToggleFavorite = (id: string, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((favId) => favId !== id) : [...prev, id]
-    );
+
+    if (favorites.includes(id)) {
+      setFavorites((current) => current.filter((favoriteId) => favoriteId !== id));
+      return;
+    }
+
+    const candidate = days
+      .flatMap((day) => day.acts)
+      .find((act) => act.id === id);
+    if (!candidate) return;
+
+    const conflicts = findConflictsForCandidate(days, candidate, favorites);
+    if (conflicts.length === 0) {
+      setFavorites((current) => [...current, id]);
+      return;
+    }
+
+    setPendingFavoriteConflict({ candidate, conflicts });
   };
 
   const handleSelectAct = (act: Act) => {
@@ -1482,6 +1487,32 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
         editionStages={edition.stages}
         language={language}
       />
+
+      {pendingFavoriteConflict && (
+        <FavoriteConflictDialog
+          candidate={pendingFavoriteConflict.candidate}
+          conflicts={pendingFavoriteConflict.conflicts}
+          language={language}
+          onReplace={() => {
+            const conflictingIds = new Set(
+              pendingFavoriteConflict.conflicts.map(({ second }) => second.id)
+            );
+            setFavorites((current) => [
+              ...current.filter((favoriteId) => !conflictingIds.has(favoriteId)),
+              pendingFavoriteConflict.candidate.id,
+            ]);
+            setPendingFavoriteConflict(null);
+          }}
+          onKeepAll={() => {
+            setFavorites((current) => [
+              ...current,
+              pendingFavoriteConflict.candidate.id,
+            ]);
+            setPendingFavoriteConflict(null);
+          }}
+          onCancel={() => setPendingFavoriteConflict(null)}
+        />
+      )}
 
       {toastMessage && (
         <div
