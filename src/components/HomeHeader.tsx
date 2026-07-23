@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Info, Calendar, Search, Newspaper, Smartphone, Send, Share2 } from 'lucide-react';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import { platform } from '../services/platform';
 
 interface HomeHeaderProps {
   language: Language;
@@ -368,11 +369,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
                       : 'Créez votre agenda de festivals rock et métal avec AgendaFest',
                     url: window.location.origin + window.location.pathname,
                   };
-                  if (navigator.share) {
-                    navigator.share(shareData).catch(() => {});
-                  } else {
-                    navigator.clipboard.writeText(shareData.url).catch(() => {});
-                  }
+                  void platform.share(shareData);
                 })}
                 style={{
                   display: 'flex',
@@ -426,7 +423,7 @@ export const HomeHeader: React.FC<HomeHeaderProps> = ({
               {/* Sugerencias */}
               <button
                 onClick={() => handleMenuClick(() => {
-                  window.location.href = 'mailto:joseafd@gmail.com?subject=AgendaFest%20Sugerencia';
+                  platform.openExternalUrl('mailto:joseafd@gmail.com?subject=AgendaFest%20Sugerencia');
                 })}
                 style={{
                   display: 'flex',
