@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "test": "npm run test:pwa && npm run test:ui",
+    "test:bundle": "node --test tests/bundle.test.mjs",
     "test:pwa": "node --test tests/pwa.test.mjs",
     "test:ui": "vitest run",
     "preview": "vite preview",
