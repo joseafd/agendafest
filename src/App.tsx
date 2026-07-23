@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import type { FestivalEdition } from './data/festivalData';
 import { storage } from './services/storage';
 import type { Language } from './utils/translations';
+import { FavoriteReminderManager } from './components/FavoriteReminderManager';
 
 const agendaFestDataPromise = import('./data/festivalData');
 const globalHomePromise = import('./components/GlobalHome');
@@ -112,29 +113,35 @@ export default function App() {
 
   if (!selectedEditionId || !agendaFestData[selectedEditionId]) {
     return (
-      <Suspense fallback={<LoadingScreen />}>
-        <GlobalHome
-          editions={editionsList}
-          onSelectEdition={setSelectedEditionId}
-          language={language}
-          onChangeLanguage={setLanguage}
-        />
-      </Suspense>
+      <>
+        <FavoriteReminderManager editions={editionsList} language={language} />
+        <Suspense fallback={<LoadingScreen />}>
+          <GlobalHome
+            editions={editionsList}
+            onSelectEdition={setSelectedEditionId}
+            language={language}
+            onChangeLanguage={setLanguage}
+          />
+        </Suspense>
+      </>
     );
   }
 
   const selectedEdition = agendaFestData[selectedEditionId];
 
   return (
-    <Suspense fallback={<LoadingScreen />}>
-      <FestivalDashboard
-        key={selectedEditionId}
-        editionId={selectedEditionId}
-        edition={selectedEdition}
-        onBackToSelector={() => setSelectedEditionId(null)}
-        language={language}
-        onChangeLanguage={setLanguage}
-      />
-    </Suspense>
+    <>
+      <FavoriteReminderManager editions={editionsList} language={language} />
+      <Suspense fallback={<LoadingScreen />}>
+        <FestivalDashboard
+          key={selectedEditionId}
+          editionId={selectedEditionId}
+          edition={selectedEdition}
+          onBackToSelector={() => setSelectedEditionId(null)}
+          language={language}
+          onChangeLanguage={setLanguage}
+        />
+      </Suspense>
+    </>
   );
 }
