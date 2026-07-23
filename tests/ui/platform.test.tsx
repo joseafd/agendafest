@@ -79,10 +79,10 @@ describe('Servicio de plataforma', () => {
 
     expect(platform.getNotificationPermission()).toBe('unsupported');
     await expect(platform.requestNotificationPermission()).resolves.toBe('unsupported');
-    expect(platform.showNotification('Próximo concierto')).toBe(false);
+    await expect(platform.showNotification('Próximo concierto')).resolves.toBe(false);
   });
 
-  it('muestra notificaciones únicamente con permiso concedido', () => {
+  it('muestra notificaciones únicamente con permiso concedido', async () => {
     const notifications: Array<{ title: string; options?: NotificationOptions }> = [];
 
     class FakeNotification {
@@ -99,7 +99,7 @@ describe('Servicio de plataforma', () => {
       value: FakeNotification,
     });
 
-    expect(platform.showNotification('Airbourne en 15 minutos', { body: 'Escenario principal' })).toBe(true);
+    await expect(platform.showNotification('Airbourne en 15 minutos', { body: 'Escenario principal' })).resolves.toBe(true);
     expect(notifications).toEqual([{
       title: 'Airbourne en 15 minutos',
       options: { body: 'Escenario principal' },
