@@ -51,6 +51,7 @@ import type { Act, FestivalDay, StageConfig } from '../data/festivalData';
 import { getArtistSocialLinks } from '../data/artistSocialLinks';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import { platform } from '../services/platform';
 
 function getYoutubeEmbedUrl(url: string): string | null {
   if (!url) return null;
@@ -145,6 +146,10 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
   if (!isOpen || !act) return null;
 
   const socialLinks = getArtistSocialLinks(act.band);
+  const handleExternalLink = (event: React.MouseEvent<HTMLAnchorElement>, url: string) => {
+    event.preventDefault();
+    platform.openExternalUrl(url, 'new-window');
+  };
 
   const stageObj = editionStages.find(s => s.name === act.stage);
   const stageColor = stageObj ? stageObj.color : '#ffffff';
@@ -466,6 +471,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   href={act.bio?.spotifyUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => handleExternalLink(event, event.currentTarget.href)}
                   className="btn-interactive"
                   title="Spotify"
                   style={{
@@ -502,6 +508,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   href={act.bio?.instagramUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => handleExternalLink(event, event.currentTarget.href)}
                   className="btn-interactive"
                   title="Instagram"
                   style={{
@@ -536,6 +543,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   href={act.bio?.facebookUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => handleExternalLink(event, event.currentTarget.href)}
                   className="btn-interactive"
                   title="Facebook"
                   style={{
@@ -570,6 +578,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   href={act.bio?.youtubeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => handleExternalLink(event, event.currentTarget.href)}
                   className="btn-interactive"
                   title="YouTube"
                   style={{
@@ -604,6 +613,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   href={socialLinks.officialWebsite}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => handleExternalLink(event, event.currentTarget.href)}
                   className="btn-interactive"
                   title="Web oficial"
                   aria-label={`Web oficial de ${act.band}`}
@@ -624,6 +634,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   href={socialLinks.tiktokUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => handleExternalLink(event, event.currentTarget.href)}
                   className="btn-interactive"
                   title="TikTok"
                   aria-label={`TikTok de ${act.band}`}
@@ -644,6 +655,7 @@ export const BandDetailModal: React.FC<BandDetailModalProps> = ({
                   href={socialLinks.xUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={(event) => handleExternalLink(event, event.currentTarget.href)}
                   className="btn-interactive"
                   title="X"
                   aria-label={`X de ${act.band}`}
