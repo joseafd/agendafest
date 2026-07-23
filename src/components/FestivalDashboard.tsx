@@ -14,6 +14,7 @@ import { PwaInstallModal } from './PwaInstallModal';
 import { t, tFormat } from '../utils/translations';
 import type { Language } from '../utils/translations';
 import { storage } from '../services/storage';
+import { platform } from '../services/platform';
 
 const getYoutubeId = (url: string) => {
   if (!url) return '';
@@ -426,7 +427,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     const baseUrl = window.location.origin + window.location.pathname;
     const shareUrl = `${baseUrl}?edition=${editionId}&favs=${encodeURIComponent(favorites.join(','))}`;
 
-    navigator.clipboard.writeText(shareUrl)
+    platform.copyText(shareUrl)
       .then(() => {
         setToastMessage(t(language, 'toastShareSuccess'));
         setTimeout(() => setToastMessage(null), 2500);
