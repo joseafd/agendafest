@@ -15,6 +15,7 @@ import { t, tFormat } from '../utils/translations';
 import type { Language } from '../utils/translations';
 import { storage } from '../services/storage';
 import { platform } from '../services/platform';
+import type { PlatformNotificationPermission } from '../services/platform';
 
 const getYoutubeId = (url: string) => {
   if (!url) return '';
@@ -93,6 +94,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   const [onlyFavorites, setOnlyFavorites] = useLocalStorage<boolean>(`af_${editionId}_only_favorites`, false);
   const [selectedCountries, setSelectedCountries] = useLocalStorage<string[]>(`af_${editionId}_selected_countries`, []);
   const [selectedGenres, setSelectedGenres] = useLocalStorage<string[]>(`af_${editionId}_selected_genres`, []);
+  const [favoriteRemindersEnabled, setFavoriteRemindersEnabled] = useLocalStorage<boolean>('af_favorite_reminders_enabled', false);
 
   // 3. UI & Notification State
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -104,6 +106,9 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   const [pendingImport, setPendingImport] = useState<string[] | null>(null);
   const [visitCount, setVisitCount] = useState<number | null>(null);
   const [nextFavImgError, setNextFavImgError] = useState<boolean>(false);
+  const [notificationPermission, setNotificationPermission] = useState<PlatformNotificationPermission>(
+    platform.getNotificationPermission()
+  );
 
   // 4. Days list shortcut
   const currentDay = useMemo(() => {
@@ -302,6 +307,44 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     const shortWeekday = weekdayTranslations[wKey]?.[lang] || day.weekdayEs.substring(0, 3);
     return `${shortWeekday}, ${act.start}`;
   }, [days]);
+
+  const handleToggleFavoriteReminders = useCallback(async () => {
+    if (favoriteRemindersEnabled) {
+      setFavoriteRemindersEnabled(false);
+      setToastMessage(
+        language === 'en'
+          ? 'Favorite reminders disabled'
+          : language === 'fr'
+            ? 'Rappels des favoris désactivés'
+            : 'Avisos de favoritos desactivados'
+      );
+      setTimeout(() => setToastMessage(null), 2500);
+      return;
+    }
+
+    const permission = await platform.requestNotificationPermission();
+    setNotificationPermission(permission);
+
+    if (permission === 'granted') {
+      setFavoriteRemindersEnabled(true);
+      setToastMessage(
+        language === 'en'
+          ? 'We will notify you 15 minutes before'
+          : language === 'fr'
+            ? 'Nous vous préviendrons 15 minutes avant'
+            : 'Te avisaremos 15 minutos antes'
+      );
+    } else {
+      setFavoriteRemindersEnabled(false);
+      setToastMessage(
+        permission === 'unsupported'
+          ? (language === 'en' ? 'Notifications are not supported' : language === 'fr' ? 'Notifications non prises en charge' : 'Este dispositivo no admite notificaciones')
+          : (language === 'en' ? 'Enable notifications in browser settings' : language === 'fr' ? 'Activez les notifications dans le navigateur' : 'Activa las notificaciones en los ajustes del navegador')
+      );
+    }
+
+    setTimeout(() => setToastMessage(null), 3500);
+  }, [favoriteRemindersEnabled, language, setFavoriteRemindersEnabled]);
 
   const nextFavoriteAct = useMemo(() => {
     if (favorites.length === 0 || !days) return null;
@@ -1405,6 +1448,9 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
         onSave={handleSaveFilters}
         defaultStages={defaultStages}
         onClearFavorites={handleClearFavorites}
+        favoriteRemindersEnabled={favoriteRemindersEnabled}
+        notificationPermission={notificationPermission}
+        onToggleFavoriteReminders={handleToggleFavoriteReminders}
         language={language}
       />
 
