@@ -152,7 +152,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
       window.localStorage.removeItem(`af_${editionId}_open_news`);
       setActiveTab('news');
     }
-  }, [editionId]);
+  }, [editionId, setOnlyFavorites]);
 
   // 5b. Visitor Counter fetcher (CounterAPI.dev) & Title Updater
   useEffect(() => {
