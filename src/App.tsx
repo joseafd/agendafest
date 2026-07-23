@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from 'react';
 import type { FestivalEdition } from './data/festivalData';
+import { storage } from './services/storage';
 import type { Language } from './utils/translations';
 
 const agendaFestDataPromise = import('./data/festivalData');
@@ -37,11 +38,11 @@ export default function App() {
   const [agendaFestData, setAgendaFestData] = useState<Record<string, FestivalEdition> | null>(null);
   const [loadError, setLoadError] = useState(false);
   const [selectedEditionId, setSelectedEditionId] = useState<string | null>(() => {
-    return window.localStorage.getItem('af_selected_edition_id');
+    return storage.getString('af_selected_edition_id');
   });
 
   const [language, setLanguage] = useState<Language>(() => {
-    const storedLanguage = window.localStorage.getItem('af_language');
+    const storedLanguage = storage.getString('af_language');
     return storedLanguage === 'es' || storedLanguage === 'en' || storedLanguage === 'fr'
       ? storedLanguage
       : 'es';
@@ -49,15 +50,15 @@ export default function App() {
 
   useEffect(() => {
     if (selectedEditionId) {
-      window.localStorage.setItem('af_selected_edition_id', selectedEditionId);
-      window.localStorage.setItem('af_last_opened_edition', selectedEditionId);
+      storage.setString('af_selected_edition_id', selectedEditionId);
+      storage.setString('af_last_opened_edition', selectedEditionId);
     } else {
-      window.localStorage.removeItem('af_selected_edition_id');
+      storage.remove('af_selected_edition_id');
     }
   }, [selectedEditionId]);
 
   useEffect(() => {
-    window.localStorage.setItem('af_language', language);
+    storage.setString('af_language', language);
     document.documentElement.lang = language;
   }, [language]);
 
