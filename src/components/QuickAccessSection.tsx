@@ -3,6 +3,7 @@ import { Calendar, Search, Map, Newspaper, Smartphone, MoreHorizontal, X, HelpCi
 import { QuickAccessCard } from './QuickAccessCard';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import { platform } from '../services/platform';
 
 interface QuickAccessSectionProps {
   language: Language;
@@ -295,7 +296,7 @@ export const QuickAccessSection: React.FC<QuickAccessSectionProps> = ({
               {/* Sugerencias */}
               <button
                 onClick={() => {
-                  window.location.href = 'mailto:joseafd@gmail.com?subject=AgendaFest%20Sugerencia';
+                  platform.openExternalUrl('mailto:joseafd@gmail.com?subject=AgendaFest%20Sugerencia');
                   setIsMoreModalOpen(false);
                 }}
                 style={{
