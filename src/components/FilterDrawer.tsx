@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { X, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff, ChevronDown, ChevronUp, Globe, Music } from 'lucide-react';
+import { X, ArrowUp, ArrowDown, RefreshCw, Eye, EyeOff, ChevronDown, ChevronUp, Globe, Music, Bell } from 'lucide-react';
 import type { StageConfig } from '../data/festivalData';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import type { PlatformNotificationPermission } from '../services/platform';
 
 interface FilterDrawerProps {
   isOpen: boolean;
@@ -27,6 +28,9 @@ interface FilterDrawerProps {
   ) => void;
   defaultStages: string[];
   onClearFavorites?: () => void;
+  favoriteRemindersEnabled: boolean;
+  notificationPermission: PlatformNotificationPermission;
+  onToggleFavoriteReminders: () => void;
   language: Language;
 }
 
@@ -44,6 +48,9 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
   onSave,
   defaultStages,
   onClearFavorites,
+  favoriteRemindersEnabled,
+  notificationPermission,
+  onToggleFavoriteReminders,
   language,
 }) => {
   // Local state to manage changes before committing on "Guardar"
@@ -207,6 +214,37 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
                   type="checkbox"
                   checked={localOnlyFavorites}
                   onChange={(e) => setLocalOnlyFavorites(e.target.checked)}
+                />
+                <span className="slider"></span>
+              </label>
+            </div>
+
+            <div className="switch-container" style={{ marginTop: '10px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <Bell size={16} color={favoriteRemindersEnabled ? 'var(--accent-red)' : 'var(--text-muted)'} />
+                <div>
+                  <span style={{ display: 'block', fontSize: '0.88rem', fontWeight: '600' }}>
+                    {language === 'en'
+                      ? 'Notify me 15 min before'
+                      : language === 'fr'
+                        ? 'Me prévenir 15 min avant'
+                        : 'Avisarme 15 min antes'}
+                  </span>
+                  <span style={{ display: 'block', marginTop: '2px', fontSize: '0.66rem', color: 'var(--text-muted)' }}>
+                    {notificationPermission === 'unsupported'
+                      ? (language === 'en' ? 'Not supported on this device' : language === 'fr' ? 'Non pris en charge sur cet appareil' : 'No compatible con este dispositivo')
+                      : notificationPermission === 'denied'
+                        ? (language === 'en' ? 'Permission blocked in browser' : language === 'fr' ? 'Autorisation bloquée dans le navigateur' : 'Permiso bloqueado en el navegador')
+                        : (language === 'en' ? 'For your favorite bands' : language === 'fr' ? 'Pour vos groupes favoris' : 'Para tus bandas favoritas')}
+                  </span>
+                </div>
+              </div>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  checked={favoriteRemindersEnabled}
+                  disabled={notificationPermission === 'unsupported' || notificationPermission === 'denied'}
+                  onChange={onToggleFavoriteReminders}
                 />
                 <span className="slider"></span>
               </label>
