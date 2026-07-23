@@ -3,6 +3,7 @@ import type { FestivalEdition } from '../data/festivalData';
 import { FestivalCard } from './FestivalCard';
 import { t } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import { storage } from '../services/storage';
 
 interface MyFestivalsSectionProps {
   editions: FestivalEdition[];
@@ -34,16 +35,8 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
       const edId = ed.config.edicionId;
       const isFollowed = followedEditions.includes(edId);
 
-      let hasFavs = false;
-      try {
-        const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
-        if (favsStr) {
-          const favs = JSON.parse(favsStr);
-          hasFavs = Array.isArray(favs) && favs.length > 0;
-        }
-      } catch (e) {
-        // ignore
-      }
+      const favs = storage.getJson<unknown>(`af_${edId}_favorites`, []);
+      const hasFavs = Array.isArray(favs) && favs.length > 0;
 
       return isFollowed || hasFavs;
     });
