@@ -1,10 +1,41 @@
-import { useState, useEffect } from 'react';
-import { GlobalHome } from './components/GlobalHome';
-import { FestivalDashboard } from './components/FestivalDashboard';
-import { agendaFestData } from './data/festivalData';
+import { lazy, Suspense, useEffect, useState } from 'react';
+import type { FestivalEdition } from './data/festivalData';
 import type { Language } from './utils/translations';
 
+const agendaFestDataPromise = import('./data/festivalData');
+const globalHomePromise = import('./components/GlobalHome');
+
+const GlobalHome = lazy(() => globalHomePromise.then((module) => ({
+  default: module.GlobalHome,
+})));
+
+const FestivalDashboard = lazy(() => import('./components/FestivalDashboard').then((module) => ({
+  default: module.FestivalDashboard,
+})));
+
+const LoadingScreen = () => (
+  <div
+    className="app-container"
+    role="status"
+    aria-live="polite"
+    style={{
+      display: 'grid',
+      minHeight: '100dvh',
+      placeItems: 'center',
+      background: '#08090d',
+      color: '#ffffff',
+    }}
+  >
+    <div style={{ display: 'grid', justifyItems: 'center', gap: '14px' }}>
+      <img src="./icon.svg" alt="" width="72" height="72" />
+      <strong style={{ letterSpacing: '1.5px' }}>Cargando AgendaFest…</strong>
+    </div>
+  </div>
+);
+
 export default function App() {
+  const [agendaFestData, setAgendaFestData] = useState<Record<string, FestivalEdition> | null>(null);
+  const [loadError, setLoadError] = useState(false);
   const [selectedEditionId, setSelectedEditionId] = useState<string | null>(() => {
     return window.localStorage.getItem('af_selected_edition_id');
   });
@@ -30,8 +61,26 @@ export default function App() {
     document.documentElement.lang = language;
   }, [language]);
 
+  useEffect(() => {
+    let mounted = true;
+
+    agendaFestDataPromise
+      .then((module) => {
+        if (mounted) setAgendaFestData(module.agendaFestData);
+      })
+      .catch(() => {
+        if (mounted) setLoadError(true);
+      });
+
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
   // If a shared favorites link is loaded, default to the shared edition or first edition if none selected
   useEffect(() => {
+    if (!agendaFestData) return;
+
     const params = new URLSearchParams(window.location.search);
     if (params.has('favs') && !selectedEditionId) {
       const editionParam = params.get('edition');
@@ -44,31 +93,47 @@ export default function App() {
         }
       }
     }
-  }, [selectedEditionId]);
+  }, [agendaFestData, selectedEditionId]);
+
+  if (loadError) {
+    return (
+      <div className="app-container" role="alert" style={{ padding: '32px', color: '#ffffff' }}>
+        No se han podido cargar los datos. Comprueba tu conexión y vuelve a intentarlo.
+      </div>
+    );
+  }
+
+  if (!agendaFestData) {
+    return <LoadingScreen />;
+  }
 
   const editionsList = Object.values(agendaFestData);
 
   if (!selectedEditionId || !agendaFestData[selectedEditionId]) {
     return (
-      <GlobalHome
-        editions={editionsList}
-        onSelectEdition={setSelectedEditionId}
-        language={language}
-        onChangeLanguage={setLanguage}
-      />
+      <Suspense fallback={<LoadingScreen />}>
+        <GlobalHome
+          editions={editionsList}
+          onSelectEdition={setSelectedEditionId}
+          language={language}
+          onChangeLanguage={setLanguage}
+        />
+      </Suspense>
     );
   }
 
   const selectedEdition = agendaFestData[selectedEditionId];
 
   return (
-    <FestivalDashboard
-      key={selectedEditionId}
-      editionId={selectedEditionId}
-      edition={selectedEdition}
-      onBackToSelector={() => setSelectedEditionId(null)}
-      language={language}
-      onChangeLanguage={setLanguage}
-    />
+    <Suspense fallback={<LoadingScreen />}>
+      <FestivalDashboard
+        key={selectedEditionId}
+        editionId={selectedEditionId}
+        edition={selectedEdition}
+        onBackToSelector={() => setSelectedEditionId(null)}
+        language={language}
+        onChangeLanguage={setLanguage}
+      />
+    </Suspense>
   );
 }
