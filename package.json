@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test": "npm run test:pwa && npm run test:ui",
     "test:pwa": "node --test tests/pwa.test.mjs",
+    "test:ui": "vitest run",
     "preview": "vite preview",
     "sync-excel": "node sync_excel.cjs",
     "import-ui": "node importador/server.js"
@@ -18,13 +20,17 @@
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
+    "jsdom": "^29.1.1",
     "oxlint": "^1.69.0",
     "typescript": "~6.0.2",
     "vite": "^8.1.0",
+    "vitest": "^4.1.10",
     "xlsx": "^0.18.5"
   }
 }
