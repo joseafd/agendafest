@@ -4,6 +4,10 @@ import type { FestivalEdition, Act } from '../data/festivalData';
 import { t, tFormat } from '../utils/translations';
 import type { Language } from '../utils/translations';
 import { storage } from '../services/storage';
+import {
+  findFavoriteConflicts,
+  getConflictingActIds,
+} from '../services/scheduleConflicts';
 
 interface ContinueAgendaSectionProps {
   editions: FestivalEdition[];
@@ -81,30 +85,9 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       // Ignorar festivales ya finalizados
       if (ed.config.endDate < todayStr) return;
 
-      // Calculate clashes count and conflict IDs
-      let clashesCount = 0;
-      const favActs = ed.days.flatMap(d => d.acts.filter(a => favs.includes(a.id)));
-      const sortedActs = [...favActs].sort((a, b) => a.startMinutes - b.startMinutes);
-      const conflictActIds = new Set<string>();
-      for (let i = 0; i < sortedActs.length; i++) {
-        let actHasOverlap = false;
-        for (let j = i + 1; j < sortedActs.length; j++) {
-          const a = sortedActs[i];
-          const b = sortedActs[j];
-          const sameDay = a.id.substring(0, 10) === b.id.substring(0, 10);
-          if (sameDay) {
-            const overlap = a.startMinutes < b.endMinutes && b.startMinutes < a.endMinutes;
-            if (overlap) {
-              actHasOverlap = true;
-              conflictActIds.add(a.id);
-              conflictActIds.add(b.id);
-            }
-          }
-        }
-        if (actHasOverlap) {
-          clashesCount++;
-        }
-      }
+      const conflicts = findFavoriteConflicts(ed.days, favs);
+      const clashesCount = conflicts.length;
+      const conflictActIds = getConflictingActIds(conflicts);
 
       // Last opened timing
       const lastOpened = storage.getString('af_last_opened_edition');
