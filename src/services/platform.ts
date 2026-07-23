@@ -1,3 +1,5 @@
+import { Capacitor } from '@capacitor/core';
+
 export interface SharePayload {
   title?: string;
   text?: string;
@@ -7,6 +9,16 @@ export interface SharePayload {
 export type ShareResult = 'shared' | 'copied' | 'cancelled' | 'unavailable';
 export type PlatformNotificationPermission = NotificationPermission | 'unsupported';
 export type ExternalUrlTarget = 'same-window' | 'new-window';
+
+export interface ScheduledPlatformNotification {
+  id: number;
+  title: string;
+  body: string;
+  at: Date;
+  tag: string;
+}
+
+const NATIVE_NOTIFICATION_SOURCE = 'agendafest-favorite-reminder';
 
 const getBrowserNavigator = (): Navigator | null => {
   if (typeof window === 'undefined') return null;
@@ -19,6 +31,19 @@ const getNotificationApi = (): typeof Notification | null => {
   }
 
   return window.Notification;
+};
+
+const isNativeApp = (): boolean => Capacitor.isNativePlatform();
+
+const getNativeNotifications = async () => {
+  if (!isNativeApp()) return null;
+
+  try {
+    const { LocalNotifications } = await import('@capacitor/local-notifications');
+    return LocalNotifications;
+  } catch {
+    return null;
+  }
 };
 
 const isAbortError = (error: unknown): boolean => {
@@ -81,10 +106,35 @@ const openExternalUrl = (url: string, target: ExternalUrlTarget = 'same-window')
 };
 
 const getNotificationPermission = (): PlatformNotificationPermission => {
+  if (isNativeApp()) return 'default';
   return getNotificationApi()?.permission ?? 'unsupported';
 };
 
+const checkNotificationPermission = async (): Promise<PlatformNotificationPermission> => {
+  const nativeNotifications = await getNativeNotifications();
+  if (nativeNotifications) {
+    try {
+      const { display } = await nativeNotifications.checkPermissions();
+      return display === 'granted' ? 'granted' : display === 'denied' ? 'denied' : 'default';
+    } catch {
+      return 'default';
+    }
+  }
+
+  return getNotificationPermission();
+};
+
 const requestNotificationPermission = async (): Promise<PlatformNotificationPermission> => {
+  const nativeNotifications = await getNativeNotifications();
+  if (nativeNotifications) {
+    try {
+      const { display } = await nativeNotifications.requestPermissions();
+      return display === 'granted' ? 'granted' : display === 'denied' ? 'denied' : 'default';
+    } catch {
+      return 'denied';
+    }
+  }
+
   const notificationApi = getNotificationApi();
   if (!notificationApi) return 'unsupported';
 
@@ -92,6 +142,49 @@ const requestNotificationPermission = async (): Promise<PlatformNotificationPerm
     return await notificationApi.requestPermission();
   } catch {
     return notificationApi.permission;
+  }
+};
+
+const syncScheduledNotifications = async (
+  notifications: ScheduledPlatformNotification[]
+): Promise<boolean> => {
+  const nativeNotifications = await getNativeNotifications();
+  if (!nativeNotifications) return false;
+
+  try {
+    const { notifications: pending } = await nativeNotifications.getPending();
+    const ownedNotifications = pending.filter(
+      (notification) => notification.extra?.source === NATIVE_NOTIFICATION_SOURCE
+    );
+
+    if (ownedNotifications.length > 0) {
+      await nativeNotifications.cancel({
+        notifications: ownedNotifications.map(({ id }) => ({ id })),
+      });
+    }
+
+    if (notifications.length > 0) {
+      await nativeNotifications.schedule({
+        notifications: notifications.map((notification) => ({
+          id: notification.id,
+          title: notification.title,
+          body: notification.body,
+          schedule: {
+            at: notification.at,
+            allowWhileIdle: true,
+          },
+          extra: {
+            source: NATIVE_NOTIFICATION_SOURCE,
+            tag: notification.tag,
+          },
+          autoCancel: true,
+        })),
+      });
+    }
+
+    return true;
+  } catch {
+    return false;
   }
 };
 
@@ -123,8 +216,11 @@ export const platform = {
   share,
   isAllowedExternalUrl,
   openExternalUrl,
+  isNativeApp,
   getNotificationPermission,
+  checkNotificationPermission,
   requestNotificationPermission,
+  syncScheduledNotifications,
   showNotification,
 };
 

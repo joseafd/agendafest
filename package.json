@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "mobile:sync": "npm run build && cap sync",
     "lint": "oxlint",
     "test": "npm run test:pwa && npm run test:architecture && npm run test:ui",
     "test:architecture": "node --test tests/storage-boundary.test.mjs",
@@ -17,11 +18,14 @@
     "import-ui": "node importador/server.js"
   },
   "dependencies": {
+    "@capacitor/core": "^8.4.2",
+    "@capacitor/local-notifications": "^8.2.1",
     "lucide-react": "^1.21.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.4.2",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
     "@types/node": "^24.13.2",

@@ -110,6 +110,18 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     platform.getNotificationPermission()
   );
 
+  useEffect(() => {
+    let active = true;
+
+    void platform.checkNotificationPermission().then((permission) => {
+      if (active) setNotificationPermission(permission);
+    });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   // 4. Days list shortcut
   const currentDay = useMemo(() => {
     return days.find((day) => day.id === selectedDayId) || days[0];
