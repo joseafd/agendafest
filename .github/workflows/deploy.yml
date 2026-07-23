@@ -20,6 +20,7 @@ jobs:
           npm ci
           npm test
           npm run build
+          npm run test:bundle
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
