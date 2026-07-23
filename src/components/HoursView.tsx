@@ -294,7 +294,10 @@ export const HoursView: React.FC<HoursViewProps> = ({
                       </div>
 
                       <button
-                        onClick={(e) => onToggleFavorite(act.id, e)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onToggleFavorite(act.id, e);
+                        }}
                         aria-label={isFavorite ? "Quitar de favoritos" : "Añadir a favoritos"}
                         style={{
                           background: 'none',
