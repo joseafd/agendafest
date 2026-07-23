@@ -95,9 +95,20 @@ const requestNotificationPermission = async (): Promise<PlatformNotificationPerm
   }
 };
 
-const showNotification = (title: string, options?: NotificationOptions): boolean => {
+const showNotification = async (title: string, options?: NotificationOptions): Promise<boolean> => {
   const notificationApi = getNotificationApi();
   if (!notificationApi || notificationApi.permission !== 'granted') return false;
+
+  const serviceWorker = getBrowserNavigator()?.serviceWorker;
+  if (serviceWorker) {
+    try {
+      const registration = await serviceWorker.ready;
+      await registration.showNotification(title, options);
+      return true;
+    } catch {
+      // Algunos navegadores solo admiten el constructor mientras la app está abierta.
+    }
+  }
 
   try {
     new notificationApi(title, options);
