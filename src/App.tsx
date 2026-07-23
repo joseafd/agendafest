@@ -10,7 +10,10 @@ export default function App() {
   });
 
   const [language, setLanguage] = useState<Language>(() => {
-    return (window.localStorage.getItem('af_language') as Language) || 'es';
+    const storedLanguage = window.localStorage.getItem('af_language');
+    return storedLanguage === 'es' || storedLanguage === 'en' || storedLanguage === 'fr'
+      ? storedLanguage
+      : 'es';
   });
 
   useEffect(() => {
@@ -22,7 +25,10 @@ export default function App() {
     }
   }, [selectedEditionId]);
 
-  window.localStorage.setItem('af_language', language);
+  useEffect(() => {
+    window.localStorage.setItem('af_language', language);
+    document.documentElement.lang = language;
+  }, [language]);
 
   // If a shared favorites link is loaded, default to the shared edition or first edition if none selected
   useEffect(() => {
