@@ -6,17 +6,18 @@
     {
       "src": "favicon.png",
       "type": "image/png",
-      "sizes": "any",
+      "sizes": "500x500",
       "purpose": "any"
     },
     {
       "src": "favicon.png",
       "type": "image/png",
-      "sizes": "any",
+      "sizes": "500x500",
       "purpose": "maskable"
     }
   ],
   "start_url": "./",
+  "scope": "./",
   "background_color": "#08090d",
   "theme_color": "#ff003c",
   "display": "standalone",
