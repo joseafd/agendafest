@@ -3,6 +3,7 @@ import { AlertTriangle, Zap, ArrowRight } from 'lucide-react';
 import type { FestivalEdition, Act } from '../data/festivalData';
 import { t, tFormat } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import { storage } from '../services/storage';
 
 interface ContinueAgendaSectionProps {
   editions: FestivalEdition[];
@@ -73,15 +74,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
 
     editions.forEach((ed) => {
       const edId = ed.config.edicionId;
-      let favs: string[] = [];
-      try {
-        const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
-        if (favsStr) {
-          favs = JSON.parse(favsStr);
-        }
-      } catch (e) {
-        // ignore
-      }
+      const favs = storage.getJson<string[]>(`af_${edId}_favorites`, []);
 
       if (!Array.isArray(favs) || favs.length === 0) return;
 
@@ -114,7 +107,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       }
 
       // Last opened timing
-      const lastOpened = window.localStorage.getItem('af_last_opened_edition');
+      const lastOpened = storage.getString('af_last_opened_edition');
       const lastOpenedTime = lastOpened === edId ? 1 : 0;
 
       // Closeness in days
@@ -128,7 +121,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       // Determine simulation time (consistent with FestivalDashboard logic)
       const getSimulatedOrRealTime = (realTime: Date): Date => {
         const params = new URLSearchParams(window.location.search);
-        const isDemo = params.get('demo') === 'true' || window.localStorage.getItem('af_demo_mode') === 'true';
+        const isDemo = params.get('demo') === 'true' || storage.getString('af_demo_mode') === 'true';
         if (!isDemo) return realTime;
 
         const dateStr = `${realTime.getFullYear()}-${(realTime.getMonth() + 1).toString().padStart(2, '0')}-${realTime.getDate().toString().padStart(2, '0')}`;
@@ -228,23 +221,17 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
   // Detect if the user HAS favorites but only in finished festivals
   const allFinishedWithFavs = useMemo(() => {
     return editions.some((ed) => {
-      try {
-        const favsStr = window.localStorage.getItem(`af_${ed.config.edicionId}_favorites`);
-        if (favsStr) {
-          const favs = JSON.parse(favsStr);
-          return Array.isArray(favs) && favs.length > 0;
-        }
-      } catch (e) { /* ignore */ }
-      return false;
+      const favs = storage.getJson<unknown>(`af_${ed.config.edicionId}_favorites`, []);
+      return Array.isArray(favs) && favs.length > 0;
     });
   }, [editions]);
 
   const handleContinueClick = () => {
     if (primaryAgenda) {
       const edId = primaryAgenda.edition.config.edicionId;
-      // Pre-set in localStorage to load directly to Agenda with favorites
-      window.localStorage.setItem(`af_${edId}_open_agenda_favs`, 'true');
-      window.localStorage.setItem(`af_${edId}_only_favorites`, 'true');
+      // Pre-set persistent navigation state to load Agenda with favorites.
+      storage.setString(`af_${edId}_open_agenda_favs`, 'true');
+      storage.setString(`af_${edId}_only_favorites`, 'true');
       onSelectEdition(edId);
     }
   };
