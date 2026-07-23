@@ -1,27 +1,18 @@
 import { useState, useEffect } from 'react';
+import { storage } from '../services/storage';
 
 /**
- * A custom hook to easily read, write, and persist React state to localStorage.
+ * Mantiene estado React persistente sin acoplar los componentes al navegador.
  */
 export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void] {
   // Initialize state with value from localStorage or fallback to initialValue
   const [storedValue, setStoredValue] = useState<T>(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      console.warn(`Error reading localStorage key "${key}":`, error);
-      return initialValue;
-    }
+    return storage.getJson<T>(key, initialValue);
   });
 
   // Keep localStorage in sync with state changes
   useEffect(() => {
-    try {
-      window.localStorage.setItem(key, JSON.stringify(storedValue));
-    } catch (error) {
-      console.warn(`Error setting localStorage key "${key}":`, error);
-    }
+    storage.setJson(key, storedValue);
   }, [key, storedValue]);
 
   return [storedValue, setStoredValue];
