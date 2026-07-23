@@ -394,6 +394,35 @@ async function saveImportToExcel(approvedData, user, importId) {
       throw new Error(`La edición ${edicionId} no tiene una fecha inicial válida.`);
     }
 
+    const stageHeaders = escenariosSheet.getRow(1).values;
+    const stageEditionCol = stageHeaders.indexOf('Edicion ID');
+    const stageIdCol = stageHeaders.indexOf('ID');
+    const stageNameCol = stageHeaders.indexOf('Nombre');
+    const stageOrderCol = stageHeaders.indexOf('Orden');
+    const stageColorCol = stageHeaders.indexOf('Color');
+    const existingEditionStages = [];
+    escenariosSheet.eachRow((row, rowNumber) => {
+      if (rowNumber === 1 || cellText(row.getCell(stageEditionCol).value) !== edicionId) return;
+      const name = cellText(row.getCell(stageNameCol).value);
+      if (
+        name &&
+        !existingEditionStages.some(existing => existing.toLowerCase() === name.toLowerCase())
+      ) {
+        existingEditionStages.push(name);
+      }
+    });
+    const proposedStageNames = [...new Set(
+      approvedData.lineup.map(item => cellText(item.stage)).filter(Boolean)
+    )];
+    const stageAliases = new Map();
+    if (existingEditionStages.length === 1 && proposedStageNames.length === 1) {
+      stageAliases.set(proposedStageNames[0].toLowerCase(), existingEditionStages[0]);
+    }
+    const resolveStageName = value => {
+      const proposed = cellText(value);
+      return stageAliases.get(proposed.toLowerCase()) || proposed;
+    };
+
     const auditLogs = [];
     const addAuditLog = (entidadTipo, entidadId, campo, valAnt, valProp, valAprob, decision = 'Aprobado', motivo = '') => {
       const traceId = 'TRC-' + Math.floor(Math.random() * 90000 + 10000);
@@ -407,7 +436,7 @@ async function saveImportToExcel(approvedData, user, importId) {
     // 2. Write Artistas
     approvedData.lineup.forEach(item => {
       const artistName = item.artistName.trim();
-      const artistId = artistName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      const artistId = slugify(artistName);
       const normName = toTitleCase(artistName);
 
       // Find artist row
@@ -496,10 +525,11 @@ async function saveImportToExcel(approvedData, user, importId) {
 
     // 3. Write Actuaciones
     approvedData.lineup.forEach(item => {
-      const artistId = item.artistName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      const artistId = slugify(item.artistName);
       const daySerial = isoDateToExcelSerial(item.day);
       const startFraction = timeToFraction(item.startTime);
       const endFraction = timeToFraction(item.endTime);
+      const resolvedStage = resolveStageName(item.stage);
 
       const edIdIdx = freshActHeaders.indexOf('Edicion ID');
       const artIdIdx = freshActHeaders.indexOf('Artista ID');
@@ -510,19 +540,27 @@ async function saveImportToExcel(approvedData, user, importId) {
       const stateIdx = freshActHeaders.indexOf('Estado');
       const actIdIdx = freshActHeaders.indexOf('Actuacion ID');
 
-      // Find performance matching (edicionId, artistId, dateSerial, stage)
+      // Prefer the canonical stage, but also recognize a renamed stage for the
+      // same artist/day/time so re-importing one-stage festivals is idempotent.
       let actRow = null;
+      const sameArtistDayRows = [];
       actuacionesSheet.eachRow((row, rowNumber) => {
         if (rowNumber === 1) return;
-        const rEd = row.getCell(edIdIdx).value;
-        const rArt = row.getCell(artIdIdx).value;
+        const rEd = cellText(row.getCell(edIdIdx).value);
+        const rArt = cellText(row.getCell(artIdIdx).value);
         const rDate = row.getCell(dateIdx).value;
-        const rStage = row.getCell(stageIdx).value;
+        const rStage = cellText(row.getCell(stageIdx).value);
 
-        if (rEd === edicionId && rArt === artistId && Number(rDate) === daySerial && rStage === item.stage) {
-          actRow = row;
-        }
+        if (rEd !== edicionId || rArt !== artistId || Number(rDate) !== daySerial) return;
+        sameArtistDayRows.push(row);
+        if (rStage.toLowerCase() === resolvedStage.toLowerCase()) actRow = row;
       });
+      if (!actRow && stageAliases.size > 0) {
+        actRow = sameArtistDayRows.find(row =>
+          Math.abs(Number(row.getCell(startIdx).value) - startFraction) <= 0.0001 &&
+          Math.abs(Number(row.getCell(endIdx).value) - endFraction) <= 0.0001
+        ) || (sameArtistDayRows.length === 1 ? sameArtistDayRows[0] : null);
+      }
 
       if (actRow) {
         // Log changes
@@ -540,6 +578,11 @@ async function saveImportToExcel(approvedData, user, importId) {
         cEnd.value = endFraction;
         cEnd.numFmt = 'hh:mm';
 
+        const oldStage = cellText(actRow.getCell(stageIdx).value);
+        if (oldStage !== resolvedStage) {
+          addAuditLog('Actuaciones', artistId, 'Escenario', oldStage, resolvedStage, resolvedStage);
+          writeCellSafely(actRow.getCell(stageIdx), resolvedStage);
+        }
         writeCellSafely(actRow.getCell(stateIdx), 'Programada');
       } else {
         // Alta - new row
@@ -549,7 +592,7 @@ async function saveImportToExcel(approvedData, user, importId) {
         writeCellSafely(newRow.getCell(edIdIdx), edicionId);
         writeCellSafely(newRow.getCell(artIdIdx), artistId);
         writeCellSafely(newRow.getCell(dateIdx), daySerial);
-        writeCellSafely(newRow.getCell(stageIdx), item.stage);
+        writeCellSafely(newRow.getCell(stageIdx), resolvedStage);
         
         const cellStart = newRow.getCell(startIdx);
         cellStart.value = startFraction;
@@ -569,20 +612,9 @@ async function saveImportToExcel(approvedData, user, importId) {
     });
 
     // 3b. Register every stage used by the new edition.
-    const stageHeaders = escenariosSheet.getRow(1).values;
-    const stageEditionCol = stageHeaders.indexOf('Edicion ID');
-    const stageIdCol = stageHeaders.indexOf('ID');
-    const stageNameCol = stageHeaders.indexOf('Nombre');
-    const stageOrderCol = stageHeaders.indexOf('Orden');
-    const stageColorCol = stageHeaders.indexOf('Color');
-    const existingStages = new Set();
-    escenariosSheet.eachRow((row, rowNumber) => {
-      if (rowNumber > 1 && row.getCell(stageEditionCol).value === edicionId) {
-        existingStages.add(String(row.getCell(stageNameCol).value).toLowerCase());
-      }
-    });
+    const existingStages = new Set(existingEditionStages.map(name => name.toLowerCase()));
     const colors = ['#d3133c', '#2b8be3', '#9c1fb8', '#059669', '#eab308', '#ea580c'];
-    [...new Set(approvedData.lineup.map(item => item.stage.trim()).filter(Boolean))].forEach((stageName, index) => {
+    [...new Set(proposedStageNames.map(resolveStageName))].forEach((stageName, index) => {
       if (existingStages.has(stageName.toLowerCase())) return;
       const row = escenariosSheet.addRow([]);
       writeCellSafely(row.getCell(stageEditionCol), edicionId);

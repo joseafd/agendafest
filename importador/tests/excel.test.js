@@ -209,6 +209,133 @@ async function runExcelTests() {
     assert.ok(auditEntries.length > 0, 'Debería haber registros de trazabilidad para la importación IMP-test-123');
   });
 
+  await runTestAsync('Reimportar un festival de un único escenario no duplica escenario ni actuación si cambia su nombre', async () => {
+    const baseEdition = {
+      festivalId: 'festival-un-escenario',
+      id: 'festival-un-escenario-2026',
+      name: 'Festival Un Escenario',
+      year: 2026,
+      startDate: '2026-08-07',
+      endDate: '2026-08-08',
+      location: 'Prueba',
+      timezone: 'Europe/Madrid',
+      url: 'https://example.com/festival-un-escenario'
+    };
+    await saveImportToExcel({
+      edition: baseEdition,
+      lineup: [{
+        artistName: 'Banda Única',
+        day: '2026-08-07',
+        stage: 'Vendaval',
+        startTime: '19:00',
+        endTime: '20:00'
+      }]
+    }, 'test-user', 'IMP-one-stage-1');
+    await saveImportToExcel({
+      edition: baseEdition,
+      lineup: [{
+        artistName: 'Banda Única',
+        day: '2026-08-07',
+        stage: 'Escenario Principal',
+        startTime: '19:00',
+        endTime: '20:00'
+      }]
+    }, 'test-user', 'IMP-one-stage-2');
+
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(excelPath);
+    const acts = workbook.getWorksheet('Actuaciones');
+    const stages = workbook.getWorksheet('Escenarios');
+    const actHeaders = acts.getRow(1).values;
+    const stageHeaders = stages.getRow(1).values;
+    const editionId = 'festival-un-escenario-2026';
+    const editionActs = [];
+    const editionStages = [];
+
+    acts.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(actHeaders.indexOf('Edicion ID')).value === editionId) {
+        editionActs.push(row);
+      }
+    });
+    stages.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(stageHeaders.indexOf('Edicion ID')).value === editionId) {
+        editionStages.push(row);
+      }
+    });
+
+    assert.strictEqual(editionActs.length, 1, 'La misma actuación no debe duplicarse por un alias del escenario');
+    assert.strictEqual(editionStages.length, 1, 'El escenario único no debe registrarse de nuevo con otro nombre');
+    assert.strictEqual(editionActs[0].getCell(actHeaders.indexOf('Artista ID')).value, 'banda-unica');
+    assert.strictEqual(editionActs[0].getCell(actHeaders.indexOf('Escenario')).value, 'Vendaval');
+    assert.strictEqual(editionStages[0].getCell(stageHeaders.indexOf('Nombre')).value, 'Vendaval');
+  });
+
+  await runTestAsync('La normalización de un escenario no fusiona actuaciones reales de un festival multiescenario', async () => {
+    const baseEdition = {
+      festivalId: 'festival-multiescenario',
+      id: 'festival-multiescenario-2026',
+      name: 'Festival Multiescenario',
+      year: 2026,
+      startDate: '2026-08-14',
+      endDate: '2026-08-15',
+      location: 'Prueba',
+      timezone: 'Europe/Madrid',
+      url: 'https://example.com/festival-multiescenario'
+    };
+    const firstAct = {
+      artistName: 'Banda Repetida',
+      day: '2026-08-14',
+      stage: 'Escenario A',
+      startTime: '19:00',
+      endTime: '20:00'
+    };
+    await saveImportToExcel({
+      edition: baseEdition,
+      lineup: [firstAct]
+    }, 'test-user', 'IMP-multi-stage-1');
+    await saveImportToExcel({
+      edition: baseEdition,
+      lineup: [
+        firstAct,
+        {
+          ...firstAct,
+          stage: 'Escenario B',
+          startTime: '22:00',
+          endTime: '23:00'
+        }
+      ]
+    }, 'test-user', 'IMP-multi-stage-2');
+
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(excelPath);
+    const acts = workbook.getWorksheet('Actuaciones');
+    const stages = workbook.getWorksheet('Escenarios');
+    const actHeaders = acts.getRow(1).values;
+    const stageHeaders = stages.getRow(1).values;
+    const editionId = 'festival-multiescenario-2026';
+    const editionActs = [];
+    const editionStages = [];
+
+    acts.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(actHeaders.indexOf('Edicion ID')).value === editionId) {
+        editionActs.push(row);
+      }
+    });
+    stages.eachRow((row, rn) => {
+      if (rn > 1 && row.getCell(stageHeaders.indexOf('Edicion ID')).value === editionId) {
+        editionStages.push(row);
+      }
+    });
+
+    assert.strictEqual(editionActs.length, 2, 'Las dos actuaciones reales deben conservarse');
+    assert.deepStrictEqual(
+      editionStages
+        .map(row => row.getCell(stageHeaders.indexOf('Nombre')).value)
+        .sort(),
+      ['Escenario A', 'Escenario B']
+    );
+  });
+
   await runTestAsync('Una URL nueva crea su propia edición, escenarios y actuaciones sin usar Resurrection', async () => {
     const beforeWorkbook = new ExcelJS.Workbook();
     await beforeWorkbook.xlsx.readFile(excelPath);

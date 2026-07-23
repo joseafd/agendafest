@@ -3269,18 +3269,6 @@ const rawAgendaFestData: any = {
         "name": "Vendaval",
         "order": 1,
         "color": "#00c9a7"
-      },
-      {
-        "id": "escenario-principal",
-        "name": "Escenario Principal",
-        "order": 1,
-        "color": "#d3133c"
-      },
-      {
-        "id": "principal",
-        "name": "Principal",
-        "order": 1,
-        "color": "#d3133c"
       }
     ],
     "days": [
@@ -3291,9 +3279,7 @@ const rawAgendaFestData: any = {
         "weekdayEs": "Viernes",
         "doors": "18:45",
         "stages": [
-          "Vendaval",
-          "Escenario Principal",
-          "Principal"
+          "Vendaval"
         ],
         "acts": [
           {
@@ -3315,80 +3301,8 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "Demenzia Sozial",
-            "stage": "Escenario Principal",
-            "start": "19:15",
-            "end": "20:00",
-            "bio": {
-              "name": "Demenzia Sozial",
-              "title": "",
-              "description": "Demenzia Sozial es una formación de punk rock procedente de Galicia que destaca por su sonido crudo y directo. La banda se ha consolidado dentro de la escena independiente gracias a unas letras cargadas de crítica social y una energía arrolladora en directo. A lo largo de su trayectoria, han mantenido una actitud firme y autogestionada, participando en diversos festivales y eventos del circuito punk estatal. Su propuesta musical conecta profundamente con el público que busca autenticidad, compromiso y una actitud rebelde frente a las estructuras establecidas, consolidándose como un referente regional en su género.",
-              "country": "España",
-              "genre": "Punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yywSko_dMsI",
-              "spotifyUrl": "https://open.spotify.com/artist/7HRSS0s7sgWTvK4q7MDy2O",
-              "instagramUrl": "https://www.instagram.com/demenziasozial/",
-              "facebookUrl": "https://www.facebook.com/DemenziaSozial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9be767d486bf71f9da537c0c"
-            }
-          },
-          {
-            "band": "Demenzia Sozial",
-            "stage": "Principal",
-            "start": "19:15",
-            "end": "20:00",
-            "bio": {
-              "name": "Demenzia Sozial",
-              "title": "",
-              "description": "Demenzia Sozial es una formación de punk rock procedente de Galicia que destaca por su sonido crudo y directo. La banda se ha consolidado dentro de la escena independiente gracias a unas letras cargadas de crítica social y una energía arrolladora en directo. A lo largo de su trayectoria, han mantenido una actitud firme y autogestionada, participando en diversos festivales y eventos del circuito punk estatal. Su propuesta musical conecta profundamente con el público que busca autenticidad, compromiso y una actitud rebelde frente a las estructuras establecidas, consolidándose como un referente regional en su género.",
-              "country": "España",
-              "genre": "Punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yywSko_dMsI",
-              "spotifyUrl": "https://open.spotify.com/artist/7HRSS0s7sgWTvK4q7MDy2O",
-              "instagramUrl": "https://www.instagram.com/demenziasozial/",
-              "facebookUrl": "https://www.facebook.com/DemenziaSozial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9be767d486bf71f9da537c0c"
-            }
-          },
-          {
             "band": "HAMLET",
             "stage": "Vendaval",
-            "start": "20:30",
-            "end": "21:45",
-            "bio": {
-              "name": "HAMLET",
-              "title": "",
-              "description": "Hamlet es una banda de metal alternativo formada en Madrid a finales de los años 80. Han sido pioneros en la profesionalización del metal en España, explorando sonidos desde el groove metal hasta el nu-metal. Con álbumes icónicos como 'Sanatorio de Muñecos' o 'Insomnio', la banda ha definido el sonido de varias generaciones de rockeros. Su líder, J. Molly, y el guitarrista Luis Tárraga mantienen una propuesta musical intensa, marcada por letras introspectivas y viscerales, lo que les ha permitido mantenerse vigentes y respetados en la escena musical española durante más de tres décadas de carrera.",
-              "country": "España",
-              "genre": "Metal alternativo",
-              "youtubeUrl": "https://www.youtube.com/@hamletband",
-              "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
-              "instagramUrl": "https://www.instagram.com/hamletbanda/",
-              "facebookUrl": "https://www.facebook.com/Hamletbanda",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7e1b69bc4f40b05b6a7052cd"
-            }
-          },
-          {
-            "band": "HAMLET",
-            "stage": "Escenario Principal",
-            "start": "20:30",
-            "end": "21:45",
-            "bio": {
-              "name": "HAMLET",
-              "title": "",
-              "description": "Hamlet es una banda de metal alternativo formada en Madrid a finales de los años 80. Han sido pioneros en la profesionalización del metal en España, explorando sonidos desde el groove metal hasta el nu-metal. Con álbumes icónicos como 'Sanatorio de Muñecos' o 'Insomnio', la banda ha definido el sonido de varias generaciones de rockeros. Su líder, J. Molly, y el guitarrista Luis Tárraga mantienen una propuesta musical intensa, marcada por letras introspectivas y viscerales, lo que les ha permitido mantenerse vigentes y respetados en la escena musical española durante más de tres décadas de carrera.",
-              "country": "España",
-              "genre": "Metal alternativo",
-              "youtubeUrl": "https://www.youtube.com/@hamletband",
-              "spotifyUrl": "https://open.spotify.com/artist/5bTh3KLGlKlcloVl318t1h",
-              "instagramUrl": "https://www.instagram.com/hamletbanda/",
-              "facebookUrl": "https://www.facebook.com/Hamletbanda",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7e1b69bc4f40b05b6a7052cd"
-            }
-          },
-          {
-            "band": "HAMLET",
-            "stage": "Principal",
             "start": "20:30",
             "end": "21:45",
             "bio": {
@@ -3422,42 +3336,6 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "DAKIDARRÍA",
-            "stage": "Escenario Principal",
-            "start": "22:15",
-            "end": "23:45",
-            "bio": {
-              "name": "DAKIDARRÍA",
-              "title": "",
-              "description": "Dakidarría es una banda gallega que destaca por su explosiva mezcla de ska, punk y reggae, siempre acompañada de letras con un marcado carácter social y festivo. Desde sus inicios, han apostado por la energía en el escenario, logrando una complicidad inmediata con el público. Su música, cantada principalmente en gallego, trasciende barreras idiomáticas gracias a su capacidad para convertir cada concierto en un evento participativo. Con numerosos discos a sus espaldas, han logrado posicionarse como una de las bandas más solicitadas en los festivales de verano de toda la península ibérica.",
-              "country": "España",
-              "genre": "Ska punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=OsJ8g_OJLCo",
-              "spotifyUrl": "https://open.spotify.com/artist/2t4UlDofSDxweW751EVw9d",
-              "instagramUrl": "https://www.instagram.com/dakidarria/",
-              "facebookUrl": "https://www.facebook.com/dakidarria",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebef81f75e6ef4a4f84453a00c"
-            }
-          },
-          {
-            "band": "DAKIDARRÍA",
-            "stage": "Principal",
-            "start": "22:15",
-            "end": "23:45",
-            "bio": {
-              "name": "DAKIDARRÍA",
-              "title": "",
-              "description": "Dakidarría es una banda gallega que destaca por su explosiva mezcla de ska, punk y reggae, siempre acompañada de letras con un marcado carácter social y festivo. Desde sus inicios, han apostado por la energía en el escenario, logrando una complicidad inmediata con el público. Su música, cantada principalmente en gallego, trasciende barreras idiomáticas gracias a su capacidad para convertir cada concierto en un evento participativo. Con numerosos discos a sus espaldas, han logrado posicionarse como una de las bandas más solicitadas en los festivales de verano de toda la península ibérica.",
-              "country": "España",
-              "genre": "Ska punk",
-              "youtubeUrl": "https://www.youtube.com/watch?v=OsJ8g_OJLCo",
-              "spotifyUrl": "https://open.spotify.com/artist/2t4UlDofSDxweW751EVw9d",
-              "instagramUrl": "https://www.instagram.com/dakidarria/",
-              "facebookUrl": "https://www.facebook.com/dakidarria",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebef81f75e6ef4a4f84453a00c"
-            }
-          },
-          {
             "band": "The Real McKenzies",
             "stage": "Vendaval",
             "start": "00:15",
@@ -3476,80 +3354,8 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "The Real McKenzies",
-            "stage": "Escenario Principal",
-            "start": "00:15",
-            "end": "01:30",
-            "bio": {
-              "name": "The Real McKenzies",
-              "title": "",
-              "description": "The Real McKenzies es una banda canadiense conocida por ser pionera en el género del punk celta. Fundados en Vancouver en 1992, integran elementos del folclore tradicional escocés, incluyendo la gaita, con la agresividad y velocidad del punk rock. Con una extensa discografía y giras constantes por todo el mundo, han sido comparados a menudo con Dropkick Murphys o Flogging Molly. Su estilo inconfundible y su estética, a menudo incluyendo faldas escocesas, les han ganado una base de seguidores leales que valoran su capacidad para mantener vivas las tradiciones celtas con una actitud urbana y rebelde.",
-              "country": "Canadá",
-              "genre": "Punk celta",
-              "youtubeUrl": "https://www.youtube.com/watch?v=C7l8EuFNuTM",
-              "spotifyUrl": "https://open.spotify.com/artist/1YczG6BNjM9XAnw64RqnXi",
-              "instagramUrl": "https://www.instagram.com/therealmckenzies/",
-              "facebookUrl": "https://www.facebook.com/therealmckenzies",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebde9500892362fec349dc392d"
-            }
-          },
-          {
-            "band": "The Real McKenzies",
-            "stage": "Principal",
-            "start": "00:15",
-            "end": "01:30",
-            "bio": {
-              "name": "The Real McKenzies",
-              "title": "",
-              "description": "The Real McKenzies es una banda canadiense conocida por ser pionera en el género del punk celta. Fundados en Vancouver en 1992, integran elementos del folclore tradicional escocés, incluyendo la gaita, con la agresividad y velocidad del punk rock. Con una extensa discografía y giras constantes por todo el mundo, han sido comparados a menudo con Dropkick Murphys o Flogging Molly. Su estilo inconfundible y su estética, a menudo incluyendo faldas escocesas, les han ganado una base de seguidores leales que valoran su capacidad para mantener vivas las tradiciones celtas con una actitud urbana y rebelde.",
-              "country": "Canadá",
-              "genre": "Punk celta",
-              "youtubeUrl": "https://www.youtube.com/watch?v=C7l8EuFNuTM",
-              "spotifyUrl": "https://open.spotify.com/artist/1YczG6BNjM9XAnw64RqnXi",
-              "instagramUrl": "https://www.instagram.com/therealmckenzies/",
-              "facebookUrl": "https://www.facebook.com/therealmckenzies",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebde9500892362fec349dc392d"
-            }
-          },
-          {
             "band": "Ruxe Ruxe",
             "stage": "Vendaval",
-            "start": "02:00",
-            "end": "03:00",
-            "bio": {
-              "name": "Ruxe Ruxe",
-              "title": "",
-              "description": "Ruxe Ruxe es un referente indispensable de la música gallega contemporánea. Formados en 1996, su propuesta musical combina el rock con elementos tradicionales de la música folk, creando un sonido propio que ellos mismos han definido como rock bravú. A lo largo de su dilatada trayectoria, han recorrido innumerables escenarios, convirtiéndose en un símbolo de la identidad cultural gallega. Sus composiciones, cargadas de ironía y compromiso social, siguen resonando entre el público, consolidando su legado como una de las bandas más longevas y queridas dentro del panorama musical alternativo del noroeste de España.",
-              "country": "España",
-              "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Q5epRujyhr0",
-              "spotifyUrl": "https://open.spotify.com/artist/1YFrhov5H4KBd13rWQvzpe",
-              "instagramUrl": "https://www.instagram.com/ruxeruxe/",
-              "facebookUrl": "https://www.facebook.com/ruxeruxe",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebadd73c05c888e31901606816"
-            }
-          },
-          {
-            "band": "Ruxe Ruxe",
-            "stage": "Escenario Principal",
-            "start": "02:00",
-            "end": "03:00",
-            "bio": {
-              "name": "Ruxe Ruxe",
-              "title": "",
-              "description": "Ruxe Ruxe es un referente indispensable de la música gallega contemporánea. Formados en 1996, su propuesta musical combina el rock con elementos tradicionales de la música folk, creando un sonido propio que ellos mismos han definido como rock bravú. A lo largo de su dilatada trayectoria, han recorrido innumerables escenarios, convirtiéndose en un símbolo de la identidad cultural gallega. Sus composiciones, cargadas de ironía y compromiso social, siguen resonando entre el público, consolidando su legado como una de las bandas más longevas y queridas dentro del panorama musical alternativo del noroeste de España.",
-              "country": "España",
-              "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Q5epRujyhr0",
-              "spotifyUrl": "https://open.spotify.com/artist/1YFrhov5H4KBd13rWQvzpe",
-              "instagramUrl": "https://www.instagram.com/ruxeruxe/",
-              "facebookUrl": "https://www.facebook.com/ruxeruxe",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebadd73c05c888e31901606816"
-            }
-          },
-          {
-            "band": "Ruxe Ruxe",
-            "stage": "Principal",
             "start": "02:00",
             "end": "03:00",
             "bio": {
@@ -3590,9 +3396,7 @@ const rawAgendaFestData: any = {
         "weekdayEs": "Sábado",
         "doors": "18:30",
         "stages": [
-          "Vendaval",
-          "Escenario Principal",
-          "Principal"
+          "Vendaval"
         ],
         "acts": [
           {
@@ -3614,80 +3418,8 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "Ochobre",
-            "stage": "Escenario Principal",
-            "start": "19:00",
-            "end": "19:45",
-            "bio": {
-              "name": "Ochobre",
-              "title": "",
-              "description": "Ochobre es una banda asturiana que se dedica a la investigación y difusión del folclore tradicional bajo una óptica contemporánea. Utilizando instrumentos clásicos como la gaita, pero integrándolos en estructuras de rock y pop, han logrado revitalizar la música de raíz de Asturias para audiencias modernas. Su trabajo no solo se limita a la interpretación, sino que también realizan una labor de recuperación cultural. Con una sólida trayectoria en festivales de folk y músicas del mundo, Ochobre destaca por su calidad técnica y su capacidad para conectar el pasado con el presente musical.",
-              "country": "España",
-              "genre": "Folk rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=zKlpOY8n5aY",
-              "spotifyUrl": "https://open.spotify.com/artist/2stjCg32t7aeyXT0L5bd0i",
-              "instagramUrl": "https://www.instagram.com/ochobrefolk/",
-              "facebookUrl": "https://www.facebook.com/ochobrefolk",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb832e1bc16c19e9fa9020b660"
-            }
-          },
-          {
-            "band": "Ochobre",
-            "stage": "Principal",
-            "start": "19:00",
-            "end": "19:45",
-            "bio": {
-              "name": "Ochobre",
-              "title": "",
-              "description": "Ochobre es una banda asturiana que se dedica a la investigación y difusión del folclore tradicional bajo una óptica contemporánea. Utilizando instrumentos clásicos como la gaita, pero integrándolos en estructuras de rock y pop, han logrado revitalizar la música de raíz de Asturias para audiencias modernas. Su trabajo no solo se limita a la interpretación, sino que también realizan una labor de recuperación cultural. Con una sólida trayectoria en festivales de folk y músicas del mundo, Ochobre destaca por su calidad técnica y su capacidad para conectar el pasado con el presente musical.",
-              "country": "España",
-              "genre": "Folk rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=zKlpOY8n5aY",
-              "spotifyUrl": "https://open.spotify.com/artist/2stjCg32t7aeyXT0L5bd0i",
-              "instagramUrl": "https://www.instagram.com/ochobrefolk/",
-              "facebookUrl": "https://www.facebook.com/ochobrefolk",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb832e1bc16c19e9fa9020b660"
-            }
-          },
-          {
             "band": "Hermana Furia",
             "stage": "Vendaval",
-            "start": "20:15",
-            "end": "21:15",
-            "bio": {
-              "name": "Hermana Furia",
-              "title": "",
-              "description": "Hermana Furia es una banda de hard rock nacida en Madrid que se ha hecho notar rápidamente por su contundencia y fuerza. Con una propuesta sonora cargada de riffs poderosos y una voz cargada de actitud, el grupo busca rescatar el espíritu más crudo y auténtico del rock and roll. A pesar de su juventud como proyecto, han demostrado una enorme capacidad para el directo, logrando captar la atención de la crítica especializada. Su estilo combina influencias del rock clásico con una producción moderna, posicionándolos como una de las apuestas más interesantes dentro del panorama rockero nacional.",
-              "country": "España",
-              "genre": "Hard rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=vRwlcrCNm00",
-              "spotifyUrl": "https://open.spotify.com/artist/4HDtqal17o1XyKuLwA4aWK",
-              "instagramUrl": "https://www.instagram.com/hermanafuria/",
-              "facebookUrl": "https://www.facebook.com/hermanafuria",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5c92f6290b2955427b9a407a"
-            }
-          },
-          {
-            "band": "Hermana Furia",
-            "stage": "Escenario Principal",
-            "start": "20:15",
-            "end": "21:15",
-            "bio": {
-              "name": "Hermana Furia",
-              "title": "",
-              "description": "Hermana Furia es una banda de hard rock nacida en Madrid que se ha hecho notar rápidamente por su contundencia y fuerza. Con una propuesta sonora cargada de riffs poderosos y una voz cargada de actitud, el grupo busca rescatar el espíritu más crudo y auténtico del rock and roll. A pesar de su juventud como proyecto, han demostrado una enorme capacidad para el directo, logrando captar la atención de la crítica especializada. Su estilo combina influencias del rock clásico con una producción moderna, posicionándolos como una de las apuestas más interesantes dentro del panorama rockero nacional.",
-              "country": "España",
-              "genre": "Hard rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=vRwlcrCNm00",
-              "spotifyUrl": "https://open.spotify.com/artist/4HDtqal17o1XyKuLwA4aWK",
-              "instagramUrl": "https://www.instagram.com/hermanafuria/",
-              "facebookUrl": "https://www.facebook.com/hermanafuria",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5c92f6290b2955427b9a407a"
-            }
-          },
-          {
-            "band": "Hermana Furia",
-            "stage": "Principal",
             "start": "20:15",
             "end": "21:15",
             "bio": {
@@ -3722,80 +3454,8 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "El Drogas",
-            "stage": "Escenario Principal",
-            "start": "21:45",
-            "end": "23:15",
-            "bio": {
-              "name": "El Drogas",
-              "title": "",
-              "description": "Enrique Villarreal, conocido popularmente como El Drogas, es una de las figuras más importantes de la historia del rock en español. Tras su etapa fundamental como bajista y vocalista de Barricada, ha desarrollado una prolífica carrera en solitario que abarca múltiples facetas musicales, desde el rock más duro hasta incursiones experimentales. Reconocido por su capacidad como letrista, sus canciones retratan la realidad social con una mirada crítica y poética. Con décadas de trayectoria, El Drogas sigue siendo un referente indispensable, manteniendo una intensidad inigualable en sus directos que continúan atrayendo a varias generaciones de seguidores.",
-              "country": "España",
-              "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=rgshBZ4d2jQ",
-              "spotifyUrl": "https://open.spotify.com/artist/5jJWnRLQeU7fe9VaDjpIWK",
-              "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
-              "facebookUrl": "https://www.facebook.com/elDrogasOficial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5710509841030fa63a87ad79"
-            }
-          },
-          {
-            "band": "El Drogas",
-            "stage": "Principal",
-            "start": "21:45",
-            "end": "23:15",
-            "bio": {
-              "name": "El Drogas",
-              "title": "",
-              "description": "Enrique Villarreal, conocido popularmente como El Drogas, es una de las figuras más importantes de la historia del rock en español. Tras su etapa fundamental como bajista y vocalista de Barricada, ha desarrollado una prolífica carrera en solitario que abarca múltiples facetas musicales, desde el rock más duro hasta incursiones experimentales. Reconocido por su capacidad como letrista, sus canciones retratan la realidad social con una mirada crítica y poética. Con décadas de trayectoria, El Drogas sigue siendo un referente indispensable, manteniendo una intensidad inigualable en sus directos que continúan atrayendo a varias generaciones de seguidores.",
-              "country": "España",
-              "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=rgshBZ4d2jQ",
-              "spotifyUrl": "https://open.spotify.com/artist/5jJWnRLQeU7fe9VaDjpIWK",
-              "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
-              "facebookUrl": "https://www.facebook.com/elDrogasOficial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5710509841030fa63a87ad79"
-            }
-          },
-          {
             "band": "Benito Kamelas",
             "stage": "Vendaval",
-            "start": "23:45",
-            "end": "01:15",
-            "bio": {
-              "name": "Benito Kamelas",
-              "title": "",
-              "description": "Benito Kamelas es una banda de rock urbano originaria de Valencia que ha sabido ganarse el respeto del público español a base de trabajo constante y canciones directas. Con una carrera que comenzó a finales de los años 90, su sonido combina letras que hablan de la cotidianidad y problemas sociales con melodías pegadizas. Han logrado mantenerse en la carretera durante más de dos décadas, consolidándose como un grupo imprescindible en los festivales de rock estatal. Su honestidad sobre el escenario y su conexión con la clase trabajadora son los pilares fundamentales de su duradera carrera musical.",
-              "country": "España",
-              "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=vnXkyue8Mpc",
-              "spotifyUrl": "https://open.spotify.com/artist/6pds73TcYgdgd1UOBWHRqn",
-              "instagramUrl": "https://www.instagram.com/benitokamelas_oficial/",
-              "facebookUrl": "https://www.facebook.com/benitokamelas",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb65afd492c1ac42db2018901f"
-            }
-          },
-          {
-            "band": "Benito Kamelas",
-            "stage": "Escenario Principal",
-            "start": "23:45",
-            "end": "01:15",
-            "bio": {
-              "name": "Benito Kamelas",
-              "title": "",
-              "description": "Benito Kamelas es una banda de rock urbano originaria de Valencia que ha sabido ganarse el respeto del público español a base de trabajo constante y canciones directas. Con una carrera que comenzó a finales de los años 90, su sonido combina letras que hablan de la cotidianidad y problemas sociales con melodías pegadizas. Han logrado mantenerse en la carretera durante más de dos décadas, consolidándose como un grupo imprescindible en los festivales de rock estatal. Su honestidad sobre el escenario y su conexión con la clase trabajadora son los pilares fundamentales de su duradera carrera musical.",
-              "country": "España",
-              "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=vnXkyue8Mpc",
-              "spotifyUrl": "https://open.spotify.com/artist/6pds73TcYgdgd1UOBWHRqn",
-              "instagramUrl": "https://www.instagram.com/benitokamelas_oficial/",
-              "facebookUrl": "https://www.facebook.com/benitokamelas",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb65afd492c1ac42db2018901f"
-            }
-          },
-          {
-            "band": "Benito Kamelas",
-            "stage": "Principal",
             "start": "23:45",
             "end": "01:15",
             "bio": {
@@ -3830,80 +3490,8 @@ const rawAgendaFestData: any = {
             }
           },
           {
-            "band": "The Lizards",
-            "stage": "Escenario Principal",
-            "start": "01:45",
-            "end": "02:30",
-            "bio": {
-              "name": "The Lizards",
-              "title": "",
-              "description": "The Lizards es un trío de rock procedente de Barcelona que se caracteriza por un sonido lleno de energía, influenciado tanto por el hard rock clásico como por el punk rock de los años 70 y 80. Con un formato sencillo pero extremadamente efectivo, la banda destaca por la potente ejecución de sus guitarras y la contundencia de su base rítmica. Han girado intensamente por Europa y España, participando en grandes festivales, lo que ha demostrado su gran capacidad para defender su repertorio en directo ante audiencias masivas, consolidándose como un grupo sólido y enérgico.",
-              "country": "España",
-              "genre": "Hard rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=sUEB6jjjpTE",
-              "spotifyUrl": "https://open.spotify.com/artist/01rt3is86SUxjThPSYMUFI",
-              "instagramUrl": "https://www.instagram.com/thelizardsbcn/",
-              "facebookUrl": "https://www.facebook.com/thelizardsmusic",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb909f93466d1be24a36efff22"
-            }
-          },
-          {
-            "band": "The Lizards",
-            "stage": "Principal",
-            "start": "01:45",
-            "end": "02:30",
-            "bio": {
-              "name": "The Lizards",
-              "title": "",
-              "description": "The Lizards es un trío de rock procedente de Barcelona que se caracteriza por un sonido lleno de energía, influenciado tanto por el hard rock clásico como por el punk rock de los años 70 y 80. Con un formato sencillo pero extremadamente efectivo, la banda destaca por la potente ejecución de sus guitarras y la contundencia de su base rítmica. Han girado intensamente por Europa y España, participando en grandes festivales, lo que ha demostrado su gran capacidad para defender su repertorio en directo ante audiencias masivas, consolidándose como un grupo sólido y enérgico.",
-              "country": "España",
-              "genre": "Hard rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=sUEB6jjjpTE",
-              "spotifyUrl": "https://open.spotify.com/artist/01rt3is86SUxjThPSYMUFI",
-              "instagramUrl": "https://www.instagram.com/thelizardsbcn/",
-              "facebookUrl": "https://www.facebook.com/thelizardsmusic",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb909f93466d1be24a36efff22"
-            }
-          },
-          {
             "band": "Las Moskas Retrompeteras",
             "stage": "Vendaval",
-            "start": "03:00",
-            "end": "04:00",
-            "bio": {
-              "name": "Las Moskas Retrompeteras",
-              "title": "",
-              "description": "Las Moskas Retrompeteras es un grupo de punk rock que se caracteriza por su propuesta musical directa y su actitud desenfadada. A través de sus canciones, exploran temas de la vida cotidiana y críticas sociales, siempre desde un enfoque festivo que busca la participación activa del público en sus conciertos. Aunque se mueven en un circuito más local o underground, su presencia en diversos escenarios les ha permitido forjar una identidad reconocible. Su propuesta es ideal para quienes buscan el lado más divertido y rebelde del punk, sin perder la esencia de la autogestión y la energía propia del género.",
-              "country": "España",
-              "genre": "Punk rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=NENoHYjB89c",
-              "spotifyUrl": "https://open.spotify.com/artist/5RvARyYjzutysfArIiqiNy",
-              "instagramUrl": "https://www.instagram.com/lasmoskasretrompeteras/",
-              "facebookUrl": "https://www.facebook.com/LasMoskasRetrompeteras",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebabd540434f5d00df7a0bbc94"
-            }
-          },
-          {
-            "band": "Las Moskas Retrompeteras",
-            "stage": "Escenario Principal",
-            "start": "03:00",
-            "end": "04:00",
-            "bio": {
-              "name": "Las Moskas Retrompeteras",
-              "title": "",
-              "description": "Las Moskas Retrompeteras es un grupo de punk rock que se caracteriza por su propuesta musical directa y su actitud desenfadada. A través de sus canciones, exploran temas de la vida cotidiana y críticas sociales, siempre desde un enfoque festivo que busca la participación activa del público en sus conciertos. Aunque se mueven en un circuito más local o underground, su presencia en diversos escenarios les ha permitido forjar una identidad reconocible. Su propuesta es ideal para quienes buscan el lado más divertido y rebelde del punk, sin perder la esencia de la autogestión y la energía propia del género.",
-              "country": "España",
-              "genre": "Punk rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=NENoHYjB89c",
-              "spotifyUrl": "https://open.spotify.com/artist/5RvARyYjzutysfArIiqiNy",
-              "instagramUrl": "https://www.instagram.com/lasmoskasretrompeteras/",
-              "facebookUrl": "https://www.facebook.com/LasMoskasRetrompeteras",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebabd540434f5d00df7a0bbc94"
-            }
-          },
-          {
-            "band": "Las Moskas Retrompeteras",
-            "stage": "Principal",
             "start": "03:00",
             "end": "04:00",
             "bio": {
@@ -3924,22 +3512,6 @@ const rawAgendaFestData: any = {
             "stage": "Vendaval",
             "start": "04:00",
             "end": "05:00",
-            "bio": {
-              "name": "DJ Tralla",
-              "title": "",
-              "description": "DJ Tralla es un artista versátil que se mueve en el ámbito de la música festiva y los ritmos urbanos. Con una trayectoria enfocada en dinamizar festivales y eventos, sus sesiones se caracterizan por una selección musical que mezcla diversos estilos para lograr el máximo impacto en el público. Su capacidad para conectar con la audiencia mediante una energía constante lo ha llevado a formar parte de numerosos carteles de festivales de rock y música alternativa en España, donde su presencia asegura un ambiente de celebración continua durante toda la actuación.",
-              "country": "España",
-              "genre": "Electrónica",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Fi2YI5aeMv8",
-              "spotifyUrl": "https://open.spotify.com/artist/5rChNZRJnV2MciNb9U6HyH",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb8406c890d80515a1f8ee7702"
-            }
-          },
-          {
-            "band": "DJ Tralla",
-            "stage": "Escenario Principal",
-            "start": "04:00",
-            "end": "04:30",
             "bio": {
               "name": "DJ Tralla",
               "title": "",
