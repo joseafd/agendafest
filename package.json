@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
+    "test:pwa": "node --test tests/pwa.test.mjs",
     "preview": "vite preview",
     "sync-excel": "node sync_excel.cjs",
     "import-ui": "node importador/server.js"
