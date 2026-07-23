@@ -3,6 +3,7 @@ import { MapPin, Calendar } from 'lucide-react';
 import type { FestivalEdition } from '../data/festivalData';
 import { t, formatDatesByLang } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import { storage } from '../services/storage';
 
 interface FestivalCardProps {
   edition: FestivalEdition;
@@ -23,16 +24,8 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
 
   // Check if user has favorites
   const hasFavorites = (() => {
-    try {
-      const favsStr = window.localStorage.getItem(`af_${config.edicionId}_favorites`);
-      if (favsStr) {
-        const favs = JSON.parse(favsStr);
-        return Array.isArray(favs) && favs.length > 0;
-      }
-    } catch (e) {
-      // ignore
-    }
-    return false;
+    const favs = storage.getJson<unknown>(`af_${config.edicionId}_favorites`, []);
+    return Array.isArray(favs) && favs.length > 0;
   })();
 
   const getStatus = () => {
