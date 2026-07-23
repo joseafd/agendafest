@@ -12,6 +12,7 @@ import type { Language } from '../utils/translations';
 import type { FestivalEdition } from '../data/festivalData';
 import { FinishedFestivalsSection } from './FinishedFestivalsSection';
 import { X, Calendar, Map, Newspaper, Info } from 'lucide-react';
+import { storage } from '../services/storage';
 
 interface GlobalHomeProps {
   editions: FestivalEdition[];
@@ -52,15 +53,10 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
       .slice(0, 5);
   }, [editions]);
 
-  // Load followed editions from localStorage
-  const [followedEditions, setFollowedEditions] = useState<string[]>(() => {
-    try {
-      const stored = window.localStorage.getItem('af_followed_editions');
-      return stored ? JSON.parse(stored) : [];
-    } catch (e) {
-      return [];
-    }
-  });
+  // Load followed editions from persistent storage
+  const [followedEditions, setFollowedEditions] = useState<string[]>(() =>
+    storage.getJson<string[]>('af_followed_editions', [])
+  );
 
   const todayStr = useMemo(() => {
     const now = new Date();
@@ -78,16 +74,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
       const edId = ed.config.edicionId;
       const isFollowed = followedEditions.includes(edId);
       
-      let hasFavs = false;
-      try {
-        const favsStr = window.localStorage.getItem(`af_${edId}_favorites`);
-        if (favsStr) {
-          const favs = JSON.parse(favsStr);
-          hasFavs = Array.isArray(favs) && favs.length > 0;
-        }
-      } catch (e) {
-        // ignore
-      }
+      const favs = storage.getJson<unknown>(`af_${edId}_favorites`, []);
+      const hasFavs = Array.isArray(favs) && favs.length > 0;
       return isFollowed || hasFavs;
     }).sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
   }, [editions, followedEditions]);
@@ -99,11 +87,7 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const handleToggleFollow = (edId: string) => {
     setFollowedEditions((prev) => {
       const updated = prev.includes(edId) ? prev.filter(id => id !== edId) : [...prev, edId];
-      try {
-        window.localStorage.setItem('af_followed_editions', JSON.stringify(updated));
-      } catch (e) {
-        // ignore
-      }
+      storage.setJson('af_followed_editions', updated);
       return updated;
     });
   };
@@ -146,16 +130,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
     return editions.filter((ed) => {
       // Excluir festivales ya finalizados
       if (ed.config.endDate < todayStr) return false;
-      try {
-        const favsStr = window.localStorage.getItem(`af_${ed.config.edicionId}_favorites`);
-        if (favsStr) {
-          const favs = JSON.parse(favsStr);
-          return Array.isArray(favs) && favs.length > 0;
-        }
-      } catch (e) {
-        // ignore
-      }
-      return false;
+      const favs = storage.getJson<unknown>(`af_${ed.config.edicionId}_favorites`, []);
+      return Array.isArray(favs) && favs.length > 0;
     });
   }, [editions, todayStr]);
 
@@ -163,8 +139,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const handleOpenAgenda = () => {
     if (editionsWithFavs.length === 1) {
       const edId = editionsWithFavs[0].config.edicionId;
-      window.localStorage.setItem(`af_${edId}_open_agenda_favs`, 'true');
-      window.localStorage.setItem(`af_${edId}_only_favorites`, 'true');
+      storage.setString(`af_${edId}_open_agenda_favs`, 'true');
+      storage.setString(`af_${edId}_only_favorites`, 'true');
       onSelectEdition(edId);
     } else if (editionsWithFavs.length > 1) {
       setActiveSelectorModal('agenda');
@@ -185,12 +161,12 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
     setActiveSelectorModal(null);
 
     if (action === 'agenda') {
-      window.localStorage.setItem(`af_${edId}_open_agenda_favs`, 'true');
-      window.localStorage.setItem(`af_${edId}_only_favorites`, 'true');
+      storage.setString(`af_${edId}_open_agenda_favs`, 'true');
+      storage.setString(`af_${edId}_only_favorites`, 'true');
     } else if (action === 'map') {
-      window.localStorage.setItem(`af_${edId}_open_map`, 'true');
+      storage.setString(`af_${edId}_open_map`, 'true');
     } else if (action === 'news') {
-      window.localStorage.setItem(`af_${edId}_open_news`, 'true');
+      storage.setString(`af_${edId}_open_news`, 'true');
     }
 
     onSelectEdition(edId);
