@@ -13,6 +13,7 @@ import type { Act, FestivalEdition } from '../data/festivalData';
 import { PwaInstallModal } from './PwaInstallModal';
 import { t, tFormat } from '../utils/translations';
 import type { Language } from '../utils/translations';
+import { storage } from '../services/storage';
 
 const getYoutubeId = (url: string) => {
   if (!url) return '';
@@ -136,20 +137,20 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
 
   // 5a. Global Home navigation routing check
   useEffect(() => {
-    const openAgendaFavs = window.localStorage.getItem(`af_${editionId}_open_agenda_favs`);
+    const openAgendaFavs = storage.getString(`af_${editionId}_open_agenda_favs`);
     if (openAgendaFavs === 'true') {
-      window.localStorage.removeItem(`af_${editionId}_open_agenda_favs`);
+      storage.remove(`af_${editionId}_open_agenda_favs`);
       setActiveTab('agenda');
       setOnlyFavorites(true);
     }
-    const openMap = window.localStorage.getItem(`af_${editionId}_open_map`);
+    const openMap = storage.getString(`af_${editionId}_open_map`);
     if (openMap === 'true') {
-      window.localStorage.removeItem(`af_${editionId}_open_map`);
+      storage.remove(`af_${editionId}_open_map`);
       setActiveTab('map');
     }
-    const openNews = window.localStorage.getItem(`af_${editionId}_open_news`);
+    const openNews = storage.getString(`af_${editionId}_open_news`);
     if (openNews === 'true') {
-      window.localStorage.removeItem(`af_${editionId}_open_news`);
+      storage.remove(`af_${editionId}_open_news`);
       setActiveTab('news');
     }
   }, [editionId, setOnlyFavorites]);
@@ -241,7 +242,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
 
   const getSimulatedOrRealTime = useCallback((realTime: Date): Date => {
     const params = new URLSearchParams(window.location.search);
-    const isDemo = params.get('demo') === 'true' || window.localStorage.getItem('af_demo_mode') === 'true';
+    const isDemo = params.get('demo') === 'true' || storage.getString('af_demo_mode') === 'true';
     if (!isDemo) {
       return realTime;
     }
