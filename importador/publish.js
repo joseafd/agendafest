@@ -65,9 +65,22 @@ function parseGitStatus(status) {
  * @returns {Promise<string>} stdout output.
  */
 function runNodeCommand(file, args, timeout = 60000) {
-  const executable = (file === 'npm' && process.platform === 'win32') ? 'npm.cmd' : file;
   return new Promise((resolve, reject) => {
-    execFile(executable, args, { cwd: rootDir, timeout, maxBuffer: 1024 * 1024 }, (err, stdout, stderr) => {
+    let executable = file;
+    let cmdArgs = [...args];
+
+    if (file === 'node') {
+      executable = process.execPath;
+    } else if (file === 'npm') {
+      if (process.env.npm_execpath) {
+        executable = process.execPath;
+        cmdArgs = [process.env.npm_execpath, ...args];
+      } else {
+        executable = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+      }
+    }
+
+    execFile(executable, cmdArgs, { cwd: rootDir, timeout, maxBuffer: 1024 * 1024 }, (err, stdout, stderr) => {
       if (err) {
         return reject(new Error(stderr.trim() || stdout.trim() || err.message));
       }
@@ -138,7 +151,7 @@ async function validateGitStatus() {
  * @returns {Promise<string>} Build output logs.
  */
 async function runLocalBuild() {
-  const syncLogs = await runNodeCommand('node', ['sync_excel.cjs']);
+  const syncLogs = await runNodeCommand('node', [path.join(rootDir, 'sync_excel.cjs')]);
   const buildLogs = await runNodeCommand('npm', ['run', 'build']);
   return `--- Excel Sync Logs ---\n${syncLogs}\n\n--- Vite Build Logs ---\n${buildLogs}`;
 }
