@@ -221,11 +221,17 @@ edicionData.forEach(edRow => {
     return edId === '' || edId === edicionId;
   });
 
-  // Map signatures by Artist ID
+  // Map all signing sessions by Artist ID. An artist can have more than one
+  // session during the same edition (for example, Jordi Wild at Leyendas 2026).
   const signaturesMap = {};
   edFirmas.forEach(f => {
     const id = String(f['Artista ID']).toLowerCase().trim();
-    signaturesMap[id] = f;
+    if (!signaturesMap[id]) signaturesMap[id] = [];
+    signaturesMap[id].push(f);
+  });
+
+  Object.values(signaturesMap).forEach(sessions => {
+    sessions.sort((a, b) => Number(a.Fecha || 0) - Number(b.Fecha || 0) || Number(a.Inicio || 0) - Number(b.Inicio || 0));
   });
 
   // Sort news descending
@@ -292,13 +298,16 @@ edicionData.forEach(edRow => {
     }
     
     // Look up signing session
-    const signature = signaturesMap[artistId];
+    const signatures = signaturesMap[artistId] || [];
     let signingSession = undefined;
-    if (signature) {
-      const weekdayStr = getWeekdayLabel(signature.Fecha);
-      const startSig = excelTimeToHHMM(signature.Inicio);
-      const endSig = excelTimeToHHMM(signature.Fin);
-      signingSession = `SESIONES DE FIRMAS - ${weekdayStr} - ${startSig} A ${endSig}`;
+    if (signatures.length > 0) {
+      const sessionLabels = signatures.map(signature => {
+        const weekdayStr = getWeekdayLabel(signature.Fecha);
+        const startSig = excelTimeToHHMM(signature.Inicio);
+        const endSig = excelTimeToHHMM(signature.Fin);
+        return `${weekdayStr} - ${startSig} A ${endSig}`;
+      });
+      signingSession = `SESIONES DE FIRMAS - ${sessionLabels.join(' · ')}`;
     }
     
     const bio = {

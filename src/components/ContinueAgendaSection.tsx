@@ -56,11 +56,10 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
   // 1. Gather all favorites and conflict counts per edition
   const getCleanSigningText = (sigStr: string) => {
     if (!sigStr) return '';
-    const parts = sigStr.split(' - ');
-    if (parts.length >= 3) {
-      return `✍️ Firmas: ${parts[2].replace(' A ', ' - ')}`;
-    }
-    return `✍️ ${sigStr.replace('SESIONES DE FIRMAS - ', '')}`;
+    const cleanText = sigStr
+      .replace(/^SESIONES DE FIRMAS\s*[-–:]\s*/i, '')
+      .replaceAll(' A ', ' – ');
+    return `✍️ Firmas: ${cleanText}`;
   };
 
   const editionsWithFavs = useMemo(() => {

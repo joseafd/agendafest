@@ -1948,7 +1948,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/18jTFcgHRRYHdwdof1MDZw",
               "instagramUrl": "https://www.instagram.com/thundermother/",
               "facebookUrl": "https://www.facebook.com/thundermother",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ac5e45658534c13cda7aa881"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ac5e45658534c13cda7aa881",
+              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 20:30 A 21:00"
             }
           },
           {
@@ -1966,7 +1967,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/0c44C54LrAHha0u92agfHM",
               "instagramUrl": "https://www.instagram.com/killusband/",
               "facebookUrl": "https://www.facebook.com/Killusband",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cdcfff294626def3c5cb85b9"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cdcfff294626def3c5cb85b9",
+              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 21:00 A 21:45"
             }
           },
           {
@@ -2033,7 +2035,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/0yxJx8OEyDfd7dzLsFuNrS",
               "instagramUrl": "https://www.instagram.com/signsoftheswarm/",
               "facebookUrl": "https://www.facebook.com/signsoftheswarm",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743d8cd968fe05c1d3825b896d"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743d8cd968fe05c1d3825b896d",
+              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 17:00 A 17:30"
             }
           },
           {
@@ -2051,7 +2054,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/3N1B1g6JtIgd6ClRkzD4yT",
               "instagramUrl": "https://www.instagram.com/thisissavatage/",
               "facebookUrl": "https://www.facebook.com/savatage",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517428ce3420531dadeaea4d8aef"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517428ce3420531dadeaea4d8aef",
+              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 18:00 A 18:45"
             }
           },
           {
@@ -2152,7 +2156,8 @@ const rawAgendaFestData: any = {
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=ZmB5Pqv2gWE",
               "instagramUrl": "https://www.instagram.com/salduieofficial/",
-              "facebookUrl": "https://www.facebook.com/SalduieOficial"
+              "facebookUrl": "https://www.facebook.com/SalduieOficial",
+              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 22:00 A 22:45"
             }
           }
         ]
@@ -2251,7 +2256,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/3qyg72RGnGdF521zMU02u9",
               "instagramUrl": "https://www.instagram.com/northlane/",
               "facebookUrl": "https://www.facebook.com/northlane",
-              "imageUrl": "https://northlaneband.com/images/promo.jpg"
+              "imageUrl": "https://northlaneband.com/images/promo.jpg",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 16:30 A 17:00"
             }
           },
           {
@@ -2283,7 +2289,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/5EHvXKnNz78jkAVgTQLQ5O",
               "instagramUrl": "https://www.instagram.com/darktranquillityofficial/",
               "facebookUrl": "https://www.facebook.com/dtofficial",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174473898d318f6958efb692c2f"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174473898d318f6958efb692c2f",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 17:00 A 17:45"
             }
           },
           {
@@ -2317,7 +2324,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/6gZq1Q6bdOxsUPUG1TaFbF",
               "instagramUrl": "https://www.instagram.com/godsmack/",
               "facebookUrl": "https://www.facebook.com/Godsmack",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe024531c06e7de54f84ea6fd"
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe024531c06e7de54f84ea6fd",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 18:00 A 18:30"
             }
           },
           {
@@ -2366,7 +2374,8 @@ const rawAgendaFestData: any = {
               "description": "Jonne Järvelä (n. 3 de junio de 1974) es el vocalista y guitarrista de la banda finlandesa Korpiklaani, y del proyecto anterior Shaman. Es conocido en la escena Folk Metal por su yoiking. Además contribuyó en los álbumes de las bandas Finntroll (Jaktens Tid) y Skiltron (Beheading The Liars).",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=M8_wLm_5s_Y"
+              "youtubeUrl": "https://www.youtube.com/watch?v=M8_wLm_5s_Y",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 20:00 A 20:30"
             }
           },
           {
@@ -2384,7 +2393,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/7Lj8CmxeAuJ2c2I6YxA6AJ",
               "instagramUrl": "https://www.instagram.com/dartagnan_official/",
               "facebookUrl": "https://www.facebook.com/dartagnan.de",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051746dc569d5f616c2ccb08fd6e9"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051746dc569d5f616c2ccb08fd6e9",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 21:30 A 22:00"
             }
           },
           {
@@ -2402,7 +2412,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/7rDC5oTEVCLYkVeaE7168p",
               "instagramUrl": "https://www.instagram.com/bolu2death_official/",
               "facebookUrl": "https://www.facebook.com/Bolu2death",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c38079b6ba9c4d5983d25ec8"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c38079b6ba9c4d5983d25ec8",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 20:30 A 21:00"
             }
           },
           {
@@ -2420,7 +2431,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/1UM5OPJuE5dGDgyPSNSAqH",
               "instagramUrl": "https://www.instagram.com/lepokafolk/",
               "facebookUrl": "https://www.facebook.com/lepokafolk",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744365a2ae1fd4c4c95c236563"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744365a2ae1fd4c4c95c236563",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 21:00 A 21:30"
             }
           }
         ]
@@ -2452,7 +2464,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/23QdQy5SrwG2X1mvnMzYeP",
               "instagramUrl": "https://www.instagram.com/chez_kane/",
               "facebookUrl": "https://www.facebook.com/ChezKaneVocalist",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174516bbe592d49e78c6395d2c7"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174516bbe592d49e78c6395d2c7",
+              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 18:00 A 18:30"
             }
           },
           {
@@ -2468,7 +2481,8 @@ const rawAgendaFestData: any = {
               "genre": "Metal Sinfónico",
               "youtubeUrl": "https://www.youtube.com/watch?v=Ow3K7MopO2k",
               "spotifyUrl": "https://open.spotify.com/artist/0qqry49HR1XCCzn7NFHzMN",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741804c4301093d03104dee1ab"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741804c4301093d03104dee1ab",
+              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 21:00 A 21:30"
             }
           },
           {
@@ -2486,7 +2500,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/4QnuZOyl4C9d1keyOZXJ21",
               "instagramUrl": "https://www.instagram.com/futurepalaceofficial/",
               "facebookUrl": "https://www.facebook.com/futurepalace",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174d822b3210878eeaf64ae5bf4"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174d822b3210878eeaf64ae5bf4",
+              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 19:00 A 19:30"
             }
           },
           {
@@ -2540,7 +2555,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/2yoaZdFiI362NRtFPF3YTN",
               "instagramUrl": "https://www.instagram.com/againstmyselfofficial/",
               "facebookUrl": "https://www.facebook.com/pages/AGAINST-MYSELF/203937595534",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174df662920ed5206484971ffb6"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174df662920ed5206484971ffb6",
+              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 21:30 A 22:00"
             }
           },
           {
@@ -2610,7 +2626,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/1Ohy5ahjQyXh0TTPH5WV3Y",
               "instagramUrl": "https://www.instagram.com/daeriaoficial/",
               "facebookUrl": "https://www.facebook.com/DAERIAOFICIAL",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174da10f52aaa76416bf04fff32"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174da10f52aaa76416bf04fff32",
+              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 17:30 A 18:00"
             }
           },
           {
@@ -2646,7 +2663,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/7vDMECFl5RLKV0QywC1pmX",
               "instagramUrl": "https://www.instagram.com/mind_driller/",
               "facebookUrl": "https://www.facebook.com/MindDriller",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517452b01b011dd2cb45ccc5a4c2"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517452b01b011dd2cb45ccc5a4c2",
+              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 20:30 A 21:00"
             }
           },
           {
@@ -2662,7 +2680,8 @@ const rawAgendaFestData: any = {
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=N_8V6XW-n_w",
               "spotifyUrl": "https://open.spotify.com/artist/4B2Iosqk1yAbGbx08My1fM",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747d38cff2be55d8e1f06896d0"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747d38cff2be55d8e1f06896d0",
+              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 19:30 A 20:30"
             }
           },
           {
@@ -2678,7 +2697,8 @@ const rawAgendaFestData: any = {
               "genre": "DJ Set",
               "youtubeUrl": "https://www.youtube.com/watch?v=bV0FxNR0yhQ",
               "spotifyUrl": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746b134287e3095d2c84b7932a"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746b134287e3095d2c84b7932a",
+              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 19:00 A 19:40 · SABADO 8 - 18:00 A 18:30"
             }
           },
           {
@@ -2741,7 +2761,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/3HsJjtbbQkhb2pcdRXmZbk",
               "instagramUrl": "https://www.instagram.com/death_and_legacy/",
               "facebookUrl": "https://www.facebook.com/deathandlegacy",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749b2d4451c09ad404176ee1cb"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749b2d4451c09ad404176ee1cb",
+              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 20:30 A 21:00"
             }
           },
           {
@@ -2759,7 +2780,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/2VFxoCJQPfQauZujESPjQK",
               "instagramUrl": "https://www.instagram.com/eihwar.music/",
               "facebookUrl": "https://www.facebook.com/eihwar.music",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743a98c334ce4cd9c8db848fa0"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743a98c334ce4cd9c8db848fa0",
+              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 19:30 A 20:00"
             }
           },
           {
@@ -2809,7 +2831,8 @@ const rawAgendaFestData: any = {
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=WNmUqMR_hkE",
               "spotifyUrl": "https://open.spotify.com/artist/6QpMNQzCXdUFCTxE9u4xAc",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741c111d5c2a504c62911fe99b"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741c111d5c2a504c62911fe99b",
+              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 21:30 A 22:00"
             }
           },
           {
@@ -2827,7 +2850,8 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/4sy5qWfwUwpGYBnCKnwfcW",
               "instagramUrl": "https://www.instagram.com/heavenshallburnofficial/",
               "facebookUrl": "https://www.facebook.com/officialheavenshallburn",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517424b3a97c9907e54b66852aeb"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517424b3a97c9907e54b66852aeb",
+              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 18:30 A 19:00"
             }
           },
           {
@@ -2842,7 +2866,8 @@ const rawAgendaFestData: any = {
               "country": "EEUU",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=I9n1_vRYYoc",
-              "facebookUrl": "https://www.facebook.com/pages/Hardline/113309705346323"
+              "facebookUrl": "https://www.facebook.com/pages/Hardline/113309705346323",
+              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 22:45 A 23:15"
             }
           },
           {
@@ -2949,7 +2974,8 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=l_9LU_Qrlfs",
               "spotifyUrl": "https://open.spotify.com/artist/4c0CmlfLtocEfBgq5w289e",
               "facebookUrl": "https://www.facebook.com/profile.php?id=100063786306898",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051748a34aa0363ad8133950ab334"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051748a34aa0363ad8133950ab334",
+              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 23:30 A 00:00"
             }
           }
         ]
