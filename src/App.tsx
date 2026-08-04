@@ -38,9 +38,9 @@ const LoadingScreen = () => (
 export default function App() {
   const [agendaFestData, setAgendaFestData] = useState<Record<string, FestivalEdition> | null>(null);
   const [loadError, setLoadError] = useState(false);
-  const [selectedEditionId, setSelectedEditionId] = useState<string | null>(() => {
-    return storage.getString('af_selected_edition_id');
-  });
+  // A normal launch or reload always starts on the global Home.
+  // Explicit shared links can still select their target edition below.
+  const [selectedEditionId, setSelectedEditionId] = useState<string | null>(null);
 
   const [language, setLanguage] = useState<Language>(() => {
     const storedLanguage = storage.getString('af_language');
@@ -51,12 +51,14 @@ export default function App() {
 
   useEffect(() => {
     if (selectedEditionId) {
-      storage.setString('af_selected_edition_id', selectedEditionId);
       storage.setString('af_last_opened_edition', selectedEditionId);
-    } else {
-      storage.remove('af_selected_edition_id');
     }
   }, [selectedEditionId]);
+
+  useEffect(() => {
+    // Remove the obsolete key left by previous versions of the application.
+    storage.remove('af_selected_edition_id');
+  }, []);
 
   useEffect(() => {
     storage.setString('af_language', language);

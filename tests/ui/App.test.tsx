@@ -50,4 +50,14 @@ describe('Carga progresiva de AgendaFest', () => {
     await user.click(screen.getByRole('button', { name: 'Volver a festivales' }));
     expect(await screen.findByRole('button', { name: 'Abrir festival de prueba' })).toBeTruthy();
   });
+
+  it('siempre arranca en la Home aunque exista una edición guardada anteriormente', async () => {
+    window.localStorage.setItem('af_selected_edition_id', 'festival-prueba-2026');
+
+    render(<App />);
+
+    expect(await screen.findByRole('button', { name: 'Abrir festival de prueba' })).toBeTruthy();
+    expect(screen.queryByText('Panel del festival')).toBeNull();
+    expect(window.localStorage.getItem('af_selected_edition_id')).toBeNull();
+  });
 });
