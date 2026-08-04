@@ -31,7 +31,7 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const [isPwaOpen, setIsPwaOpen] = useState(false);
   const [isCreditsOpen, setIsCreditsOpen] = useState(false);
   const [isNewsOpen, setIsNewsOpen] = useState(false);
-  const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | 'finished' | 'myFestivals' | 'allSystem' | null>(null);
+  const [activeSelectorModal, setActiveSelectorModal] = useState<'agenda' | 'map' | 'news' | 'finished' | 'myFestivals' | 'upcoming' | null>(null);
 
   const allGlobalNews = useMemo(() => {
     const parseDDMMYYYY = (dateStr: string): Date => {
@@ -80,9 +80,11 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
     }).sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
   }, [editions, followedEditions]);
 
-  const allSystemEditions = useMemo(() => {
-    return [...editions].sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
-  }, [editions]);
+  const upcomingEditions = useMemo(() => {
+    return editions
+      .filter(ed => ed.config.endDate >= todayStr)
+      .sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
+  }, [editions, todayStr]);
 
   const handleToggleFollow = (edId: string) => {
     setFollowedEditions((prev) => {
@@ -283,7 +285,7 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               editions={editions}
               language={language}
               onSelectEdition={onSelectEdition}
-              onShowAll={() => setActiveSelectorModal('allSystem')}
+              onShowAll={() => setActiveSelectorModal('upcoming')}
               followedEditions={followedEditions}
               onToggleFollow={handleToggleFollow}
             />
@@ -333,6 +335,11 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
         >
           <div
             onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label={activeSelectorModal === 'upcoming'
+              ? (language === 'es' ? 'Próximos festivales' : language === 'en' ? 'Upcoming Festivals' : 'Festivals à venir')
+              : undefined}
             style={{
               width: '100%',
               maxWidth: '360px',
@@ -356,8 +363,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
                   ? (language === 'es' ? 'Festivales finalizados' : language === 'en' ? 'Past Festivals' : 'Festivals terminés')
                   : activeSelectorModal === 'myFestivals'
                   ? (language === 'es' ? 'Mis festivales favoritos' : language === 'en' ? 'My Favorite Festivals' : 'Mes festivals favoris')
-                  : activeSelectorModal === 'allSystem'
-                  ? (language === 'es' ? 'Todos los festivales' : language === 'en' ? 'All Festivals' : 'Tous les festivals')
+                  : activeSelectorModal === 'upcoming'
+                  ? (language === 'es' ? 'Próximos festivales' : language === 'en' ? 'Upcoming Festivals' : 'Festivals à venir')
                   : (language === 'es' ? 'Selecciona un festival' : language === 'en' ? 'Select a festival' : 'Sélectionner un festival')
                 }
               </h4>
@@ -379,8 +386,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
                   list = finishedEditions;
                 } else if (activeSelectorModal === 'myFestivals') {
                   list = allMyEditions;
-                } else if (activeSelectorModal === 'allSystem') {
-                  list = allSystemEditions;
+                } else if (activeSelectorModal === 'upcoming') {
+                  list = upcomingEditions;
                 }
                 return list.map((ed) => (
                   <button

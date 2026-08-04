@@ -63,8 +63,8 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
           {t(language, 'upcomingFestivals')}
         </h3>
 
-        {/* Ver todos button (shown if total editions in the system > 2) */}
-        {editions.length > 2 && (
+        {/* Ver todos button (shown only when there are more upcoming editions than visible cards) */}
+        {upcomingEditions.length > 2 && (
           <button
             onClick={onShowAll}
             style={{
