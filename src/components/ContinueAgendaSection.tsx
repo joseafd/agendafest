@@ -100,30 +100,6 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
       // Next / Live favorite act calculation
       let nextOrLiveAct: { act: Act; status: 'live' | 'upcoming'; minutesToStart: number; hasConflict: boolean; absoluteStart: Date } | null = null;
       
-      // Determine simulation time (consistent with FestivalDashboard logic)
-      const getSimulatedOrRealTime = (realTime: Date): Date => {
-        const params = new URLSearchParams(window.location.search);
-        const isDemo = params.get('demo') === 'true' || storage.getString('af_demo_mode') === 'true';
-        if (!isDemo) return realTime;
-
-        const dateStr = `${realTime.getFullYear()}-${(realTime.getMonth() + 1).toString().padStart(2, '0')}-${realTime.getDate().toString().padStart(2, '0')}`;
-        const isFestivalPeriod = dateStr >= ed.config.startDate && dateStr <= ed.config.endDate;
-        if (isFestivalPeriod) return realTime;
-
-        if (!ed.days || ed.days.length === 0) return realTime;
-        const firstDay = ed.days[0];
-        const [fY, fM, fD] = firstDay.id.split('-').map(Number);
-        
-        const simulated = new Date(fY, fM - 1, fD);
-        simulated.setHours(realTime.getHours(), realTime.getMinutes(), realTime.getSeconds(), 0);
-        
-        const currentHours = realTime.getHours();
-        if (currentHours < ed.config.dayStartHour && currentHours >= ed.config.dayEndHour) {
-          simulated.setHours(18, 30, 0, 0);
-        }
-        return simulated;
-      };
-
       const getActAbsoluteStartTime = (act: Act): Date => {
         const datePart = act.id.substring(0, 10);
         const [aY, aM, aD] = datePart.split('-').map(Number);
@@ -136,7 +112,7 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
         return actDate;
       };
 
-      const simTime = getSimulatedOrRealTime(now);
+      const referenceTime = now;
       const upcomingFavsList: Array<{ act: Act; startTime: Date; endTime: Date; status: 'live' | 'upcoming'; minutesToStart: number }> = [];
 
       ed.days.forEach((day) => {
@@ -144,10 +120,10 @@ export const ContinueAgendaSection: React.FC<ContinueAgendaSectionProps> = ({
           if (favs.includes(act.id)) {
             const startTime = getActAbsoluteStartTime(act);
             const endTime = new Date(startTime.getTime() + act.duration * 60 * 1000);
-            if (simTime < endTime) {
-              const isLive = simTime >= startTime;
+            if (referenceTime < endTime) {
+              const isLive = referenceTime >= startTime;
               const status = isLive ? 'live' : 'upcoming';
-              const minutesToStart = Math.round((startTime.getTime() - simTime.getTime()) / (60 * 1000));
+              const minutesToStart = Math.round((startTime.getTime() - referenceTime.getTime()) / (60 * 1000));
               upcomingFavsList.push({ act, startTime, endTime, status, minutesToStart });
             }
           }

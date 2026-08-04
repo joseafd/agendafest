@@ -259,7 +259,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     return () => clearInterval(timer);
   }, [getFestivalMinutes]);
 
-  // Real-time / simulated date logic for Next Favorite Band
+  // Real time used by live indicators and the next favorite band.
   const [currentTime, setCurrentTime] = useState<Date>(new Date());
 
   useEffect(() => {
@@ -268,35 +268,6 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     }, 10000); // Update every 10 seconds
     return () => clearInterval(timer);
   }, []);
-
-  const getSimulatedOrRealTime = useCallback((realTime: Date): Date => {
-    const params = new URLSearchParams(window.location.search);
-    const isDemo = params.get('demo') === 'true' || storage.getString('af_demo_mode') === 'true';
-    if (!isDemo) {
-      return realTime;
-    }
-
-    const dateStr = `${realTime.getFullYear()}-${(realTime.getMonth() + 1).toString().padStart(2, '0')}-${realTime.getDate().toString().padStart(2, '0')}`;
-    const isFestivalPeriod = dateStr >= edicionConfig.startDate && dateStr <= edicionConfig.endDate;
-    
-    if (isFestivalPeriod) {
-      return realTime;
-    }
-    
-    if (!days || days.length === 0) return realTime;
-    const firstDay = days[0];
-    const [y, m, d] = firstDay.id.split('-').map(Number);
-    
-    const simulated = new Date(y, m - 1, d);
-    simulated.setHours(realTime.getHours(), realTime.getMinutes(), realTime.getSeconds(), 0);
-    
-    // Fallback: if simulated time is outside festival timeline, force 18:30 for demo purposes
-    const currentHours = realTime.getHours();
-    if (currentHours < edicionConfig.dayStartHour && currentHours >= edicionConfig.dayEndHour) {
-      simulated.setHours(18, 30, 0, 0);
-    }
-    return simulated;
-  }, [days, edicionConfig]);
 
   const getActAbsoluteStartTime = useCallback((act: Act): Date => {
     const datePart = act.id.substring(0, 10);
@@ -372,7 +343,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
   const nextFavoriteAct = useMemo(() => {
     if (favorites.length === 0 || !days) return null;
     
-    const simTime = getSimulatedOrRealTime(currentTime);
+    const referenceTime = currentTime;
     const list: Array<{ act: Act; startTime: Date; endTime: Date; status: 'live' | 'upcoming'; minutesToStart: number; stageColor: string }> = [];
     
     days.forEach((day) => {
@@ -381,10 +352,10 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
           const startTime = getActAbsoluteStartTime(act);
           const endTime = new Date(startTime.getTime() + act.duration * 60 * 1000);
           
-          if (simTime < endTime) {
-            const isLive = simTime >= startTime;
+          if (referenceTime < endTime) {
+            const isLive = referenceTime >= startTime;
             const status = isLive ? 'live' : 'upcoming';
-            const minutesToStart = Math.round((startTime.getTime() - simTime.getTime()) / (60 * 1000));
+            const minutesToStart = Math.round((startTime.getTime() - referenceTime.getTime()) / (60 * 1000));
             const stageObj = edition.stages.find(s => s.name === act.stage);
             const stageColor = stageObj ? stageObj.color : '#ffffff';
             
@@ -411,15 +382,14 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     });
     
     return list[0];
-  }, [days, favorites, currentTime, getSimulatedOrRealTime, getActAbsoluteStartTime, edition.stages]);
+  }, [days, favorites, currentTime, getActAbsoluteStartTime, edition.stages]);
 
   useEffect(() => {
     setNextFavImgError(false);
   }, [nextFavoriteAct?.act?.id]);
 
-  // Determine if we should show active live indicators
-  // For testing: if outside festival dates, always show live line using system clock on selected day.
-  // During festival dates: only show it on the matching day.
+  // Live indicators only make sense while the festival is taking place and
+  // on the jornada that corresponds to the current time.
   const shouldShowLive = useMemo(() => {
     const now = new Date();
     if (!days || days.length === 0) return false;
@@ -437,7 +407,7 @@ export const FestivalDashboard: React.FC<FestivalDashboardProps> = ({
     if (isFestivalPeriod) {
       return selectedDayId === getInitialDayId();
     }
-    return true; // Simulate live mode on any selected day outside festival dates
+    return false;
   }, [selectedDayId, getInitialDayId, days, edicionConfig]);
 
   // Determine if the festival is completely over (passed Sunday morning of the last day's jornada)

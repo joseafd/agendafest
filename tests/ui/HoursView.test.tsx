@@ -77,4 +77,23 @@ describe('Agenda por horas', () => {
     await user.click(screen.getByText('Después de medianoche'));
     expect(onSelectAct).toHaveBeenCalledWith(nightActs[0]);
   });
+
+  it('no muestra DIRECTO fuera de las fechas del festival aunque coincida la hora', () => {
+    render(
+      <HoursView
+        acts={[nightActs[0]]}
+        favorites={[]}
+        onToggleFavorite={vi.fn()}
+        onSelectAct={vi.fn()}
+        currentTimeMinutes={690}
+        shouldShowLive={false}
+        conflictActIds={new Set()}
+        dayStartHour={14}
+        editionStages={stages}
+        days={days}
+      />,
+    );
+
+    expect(screen.queryByText('● DIRECTO')).toBeNull();
+  });
 });
