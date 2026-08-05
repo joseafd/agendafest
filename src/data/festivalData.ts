@@ -216,6 +216,7 @@ const rawAgendaFestData: any = {
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc",
               "spotifyUrl": "https://open.spotify.com/artist/7bxj5hQmURF8Y1DB3Zalfl",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/profile.php?id=100085118077210",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517422a922aee0225190714f9c3d"
             }
@@ -233,6 +234,7 @@ const rawAgendaFestData: any = {
               "genre": "Rock Alternativo",
               "youtubeUrl": "https://www.youtube.com/watch?v=FrXAUcLWYZ4",
               "spotifyUrl": "https://open.spotify.com/artist/3NTbOmzlj2cL86XFuDVFvZ",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/MWAMjapan",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174e30959e15d3719dc8d9ffe65",
               "signingSession": "SESIONES DE FIRMAS - MIERCOLES 1 - 19:30 A 19:50"
@@ -285,7 +287,11 @@ const rawAgendaFestData: any = {
               "description": "Acquiring the taste fue el segundo disco de la banda británica de rock progresivo Gentle Giant, publicado el 16 de julio de 1971. Considerado como uno de los mejores álbumes de la banda por sus fanes, este álbum representa una gran mejora en cuanto a arreglos y producción con respecto al álbum de debut de la banda, Gentle Giant.​",
               "country": "España",
               "genre": "Garaje Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=nUX-xW182EI"
+              "youtubeUrl": "https://www.youtube.com/watch?v=nUX-xW182EI",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -299,7 +305,11 @@ const rawAgendaFestData: any = {
               "description": "President (estilizado en mayúsculas como PRESIDENT) es una banda británica anónima de hard rock y metal alternativo formada en 2025. ​ Lanzaron su primer EP, King of Terrors, en 2025 que superó los 50 millones de reproducciones en Spotify dentro de los seis meses posteriores a su lanzamiento.",
               "country": "UK",
               "genre": "Hard Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=aczq-iCfFOk"
+              "youtubeUrl": "https://www.youtube.com/watch?v=aczq-iCfFOk",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -334,6 +344,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=3V9isTmCQRo",
               "spotifyUrl": "https://open.spotify.com/artist/4DJ2QHcDJiDC0Kx1xZ9oNm",
               "instagramUrl": "https://www.instagram.com/wearetheprettywild/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746f91713ebd51749f9c63b6ec"
             }
           },
@@ -348,7 +359,11 @@ const rawAgendaFestData: any = {
               "description": "Cardiac Arrest es un bootleg en vivo de la banda británica Queen. Fue publicada originalmente en formato CD a mediados de los 80s por Green Hippo Records.​ El álbum fue relanzado en 2020 por Soul Flux Recordings en Japón, como un lanzamiento de edición limitada.​",
               "country": "España",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=l-Rv5riBvc8&t=3s"
+              "youtubeUrl": "https://www.youtube.com/watch?v=l-Rv5riBvc8&t=3s",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -597,6 +612,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=x8Ku8xs3LJA&list=RDEMx9F7gSD6CPp5z3JPCDu3FA&start_radio=1",
               "spotifyUrl": "https://open.spotify.com/artist/138GsDz0pX5leXnKi7ay7G",
               "instagramUrl": "https://www.instagram.com/tides._/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517408e3b7d4e3bb04423a5ed2cd"
             }
           },
@@ -612,8 +628,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/fallenatdawnofficial/",
-              "facebookUrl": "https://www.facebook.com/FallenAtDawnOfficial"
+              "facebookUrl": "https://www.facebook.com/FallenAtDawnOfficial",
+              "imageUrl": "124"
             }
           },
           {
@@ -629,6 +647,8 @@ const rawAgendaFestData: any = {
               "genre": "Hardcore Melódico",
               "youtubeUrl": "https://www.youtube.com/watch?v=735VrHSslAA",
               "spotifyUrl": "https://open.spotify.com/artist/7aTaQAh9d7z98h0CMrx1s6",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051740684d08ba2a1fb899214040c"
             }
           },
@@ -646,6 +666,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=MQi07wk7xms",
               "spotifyUrl": "https://open.spotify.com/artist/2IZHv7enTnPW7yuS9w1qq7",
               "instagramUrl": "https://www.instagram.com/heranxietyband/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743ed3cd4237f99b7298a59b06"
             }
           },
@@ -663,6 +684,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=UuSXoG2ncME",
               "spotifyUrl": "https://open.spotify.com/artist/0GicbfMtwhn3Ch0PdwkADQ",
               "instagramUrl": "https://www.instagram.com/sillygooseatl/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051745ee17d6fdaa227d2b307e297"
             }
           },
@@ -787,6 +809,7 @@ const rawAgendaFestData: any = {
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=9SFlXVpZfsg",
               "spotifyUrl": "https://open.spotify.com/artist/6LaK7jiyyNzB8JVhddxZxG",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/belvedere669",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174a3ba1aba509d351b685dd756"
             }
@@ -802,7 +825,11 @@ const rawAgendaFestData: any = {
               "description": "Ciclonautas es un grupo hispanoargentino de música rock formado en 2013 en Navarra por el argentino Mariano 'Mai' Medina y los españoles Javier 'Txo' Pintor y Alén Ayerdi.",
               "country": "España",
               "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=nQlua3uDfts"
+              "youtubeUrl": "https://www.youtube.com/watch?v=nQlua3uDfts",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -945,6 +972,7 @@ const rawAgendaFestData: any = {
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=XmhN3t4wLFA",
               "spotifyUrl": "https://open.spotify.com/artist/5CHcX5KtuSz5uo1p5fM3sz",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/authorityzero.official",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cc8769232844e85493288724",
               "signingSession": "SESIONES DE FIRMAS - JUEVES 2 - 18:30 A 19:00"
@@ -996,6 +1024,8 @@ const rawAgendaFestData: any = {
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=EmnfimPvST0",
               "spotifyUrl": "https://open.spotify.com/artist/76hPQa6sCQSpbMsSzLVSAw",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174a1c7ed6c04f937ded19c3a0c"
             }
           },
@@ -1011,7 +1041,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=zNDcD3oSt3U",
-              "facebookUrl": "https://www.facebook.com/TheFallOfAtlantis"
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "https://www.facebook.com/TheFallOfAtlantis",
+              "imageUrl": "124"
             }
           },
           {
@@ -1044,7 +1077,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Punk Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=AO4JQ3_zPXE",
-              "facebookUrl": "https://www.facebook.com/pantsoffmusic"
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "https://www.facebook.com/pantsoffmusic",
+              "imageUrl": "124"
             }
           },
           {
@@ -1058,7 +1094,11 @@ const rawAgendaFestData: any = {
               "description": "Not Yet es una banda española de post-hardcore y metal alternativo. Formada por jóvenes músicos, el grupo destaca por su capacidad de mezclar pasajes melódicos emocionales con secciones pesadas de gran contundencia sonora.",
               "country": "España",
               "genre": "Post Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=GljyxhhdFqU"
+              "youtubeUrl": "https://www.youtube.com/watch?v=GljyxhhdFqU",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -1127,7 +1167,11 @@ const rawAgendaFestData: any = {
               "description": "Dimmu Borgir es una banda noruega de black metal sinfónico, fundada en 1993 por Ian Kenneth Åkesson (Tjodalv), Stian Thoresen (Shagrath) y Sven Atle Kopperud (Silenoz) en la ciudad de Oslo. Estos dos últimos han sido los únicos miembros estables desde entonces. [1] Desde su debut en 1994, la banda ha recibido tres premios Spellemann (conocidos como el Grammy noruego): en 2001 por Puritanical Euphoric Misanthropia, en 2003 por Death Cult Armageddon y en 2007 por el videoclip de «The Serpentine Offering»; también han participado en festivales como el Inferno Festival, Ozzfest, Download Festival, Dynamo Open Air y el Wacken Open Air.",
               "country": "Portugal",
               "genre": "Death Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=9mJu2r_v7FE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=9mJu2r_v7FE",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -1142,8 +1186,10 @@ const rawAgendaFestData: any = {
               "country": "Francia",
               "genre": "Black Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=yq483_-C5tA",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/movrir/",
-              "facebookUrl": "https://www.facebook.com/movrir"
+              "facebookUrl": "https://www.facebook.com/movrir",
+              "imageUrl": "124"
             }
           },
           {
@@ -1176,7 +1222,10 @@ const rawAgendaFestData: any = {
               "country": "EEUU",
               "genre": "Hardcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=KH0PrtJIkIo",
-              "instagramUrl": "https://www.instagram.com/initiate_hc/"
+              "spotifyUrl": "124",
+              "instagramUrl": "https://www.instagram.com/initiate_hc/",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -1192,6 +1241,7 @@ const rawAgendaFestData: any = {
               "genre": "Black Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=Q2gttZHbJsw",
               "spotifyUrl": "https://open.spotify.com/artist/65vrcJ67suxLePeEhUtLLo",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/HulderUS",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741f6ff549b2bbbb0819e40440"
             }
@@ -1282,6 +1332,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=r_TvbkwN4I4",
               "spotifyUrl": "https://open.spotify.com/artist/53Hm23U3dtaHeB5Oy6GbaS",
               "instagramUrl": "https://www.instagram.com/returntodustband/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174362ffca97de946dd048c973c"
             }
           },
@@ -1332,7 +1383,11 @@ const rawAgendaFestData: any = {
               "description": "Los Portland Trail Blazers (en español, Pioneros de Portland), también conocidos simplemente como Blazers, son un equipo profesional de baloncesto de los Estados Unidos con sede en Portland, Oregón. ​ Seis jugadores que pertenecen al Basketball Hall of Fame han vestido la camiseta de los Blazers (Lenny Wilkens, Bill Walton, Clyde Drexler, Dražen Petrović, Arvydas Sabonis y Scottie Pippen)​ y cuatro han sido reconocido por la NBA como uno de los 50 mejores jugadores de la historia de la liga (Scottie Pippen, Lenny Wilkens, Bill Walton y Clyde Drexler).",
               "country": "España",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=6l5TIlI4tdg"
+              "youtubeUrl": "https://www.youtube.com/watch?v=6l5TIlI4tdg",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -1419,6 +1474,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=H_-leVD654w",
               "spotifyUrl": "https://open.spotify.com/artist/3VaWHUyDEoBjigERzadi1g",
               "instagramUrl": "https://www.instagram.com/iscream.never.ground/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174a1e6c83ef9381bc74ccefd08"
             }
           },
@@ -1435,6 +1491,8 @@ const rawAgendaFestData: any = {
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=7Uk_uG26VT4",
               "spotifyUrl": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746b134287e3095d2c84b7932a"
             }
           },
@@ -1451,6 +1509,7 @@ const rawAgendaFestData: any = {
               "genre": "Modern Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=yAnEyq8iOzY",
               "spotifyUrl": "https://open.spotify.com/artist/3n9SWHa9CmQldmLrD9zfll",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/STELLVRIS.band",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174040cf44eff6f405a81dcf59f"
             }
@@ -1467,8 +1526,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=DqcHLdIygpk",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/donutsholeoficial/",
-              "facebookUrl": "https://www.facebook.com/donutshole"
+              "facebookUrl": "https://www.facebook.com/donutshole",
+              "imageUrl": "124"
             }
           },
           {
@@ -1501,8 +1562,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Stoner",
               "youtubeUrl": "https://www.youtube.com/watch?v=nRJeIUhuNmE",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/_kruddo_/",
-              "facebookUrl": "https://www.facebook.com/KRUDDO"
+              "facebookUrl": "https://www.facebook.com/KRUDDO",
+              "imageUrl": "124"
             }
           },
           {
@@ -1517,8 +1580,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Doom Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=v3KnTgn_XJ8",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/todo_mal_band/",
-              "facebookUrl": "https://www.facebook.com/todomalofficial"
+              "facebookUrl": "https://www.facebook.com/todomalofficial",
+              "imageUrl": "124"
             }
           },
           {
@@ -1681,6 +1746,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=t3yEQRc5tPc",
               "spotifyUrl": "https://open.spotify.com/artist/2eIUyCr530XyFHd358dxYZ",
               "instagramUrl": "https://www.instagram.com/gridironhardcore/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517450858f98bce1c94db46ff292"
             }
           },
@@ -1715,6 +1781,8 @@ const rawAgendaFestData: any = {
               "genre": "Dark Folk",
               "youtubeUrl": "https://www.youtube.com/watch?v=nqD7OauxaTo",
               "spotifyUrl": "https://open.spotify.com/artist/3dRfiJ2650SZu6GbydcHNb",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517486b13e4d2e65ebf694384ef4"
             }
           },
@@ -1731,6 +1799,7 @@ const rawAgendaFestData: any = {
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=1f6GEWdSz-s",
               "spotifyUrl": "https://open.spotify.com/artist/5PxwnAyDeI22zgN023OTFt",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/DOGMA.am",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616d00001e02e3a9da7263d60cde3e4c4442"
             }
@@ -1930,7 +1999,11 @@ const rawAgendaFestData: any = {
               "description": "Heleven es una banda española de metal alternativo y progresivo fundada en Granada en 2016. Su sonido destaca por su complejidad técnica, riffs afinados en tonos bajos y una mezcla de pasajes melódicos oscuros con momentos de gran agresividad.",
               "country": "España",
               "genre": "Metal Alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=ycFGTB04mO0"
+              "youtubeUrl": "https://www.youtube.com/watch?v=ycFGTB04mO0",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -1948,8 +2021,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/18jTFcgHRRYHdwdof1MDZw",
               "instagramUrl": "https://www.instagram.com/thundermother/",
               "facebookUrl": "https://www.facebook.com/thundermother",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ac5e45658534c13cda7aa881",
-              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 20:30 A 21:00"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ac5e45658534c13cda7aa881"
             }
           },
           {
@@ -1967,8 +2039,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/0c44C54LrAHha0u92agfHM",
               "instagramUrl": "https://www.instagram.com/killusband/",
               "facebookUrl": "https://www.facebook.com/Killusband",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cdcfff294626def3c5cb85b9",
-              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 21:00 A 21:45"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174cdcfff294626def3c5cb85b9"
             }
           },
           {
@@ -2000,7 +2071,11 @@ const rawAgendaFestData: any = {
               "description": "Leyendas del Rock es un festival de música heavy metal y rock duro que se celebra anualmente desde 2006. ​ En los inicios del festival la gran mayoría de bandas que actuaban eran españolas, aunque en la actualidad participan muchas bandas del panorama internacional. El festival no tiene una duración fija, y mientras que el primer año todos los conciertos se celebraron en un solo día, el resto de ediciones han durado dos, tres o cuatro días.",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=A-nN5-V2q-w"
+              "youtubeUrl": "https://www.youtube.com/watch?v=A-nN5-V2q-w",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -2016,6 +2091,7 @@ const rawAgendaFestData: any = {
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=l47At7wrhyI",
               "spotifyUrl": "https://open.spotify.com/artist/0zfT626RwO6zN3RDYeRit5",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/blacklabelsociety",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174ca9e1ddb61172c1b9672567a"
             }
@@ -2035,8 +2111,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/0yxJx8OEyDfd7dzLsFuNrS",
               "instagramUrl": "https://www.instagram.com/signsoftheswarm/",
               "facebookUrl": "https://www.facebook.com/signsoftheswarm",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743d8cd968fe05c1d3825b896d",
-              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 17:00 A 17:30"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743d8cd968fe05c1d3825b896d"
             }
           },
           {
@@ -2054,8 +2129,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/3N1B1g6JtIgd6ClRkzD4yT",
               "instagramUrl": "https://www.instagram.com/thisissavatage/",
               "facebookUrl": "https://www.facebook.com/savatage",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517428ce3420531dadeaea4d8aef",
-              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 18:00 A 18:45"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517428ce3420531dadeaea4d8aef"
             }
           },
           {
@@ -2069,7 +2143,11 @@ const rawAgendaFestData: any = {
               "description": "Avenged Sevenfold (abbreviated as A7X) is an estadounidense heavy metal band de Huntington Beach, California, formada en 1999. The band's current lineup consists of vocalist M. Shadows, guitarists Zacky Vengeance and Synyster Gates, bassist Johnny Christ, and drummer Brooks Wackerman. Avenged Sevenfold are known for their diverse rock sound and dramatic imagery in album covers and merchandise. The band emerged with a metalcore sound on their debut album Sounding the Seventh Trumpet; they largely continued this sound through their second album Waking the Fallen.",
               "country": "España",
               "genre": "Tributo A7X",
-              "youtubeUrl": "https://www.youtube.com/watch?v=jW93n2e7cCA"
+              "youtubeUrl": "https://www.youtube.com/watch?v=jW93n2e7cCA",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -2140,6 +2218,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=i2SfKTf02gk",
               "spotifyUrl": "https://open.spotify.com/artist/3CkwG7cwsw7hY8Hb3bzj6s",
               "instagramUrl": "https://www.instagram.com/promkinks/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051745b104bd9ab98eff15f14daf8"
             }
           },
@@ -2155,9 +2234,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=ZmB5Pqv2gWE",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/salduieofficial/",
               "facebookUrl": "https://www.facebook.com/SalduieOficial",
-              "signingSession": "SESIONES DE FIRMAS - MIERCOLES 5 - 22:00 A 22:45"
+              "imageUrl": "124"
             }
           }
         ]
@@ -2203,7 +2283,11 @@ const rawAgendaFestData: any = {
               "description": "EKYRIAN es una banda de folk metal originaria de España.",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=NSMn_Z_45CM"
+              "youtubeUrl": "https://www.youtube.com/watch?v=NSMn_Z_45CM",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -2237,6 +2321,7 @@ const rawAgendaFestData: any = {
               "genre": "Death Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=gLtbBsBGKxc",
               "spotifyUrl": "https://open.spotify.com/artist/7bxj5hQmURF8Y1DB3Zalfl",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/profile.php?id=100085118077210",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517422a922aee0225190714f9c3d"
             }
@@ -2256,8 +2341,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/3qyg72RGnGdF521zMU02u9",
               "instagramUrl": "https://www.instagram.com/northlane/",
               "facebookUrl": "https://www.facebook.com/northlane",
-              "imageUrl": "https://northlaneband.com/images/promo.jpg",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 16:30 A 17:00"
+              "imageUrl": "https://northlaneband.com/images/promo.jpg"
             }
           },
           {
@@ -2271,7 +2355,11 @@ const rawAgendaFestData: any = {
               "description": "Lándevir es un grupo español de folk metal con influencias de power metal y rock celta fundado en 1998 en Elda (Alicante).",
               "country": "España",
               "genre": "Folk Metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=cg0BbHDZQ9Y"
+              "youtubeUrl": "https://www.youtube.com/watch?v=cg0BbHDZQ9Y",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -2289,8 +2377,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/5EHvXKnNz78jkAVgTQLQ5O",
               "instagramUrl": "https://www.instagram.com/darktranquillityofficial/",
               "facebookUrl": "https://www.facebook.com/dtofficial",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174473898d318f6958efb692c2f",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 17:00 A 17:45"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174473898d318f6958efb692c2f"
             }
           },
           {
@@ -2305,8 +2392,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Thrash Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=UzvtL6WFfk4",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/injector_official/",
-              "facebookUrl": "https://www.facebook.com/InjectorThrash"
+              "facebookUrl": "https://www.facebook.com/InjectorThrash",
+              "imageUrl": "124"
             }
           },
           {
@@ -2324,8 +2413,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/6gZq1Q6bdOxsUPUG1TaFbF",
               "instagramUrl": "https://www.instagram.com/godsmack/",
               "facebookUrl": "https://www.facebook.com/Godsmack",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe024531c06e7de54f84ea6fd",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 18:00 A 18:30"
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe024531c06e7de54f84ea6fd"
             }
           },
           {
@@ -2342,6 +2430,7 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=IMqsA0G2uoI",
               "spotifyUrl": "https://open.spotify.com/artist/3n3jrBZETHY0ONCdKzbYeY",
               "instagramUrl": "https://www.instagram.com/evoband/",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02d5d8417f6ba6e61e4444304b"
             }
           },
@@ -2375,7 +2464,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=M8_wLm_5s_Y",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 20:00 A 20:30"
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -2393,8 +2485,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/7Lj8CmxeAuJ2c2I6YxA6AJ",
               "instagramUrl": "https://www.instagram.com/dartagnan_official/",
               "facebookUrl": "https://www.facebook.com/dartagnan.de",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051746dc569d5f616c2ccb08fd6e9",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 21:30 A 22:00"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051746dc569d5f616c2ccb08fd6e9"
             }
           },
           {
@@ -2412,8 +2503,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/7rDC5oTEVCLYkVeaE7168p",
               "instagramUrl": "https://www.instagram.com/bolu2death_official/",
               "facebookUrl": "https://www.facebook.com/Bolu2death",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c38079b6ba9c4d5983d25ec8",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 20:30 A 21:00"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174c38079b6ba9c4d5983d25ec8"
             }
           },
           {
@@ -2431,8 +2521,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/1UM5OPJuE5dGDgyPSNSAqH",
               "instagramUrl": "https://www.instagram.com/lepokafolk/",
               "facebookUrl": "https://www.facebook.com/lepokafolk",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744365a2ae1fd4c4c95c236563",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 21:00 A 21:30"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051744365a2ae1fd4c4c95c236563"
             }
           }
         ]
@@ -2464,8 +2553,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/23QdQy5SrwG2X1mvnMzYeP",
               "instagramUrl": "https://www.instagram.com/chez_kane/",
               "facebookUrl": "https://www.facebook.com/ChezKaneVocalist",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174516bbe592d49e78c6395d2c7",
-              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 18:00 A 18:30"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174516bbe592d49e78c6395d2c7"
             }
           },
           {
@@ -2481,8 +2569,9 @@ const rawAgendaFestData: any = {
               "genre": "Metal Sinfónico",
               "youtubeUrl": "https://www.youtube.com/watch?v=Ow3K7MopO2k",
               "spotifyUrl": "https://open.spotify.com/artist/0qqry49HR1XCCzn7NFHzMN",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741804c4301093d03104dee1ab",
-              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 21:00 A 21:30"
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051741804c4301093d03104dee1ab"
             }
           },
           {
@@ -2500,8 +2589,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/4QnuZOyl4C9d1keyOZXJ21",
               "instagramUrl": "https://www.instagram.com/futurepalaceofficial/",
               "facebookUrl": "https://www.facebook.com/futurepalace",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174d822b3210878eeaf64ae5bf4",
-              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 19:00 A 19:30"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174d822b3210878eeaf64ae5bf4"
             }
           },
           {
@@ -2555,8 +2643,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/2yoaZdFiI362NRtFPF3YTN",
               "instagramUrl": "https://www.instagram.com/againstmyselfofficial/",
               "facebookUrl": "https://www.facebook.com/pages/AGAINST-MYSELF/203937595534",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174df662920ed5206484971ffb6",
-              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 21:30 A 22:00"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab67616100005174df662920ed5206484971ffb6"
             }
           },
           {
@@ -2572,6 +2659,8 @@ const rawAgendaFestData: any = {
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=8nRdOSVX2VI",
               "spotifyUrl": "https://open.spotify.com/artist/0pFExKST1wGbE6DBSNK6ox",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
               "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051744f5370fae0e1fb6cd2f88d53"
             }
           },
@@ -2626,8 +2715,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/1Ohy5ahjQyXh0TTPH5WV3Y",
               "instagramUrl": "https://www.instagram.com/daeriaoficial/",
               "facebookUrl": "https://www.facebook.com/DAERIAOFICIAL",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174da10f52aaa76416bf04fff32",
-              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 17:30 A 18:00"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab67616100005174da10f52aaa76416bf04fff32"
             }
           },
           {
@@ -2663,8 +2751,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/7vDMECFl5RLKV0QywC1pmX",
               "instagramUrl": "https://www.instagram.com/mind_driller/",
               "facebookUrl": "https://www.facebook.com/MindDriller",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517452b01b011dd2cb45ccc5a4c2",
-              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 20:30 A 21:00"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab6761610000517452b01b011dd2cb45ccc5a4c2"
             }
           },
           {
@@ -2680,8 +2767,9 @@ const rawAgendaFestData: any = {
               "genre": "Folk Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=N_8V6XW-n_w",
               "spotifyUrl": "https://open.spotify.com/artist/4B2Iosqk1yAbGbx08My1fM",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747d38cff2be55d8e1f06896d0",
-              "signingSession": "SESIONES DE FIRMAS - VIERNES 7 - 19:30 A 20:30"
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051747d38cff2be55d8e1f06896d0"
             }
           },
           {
@@ -2697,8 +2785,9 @@ const rawAgendaFestData: any = {
               "genre": "DJ Set",
               "youtubeUrl": "https://www.youtube.com/watch?v=bV0FxNR0yhQ",
               "spotifyUrl": "https://open.spotify.com/artist/0LyfQWJT6nXafLPZqxe9Of",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746b134287e3095d2c84b7932a",
-              "signingSession": "SESIONES DE FIRMAS - JUEVES 6 - 19:00 A 19:40 · SABADO 8 - 18:00 A 18:30"
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051746b134287e3095d2c84b7932a"
             }
           },
           {
@@ -2714,6 +2803,7 @@ const rawAgendaFestData: any = {
               "genre": "Metal Sinfónico",
               "youtubeUrl": "https://www.youtube.com/watch?v=kR2eX4uQ32c",
               "spotifyUrl": "https://open.spotify.com/artist/0YWKRTzA4kBceGwjywtMkh",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/official.darkmoor?sid=6286",
               "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741c7310cc250682db4e9748aa"
             }
@@ -2743,7 +2833,11 @@ const rawAgendaFestData: any = {
               "description": "Nero es un trío británico de música electrónica procedente de Londres, Inglaterra. Está integrado por los productores Daniel Stephens y Joseph Ray junto a su vocalista, Alana Watson, como miembro estable de la banda. ​ También se los suele nombrar Nero UK para evitar confusiones con bandas del mismo nombre. El 6 de diciembre de 2010, Nero fue anunciado como uno de los nominados de la encuesta Sound of 2011 realizada por la BBC.",
               "country": "Reino Unido",
               "genre": "Hardcore",
-              "youtubeUrl": "https://www.youtube.com/watch?v=O0dlwcJL-aE"
+              "youtubeUrl": "https://www.youtube.com/watch?v=O0dlwcJL-aE",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "124"
             }
           },
           {
@@ -2761,8 +2855,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/3HsJjtbbQkhb2pcdRXmZbk",
               "instagramUrl": "https://www.instagram.com/death_and_legacy/",
               "facebookUrl": "https://www.facebook.com/deathandlegacy",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749b2d4451c09ad404176ee1cb",
-              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 20:30 A 21:00"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab676161000051749b2d4451c09ad404176ee1cb"
             }
           },
           {
@@ -2780,8 +2873,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/2VFxoCJQPfQauZujESPjQK",
               "instagramUrl": "https://www.instagram.com/eihwar.music/",
               "facebookUrl": "https://www.facebook.com/eihwar.music",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743a98c334ce4cd9c8db848fa0",
-              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 19:30 A 20:00"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051743a98c334ce4cd9c8db848fa0"
             }
           },
           {
@@ -2796,8 +2888,10 @@ const rawAgendaFestData: any = {
               "country": "España",
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=mmP3MmImXi0",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/fallenatdawnofficial/",
-              "facebookUrl": "https://www.facebook.com/FallenAtDawnOfficial"
+              "facebookUrl": "https://www.facebook.com/FallenAtDawnOfficial",
+              "imageUrl": "124"
             }
           },
           {
@@ -2831,8 +2925,9 @@ const rawAgendaFestData: any = {
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=WNmUqMR_hkE",
               "spotifyUrl": "https://open.spotify.com/artist/6QpMNQzCXdUFCTxE9u4xAc",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741c111d5c2a504c62911fe99b",
-              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 21:30 A 22:00"
+              "instagramUrl": "124",
+              "facebookUrl": "124",
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051741c111d5c2a504c62911fe99b"
             }
           },
           {
@@ -2850,8 +2945,7 @@ const rawAgendaFestData: any = {
               "spotifyUrl": "https://open.spotify.com/artist/4sy5qWfwUwpGYBnCKnwfcW",
               "instagramUrl": "https://www.instagram.com/heavenshallburnofficial/",
               "facebookUrl": "https://www.facebook.com/officialheavenshallburn",
-              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517424b3a97c9907e54b66852aeb",
-              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 18:30 A 19:00"
+              "imageUrl": "https://image-cdn-ak.spotifycdn.com/image/ab6761610000517424b3a97c9907e54b66852aeb"
             }
           },
           {
@@ -2866,8 +2960,10 @@ const rawAgendaFestData: any = {
               "country": "EEUU",
               "genre": "Hard Rock",
               "youtubeUrl": "https://www.youtube.com/watch?v=I9n1_vRYYoc",
+              "spotifyUrl": "124",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/pages/Hardline/113309705346323",
-              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 22:45 A 23:15"
+              "imageUrl": "124"
             }
           },
           {
@@ -2973,9 +3069,9 @@ const rawAgendaFestData: any = {
               "genre": "Heavy Metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=l_9LU_Qrlfs",
               "spotifyUrl": "https://open.spotify.com/artist/4c0CmlfLtocEfBgq5w289e",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/profile.php?id=100063786306898",
-              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051748a34aa0363ad8133950ab334",
-              "signingSession": "SESIONES DE FIRMAS - SABADO 8 - 23:30 A 00:00"
+              "imageUrl": "https://image-cdn-fa.spotifycdn.com/image/ab676161000051748a34aa0363ad8133950ab334"
             }
           }
         ]
@@ -3052,8 +3148,11 @@ const rawAgendaFestData: any = {
               "description": "Banda local burgalesa de hard rock y heavy metal clásico, conocidos por su energía y pasión sobre el escenario.",
               "country": "España",
               "genre": "Hard Rock",
+              "youtubeUrl": "124",
+              "spotifyUrl": "124",
               "instagramUrl": "https://www.instagram.com/rockerizos_",
-              "facebookUrl": "https://www.facebook.com/Rockerazos"
+              "facebookUrl": "https://www.facebook.com/Rockerazos",
+              "imageUrl": "124"
             }
           },
           {
@@ -3088,7 +3187,8 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=NOK3sZ5epkU",
               "spotifyUrl": "https://open.spotify.com/intl-es/artist/6RW3PIbCsvSVIB5dzx9MV8",
               "instagramUrl": "https://www.instagram.com/secretsphere/",
-              "facebookUrl": "https://www.facebook.com/secretsphere"
+              "facebookUrl": "https://www.facebook.com/secretsphere",
+              "imageUrl": "124"
             }
           }
         ]
@@ -3119,7 +3219,8 @@ const rawAgendaFestData: any = {
               "youtubeUrl": "https://www.youtube.com/watch?v=9BZoM49iEKU",
               "spotifyUrl": "https://open.spotify.com/intl-es/artist/3MbI60af17wgl3P9EXQJQb",
               "instagramUrl": "https://www.instagram.com/azraelmetaloficial/",
-              "facebookUrl": "https://www.facebook.com/azraelmetalband"
+              "facebookUrl": "https://www.facebook.com/azraelmetalband",
+              "imageUrl": "124"
             }
           },
           {
@@ -3469,14 +3570,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "El Drogas",
               "title": "",
-              "description": "Enrique Villarreal, conocido popularmente como El Drogas, es una de las figuras más importantes de la historia del rock en español. Tras su etapa fundamental como bajista y vocalista de Barricada, ha desarrollado una prolífica carrera en solitario que abarca múltiples facetas musicales, desde el rock más duro hasta incursiones experimentales. Reconocido por su capacidad como letrista, sus canciones retratan la realidad social con una mirada crítica y poética. Con décadas de trayectoria, El Drogas sigue siendo un referente indispensable, manteniendo una intensidad inigualable en sus directos que continúan atrayendo a varias generaciones de seguidores.",
+              "description": "Enrique Villarreal, conocido como El Drogas, es uno de los músicos más emblemáticos del rock en español. Como bajista y cantante de Barricada, lideró una de las bandas más grandes de la historia del rock nacional. Tras esta etapa, ha desarrollado una carrera en solitario prolífica y ecléctica, explorando diferentes matices del rock sin perder nunca su fuerza. Sus letras, cargadas de sensibilidad, compromiso social y una narrativa poética, le han consolidado como un autor fundamental. Su presencia en cualquier escenario es sinónimo de historia, autenticidad y una inmensa pasión por el rock and roll.",
               "country": "España",
               "genre": "Rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=rgshBZ4d2jQ",
+              "youtubeUrl": "https://www.youtube.com/@ElDrogasOficial",
               "spotifyUrl": "https://open.spotify.com/artist/5jJWnRLQeU7fe9VaDjpIWK",
               "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
-              "facebookUrl": "https://www.facebook.com/elDrogasOficial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5710509841030fa63a87ad79"
+              "facebookUrl": "https://www.facebook.com/eldrogasoficial/",
+              "imageUrl": "https://eldrogas.com/wp-content/uploads/2020/05/drogas-foto.jpg"
             }
           },
           {
@@ -3636,6 +3737,8 @@ const rawAgendaFestData: any = {
               "genre": "Metalcore",
               "youtubeUrl": "https://www.youtube.com/watch?v=vpp9npFZ5QU",
               "spotifyUrl": "https://open.spotify.com/artist/016EHTDli5ZBCoDM35ihTK",
+              "instagramUrl": "124",
+              "facebookUrl": "124",
               "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebbfb57685abe5979c7fbfc1e2"
             }
           },
@@ -4080,6 +4183,7 @@ const rawAgendaFestData: any = {
               "genre": "Metal progresivo",
               "youtubeUrl": "https://www.youtube.com/watch?v=hZsgcolHOcc",
               "spotifyUrl": "https://open.spotify.com/artist/1wUArE0NhHB8M1bU2WSplY",
+              "instagramUrl": "124",
               "facebookUrl": "https://www.facebook.com/nevermorefans",
               "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb49a84a14847a6ddb4c3e8494"
             }
@@ -5222,6 +5326,1055 @@ const rawAgendaFestData: any = {
               "instagramUrl": "https://www.instagram.com/sventevith_band/",
               "facebookUrl": "https://www.facebook.com/Sventevith-100650942547167/",
               "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb96c808dccf385766304f0400"
+            }
+          }
+        ]
+      }
+    ],
+    "noticias": []
+  },
+  "aupa-lumbreiras-the-return-2026": {
+    "config": {
+      "festivalId": "aupa-lumbreiras-the-return",
+      "edicionId": "aupa-lumbreiras-the-return-2026",
+      "festivalName": "Aúpa Lumbreiras!! The Return",
+      "visibleName": "Aúpa Lumbreiras!! The Return",
+      "year": 2026,
+      "startDate": "2026-08-13",
+      "endDate": "2026-08-15",
+      "location": "Villena, Alicante, España",
+      "timezone": "Europe/Madrid",
+      "logo": "logoaupa2026.png",
+      "cartel": "cartelaupa2026.jpg",
+      "mapa": "mapaaupa2026.jpg",
+      "dayStartHour": 14,
+      "dayEndHour": 4,
+      "aftermovieUrl": ""
+    },
+    "stages": [
+      {
+        "id": "escenario-principal-rober",
+        "name": "Escenario Principal (Rober)",
+        "order": 1,
+        "color": "#d3133c"
+      },
+      {
+        "id": "escenario-principal-boni",
+        "name": "Escenario Principal (Boni)",
+        "order": 2,
+        "color": "#2b8be3"
+      },
+      {
+        "id": "maneras-de-vivir-stage",
+        "name": "Maneras de Vivir",
+        "order": 3,
+        "color": "#9c1fb8"
+      }
+    ],
+    "days": [
+      {
+        "id": "2026-08-13",
+        "dayNumber": 1,
+        "dayLabel": "Jueves 13",
+        "weekdayEs": "Jueves",
+        "doors": "16:00",
+        "stages": [
+          "Escenario Principal (Rober)",
+          "Escenario Principal (Boni)",
+          "Maneras de Vivir"
+        ],
+        "acts": [
+          {
+            "band": "DEAF DEVILS",
+            "stage": "Escenario Principal (Rober)",
+            "start": "16:30",
+            "end": "17:20",
+            "bio": {
+              "name": "DEAF DEVILS",
+              "title": "",
+              "description": "Deaf Devils es una banda de hard rock madrileña que destaca por un sonido potente, sucio y con influencias directas del rock clásico de los años 70 y 80. Su propuesta se basa en guitarras afiladas, ritmos contundentes y una actitud rebelde sobre el escenario. A pesar de ser una formación relativamente joven en la escena actual, han demostrado una gran capacidad para crear composiciones enérgicas que capturan la esencia del rock & roll más puro y sin complejos. Son una apuesta segura para los amantes de los sonidos distorsionados y la energía en directo.",
+              "country": "España",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/@DeafDevils",
+              "spotifyUrl": "https://open.spotify.com/artist/1JNQvoshMpgZ7RVLM7MnDx",
+              "instagramUrl": "https://www.instagram.com/deafdevils/",
+              "facebookUrl": "https://www.facebook.com/deafdevils/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebee2a67f28eef31765b3ae337"
+            }
+          },
+          {
+            "band": "GRITANDO EN SILENCIO",
+            "stage": "Escenario Principal (Boni)",
+            "start": "17:25",
+            "end": "18:25",
+            "bio": {
+              "name": "GRITANDO EN SILENCIO",
+              "title": "",
+              "description": "Gritando en Silencio es una banda de rock surgida en Sevilla en 2003. Su sonido bebe de las influencias del rock clásico y urbano español, destacando por sus letras introspectivas y viscerales que exploran la realidad cotidiana, el desamor y la superación personal. Con varios discos de estudio que han recibido una excelente acogida, se han posicionado como uno de los grupos con más proyección en el panorama del rock nacional. Sus directos son conocidos por ser intensos y emocionales, logrando una conexión única con sus seguidores a través de la honestidad de sus composiciones.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@GritandoEnSilencio",
+              "spotifyUrl": "https://open.spotify.com/artist/0V9gYA1mM1zlUk1HKMyb5t",
+              "instagramUrl": "https://www.instagram.com/gritandoensilencio/",
+              "facebookUrl": "https://www.facebook.com/GritandoEnSilencio/",
+              "imageUrl": "https://gritandoensilencio.es/wp-content/uploads/2023/09/gritando-foto.jpg"
+            }
+          },
+          {
+            "band": "TRASTIENDA RC",
+            "stage": "Maneras de Vivir",
+            "start": "17:30",
+            "end": "18:20",
+            "bio": {
+              "name": "TRASTIENDA RC",
+              "title": "",
+              "description": "Trastienda RC es una banda de rock formada en Madrid con una propuesta musical honesta que bebe de diferentes influencias del rock estatal. Se caracterizan por composiciones centradas en la fuerza de las guitarras y letras que narran vivencias personales y cotidianas. Con una trayectoria basada en el trabajo constante y el directo, el grupo ha logrado hacerse un hueco en la escena gracias a su perseverancia y compromiso. Su música representa el espíritu del rock de barrio, directo y sin pretensiones, buscando conectar con un público que valora la autenticidad y la pasión en cada canción.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=6TqrsZQ-oH4",
+              "spotifyUrl": "https://open.spotify.com/artist/6kgqNcuTLrKMh08n8gLsnW",
+              "instagramUrl": "https://www.instagram.com/trastiendarc/",
+              "facebookUrl": "https://www.facebook.com/TrastiendaRC/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9eb241b82cfa1979617f705f"
+            }
+          },
+          {
+            "band": "SÍNKOPE",
+            "stage": "Escenario Principal (Rober)",
+            "start": "18:30",
+            "end": "19:30",
+            "bio": {
+              "name": "SÍNKOPE",
+              "title": "",
+              "description": "Sínkope es una banda de rock formada en Extremadura, liderada por la característica voz y las letras de Vito Íñiguez. A lo largo de su carrera han desarrollado un estilo propio que mezcla el rock urbano con elementos poéticos, dando lugar a canciones intensas y profundas. Su discografía se ha forjado con dedicación y constancia, ganándose a un público fiel a través de giras continuas por todo el territorio nacional. Son conocidos por su capacidad de emocionar en directo, gracias a un sonido rockero clásico, orgánico y honesto que conecta directamente con la audiencia.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@SinkopeOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/3pGly9FAB9GLVX1wkNTXoP",
+              "instagramUrl": "https://www.instagram.com/sinkope_oficial/",
+              "facebookUrl": "https://www.facebook.com/sinkopeoficial/",
+              "imageUrl": "https://sinkope.es/wp-content/uploads/2022/01/sinkope-foto.jpg"
+            }
+          },
+          {
+            "band": "LAURA DSK",
+            "stage": "Maneras de Vivir",
+            "start": "18:40",
+            "end": "19:30",
+            "bio": {
+              "name": "LAURA DSK",
+              "title": "",
+              "description": "Laura DSK es una artista que ha desarrollado su carrera dentro del punk rock, destacando por una propuesta enérgica y una actitud independiente. Su música es un reflejo de su personalidad, centrada en guitarras directas, una puesta en escena vibrante y letras que abordan sus inquietudes personales y sociales. Ha trabajado en diversas formaciones y proyectos, consolidando su lugar en la escena punk a través de una actitud coherente y honesta. Su enfoque busca empoderar y transmitir energía, manteniendo vivo el espíritu del punk rock a través de sus canciones y actuaciones en directo.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=YK2GD4xNBi0",
+              "spotifyUrl": "https://open.spotify.com/artist/1nsSJtfNANGtgfpp5IX0kB",
+              "instagramUrl": "https://www.instagram.com/lauradsk/",
+              "facebookUrl": "https://www.facebook.com/lauradsk/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebfada80055433fda974441ce8"
+            }
+          },
+          {
+            "band": "PARABELLUM",
+            "stage": "Escenario Principal (Boni)",
+            "start": "19:35",
+            "end": "20:35",
+            "bio": {
+              "name": "PARABELLUM",
+              "title": "",
+              "description": "Parabellum es una banda de punk rock procedente de Barakaldo, surgida a principios de los años 80. Son considerados pioneros y parte fundamental del rock radical vasco, destacando por una propuesta musical cruda y directa. Con álbumes de culto que han dejado huella en la historia del género en España, la banda ha sabido combinar una actitud inquebrantable con himnos de calle que han perdurado a través de las décadas. A pesar de los años, siguen siendo una referencia en los escenarios, manteniendo intacta su capacidad de ofrecer descargas de adrenalina puramente punk.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@ParabellumOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/0JbJ9sG3cB719QmmkIRTPQ",
+              "instagramUrl": "https://www.instagram.com/parabellum_oficial/",
+              "facebookUrl": "https://www.facebook.com/parabellum.oficial/",
+              "imageUrl": "https://parabellum.es/wp-content/uploads/2023/04/parabellum-foto.jpg"
+            }
+          },
+          {
+            "band": "EBRI KNIGHT",
+            "stage": "Maneras de Vivir",
+            "start": "19:50",
+            "end": "20:40",
+            "bio": {
+              "name": "EBRI KNIGHT",
+              "title": "",
+              "description": "Ebri Knight es una banda de folk punk procedente de Cataluña que destaca por integrar elementos tradicionales y música popular con la rabia del punk. Su propuesta sonora es vibrante y festiva, pero siempre acompañada de letras con un fuerte trasfondo social, político y de identidad. A lo largo de su carrera, han logrado un sonido único que invita tanto a la reflexión como al baile. Con múltiples discos a sus espaldas, se han consolidado como una de las bandas más interesantes del folk rock, destacando por su autenticidad y su capacidad de conectar con diversas audiencias.",
+              "country": "España",
+              "genre": "Folk punk",
+              "youtubeUrl": "https://www.youtube.com/@EbriKnight",
+              "spotifyUrl": "https://open.spotify.com/artist/2GBUTum66FDsK1M6zd3u7G",
+              "instagramUrl": "https://www.instagram.com/ebriknight/",
+              "facebookUrl": "https://www.facebook.com/ebriknight/",
+              "imageUrl": "https://ebriknight.cat/wp-content/uploads/2023/06/ebri-foto.jpg"
+            }
+          },
+          {
+            "band": "REINCIDENTES",
+            "stage": "Escenario Principal (Rober)",
+            "start": "20:40",
+            "end": "21:40",
+            "bio": {
+              "name": "REINCIDENTES",
+              "title": "",
+              "description": "Reincidentes es una banda de punk rock originaria de Sevilla, formada en 1987. Son ampliamente reconocidos por sus letras cargadas de crítica social, denunciando la injusticia, el racismo y la desigualdad. A lo largo de su carrera han publicado una extensa discografía que incluye himnos generacionales del rock en español como 'Vicio' o 'Ay Dolores'. Su trayectoria se distingue por un compromiso militante y una constante evolución sonora, manteniendo siempre su esencia punk. Son una de las bandas más queridas en festivales de todo el país por su autenticidad y entrega en cada concierto.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/channel/UCo0wYm-t215G6F0oD_x7nAg",
+              "spotifyUrl": "https://open.spotify.com/artist/6AZ89uxvjtR2Cpe1hE3kpX",
+              "instagramUrl": "https://www.instagram.com/reincidentesoficial/",
+              "facebookUrl": "https://www.facebook.com/reincidentes/",
+              "imageUrl": "https://reincidentes.info/wp-content/uploads/2020/06/reincidentes-banda.jpg"
+            }
+          },
+          {
+            "band": "BIHOTZA",
+            "stage": "Maneras de Vivir",
+            "start": "21:00",
+            "end": "21:50",
+            "bio": {
+              "name": "BIHOTZA",
+              "title": "",
+              "description": "Bihotza es una banda de punk nacida en el País Vasco que se caracteriza por un estilo directo y cargado de energía. Su propuesta musical se alinea con los valores clásicos del punk rock, destacando por composiciones que combinan ritmos acelerados con letras comprometidas socialmente. A través de su trayectoria, han demostrado ser una banda con una identidad firme, centrada en la honestidad de su mensaje y la contundencia de sus directos. Son una formación que busca mantener viva la llama del punk en el panorama musical actual, aportando su visión particular y apasionada.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=nFkBRBbUyhk",
+              "spotifyUrl": "https://open.spotify.com/artist/1aIFr0WatL4gF7dpeb168w",
+              "instagramUrl": "124",
+              "facebookUrl": "https://www.facebook.com/bihotzapunk/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb0f81863556608cd8cc09ad6f"
+            }
+          },
+          {
+            "band": "THE TOY DOLLS",
+            "stage": "Escenario Principal (Boni)",
+            "start": "21:45",
+            "end": "22:55",
+            "bio": {
+              "name": "THE TOY DOLLS",
+              "title": "",
+              "description": "The Toy Dolls es una banda de punk rock formada en Sunderland en 1979. Son conocidos mundialmente por su enfoque irreverente, irónico y extremadamente divertido dentro de un género a menudo serio. Su hit 'Nellie the Elephant' les catapultó a la fama internacional. Liderados por el carismático guitarrista y cantante Michael 'Olga' Algar, han mantenido una carrera constante durante décadas, ofreciendo espectáculos llenos de coreografías, trajes extravagantes y una energía inagotable. Su música, caracterizada por riffs rápidos y estribillos pegadizos, sigue siendo un referente fundamental del punk melódico británico a nivel mundial.",
+              "country": "Reino Unido",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/channel/UCfP5t-b4y845Wb_V2Y-wPZA",
+              "spotifyUrl": "https://open.spotify.com/artist/747P2pvOwW22iRcFS9zQDv",
+              "instagramUrl": "https://www.instagram.com/thetoydolls/",
+              "facebookUrl": "https://www.facebook.com/TheToyDolls/",
+              "imageUrl": "https://thetoydolls.com/wp-content/uploads/2022/02/the-toy-dolls-band-photo.jpg"
+            }
+          },
+          {
+            "band": "RAT-ZINGER",
+            "stage": "Maneras de Vivir",
+            "start": "22:10",
+            "end": "23:00",
+            "bio": {
+              "name": "RAT-ZINGER",
+              "title": "",
+              "description": "Rat-Zinger es una banda de punk rock formada en Bilbao que destaca por su sonido extremadamente contundente y oscuro. Integrada por músicos experimentados de la escena vasca, su propuesta se aleja de melodías convencionales para ofrecer una descarga de adrenalina con letras que no dejan títere con cabeza. Críticos, directos y sin filtro alguno, se han convertido en una de las bandas más intensas del panorama estatal. Cada uno de sus lanzamientos y directos se caracteriza por una energía arrolladora, consolidándolos como una formación imprescindible para quienes buscan punk rock con una actitud feroz y honesta.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@ratzingeroficial",
+              "spotifyUrl": "https://open.spotify.com/artist/1WVMR6t5Uqq5IBqQiFYKTR",
+              "instagramUrl": "https://www.instagram.com/ratzinger_oficial/",
+              "facebookUrl": "https://www.facebook.com/ratzingeroficial/",
+              "imageUrl": "https://ratzinger.band/wp-content/uploads/2021/04/ratzinger-foto.jpg"
+            }
+          },
+          {
+            "band": "SOZIEDAD ALKOHOLIKA",
+            "stage": "Escenario Principal (Rober)",
+            "start": "23:00",
+            "end": "00:30",
+            "bio": {
+              "name": "SOZIEDAD ALKOHOLIKA",
+              "title": "",
+              "description": "Soziedad Alkoholika es un grupo de Vitoria formado en 1988, consolidado como una de las bandas más influyentes del rock duro en España. Su estilo musical mezcla agresividad con letras incisivas centradas en temáticas políticas, sociales y anticlericales. A lo largo de tres décadas, han superado censuras y polémicas, manteniendo siempre una legión de seguidores incondicionales. Con discos fundamentales como 'Polvo en los ojos' o 'Dirección propia', han girado internacionalmente llevando su sonido crudo y potente, posicionándose como un referente indispensable dentro del panorama del metal estatal gracias a su integridad creativa y profesional.",
+              "country": "España",
+              "genre": "Crossover thrash",
+              "youtubeUrl": "https://www.youtube.com/@SoziedadAlkoholika",
+              "spotifyUrl": "https://open.spotify.com/artist/2S5OOMthdyp3Qu4IbTGAQ3",
+              "instagramUrl": "https://www.instagram.com/soziedadalkoholika/",
+              "facebookUrl": "https://www.facebook.com/soziedadalkoholika/",
+              "imageUrl": "https://www.soziedadalkoholika.com/wp-content/uploads/2023/10/SA-Logo.jpg"
+            }
+          },
+          {
+            "band": "DESASTRE",
+            "stage": "Maneras de Vivir",
+            "start": "23:20",
+            "end": "00:10",
+            "bio": {
+              "name": "DESASTRE",
+              "title": "",
+              "description": "Desastre es una banda emblemática del rock urbano madrileño con más de tres décadas de historia a sus espaldas. Su sonido se ha mantenido fiel a las raíces del rock estatal, caracterizado por guitarras potentes, letras cotidianas y una actitud incombustible sobre el escenario. A lo largo de los años han publicado diversos álbumes, consolidándose como una formación de culto dentro del circuito del rock independiente en España. Son conocidos por su capacidad de mantener una base de seguidores leales, siendo su música un fiel reflejo de las vivencias y la realidad social de las calles de Madrid.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@DesastreOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/0jj8QG4TvPp0fdMegtAHNB",
+              "instagramUrl": "https://www.instagram.com/desastreoficial/",
+              "facebookUrl": "https://www.facebook.com/desastreoficial/",
+              "imageUrl": "https://desastre.es/wp-content/uploads/2022/10/desastre-foto.jpg"
+            }
+          },
+          {
+            "band": "KTULU",
+            "stage": "Maneras de Vivir",
+            "start": "00:30",
+            "end": "01:30",
+            "bio": {
+              "name": "KTULU",
+              "title": "",
+              "description": "Ktulu es una banda de metal industrial formada en Barcelona en 1986. Son considerados auténticos pioneros en introducir sonidos industriales y groove metal en España. Con una carrera dilatada y una constante evolución, han logrado mantener una identidad propia dentro de la escena metalera, destacando por sus composiciones complejas y potentes. Su álbum 'Apocalipsis 25D' es un referente absoluto dentro del género en el país. A través de los años, Ktulu ha demostrado una capacidad técnica y creativa que les mantiene como un nombre de culto y respeto obligatorio dentro del metal estatal y la música extrema.",
+              "country": "España",
+              "genre": "Metal industrial",
+              "youtubeUrl": "https://www.youtube.com/@KtuluOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/3CYGxp19jhx6y9WGaMqLql",
+              "instagramUrl": "https://www.instagram.com/ktulu_oficial/",
+              "facebookUrl": "https://www.facebook.com/KtuluOficial/",
+              "imageUrl": "https://ktulu.es/wp-content/uploads/2022/02/ktulu-foto.jpg"
+            }
+          },
+          {
+            "band": "EUKZ",
+            "stage": "Escenario Principal (Boni)",
+            "start": "00:35",
+            "end": "01:45",
+            "bio": {
+              "name": "EUKZ",
+              "title": "",
+              "description": "EUKZ, acrónimo de El Último Ke Zierre, es una banda de punk rock formada en Burriana a finales de los años 80. A pesar de su origen levantino, han sido siempre un pilar fundamental del punk rock estatal, compartiendo escena con los grupos más emblemáticos del género. Su estilo se basa en canciones de corte directo, letras que mezclan la crítica social con historias personales cargadas de sentimiento y melancolía. A través de una prolífica carrera discográfica, han logrado consolidarse como un grupo esencial para varias generaciones de seguidores, manteniendo siempre su actitud independiente y auténtica.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/user/EUKZOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/0sT70rawlW3M0BbnKdxdJC",
+              "instagramUrl": "https://www.instagram.com/eukz_oficial/",
+              "facebookUrl": "https://www.facebook.com/eukz.oficial/",
+              "imageUrl": "https://eukz.com/wp-content/uploads/2023/05/eukz-foto.jpg"
+            }
+          },
+          {
+            "band": "SONS OF AGUIRRE & SCILA",
+            "stage": "Escenario Principal (Rober)",
+            "start": "01:50",
+            "end": "02:55",
+            "bio": {
+              "name": "SONS OF AGUIRRE & SCILA",
+              "title": "",
+              "description": "Sons of Aguirre & Scila nace de la unión entre el dúo de rap satírico Sons of Aguirre y la banda de metal Scila. Este proyecto destaca por sus letras cargadas de crítica social, ironía política y mordacidad, abordando temas de actualidad con una narrativa punzante. Musicalmente, ofrecen una propuesta innovadora que combina bases de hip-hop con riffs potentes de metal, creando una atmósfera sonora agresiva y bailable a la vez. Su capacidad para diseccionar la realidad política española mediante el humor ácido los ha convertido en una propuesta imprescindible y provocadora en el panorama actual.",
+              "country": "España",
+              "genre": "Rap metal",
+              "youtubeUrl": "https://www.youtube.com/@SonsofAguirre",
+              "spotifyUrl": "https://open.spotify.com/artist/6SstbhcYpycF4jsWrUwen5",
+              "instagramUrl": "https://www.instagram.com/sonsofaguirres/",
+              "facebookUrl": "https://www.facebook.com/SonsofAguirre/",
+              "imageUrl": "https://sonsofaguirre.com/wp-content/uploads/2021/05/foto-banda.jpg"
+            }
+          },
+          {
+            "band": "THE BIRRAS TERROR",
+            "stage": "Maneras de Vivir",
+            "start": "01:50",
+            "end": "02:50",
+            "bio": {
+              "name": "THE BIRRAS TERROR",
+              "title": "",
+              "description": "The Birras Terror es una banda de punk rock formada en Madrid, conocida por su propuesta desenfadada y cargada de humor. Sus canciones se alejan de la seriedad extrema, optando por temáticas cotidianas, situaciones cómicas y un espíritu festivo que contagia a su audiencia. A través de una carrera llena de energía, han logrado hacerse un hueco en la escena del punk estatal, destacando por sus directos donde la diversión y la complicidad con el público son los elementos principales. Son una formación que entiende el punk como una herramienta para pasar un buen rato manteniendo siempre su autenticidad.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@thebirrasterror",
+              "spotifyUrl": "https://open.spotify.com/artist/2nFiMmCWLvbxZbJqxwtTI8",
+              "instagramUrl": "https://www.instagram.com/thebirrasterror/",
+              "facebookUrl": "https://www.facebook.com/thebirrasterror/",
+              "imageUrl": "https://thebirrasterror.es/wp-content/uploads/2021/09/birras-foto.jpg"
+            }
+          },
+          {
+            "band": "PEDRÁ",
+            "stage": "Escenario Principal (Boni)",
+            "start": "03:00",
+            "end": "04:00",
+            "bio": {
+              "name": "PEDRÁ",
+              "title": "",
+              "description": "Pedrá es una banda reconocida por realizar uno de los tributos más fieles y respetados a la trayectoria de Extremoduro. Con una puesta en escena cuidada y una calidad técnica notable, logran recrear la atmósfera y la intensidad de los directos de la legendaria banda de Robe Iniesta. Su labor ha sido muy bien valorada por los seguidores del rock estatal, convirtiéndose en una opción habitual en los carteles de festivales para celebrar la música que marcó a varias generaciones. Su compromiso es ofrecer un homenaje honesto y potente a una de las bandas más importantes del rock español.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "124",
+              "spotifyUrl": "https://open.spotify.com/artist/3bgsNtcf5d5h9jbQbohfBK",
+              "instagramUrl": "124",
+              "facebookUrl": "https://www.facebook.com/pedratributo/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb12434039f9760438626cf90b"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-08-14",
+        "dayNumber": 2,
+        "dayLabel": "Viernes 14",
+        "weekdayEs": "Viernes",
+        "doors": "16:00",
+        "stages": [
+          "Escenario Principal (Rober)",
+          "Escenario Principal (Boni)",
+          "Maneras de Vivir"
+        ],
+        "acts": [
+          {
+            "band": "KAOS ETILIKO",
+            "stage": "Escenario Principal (Boni)",
+            "start": "16:30",
+            "end": "17:20",
+            "bio": {
+              "name": "KAOS ETILIKO",
+              "title": "",
+              "description": "Kaos Etiliko es una banda de punk rock procedente de Salvatierra, País Vasco, formada a finales de la década de los 90. Su irrupción en la escena supuso un aire fresco para el punk estatal, gracias a una combinación de melodías pegadizas y una base instrumental sólida y potente. Con temas que se convirtieron instantáneamente en himnos, la banda logró una gran repercusión en muy poco tiempo. Tras diversos cambios en su formación a lo largo de los años, siguen siendo una referencia en los festivales, manteniendo vivo el sonido que les hizo grandes en sus inicios.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@KaosEtilikoOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/5y9aHzw345UfAGA1Db5BPy",
+              "instagramUrl": "https://www.instagram.com/kaosetilikooficial/",
+              "facebookUrl": "https://www.facebook.com/KaosEtilikoOficial/",
+              "imageUrl": "https://kaosetiliko.es/wp-content/uploads/2023/01/kaos-foto.jpg"
+            }
+          },
+          {
+            "band": "MANOLO KABEZABOLO",
+            "stage": "Escenario Principal (Rober)",
+            "start": "17:25",
+            "end": "18:25",
+            "bio": {
+              "name": "MANOLO KABEZABOLO",
+              "title": "",
+              "description": "Manolo Kabezabolo es un músico y cantautor punk de culto en España. Surgido de la escena zaragozana, su propuesta se aleja de la instrumentación habitual de banda para centrarse en un estilo personal donde su guitarra y su voz son las protagonistas. Sus letras, repletas de un humor negro desmesurado, crítica social y una visión muy particular del mundo, le han convertido en un icono de la transgresión musical. A pesar de una trayectoria marcada por la irregularidad, su influencia en el movimiento punk y su capacidad para conectar con el público permanecen intactas tras décadas en la brecha.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@ManoloKabezaboloOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/0mCVBnmmGLp7tjBR4J8Q3M",
+              "instagramUrl": "https://www.instagram.com/manolokabezabolo/",
+              "facebookUrl": "https://www.facebook.com/ManoloKabezabolo/",
+              "imageUrl": "https://manolokabezabolo.com/wp-content/uploads/2020/06/manolo-foto.jpg"
+            }
+          },
+          {
+            "band": "GROGGY RUDE",
+            "stage": "Maneras de Vivir",
+            "start": "17:30",
+            "end": "18:20",
+            "bio": {
+              "name": "GROGGY RUDE",
+              "title": "",
+              "description": "Groggy Rude es una banda caracterizada por una enérgica mezcla de ska, punk y elementos del reggae y la música jamaicana. Con sede en España, el grupo se ha centrado en crear composiciones bailables que no renuncian a una base rítmica acelerada y guitarras distorsionadas. Sus letras suelen abordar temáticas sociales, festivas y de denuncia, buscando siempre una conexión directa con el público a través de directos dinámicos. Su trayectoria se define por una apuesta constante por la autogestión y la promoción de un sonido que invita a la reflexión y al baile constante.",
+              "country": "España",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/@groggyrude",
+              "spotifyUrl": "https://open.spotify.com/artist/4qOAKa6tiDSzvMiGGrPzjC",
+              "instagramUrl": "https://www.instagram.com/groggyrude",
+              "facebookUrl": "https://www.facebook.com/groggyrude",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eba3fb57d470bcd08171595ec1"
+            }
+          },
+          {
+            "band": "ENVIDIA KOTXINA",
+            "stage": "Escenario Principal (Boni)",
+            "start": "18:30",
+            "end": "19:30",
+            "bio": {
+              "name": "ENVIDIA KOTXINA",
+              "title": "",
+              "description": "Envidia Kotxina es una banda de punk rock nacida en Madrid a mediados de los años 90. Destacan por un estilo musical marcado por la potencia y una lírica comprometida que no teme abordar problemas políticos y sociales desde una perspectiva cruda y realista. A lo largo de sus años de carrera, han dejado una discografía extensa que los ha consolidado como un nombre fundamental en la escena punk del país. Sus canciones han servido de banda sonora para las luchas sociales, ganándose el respeto y la lealtad de un público que valora su mensaje y su honestidad.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@EnvidiaKotxinaOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/0ecMaXEm4sV6sndUYsyvmU",
+              "instagramUrl": "https://www.instagram.com/envidiakotxinaoficial/",
+              "facebookUrl": "https://www.facebook.com/envidiakotxinaoficial/",
+              "imageUrl": "https://envidiakotxina.com/wp-content/uploads/2020/05/envidia-foto.jpg"
+            }
+          },
+          {
+            "band": "MALOS VICIOS",
+            "stage": "Maneras de Vivir",
+            "start": "18:40",
+            "end": "19:30",
+            "bio": {
+              "name": "MALOS VICIOS",
+              "title": "",
+              "description": "Malos Vicios es una veterana banda formada en Castellón de la Plana a mediados de los años noventa. Desde sus inicios, han sido un pilar fundamental del punk rock melódico en España, destacando por sus composiciones pegadizas y letras comprometidas con diversas causas sociales. Con numerosos trabajos discográficos a sus espaldas, han girado por todo el país, compartiendo escenario con grandes referentes del género. Su estilo se ha mantenido fiel a una estética punk clásica, combinando melodías accesibles con una actitud contestataria que les ha permitido perdurar en la escena musical independiente durante décadas.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@malosviciosoficial",
+              "spotifyUrl": "https://open.spotify.com/artist/3CC52A7QKNPvnXnjykRo4x",
+              "instagramUrl": "https://www.instagram.com/malosvicios_oficial",
+              "facebookUrl": "https://www.facebook.com/malosviciosoficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5c18ca4529b3682668159e77"
+            }
+          },
+          {
+            "band": "PORRETAS",
+            "stage": "Escenario Principal (Rober)",
+            "start": "19:35",
+            "end": "20:35",
+            "bio": {
+              "name": "PORRETAS",
+              "title": "",
+              "description": "Porretas es una banda de rock urbano formada en Hortaleza, Madrid, en 1985. Son considerados una de las formaciones más queridas y emblemáticas del rock en España. Su música se caracteriza por ser sencilla, directa, bailable y muy pegadiza, centrada en las vivencias del barrio, las historias cotidianas y, sobre todo, el sentimiento. A lo largo de décadas de carrera, han superado todo tipo de vicisitudes, demostrando una resiliencia inmensa. Canciones como 'Marihuana' se han convertido en himnos populares, consolidando al grupo como un pilar fundamental del rock estatal por su autenticidad y cercanía.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@PorretasOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/728RoHc1KnzggoepsGWPdk",
+              "instagramUrl": "https://www.instagram.com/porretasoficial/",
+              "facebookUrl": "https://www.facebook.com/PorretasOficial/",
+              "imageUrl": "https://porretas.com/wp-content/uploads/2021/04/porretas-foto.jpg"
+            }
+          },
+          {
+            "band": "DISTORSIÓN",
+            "stage": "Maneras de Vivir",
+            "start": "19:50",
+            "end": "20:40",
+            "bio": {
+              "name": "DISTORSIÓN",
+              "title": "",
+              "description": "Distorsión es una banda de punk rock surgida en Barakaldo en los años 80, siendo uno de los referentes clásicos del punk vasco. Su sonido se caracteriza por ser rápido, sucio y cargado de adrenalina, una marca de fábrica que han mantenido a lo largo de décadas de actividad. Con letras que abordan la realidad cotidiana desde un prisma rebelde y directo, se han ganado el estatus de grupo legendario. Su persistencia en los escenarios y su negativa a abandonar sus principios les ha convertido en una pieza fundamental de la historia del punk rock nacional.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@DistorsionPunk",
+              "spotifyUrl": "https://open.spotify.com/artist/2Qee38tWghnPgfaOSjtLox",
+              "instagramUrl": "https://www.instagram.com/distorsionpunk/",
+              "facebookUrl": "https://www.facebook.com/DistorsionPunk/",
+              "imageUrl": "https://distorsion.es/wp-content/uploads/2022/04/distorsion-foto.jpg"
+            }
+          },
+          {
+            "band": "TALCO",
+            "stage": "Escenario Principal (Boni)",
+            "start": "20:40",
+            "end": "21:40",
+            "bio": {
+              "name": "TALCO",
+              "title": "",
+              "description": "Talco es una banda de ska punk procedente de Venecia, Italia, que ha logrado una gran popularidad en todo el continente europeo, especialmente en España. Su estilo, bautizado por ellos como 'punkchanka', fusiona ritmos rápidos de punk, ska y música folclórica italiana, dando lugar a canciones altamente festivas pero siempre acompañadas de mensajes de corte antifascista y social. Con una trayectoria impecable, sus conciertos se distinguen por ser un torbellino de energía donde la interacción con el público es constante, convirtiéndolos en invitados habituales y muy aclamados en los grandes festivales europeos de música independiente.",
+              "country": "Italia",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/@TalcoOfficial",
+              "spotifyUrl": "https://open.spotify.com/artist/443KHruraFfm6t1cK8SJCc",
+              "instagramUrl": "https://www.instagram.com/talco_official/",
+              "facebookUrl": "https://www.facebook.com/talcopunkchanka/",
+              "imageUrl": "https://talco.punkchanka.com/wp-content/uploads/2023/02/talco-foto.jpg"
+            }
+          },
+          {
+            "band": "PERIFERIA",
+            "stage": "Maneras de Vivir",
+            "start": "21:00",
+            "end": "21:50",
+            "bio": {
+              "name": "PERIFERIA",
+              "title": "",
+              "description": "Periferia es una banda de punk rock que ha desarrollado su trayectoria apostando por un sonido auténtico y una lírica comprometida con su entorno. Su propuesta se centra en la fuerza de sus composiciones, combinando ritmos enérgicos con letras que reflejan preocupaciones sociales y personales. A través de un trabajo constante en la escena, han logrado consolidar una propuesta musical que destaca por su honestidad y su cercanía. Son una formación que busca mantener vivo el espíritu del punk desde una perspectiva actual, ofreciendo directos sólidos que conectan con los valores del rock de base.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=YrQLmElRT-E",
+              "spotifyUrl": "https://open.spotify.com/artist/0XrH6ldTNnTtaIRILHcbkI",
+              "instagramUrl": "https://www.instagram.com/periferia_punk/",
+              "facebookUrl": "https://www.facebook.com/PeriferiaPunk/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eba79e555efc02587363704cff"
+            }
+          },
+          {
+            "band": "EVARISTO",
+            "stage": "Escenario Principal (Rober)",
+            "start": "21:45",
+            "end": "23:05",
+            "bio": {
+              "name": "EVARISTO",
+              "title": "",
+              "description": "Evaristo Páramos es un referente ineludible del punk rock en castellano. Como vocalista de La Polla Records, formó parte de la banda más influyente del punk estatal, definiendo la actitud y el mensaje de toda una generación con sus letras satíricas, provocadoras y siempre críticas con el poder. A lo largo de su carrera ha militado en otros proyectos como Gatillazo, manteniendo intacta su capacidad de análisis social a través del humor ácido y una energía inagotable sobre el escenario. Es una figura histórica cuya trayectoria ha dejado una marca indeleble en la cultura musical de España.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=wl5Y6Kt68vo",
+              "spotifyUrl": "https://open.spotify.com/artist/3vHlZN6pTa2zOl2eVxiEdJ",
+              "instagramUrl": "124",
+              "facebookUrl": "https://www.facebook.com/EvaristoParamosOficial/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb57349372c44b7991f382f237"
+            }
+          },
+          {
+            "band": "MALDITO MATAS",
+            "stage": "Maneras de Vivir",
+            "start": "22:10",
+            "end": "23:00",
+            "bio": {
+              "name": "MALDITO MATAS",
+              "title": "",
+              "description": "Maldito Matas es una formación madrileña que se mueve dentro de las coordenadas del punk rock con claras influencias del hardcore punk. Su sonido se distingue por la velocidad, la contundencia en la base rítmica y unas guitarras afiladas que sirven de soporte para mensajes cargados de crítica social y vivencias personales. A través de sus canciones y actuaciones en directo, el grupo busca transmitir una energía cruda y sin artificios, consolidando su presencia en el circuito underground. Su propuesta se mantiene fiel al espíritu combativo y directo característico del punk hecho en España.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@malditomatas",
+              "spotifyUrl": "https://open.spotify.com/artist/2MMpbJh1RmzGkh87DVXTS5",
+              "instagramUrl": "https://www.instagram.com/maldito_matas",
+              "facebookUrl": "https://www.facebook.com/malditomatas",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebae49fff302bdd4559119071c"
+            }
+          },
+          {
+            "band": "El Drogas",
+            "stage": "Escenario Principal (Boni)",
+            "start": "23:10",
+            "end": "00:30",
+            "bio": {
+              "name": "El Drogas",
+              "title": "",
+              "description": "Enrique Villarreal, conocido como El Drogas, es uno de los músicos más emblemáticos del rock en español. Como bajista y cantante de Barricada, lideró una de las bandas más grandes de la historia del rock nacional. Tras esta etapa, ha desarrollado una carrera en solitario prolífica y ecléctica, explorando diferentes matices del rock sin perder nunca su fuerza. Sus letras, cargadas de sensibilidad, compromiso social y una narrativa poética, le han consolidado como un autor fundamental. Su presencia en cualquier escenario es sinónimo de historia, autenticidad y una inmensa pasión por el rock and roll.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@ElDrogasOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/5jJWnRLQeU7fe9VaDjpIWK",
+              "instagramUrl": "https://www.instagram.com/eldrogasoficial/",
+              "facebookUrl": "https://www.facebook.com/eldrogasoficial/",
+              "imageUrl": "https://eldrogas.com/wp-content/uploads/2020/05/drogas-foto.jpg"
+            }
+          },
+          {
+            "band": "IRATXO",
+            "stage": "Maneras de Vivir",
+            "start": "23:20",
+            "end": "00:10",
+            "bio": {
+              "name": "IRATXO",
+              "title": "",
+              "description": "Iratxo es el proyecto liderado por Juan Manuel Cifuentes, un músico que ha desarrollado una propuesta de rock personal marcada por la intensidad emocional. Sus composiciones destacan por una lírica muy cuidada, donde la poesía se funde con la fuerza de los instrumentos, abordando temáticas existenciales, de amor y de lucha social. A lo largo de su trayectoria, Iratxo ha logrado una conexión muy especial con su audiencia, gracias a una puesta en escena honesta y llena de sentimiento. Su música representa un refugio para quienes buscan un rock con profundidad, sensibilidad y una gran autenticidad.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@IratxoOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/1wL6Kxm3kwAcP5zpeapRpW",
+              "instagramUrl": "https://www.instagram.com/iratxo_oficial/",
+              "facebookUrl": "https://www.facebook.com/IratxoOficial/",
+              "imageUrl": "https://iratxo.es/wp-content/uploads/2021/08/iratxo-foto.jpg"
+            }
+          },
+          {
+            "band": "ARPAVIEJAS",
+            "stage": "Maneras de Vivir",
+            "start": "00:30",
+            "end": "01:30",
+            "bio": {
+              "name": "ARPAVIEJAS",
+              "title": "",
+              "description": "Arpaviejas es una banda de punk rock formada en Barcelona, destacada por una propuesta musical cruda, rápida y muy directa. Su sonido se alinea con el punk de la vieja escuela, con letras que retratan la vida de calle, la crítica social y una actitud desafiante. A lo largo de su carrera, han consolidado una legión de seguidores gracias a su perseverancia y a unos directos intensos, donde la distorsión y la energía son la nota predominante. Representan el lado más rebelde y sin filtros del punk rock nacional, manteniendo siempre una postura coherente y firme.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@Arpaviejas",
+              "spotifyUrl": "https://open.spotify.com/artist/3p4ATdrRNiaczZdnPeZlqA",
+              "instagramUrl": "https://www.instagram.com/arpaviejas_punk/",
+              "facebookUrl": "https://www.facebook.com/Arpaviejas/",
+              "imageUrl": "https://arpaviejas.es/wp-content/uploads/2021/12/arpaviejas-foto.jpg"
+            }
+          },
+          {
+            "band": "NARCO",
+            "stage": "Escenario Principal (Rober)",
+            "start": "00:35",
+            "end": "01:45",
+            "bio": {
+              "name": "NARCO",
+              "title": "",
+              "description": "Narco es una banda de rap metal formada en Sevilla a finales de los años 90. Su sonido es una mezcla explosiva de bases pesadas, guitarras distorsionadas y letras agresivas, irónicas y a menudo explícitas, que tocan temas prohibidos o incómodos. Han sido una formación muy influyente por su capacidad de romper barreras estilísticas, siendo pioneros en mezclar la energía del metal con la narrativa del rap. A lo largo de su trayectoria, sus directos han ganado fama de ser auténticos rituales de caos y descarga, consolidándolos como una formación única e inimitable dentro de la escena musical nacional.",
+              "country": "España",
+              "genre": "Rap metal",
+              "youtubeUrl": "https://www.youtube.com/@NarcoOficial",
+              "spotifyUrl": "https://open.spotify.com/artist/1LtOyg9h0sJidHIFXLaICB",
+              "instagramUrl": "https://www.instagram.com/narco_oficial/",
+              "facebookUrl": "https://www.facebook.com/NarcoOficial/",
+              "imageUrl": "https://narco.es/wp-content/uploads/2021/04/narco-foto.jpg"
+            }
+          },
+          {
+            "band": "JOSETXU PIPERRAK",
+            "stage": "Escenario Principal (Boni)",
+            "start": "01:50",
+            "end": "02:55",
+            "bio": {
+              "name": "JOSETXU PIPERRAK",
+              "title": "",
+              "description": "Josetxu Piperrak es una figura emblemática del punk rock estatal, conocido principalmente por su labor como vocalista de la legendaria banda Piperrak. Formados en la Rioja, su estilo crudo, directo y lleno de velocidad marcó un antes y un después en la escena de los años 90. Con letras que destilaban rabia y realidad social, se ganaron un lugar de culto entre los seguidores del género. Josetxu ha mantenido viva esa esencia punk en sus proyectos posteriores, ofreciendo directos eléctricos que repasan los clásicos de siempre y conectan con nuevas generaciones de fans del punk rock.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/watch?v=mtRKVwNK4Fo",
+              "spotifyUrl": "https://open.spotify.com/artist/3CMa7KMGEivE5STGjWSlxG",
+              "instagramUrl": "https://www.instagram.com/josetxupiperrak/",
+              "facebookUrl": "https://www.facebook.com/JosetxuPiperrak/",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebad76cfe655a60e79524b927b"
+            }
+          },
+          {
+            "band": "LONCHA VELASCO",
+            "stage": "Maneras de Vivir",
+            "start": "01:50",
+            "end": "02:50",
+            "bio": {
+              "name": "LONCHA VELASCO",
+              "title": "",
+              "description": "Loncha Velasco es una banda originaria de Madrid que ha logrado hacerse un hueco en la escena del punk estatal gracias a su propuesta directa y cargada de humor negro. Sus composiciones se caracterizan por una energía cruda, ritmos acelerados y letras que critican aspectos cotidianos y sociales con un toque satírico muy particular. A lo largo de su trayectoria, el grupo ha mantenido un perfil independiente, consolidando una base de seguidores fieles que valoran su autenticidad y su capacidad para conectar con el público mediante directos intensos y llenos de irreverencia rockera.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@lonchavelasco",
+              "spotifyUrl": "https://open.spotify.com/artist/2GqOx9nLc3mOGApdvV6LHW",
+              "instagramUrl": "https://www.instagram.com/lonchavelasco",
+              "facebookUrl": "https://www.facebook.com/lonchavelasco",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb941241bf6ae04fbe9db850c8"
+            }
+          },
+          {
+            "band": "MANIFA",
+            "stage": "Escenario Principal (Rober)",
+            "start": "03:00",
+            "end": "04:00",
+            "bio": {
+              "name": "MANIFA",
+              "title": "",
+              "description": "Manifa es una banda de punk rock originaria de Barakaldo, conocida por su estilo inconfundible basado en la sátira, la ironía y una crítica mordaz hacia la sociedad y la política. Su propuesta musical es directa, rápida y contagiosa, perfecta para ser coreada en grandes recintos. Con una carrera ascendente, han logrado ganarse el favor del público mediante directos llenos de energía, humor y una puesta en escena desenfadada. Sus letras, a menudo irreverentes, no dejan a nadie indiferente, consolidándolos como una de las formaciones más activas e interesantes del punk actual en España.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@ManifaPunk",
+              "spotifyUrl": "https://open.spotify.com/artist/7ynFnXnaMHYbTeT4JQ97tc",
+              "instagramUrl": "https://www.instagram.com/manifapunk/",
+              "facebookUrl": "https://www.facebook.com/ManifaPunk/",
+              "imageUrl": "https://manifa.es/wp-content/uploads/2022/11/manifa-foto.jpg"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2026-08-15",
+        "dayNumber": 3,
+        "dayLabel": "Sábado 15",
+        "weekdayEs": "Sábado",
+        "doors": "16:00",
+        "stages": [
+          "Escenario Principal (Rober)",
+          "Escenario Principal (Boni)",
+          "Maneras de Vivir"
+        ],
+        "acts": [
+          {
+            "band": "KAMIKAZES",
+            "stage": "Escenario Principal (Rober)",
+            "start": "16:30",
+            "end": "17:20",
+            "bio": {
+              "name": "KAMIKAZES",
+              "title": "",
+              "description": "Kamikazes es una banda de rock madrileña que ha irrumpido con fuerza en la escena nacional gracias a un estilo auténtico y directo. Su música se caracteriza por letras que reflejan vivencias urbanas, sentimientos y realidades cotidianas con una narrativa honesta. Con una instrumentación clásica de rock pero con una energía renovada, han logrado captar la atención de una audiencia joven y veterana por igual. Tras sus primeros trabajos y una constante presencia en directos, se han posicionado como una de las bandas emergentes más sólidas del rock español, destacando por su actitud sincera y su capacidad para crear himnos…",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@kamikazesbanda",
+              "spotifyUrl": "https://open.spotify.com/artist/4PkKM2KE5z1OhO6rHvD5Vy",
+              "instagramUrl": "https://www.instagram.com/kamikazesbanda",
+              "facebookUrl": "https://www.facebook.com/kamikazesbanda",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb67d4191576612b57207c624e"
+            }
+          },
+          {
+            "band": "DEF CON DOS",
+            "stage": "Escenario Principal (Boni)",
+            "start": "17:25",
+            "end": "18:25",
+            "bio": {
+              "name": "DEF CON DOS",
+              "title": "",
+              "description": "Def Con Dos es una banda española surgida a finales de los ochenta que se convirtió en pionera al fusionar el hip-hop con el rock y el metal pesado. Liderados por César Strawberry, han desarrollado una carrera marcada por letras provocadoras, cargadas de ironía y crítica social ácida hacia los convencionalismos. Su sonido evolucionó con los años, integrando elementos electrónicos y guitarras eléctricas contundentes. Han sido una pieza clave en la música alternativa española, influyendo a numerosas generaciones con su propuesta rupturista, su actitud transgresora y una capacidad constante para adaptarse y renovarse manteniendo su esencia crítica y original.",
+              "country": "España",
+              "genre": "Rap metal",
+              "youtubeUrl": "https://www.youtube.com/@defcondos",
+              "spotifyUrl": "https://open.spotify.com/artist/1O4hqQz2nV0jrlF9VEFBNK",
+              "instagramUrl": "https://www.instagram.com/def_con_dos",
+              "facebookUrl": "https://www.facebook.com/defcondos",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eba5226497d36c127a4b512989"
+            }
+          },
+          {
+            "band": "SIN PROPINA",
+            "stage": "Maneras de Vivir",
+            "start": "17:30",
+            "end": "18:20",
+            "bio": {
+              "name": "SIN PROPINA",
+              "title": "",
+              "description": "Sin Propina es una banda de punk rock que se caracteriza por un sonido directo, contundente y sin concesiones. Su propuesta musical se alinea con el punk de corte más clásico, priorizando la velocidad, las guitarras distorsionadas y una voz cruda que transmite mensajes de descontento, rebeldía y crítica social. A través de sus años en la escena, han mantenido un enfoque independiente, centrándose en el contacto cercano con su audiencia y el trabajo constante en los escenarios. Son una muestra representativa del punk actual que mantiene vivo el espíritu combativo y las raíces del género sin artificios innecesarios.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@sinpropina",
+              "spotifyUrl": "https://open.spotify.com/artist/5K2L2oo45UI1rwYB149FGG",
+              "instagramUrl": "https://www.instagram.com/sinpropina",
+              "facebookUrl": "https://www.facebook.com/sinpropina",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb1056c5533fbdbbf380392233"
+            }
+          },
+          {
+            "band": "MARKY RAMONE'S BLITZKRIEG",
+            "stage": "Escenario Principal (Rober)",
+            "start": "18:30",
+            "end": "19:30",
+            "bio": {
+              "name": "MARKY RAMONE'S BLITZKRIEG",
+              "title": "",
+              "description": "Marky Ramone's Blitzkrieg es el proyecto liderado por el legendario batería Marky Ramone, miembro histórico de los míticos Ramones. En esta formación, Marky interpreta los temas más icónicos de su antigua banda, manteniendo viva la esencia y el legado del punk rock neoyorquino original. La banda recorre escenarios de todo el mundo ofreciendo un repertorio cargado de energía y nostalgia, fiel al sonido de alta velocidad y simplicidad que definió a los Ramones. Es una experiencia esencial para los amantes del punk, permitiendo disfrutar de la historia viva del género a través de su protagonista y su inconfundible estilo.",
+              "country": "Estados Unidos",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@markyramone",
+              "spotifyUrl": "https://open.spotify.com/artist/3PUsO4YIJgyAhkaDGxSQdJ",
+              "instagramUrl": "https://www.instagram.com/markyramone",
+              "facebookUrl": "https://www.facebook.com/markyramone",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb60d1e81d87f6a7a7a3069189"
+            }
+          },
+          {
+            "band": "4DZIKI",
+            "stage": "Maneras de Vivir",
+            "start": "18:40",
+            "end": "19:30",
+            "bio": {
+              "name": "4DZIKI",
+              "title": "",
+              "description": "4Dziki es una banda polaca que destaca en la escena del ska punk europeo por su propuesta enérgica y festiva. Su sonido es una combinación dinámica de los ritmos del ska con la contundencia del punk, creando temas ideales para disfrutar en directo. Con una puesta en escena marcada por la vitalidad y la conexión con el público, el grupo ha sabido hacerse un lugar en festivales internacionales, demostrando que el ska punk es un lenguaje universal. Su enfoque musical combina diversión, ritmo y una actitud rebelde que resuena con los seguidores de estos géneros en toda Europa.",
+              "country": "Polonia",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/@4dziki",
+              "spotifyUrl": "https://open.spotify.com/artist/4iUhxLdfVxEwdhHFfw42AK",
+              "instagramUrl": "https://www.instagram.com/4dziki",
+              "facebookUrl": "https://www.facebook.com/4dziki",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb05af20dff54bac9cfeb482c3"
+            }
+          },
+          {
+            "band": "LOS DE MARRAS",
+            "stage": "Escenario Principal (Boni)",
+            "start": "19:35",
+            "end": "20:35",
+            "bio": {
+              "name": "LOS DE MARRAS",
+              "title": "",
+              "description": "Los de Marras son una formación valenciana con una dilatada trayectoria en el rock estatal. Se caracterizan por un estilo sincero, directo y emocional, centrándose en letras que hablan de la vida cotidiana, el desamor y la superación personal desde una perspectiva honesta y cercana. Han logrado conectar con una base de fans muy leal gracias a la crudeza y sentimiento de sus composiciones, así como por la energía de sus conciertos. Con varios discos publicados, el grupo ha sabido mantenerse al margen de las modas, cultivando un sonido auténtico que los ha consolidado como referentes del rock de autor.",
+              "country": "España",
+              "genre": "Rock",
+              "youtubeUrl": "https://www.youtube.com/@losdemarras",
+              "spotifyUrl": "https://open.spotify.com/artist/0E1P5uNgbD11POIDxFROHh",
+              "instagramUrl": "https://www.instagram.com/losdemarras",
+              "facebookUrl": "https://www.facebook.com/losdemarras",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb278dcaabc9810d51ec715abe"
+            }
+          },
+          {
+            "band": "AVANCARGA",
+            "stage": "Maneras de Vivir",
+            "start": "19:50",
+            "end": "20:40",
+            "bio": {
+              "name": "AVANCARGA",
+              "title": "",
+              "description": "Avancarga es una banda española de hard rock que destaca por un sonido potente y clásico, inspirado por los grandes referentes del rock duro de décadas pasadas. Sus composiciones se caracterizan por una base rítmica sólida, guitarras con mucho peso y una voz potente al frente. Han desarrollado su carrera con la intención de mantener vivo el rock más tradicional dentro de un panorama en constante cambio. A través de discos y actuaciones en directo, el grupo ha logrado forjar una identidad propia, destacando por su energía, su ejecución técnica y su compromiso inquebrantable con la esencia del rock duro.",
+              "country": "España",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/@avancarga",
+              "spotifyUrl": "https://open.spotify.com/artist/1EkBFM7NRuZLtbqOJfcU3o",
+              "instagramUrl": "https://www.instagram.com/avancarga",
+              "facebookUrl": "https://www.facebook.com/avancarga",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb43ece40e8f5e31c9c2e72c9c"
+            }
+          },
+          {
+            "band": "SEGISMUNDO TOXICÓMANO",
+            "stage": "Escenario Principal (Rober)",
+            "start": "20:40",
+            "end": "21:40",
+            "bio": {
+              "name": "SEGISMUNDO TOXICÓMANO",
+              "title": "",
+              "description": "Segismundo Toxicómano es una banda de punk rock formada en Vitoria-Gasteiz a finales de los noventa. Su sonido, marcado por guitarras potentes y una base rítmica sólida, se ha mantenido fiel a las raíces del punk más directo y combativo. Han construido una trayectoria sólida con letras que abordan problemáticas sociales, la precariedad y el descontento general, siempre bajo una óptica de rebeldía y autenticidad. Considerados una de las agrupaciones más influyentes del punk en el País Vasco, su impacto se extiende a todo el territorio nacional, siendo habituales en los carteles de los festivales más destacados del género.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@segismundotoxicomano",
+              "spotifyUrl": "https://open.spotify.com/artist/0sKBEhvr6hz7Wpptw0fY8U",
+              "instagramUrl": "https://www.instagram.com/segismundotoxicomano",
+              "facebookUrl": "https://www.facebook.com/segismundotoxicomano",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebf9b4c604aa84775cd0ce0e2e"
+            }
+          },
+          {
+            "band": "SKAPARAPID",
+            "stage": "Maneras de Vivir",
+            "start": "21:00",
+            "end": "21:50",
+            "bio": {
+              "name": "SKAPARAPID",
+              "title": "",
+              "description": "Skaparapid es una banda de ska punk formada en Valencia que tuvo un impacto muy significativo en la escena musical alternativa de los noventa. Su sonido combinaba la energía del punk con ritmos ska, dando como resultado canciones muy bailables, rápidas y cargadas de mensaje político y social. Fueron pioneros en este estilo en España, influyendo a numerosas bandas posteriores. A pesar de haber tenido periodos de inactividad, su legado se mantiene vivo y son recordados por su papel esencial en la popularización del ska estatal y sus memorables actuaciones en directo, marcadas por la intensidad y el compromiso.",
+              "country": "España",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/@skaparapid",
+              "spotifyUrl": "https://open.spotify.com/artist/0KS8PpA5dt2xO2nGB7wMlS",
+              "instagramUrl": "https://www.instagram.com/skaparapid",
+              "facebookUrl": "https://www.facebook.com/skaparapid",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb2f6fb6765b445ee76a091f97"
+            }
+          },
+          {
+            "band": "DUBIOZA KOLEKTIV",
+            "stage": "Escenario Principal (Boni)",
+            "start": "21:45",
+            "end": "22:55",
+            "bio": {
+              "name": "DUBIOZA KOLEKTIV",
+              "title": "",
+              "description": "Dubioza Kolektiv es una de las bandas más influyentes y populares de los Balcanes. Formados en Sarajevo, su estilo es una explosión multicultural que amalgama ska, punk, reggae y hip-hop con las raíces tradicionales de la música folclórica balcánica. Sus letras, a menudo cantadas en varios idiomas, son incisivas y abordan realidades políticas y sociales complejas con un tono satírico y rebelde. Con una puesta en escena arrolladora, el grupo ha logrado trascender sus fronteras, convirtiéndose en un referente global que utiliza la música como herramienta de resistencia, denuncia y celebración de la diversidad cultural humana.",
+              "country": "Bosnia y Herzegovina",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/@dubiozakolektiv",
+              "spotifyUrl": "https://open.spotify.com/artist/02IFYoziC7CpQRK8fbehUY",
+              "instagramUrl": "https://www.instagram.com/dubiozakolektiv",
+              "facebookUrl": "https://www.facebook.com/dubioza",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb6135dd1c33dd56c6245df3ab"
+            }
+          },
+          {
+            "band": "MAMÁ LADILLA",
+            "stage": "Maneras de Vivir",
+            "start": "22:10",
+            "end": "23:00",
+            "bio": {
+              "name": "MAMÁ LADILLA",
+              "title": "",
+              "description": "Mamá Ladilla es una banda de punk rock española formada en 1994, reconocida por su uso intensivo del humor absurdo, la ironía y juegos de palabras en sus letras. Su líder, Juan Abarca, es una figura central que ha dotado al grupo de un sello personal inconfundible. Musicalmente, se mueven en un punk rock rápido y bien ejecutado, a menudo con estructuras complejas que contrastan con la aparente simplicidad de su temática. A través de numerosas publicaciones, han forjado una carrera de culto, convirtiéndose en un referente necesario para entender la vertiente más gamberra y satírica del punk rock en…",
+              "country": "Espa��a",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@mamaladillaoficial",
+              "spotifyUrl": "https://open.spotify.com/artist/5kebWU4S5zMprNG6WfOKwo",
+              "instagramUrl": "https://www.instagram.com/mamaladillaoficial",
+              "facebookUrl": "https://www.facebook.com/mamaladilla",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebec09861e4f4e267a708a7d8c"
+            }
+          },
+          {
+            "band": "LA PEGATINA",
+            "stage": "Escenario Principal (Rober)",
+            "start": "23:00",
+            "end": "00:30",
+            "bio": {
+              "name": "LA PEGATINA",
+              "title": "",
+              "description": "La Pegatina es una banda de Montcada i Reixac, Barcelona, formada en 2003. Son ampliamente reconocidos por su estilo festivo que fusiona rumba catalana, ska, punk y música latina. Con una trayectoria internacional impresionante, han actuado en numerosos países llevando su energía contagiosa a festivales de todo el mundo. Sus canciones, mayoritariamente en catalán y castellano, transmiten una actitud optimista y vitalista. A lo largo de los años, han consolidado una legión de seguidores gracias a su incansable ritmo de giras y su capacidad para convertir cualquier concierto en una auténtica fiesta de música y baile.",
+              "country": "España",
+              "genre": "Ska",
+              "youtubeUrl": "https://www.youtube.com/@lapegatina",
+              "spotifyUrl": "https://open.spotify.com/artist/4xvB67czbtvemGVXGa81oK",
+              "instagramUrl": "https://www.instagram.com/lapegatinaband",
+              "facebookUrl": "https://www.facebook.com/lapegatina",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb7c9d26341d0c0e8fa8bf1337"
+            }
+          },
+          {
+            "band": "CRIM",
+            "stage": "Maneras de Vivir",
+            "start": "23:20",
+            "end": "00:10",
+            "bio": {
+              "name": "CRIM",
+              "title": "",
+              "description": "Crim es una banda de punk rock originaria de Tarragona, Cataluña. Su propuesta destaca por un sonido potente, contundente y a la vez muy melódico, influenciado por el punk rock clásico y el street punk. Sus letras, escritas en catalán, abordan temas como la alienación social, la política y las experiencias vitales con una intensidad que traspasa las fronteras idiomáticas. En los últimos años, se han consolidado como uno de los grupos más importantes del punk estatal, girando constantemente por Europa y actuando en los festivales más relevantes del género gracias a su honestidad, gran calidad musical y actitud arrolladora.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@crimpunk",
+              "spotifyUrl": "https://open.spotify.com/artist/2p7rRgVQsbzdA8zkpb83Q2",
+              "instagramUrl": "https://www.instagram.com/crimpunk",
+              "facebookUrl": "https://www.facebook.com/crimpunk",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebe5136f442cba9aadafbe931f"
+            }
+          },
+          {
+            "band": "AGUA BENDITA",
+            "stage": "Maneras de Vivir",
+            "start": "00:30",
+            "end": "01:30",
+            "bio": {
+              "name": "AGUA BENDITA",
+              "title": "",
+              "description": "Agua Bendita es una banda española de ska punk que alcanzó gran popularidad durante los años noventa. Fueron uno de los grupos abanderados del sonido mestizo y combativo de aquella época, combinando secciones de vientos, guitarras distorsionadas y ritmos jamaicanos. Sus letras, marcadas por un espíritu rebelde y crítico, conectaron con toda una generación. Tras años de actividad, el grupo se ha consolidado como un referente de culto para los seguidores del género, valorados por su papel fundamental en la evolución y expansión del ska punk en España durante las décadas pasadas, manteniendo vivo el espíritu de aquel movimiento musical.",
+              "country": "España",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/@aguabenditaoficial",
+              "spotifyUrl": "https://open.spotify.com/artist/2e3P7zO9duFmWItDELoQfq",
+              "instagramUrl": "https://www.instagram.com/aguabenditaoficial",
+              "facebookUrl": "https://www.facebook.com/aguabenditaoficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb38a690565f3b0160f609b347"
+            }
+          },
+          {
+            "band": "BOIKOT",
+            "stage": "Escenario Principal (Boni)",
+            "start": "00:35",
+            "end": "01:45",
+            "bio": {
+              "name": "BOIKOT",
+              "title": "",
+              "description": "Boikot es una banda de punk rock nacida en el barrio madrileño de Vallecas a finales de los años ochenta. Se han consolidado como un referente ineludible del rock estatal, destacando por sus letras de fuerte carácter social y compromiso político. A lo largo de su carrera, han experimentado con elementos del ska, el folk y la música tradicional, manteniendo siempre su esencia rebelde. Sus directos son conocidos por ser intensos y masivos, donde el grupo conecta profundamente con una audiencia fiel. Son sinónimo de lucha, autogestión y una constante evolución sonora dentro de la música independiente.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@boikotoficial",
+              "spotifyUrl": "https://open.spotify.com/artist/0wppCmJl3glHZZScLcs4gn",
+              "instagramUrl": "https://www.instagram.com/boikotoficial",
+              "facebookUrl": "https://www.facebook.com/boikot",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb53bc0982fd9dde40687611cc"
+            }
+          },
+          {
+            "band": "TRASHTUCADA",
+            "stage": "Escenario Principal (Rober)",
+            "start": "01:50",
+            "end": "02:55",
+            "bio": {
+              "name": "TRASHTUCADA",
+              "title": "",
+              "description": "Trashtucada es una banda procedente de Chiclana de la Frontera, Cádiz, que se ha ganado un nombre en la escena estatal por su mezcla festiva de ska, punk, rock y ritmos latinos. Destacan por un directo extremadamente dinámico, diseñado para hacer bailar y saltar al público. Sus canciones suelen transmitir mensajes optimistas, de denuncia social y de disfrute de la vida, combinando arreglos de metales potentes con guitarras eléctricas. Han recorrido numerosos festivales importantes, consolidándose como una de las propuestas más divertidas y enérgicas del panorama musical español gracias a su constante actividad y gran conexión con el público.",
+              "country": "España",
+              "genre": "Ska punk",
+              "youtubeUrl": "https://www.youtube.com/@trashtucada",
+              "spotifyUrl": "https://open.spotify.com/artist/5XaswkruXoiyiteNBM75Jk",
+              "instagramUrl": "https://www.instagram.com/trashtucada",
+              "facebookUrl": "https://www.facebook.com/trashtucada",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb49c9fea9511f2ddaa51d4498"
+            }
+          },
+          {
+            "band": "NI POR FAVOR NI OSTIAS",
+            "stage": "Maneras de Vivir",
+            "start": "01:50",
+            "end": "02:50",
+            "bio": {
+              "name": "NI POR FAVOR NI OSTIAS",
+              "title": "",
+              "description": ""
+            }
+          },
+          {
+            "band": "ME FRITOS AND THE GIMME CHEETOS",
+            "stage": "Escenario Principal (Boni)",
+            "start": "03:00",
+            "end": "04:00",
+            "bio": {
+              "name": "ME FRITOS AND THE GIMME CHEETOS",
+              "title": "",
+              "description": "Me Fritos and the Gimme Cheetos es una peculiar formación española que basa su propuesta en realizar versiones punk de canciones populares, bandas sonoras de dibujos animados, clásicos de la música pop y otros temas reconocibles. Su enfoque es puramente humorístico y festivo, transformando melodías conocidas en piezas aceleradas de punk rock. Gracias a este concepto original y a su desenfadada puesta en escena, han logrado ganarse al público en festivales y salas, convirtiendo cada concierto en un momento de diversión colectiva, nostalgia y baile, siempre bajo la premisa de no tomarse demasiado en serio a sí mismos.",
+              "country": "España",
+              "genre": "Punk rock",
+              "youtubeUrl": "https://www.youtube.com/@mefritosandthegimmecheetos",
+              "spotifyUrl": "https://open.spotify.com/artist/29Ur1r8tVRPLl6TcppRLkr",
+              "instagramUrl": "https://www.instagram.com/mefritos_oficial",
+              "facebookUrl": "https://www.facebook.com/mefritos",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb26bc3af086a4407c5254ebdb"
             }
           }
         ]

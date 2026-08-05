@@ -79,9 +79,9 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "xUrl": "https://x.com/hermanafuria"
   },
   "eldrogas": {
-    "officialWebsite": "https://www.eldrogas.com/",
+    "officialWebsite": "https://eldrogas.com/",
     "tiktokUrl": "",
-    "xUrl": "https://x.com/ElDrogo"
+    "xUrl": "https://x.com/eldrogas"
   },
   "benitokamelas": {
     "officialWebsite": "https://benitokamelas.es/",
@@ -93,44 +93,49 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "tiktokUrl": "",
     "xUrl": "https://x.com/TheLizardsBCN"
   },
+  "reversethemoment": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
   "crowbar": {
     "officialWebsite": "https://crowbarmusic.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/crowbarmusic"
   },
   "heavenshallburn": {
     "officialWebsite": "https://www.heavenshallburn.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/hsb_official"
   },
   "implantpentrurefuz": {
     "officialWebsite": "https://www.implantpentrurefuz.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/IPRMusicBand"
   },
   "blacklabelsociety": {
     "officialWebsite": "https://blacklabelsociety.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/ZakkWyldeBLS"
   },
   "marilynmanson": {
     "officialWebsite": "https://marilynmanson.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/marilynmanson"
   },
   "necrotted": {
     "officialWebsite": "https://necrotted.com/",
-    "tiktokUrl": "",
-    "xUrl": ""
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "panzerfaust": {
     "officialWebsite": "https://panzerfaust.bandcamp.com",
-    "tiktokUrl": "",
-    "xUrl": ""
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "hackneyed": {
     "officialWebsite": "http://www.hackneyed.de/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/hackneyedband"
   },
   "vended": {
@@ -140,62 +145,67 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
   },
   "majestica": {
     "officialWebsite": "https://majestica.nu/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/majesticametal"
   },
   "alcest": {
     "officialWebsite": "https://alcest-music.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/alcestofficial"
   },
   "deathangel": {
     "officialWebsite": "https://www.deathangel.us/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/deathangel"
   },
   "fumanchu": {
     "officialWebsite": "https://fu-manchu.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/fumanchuband"
   },
   "elder": {
     "officialWebsite": "https://beholdtheelder.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/elder_band"
   },
   "bleedfromwithin": {
     "officialWebsite": "https://bleedfromwithin.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/bleedfromwithin"
   },
   "igorrr": {
     "officialWebsite": "https://igorrr.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/igorrr"
   },
   "hatebreed": {
     "officialWebsite": "https://hatebreed.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/hatebreed"
+  },
+  "rotheads": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "gutalax": {
     "officialWebsite": "https://bandzone.cz/gutalax?at=info",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/GutalaxGore"
   },
   "orbitculture": {
     "officialWebsite": "https://orbitculture.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/orbitculture"
   },
   "nevermore": {
     "officialWebsite": "http://www.nevermore.tv",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/nevermoreband"
   },
   "inflames": {
     "officialWebsite": "https://www.inflames.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/InFlames_SWE"
   },
   "employedtoserve": {
@@ -205,33 +215,33 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
   },
   "tribulation": {
     "officialWebsite": "https://www.tribulation.se/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/TribulationBand"
   },
   "cryptopsy": {
     "officialWebsite": "http://www.myspace.com/cryptopsy",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/Cryptopsy"
   },
   "nonestdeus": {
     "officialWebsite": "https://noisebringer.de/index.php/de/projekte/non-est-deus",
-    "tiktokUrl": "",
-    "xUrl": ""
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "immolation": {
     "officialWebsite": "https://www.everlastingfire.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/immolation"
   },
   "deafheaven": {
     "officialWebsite": "https://deafheaven.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/deafheavenband"
   },
   "grave": {
     "officialWebsite": "https://www.grave.se/",
-    "tiktokUrl": "",
-    "xUrl": ""
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "allt": {
     "officialWebsite": "https://www.alltband.com/",
@@ -240,17 +250,17 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
   },
   "municipalwaste": {
     "officialWebsite": "https://www.municipalwaste.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/municipalwaste"
   },
   "inextremo": {
     "officialWebsite": "https://www.inextremo.de/",
-    "tiktokUrl": "",
-    "xUrl": ""
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "archenemy": {
     "officialWebsite": "https://www.archenemy.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/archenemy"
   },
   "lambofgod": {
@@ -258,73 +268,78 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "tiktokUrl": "https://www.tiktok.com/@lambofgod",
     "xUrl": "https://x.com/lambofgod"
   },
+  "underwaves": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
   "vader": {
     "officialWebsite": "https://vader.pl/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/vaderband"
   },
   "thyartismurder": {
     "officialWebsite": "https://www.thyartismurder.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/thyartismurder"
   },
   "accept": {
     "officialWebsite": "https://www.acceptworldwide.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/accepttheband"
   },
   "slaughtertoprevail": {
     "officialWebsite": "https://slaughtertoprevail.com/",
     "tiktokUrl": "https://www.tiktok.com/@slaughtertoprevail",
-    "xUrl": ""
+    "xUrl": "124"
   },
   "novembersdoom": {
     "officialWebsite": "https://www.novembersdoom.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/novembersdoom"
   },
   "animalsasleaders": {
     "officialWebsite": "https://www.animalsasleaders.org/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/animalsasleaders"
   },
   "theghostinside": {
     "officialWebsite": "https://www.theghostinside.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/theghostinside"
   },
   "perturbator": {
     "officialWebsite": "https://perturbator.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/Perturbator"
   },
   "candlemass": {
     "officialWebsite": "https://www.candlemass.se/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/candlemass"
   },
   "raisedbyowls": {
     "officialWebsite": "https://raisedbyowls.bigcartel.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/raisedbyowls"
   },
   "fitforanautopsy": {
     "officialWebsite": "https://fitforanautopsy.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/fitforanautopsy"
   },
   "trooper": {
     "officialWebsite": "https://trooper.ro/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/Trooper_Salute"
   },
   "satyricon": {
     "officialWebsite": "https://www.satyricon.no/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/Satyricon"
   },
   "cripplingalcoholism": {
-    "officialWebsite": "",
+    "officialWebsite": "124",
     "tiktokUrl": "https://www.tiktok.com/@your.crippling.alcoholism",
     "xUrl": "https://twitter.com/Crippling_Alc"
   },
@@ -335,67 +350,72 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
   },
   "airbourne": {
     "officialWebsite": "https://airbourneairbourne.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/airbourne"
   },
   "amorphis": {
     "officialWebsite": "https://amorphis.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/amorphis"
   },
   "machukha": {
-    "officialWebsite": "",
+    "officialWebsite": "124",
     "tiktokUrl": "https://www.tiktok.com/@machakaunique",
-    "xUrl": ""
+    "xUrl": "124"
   },
   "slowcrush": {
     "officialWebsite": "https://slowcrush.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/slowcrushband"
   },
   "conservativemilitaryimage": {
     "officialWebsite": "https://www.conservativemilitaryimage.com/",
-    "tiktokUrl": "",
-    "xUrl": ""
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "monolord": {
     "officialWebsite": "https://monolord.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/monolordofficial"
   },
   "bucovina": {
     "officialWebsite": "https://bucovina.band/",
-    "tiktokUrl": "",
-    "xUrl": ""
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "malevolence": {
     "officialWebsite": "https://mlvst.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/malevolenceriff"
   },
   "alexandracapitanescu": {
-    "officialWebsite": "",
+    "officialWebsite": "124",
     "tiktokUrl": "https://www.tiktok.com/@alexoi.capi",
-    "xUrl": ""
+    "xUrl": "124"
   },
   "coroner": {
     "officialWebsite": "https://coroner-band.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/coronerband"
   },
   "wolvesinthethroneroom": {
     "officialWebsite": "https://wittr.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://twitter.com/wittrofficial"
+  },
+  "parnaie": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "decapitated": {
     "officialWebsite": "https://www.decapitatedband.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/decapitated"
   },
   "periphery": {
     "officialWebsite": "https://periphery.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/peripheryband"
   },
   "grandson": {
@@ -405,7 +425,7 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
   },
   "theprodigy": {
     "officialWebsite": "https://theprodigy.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/the_prodigy"
   },
   "signsoftheswarm": {
@@ -415,48 +435,323 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
   },
   "carcass": {
     "officialWebsite": "https://www.reekofcarcass.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/CarcassBand"
   },
   "thegathering": {
     "officialWebsite": "https://www.gathering.nl/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/TheGatheringBand"
   },
   "soulfly": {
     "officialWebsite": "https://www.soulfly.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/TheSoulflyTribe"
   },
   "heavyhitter": {
-    "officialWebsite": "",
+    "officialWebsite": "124",
     "tiktokUrl": "https://www.tiktok.com/@heavyhitterfl",
     "xUrl": "https://twitter.com/heavyhitterfl"
   },
   "voivod": {
     "officialWebsite": "https://voivod.com/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/voivoddotnet"
   },
   "evergrey": {
     "officialWebsite": "https://evergrey.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/evergrey"
+  },
+  "lefttodie": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "hvnds": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
   },
   "insomnium": {
     "officialWebsite": "https://insomnium.net/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/insomniumband"
   },
   "sventevith": {
     "officialWebsite": "http://www.cocoon.net/svenvath",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/svenvaeth"
   },
   "dakidarria": {
     "officialWebsite": "https://dakidarria.gal/",
-    "tiktokUrl": "",
+    "tiktokUrl": "124",
     "xUrl": "https://x.com/dakidarria"
+  },
+  "soziedadalkoholika": {
+    "officialWebsite": "https://www.soziedadalkoholika.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/soziedadalk"
+  },
+  "thetoydolls": {
+    "officialWebsite": "https://thetoydolls.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/thetoydolls"
+  },
+  "reincidentes": {
+    "officialWebsite": "https://reincidentes.info/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/reincidentes"
+  },
+  "eukz": {
+    "officialWebsite": "https://eukz.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/eukz_oficial"
+  },
+  "sonsofaguirrescila": {
+    "officialWebsite": "https://sonsofaguirre.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/sonsofaguirre"
+  },
+  "sinkope": {
+    "officialWebsite": "https://sinkope.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/sinkope_oficial"
+  },
+  "parabellum": {
+    "officialWebsite": "https://parabellum.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/parabellum_ofic"
+  },
+  "gritandoensilencio": {
+    "officialWebsite": "https://gritandoensilencio.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/gritando_rock"
+  },
+  "pedra": {
+    "officialWebsite": "http://www.extremoduro.com",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/_extremoduro"
+  },
+  "deafdevils": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "ratzinger": {
+    "officialWebsite": "https://ratzinger.band/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/ratzinger_oficial"
+  },
+  "ktulu": {
+    "officialWebsite": "https://ktulu.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/ktulu_oficial"
+  },
+  "bihotza": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "ebriknight": {
+    "officialWebsite": "https://ebriknight.cat/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/ebriknight"
+  },
+  "trastiendarc": {
+    "officialWebsite": "124",
+    "tiktokUrl": "https://www.tiktok.com/@trastienda.rc.ofi",
+    "xUrl": "https://x.com/TrastiendaRC"
+  },
+  "desastre": {
+    "officialWebsite": "https://desastre.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/desastreoficial"
+  },
+  "lauradsk": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "thebirrasterror": {
+    "officialWebsite": "https://thebirrasterror.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/birrasterror"
+  },
+  "evaristo": {
+    "officialWebsite": "http://www.lapollarecords.net/",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "narco": {
+    "officialWebsite": "https://narco.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/narco_oficial"
+  },
+  "talco": {
+    "officialWebsite": "https://talco.punkchanka.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/talcopunkchanka"
+  },
+  "porretas": {
+    "officialWebsite": "https://porretas.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/porretasoficial"
+  },
+  "josetxupiperrak": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "envidiakotxina": {
+    "officialWebsite": "https://envidiakotxina.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/envidiakotxina"
+  },
+  "kaosetiliko": {
+    "officialWebsite": "https://kaosetiliko.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/kaosetiliko"
+  },
+  "manifa": {
+    "officialWebsite": "https://manifa.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/manifapunk"
+  },
+  "manolokabezabolo": {
+    "officialWebsite": "https://manolokabezabolo.com/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/manolokabezabol"
+  },
+  "arpaviejas": {
+    "officialWebsite": "https://arpaviejas.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/arpaviejas"
+  },
+  "periferia": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "distorsion": {
+    "officialWebsite": "https://distorsion.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/distorsionpunk"
+  },
+  "iratxo": {
+    "officialWebsite": "https://iratxo.es/",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/iratxo_oficial"
+  },
+  "lonchavelasco": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "malosvicios": {
+    "officialWebsite": "https://malosvicios.com",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "malditomatas": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "groggyrude": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "lapegatina": {
+    "officialWebsite": "https://lapegatina.com",
+    "tiktokUrl": "https://www.tiktok.com/@lapegatinaband",
+    "xUrl": "https://x.com/lapegatina"
+  },
+  "dubiozakolektiv": {
+    "officialWebsite": "https://dubioza.org",
+    "tiktokUrl": "https://www.tiktok.com/@dubiozakolektiv",
+    "xUrl": "https://x.com/dubiozakolektiv"
+  },
+  "boikot": {
+    "officialWebsite": "https://boikot.com.es",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/boikotoficial"
+  },
+  "segismundotoxicomano": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "defcondos": {
+    "officialWebsite": "https://defcondos.com",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/def_con_dos"
+  },
+  "losdemarras": {
+    "officialWebsite": "https://losdemarras.es",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/losdemarras"
+  },
+  "markyramonesblitzkrieg": {
+    "officialWebsite": "https://markyramone.com",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/markyramone"
+  },
+  "trashtucada": {
+    "officialWebsite": "https://trashtucada.com",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/trashtucada"
+  },
+  "kamikazes": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "mefritosandthegimmecheetos": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "mamaladilla": {
+    "officialWebsite": "https://mamaladilla.com",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "aguabendita": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "skaparapid": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "crim": {
+    "officialWebsite": "https://crim.cat",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/crimpunk"
+  },
+  "kantepinreliko": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "https://x.com/Kante_Pinrelico"
+  },
+  "sinpropina": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "avancarga": {
+    "officialWebsite": "124",
+    "tiktokUrl": "124",
+    "xUrl": "124"
+  },
+  "4dziki": {
+    "officialWebsite": "https://4dziki.pl",
+    "tiktokUrl": "124",
+    "xUrl": "124"
   }
 };
 
