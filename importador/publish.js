@@ -109,8 +109,9 @@ async function validateGitStatus() {
   // 3. Remote Origin URL check
   const remote = await runGitCommand(['remote', 'get-url', 'origin']);
   const expectedRemote = 'https://github.com/joseafd/agendafest.git';
+  const expectedActionsRemote = 'https://github.com/joseafd/agendafest';
   const expectedSshRemote = 'git@github.com:joseafd/agendafest.git';
-  if (remote !== expectedRemote && remote !== expectedSshRemote) {
+  if (remote !== expectedRemote && remote !== expectedActionsRemote && remote !== expectedSshRemote) {
     throw new Error(`Remoto no canónico: "${remote}". Debe ser ${expectedRemote}`);
   }
 
