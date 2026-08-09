@@ -26,102 +26,57 @@ export const UpcomingFestivalsSection: React.FC<UpcomingFestivalsSectionProps> =
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
   }, []);
 
-  // Filter active or future editions and sort chronologically ascending
-  const upcomingEditions = useMemo(() => {
-    return editions
-      .filter(ed => ed.config.endDate >= todayStr)
-      .sort((a, b) => a.config.startDate.localeCompare(b.config.startDate));
-  }, [editions, todayStr]);
+  const upcomingEditions = useMemo(() => editions
+    .filter((edition) => edition.config.endDate >= todayStr)
+    .sort((a, b) => a.config.startDate.localeCompare(b.config.startDate)), [editions, todayStr]);
 
-  // Show up to 2 on the home page
-  const displayedUpcoming = upcomingEditions.slice(0, 2);
+  const [nextEdition, ...rest] = upcomingEditions;
+  const displayedRest = rest.slice(0, 2);
+  const title = language === 'es' ? 'Tu próxima cita' : language === 'en' ? 'Your next festival' : 'Votre prochain festival';
 
   return (
-    <section
-      id="upcoming-festivals-section"
-      style={{
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '12px',
-        marginBottom: '32px',
-        animation: 'fadeIn 0.4s ease-out 0.4s both',
-      }}
-    >
-      {/* Title block */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h3
-          style={{
-            fontSize: '1.25rem',
-            fontWeight: '900',
-            color: '#ffffff',
-            margin: 0,
-            textTransform: 'uppercase',
-            letterSpacing: '0.5px',
-          }}
-        >
-          {t(language, 'upcomingFestivals')}
-        </h3>
-
-        {/* Ver todos button (shown only when there are more upcoming editions than visible cards) */}
+    <section id="upcoming-festivals-section" className="af-upcoming-section">
+      <div className="af-section-heading">
+        <div>
+          <span className="af-kicker">{language === 'es' ? 'DESCUBRIR' : language === 'en' ? 'DISCOVER' : 'DÉCOUVRIR'}</span>
+          <h1>{title}</h1>
+        </div>
         {upcomingEditions.length > 2 && (
-          <button
-            onClick={onShowAll}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'var(--accent-red)',
-              fontSize: '0.8rem',
-              fontWeight: '700',
-              cursor: 'pointer',
-              padding: '4px 8px',
-            }}
-            className="btn-interactive"
-          >
-            {t(language, 'verTodos')}
-          </button>
+          <button className="af-text-button" onClick={onShowAll}>{t(language, 'verTodos')}</button>
         )}
       </div>
 
-      {upcomingEditions.length === 0 ? (
-        /* Empty State */
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '24px 16px',
-            background: 'rgba(255, 255, 255, 0.01)',
-            border: '1px dashed var(--border-color)',
-            borderRadius: '16px',
-            textAlign: 'center',
-          }}
-        >
-          <span style={{ fontSize: '0.84rem', color: 'var(--text-muted)' }}>
-            {t(language, 'noUpcomingFestivals')}
-          </span>
-        </div>
+      {!nextEdition ? (
+        <div className="af-empty-state">{t(language, 'noUpcomingFestivals')}</div>
       ) : (
-        /* Grid Display (up to 2 cards) */
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-            gap: '12px',
-            width: '100%',
-          }}
-        >
-          {displayedUpcoming.map(ed => (
-            <FestivalCard
-              key={ed.config.edicionId}
-              edition={ed}
-              language={language}
-              onClick={() => onSelectEdition(ed.config.edicionId)}
-              isFollowed={followedEditions.includes(ed.config.edicionId)}
-              onToggleFollow={() => onToggleFollow(ed.config.edicionId)}
-            />
-          ))}
-        </div>
+        <>
+          <FestivalCard
+            edition={nextEdition}
+            language={language}
+            onClick={() => onSelectEdition(nextEdition.config.edicionId)}
+            isFollowed={followedEditions.includes(nextEdition.config.edicionId)}
+            onToggleFollow={() => onToggleFollow(nextEdition.config.edicionId)}
+            variant="featured"
+          />
+
+          {displayedRest.length > 0 && (
+            <div className="af-upcoming-more">
+              <h2>{t(language, 'upcomingFestivals')}</h2>
+              <div className="af-festival-grid">
+                {displayedRest.map((edition) => (
+                  <FestivalCard
+                    key={edition.config.edicionId}
+                    edition={edition}
+                    language={language}
+                    onClick={() => onSelectEdition(edition.config.edicionId)}
+                    isFollowed={followedEditions.includes(edition.config.edicionId)}
+                    onToggleFollow={() => onToggleFollow(edition.config.edicionId)}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       )}
     </section>
   );

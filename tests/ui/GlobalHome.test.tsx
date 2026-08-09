@@ -58,4 +58,27 @@ describe('Próximos festivales', () => {
     expect(within(dialog).getByText('Festival próximo B')).toBeTruthy();
     expect(within(dialog).queryByText('Festival finalizado')).toBeNull();
   });
+
+  it('presenta como próxima cita el festival vigente o futuro más cercano', () => {
+    const festivalEditions = [
+      makeEdition('festival-finalizado-2026', 'Festival finalizado', '2026-07-01', '2026-07-03'),
+      makeEdition('festival-proximo-b-2026', 'Festival próximo B', '2026-09-10', '2026-09-11'),
+      makeEdition('festival-proximo-a-2026', 'Festival próximo A', '2026-08-10', '2026-08-11'),
+    ];
+
+    render(
+      <GlobalHome
+        editions={festivalEditions}
+        onSelectEdition={vi.fn()}
+        language="es"
+        onChangeLanguage={vi.fn()}
+      />,
+    );
+
+    const upcomingSection = document.getElementById('upcoming-festivals-section');
+    expect(upcomingSection).not.toBeNull();
+    expect(screen.getByRole('heading', { name: 'Tu próxima cita' })).toBeTruthy();
+    expect(within(upcomingSection!).getByRole('button', { name: /^Festival próximo A\./ })).toBeTruthy();
+    expect(within(upcomingSection!).queryByRole('button', { name: /^Festival finalizado\./ })).toBeNull();
+  });
 });

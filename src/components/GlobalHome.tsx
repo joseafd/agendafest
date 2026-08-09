@@ -177,22 +177,8 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
   const hasSearchQuery = searchQuery.trim() !== '';
 
   return (
-    <div
-      style={{
-        width: '100vw',
-        height: '100vh',
-        background: 'var(--bg-primary)',
-        overflowY: 'auto',
-        padding: '24px 16px',
-        paddingTop: 'calc(24px + var(--safe-top))',
-        paddingBottom: 'calc(40px + var(--safe-bottom))',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-      className="animate-fade-in"
-    >
-      <div className="responsive-content" style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div className="af-home-page animate-fade-in">
+      <div className="responsive-content af-home-content">
         {/* 1. Cabecera principal */}
         <HomeHeader
           language={language}
@@ -259,13 +245,12 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
         ) : (
           /* Standard Global PWA blocks in order */
           <>
-            {/* 3. Mis festivales */}
-            <MyFestivalsSection
+            {/* 3. Próxima cita y festivales futuros */}
+            <UpcomingFestivalsSection
               editions={editions}
               language={language}
               onSelectEdition={onSelectEdition}
-              onScrollToUpcoming={() => handleScrollToSection('upcoming-festivals-section')}
-              onShowAll={() => setActiveSelectorModal('myFestivals')}
+              onShowAll={() => setActiveSelectorModal('upcoming')}
               followedEditions={followedEditions}
               onToggleFollow={handleToggleFollow}
             />
@@ -280,12 +265,13 @@ export const GlobalHome: React.FC<GlobalHomeProps> = ({
               />
             )}
 
-            {/* 5. Próximos festivales */}
-            <UpcomingFestivalsSection
+            {/* 5. Mis festivales */}
+            <MyFestivalsSection
               editions={editions}
               language={language}
               onSelectEdition={onSelectEdition}
-              onShowAll={() => setActiveSelectorModal('upcoming')}
+              onScrollToUpcoming={() => handleScrollToSection('upcoming-festivals-section')}
+              onShowAll={() => setActiveSelectorModal('myFestivals')}
               followedEditions={followedEditions}
               onToggleFollow={handleToggleFollow}
             />
