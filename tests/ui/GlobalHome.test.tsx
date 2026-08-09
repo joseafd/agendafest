@@ -78,7 +78,33 @@ describe('Próximos festivales', () => {
     const upcomingSection = document.getElementById('upcoming-festivals-section');
     expect(upcomingSection).not.toBeNull();
     expect(screen.getByRole('heading', { name: 'Tu próxima cita' })).toBeTruthy();
+    expect(within(upcomingSection!).getAllByText(/tu próxima cita/i)).toHaveLength(1);
     expect(within(upcomingSection!).getByRole('button', { name: /^Festival próximo A\./ })).toBeTruthy();
     expect(within(upcomingSection!).queryByRole('button', { name: /^Festival finalizado\./ })).toBeNull();
+  });
+
+  it('oculta Ver todos en Mis festivales cuando solo hay festivales finalizados guardados', () => {
+    const festivalEditions = [
+      makeEdition('festival-finalizado-a-2026', 'Festival finalizado A', '2026-07-01', '2026-07-03'),
+      makeEdition('festival-finalizado-b-2026', 'Festival finalizado B', '2026-07-05', '2026-07-07'),
+      makeEdition('festival-finalizado-c-2026', 'Festival finalizado C', '2026-07-10', '2026-07-12'),
+    ];
+    window.localStorage.setItem(
+      'af_followed_editions',
+      JSON.stringify(festivalEditions.map((edition) => edition.config.edicionId)),
+    );
+
+    render(
+      <GlobalHome
+        editions={festivalEditions}
+        onSelectEdition={vi.fn()}
+        language="es"
+        onChangeLanguage={vi.fn()}
+      />,
+    );
+
+    const myFestivalsSection = document.getElementById('my-festivals-section');
+    expect(myFestivalsSection).not.toBeNull();
+    expect(within(myFestivalsSection!).queryByRole('button', { name: 'Ver todos' })).toBeNull();
   });
 });

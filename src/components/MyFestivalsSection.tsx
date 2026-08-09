@@ -79,8 +79,8 @@ export const MyFestivalsSection: React.FC<MyFestivalsSectionProps> = ({
           {t(language, 'myFestivals')}
         </h3>
 
-        {/* Ver todos button (shown if total followed/favorited editions of all time > 2) */}
-        {allMyEditions.length > 2 && (
+        {/* Ver todos only belongs here when there are more active/future festivals to show. */}
+        {myActiveOrFutureEditions.length > 2 && (
           <button
             onClick={onShowAll}
             style={{

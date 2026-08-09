@@ -57,10 +57,16 @@ export const FestivalCard: React.FC<FestivalCardProps> = ({
       <button className="af-festival-card-main" onClick={onClick} aria-label={`${config.visibleName}. ${formatDatesByLang(language, config.startDate, config.endDate)}`}>
         <img className="af-festival-card-poster" src={`./images/${config.cartel}?v=3`} alt="" />
         <span className="af-festival-card-scrim" />
-        <span className={`af-status-chip af-status-chip--${status.tone}`}>{status.label}</span>
+        {variant !== 'featured' && (
+          <span className={`af-status-chip af-status-chip--${status.tone}`}>{status.label}</span>
+        )}
 
         <span className="af-festival-card-content">
-          {variant === 'featured' && <span className="af-kicker">TU PRÓXIMA CITA</span>}
+          {variant === 'featured' && (
+            <span className={`af-status-chip af-status-chip--featured af-status-chip--${status.tone}`}>
+              {status.label}
+            </span>
+          )}
           <strong>{config.visibleName}</strong>
           <span className="af-festival-card-meta">
             <span><Calendar size={14} />{formatDatesByLang(language, config.startDate, config.endDate)}</span>
