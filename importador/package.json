@@ -14,6 +14,9 @@
     "test:publish": "node tests/publish.test.js",
     "test:remediation": "node tests/remediation.test.js"
   },
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "cheerio": "^1.2.0",
     "cookie-parser": "^1.4.7",

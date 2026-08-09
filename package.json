@@ -1,5 +1,5 @@
 {
-  "name": "resurrection-fest-2026",
+  "name": "agendafest",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,11 +11,17 @@
     "test": "npm run test:pwa && npm run test:architecture && npm run test:ui",
     "test:architecture": "node --test tests/storage-boundary.test.mjs",
     "test:bundle": "node --test tests/bundle.test.mjs",
+    "test:importador": "npm --prefix importador test",
     "test:pwa": "node --test tests/pwa.test.mjs",
     "test:ui": "vitest run",
+    "audit:prod": "npm audit --omit=dev --audit-level=high && npm --prefix importador audit --omit=dev --audit-level=high",
+    "verify": "npm test && npm run test:importador && npm run build && npm run test:bundle",
     "preview": "vite preview",
     "sync-excel": "node sync_excel.cjs",
     "import-ui": "node importador/server.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   },
   "dependencies": {
     "@capacitor/core": "^8.4.2",

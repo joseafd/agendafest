@@ -29,3 +29,7 @@ importador/backups/
 importador/temp/
 importador/logs/
 
+# Local recovery artifacts
+AgendaFest OLD.xlsx
+AgendaFest.*_failed.xlsx
+AgendaFest_*_backup.zip

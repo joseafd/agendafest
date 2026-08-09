@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -15,15 +19,28 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Install and Build 🔧
+      - name: Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            importador/package-lock.json
+
+      - name: Install dependencies
         run: |
           npm ci
-          npm test
-          npm run build
-          npm run test:bundle
+          npm --prefix importador ci
+
+      - name: Audit production dependencies
+        run: npm run audit:prod
+
+      - name: Verify application
+        run: npm run verify
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # The output folder of Vite build
-          branch: gh-pages # The branch the action should deploy to
+          folder: dist
+          branch: gh-pages
