@@ -16,7 +16,8 @@ const {
   parseGitStatus,
   isAuthorizedPublicationFile,
   buildImportPublicationFiles,
-  selectImportPublicationFiles
+  selectImportPublicationFiles,
+  buildGitHubActionsRequest
 } = require('../publish');
 const { unlinkWithRetry } = require('../excel');
 
@@ -133,6 +134,16 @@ async function runRemediationTests() {
       ], expected),
       ['AgendaFest.xlsx', 'Recursos/logofestival2027.webp']
     );
+  });
+
+  await runTestAsync('El monitor consulta Actions sin credenciales para el repositorio público', async () => {
+    const publicRequest = buildGitHubActionsRequest('abc123', null);
+    assert.strictEqual(publicRequest.hostname, 'api.github.com');
+    assert.ok(publicRequest.path.includes('head_sha=abc123'));
+    assert.strictEqual(Object.hasOwn(publicRequest.headers, 'Authorization'), false);
+
+    const authenticatedRequest = buildGitHubActionsRequest('abc123', ' token-prueba ');
+    assert.strictEqual(authenticatedRequest.headers.Authorization, 'Bearer token-prueba');
   });
 
   // Authenticate once to obtain sessionCookie for all endpoint tests

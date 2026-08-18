@@ -222,27 +222,38 @@ async function runGitDeploy(importId, branch, files) {
 
 /**
  * Polls the GitHub Actions API to track the workflow execution of a specific commit SHA.
- * Falls back to mock timer if GITHUB_TOKEN is not configured.
+ * Public repositories can be queried without a token. Tests keep an isolated mock.
  * @param {string} sha Commit SHA.
  * @param {string} token GitHub personal access token.
  * @returns {Promise<{conclusion: string, status: string}>}
  */
+function buildGitHubActionsRequest(sha, token) {
+  const headers = {
+    'User-Agent': 'AgendaFest-Publish-Monitor/1.0.0',
+    'Accept': 'application/vnd.github.v3+json'
+  };
+  const normalizedToken = String(token || '').trim();
+  if (normalizedToken) headers.Authorization = `Bearer ${normalizedToken}`;
+  return {
+    hostname: 'api.github.com',
+    path: `/repos/joseafd/agendafest/actions/runs?head_sha=${encodeURIComponent(sha)}`,
+    method: 'GET',
+    headers
+  };
+}
+
 function pollGitHubAction(sha, token) {
   return new Promise((resolve) => {
-    if (!token) {
-      if (process.env.NODE_ENV === 'test') {
-        // Mock mode: simulate Action compilation for 10 seconds
-        console.log(`[GitHub Actions MOCK] Simulando ejecución de Action para SHA ${sha.substring(0, 7)}...`);
-        setTimeout(() => {
-          resolve({ conclusion: 'success', status: 'completed' });
-        }, 10000);
-        return;
-      } else {
-        return resolve({ conclusion: 'failure', status: 'completed' });
-      }
+    if (!token && process.env.NODE_ENV === 'test') {
+      // Mock mode: simulate Action compilation for 10 seconds
+      console.log(`[GitHub Actions MOCK] Simulando ejecución de Action para SHA ${sha.substring(0, 7)}...`);
+      setTimeout(() => {
+        resolve({ conclusion: 'success', status: 'completed' });
+      }, 10000);
+      return;
     }
 
-    const pollInterval = 5000;
+    const pollInterval = token ? 5000 : 15000;
     const start = Date.now();
 
     const check = () => {
@@ -251,16 +262,7 @@ function pollGitHubAction(sha, token) {
         return resolve({ conclusion: 'timeout', status: 'completed' });
       }
 
-      const options = {
-        hostname: 'api.github.com',
-        path: `/repos/joseafd/agendafest/actions/runs?head_sha=${sha}`,
-        method: 'GET',
-        headers: {
-          'User-Agent': 'AgendaFest-Publish-Monitor/1.0.0',
-          'Authorization': `Bearer ${token}`,
-          'Accept': 'application/vnd.github.v3+json'
-        }
-      };
+      const options = buildGitHubActionsRequest(sha, token);
 
       const req = https.get(options, (res) => {
         let data = '';
@@ -470,6 +472,7 @@ module.exports = {
   isAuthorizedPublicationFile,
   buildImportPublicationFiles,
   selectImportPublicationFiles,
+  buildGitHubActionsRequest,
   parseGitStatus,
   validateGitStatus,
   runLocalBuild,
