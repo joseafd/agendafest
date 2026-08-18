@@ -28,6 +28,11 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "tiktokUrl": "",
     "xUrl": "https://x.com/metundmiezen"
   },
+  "gaerea": {
+    "officialWebsite": "https://www.gaerea.com/",
+    "tiktokUrl": "https://www.tiktok.com/@gaereaofficial",
+    "xUrl": "https://twitter.com/gaerea_official"
+  },
   "hamlet": {
     "officialWebsite": "http://www.hamlet1.com/",
     "tiktokUrl": "",
@@ -752,6 +757,56 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "officialWebsite": "https://4dziki.pl",
     "tiktokUrl": "124",
     "xUrl": "124"
+  },
+  "airos": {
+    "officialWebsite": "https://www.aerosmith.com/",
+    "tiktokUrl": "https://www.tiktok.com/@aerosmith",
+    "xUrl": "https://x.com/Aerosmith"
+  },
+  "siddharta": {
+    "officialWebsite": "",
+    "tiktokUrl": "https://www.tiktok.com/@siddhartha_oficial",
+    "xUrl": "https://x.com/iamsiddhartha"
+  },
+  "eivor": {
+    "officialWebsite": "https://www.eivor.com",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/eivormusic"
+  },
+  "allformetal": {
+    "officialWebsite": "https://www.allformetal.com/",
+    "tiktokUrl": "https://www.tiktok.com/@_allformetal_",
+    "xUrl": ""
+  },
+  "destruction": {
+    "officialWebsite": "https://www.destruction.de/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/destruction"
+  },
+  "lordi": {
+    "officialWebsite": "https://lordi.fi",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/lordiofficial"
+  },
+  "calvalouise": {
+    "officialWebsite": "https://www.musicglue.com/calvalouise/",
+    "tiktokUrl": "",
+    "xUrl": "https://twitter.com/calvalouise"
+  },
+  "primalfear": {
+    "officialWebsite": "http://www.primalfear.de/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/Matsinner1"
+  },
+  "avantasia": {
+    "officialWebsite": "https://avantasia.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/_avantasia"
+  },
+  "soen": {
+    "officialWebsite": "http://soenmusic.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/soenmusic"
   }
 };
 
