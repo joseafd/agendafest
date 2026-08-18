@@ -411,6 +411,7 @@ app.post('/api/import/init', requireAuth, (req, res) => {
     logs: [`[${new Date().toISOString()}] Transacción de importación iniciada para URL: ${url}`],
     resourceUploads: [],
     result: null,
+    publicationFiles: [],
     error: null
   };
 
@@ -584,7 +585,7 @@ app.get('/api/import/status/:id', requireAuth, (req, res) => {
   if (!transaction) {
     return res.status(404).json({ error: 'Transacción no encontrada.' });
   }
-  const { resourceUploads, ...publicTransaction } = transaction;
+  const { resourceUploads, publicationFiles: _publicationFiles, ...publicTransaction } = transaction;
   res.json({ ...publicTransaction, resources: resourceUploads.map(publicResource) });
 });
 
@@ -645,6 +646,7 @@ app.post('/api/import/save', requireAuth, async (req, res) => {
     // Save resources and Excel as one recoverable operation. If Excel fails,
     // every created/replaced resource is rolled back.
     let resourceCommit = null;
+    const publicationFiles = publish.buildImportPublicationFiles(transaction.resourceUploads);
     try {
       resourceCommit = commitTemporaryResources(transaction.resourceUploads, transaction.result.edition);
       await saveImportToExcel(transaction.result, 'joseafd', importId);
@@ -655,6 +657,7 @@ app.post('/api/import/save', requireAuth, async (req, res) => {
     }
 
     transaction.state = 'REVISADA';
+    transaction.publicationFiles = publicationFiles;
     transaction.resourceUploads = [];
     transaction.logs.push(`[${new Date().toISOString()}] Transacción finalizada y guardada con éxito en AgendaFest.xlsx.`);
     res.json({ success: true, state: 'REVISADA' });
@@ -675,12 +678,20 @@ app.post('/api/publish/plan', requireAuth, async (req, res) => {
   const { importId } = req.body;
   try {
     const gitState = await publish.validateGitStatus();
-    if (!gitState.changedFiles || gitState.changedFiles.length === 0) {
-      throw new Error('No hay cambios pendientes para publicar.');
+    const transaction = importId ? activeImports[importId] : null;
+    if (importId && !transaction) {
+      throw new Error('La importación asociada al plan no existe o ha caducado.');
     }
+    if (transaction && transaction.state !== 'REVISADA') {
+      throw new Error('La importación debe estar confirmada antes de generar el plan.');
+    }
+    const expectedFiles = transaction
+      ? transaction.publicationFiles
+      : [...publish.FIXED_PUBLICATION_FILES];
+    const scopedFiles = publish.selectImportPublicationFiles(gitState.changedFiles, expectedFiles);
 
     const projectRoot = path.join(__dirname, '..');
-    const planFiles = gitState.changedFiles.map((name) => {
+    const planFiles = scopedFiles.map((name) => {
       const filePath = path.resolve(projectRoot, name);
       if (!filePath.startsWith(path.resolve(projectRoot) + path.sep)) {
         throw new Error(`Ruta de publicación no válida: "${name}"`);

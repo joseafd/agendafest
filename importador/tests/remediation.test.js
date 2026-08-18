@@ -10,7 +10,14 @@ process.env.AI_PROVIDER = 'mock';
 process.env.PUBLISH_ENABLED = 'false'; // Keep disabled as required by safety rules
 
 const { server, getPairingCode, normalizeAndValidateImport } = require('../server');
-const { validateGitStatus, pollGitHubAction, parseGitStatus, isAuthorizedPublicationFile } = require('../publish');
+const {
+  validateGitStatus,
+  pollGitHubAction,
+  parseGitStatus,
+  isAuthorizedPublicationFile,
+  buildImportPublicationFiles,
+  selectImportPublicationFiles
+} = require('../publish');
 const { unlinkWithRetry } = require('../excel');
 
 function makeRequest(options, postData = null) {
@@ -92,6 +99,40 @@ async function runRemediationTests() {
     assert.strictEqual(isAuthorizedPublicationFile('dist/assets/index.js'), false);
     assert.strictEqual(isAuthorizedPublicationFile('public/images/../sw.js'), false);
     assert.strictEqual(isAuthorizedPublicationFile('Recursos/script.js'), false);
+  });
+
+  await runTestAsync('El alcance conserva solo los recursos adjuntados en la importación actual', async () => {
+    const expected = buildImportPublicationFiles([
+      { type: 'cartel', plannedName: 'cartelfestival2027.jpg' },
+      { type: 'horario', plannedName: 'horariosfestival2027-01.png' }
+    ]);
+    assert.ok(expected.includes('AgendaFest.xlsx'));
+    assert.ok(expected.includes('Recursos/cartelfestival2027.jpg'));
+    assert.ok(expected.includes('public/images/cartelfestival2027.jpg'));
+    assert.ok(expected.includes('Recursos/horariosfestival2027-01.png'));
+    assert.strictEqual(expected.includes('public/images/horariosfestival2027-01.png'), false);
+    assert.strictEqual(expected.includes('Recursos/cartel-otra-edicion.jpg'), false);
+  });
+
+  await runTestAsync('El plan rechaza cualquier recurso ajeno aunque esté en una carpeta autorizada', async () => {
+    const expected = buildImportPublicationFiles([
+      { type: 'logo', plannedName: 'logofestival2027.webp' }
+    ]);
+    assert.throws(
+      () => selectImportPublicationFiles([
+        'AgendaFest.xlsx',
+        'Recursos/logofestival2027.webp',
+        'Recursos/cartelwacken2026.jpg'
+      ], expected),
+      /no pertenecen a esta importación.*cartelwacken2026\.jpg/
+    );
+    assert.deepStrictEqual(
+      selectImportPublicationFiles([
+        'AgendaFest.xlsx',
+        'Recursos/logofestival2027.webp'
+      ], expected),
+      ['AgendaFest.xlsx', 'Recursos/logofestival2027.webp']
+    );
   });
 
   // Authenticate once to obtain sessionCookie for all endpoint tests

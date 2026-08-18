@@ -31,9 +31,49 @@ const FIXED_PUBLICATION_FILES = new Set([
 ]);
 const PUBLICATION_IMAGE_PATTERN = /^(?:public\/images|Recursos)\/[^/]+\.(?:png|jpe?g|webp|gif|svg)$/i;
 
+function normalizePublicationFile(file) {
+  return String(file || '').replace(/\\/g, '/');
+}
+
 function isAuthorizedPublicationFile(file) {
-  const normalized = String(file || '').replace(/\\/g, '/');
+  const normalized = normalizePublicationFile(file);
   return FIXED_PUBLICATION_FILES.has(normalized) || PUBLICATION_IMAGE_PATTERN.test(normalized);
+}
+
+function buildImportPublicationFiles(resources = []) {
+  const files = new Set(FIXED_PUBLICATION_FILES);
+  for (const resource of resources) {
+    const rawName = String(resource?.plannedName || '');
+    const plannedName = path.basename(rawName);
+    if (!plannedName || plannedName !== rawName) {
+      throw new Error('El recurso confirmado no tiene un nombre de publicación válido.');
+    }
+    const resourceFile = `Recursos/${plannedName}`;
+    if (!isAuthorizedPublicationFile(resourceFile)) {
+      throw new Error(`Recurso no autorizado para publicación: "${resourceFile}"`);
+    }
+    files.add(resourceFile);
+    if (['cartel', 'logo', 'mapa'].includes(resource.type)) {
+      files.add(`public/images/${plannedName}`);
+    }
+  }
+  return [...files];
+}
+
+function selectImportPublicationFiles(changedFiles, expectedFiles) {
+  const changed = [...new Set((changedFiles || []).map(normalizePublicationFile))];
+  const expected = new Set((expectedFiles || []).map(normalizePublicationFile));
+  const unexpected = changed.filter(file => !expected.has(file));
+  if (unexpected.length > 0) {
+    throw new Error(
+      `Hay cambios que no pertenecen a esta importación: ${unexpected.map(file => `"${file}"`).join(', ')}. ` +
+      'Retíralos o guárdalos antes de generar el plan.'
+    );
+  }
+  if (changed.length === 0) {
+    throw new Error('No hay cambios pendientes para publicar.');
+  }
+  return changed;
 }
 
 function parseGitStatus(status) {
@@ -426,7 +466,10 @@ async function runV3Validation(baseUrl, edicionId) {
 }
 
 module.exports = {
+  FIXED_PUBLICATION_FILES,
   isAuthorizedPublicationFile,
+  buildImportPublicationFiles,
+  selectImportPublicationFiles,
   parseGitStatus,
   validateGitStatus,
   runLocalBuild,
