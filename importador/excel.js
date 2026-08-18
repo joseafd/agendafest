@@ -290,17 +290,18 @@ async function saveImportToExcel(approvedData, user, importId) {
     }
 
     // 1. Ensure new columns exist
-    // Edición: URL Oficial
+    // Edición: source URL and managed resource references
     const edRow1 = edicionSheet.getRow(1);
     let edHeaders = edRow1.values;
     let edIdIdx = edHeaders.indexOf('Edicion ID');
     let startDateIdx = edHeaders.indexOf('Fecha inicio');
-    let urlOficialIdx = edHeaders.indexOf('URL Oficial');
-    if (urlOficialIdx === -1) {
-      urlOficialIdx = edHeaders.length;
-      edRow1.getCell(urlOficialIdx).value = 'URL Oficial';
-      edRow1.commit();
+    for (const columnName of ['URL Oficial', 'Logo', 'Cartel', 'Mapa', 'Horarios']) {
+      if (edHeaders.indexOf(columnName) === -1) {
+        edRow1.getCell(edHeaders.length).value = columnName;
+        edHeaders = edRow1.values;
+      }
     }
+    edRow1.commit();
 
     // Artistas new columns: Nombre normalizado, Spotify Artist ID, MusicBrainz ID, Wikidata ID, Web Oficial Artista, TikTok, X URL, Imagen Aprobada
     const artRow1 = artistasSheet.getRow(1);
@@ -379,7 +380,11 @@ async function saveImportToExcel(approvedData, user, importId) {
         'Inicio cuenta atrás': startSerial,
         'Hora inicio parrilla': 14 / 24,
         'Hora fin parrilla': 4 / 24,
-        'URL Oficial': edition.url
+        'URL Oficial': edition.url,
+        'Logo': edition.logo || '',
+        'Cartel': edition.cartel || '',
+        'Mapa': edition.mapa || '',
+        'Horarios': Array.isArray(edition.horarios) ? edition.horarios.join(' | ') : (edition.horarios || '')
       };
       for (const [header, value] of Object.entries(editionValues)) {
         const column = freshEdHeaders.indexOf(header);
@@ -388,6 +393,16 @@ async function saveImportToExcel(approvedData, user, importId) {
       editionRow.commit();
     } else {
       if (edition.url) writeCellSafely(editionRow.getCell(freshEdHeaders.indexOf('URL Oficial')), edition.url);
+      const resourceValues = {
+        'Logo': edition.logo,
+        'Cartel': edition.cartel,
+        'Mapa': edition.mapa,
+        'Horarios': Array.isArray(edition.horarios) ? edition.horarios.join(' | ') : edition.horarios
+      };
+      for (const [header, value] of Object.entries(resourceValues)) {
+        const column = freshEdHeaders.indexOf(header);
+        if (column > 0 && value) writeCellSafely(editionRow.getCell(column), value);
+      }
     }
 
     if (!Number.isFinite(startDateSerial)) {

@@ -111,6 +111,64 @@ async function logout() {
 let activeImportId = null;
 let statusPollInterval = null;
 
+function selectedResourceFiles() {
+  const single = (id, type) => {
+    const file = document.getElementById(id)?.files?.[0];
+    return file ? [{ type, file }] : [];
+  };
+  const schedules = [...(document.getElementById('resourceHorarios')?.files || [])]
+    .map(file => ({ type: 'horario', file }));
+  return [
+    ...single('resourceCartel', 'cartel'),
+    ...single('resourceLogo', 'logo'),
+    ...single('resourceMapa', 'mapa'),
+    ...schedules
+  ];
+}
+
+function validateSelectedResources(resources) {
+  const allowed = new Set(['image/jpeg', 'image/png', 'image/webp']);
+  if (resources.filter(resource => resource.type === 'horario').length > 6) {
+    throw new Error('Solo se permiten 6 imágenes de horarios.');
+  }
+  let scheduleBytes = 0;
+  for (const { type, file } of resources) {
+    if (!allowed.has(file.type)) throw new Error(`${file.name}: formato no permitido.`);
+    if (!file.size) throw new Error(`${file.name}: el archivo está vacío.`);
+    if (file.size > 8 * 1024 * 1024) throw new Error(`${file.name}: supera el máximo de 8 MB.`);
+    if (type === 'horario') scheduleBytes += file.size;
+  }
+  if (scheduleBytes > 12 * 1024 * 1024) throw new Error('Los horarios superan el máximo conjunto de 12 MB.');
+}
+
+async function uploadSelectedResources(importId, resources, logsDiv) {
+  validateSelectedResources(resources);
+  for (const { type, file } of resources) {
+    logsDiv.textContent += `Adjuntando ${type}: ${file.name}…\n`;
+    const response = await fetch(`/api/import/resources?importId=${encodeURIComponent(importId)}&type=${encodeURIComponent(type)}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': file.type,
+        'X-File-Name': encodeURIComponent(file.name)
+      },
+      body: file
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || `No se pudo adjuntar ${file.name}.`);
+  }
+}
+
+async function cancelActiveImportQuietly() {
+  if (!activeImportId) return;
+  try {
+    await fetch('/api/import/cancel', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ importId: activeImportId })
+    });
+  } catch {}
+}
+
 function renderCompletionStatus(missingFields, completeLabel) {
   if (missingFields.length === 0) {
     return `<span class="completion-status completion-status--complete">${escapeHtml(completeLabel)}</span>`;
@@ -136,6 +194,7 @@ function renderMetadataSources(item, hasSocial) {
 
 async function startImport() {
   const url = document.getElementById('importUrl').value;
+  const selectedResources = selectedResourceFiles();
   const progressDiv = document.getElementById('importProgress');
   const logsDiv = document.getElementById('importLogs');
   const stateSpan = document.getElementById('importState');
@@ -162,9 +221,13 @@ async function startImport() {
     }
 
     activeImportId = initData.importId;
-    logsDiv.textContent += `ID Transacción: ${activeImportId}\nEnviando cola de extracción...\n`;
+    logsDiv.textContent += `ID Transacción: ${activeImportId}\n`;
 
-    // 2. Process
+    // 2. Upload resources while the transaction is still temporary.
+    await uploadSelectedResources(activeImportId, selectedResources, logsDiv);
+    logsDiv.textContent += `Recursos validados: ${selectedResources.length}. Enviando cola de extracción...\n`;
+
+    // 3. Process
     const processRes = await fetch('/api/import/process', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -180,13 +243,15 @@ async function startImport() {
 
     stateSpan.textContent = 'EXTRAYENDO';
 
-    // 3. Poll status
+    // 4. Poll status
     if (statusPollInterval) clearInterval(statusPollInterval);
     statusPollInterval = setInterval(pollImportStatus, 1000);
 
   } catch (err) {
     logsDiv.textContent += `Error de comunicación: ${err.message}\n`;
     stateSpan.textContent = 'FALLIDA';
+    await cancelActiveImportQuietly();
+    activeImportId = null;
   }
 }
 
@@ -209,7 +274,7 @@ async function pollImportStatus() {
 
     if (data.state === 'PENDIENTE_REVISION') {
       clearInterval(statusPollInterval);
-      renderReviewTable(data.result);
+      renderReviewTable(data.result, data.resources || []);
       reviewDiv.style.display = 'block';
     } else if (data.state === 'FALLIDA') {
       clearInterval(statusPollInterval);
@@ -220,10 +285,11 @@ async function pollImportStatus() {
   }
 }
 
-function renderReviewTable(result) {
+function renderReviewTable(result, resources = []) {
   const tbody = document.getElementById('lineupTableBody');
   const approveButton = document.getElementById('btnApproveImport');
   const editionSummary = document.getElementById('editionSummary');
+  const resourceSummary = document.getElementById('resourceSummary');
   tbody.innerHTML = '';
   approveButton.disabled = true;
 
@@ -232,6 +298,14 @@ function renderReviewTable(result) {
     editionSummary.textContent = `${edition.name} · ${edition.startDate} → ${edition.endDate} · ${edition.location || ''} · ID: ${edition.id || ''}`;
   } else {
     editionSummary.textContent = 'Faltan los datos obligatorios de la edición.';
+  }
+  if (resources.length) {
+    const labels = { cartel: 'Cartel', logo: 'Logo', mapa: 'Mapa', horario: 'Horario' };
+    resourceSummary.innerHTML = `<strong>Recursos adjuntos:</strong> ${resources.map(resource =>
+      `${escapeHtml(labels[resource.type] || resource.type)}: ${escapeHtml(resource.originalName)} → ${escapeHtml(resource.plannedName || 'pendiente')}`
+    ).join(' · ')}`;
+  } else {
+    resourceSummary.innerHTML = '<strong>Recursos adjuntos:</strong> ninguno.';
   }
 
   if (!result || !result.lineup || result.lineup.length === 0 || !edition || !edition.id || !edition.startDate || !edition.endDate) {
@@ -505,7 +579,8 @@ async function approveImport() {
 let activePlanId = null;
 let publishPollInterval = null;
 
-function resetImport() {
+async function resetImport() {
+  await cancelActiveImportQuietly();
   activeImportId = null;
   activePlanId = null;
   currentPreviewHash = '';

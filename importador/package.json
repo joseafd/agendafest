@@ -6,13 +6,14 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "node tests/security.test.js && node tests/business.test.js && node tests/open-metadata.test.js && node tests/excel.test.js && node tests/publish.test.js && node tests/remediation.test.js",
+    "test": "node tests/security.test.js && node tests/business.test.js && node tests/open-metadata.test.js && node tests/excel.test.js && node tests/publish.test.js && node tests/remediation.test.js && node tests/resources.test.js",
     "test:security": "node tests/security.test.js",
     "test:business": "node tests/business.test.js",
     "test:metadata": "node tests/open-metadata.test.js",
     "test:excel": "node tests/excel.test.js",
     "test:publish": "node tests/publish.test.js",
-    "test:remediation": "node tests/remediation.test.js"
+    "test:remediation": "node tests/remediation.test.js",
+    "test:resources": "node tests/resources.test.js"
   },
   "engines": {
     "node": ">=22.0.0"

@@ -148,6 +148,46 @@
       font-size: 14px;
     }
 
+    input[type="file"] {
+      width: 100%;
+      box-sizing: border-box;
+      background-color: var(--input-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      color: #d1d5db;
+      padding: 9px;
+      font-size: 13px;
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 16px;
+      margin-top: 16px;
+    }
+
+    .resource-grid label {
+      display: block;
+      margin-bottom: 5px;
+      color: #d1d5db;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .field-help {
+      margin: 5px 0 0;
+      color: #9ca3af;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 650px) {
+      .grid,
+      .resource-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .console {
       background-color: #060608;
       border: 1px solid var(--border-color);
@@ -248,18 +288,41 @@
         <label for="importUrl" style="display:block; margin-bottom: 5px; color: #9ca3af;">URL del Festival:</label>
         <input type="text" id="importUrl" value="https://www.resurrectionfest.es/" placeholder="https://ejemplo.com">
       </div>
+      <div class="resource-grid" aria-label="Recursos gráficos opcionales">
+        <div>
+          <label for="resourceCartel">Cartel</label>
+          <input type="file" id="resourceCartel" accept="image/jpeg,image/png,image/webp">
+        </div>
+        <div>
+          <label for="resourceLogo">Logo</label>
+          <input type="file" id="resourceLogo" accept="image/jpeg,image/png,image/webp">
+        </div>
+        <div>
+          <label for="resourceMapa">Mapa</label>
+          <input type="file" id="resourceMapa" accept="image/jpeg,image/png,image/webp">
+        </div>
+        <div>
+          <label for="resourceHorarios">Horarios</label>
+          <input type="file" id="resourceHorarios" accept="image/jpeg,image/png,image/webp" multiple>
+        </div>
+      </div>
+      <p class="field-help">Opcionales. JPEG, PNG o WebP; máximo 8 MB por archivo. Puedes adjuntar hasta 6 imágenes de horarios (12 MB en conjunto). No se guardará ningún recurso definitivamente hasta confirmar la importación.</p>
       <div class="form-group" style="margin-top: 15px;">
         <button class="btn" onclick="startImport()">Iniciar Alta de Festival</button>
       </div>
 
       <div id="importProgress" style="display: none; margin-top: 20px;">
-        <h3>Progreso de Importación (<span id="importState">CREADA</span>)</h3>
+        <div style="display:flex; justify-content:space-between; gap:12px; align-items:center;">
+          <h3>Progreso de Importación (<span id="importState">CREADA</span>)</h3>
+          <button class="btn btn-secondary" type="button" onclick="resetImport()">Cancelar proceso</button>
+        </div>
         <div class="console" id="importLogs" style="height: 150px; color: #6ee7b7; border-color: #059669;">Listo.</div>
       </div>
 
       <div id="importReview" style="display: none; margin-top: 25px;">
         <h3>Revisión de Datos del Cartel</h3>
         <div id="editionSummary" style="margin: 12px 0; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px;"></div>
+        <div id="resourceSummary" style="margin: 12px 0; padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; color:#d1d5db;"></div>
         <p style="color:#9ca3af; font-size:13px;">Haz doble clic en los campos para editarlos. Inicio y Fin se muestran en formato HH:MM. País, género y biografía se proponen en español; la bio debe tener entre 60 y 100 palabras. Los campos pendientes aparecen escritos directamente en cada fila.</p>
         <div style="overflow-x: auto;">
           <table class="review-table" style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px;">

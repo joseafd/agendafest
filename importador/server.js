@@ -22,6 +22,17 @@ const { searchSpotifyArtistDetailed, isSpotifyConfigured } = require('./spotify'
 const { enrichArtistsWithOpenMetadata } = require('./open-metadata');
 const { saveImportToExcel, buildImportPreview } = require('./excel');
 const publish = require('./publish');
+const {
+  MAX_RESOURCE_BYTES,
+  publicResource,
+  storeTemporaryResource,
+  applyResourceNamesToEdition,
+  mergeScheduleImages,
+  commitTemporaryResources,
+  rollbackResourceCommit,
+  finalizeResourceCommit,
+  cleanupImportResources
+} = require('./resources');
 
 const PUBLISH_ENABLED = process.env.PUBLISH_ENABLED === 'true';
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
@@ -398,11 +409,61 @@ app.post('/api/import/init', requireAuth, (req, res) => {
     edition: edition || '',
     state: 'CREADA',
     logs: [`[${new Date().toISOString()}] Transacción de importación iniciada para URL: ${url}`],
+    resourceUploads: [],
     result: null,
     error: null
   };
 
   res.json({ success: true, importId });
+});
+
+// POST /api/import/resources - one raw raster image per request. Files remain
+// in importador/temp until the administrator confirms the reviewed import.
+app.post(
+  '/api/import/resources',
+  requireAuth,
+  express.raw({ type: ['image/jpeg', 'image/png', 'image/webp', 'application/octet-stream'], limit: MAX_RESOURCE_BYTES }),
+  (req, res) => {
+    const { importId, type } = req.query;
+    const transaction = activeImports[importId];
+    if (!transaction) return res.status(404).json({ error: 'Transacción no encontrada.' });
+    if (transaction.state !== 'CREADA') {
+      return res.status(409).json({ error: 'Los recursos solo pueden adjuntarse antes de iniciar el procesamiento.' });
+    }
+    let originalName = 'imagen';
+    try {
+      originalName = decodeURIComponent(String(req.get('X-File-Name') || 'imagen'));
+    } catch {
+      return res.status(400).json({ error: 'El nombre del archivo no es válido.' });
+    }
+    try {
+      transaction.resourceUploads = storeTemporaryResource({
+        importId,
+        type,
+        originalName,
+        declaredMimeType: req.get('Content-Type'),
+        buffer: req.body,
+        existingResources: transaction.resourceUploads
+      });
+      const uploaded = transaction.resourceUploads[transaction.resourceUploads.length - 1];
+      transaction.logs.push(`[${new Date().toISOString()}] Recurso adjuntado: ${uploaded.type} (${uploaded.originalName}, ${uploaded.size} bytes).`);
+      res.json({ success: true, resources: transaction.resourceUploads.map(publicResource) });
+    } catch (err) {
+      res.status(400).json({ error: err.message });
+    }
+  }
+);
+
+app.post('/api/import/cancel', requireAuth, (req, res) => {
+  const { importId } = req.body;
+  const transaction = activeImports[importId];
+  if (!transaction) return res.status(404).json({ error: 'Transacción no encontrada.' });
+  if (['REVISADA', 'PUBLICADA'].includes(transaction.state)) {
+    return res.status(409).json({ error: 'La importación ya fue confirmada y no puede cancelarse.' });
+  }
+  cleanupImportResources(importId, transaction.resourceUploads);
+  delete activeImports[importId];
+  res.json({ success: true });
 });
 
 // POST /api/import/process
@@ -423,17 +484,20 @@ app.post('/api/import/process', requireAuth, (req, res) => {
     try {
       // 1. Scraping official website
       const scrapedData = await scrapeFestival(transaction.url);
+      scrapedData.images = mergeScheduleImages(transaction.resourceUploads, scrapedData.images);
       transaction.logs.push(`[${new Date().toISOString()}] Descubrimiento completado. Recursos clasificados.`);
       
       if (scrapedData.pdfs.length > 0) {
         transaction.logs.push(`[${new Date().toISOString()}] Detección de ${scrapedData.pdfs.length} archivo(s) PDF. Texto extraído.`);
       }
-      transaction.logs.push(`[${new Date().toISOString()}] Enlaces internos relevantes: ${Math.max(0, scrapedData.pages.length - 1)}. Imágenes enviadas a Gemini: ${scrapedData.images.filter(image => image.data).length}.`);
+      const uploadedSchedules = transaction.resourceUploads.filter(resource => resource.type === 'horario').length;
+      transaction.logs.push(`[${new Date().toISOString()}] Enlaces internos relevantes: ${Math.max(0, scrapedData.pages.length - 1)}. Imágenes enviadas a Gemini: ${scrapedData.images.filter(image => image.data).length}${uploadedSchedules ? ` (${uploadedSchedules} horario(s) adjunto(s))` : ''}.`);
       
       // 2. Structuring with Gemini AI
       transaction.logs.push(`[${new Date().toISOString()}] Analizando contenidos con inteligencia artificial (Gemini)...`);
       const lineupResult = await extractLineupWithAi(scrapedData);
       normalizeAndValidateImport(lineupResult, transaction.url);
+      transaction.resourceUploads = applyResourceNamesToEdition(lineupResult.edition, transaction.resourceUploads);
       if (lineupResult.validationIssues.length > 0) {
         const firstIssue = lineupResult.validationIssues[0];
         transaction.logs.push(`[${new Date().toISOString()}] ${lineupResult.validationIssues.length} actuación(es) requieren corrección manual. Primera: fila ${firstIssue.row}, ${firstIssue.artistName}, ${firstIssue.reasons.join('; ')}.`);
@@ -520,7 +584,8 @@ app.get('/api/import/status/:id', requireAuth, (req, res) => {
   if (!transaction) {
     return res.status(404).json({ error: 'Transacción no encontrada.' });
   }
-  res.json(transaction);
+  const { resourceUploads, ...publicTransaction } = transaction;
+  res.json({ ...publicTransaction, resources: resourceUploads.map(publicResource) });
 });
 
 // POST /api/import/preview - read-only comparison; never writes the workbook.
@@ -577,10 +642,20 @@ app.post('/api/import/save', requireAuth, async (req, res) => {
       throw new Error('La comparación ha caducado porque cambiaron los datos o el Excel. Vuelve a generarla antes de confirmar.');
     }
 
-    // Save to excel
-    await saveImportToExcel(transaction.result, 'joseafd', importId);
+    // Save resources and Excel as one recoverable operation. If Excel fails,
+    // every created/replaced resource is rolled back.
+    let resourceCommit = null;
+    try {
+      resourceCommit = commitTemporaryResources(transaction.resourceUploads, transaction.result.edition);
+      await saveImportToExcel(transaction.result, 'joseafd', importId);
+      finalizeResourceCommit(resourceCommit, importId, transaction.resourceUploads);
+    } catch (saveError) {
+      if (resourceCommit) rollbackResourceCommit(resourceCommit);
+      throw saveError;
+    }
 
     transaction.state = 'REVISADA';
+    transaction.resourceUploads = [];
     transaction.logs.push(`[${new Date().toISOString()}] Transacción finalizada y guardada con éxito en AgendaFest.xlsx.`);
     res.json({ success: true, state: 'REVISADA' });
 
@@ -793,6 +868,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Global Fallback Error Handler (prevents stack traces from leaking)
 app.use((err, req, res, next) => {
   if (err && err.type === 'entity.too.large') {
+    if (req.path === '/api/import/resources') {
+      return res.status(413).json({ error: 'El recurso supera el máximo permitido de 8 MB.' });
+    }
     return res.status(413).json({ error: 'La importación supera el límite seguro de 2 MB. Reduce el cartel o los textos y vuelve a intentarlo.' });
   }
   if (err && err.type === 'entity.parse.failed') {

@@ -418,6 +418,34 @@ async function runExcelTests() {
     assert.deepStrictEqual(after, before, 'El Excel debe quedar idéntico tras el rollback');
   });
 
+  await runTestAsync('La edición conserva las referencias de cartel, logo, mapa y horarios adjuntos', async () => {
+    const edition = {
+      festivalId: 'festival-recursos', id: 'festival-recursos-2027', name: 'Festival Recursos', year: 2027,
+      startDate: '2027-08-06', endDate: '2027-08-07', location: 'Prueba', timezone: 'Europe/Madrid',
+      url: 'https://example.com/festival-recursos', cartel: 'cartelfestivalrecursos2027.jpg',
+      logo: 'logofestivalrecursos2027.png', mapa: 'mapafestivalrecursos2027.webp',
+      horarios: ['horariosfestivalrecursos2027-01.jpg', 'horariosfestivalrecursos2027-02.jpg']
+    };
+    await saveImportToExcel({
+      edition,
+      lineup: [{ artistName: 'Banda Recursos', day: '2027-08-06', stage: 'Principal', startTime: '19:00', endTime: '20:00' }]
+    }, 'test-user', 'IMP-resources');
+
+    const workbook = new ExcelJS.Workbook();
+    await workbook.xlsx.readFile(excelPath);
+    const sheet = workbook.getWorksheet('Edición');
+    const headers = sheet.getRow(1).values;
+    let row = null;
+    sheet.eachRow((candidate, rowNumber) => {
+      if (rowNumber > 1 && candidate.getCell(headers.indexOf('Edicion ID')).value === edition.id) row = candidate;
+    });
+    assert.ok(row);
+    assert.strictEqual(row.getCell(headers.indexOf('Cartel')).value, edition.cartel);
+    assert.strictEqual(row.getCell(headers.indexOf('Logo')).value, edition.logo);
+    assert.strictEqual(row.getCell(headers.indexOf('Mapa')).value, edition.mapa);
+    assert.strictEqual(row.getCell(headers.indexOf('Horarios')).value, edition.horarios.join(' | '));
+  });
+
   // TEST 4: Retención máxima de 10 copias de seguridad
   await runTestAsync('La limpieza de backups mantiene estrictamente un máximo de 10 archivos de seguridad', async () => {
     // Create 15 fake backup files
