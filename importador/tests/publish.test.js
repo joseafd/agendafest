@@ -16,7 +16,7 @@ const productionServer = http.createServer((req, res) => {
           <link rel="manifest" href="/manifest.json">
         </head>
         <body>
-          <h1>Portal Deploued resurrection-fest-2026</h1>
+          <h1>Portal desplegado con datos diferidos</h1>
           <script src="/assets/index-mocked.js"></script>
         </body>
       </html>
@@ -38,10 +38,10 @@ const productionServer = http.createServer((req, res) => {
     `);
   } else if (urlPath === '/assets/index-mocked.js') {
     res.writeHead(200, { 'Content-Type': 'application/javascript' });
-    res.end(`
-      const edId = "resurrection-fest-2026";
-      console.log("Active edition", edId);
-    `);
+    res.end(`${'x'.repeat(120 * 1024)};const lazyChunk="festivalData-mocked.js";`);
+  } else if (urlPath === '/assets/festivalData-mocked.js') {
+    res.writeHead(200, { 'Content-Type': 'application/javascript' });
+    res.end('const edition={edicionId:"resurrection-fest-2026"};');
   } else {
     res.writeHead(404);
     res.end();
@@ -75,6 +75,7 @@ async function runPublishTests() {
     assert.strictEqual(results.manifest.passed, true, 'El manifest.json debería ser válido');
     assert.strictEqual(results.serviceWorker.passed, true, 'El service worker sw.js debería ser válido');
     assert.strictEqual(results.editionCheck.passed, true, 'La edición resurrection-fest-2026 debería detectarse en los scripts');
+    assert.ok(results.editionCheck.message.includes('bundle diferido'));
   });
 
   // TEST 2: Comprobación de Validación V3 con fallos

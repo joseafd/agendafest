@@ -308,7 +308,7 @@ function pollGitHubAction(sha, token) {
  * @param {string} targetUrl 
  * @returns {Promise<{status: number, body: string}>}
  */
-function secureFetchV3(targetUrl) {
+function secureFetchV3(targetUrl, requestedMaxBytes = 100 * 1024) {
   return new Promise((resolve, reject) => {
     // Add cache buster query string parameter
     const urlWithCacheBuster = new URL(targetUrl);
@@ -318,7 +318,7 @@ function secureFetchV3(targetUrl) {
     const hostname = parsed.hostname;
     const port = parsed.port ? parseInt(parsed.port, 10) : (parsed.protocol === 'https:' ? 443 : 80);
 
-    const maxDownloadSize = 100 * 1024;
+    const maxDownloadSize = Math.min(Math.max(Number(requestedMaxBytes) || 0, 1024), 2 * 1024 * 1024);
     const isTestLocal = process.env.NODE_ENV === 'test' && (hostname === '127.0.0.1' || hostname === 'localhost');
 
     const proceed = (ip) => {
@@ -379,6 +379,43 @@ function secureFetchV3(targetUrl) {
   });
 }
 
+async function validateEditionInViteBundles(cleanBase, html, edicionId) {
+  const entryMatch = html.match(/<script[^>]+src=["']([^"']*\/assets\/index-[a-zA-Z0-9_-]+\.js)["'][^>]*>/i);
+  if (!entryMatch) {
+    return { passed: false, message: 'No se encontró el script compilado de Vite en el HTML.' };
+  }
+
+  const entryUrl = new URL(entryMatch[1], cleanBase).toString();
+  try {
+    const entryBundle = await secureFetchV3(entryUrl, 2 * 1024 * 1024);
+    if (entryBundle.status !== 200) {
+      return { passed: false, message: `El bundle principal de Vite devolvió HTTP ${entryBundle.status}.` };
+    }
+    if (entryBundle.body.includes(edicionId)) {
+      return { passed: true, message: `Edición "${edicionId}" detectada en el bundle principal de Vite.` };
+    }
+
+    const lazyNames = [...new Set(
+      [...entryBundle.body.matchAll(/(?:^|["'`/])(festivalData-[a-zA-Z0-9_-]+\.js)/g)]
+        .map(match => match[1])
+    )].slice(0, 8);
+    if (lazyNames.length === 0) {
+      return { passed: false, message: `La edición "${edicionId}" no fue encontrada y el bundle principal no referencia datos diferidos.` };
+    }
+
+    for (const lazyName of lazyNames) {
+      const lazyUrl = new URL(lazyName, entryUrl).toString();
+      const lazyBundle = await secureFetchV3(lazyUrl, 2 * 1024 * 1024);
+      if (lazyBundle.status === 200 && lazyBundle.body.includes(edicionId)) {
+        return { passed: true, message: `Edición "${edicionId}" detectada en el bundle diferido ${lazyName}.` };
+      }
+    }
+    return { passed: false, message: `La edición "${edicionId}" no fue encontrada en los bundles de datos diferidos.` };
+  } catch (error) {
+    return { passed: false, message: `Fallo al verificar los bundles de Vite: ${error.message}` };
+  }
+}
+
 /**
  * Runs the V3 validation checks against the deployed festival URL.
  * @param {string} baseUrl Official website URL of the festival.
@@ -404,22 +441,7 @@ async function runV3Validation(baseUrl, edicionId) {
       if (mainPage.body.includes(edicionId)) {
         results.editionCheck = { passed: true, message: `Edición "${edicionId}" encontrada en el HTML principal.` };
       } else {
-        const scriptMatch = mainPage.body.match(/\/assets\/index-[a-zA-Z0-9_-]+\.js/);
-        if (scriptMatch) {
-          const scriptUrl = cleanBase + scriptMatch[0].replace(/^\//, '');
-          try {
-            const scriptFile = await secureFetchV3(scriptUrl);
-            if (scriptFile.body.includes(edicionId)) {
-              results.editionCheck = { passed: true, message: `Edición "${edicionId}" detectada dentro del bundle de scripts de Vite (${scriptMatch[0]}).` };
-            } else {
-              results.editionCheck = { passed: false, message: `La edición "${edicionId}" no fue encontrada en los bundles de scripts.` };
-            }
-          } catch (e) {
-            results.editionCheck = { passed: false, message: `Fallo al verificar bundle de scripts: ${e.message}` };
-          }
-        } else {
-          results.editionCheck = { passed: false, message: `No se encontró el script compilado de Vite en el HTML.` };
-        }
+        results.editionCheck = await validateEditionInViteBundles(cleanBase, mainPage.body, edicionId);
       }
     } else {
       results.webStatus = { passed: false, message: `El portal principal retornó HTTP ${mainPage.status}.` };
@@ -478,5 +500,6 @@ module.exports = {
   runLocalBuild,
   runGitDeploy,
   pollGitHubAction,
+  validateEditionInViteBundles,
   runV3Validation
 };
