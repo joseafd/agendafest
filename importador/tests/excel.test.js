@@ -423,6 +423,7 @@ async function runExcelTests() {
       festivalId: 'festival-recursos', id: 'festival-recursos-2027', name: 'Festival Recursos', year: 2027,
       startDate: '2027-08-06', endDate: '2027-08-07', location: 'Prueba', timezone: 'Europe/Madrid',
       url: 'https://example.com/festival-recursos', cartel: 'cartelfestivalrecursos2027.jpg',
+      aftermovieUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
       logo: 'logofestivalrecursos2027.png', mapa: 'mapafestivalrecursos2027.webp',
       horarios: ['horariosfestivalrecursos2027-01.jpg', 'horariosfestivalrecursos2027-02.jpg']
     };
@@ -430,6 +431,12 @@ async function runExcelTests() {
       edition,
       lineup: [{ artistName: 'Banda Recursos', day: '2027-08-06', stage: 'Principal', startTime: '19:00', endTime: '20:00' }]
     }, 'test-user', 'IMP-resources');
+
+    edition.aftermovieUrl = 'https://www.youtube.com/watch?v=9bZkp7q19f0';
+    await saveImportToExcel({
+      edition,
+      lineup: [{ artistName: 'Banda Recursos', day: '2027-08-06', stage: 'Principal', startTime: '19:00', endTime: '20:00' }]
+    }, 'test-user', 'IMP-resources-update');
 
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.readFile(excelPath);
@@ -444,6 +451,7 @@ async function runExcelTests() {
     assert.strictEqual(row.getCell(headers.indexOf('Logo')).value, edition.logo);
     assert.strictEqual(row.getCell(headers.indexOf('Mapa')).value, edition.mapa);
     assert.strictEqual(row.getCell(headers.indexOf('Horarios')).value, edition.horarios.join(' | '));
+    assert.strictEqual(row.getCell(headers.indexOf('Aftermovie')).value, edition.aftermovieUrl);
   });
 
   // TEST 4: Retención máxima de 10 copias de seguridad

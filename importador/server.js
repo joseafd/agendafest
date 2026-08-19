@@ -59,6 +59,36 @@ function slugify(value) {
     .replace(/(^-|-$)/g, '');
 }
 
+function normalizeAftermovieUrl(value) {
+  const raw = String(value || '').trim();
+  if (!raw) return '';
+  let parsed;
+  try {
+    parsed = new URL(raw);
+  } catch {
+    throw new Error('La URL del aftermovie no es válida.');
+  }
+  if (!['http:', 'https:'].includes(parsed.protocol) || parsed.username || parsed.password) {
+    throw new Error('La URL del aftermovie debe ser una URL pública de YouTube.');
+  }
+  const host = parsed.hostname.toLowerCase().replace(/^www\./, '');
+  let videoId = '';
+  if (host === 'youtu.be') {
+    videoId = parsed.pathname.split('/').filter(Boolean)[0] || '';
+  } else if (['youtube.com', 'm.youtube.com', 'music.youtube.com', 'youtube-nocookie.com'].includes(host)) {
+    if (parsed.pathname === '/watch') {
+      videoId = parsed.searchParams.get('v') || '';
+    } else {
+      const match = /^\/(?:embed|shorts|live)\/([^/]+)/.exec(parsed.pathname);
+      videoId = match ? match[1] : '';
+    }
+  }
+  if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
+    throw new Error('La URL del aftermovie debe identificar un vídeo válido de YouTube.');
+  }
+  return `https://www.youtube.com/watch?v=${videoId}`;
+}
+
 function normalizeAndValidateImport(result, sourceUrl) {
   if (!result || !result.edition || !Array.isArray(result.lineup) || result.lineup.length === 0) {
     throw new Error('Gemini no devolvió una edición con actuaciones verificables.');
@@ -396,9 +426,16 @@ app.get('/api/check-git', requireAuth, (req, res) => {
 
 // POST /api/import/init
 app.post('/api/import/init', requireAuth, (req, res) => {
-  const { url, name, edition } = req.body;
+  const { url, name, edition, aftermovieUrl } = req.body;
   if (!url) {
     return res.status(400).json({ error: 'Falta la URL del festival.' });
+  }
+
+  let normalizedAftermovieUrl;
+  try {
+    normalizedAftermovieUrl = normalizeAftermovieUrl(aftermovieUrl);
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
   }
 
   const importId = 'IMP-' + Date.now();
@@ -407,6 +444,7 @@ app.post('/api/import/init', requireAuth, (req, res) => {
     url: url,
     name: name || '',
     edition: edition || '',
+    aftermovieUrl: normalizedAftermovieUrl,
     state: 'CREADA',
     logs: [`[${new Date().toISOString()}] Transacción de importación iniciada para URL: ${url}`],
     resourceUploads: [],
@@ -498,6 +536,7 @@ app.post('/api/import/process', requireAuth, (req, res) => {
       transaction.logs.push(`[${new Date().toISOString()}] Analizando contenidos con inteligencia artificial (Gemini)...`);
       const lineupResult = await extractLineupWithAi(scrapedData);
       normalizeAndValidateImport(lineupResult, transaction.url);
+      lineupResult.edition.aftermovieUrl = transaction.aftermovieUrl;
       transaction.resourceUploads = applyResourceNamesToEdition(lineupResult.edition, transaction.resourceUploads);
       if (lineupResult.validationIssues.length > 0) {
         const firstIssue = lineupResult.validationIssues[0];
@@ -914,6 +953,7 @@ module.exports = {
   getSessionToken: () => require('./security').getSessionToken(),
   getActivePlan: () => activePublicationPlan,
   setActivePlan: (val) => { activePublicationPlan = val; },
+  normalizeAftermovieUrl,
   normalizeAndValidateImport,
   JSON_BODY_LIMIT,
   MAX_IMPORT_ROWS

@@ -130,7 +130,10 @@ async function run() {
     const init = await request({
       path: '/api/import/init', method: 'POST',
       headers: { Cookie: sessionCookie, 'Content-Type': 'application/json' },
-      body: Buffer.from(JSON.stringify({ url: 'https://example.com/festival' }))
+      body: Buffer.from(JSON.stringify({
+        url: 'https://example.com/festival',
+        aftermovieUrl: 'https://youtu.be/dQw4w9WgXcQ?t=3'
+      }))
     });
     assert.strictEqual(init.res.statusCode, 200);
     const importId = JSON.parse(init.body).importId;
@@ -148,7 +151,19 @@ async function run() {
     const status = await request({ path: `/api/import/status/${importId}`, headers: { Cookie: sessionCookie } });
     const statusBody = JSON.parse(status.body);
     assert.strictEqual(statusBody.resources[0].originalName, 'cartel.png');
+    assert.strictEqual(statusBody.aftermovieUrl, 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
     assert.strictEqual(JSON.stringify(statusBody).includes('tempPath'), false);
+
+    const invalidAftermovie = await request({
+      path: '/api/import/init', method: 'POST',
+      headers: { Cookie: sessionCookie, 'Content-Type': 'application/json' },
+      body: Buffer.from(JSON.stringify({
+        url: 'https://example.com/otro-festival',
+        aftermovieUrl: 'https://vimeo.com/123456789'
+      }))
+    });
+    assert.strictEqual(invalidAftermovie.res.statusCode, 400);
+    assert.match(JSON.parse(invalidAftermovie.body).error, /YouTube/);
     const cancel = await request({
       path: '/api/import/cancel', method: 'POST',
       headers: { Cookie: sessionCookie, 'Content-Type': 'application/json' },

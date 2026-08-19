@@ -9,7 +9,7 @@ process.env.PORT = 3039;
 process.env.AI_PROVIDER = 'mock';
 process.env.PUBLISH_ENABLED = 'false'; // Keep disabled as required by safety rules
 
-const { server, getPairingCode, normalizeAndValidateImport } = require('../server');
+const { server, getPairingCode, normalizeAftermovieUrl, normalizeAndValidateImport } = require('../server');
 const {
   validateGitStatus,
   pollGitHubAction,
@@ -144,6 +144,20 @@ async function runRemediationTests() {
 
     const authenticatedRequest = buildGitHubActionsRequest('abc123', ' token-prueba ');
     assert.strictEqual(authenticatedRequest.headers.Authorization, 'Bearer token-prueba');
+  });
+
+  await runTestAsync('El Importador normaliza y valida la URL opcional del aftermovie', async () => {
+    assert.strictEqual(
+      normalizeAftermovieUrl('https://youtu.be/dQw4w9WgXcQ?t=3'),
+      'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+    );
+    assert.strictEqual(normalizeAftermovieUrl(''), '');
+    assert.throws(() => normalizeAftermovieUrl('https://vimeo.com/123456789'), /YouTube/);
+
+    const appContent = fs.readFileSync(path.join(__dirname, '..', 'public', 'app.js'), 'utf8');
+    const htmlContent = fs.readFileSync(path.join(__dirname, '..', 'public', 'index.html'), 'utf8');
+    assert.ok(htmlContent.includes('id="importAftermovieUrl"'));
+    assert.ok(appContent.includes('JSON.stringify({ url, aftermovieUrl })'));
   });
 
   // Authenticate once to obtain sessionCookie for all endpoint tests

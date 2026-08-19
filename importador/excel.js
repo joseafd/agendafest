@@ -295,7 +295,7 @@ async function saveImportToExcel(approvedData, user, importId) {
     let edHeaders = edRow1.values;
     let edIdIdx = edHeaders.indexOf('Edicion ID');
     let startDateIdx = edHeaders.indexOf('Fecha inicio');
-    for (const columnName of ['URL Oficial', 'Logo', 'Cartel', 'Mapa', 'Horarios']) {
+    for (const columnName of ['URL Oficial', 'Aftermovie', 'Logo', 'Cartel', 'Mapa', 'Horarios']) {
       if (edHeaders.indexOf(columnName) === -1) {
         edRow1.getCell(edHeaders.length).value = columnName;
         edHeaders = edRow1.values;
@@ -381,6 +381,7 @@ async function saveImportToExcel(approvedData, user, importId) {
         'Hora inicio parrilla': 14 / 24,
         'Hora fin parrilla': 4 / 24,
         'URL Oficial': edition.url,
+        'Aftermovie': edition.aftermovieUrl || '',
         'Logo': edition.logo || '',
         'Cartel': edition.cartel || '',
         'Mapa': edition.mapa || '',
@@ -393,6 +394,7 @@ async function saveImportToExcel(approvedData, user, importId) {
       editionRow.commit();
     } else {
       if (edition.url) writeCellSafely(editionRow.getCell(freshEdHeaders.indexOf('URL Oficial')), edition.url);
+      if (edition.aftermovieUrl) writeCellSafely(editionRow.getCell(freshEdHeaders.indexOf('Aftermovie')), edition.aftermovieUrl);
       const resourceValues = {
         'Logo': edition.logo,
         'Cartel': edition.cartel,

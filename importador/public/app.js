@@ -194,6 +194,7 @@ function renderMetadataSources(item, hasSocial) {
 
 async function startImport() {
   const url = document.getElementById('importUrl').value;
+  const aftermovieUrl = document.getElementById('importAftermovieUrl').value.trim();
   const selectedResources = selectedResourceFiles();
   const progressDiv = document.getElementById('importProgress');
   const logsDiv = document.getElementById('importLogs');
@@ -210,7 +211,7 @@ async function startImport() {
     const initRes = await fetch('/api/import/init', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url })
+      body: JSON.stringify({ url, aftermovieUrl })
     });
     const initData = await initRes.json();
     
@@ -295,7 +296,8 @@ function renderReviewTable(result, resources = []) {
 
   const edition = result && result.edition;
   if (edition) {
-    editionSummary.textContent = `${edition.name} · ${edition.startDate} → ${edition.endDate} · ${edition.location || ''} · ID: ${edition.id || ''}`;
+    const aftermovieSummary = edition.aftermovieUrl ? ` · Aftermovie: ${edition.aftermovieUrl}` : '';
+    editionSummary.textContent = `${edition.name} · ${edition.startDate} → ${edition.endDate} · ${edition.location || ''} · ID: ${edition.id || ''}${aftermovieSummary}`;
   } else {
     editionSummary.textContent = 'Faltan los datos obligatorios de la edición.';
   }
