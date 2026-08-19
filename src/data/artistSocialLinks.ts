@@ -31,7 +31,7 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
   "gaerea": {
     "officialWebsite": "https://www.gaerea.com/",
     "tiktokUrl": "https://www.tiktok.com/@gaereaofficial",
-    "xUrl": "https://twitter.com/gaerea_official"
+    "xUrl": "https://x.com/gaerea_official"
   },
   "hamlet": {
     "officialWebsite": "http://www.hamlet1.com/",
@@ -769,44 +769,64 @@ const artistSocialLinks: Record<string, ArtistSocialLinks> = {
     "xUrl": "https://x.com/iamsiddhartha"
   },
   "eivor": {
-    "officialWebsite": "https://www.eivor.com",
+    "officialWebsite": "https://eivor.com/",
     "tiktokUrl": "",
     "xUrl": "https://x.com/eivormusic"
   },
+  "harakiriforthesky": {
+    "officialWebsite": "https://www.harakiriforthesky.com/",
+    "tiktokUrl": "",
+    "xUrl": ""
+  },
+  "sovengar": {
+    "officialWebsite": "http://sovengar.com/",
+    "tiktokUrl": "",
+    "xUrl": ""
+  },
+  "vendettafm": {
+    "officialWebsite": "https://www.vendettafm.com/",
+    "tiktokUrl": "",
+    "xUrl": ""
+  },
   "allformetal": {
-    "officialWebsite": "https://www.allformetal.com/",
-    "tiktokUrl": "https://www.tiktok.com/@_allformetal_",
+    "officialWebsite": "https://allformetal.com/",
+    "tiktokUrl": "https://www.tiktok.com/@allformetalofficial",
     "xUrl": ""
   },
   "destruction": {
-    "officialWebsite": "https://www.destruction.de/",
+    "officialWebsite": "https://destruction.de/",
     "tiktokUrl": "",
     "xUrl": "https://x.com/destruction"
   },
   "lordi": {
-    "officialWebsite": "https://lordi.fi",
+    "officialWebsite": "https://www.lordi.fi/",
     "tiktokUrl": "",
     "xUrl": "https://x.com/lordiofficial"
   },
   "calvalouise": {
-    "officialWebsite": "https://www.musicglue.com/calvalouise/",
+    "officialWebsite": "https://calvalouise.com/",
     "tiktokUrl": "",
-    "xUrl": "https://twitter.com/calvalouise"
+    "xUrl": "https://x.com/calvalouise"
   },
   "primalfear": {
-    "officialWebsite": "http://www.primalfear.de/",
+    "officialWebsite": "https://www.primalfear.de/",
     "tiktokUrl": "",
-    "xUrl": "https://x.com/Matsinner1"
+    "xUrl": "https://x.com/PrimalFearBand"
   },
   "avantasia": {
-    "officialWebsite": "https://avantasia.com/",
+    "officialWebsite": "https://www.avantasia.net/",
     "tiktokUrl": "",
-    "xUrl": "https://x.com/_avantasia"
+    "xUrl": "https://x.com/tobiassammet"
   },
   "soen": {
-    "officialWebsite": "http://soenmusic.com/",
+    "officialWebsite": "https://soenmusic.com/",
     "tiktokUrl": "",
-    "xUrl": "https://x.com/soenmusic"
+    "xUrl": "https://x.com/SoenMusic"
+  },
+  "deblersiddharta": {
+    "officialWebsite": "https://deblermusic.com/",
+    "tiktokUrl": "",
+    "xUrl": "https://x.com/DeblerOfficial"
   }
 };
 

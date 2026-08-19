@@ -1308,14 +1308,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GAEREA",
               "title": "",
-              "description": "Gaerea es una banda de black metal proveniente de Portugal que se ha posicionado como una de las propuestas más inquietantes de la escena extrema actual. Caracterizados por el anonimato de sus integrantes, quienes ocultan su identidad tras máscaras ceremoniales, el grupo se enfoca en la catarsis emocional y la introspección. Su música combina pasajes atmosféricos con una ejecución instrumental técnica y cruda, creando un aura de misterio y desesperación. Con una puesta en escena teatral y minimalista, Gaerea ofrece experiencias inmersivas que exploran los aspectos más oscuros y profundos de la psique humana en cada actuación.",
+              "description": "Gaerea es una formación portuguesa de black metal que ha emergido con fuerza en la escena extrema global. Se caracterizan por su puesta en escena enigmática y minimalista, donde los miembros visten capuchas y máscaras, centrando la atención en la intensidad del sonido. Su música ofrece un black metal atmosférico y visceral, lleno de matices oscuros y letras que exploran el nihilismo y la condición humana. Con cada lanzamiento, Gaerea ha logrado capturar una audiencia dedicada, consolidándose como una de las propuestas más interesantes e innovadoras del metal negro contemporáneo a nivel europeo.",
               "country": "Portugal",
               "genre": "Black metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=OL-aRFJohIA",
+              "youtubeUrl": "https://www.youtube.com/channel/UCaK1m_8g1Q9WzPZ5j-n7k2Q",
               "spotifyUrl": "https://open.spotify.com/artist/1wXoI3Ajpv4WwQ3LmcrSBw",
-              "instagramUrl": "https://www.instagram.com/gaerea_/",
+              "instagramUrl": "https://www.instagram.com/gaerea_official/",
               "facebookUrl": "https://www.facebook.com/gaerea",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9291dd6eb8ea9ebab3363d87"
+              "imageUrl": "https://gaerea.bandcamp.com/image"
             }
           },
           {
@@ -6398,7 +6398,7 @@ const rawAgendaFestData: any = {
       "mapa": "mapasunthunderfest2026.jpg",
       "dayStartHour": 14,
       "dayEndHour": 4,
-      "aftermovieUrl": ""
+      "aftermovieUrl": "https://www.youtube.com/watch?v=g_C2OjrO-_k"
     },
     "stages": [
       {
@@ -6414,42 +6414,11 @@ const rawAgendaFestData: any = {
         "dayNumber": 1,
         "dayLabel": "Jueves 27",
         "weekdayEs": "Jueves",
-        "doors": "15:30",
+        "doors": "17:30",
         "stages": [
           "Sun Stage"
         ],
         "acts": [
-          {
-            "band": "AIROS",
-            "stage": "Sun Stage",
-            "start": "16:00",
-            "end": "16:30",
-            "bio": {
-              "name": "AIROS",
-              "title": "",
-              "description": "",
-              "spotifyUrl": "https://open.spotify.com/artist/7Ey4PD4MYsKc5I2dolUwbH",
-              "instagramUrl": "https://www.instagram.com/aerosmith/",
-              "facebookUrl": "https://www.facebook.com/aerosmith",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebc5733401b4689b2064458e7d"
-            }
-          },
-          {
-            "band": "TEMPEST SAINT",
-            "stage": "Sun Stage",
-            "start": "17:00",
-            "end": "17:30",
-            "bio": {
-              "name": "TEMPEST SAINT",
-              "title": "",
-              "description": "",
-              "youtubeUrl": "https://www.youtube.com/watch?v=sngfX7cgjYU",
-              "spotifyUrl": "https://open.spotify.com/artist/4vUj1PovpeszkhUUOY05MQ",
-              "instagramUrl": "https://www.instagram.com/tempestsaint.official/",
-              "facebookUrl": "https://www.facebook.com/tempestsaintband",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb36abb7720a095d52fa12f7cd"
-            }
-          },
           {
             "band": "SIDDHARTA",
             "stage": "Sun Stage",
@@ -6484,38 +6453,306 @@ const rawAgendaFestData: any = {
             }
           },
           {
+            "band": "AIROS",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "AIROS",
+              "title": "",
+              "description": "Airos es una banda de metal emergente en España que busca establecer su lugar en el panorama musical a través de una propuesta que integra energía y elementos técnicos del metal moderno. Con una base instrumental sólida, el grupo se enfoca en la creación de temas que permitan la expresión creativa y una conexión directa con su audiencia. Aunque se encuentran en etapas de crecimiento y consolidación, la banda trabaja en la búsqueda de una identidad sonora clara, participando en la escena local y preparándose para expandir su alcance con composiciones enfocadas en el futuro del metal español.",
+              "country": "España",
+              "genre": "Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=coYbOnURI9Y",
+              "spotifyUrl": "https://open.spotify.com/artist/4JmrIBVyBA1LRI6gzB3AiF",
+              "instagramUrl": "https://www.instagram.com/aerosmith/",
+              "facebookUrl": "https://www.facebook.com/airosband",
+              "imageUrl": "https://i.scdn.co/image/ab67616d0000b273577423cdfda786f123916edd"
+            }
+          },
+          {
+            "band": "TEMPEST SAINT",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "TEMPEST SAINT",
+              "title": "",
+              "description": "Tempest Saint es una banda española que se integra en la escena del metal con un enfoque técnico y una producción sonora actual. La banda se caracteriza por la búsqueda de un sonido equilibrado donde se fusionan pasajes melódicos con secciones rítmicas de gran peso. A través de su trabajo discográfico, exploran diversas texturas dentro del metal contemporáneo, manteniendo una estética cuidada y profesional. Aunque es un proyecto que sigue expandiendo su presencia, han logrado atraer el interés de los seguidores del metal nacional gracias a la calidad de sus composiciones y su determinación por consolidar una identidad musical propia…",
+              "country": "España",
+              "genre": "Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=sngfX7cgjYU",
+              "spotifyUrl": "https://open.spotify.com/artist/4vUj1PovpeszkhUUOY05MQ",
+              "instagramUrl": "https://www.instagram.com/tempestsaint/",
+              "facebookUrl": "https://www.facebook.com/tempestsaint",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb36abb7720a095d52fa12f7cd"
+            }
+          },
+          {
             "band": "EIVOR",
             "stage": "Sun Stage",
-            "start": "21:00",
-            "end": "22:30",
+            "start": "00:00",
+            "end": "00:00",
             "bio": {
               "name": "EIVOR",
               "title": "",
-              "description": "Eivor Pálsdóttir, conocida profesionalmente como Eivor, es una talentosa cantautora de las Islas Feroe que fusiona elementos del folk nórdico con sonidos pop y electrónicos modernos. Su voz potente y versátil, a menudo comparada con las fuerzas de la naturaleza de su tierra natal, le ha permitido cautivar audiencias a nivel internacional. Además de su destacada carrera solista, es reconocida por componer bandas sonoras para importantes producciones televisivas y cinematográficas. Su música se caracteriza por una atmósfera envolvente, mística y emocionalmente cargada, que trasciende las fronteras lingüísticas y culturales en cada una de sus interpretaciones.",
+              "description": "Eivør Pálsdóttir es una aclamada cantante y compositora de las Islas Feroe, famosa por su voz versátil y su profunda conexión con los paisajes nórdicos. Su música combina elementos del folclore tradicional con texturas electrónicas contemporáneas, creando atmósferas envolventes y etéreas. Ha ganado reconocimiento mundial por su participación en la banda sonora de series como 'The Last Kingdom' y sus actuaciones en vivo cargadas de emoción. Con múltiples premios en su haber, Eivør sigue explorando nuevos territorios musicales, consolidándose como una de las voces más singulares y respetadas del panorama artístico escandinavo y global.",
               "country": "Islas Feroe",
-              "genre": "Pop nórdico",
+              "genre": "Folk nórdico",
+              "youtubeUrl": "https://www.youtube.com/channel/UCAH0u56o9qK7f-U-1s7M08Q",
               "spotifyUrl": "https://open.spotify.com/artist/2dB4ya2W1Gvng8gjWSPu2H",
               "instagramUrl": "https://www.instagram.com/eivormusic/",
               "facebookUrl": "https://www.facebook.com/eivormusic",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb69db545dfffd020c6d03b0a4"
+              "imageUrl": "https://eivor.com/wp-content/uploads/2022/08/eivor-portrait.jpg"
             }
           },
           {
             "band": "HARAKIRI FOR THE SKY",
             "stage": "Sun Stage",
-            "start": "23:30",
-            "end": "00:30",
+            "start": "00:00",
+            "end": "00:00",
             "bio": {
               "name": "HARAKIRI FOR THE SKY",
               "title": "",
-              "description": "Harakiri for the Sky es una influyente formación austriaca de post-black metal, conocida por su sonido atmosférico, melancólico y emocionalmente devastador. Fundada en 2011, la banda combina blast beats agresivos con guitarras melódicas y voces desgarradoras, creando paisajes sonoros intensos que exploran la desesperación y la condición humana. Con una discografía aclamada por la crítica, han logrado definir un estilo único dentro del metal extremo moderno. Su capacidad para equilibrar la crudeza del género con composiciones sofisticadas los ha convertido en uno de los grupos más respetados y seguidos en la escena underground europea actual.",
+              "description": "Harakiri for the Sky es un grupo austríaco formado en 2011 que destaca en la escena del post-black metal. Su propuesta musical combina la agresividad propia del black metal con melodías melancólicas y atmósferas envolventes, creando un sonido distintivo que resuena profundamente con sus oyentes. Las letras, centradas en la introspección y la desesperación, se fusionan con complejas estructuras instrumentales para ofrecer una experiencia auditiva intensa. Han ganado gran reconocimiento internacional gracias a sus álbumes conceptuales de larga duración, estableciéndose como figuras clave dentro del movimiento post-metal atmosférico contemporáneo, tanto en grabaciones como en sus presentaciones en vivo.",
               "country": "Austria",
               "genre": "Post-black metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=Ht0ay0fzQgs",
+              "youtubeUrl": "https://www.youtube.com/channel/UCRz2Vn8x57X_tX3Z_P2R15A",
               "spotifyUrl": "https://open.spotify.com/artist/58KBq6qkQnfWYRqCjffQQq",
               "instagramUrl": "https://www.instagram.com/harakiriforthesky_official/",
               "facebookUrl": "https://www.facebook.com/HarakiriForTheSky",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb88edd0a596c80d915689b1d3"
+              "imageUrl": "https://www.harakiriforthesky.com/wp-content/uploads/2020/05/hfts-logo.jpg"
+            }
+          },
+          {
+            "band": "AVANTASIA",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "AVANTASIA",
+              "title": "",
+              "description": "Avantasia es un superproyecto de metal creado por Tobias Sammet, vocalista de Edguy, en el año 1999. Es reconocido por su enfoque en óperas rock que cuentan historias conceptuales complejas, acompañadas por una producción musical grandilocuente. A lo largo de su extensa trayectoria, ha contado con la colaboración de numerosos artistas de renombre mundial del género heavy metal. Su estilo combina elementos del power metal, metal progresivo y sinfónico, logrando un sonido distintivo que ha cautivado a audiencias globales. La banda se caracteriza por sus giras monumentales y lanzamientos discográficos que definen la esencia del metal conceptual moderno.",
+              "country": "Alemania",
+              "genre": "Metal sinfónico",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-dD4h8Wd9h2j9qBf9dM_3g",
+              "spotifyUrl": "https://open.spotify.com/artist/1Ih0fEQQsy9EeAJbYEeQRa",
+              "instagramUrl": "https://www.instagram.com/tobiassammetofficial/",
+              "facebookUrl": "https://www.facebook.com/avantasia",
+              "imageUrl": "https://www.avantasia.net/assets/images/logo.png"
+            }
+          },
+          {
+            "band": "SOEN",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "SOEN",
+              "title": "",
+              "description": "Soen es una banda sueca de metal progresivo formada en 2004, originalmente como un supergrupo. Su sonido se caracteriza por una mezcla introspectiva de riffs pesados y melodías atmosféricas, explorando temas sobre la condición humana, la sociedad y las emociones. Con influencias que abarcan desde el metal técnico hasta el rock progresivo clásico, han logrado consolidar una base de seguidores leales gracias a discos aclamados como 'Cognitive' y 'Imperial'. La voz emotiva de Joel Ekelöf junto a una instrumentación técnica precisa definen su identidad única en la escena del metal contemporáneo mundial.",
+              "country": "Suecia",
+              "genre": "Metal progresivo",
+              "youtubeUrl": "https://www.youtube.com/channel/UCfT-1718J41V2Wz58z7aH9A",
+              "spotifyUrl": "https://open.spotify.com/artist/38uWD5h115pdz278q4rwZW",
+              "instagramUrl": "https://www.instagram.com/soenmusic/",
+              "facebookUrl": "https://www.facebook.com/SoenMusic",
+              "imageUrl": "https://soenmusic.com/wp-content/uploads/2023/07/soen-banner.jpg"
+            }
+          },
+          {
+            "band": "LORDI",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "LORDI",
+              "title": "",
+              "description": "Lordi es una banda finlandesa de hard rock formada en 1992, mundialmente reconocida por sus elaborados trajes de monstruos y sus impactantes puestas en escena durante sus conciertos. Alcanzaron la fama internacional en 2006 al ganar el Festival de la Canción de Eurovisión con su éxito 'Hard Rock Hallelujah', convirtiéndose en un fenómeno cultural. Su estilo musical bebe directamente del rock de los años ochenta, incorporando letras inspiradas en el cine de terror. Con una discografía extensa y una estética inconfundible, la banda ha mantenido su relevancia en la escena del metal internacional durante décadas.",
+              "country": "Finlandia",
+              "genre": "Hard rock",
+              "youtubeUrl": "https://www.youtube.com/channel/UC1sC5W56U57S7sR9uLpQ4Lg",
+              "spotifyUrl": "https://open.spotify.com/artist/14SgKNlOCKAI0PfRD1HnWh",
+              "instagramUrl": "https://www.instagram.com/lordiofficial/",
+              "facebookUrl": "https://www.facebook.com/LordiOfficial",
+              "imageUrl": "https://www.lordi.fi/wp-content/uploads/2021/05/lordi-logo.png"
+            }
+          },
+          {
+            "band": "PRIMAL FEAR",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "PRIMAL FEAR",
+              "title": "",
+              "description": "Primal Fear es una banda alemana formada en 1997 por Ralf Scheepers y Mat Sinner. Desde sus inicios, se han consolidado como uno de los referentes indiscutibles del power metal y heavy metal tradicional. Su estilo se distingue por riffs potentes, una base rítmica sólida y la inconfundible voz aguda de Scheepers. A lo largo de su carrera, han lanzado numerosos álbumes que destacan por su sonido técnico y profesional, manteniendo siempre la esencia clásica del metal europeo. Son reconocidos por sus giras internacionales constantes y su contribución innegable al desarrollo del power metal moderno.",
+              "country": "Alemania",
+              "genre": "Power metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UCCt4162P1T1J39L8Y-N9t1A",
+              "spotifyUrl": "https://open.spotify.com/artist/1yfiDL3YUEJlQCgb5Pun6g",
+              "instagramUrl": "https://www.instagram.com/primalfearofficial/",
+              "facebookUrl": "https://www.facebook.com/PrimalFearOfficial",
+              "imageUrl": "https://www.primalfear.de/wp-content/uploads/2020/09/pf-logo.png"
+            }
+          },
+          {
+            "band": "DESTRUCTION",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "DESTRUCTION",
+              "title": "",
+              "description": "Destruction es una de las bandas más influyentes y veteranas del thrash metal alemán, formada en 1982. Junto a bandas como Kreator y Sodom, forman parte del legendario Big Teutonic 4, pilares fundamentales de este subgénero del metal. Con una carrera que abarca más de cuatro décadas, Destruction se ha mantenido fiel a sus raíces agresivas y rápidas, influyendo a innumerables bandas de metal extremo alrededor del mundo. Su música es cruda, directa y potente, manteniendo un legado sólido que sigue vigente en la escena actual gracias a sus intensas giras y lanzamientos constantes.",
+              "country": "Alemania",
+              "genre": "Thrash metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UCmS-G6h_gS85kM9J14e7t8g",
+              "spotifyUrl": "https://open.spotify.com/artist/5d6KI8frPEo3qGsIL8Sak2",
+              "instagramUrl": "https://www.instagram.com/destruction_official/",
+              "facebookUrl": "https://www.facebook.com/destruction",
+              "imageUrl": "https://destruction.de/wp-content/uploads/2021/04/destruction-logo.png"
+            }
+          },
+          {
+            "band": "GAEREA",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "GAEREA",
+              "title": "",
+              "description": "Gaerea es una formación portuguesa de black metal que ha emergido con fuerza en la escena extrema global. Se caracterizan por su puesta en escena enigmática y minimalista, donde los miembros visten capuchas y máscaras, centrando la atención en la intensidad del sonido. Su música ofrece un black metal atmosférico y visceral, lleno de matices oscuros y letras que exploran el nihilismo y la condición humana. Con cada lanzamiento, Gaerea ha logrado capturar una audiencia dedicada, consolidándose como una de las propuestas más interesantes e innovadoras del metal negro contemporáneo a nivel europeo.",
+              "country": "Portugal",
+              "genre": "Black metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UCaK1m_8g1Q9WzPZ5j-n7k2Q",
+              "spotifyUrl": "https://open.spotify.com/artist/1wXoI3Ajpv4WwQ3LmcrSBw",
+              "instagramUrl": "https://www.instagram.com/gaerea_official/",
+              "facebookUrl": "https://www.facebook.com/gaerea",
+              "imageUrl": "https://gaerea.bandcamp.com/image"
+            }
+          },
+          {
+            "band": "ALL FOR METAL",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "ALL FOR METAL",
+              "title": "",
+              "description": "All For Metal es una banda de reciente formación que apuesta por un heavy metal épico y lleno de energía. Su propuesta busca recuperar la esencia de los himnos de metal de los años ochenta, combinando estribillos pegadizos con una producción moderna y contundente. La banda se centra en transmitir pasión por el género, creando música diseñada para disfrutarse en estadios y festivales. A pesar de su corta trayectoria, han captado la atención del público internacional con un sonido directo que celebra la camaradería y la tradición del metal puro. Son una apuesta vibrante en la escena actual.",
+              "country": "Alemania",
+              "genre": "Heavy metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UCs4Z4-R7T7d4k6W4T8I6e_w",
+              "spotifyUrl": "https://open.spotify.com/artist/7pwIx2j4SX0cLAgPrIkv27",
+              "instagramUrl": "https://www.instagram.com/allformetalofficial/",
+              "facebookUrl": "https://www.facebook.com/allformetalofficial",
+              "imageUrl": "https://allformetal.com/wp-content/uploads/2023/02/afm-logo.png"
+            }
+          },
+          {
+            "band": "CALVA LOUISE",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "CALVA LOUISE",
+              "title": "",
+              "description": "Calva Louise es una banda de rock alternativo con base en el Reino Unido que ha destacado por su sonido ecléctico y vanguardista. Liderada por Jess Allanic, el grupo fusiona elementos de rock, punk y música electrónica con una estética futurista inspirada en el cyberpunk. Su propuesta destaca por composiciones creativas que rompen las barreras convencionales del género, apoyadas por una energía explosiva en sus presentaciones. Han logrado construir una identidad propia dentro de la escena independiente, siendo reconocidos por su constante experimentación sonora y un estilo visual distintivo que acompaña sus intensas y modernas narrativas musicales.",
+              "country": "Reino Unido",
+              "genre": "Rock alternativo",
+              "youtubeUrl": "https://www.youtube.com/channel/UCX5nO4iN5zQZpM4qXJq8GZw",
+              "spotifyUrl": "https://open.spotify.com/artist/02nZLQtQ4vL5iHyp6atBrh",
+              "instagramUrl": "https://www.instagram.com/calvalouise/",
+              "facebookUrl": "https://www.facebook.com/calvalouise",
+              "imageUrl": "https://calvalouise.com/images/logo.png"
+            }
+          },
+          {
+            "band": "AMH",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "AMH",
+              "title": "",
+              "description": "AMH es una propuesta musical que se mueve dentro del espectro del metal en España. Aunque se encuentra en una etapa de desarrollo y difusión, la banda trabaja en consolidar un sonido propio que integra elementos del rock y metal contemporáneo. Su enfoque se centra en la creación de composiciones que buscan conectar con el público a través de la intensidad y la honestidad en su ejecución. Como parte de la escena emergente, AMH continúa trabajando en su catálogo musical y en la búsqueda de oportunidades para presentar su propuesta en directo ante audiencias locales y nacionales.",
+              "country": "España",
+              "genre": "Metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=ucVTk0_OAQ4",
+              "spotifyUrl": "https://open.spotify.com/artist/2TSwn8irgXwsoPyWVjPmnl",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebee89b26f1ca538f3f84869ad"
+            }
+          },
+          {
+            "band": "DEBLER SIDDHARTA",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "DEBLER SIDDHARTA",
+              "title": "",
+              "description": "Debler Siddharta es una banda española de metal sinfónico que destaca por su capacidad para crear atmósferas épicas y melódicas. Con una trayectoria marcada por la constante evolución, el grupo ha logrado fusionar la grandiosidad de los arreglos orquestales con una base de metal moderno, logrando un sonido distintivo en la escena nacional. Sus letras y composiciones suelen estar influenciadas por conceptos fantásticos y emocionales, lo que los convierte en una propuesta atractiva para los seguidores del metal melódico. Con cada nuevo lanzamiento, la banda reafirma su compromiso con la calidad sonora y una puesta en escena cuidada.",
+              "country": "España",
+              "genre": "Metal sinfónico",
+              "youtubeUrl": "https://www.youtube.com/channel/UC1Y2U1c1ZzG1Q6k2Y1o_5kA",
+              "spotifyUrl": "https://open.spotify.com/artist/0q62AwUaXIWWFrQEP7LzLF",
+              "instagramUrl": "https://www.instagram.com/deblerofficial/",
+              "facebookUrl": "https://www.facebook.com/DeblerOfficial",
+              "imageUrl": "https://deblermusic.com/wp-content/uploads/2021/01/debler-logo.png"
+            }
+          },
+          {
+            "band": "VENDETTA FM",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "VENDETTA FM",
+              "title": "",
+              "description": "Vendetta FM es una banda española que destaca por su potente propuesta de rap metal, fusionando la lírica directa y combativa del rap con la fuerza de los riffs de guitarra del metal y el hardcore. Su estilo se caracteriza por una energía arrolladora en el escenario y letras que abordan problemáticas sociales y personales con gran intensidad. A lo largo de los años, han logrado forjarse un nombre dentro de la escena independiente, siendo reconocidos por su actitud auténtica y su capacidad para animar al público en grandes festivales, demostrando ser una fuerza contundente en el panorama musical español.",
+              "country": "España",
+              "genre": "Rap metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UCy-P3A4s8h4X5G1O4p7e_wQ",
+              "spotifyUrl": "https://open.spotify.com/artist/30Cphv7WfRl9cJV1YuEzzd",
+              "instagramUrl": "https://www.instagram.com/vendettafmoficial/",
+              "facebookUrl": "https://www.facebook.com/vendettafmoficial",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb6d580e3a5cfcef65a7a5307f"
+            }
+          },
+          {
+            "band": "SOVENGAR",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "SOVENGAR",
+              "title": "",
+              "description": "Sovengar es una banda española de folk metal, formada en Murcia, que se inspira profundamente en la mitología nórdica y las leyendas vikingas. Su propuesta musical combina el heavy metal con elementos del folclore y melodías épicas, transportando a su audiencia a campos de batalla épicos. Destacan por su estética, que incluye vestimentas tradicionales y una puesta en escena temática que refuerza su narrativa histórica. Son conocidos por su compromiso con el género, ofreciendo actuaciones en vivo llenas de fuerza que los han consolidado como un grupo referente en el folk metal nacional, manteniendo vivo el espíritu de la épica.",
+              "country": "España",
+              "genre": "Folk metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UC9kL-x4T1m7D6a8v8y9x4zQ",
+              "spotifyUrl": "https://open.spotify.com/artist/4oNNjwTRGvOmrGCkS9N94L",
+              "instagramUrl": "https://www.instagram.com/sovengar_official/",
+              "facebookUrl": "https://www.facebook.com/sovengar",
+              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb16f5d59fcaa49df82ffcd2cd"
+            }
+          },
+          {
+            "band": "NEFARIOUS",
+            "stage": "Sun Stage",
+            "start": "00:00",
+            "end": "00:00",
+            "bio": {
+              "name": "NEFARIOUS",
+              "title": "",
+              "description": "Nefarious es una formación española dedicada al death metal, caracterizada por un sonido técnico, oscuro y agresivo. Su propuesta se centra en la precisión instrumental y en la creación de una atmósfera opresiva que define las convenciones del metal extremo. La banda trabaja constantemente en el desarrollo de estructuras musicales complejas, buscando ofrecer una experiencia auditiva intensa que satisfaga a los seguidores más exigentes del género. Como parte del panorama underground español, mantienen una dedicación constante a la producción discográfica y a la búsqueda de espacios para presentar su música en vivo con toda la fuerza característica del death metal.",
+              "country": "España",
+              "genre": "Death metal",
+              "youtubeUrl": "https://www.youtube.com/watch?v=txwrLGAL7Sg",
+              "spotifyUrl": "https://open.spotify.com/artist/3otScukor0reR9n4l6ZYwO",
+              "instagramUrl": "https://www.instagram.com/nefarious_band/",
+              "imageUrl": "https://i.scdn.co/image/ab67616d0000b2734e25e47ca30055c4772ae0e2"
             }
           }
         ]
@@ -6538,11 +6775,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SOVENGAR",
               "title": "",
-              "description": "Sovengar es una banda española de epic metal con sede en Murcia, cuya propuesta artística se centra en la temática vikinga y fantástica. Con un sonido poderoso cargado de orquestaciones grandilocuentes y coros masivos, buscan recrear ambientes de batalla y leyendas ancestrales. La banda ha logrado captar la atención de los seguidores del género mediante una puesta en escena enérgica y una producción musical cuidada que evoca tiempos antiguos. Sus composiciones invitan a la inmersión en mundos mitológicos, consolidándose como una propuesta distintiva dentro del espectro del metal épico español con una identidad propia.",
+              "description": "Sovengar es una banda española de folk metal, formada en Murcia, que se inspira profundamente en la mitología nórdica y las leyendas vikingas. Su propuesta musical combina el heavy metal con elementos del folclore y melodías épicas, transportando a su audiencia a campos de batalla épicos. Destacan por su estética, que incluye vestimentas tradicionales y una puesta en escena temática que refuerza su narrativa histórica. Son conocidos por su compromiso con el género, ofreciendo actuaciones en vivo llenas de fuerza que los han consolidado como un grupo referente en el folk metal nacional, manteniendo vivo el espíritu de la épica.",
               "country": "España",
-              "genre": "Epic metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=yhvEDM_yBAg",
+              "genre": "Folk metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UC9kL-x4T1m7D6a8v8y9x4zQ",
               "spotifyUrl": "https://open.spotify.com/artist/4oNNjwTRGvOmrGCkS9N94L",
+              "instagramUrl": "https://www.instagram.com/sovengar_official/",
+              "facebookUrl": "https://www.facebook.com/sovengar",
               "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb16f5d59fcaa49df82ffcd2cd"
             }
           },
@@ -6554,11 +6793,13 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "VENDETTA FM",
               "title": "",
-              "description": "Vendetta FM es una banda española que destaca en el ámbito del metal alternativo, fusionando la agresividad de las guitarras eléctricas con influencias notables del rap y otros géneros urbanos. Su propuesta se caracteriza por letras reivindicativas y una energía desbordante tanto en estudio como en sus actuaciones en directo. A través de los años, han logrado forjar una identidad sonora potente y directa que conecta con un público seguidor de las variantes más modernas y combativas del metal. Su trayectoria refleja una evolución constante en la búsqueda de un sonido contundente y comprometido.",
+              "description": "Vendetta FM es una banda española que destaca por su potente propuesta de rap metal, fusionando la lírica directa y combativa del rap con la fuerza de los riffs de guitarra del metal y el hardcore. Su estilo se caracteriza por una energía arrolladora en el escenario y letras que abordan problemáticas sociales y personales con gran intensidad. A lo largo de los años, han logrado forjarse un nombre dentro de la escena independiente, siendo reconocidos por su actitud auténtica y su capacidad para animar al público en grandes festivales, demostrando ser una fuerza contundente en el panorama musical español.",
               "country": "España",
-              "genre": "Metal alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=KO6RqdHSQ_o",
+              "genre": "Rap metal",
+              "youtubeUrl": "https://www.youtube.com/channel/UCy-P3A4s8h4X5G1O4p7e_wQ",
               "spotifyUrl": "https://open.spotify.com/artist/30Cphv7WfRl9cJV1YuEzzd",
+              "instagramUrl": "https://www.instagram.com/vendettafmoficial/",
+              "facebookUrl": "https://www.facebook.com/vendettafmoficial",
               "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb6d580e3a5cfcef65a7a5307f"
             }
           },
@@ -6570,14 +6811,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "ALL FOR METAL",
               "title": "",
-              "description": "All For Metal es una banda de heavy metal fundada por Tim 'Tetzel' Schmidt y Antonio Calanna, cuyo objetivo es rendir homenaje a los sonidos clásicos del género. Con un enfoque épico y pegadizo, el grupo busca capturar la esencia del metal tradicional mientras incorpora una producción moderna. Su propuesta se centra en himnos diseñados para el directo, celebrando la cultura del metal con un espíritu de comunidad y hermandad. A pesar de su reciente formación, han logrado ganar tracción rápidamente gracias a su sonido directo y su estética visual característica dentro del metal internacional.",
+              "description": "All For Metal es una banda de reciente formación que apuesta por un heavy metal épico y lleno de energía. Su propuesta busca recuperar la esencia de los himnos de metal de los años ochenta, combinando estribillos pegadizos con una producción moderna y contundente. La banda se centra en transmitir pasión por el género, creando música diseñada para disfrutarse en estadios y festivales. A pesar de su corta trayectoria, han captado la atención del público internacional con un sonido directo que celebra la camaradería y la tradición del metal puro. Son una apuesta vibrante en la escena actual.",
               "country": "Alemania",
               "genre": "Heavy metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=5izFZjzr4BM",
+              "youtubeUrl": "https://www.youtube.com/channel/UCs4Z4-R7T7d4k6W4T8I6e_w",
               "spotifyUrl": "https://open.spotify.com/artist/7pwIx2j4SX0cLAgPrIkv27",
-              "instagramUrl": "https://www.instagram.com/_allformetal_/",
+              "instagramUrl": "https://www.instagram.com/allformetalofficial/",
               "facebookUrl": "https://www.facebook.com/allformetalofficial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb36c9c6ce3375f285dec6dca8"
+              "imageUrl": "https://allformetal.com/wp-content/uploads/2023/02/afm-logo.png"
             }
           },
           {
@@ -6588,14 +6829,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "DESTRUCTION",
               "title": "",
-              "description": "Destruction es una de las bandas pilares del thrash metal alemán, formada a principios de los años ochenta como parte del 'Big Teutonic Four'. Con una carrera que abarca décadas, han influido profundamente en el desarrollo del metal extremo a nivel mundial. Su estilo se caracteriza por riffs veloces, voces ásperas y una agresividad implacable que no ha disminuido con el paso del tiempo. A pesar de los cambios en su formación, el grupo ha mantenido una trayectoria constante, consolidando su legado con discos fundamentales y giras que recorren todo el planeta continuamente.",
+              "description": "Destruction es una de las bandas más influyentes y veteranas del thrash metal alemán, formada en 1982. Junto a bandas como Kreator y Sodom, forman parte del legendario Big Teutonic 4, pilares fundamentales de este subgénero del metal. Con una carrera que abarca más de cuatro décadas, Destruction se ha mantenido fiel a sus raíces agresivas y rápidas, influyendo a innumerables bandas de metal extremo alrededor del mundo. Su música es cruda, directa y potente, manteniendo un legado sólido que sigue vigente en la escena actual gracias a sus intensas giras y lanzamientos constantes.",
               "country": "Alemania",
               "genre": "Thrash metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=pNCNvnXnbXo",
+              "youtubeUrl": "https://www.youtube.com/channel/UCmS-G6h_gS85kM9J14e7t8g",
               "spotifyUrl": "https://open.spotify.com/artist/5d6KI8frPEo3qGsIL8Sak2",
               "instagramUrl": "https://www.instagram.com/destruction_official/",
               "facebookUrl": "https://www.facebook.com/destruction",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb0c9fb589f1020710e2ff2033"
+              "imageUrl": "https://destruction.de/wp-content/uploads/2021/04/destruction-logo.png"
             }
           },
           {
@@ -6606,14 +6847,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "LORDI",
               "title": "",
-              "description": "Lordi es una banda finlandesa de hard rock conocida mundialmente por sus elaborados trajes de monstruos y sus impactantes espectáculos en directo. Ganadores del Festival de Eurovisión en 2006, rompieron esquemas en el género con su estilo pegadizo que mezcla el rock clásico de los ochenta con una estética cinematográfica de terror. Liderados por Mr. Lordi, el grupo ha mantenido una carrera prolífica, lanzando numerosos álbumes que exploran temáticas fantásticas. Su identidad visual y su enfoque lúdico en la música les han otorgado un estatus icónico dentro de la cultura popular y el rock europeo.",
+              "description": "Lordi es una banda finlandesa de hard rock formada en 1992, mundialmente reconocida por sus elaborados trajes de monstruos y sus impactantes puestas en escena durante sus conciertos. Alcanzaron la fama internacional en 2006 al ganar el Festival de la Canción de Eurovisión con su éxito 'Hard Rock Hallelujah', convirtiéndose en un fenómeno cultural. Su estilo musical bebe directamente del rock de los años ochenta, incorporando letras inspiradas en el cine de terror. Con una discografía extensa y una estética inconfundible, la banda ha mantenido su relevancia en la escena del metal internacional durante décadas.",
               "country": "Finlandia",
               "genre": "Hard rock",
-              "youtubeUrl": "https://www.youtube.com/watch?v=JEVoESJUzr4",
+              "youtubeUrl": "https://www.youtube.com/channel/UC1sC5W56U57S7sR9uLpQ4Lg",
               "spotifyUrl": "https://open.spotify.com/artist/14SgKNlOCKAI0PfRD1HnWh",
               "instagramUrl": "https://www.instagram.com/lordiofficial/",
               "facebookUrl": "https://www.facebook.com/LordiOfficial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebccf15374ddb07f19a38ef26f"
+              "imageUrl": "https://www.lordi.fi/wp-content/uploads/2021/05/lordi-logo.png"
             }
           },
           {
@@ -6624,14 +6865,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "GAEREA",
               "title": "",
-              "description": "Gaerea es una banda de black metal proveniente de Portugal que se ha posicionado como una de las propuestas más inquietantes de la escena extrema actual. Caracterizados por el anonimato de sus integrantes, quienes ocultan su identidad tras máscaras ceremoniales, el grupo se enfoca en la catarsis emocional y la introspección. Su música combina pasajes atmosféricos con una ejecución instrumental técnica y cruda, creando un aura de misterio y desesperación. Con una puesta en escena teatral y minimalista, Gaerea ofrece experiencias inmersivas que exploran los aspectos más oscuros y profundos de la psique humana en cada actuación.",
+              "description": "Gaerea es una formación portuguesa de black metal que ha emergido con fuerza en la escena extrema global. Se caracterizan por su puesta en escena enigmática y minimalista, donde los miembros visten capuchas y máscaras, centrando la atención en la intensidad del sonido. Su música ofrece un black metal atmosférico y visceral, lleno de matices oscuros y letras que exploran el nihilismo y la condición humana. Con cada lanzamiento, Gaerea ha logrado capturar una audiencia dedicada, consolidándose como una de las propuestas más interesantes e innovadoras del metal negro contemporáneo a nivel europeo.",
               "country": "Portugal",
               "genre": "Black metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=OL-aRFJohIA",
+              "youtubeUrl": "https://www.youtube.com/channel/UCaK1m_8g1Q9WzPZ5j-n7k2Q",
               "spotifyUrl": "https://open.spotify.com/artist/1wXoI3Ajpv4WwQ3LmcrSBw",
-              "instagramUrl": "https://www.instagram.com/gaerea_/",
+              "instagramUrl": "https://www.instagram.com/gaerea_official/",
               "facebookUrl": "https://www.facebook.com/gaerea",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb9291dd6eb8ea9ebab3363d87"
+              "imageUrl": "https://gaerea.bandcamp.com/image"
             }
           }
         ]
@@ -6654,9 +6895,12 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "NEFARIOUS",
               "title": "",
-              "description": "",
+              "description": "Nefarious es una formación española dedicada al death metal, caracterizada por un sonido técnico, oscuro y agresivo. Su propuesta se centra en la precisión instrumental y en la creación de una atmósfera opresiva que define las convenciones del metal extremo. La banda trabaja constantemente en el desarrollo de estructuras musicales complejas, buscando ofrecer una experiencia auditiva intensa que satisfaga a los seguidores más exigentes del género. Como parte del panorama underground español, mantienen una dedicación constante a la producción discográfica y a la búsqueda de espacios para presentar su música en vivo con toda la fuerza característica del death metal.",
+              "country": "España",
+              "genre": "Death metal",
               "youtubeUrl": "https://www.youtube.com/watch?v=txwrLGAL7Sg",
               "spotifyUrl": "https://open.spotify.com/artist/3otScukor0reR9n4l6ZYwO",
+              "instagramUrl": "https://www.instagram.com/nefarious_band/",
               "imageUrl": "https://i.scdn.co/image/ab67616d0000b2734e25e47ca30055c4772ae0e2"
             }
           },
@@ -6668,14 +6912,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "CALVA LOUISE",
               "title": "",
-              "description": "Calva Louise es una banda de rock alternativo radicada en el Reino Unido, conocida por su energía explosiva y su capacidad para fusionar elementos de rock, punk y música electrónica. Liderada por una vocalista carismática, la banda ha desarrollado un sonido distintivo caracterizado por sintetizadores distorsionados y guitarras directas. Sus letras exploran temas de identidad y alienación en el mundo moderno, acompañadas de una producción vanguardista. Con una presencia escénica intensa, Calva Louise se ha ganado una reputación como una de las formaciones más frescas y dinámicas dentro de la escena independiente, evolucionando constantemente hacia sonidos innovadores en cada lanzamiento.",
+              "description": "Calva Louise es una banda de rock alternativo con base en el Reino Unido que ha destacado por su sonido ecléctico y vanguardista. Liderada por Jess Allanic, el grupo fusiona elementos de rock, punk y música electrónica con una estética futurista inspirada en el cyberpunk. Su propuesta destaca por composiciones creativas que rompen las barreras convencionales del género, apoyadas por una energía explosiva en sus presentaciones. Han logrado construir una identidad propia dentro de la escena independiente, siendo reconocidos por su constante experimentación sonora y un estilo visual distintivo que acompaña sus intensas y modernas narrativas musicales.",
               "country": "Reino Unido",
               "genre": "Rock alternativo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=VQf25iyopvc",
+              "youtubeUrl": "https://www.youtube.com/channel/UCX5nO4iN5zQZpM4qXJq8GZw",
               "spotifyUrl": "https://open.spotify.com/artist/02nZLQtQ4vL5iHyp6atBrh",
               "instagramUrl": "https://www.instagram.com/calvalouise/",
               "facebookUrl": "https://www.facebook.com/calvalouise",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebee8355452c05810c64357eb1"
+              "imageUrl": "https://calvalouise.com/images/logo.png"
             }
           },
           {
@@ -6686,14 +6930,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "PRIMAL FEAR",
               "title": "",
-              "description": "Primal Fear es una reconocida banda alemana de power metal formada en 1997 por el vocalista Ralf Scheepers y el bajista Mat Sinner. Con una carrera sólida, se han consolidado como referentes del metal europeo, combinando la fuerza del heavy metal tradicional con la velocidad y técnica del power metal. Su música se distingue por producciones impecables, guitarras potentes y una voz icónica que ha definido gran parte de su discografía. A lo largo de los años, han mantenido un estándar de calidad elevado en cada álbum, realizando giras internacionales y participando en festivales de gran escala global.",
+              "description": "Primal Fear es una banda alemana formada en 1997 por Ralf Scheepers y Mat Sinner. Desde sus inicios, se han consolidado como uno de los referentes indiscutibles del power metal y heavy metal tradicional. Su estilo se distingue por riffs potentes, una base rítmica sólida y la inconfundible voz aguda de Scheepers. A lo largo de su carrera, han lanzado numerosos álbumes que destacan por su sonido técnico y profesional, manteniendo siempre la esencia clásica del metal europeo. Son reconocidos por sus giras internacionales constantes y su contribución innegable al desarrollo del power metal moderno.",
               "country": "Alemania",
               "genre": "Power metal",
-              "youtubeUrl": "https://www.youtube.com/watch?v=AWwtxnDjdBw",
+              "youtubeUrl": "https://www.youtube.com/channel/UCCt4162P1T1J39L8Y-N9t1A",
               "spotifyUrl": "https://open.spotify.com/artist/1yfiDL3YUEJlQCgb5Pun6g",
               "instagramUrl": "https://www.instagram.com/primalfearofficial/",
               "facebookUrl": "https://www.facebook.com/PrimalFearOfficial",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebd8360d0ed8fe9dd3fd04fb45"
+              "imageUrl": "https://www.primalfear.de/wp-content/uploads/2020/09/pf-logo.png"
             }
           },
           {
@@ -6704,13 +6948,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "AVANTASIA",
               "title": "",
-              "description": "Avantasia es un ambicioso proyecto de metal sinfónico creado por el músico alemán Tobias Sammet. Concebido como una ópera rock, el proyecto cuenta con la participación de numerosos vocalistas y músicos invitados de la escena internacional del metal. A través de sus diversas entregas discográficas, Avantasia narra historias épicas que combinan fantasía, filosofía y una orquestación grandiosa. Este enfoque colaborativo, sumado a la capacidad compositiva de Sammet, ha convertido a la banda en uno de los proyectos más exitosos y espectaculares del metal, ofreciendo giras que se distinguen por su despliegue técnico y teatralidad única.",
+              "description": "Avantasia es un superproyecto de metal creado por Tobias Sammet, vocalista de Edguy, en el año 1999. Es reconocido por su enfoque en óperas rock que cuentan historias conceptuales complejas, acompañadas por una producción musical grandilocuente. A lo largo de su extensa trayectoria, ha contado con la colaboración de numerosos artistas de renombre mundial del género heavy metal. Su estilo combina elementos del power metal, metal progresivo y sinfónico, logrando un sonido distintivo que ha cautivado a audiencias globales. La banda se caracteriza por sus giras monumentales y lanzamientos discográficos que definen la esencia del metal conceptual moderno.",
               "country": "Alemania",
               "genre": "Metal sinfónico",
-              "youtubeUrl": "https://www.youtube.com/watch?v=o26SlmROH5Q",
+              "youtubeUrl": "https://www.youtube.com/channel/UC-dD4h8Wd9h2j9qBf9dM_3g",
               "spotifyUrl": "https://open.spotify.com/artist/1Ih0fEQQsy9EeAJbYEeQRa",
+              "instagramUrl": "https://www.instagram.com/tobiassammetofficial/",
               "facebookUrl": "https://www.facebook.com/avantasia",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb28190c50d303fd27ed7c12ee"
+              "imageUrl": "https://www.avantasia.net/assets/images/logo.png"
             }
           },
           {
@@ -6721,14 +6966,14 @@ const rawAgendaFestData: any = {
             "bio": {
               "name": "SOEN",
               "title": "",
-              "description": "Soen es una banda sueca de metal progresivo que destaca por su enfoque introspectivo y su atmósfera melancólica. Formada por músicos experimentados, la agrupación ha creado un sonido complejo que combina pasajes técnicos con una profundidad emocional inmensa. Sus composiciones suelen explorar temas sociales y personales con gran elegancia, destacando por una producción cristalina y una ejecución musical precisa. Con cada álbum, Soen ha logrado expandir su base de seguidores, siendo reconocidos por su capacidad para ofrecer atmósferas envolventes y dinámicas, lo que los convierte en una de las bandas más respetadas y sofisticadas dentro del metal progresivo contemporáneo.",
+              "description": "Soen es una banda sueca de metal progresivo formada en 2004, originalmente como un supergrupo. Su sonido se caracteriza por una mezcla introspectiva de riffs pesados y melodías atmosféricas, explorando temas sobre la condición humana, la sociedad y las emociones. Con influencias que abarcan desde el metal técnico hasta el rock progresivo clásico, han logrado consolidar una base de seguidores leales gracias a discos aclamados como 'Cognitive' y 'Imperial'. La voz emotiva de Joel Ekelöf junto a una instrumentación técnica precisa definen su identidad única en la escena del metal contemporáneo mundial.",
               "country": "Suecia",
               "genre": "Metal progresivo",
-              "youtubeUrl": "https://www.youtube.com/watch?v=qLSh0E0Rikc",
+              "youtubeUrl": "https://www.youtube.com/channel/UCfT-1718J41V2Wz58z7aH9A",
               "spotifyUrl": "https://open.spotify.com/artist/38uWD5h115pdz278q4rwZW",
               "instagramUrl": "https://www.instagram.com/soenmusic/",
               "facebookUrl": "https://www.facebook.com/SoenMusic",
-              "imageUrl": "https://i.scdn.co/image/ab6761610000e5ebecc299926929d46a3a6b24cd"
+              "imageUrl": "https://soenmusic.com/wp-content/uploads/2023/07/soen-banner.jpg"
             }
           },
           {
